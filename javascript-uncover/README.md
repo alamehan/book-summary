@@ -1,6 +1,6 @@
 <div id="daftarisi"></div>
 
-# Daftar Isi (Section) :
+# Daftar Isi JavaScript Uncover:
 
 <p align="left">
 	<a href="#bab01">1. Berkenalan Dengan JavaScript</a>&nbsp;<br>
