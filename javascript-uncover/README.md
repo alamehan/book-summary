@@ -273,8 +273,8 @@ var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 (
 // C. Tipe Data Boolean
 // ====================
 
-var bolA = true;                       // bernilai true
-var bolB = false;                      // bernilai false
+var bolA = true;                       // bernilai true, biasanya di pakai di if, else, while, dan do while
+var bolB = false;                      // bernilai false, biasanya di pakai di if, else, while, dan do while
 
 // =============================
 // D. Tipe Data Null & Undefined
