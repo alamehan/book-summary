@@ -248,17 +248,17 @@ var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai es
 
 /*
 Ragam karakter escape di JavaScript:
- 1. \0: Karakter NUL
- 2. \b: Backspace
- 3. \t: Horizontal tab
- 4. \n: Newline
- 5. \v: Vertical tab
- 6. \f: Form feed
- 7. \r: Carriage return
- 8. \": Tanda kutip dua (double quote)
- 9. \': Tanda kutip satu (apostrophe atau single quote)
-10. \\: Garis miring backslash
-11. \xXX: Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX
+ 1. \0    : Karakter NUL
+ 2. \b    : Backspace
+ 3. \t    : Horizontal tab
+ 4. \n    : Newline
+ 5. \v    : Vertical tab
+ 6. \f    : Form feed
+ 7. \r    : Carriage return
+ 8. \"    : Tanda kutip dua (double quote)
+ 9. \'    : Tanda kutip satu (apostrophe atau single quote)
+10. \\    : Garis miring backslash
+11. \xXX  : Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX
 12. \uXXXX: Karakter Unicode dengan menggunakan empat digit heksa XXXX 
 */
 ```
