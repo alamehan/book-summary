@@ -58,7 +58,7 @@
 1. Dalam bab ini kita akan mempelajari cara menjalankan kode program JavaScript. Dimulai dari mempersiapkan aplikasi teks editor dan web browser, membahas 3 metode input JavaScript, mengenal tab console dari web developer tools, hingga menampilkan pesan untuk web browser yang tidak mendukung JavaScript.
 ```HTML
 ====================
-1. Inline JavaScript
+A. Inline JavaScript
 ====================
 
 <html>
@@ -73,7 +73,7 @@
 </html>
 
 ======================
-2. Internal JavaScript
+B. Internal JavaScript
 ======================
 
 <html>
@@ -89,7 +89,7 @@
 </html>
 
 ======================
-3. External JavaScript
+C. External JavaScript
 ======================
 
 <html>
@@ -213,3 +213,42 @@ Var, Let & Const
 
 # 6. Tipe Data JavaScript <a href="#daftarisi">🡹</a>
 
+1. Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif (primitive type), dan tipe data object.
+2. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Di dalam JavaScript terdapat 6 tipe data primitif:
+   - Number
+   - String
+   - Boolean
+   - Null
+   - Undefined
+   - Symbol*
+3. Tipe data object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya bermacam-macam. Adapun tipe data object bawaan JavaScript adalah: 
+   - Array
+   - Date
+   - RegExp
+   - Map dan WeakMap*
+   - Set dan WeakSet*
+4. Untuk tipe data Object, dalam bab ini saya hanya membahas object array. Tipe data Object Date dan RegExp akan dibahas dalam bab tersendiri karena butuh penjelasan yang cukup panjang, termasuk cara membuat object bentukan sendiri. Tipe data Symbol, Map, WeakMap, Set dan WeakSet adalah tipe data baru dalam ECMAScript 6. Tipe data ini tidak akan saya bahas karena termasuk materi lanjutan yang cukup kompleks untuk pemula.
+```Javascript
+/*
+===================
+A. Tipe Data Number
+===================
+*/
+
+var a = 100;
+var b = -5000;
+var c = 0.66634;
+var d = 3e3;            // 3 x 10^3
+var e = 0.4e-3;         // 0.4 x 10^-3
+
+var f = 999;            // desimal (basis 10)
+var g = 0b1111100111;   // biner (basis 2), diawali 0b
+var h = 0o1747;         // oktal (basis 8), diawali 0o
+var i = 0x3E7;          // heksadesimal (basis 16), diawali 0x
+
+var j = 9 / "a";
+console.log(j);         // hasilnya: NaN (Not a Number)
+
+var k = 9 / 0;
+console.log(k);         // hasilnya: Infinity (Tak Hingga)
+```
