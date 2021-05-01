@@ -266,7 +266,11 @@ Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
 
 var strH = "Indonesia";
-var strI = "Bahasa" + strH;         // Sebelum ada fitur Template String ES6 (hasil: Bahasa Indonesia)
+var strI = "Bahasa " + strH;         // Sebelum ada fitur Template String ES6 (hasil: Bahasa Indonesia)
 var strJ = `Bahasa ${strH}`;        // Setelah ada fitur Template String ES6 (hasil: Bahasa Indonesia)
+
+// ====================
+// C. Tipe Data Boolean
+// ====================
 
 ```
