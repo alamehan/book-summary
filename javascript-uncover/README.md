@@ -73,7 +73,8 @@ A. Inline JavaScript
     ...
   </body> 
 </html>
-
+```
+```HTML
 <!-- 
 ======================
 B. Internal JavaScript
@@ -91,6 +92,8 @@ B. Internal JavaScript
     ...
   </body> 
 </html>
+```
+```HTML
 
 <!-- 
 ======================
