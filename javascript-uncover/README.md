@@ -298,7 +298,12 @@ console.log(arrSiswa[2]);             // hasilnya: Sukma
 console.log(arrSiswa[3]);             // hasilnya: undefined
 
 console.log(arrAcak);                 // hasilnya: [1, 2.0, "tiga", true, null]
+console.log(arrAcak[0]);              // hasilnya: 1
+console.log(arrAcak[1]);              // hasilnya: 2.0
 console.log(arrAcak[2]);              // hasilnya: tiga
+console.log(arrAcak[3]);              // hasilnya: true
+console.log(arrAcak[4]);              // hasilnya: null
+console.log(arrAcak[5]);              // hasilnya: undefined
 
 console.log(arr2D);                   // hasilnya: [[2,5],[9,5],[3,5]]
 console.log(arr2D[0]);                // hasilnya: [2,5]
