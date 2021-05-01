@@ -280,7 +280,7 @@ var bolB = false;                      // bernilai false, biasanya di pakai di i
 // D. Tipe Data Null & Undefined
 // =============================
 
-var nudA = null;                        // keadaan dimana data "kosong", biasanya diinput sengaja diinput
+var nudA = null;                        // keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
 var nudB = undefined;                   // keadaan dimana data "tidak terdefinisi", biasanya karena error
 
 ```
