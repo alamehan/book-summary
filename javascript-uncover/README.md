@@ -283,9 +283,9 @@ var bolB = false;                     // bernilai false, biasanya di pakai di if
 var nudA = null;                      // keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
 var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 
-// ==========================
-// E. Tipe Data Object: Array
-// ==========================
+// ==================
+// E. Tipe Data Array
+// ==================
 
 var arrSiswa = ["Andri", "Joko", "Sukma"];    // Array 1D berisi hanya data string
 var arrAcak  = [1, 2.0, "tiga", true, null];  // Array 1D berisi beragam tipe data
@@ -321,7 +321,8 @@ console.log(arr2D[2][1]);             // hasilnya: 5
 // ==================
 
 /*
-Operator typeof digunakan untuk melihat tipe data dari sebuah variabel. Apakah tipe datanya number, string, boolean, undefined, atau sebuah object. 
+Operator typeof digunakan untuk melihat tipe data dari sebuah variabel
+Apakah tipe datanya number, string, boolean, undefined, atau sebuah object. 
 */
 
 console.log(typeof numA);             // hasilnya: number
