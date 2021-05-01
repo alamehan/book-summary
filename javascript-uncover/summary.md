@@ -92,8 +92,8 @@
 <html>
   <head>
     ...
-    <script src="script-penting.js" async ></script>
-    <script src="script.js" defer ></script>
+    <script src="script-penting.js" async></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     ...
