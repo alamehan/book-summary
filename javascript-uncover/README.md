@@ -331,5 +331,9 @@ console.log(typeof bolA);             // hasilnya: boolean
 console.log(typeof nudA);             // hasilnya: object (bukan null)
 console.log(typeof nudB);             // hasilnya: undefined
 console.log(typeof arrSiswa);         // hasilnya: object
-
 ```
+
+<br>
+<div id="bab07"></div>
+
+# 7. Operator JavaScript <a href="#daftarisi">🡹</a>
