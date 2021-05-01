@@ -290,4 +290,25 @@ var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi"
 var arrSiswa = ["Andri", "Joko", "Sukma"];    // Array 1D berisi hanya data string
 var arrAcak  = [1, 2.0, "tiga", true, null];  // Array 1D berisi beragam tipe data
 var arr2D    = [[2,5],[9,5],[3,5]];           // Array 2D (misalnya untuk koordinat)
+
+console.log(arrSiswa);                // hasilnya: ["Andri", "Joko", "Sukma"]
+console.log(arrSiswa[0]);             // hasilnya: Andri
+console.log(arrSiswa[1]);             // hasilnya: Joko
+console.log(arrSiswa[2]);             // hasilnya: Sukma
+console.log(arrSiswa[3]);             // hasilnya: undefined
+
+console.log(arrAcak);                 // hasilnya: [1, 2.0, "tiga", true, null]
+console.log(arrAcak[2]);              // hasilnya: tiga
+
+console.log(arr2D);                   // hasilnya: [[2,5],[9,5],[3,5]]
+console.log(arr2D[0]);                // hasilnya: [2,5]
+console.log(arr2D[1]);                // hasilnya: [9,5]
+console.log(arr2D[2]);                // hasilnya: [3,5]
+console.log(arr2D[0][0]);             // hasilnya: 2
+console.log(arr2D[0][1]);             // hasilnya: 5
+console.log(arr2D[1][0]);             // hasilnya: 9
+console.log(arr2D[1][1]);             // hasilnya: 5
+console.log(arr2D[2][0]);             // hasilnya: 3
+console.log(arr2D[2][1]);             // hasilnya: 5
+
 ```
