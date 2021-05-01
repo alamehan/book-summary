@@ -283,4 +283,11 @@ var bolB = false;                     // bernilai false, biasanya di pakai di if
 var nudA = null;                      // keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
 var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 
+// ==================
+// E. Tipe Data Array
+// ==================
+
+var arrSiswa = ["Andri", "Joko", "Sukma"];    // Array 1D berisi data string
+var arrAcak  = [1, 2.0, "tiga", true, null];  // Array 1D berisi ragam tipe data
+var arr2D    = [[2,5],[9,5],[3,5]];           // Array 2D (misalnya untuk koordinat)
 ```
