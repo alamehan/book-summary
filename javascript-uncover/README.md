@@ -273,14 +273,14 @@ var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 (
 // C. Tipe Data Boolean
 // ====================
 
-var bolA = true;                       // bernilai true, biasanya di pakai di if, else, while, dan do while
-var bolB = false;                      // bernilai false, biasanya di pakai di if, else, while, dan do while
+var bolA = true;                      // bernilai true, biasanya di pakai di if, else, while, dan do while
+var bolB = false;                     // bernilai false, biasanya di pakai di if, else, while, dan do while
 
 // =============================
 // D. Tipe Data Null & Undefined
 // =============================
 
-var nudA = null;                        // keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
-var nudB = undefined;                   // keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
+var nudA = null;                      // keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
+var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 
 ```
