@@ -222,16 +222,27 @@ Var, Let & Const
 // A. Tipe Data Number
 // ===================
 
-var a = 100;                    // angka bulat
-var b = -100;                   // angka bulat negatif
-var c = 0.66634;                // angka pecahan
-var d = -0.66634;               // angka pecahan negatif
-var e = 3e3;                    // 3 x 10^3
-var f = 0.4e-3;                 // 0.4 x 10^-3
-var g = 999;                    // desimal (basis 10)
-var h = 0b1111100111;           // biner (basis 2), diawali 0b
-var i = 0o1747;                 // oktal (basis 8), diawali 0o
-var j = 0x3E7;                  // heksadesimal (basis 16), diawali 0x
-var k = 9/"a"; console.log(k);  // hasilnya: NaN (Not a Number)
-var l = 9/0; console.log(l);    // hasilnya: Infinity (Tak Hingga)
+var numA = 100;                       // angka bulat
+var numB = -100;                      // angka bulat negatif
+var numC = 0.66634;                   // angka pecahan
+var numD = -0.66634;                  // angka pecahan negatif
+var numE = 3e3;                       // 3 x 10^3
+var numF = 0.4e-3;                    // 0.4 x 10^-3
+var numG = 999;                       // desimal (basis 10)
+var numH = 0b1111100111;              // biner (basis 2), diawali 0b
+var numI = 0o1747;                    // oktal (basis 8), diawali 0o
+var numJ = 0x3E7;                     // heksadesimal (basis 16), diawali 0x
+var numK = 9/"a"; console.log(numK);  // hasilnya: NaN (Not a Number)
+var numL = 9/0; console.log(numL);    // hasilnya: Infinity (Tak Hingga)
+
+// ===================
+// B. Tipe Data String
+// ===================
+
+var strA = "Hello World!";            // string dengan kutip dua
+var strB = 'Hello World!';            // string dengan kutip satu
+var strC = "Hari Jum'at";             // kutip satu didalam kutip dua
+var strD = 'Dia berkata: "Hey"';      // kutip dua didalam kutip satu
+var strE = "Dia berkata: \"Hey\"";    // kutip dua didalam kutip dua, pakai escape char (\)
+var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai escape char (\)
 ```
