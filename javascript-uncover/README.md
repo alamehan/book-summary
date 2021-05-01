@@ -245,7 +245,7 @@ var strC = "Hari Jum'at";             // kutip satu didalam kutip dua
 var strD = 'Dia berkata: "Hey"';      // kutip dua didalam kutip satu
 var strE = "Dia berkata: \"Hey\"";    // kutip dua didalam kutip dua, pakai escape character (\)
 var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai escape character (\)
-var strG = "\u2764 You!"              // contoh Unicode (hasilnya: ❤ You!)
+var strG = "\u2764 You!"              // contoh pemakaian Unicode (hasilnya: ❤ You!)
 
 /*
 Ragam karakter escape di JavaScript:
