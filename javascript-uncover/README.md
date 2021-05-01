@@ -235,16 +235,16 @@ A. Tipe Data Number
 ===================
 */
 
-var a = 100;            // angka bulat
-var b = -100;           // angka bulat negatif
-var c = 0.66634;        // angka pecahan
-var d = -0.66634;       // angka pecahan negatif
-var e = 3e3;            // 3 x 10^3
-var f = 0.4e-3;         // 0.4 x 10^-3
-var g = 999;            // desimal (basis 10)
-var h = 0b1111100111;   // biner (basis 2), diawali 0b
-var i = 0o1747;         // oktal (basis 8), diawali 0o
-var j = 0x3E7;          // heksadesimal (basis 16), diawali 0x
+var a = 100;                    // angka bulat
+var b = -100;                   // angka bulat negatif
+var c = 0.66634;                // angka pecahan
+var d = -0.66634;               // angka pecahan negatif
+var e = 3e3;                    // 3 x 10^3
+var f = 0.4e-3;                 // 0.4 x 10^-3
+var g = 999;                    // desimal (basis 10)
+var h = 0b1111100111;           // biner (basis 2), diawali 0b
+var i = 0o1747;                 // oktal (basis 8), diawali 0o
+var j = 0x3E7;                  // heksadesimal (basis 16), diawali 0x
 var k = 9/"a"; console.log(k);  // hasilnya: NaN (Not a Number)
 var l = 9/0; console.log(l);    // hasilnya: Infinity (Tak Hingga)
 ```
