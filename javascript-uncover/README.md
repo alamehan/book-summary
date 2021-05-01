@@ -264,4 +264,9 @@ Ragam karakter escape di JavaScript:
 
 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
+
+var strH = "Indonesia";
+var strI = "Bahasa" + strH;         // Sebelum ada fitur Template String ES6
+var strJ = `Bahasa ${strH}`;        // Setelah ada fitur Template String ES6
+
 ```
