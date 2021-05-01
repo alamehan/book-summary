@@ -171,7 +171,7 @@ Posisi Terbaik Internal & External JavaScript
 2. JavaScript termasuk ke dalam bahasa pemrograman **Typeless Programming Language**, yakni kelompok bahasa pemrograman yang variabelnya bisa diisi dengan tipe data apa saja tanpa harus dideklarasikan terlebih dahulu.
 3. Apabila anda sering mengikuti tutorial programming dari situs berbahasa inggris, nama variabel **foo**, **bar**, dan **baz** sering digunakan. Ketiganya dikenal sebagai **dummy variabel**, yakni variabel yang fungsinya hanya sebagai contoh. Mirip seperti teks “Lorem Ipsum dolor sit amet” dalam bidang design.
 4. Kita bisa memberi nama apa saja untuk variabel, apakah itu angka, foo, bar, andi, atau username. Selain variabel, kita juga bebas untuk membuat nama konstanta, function, maupun object. Semua inilah yang termasuk kedalam kelompok **identifier**. Identifier di dalam JavaScript memiliki aturan sebagai berikut:
-   - Bisaterdiri dari huruf, angka, garisbawah “ _ ” (underscore), dan tanda dollar “ $ “ (dollar sign). Selain itu, dianggap sebagai karakter ilegal (tidak boleh digunakan). 
+   - Bisa terdiri dari huruf, angka, garis bawah “ _ ” (underscore), dan tanda dollar “ $ “ (dollar sign). Selain itu, dianggap sebagai karakter ilegal (tidak boleh digunakan). 
    - Karakter pertama dari identifier tidak boleh berupa angka. Angka hanya bisa digunakan sebagai karakterkedua dan seterusnya.
    - Bersifat case sensitive, dimana huruf besar dan kecil dianggap berbeda.
    - Harus selain dari **reserved keyword**, yakni kata khusus yang berfungsi sebagai perintah di dalam pemrograman JavaScript, seperti ```var```, ```while```, ```function```, dll.
