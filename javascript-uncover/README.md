@@ -287,7 +287,7 @@ var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi"
 // E. Tipe Data Array
 // ==================
 
-var arrSiswa = ["Andri", "Joko", "Sukma"];    // Array 1D berisi data string
-var arrAcak  = [1, 2.0, "tiga", true, null];  // Array 1D berisi ragam tipe data
+var arrSiswa = ["Andri", "Joko", "Sukma"];    // Array 1D berisi hanya data string
+var arrAcak  = [1, 2.0, "tiga", true, null];  // Array 1D berisi beragam tipe data
 var arr2D    = [[2,5],[9,5],[3,5]];           // Array 2D (misalnya untuk koordinat)
 ```
