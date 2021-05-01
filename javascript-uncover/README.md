@@ -189,8 +189,8 @@ Posisi Terbaik Internal & External JavaScript
     <script>
       "use strict";
 
-      var hargaBarang = 12000;
-      let namaLngkap = "Rudi Siswoyo";
+      var harga = 12000;
+      let namaLengkap = "Rudi Siswoyo";
       const NILAI_PI = 3.14;
 
       ...
@@ -198,4 +198,4 @@ Posisi Terbaik Internal & External JavaScript
   </body> 
 </html>
 ```
-9. Berdasarkan contoh diatas: Variabel ```hargaBarang```, Let ```namaLengkap```, dan konstanta ```NILAI_PI``` adalah **Identifier**. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah **Literal**.
+9. Berdasarkan contoh diatas: Variabel ```harga```, Let ```namaLengkap```, dan konstanta ```NILAI_PI``` adalah **Identifier**. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah **Literal**.
