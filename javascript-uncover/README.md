@@ -248,7 +248,6 @@ var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai es
 
 /*
 Ragam karakter escape di JavaScript:
-
  1. \0    : Karakter NUL
  2. \b    : Backspace
  3. \t    : Horizontal tab
