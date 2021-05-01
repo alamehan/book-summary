@@ -1,6 +1,6 @@
 <div id="daftarisi"></div>
 
-# Daftar Isi JavaScript Uncover:
+# 📖 Daftar Isi JavaScript Uncover:
 
 <p align="left">
 	<a href="#bab01">1. Berkenalan Dengan JavaScript</a>&nbsp;<br>
@@ -17,7 +17,7 @@
 
 <div id="bab01"></div>
 
-# 1. Berkenalan Dengan JavaScript | <a href="#daftarisi">🡹</a>
+# 1. Berkenalan Dengan JavaScript <a href="#daftarisi">🡹</a>
 
 1. JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CSS, PHP, MySQL dan JavaScript. Bersama-sama dengan HTML dan CSS, ketiganya berbagi peran masing-masing. HTML digunakan untuk membuat struktur dan isi dari halaman web (content). CSS untuk mempercantik tampilan website (design). Sedangkan JavaScript berfungsi menangani interaksi (behavior).**“HTML for content, CSS for presentation and JavaScript for behavior”**.
 2. HTML, CSS dan JavaScript sama-sama termasuk ke dalam kelompok “client side programming language”, yakni bahasa pemrograman yang dijalankan di sisi client (web browser). PHP juga merupakan bahasa pemrograman web, tapi berada di dalam server, sehingga disebut sebagai “server side programming language”.
@@ -31,7 +31,7 @@
 <br>
 <div id="bab02"></div>
 
-# 2. Sejarah dan Perkembangan JavaScript | <a href="#daftarisi">🡹</a>
+# 2. Sejarah dan Perkembangan JavaScript <a href="#daftarisi">🡹</a>
 
 1. Brendan Eich membuat prototype bahasa baru dalam 10 hari. Pada Mei 1995, bahasa pemrograman “Mocha” lahir. Bahasa pemrograman inilah yang diputuskan untuk digunakan Netscape. Bahasa pemograman Mocha dirilis pertama kali ke dalam versi beta Netscape Navigator 2.0 di bulan September 1995, tetapi dengan menggunakan nama baru: LiveScript. Umur dari LiveScript ternyata tidak lama. 3 bulan kemudian, tepatnya Desember 1995, hadir Netscape Navigator 2.0 beta 3 dengan sebuah bahasa baru: JavaScript. Sebenarnya ini bukanlah bahasa pemrograman baru, tapi perubahan nama dari LiveScript. Nama JavaScript dipilih agar Netscape bisa ‘nompang tenar’ dari bahasa pemrograman JAVA milik Sun Microsystems, yang pada masa itu sangat populer di kalangan programmer.
 <img src="images/2-1-Brendan.png">
@@ -53,7 +53,7 @@
 <br>
 <div id="bab03"></div>
 
-# 3. Menjalankan Kode Program JavaScript | <a href="#daftarisi">🡹</a>
+# 3. Menjalankan Kode Program JavaScript <a href="#daftarisi">🡹</a>
 
 1. Dalam bab ini kita akan mempelajari cara menjalankan kode program JavaScript. Dimulai dari mempersiapkan aplikasi teks editor dan web browser, membahas 3 metode input JavaScript, mengenal tab console dari web developer tools, hingga menampilkan pesan untuk web browser yang tidak mendukung JavaScript.
 ```HTML
@@ -150,7 +150,7 @@
 <br>
 <div id="bab04"></div>
 
-# 4. Aturan Dasar, Variabel dan Konstanta | <a href="#daftarisi">🡹</a>
+# 4. Aturan Dasar, Variabel dan Konstanta <a href="#daftarisi">🡹</a>
 
 1. **Statement** adalah sebutan untuk sebuah baris perintah JavaScript. Walaupun saya menggunakan kata “baris”, bisa saja sebuah statement butuh beberapa baris. Atau dalam 1 baris bisa terdiri dari beberapa statement. Setiap statement diakhiri dengan tanda titik koma (semi colon): ‘ ; ‘. Sebenarnya, tanda titik koma untuk mengakhiri statement JavaScript ini adalah opsional. Artinya, boleh tidak ditulis sepanjang statement tersebut harus berada dalam baris baru (1 statement, 1 baris). Sebaiknya kita tetap menambahkan tanda titik koma untuk mengakhiri setiap statement di dalam JavaScript.
 2. **Case Sensitivity**: JavaScript termasuk bahasa pemrograman yang bersifat case sensitif, artinya huruf besar dan huruf kecil dianggap berbeda. Salah menulis huruf sangat sering terjadi.
@@ -161,5 +161,5 @@
 <br>
 <div id="bab05"></div>
 
-# 5. Variabel dan Konstanta | <a href="#daftarisi">🡹</a>
+# 5. Variabel dan Konstanta <a href="#daftarisi">🡹</a>
 
