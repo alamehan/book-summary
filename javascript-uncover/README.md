@@ -243,6 +243,22 @@ var strA = "Hello World!";            // string dengan kutip dua
 var strB = 'Hello World!';            // string dengan kutip satu
 var strC = "Hari Jum'at";             // kutip satu didalam kutip dua
 var strD = 'Dia berkata: "Hey"';      // kutip dua didalam kutip satu
-var strE = "Dia berkata: \"Hey\"";    // kutip dua didalam kutip dua, pakai escape char (\)
-var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai escape char (\)
+var strE = "Dia berkata: \"Hey\"";    // kutip dua didalam kutip dua, pakai escape character (\)
+var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai escape character (\)
+
+/*
+Ragam karakter escape di JavaScript:
+ 1. \0: Karakter NUL
+ 2. \b: Backspace
+ 3. \t: Horizontal tab
+ 4. \n: Newline
+ 5. \v: Vertical tab
+ 6. \f: Form feed
+ 7. \r: Carriage return
+ 8. \": Tanda kutip dua (double quote)
+ 9. \': Tanda kutip satu (apostrophe atau single quote)
+10. \\: Garis miring backslash
+11. \xXX: Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX
+12. \uXXXX: Karakter Unicode dengan menggunakan empat digit heksa XXXX 
+*/
 ```
