@@ -350,7 +350,7 @@ console.log(4+6/5-3*2+3);             // output: 2.2  ⇨ operator * dan / dipro
 console.log((4+6)/(5-3)*2+3);         // output: 13   ⇨ operator () diproses lebih awal (precedence: 21)
 
 /*
-Urutan prioritas operator (Precedence) secara lengkap dapat diakses di:
+Urutan prioritas operator (precedence) secara lengkap dapat diakses di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 */
 
@@ -386,9 +386,28 @@ console.log(9 === "9");               // output: false  ⇨ strict equality (ide
 console.log(9 != "9");                // output: false
 console.log(9 !== "9");               // output: true   ⇨ strict inequality (tidak identik dengan)
 
+// Anda Harus Tahu
+
 console.log(1 == true);               // output: true
 console.log(1 === true);              // output: false
 console.log(0 == false);              // output: true
 console.log(0 === false);             // output: false
+console.log(0.3 == 3e-1);             // output: true
+console.log(0.3 === 3e-1);            // output: true   (karena memang nilainya sama)
+console.log(true > false)             // output: true   (ingat: true = 1, false = 0)
+
+// Perbandingan String 
+
+/*
+Setiap karakter menggunakan nomor urut desimal
+di ASCII-Code: https://www.ascii-code.com/
+*/
+
+console.log("a" < "b");               // output: true   (a = 97, b = 98)
+console.log("a" < "A");               // output: false  (a = 97, A = 65)
+console.log("ali" < "ala");           // output: false  (ali = 97→108→105, ala = 97→108→97)
+console.log("ali" < "alo");           // output: true   (ali = 97→108→105, alo = 97→108→111)
+console.log("ali" < "alika");         // output: true   (ali = 97→108→105, alika = 97→108→105→107→97)
+console.log('ali' < 9999999);         // output: false  (perbandingan String & Number selalu menghasilkan false)
 
 ```
