@@ -519,8 +519,8 @@ console.log(false || "World");        // output: World  (false bertemu ||, lanju
 console.log("Hello" && false);        // output: false  ("Hello" ≈ true, lalu bertemu &&, lanjut, hasilnya boolean false)
 console.log(false && "World");        // output: false  (false bertemu &&, stop, hasilnya boolean false)
 
-console.log(false || false && true || "World");   // output: World
-console.log(true || false && true || "World");    // output: true
+console.log(false || false && true || "World");   // output: World  (&& duluan, menjadi: false || false || "World", ...)
+console.log(true || false && true || "World");    // output: true   (&& duluan, menjadi: true || false || "World", ...)
 ```
 <hr>
 
