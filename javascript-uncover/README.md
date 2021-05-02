@@ -337,3 +337,20 @@ console.log(typeof arrSiswa);         // hasilnya: object
 <div id="bab07"></div>
 
 # 7. Operator JavaScript <a href="#daftarisi">🡹</a>
+
+```Javascript
+
+// ======================
+// A. Operator Aritmatika
+// ======================
+
+var a = 10;
+var b = 5;
+
+console.log(a + b);                   // tambah (hasilnya: 15)
+console.log(a - b);                   // kurang (hasilnya: 5)
+console.log(a * b);                   // kali (hasilnya: 50)
+console.log(a / b);                   // bagi (hasilnya: 2)
+console.log(a % b);                   // modulo a.k.a sisa bagi (hasilnya: 0)
+
+```
