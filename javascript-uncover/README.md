@@ -232,8 +232,8 @@ var numG = 999;                       // desimal (basis 10)
 var numH = 0b1111100111;              // biner (basis 2), diawali 0b
 var numI = 0o1747;                    // oktal (basis 8), diawali 0o
 var numJ = 0x3E7;                     // heksadesimal (basis 16), diawali 0x
-var numK = 9/"a"; console.log(numK);  // hasilnya: NaN (Not a Number)
-var numL = 9/0; console.log(numL);    // hasilnya: Infinity (Tak Hingga)
+var numK = 9/"a"; console.log(numK);  // output: NaN (Not a Number)
+var numL = 9/0; console.log(numL);    // output: Infinity (Tak Hingga)
 
 // ===================
 // B. Tipe Data String
@@ -245,7 +245,7 @@ var strC = "Hari Jum'at";             // kutip satu didalam kutip dua
 var strD = 'Dia berkata: "Hey"';      // kutip dua didalam kutip satu
 var strE = "Dia berkata: \"Hey\"";    // kutip dua didalam kutip dua, pakai escape character (\)
 var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai escape character (\)
-var strG = "\u2764 You!"              // contoh pemakaian Unicode ⇨ hasilnya: ❤ You!
+var strG = "\u2764 You!"              // contoh pemakaian Unicode ⇨ output: ❤ You!
 
 /*
 Ragam karakter escape di JavaScript:
@@ -266,8 +266,8 @@ Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
 
 var strH = "Indonesia";
-var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
-var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
+var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ output: Bahasa Indonesia
+var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ output: Bahasa Indonesia
 
 // ====================
 // C. Tipe Data Boolean
@@ -291,30 +291,30 @@ var arrSiswa = ["Andri", "Joko", "Sukma"];    // Array 1D berisi hanya data stri
 var arrAcak  = [1, 2.0, "tiga", true, null];  // Array 1D berisi beragam tipe data
 var arr2D    = [[2,5], [9,5], [3,5]];         // Array 2D (misalnya untuk koordinat)
 
-console.log(arrSiswa);                // hasilnya: ["Andri", "Joko", "Sukma"]
-console.log(arrSiswa[0]);             // hasilnya: Andri
-console.log(arrSiswa[1]);             // hasilnya: Joko
-console.log(arrSiswa[2]);             // hasilnya: Sukma
-console.log(arrSiswa[3]);             // hasilnya: undefined
+console.log(arrSiswa);                // output: ["Andri", "Joko", "Sukma"]
+console.log(arrSiswa[0]);             // output: Andri
+console.log(arrSiswa[1]);             // output: Joko
+console.log(arrSiswa[2]);             // output: Sukma
+console.log(arrSiswa[3]);             // output: undefined
 
-console.log(arrAcak);                 // hasilnya: [1, 2.0, "tiga", true, null]
-console.log(arrAcak[0]);              // hasilnya: 1
-console.log(arrAcak[1]);              // hasilnya: 2.0
-console.log(arrAcak[2]);              // hasilnya: tiga
-console.log(arrAcak[3]);              // hasilnya: true
-console.log(arrAcak[4]);              // hasilnya: null
-console.log(arrAcak[5]);              // hasilnya: undefined
+console.log(arrAcak);                 // output: [1, 2.0, "tiga", true, null]
+console.log(arrAcak[0]);              // output: 1
+console.log(arrAcak[1]);              // output: 2.0
+console.log(arrAcak[2]);              // output: tiga
+console.log(arrAcak[3]);              // output: true
+console.log(arrAcak[4]);              // output: null
+console.log(arrAcak[5]);              // output: undefined
 
-console.log(arr2D);                   // hasilnya: [[2,5],[9,5],[3,5]]
-console.log(arr2D[0]);                // hasilnya: [2,5]
-console.log(arr2D[1]);                // hasilnya: [9,5]
-console.log(arr2D[2]);                // hasilnya: [3,5]
-console.log(arr2D[0][0]);             // hasilnya: 2
-console.log(arr2D[0][1]);             // hasilnya: 5
-console.log(arr2D[1][0]);             // hasilnya: 9
-console.log(arr2D[1][1]);             // hasilnya: 5
-console.log(arr2D[2][0]);             // hasilnya: 3
-console.log(arr2D[2][1]);             // hasilnya: 5
+console.log(arr2D);                   // output: [[2,5],[9,5],[3,5]]
+console.log(arr2D[0]);                // output: [2,5]
+console.log(arr2D[1]);                // output: [9,5]
+console.log(arr2D[2]);                // output: [3,5]
+console.log(arr2D[0][0]);             // output: 2
+console.log(arr2D[0][1]);             // output: 5
+console.log(arr2D[1][0]);             // output: 9
+console.log(arr2D[1][1]);             // output: 5
+console.log(arr2D[2][0]);             // output: 3
+console.log(arr2D[2][1]);             // output: 5
 
 // ==================
 // E. Operator typeof
@@ -325,12 +325,12 @@ Operator typeof digunakan untuk melihat tipe data dari sebuah variabel
 Apakah tipe datanya number, string, boolean, undefined, atau sebuah object. 
 */
 
-console.log(typeof numA);             // hasilnya: number
-console.log(typeof strA);             // hasilnya: string
-console.log(typeof bolA);             // hasilnya: boolean
-console.log(typeof nudA);             // hasilnya: object (bukan null)
-console.log(typeof nudB);             // hasilnya: undefined
-console.log(typeof arrSiswa);         // hasilnya: object
+console.log(typeof numA);             // output: number
+console.log(typeof strA);             // output: string
+console.log(typeof bolA);             // output: boolean
+console.log(typeof nudA);             // output: object (bukan null)
+console.log(typeof nudB);             // output: undefined
+console.log(typeof arrSiswa);         // output: object
 ```
 
 <br>
@@ -347,18 +347,36 @@ console.log(typeof arrSiswa);         // hasilnya: object
 var a = 10;
 var b = 5;
 
-console.log(a + b);                   // addition (tambah) ⇨ hasilnya: 15
-console.log(a - b);                   // substraction (kurang) ⇨ hasilnya: 5
-console.log(a * b);                   // multiplication (kali) ⇨ hasilnya: 50
-console.log(a / b);                   // division (bagi) ⇨ hasilnya: 2
-console.log(a % b);                   // modulo (sisa bagi) ⇨ hasilnya: 0
-console.log(a ** b);                  // exponentiation (pangkat) ⇨ hasilnya: 100000
+console.log(a + b);                   // addition (tambah) ⇨ output: 15
+console.log(a - b);                   // substraction (kurang) ⇨ output: 5
+console.log(a * b);                   // multiplication (kali) ⇨ output: 50
+console.log(a / b);                   // division (bagi) ⇨ output: 2
+console.log(a % b);                   // modulo (sisa bagi) ⇨ output: 0
+console.log(a ** b);                  // exponentiation (pangkat) ⇨ output: 100000
 
-console.log(4+6/5-3*2+3);             // operator * dan / diproses lebih awal (precedence: 15) ⇨ hasilnya: 2.2
-console.log((4+6)/(5-3)*2+3);         // operator () diproses lebih awal (precedence: 21) ⇨ hasilnya: 13
+console.log(4+6/5-3*2+3);             // operator * dan / diproses lebih awal (precedence: 15) ⇨ output: 2.2
+console.log((4+6)/(5-3)*2+3);         // operator () diproses lebih awal (precedence: 21) ⇨ output: 13
 
 /*
 Urutan prioritas operator (Precedence) secara lengkap dapat diakses di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 */
+
+// ===================================
+// B. Operator Increment dan Decrement
+// ===================================
+
+var c = 10, d = 10, e = 10, f = 10;
+
+console.log(++c);                     // output: 11 (pre-increment: langsung tambahkan)
+console.log(c);                       // output: 11
+console.log(--d);                     // output: 9 (pre-decrement: langsung kurangi)
+console.log(d);                       // output: 9
+
+console.log(e++);                     // output: 10 (post-increment: tampilkan dulu, baru tambahkan)
+console.log(e);                       // output: 11
+console.log(f--);                     // output: 10 (post-decrement: tampilkan dulu, baru kurangi)
+console.log(f);                       // output: 9
+
+
 ```
