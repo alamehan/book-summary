@@ -347,10 +347,10 @@ console.log(typeof arrSiswa);         // hasilnya: object
 var a = 10;
 var b = 5;
 
-console.log(a + b);                   // tambah (hasilnya: 15)
-console.log(a - b);                   // kurang (hasilnya: 5)
-console.log(a * b);                   // kali (hasilnya: 50)
-console.log(a / b);                   // bagi (hasilnya: 2)
-console.log(a % b);                   // modulo a.k.a sisa bagi (hasilnya: 0)
+console.log(a + b);     // tambah (hasilnya: 15)
+console.log(a - b);     // kurang (hasilnya: 5)
+console.log(a * b);     // kali (hasilnya: 50)
+console.log(a / b);     // bagi (hasilnya: 2)
+console.log(a % b);     // modulo a.k.a sisa bagi (hasilnya: 0)
 
 ```
