@@ -386,7 +386,7 @@ console.log(9 === "9");               // output: false  ⇨ strict equality (ide
 console.log(9 != '9');                // output: false
 console.log(9 !== '9');               // output: true   ⇨ strict inequality (tidak identik dengan)
 
-// Anda Harus Tahu
+// C1. Anda Harus Tahu
 
 console.log(1 == true);               // output: true
 console.log(1 === true);              // output: false
@@ -396,7 +396,7 @@ console.log(0.3 == 3e-1);             // output: true
 console.log(0.3 === 3e-1);            // output: true   (karena memang nilainya sama)
 console.log(true > false)             // output: true   (ingat: true = 1, false = 0)
 
-// Perbandingan String 
+// C2. Perbandingan String 
 
 /*
 Setiap karakter dalam string menggunakan nomor urut
@@ -409,5 +409,42 @@ console.log("ali" < "ala");           // output: false  (ali = 97→108→105, a
 console.log("ali" < "alo");           // output: true   (ali = 97→108→105, alo = 97→108→111)
 console.log("ali" < "alika");         // output: true   (ali = 97→108→105, alika = 97→108→105→107→97)
 console.log("ali" < 9999999);         // output: false  (perbandingan String & Number selalu menghasilkan false)
+
+// C3. Falsy & Truthy Value
+
+/*
+Dalam operator perbandingan sebuah tipe data akan dikonversi
+menjadi boolean, apakah itu menjadi true atau menjadi false.
+
+Yang dikonversi menjadi false:
+• false
+• null
+• undefined
+• 0
+• NaN
+• ''        (string kosong)
+• ""        (string kosong)
+
+Yang dikonversi menjadi true:
+• true
+• {}        (object kosong)
+• []        (array kosong)
+• 42        (sembarang angka, termasuk pecahan dan negatif, selain 0)
+• "foo"     (sembarang string, selama bukan string kosong)
+• infinity  (termasuk -infinity)
+*/
+
+console.log('' == '0');               // output: false  (hasil konversi: false == true)
+console.log(0 == '');                 // output: true   (hasil konversi: false == false) 
+console.log(0 == '0');                // output: true   (bukan operator indentik, jadinya true) 
+console.log(false == 'false');        // output: false  (hasil konversi: false == true) 
+console.log(false == '0');            // output: true   (bukan operator indentik & false kan bernilai 0, jadinya true) 
+console.log(false == undefined);      // output: false  (pengecualian) 
+console.log(false == null);           // output: false  (pengecualian) 
+console.log(null == undefined);       // output: true   (hasil konversi: false == false) 
+console.log('\t\r\n' == 0);           // output: true   (pengecualian) 
+
+
+
 
 ```
