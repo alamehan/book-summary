@@ -245,7 +245,7 @@ var strC = "Hari Jum'at";             // kutip satu didalam kutip dua
 var strD = 'Dia berkata: "Hey"';      // kutip dua didalam kutip satu
 var strE = "Dia berkata: \"Hey\"";    // kutip dua didalam kutip dua, pakai escape character (\)
 var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai escape character (\)
-var strG = "\u2764 You!"              // contoh pemakaian Unicode ━ hasilnya: ❤ You!
+var strG = "\u2764 You!"              // contoh pemakaian Unicode ⇨ hasilnya: ❤ You!
 
 /*
 Ragam karakter escape di JavaScript:
@@ -266,8 +266,8 @@ Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
 
 var strH = "Indonesia";
-var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ━ hasilnya: Bahasa Indonesia
-var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ━ hasilnya: Bahasa Indonesia
+var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
+var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 
 // ====================
 // C. Tipe Data Boolean
@@ -347,15 +347,15 @@ console.log(typeof arrSiswa);         // hasilnya: object
 var a = 10;
 var b = 5;
 
-console.log(a + b);                   // addition (tambah) ━ hasilnya: 15
-console.log(a - b);                   // substraction (kurang) ━ hasilnya: 5
-console.log(a * b);                   // multiplication (kali) ━ hasilnya: 50
-console.log(a / b);                   // division (bagi) ━ hasilnya: 2
-console.log(a % b);                   // modulo (sisa bagi) ━ hasilnya: 0
-console.log(a ** b);                  // exponentiation (pangkat) ━ hasilnya: 100000
+console.log(a + b);                   // addition (tambah) ⇨ hasilnya: 15
+console.log(a - b);                   // substraction (kurang) ⇨ hasilnya: 5
+console.log(a * b);                   // multiplication (kali) ⇨ hasilnya: 50
+console.log(a / b);                   // division (bagi) ⇨ hasilnya: 2
+console.log(a % b);                   // modulo (sisa bagi) ⇨ hasilnya: 0
+console.log(a ** b);                  // exponentiation (pangkat) ⇨ hasilnya: 100000
 
-console.log(4+6/5-3*2+3);             // operator * dan / diproses lebih awal (precedence: 15) ━ hasilnya: 2.2
-console.log((4+6)/(5-3)*2+3);         // operator () diproses lebih awal (precedence: 21) ━ hasilnya: 13
+console.log(4+6/5-3*2+3);             // operator * dan / diproses lebih awal (precedence: 15) ⇨ hasilnya: 2.2
+console.log((4+6)/(5-3)*2+3);         // operator () diproses lebih awal (precedence: 21) ⇨ hasilnya: 13
 
 /*
 Urutan prioritas operator (Precedence) secara lengkap dapat diakses di:
