@@ -399,8 +399,8 @@ console.log(true > false)             // output: true   (ingat: true = 1, false 
 // Perbandingan String 
 
 /*
-Setiap karakter menggunakan nomor urut desimal
-di ASCII-Code: https://www.ascii-code.com/
+Setiap karakter dalam string menggunakan nomor urut
+desimal di ASCII-Code: https://www.ascii-code.com/
 */
 
 console.log("a" < "b");               // output: true   (a = 97, b = 98)
