@@ -217,6 +217,7 @@ Var, Let & Const
 
 1. Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif (primitive type), dan tipe data object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Di dalam JavaScript terdapat 6 tipe data primitif, yaitu: **Number, String, Boolean, Null, Undefined, Symbol**. Sedangkan tipe data object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya bermacam-macam. Adapun tipe data object bawaan JavaScript yaitu: **Array, Date, RegExp, Map, WeakMap, Set, WeakSet.**
 2. Untuk tipe data Object, dalam bab ini saya hanya membahas object array. Tipe data Object Date dan RegExp akan dibahas dalam bab tersendiri karena butuh penjelasan yang cukup panjang, termasuk cara membuat object bentukan sendiri. Tipe data Symbol, Map, WeakMap, Set dan WeakSet adalah tipe data baru dalam ECMAScript 6. Tipe data ini tidak akan saya bahas karena termasuk materi lanjutan yang cukup kompleks untuk pemula.
+
 ```Javascript
 // ===================
 // A. Tipe Data Number
@@ -234,7 +235,9 @@ var numI = 0o1747;                    // oktal (basis 8), diawali 0o
 var numJ = 0x3E7;                     // heksadesimal (basis 16), diawali 0x
 var numK = 9/"a"; console.log(numK);  // output: NaN (Not a Number)
 var numL = 9/0; console.log(numL);    // output: Infinity (Tak Hingga)
+```
 
+```Javascript
 // ===================
 // B. Tipe Data String
 // ===================
@@ -258,9 +261,9 @@ Ragam karakter escape di JavaScript:
  7. \r    : Carriage return
  8. \"    : Tanda kutip dua (double quote)
  9. \'    : Tanda kutip satu (apostrophe atau single quote)
-10. \\    : Garis miring backslash
-11. \xXX  : Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX
-12. \uXXXX: Karakter Unicode dengan menggunakan empat digit heksa XXXX
+1.  \\    : Garis miring backslash
+2.  \xXX  : Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX
+3.  \uXXXX: Karakter Unicode dengan menggunakan empat digit heksa XXXX
 
 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
@@ -268,21 +271,27 @@ Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 var strH = "Indonesia";
 var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
+```
 
+```Javascript
 // ====================
 // C. Tipe Data Boolean
 // ====================
 
 var bolA = true;                      // bernilai true, biasanya di pakai di if, else, while, dan do while
 var bolB = false;                     // bernilai false, biasanya di pakai di if, else, while, dan do while
+```
 
+```Javascript
 // =============================
 // D. Tipe Data Null & Undefined
 // =============================
 
 var nudA = null;                      // keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
 var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
+```
 
+```Javascript
 // ==================
 // E. Tipe Data Array
 // ==================
@@ -307,7 +316,9 @@ console.log(arr2D[1][0]);             // output: 9
 console.log(arr2D[1][1]);             // output: 5
 console.log(arr2D[2][0]);             // output: 3
 console.log(arr2D[2][1]);             // output: 5
+```
 
+```Javascript
 // ==================
 // E. Operator typeof
 // ==================
@@ -331,7 +342,6 @@ console.log(typeof arrSiswa);         // output: object
 # 7. Operator JavaScript <a href="#daftarisi">🡹</a>
 
 ```Javascript
-
 // ======================
 // A. Operator Aritmatika
 // ======================
@@ -353,7 +363,9 @@ console.log((4+6)/(5-3)*2+3);         // output: 13   ⇨ operator () diproses l
 Urutan prioritas operator (precedence) secara lengkap dapat diakses di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 */
+```
 
+```Javascript
 // ===================================
 // B. Operator Increment dan Decrement
 // ===================================
@@ -369,7 +381,9 @@ console.log(e++);                     // output: 10     ⇨ post-increment: tamp
 console.log(e);                       // output: 11
 console.log(f--);                     // output: 10     ⇨ post-decrement: tampilkan dulu, baru kurangi
 console.log(f);                       // output: 9
+```
 
+```Javascript
 // ========================
 // C. Operator Perbandingan
 // ========================
@@ -443,7 +457,9 @@ console.log(false == undefined);      // output: false  (pengecualian)
 console.log(false == null);           // output: false  (pengecualian) 
 console.log(null == undefined);       // output: true   (hasil konversi: false == false) 
 console.log('\t\r\n' == 0);           // output: true   (pengecualian) 
+```
 
+```Javascript
 // ==================
 // D. Operator Logika
 // ==================
