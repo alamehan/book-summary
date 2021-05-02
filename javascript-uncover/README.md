@@ -502,7 +502,7 @@ console.log(true || false || true);   // kiri ke kanan: true bertemu operator ||
 console.log(false && true && true);   // kiri ke kanan: false bertemu operator &&, stop, sudah pasti hasilnya false
 console.log(true || true && false);   // operator && duluan, hasilnya false, maka: true || false, hasilnya true
 
-// E2. Operasi Logika non-Boolean
+// E2. Operasi Logika Non-Boolean
 
 /*
 Nilai yang dibandingkan menggunakan operator logika harus bertipe boolean, jika tidak,
