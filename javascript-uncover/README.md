@@ -177,7 +177,7 @@ Contoh Penggunaan <noscript>
 
 # 5. Variabel dan Konstanta <a href="#daftarisi">🡹</a>
 
-1. Secara sederhana, variabel adalah “penampung” dari sebuah data. Disebut variabel karena data yang kita simpan bisa berubah-ubah sepanjang kode program (isinya tidak tetap). ```var angka = 192;``` **Operasi Asignment** atau memberikan nilai ke sebuah variabel dibaca dari kanan ke kiri. Artinya, 192 “dimasukkan” sebagai nilai ke variabel ```angka```.
+1. Secara sederhana, variabel adalah “penampung” dari sebuah data. Disebut variabel karena data yang kita simpan bisa berubah-ubah sepanjang kode program (isinya tidak tetap). ```var angka = 192;``` **Operasi Asignment** atau memberikan nilai ke sebuah variabel dibaca dari kanan ke kiri (right-to-left). Artinya, 192 “dimasukkan” sebagai nilai ke variabel ```angka```.
 2. JavaScript termasuk ke dalam bahasa pemrograman **Typeless Programming Language**, yakni kelompok bahasa pemrograman yang variabelnya bisa diisi dengan tipe data apa saja tanpa harus dideklarasikan terlebih dahulu.
 3. Apabila anda sering mengikuti tutorial programming dari situs berbahasa inggris, nama variabel **foo**, **bar**, dan **baz** sering digunakan. Ketiganya dikenal sebagai **dummy variabel**, yakni variabel yang fungsinya hanya sebagai contoh. Mirip seperti teks “Lorem Ipsum dolor sit amet” dalam bidang design.
 4. Kita bisa memberi nama apa saja untuk variabel, apakah itu ```angka```, ```foo```, ```bar```, ```andi```, atau ```username```. Selain variabel, kita juga bebas untuk membuat nama konstanta, function, maupun object. Semua inilah yang termasuk kedalam kelompok **Identifier**. Identifier di dalam JavaScript memiliki aturan sebagai berikut:
@@ -266,9 +266,9 @@ Ragam karakter escape di JavaScript:
  7. \r    : Carriage return
  8. \"    : Tanda kutip dua (double quote)
  9. \'    : Tanda kutip satu (apostrophe atau single quote)
-1.  \\    : Garis miring backslash
-2.  \xXX  : Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX
-3.  \uXXXX: Karakter Unicode dengan menggunakan empat digit heksa XXXX
+10. \\    : Garis miring backslash
+11. \xXX  : Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX
+12. \uXXXX: Karakter Unicode dengan menggunakan empat digit heksa XXXX
 
 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
@@ -487,9 +487,16 @@ console.log(!false);                  // output: true   ⇨ not operator (negasi
 console.log(true || true && false);   // output: true   ⇨ operator && diproses lebih awal (precedence: 7)
 
 /*
-Nilai yang dibandingkan menggunakan operator logika harus
-bertipe boolean, jika tidak, akan di konversi secara
-otomatis berdasasrkan ketentuan Falsy & Truthy Value
+Nilai yang dibandingkan menggunakan operator logika harus bertipe boolean, jika tidak,
+akan di konversi secara otomatis berdasarkan ketentuan Falsy & Truthy Value.
+
+Operasi logika di proses dari kiri ke kanan (left-to-right), baca selengkapnya di:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+Selain itu, operasi logika pun mnggunakan prinsip short-circuit-evaluation, maksudnya, jika
+dengan memeriksa 1 nilai saja hasil operasi tersebut sudah diketahui, nilai-nilai lain tidak
+akan diperiksa, kecuali jika terdapat operator && dan || dalam 1 operasi, maka operator &&
+akan dikjalankan terlebih dahulu (karena nilai precedence && lebih tinggi daripada ||) 
 */
 ```
 <hr>
