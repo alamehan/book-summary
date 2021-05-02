@@ -383,8 +383,8 @@ console.log(21 >= 21);                // output: true   ⇨ greater than or equa
 
 console.log(9 == "9");                // output: true
 console.log(9 === "9");               // output: false  ⇨ strict equality (identik dengan)
-console.log(9 != "9");                // output: false
-console.log(9 !== "9");               // output: true   ⇨ strict inequality (tidak identik dengan)
+console.log(9 != '9');                // output: false
+console.log(9 !== '9');               // output: true   ⇨ strict inequality (tidak identik dengan)
 
 // Anda Harus Tahu
 
@@ -408,6 +408,6 @@ console.log("a" < "A");               // output: false  (a = 97, A = 65)
 console.log("ali" < "ala");           // output: false  (ali = 97→108→105, ala = 97→108→97)
 console.log("ali" < "alo");           // output: true   (ali = 97→108→105, alo = 97→108→111)
 console.log("ali" < "alika");         // output: true   (ali = 97→108→105, alika = 97→108→105→107→97)
-console.log('ali' < 9999999);         // output: false  (perbandingan String & Number selalu menghasilkan false)
+console.log("ali" < 9999999);         // output: false  (perbandingan String & Number selalu menghasilkan false)
 
 ```
