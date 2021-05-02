@@ -236,6 +236,7 @@ var numJ = 0x3E7;                     // heksadesimal (basis 16), diawali 0x
 var numK = 9/"a"; console.log(numK);  // output: NaN (Not a Number)
 var numL = 9/0; console.log(numL);    // output: Infinity (Tak Hingga)
 ```
+<hr>
 
 ```Javascript
 // ===================
@@ -272,6 +273,7 @@ var strH = "Indonesia";
 var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 ```
+<hr>
 
 ```Javascript
 // ====================
@@ -281,6 +283,7 @@ var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 �
 var bolA = true;                      // bernilai true, biasanya di pakai di if, else, while, dan do while
 var bolB = false;                     // bernilai false, biasanya di pakai di if, else, while, dan do while
 ```
+<hr>
 
 ```Javascript
 // =============================
@@ -290,6 +293,7 @@ var bolB = false;                     // bernilai false, biasanya di pakai di if
 var nudA = null;                      // keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
 var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 ```
+<hr>
 
 ```Javascript
 // ==================
@@ -317,10 +321,11 @@ console.log(arr2D[1][1]);             // output: 5
 console.log(arr2D[2][0]);             // output: 3
 console.log(arr2D[2][1]);             // output: 5
 ```
+<hr>
 
 ```Javascript
 // ==================
-// E. Operator typeof
+// F. Operator typeof
 // ==================
 
 /*
@@ -364,6 +369,7 @@ Urutan prioritas operator (precedence) secara lengkap dapat diakses di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 */
 ```
+<hr>
 
 ```Javascript
 // ===================================
@@ -382,6 +388,7 @@ console.log(e);                       // output: 11
 console.log(f--);                     // output: 10     ⇨ post-decrement: tampilkan dulu, baru kurangi
 console.log(f);                       // output: 9
 ```
+<hr>
 
 ```Javascript
 // ========================
@@ -424,6 +431,7 @@ console.log("ali" < "alo");           // output: true   (ali = 97→108→105, a
 console.log("ali" < "alika");         // output: true   (ali = 97→108→105, alika = 97→108→105→107→97)
 console.log("ali" < 9999999);         // output: false  (perbandingan String & Number selalu menghasilkan false)
 ```
+<hr>
 
 ```Javascript
 // =======================
@@ -462,6 +470,7 @@ console.log(false == null);           // output: false  (pengecualian)
 console.log(null == undefined);       // output: true   (hasil konversi: false == false) 
 console.log('\t\r\n' == 0);           // output: true   (pengecualian) 
 ```
+<hr>
 
 ```Javascript
 // ==================
@@ -479,3 +488,4 @@ bertipe boolean, jika tidak, akan di konversi secara
 otomatis berdasasrkan ketentuan Falsy & Truthy Value
 */
 ```
+<hr>
