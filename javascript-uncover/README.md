@@ -444,7 +444,18 @@ console.log(false == null);           // output: false  (pengecualian)
 console.log(null == undefined);       // output: true   (hasil konversi: false == false) 
 console.log('\t\r\n' == 0);           // output: true   (pengecualian) 
 
+// ==================
+// D. Operator Logika
+// ==================
 
+console.log(true && false);           // output: false  ⇨ and operator (true hanya jika kedua nilai true)
+console.log(true || false);           // output: true   ⇨ or operator (true jika salah satu nilai true)
+console.log(!false);                  // output: true   ⇨ not operator (negasi/kebalikannya)
+console.log(true || true && false);   // output: true   ⇨ operator && diproses lebih awal (precedence: 7)
 
-
+/*
+Nilai yang dibandingkan menggunakan operator logika harus
+bertipe boolean, jika tidak, akan di konversi secara
+otomatis berdasasrkan ketentuan Falsy & Truthy Value
+*/
 ```
