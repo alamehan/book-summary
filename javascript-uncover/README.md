@@ -528,4 +528,15 @@ console.log(true || false && true || "World");    // output: true   (&& duluan, 
 // ==================
 // F. Operator String
 // ==================
+
+var arr = ["Andri", "Joko", "Sukma"];
+
+strA = arr[0] + " dan " + arr[1] + " adalah teman akrab.";  // string concatenation (sebelum ES6), + sebagai penyambung
+strB = `${arr[0]} dan ${arr[1]} adalah teman akrab`;        // template string (setelah ES6), memakai backtick (``)
+
+console.log(10 + 10 + 9);             // output: 29     (number)
+console.log("10" + 10 + 9);           // output: 10109  (string)  ≈ console.log("10" + "10" + "9");
+console.log(10 + "10" + 9);           // output: 10109  (string)  ≈ console.log(10 + "10" + "9");
+console.log(10 + 10 + "9");           // output: 209    (string)  ≈ console.log(20 + "9");
+
 ```
