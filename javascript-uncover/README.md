@@ -245,7 +245,7 @@ var strC = "Hari Jum'at";             // kutip satu didalam kutip dua
 var strD = 'Dia berkata: "Hey"';      // kutip dua didalam kutip satu
 var strE = "Dia berkata: \"Hey\"";    // kutip dua didalam kutip dua, pakai escape character (\)
 var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai escape character (\)
-var strG = "\u2764 You!"              // contoh pemakaian Unicode ❏ hasilnya: ❤ You!
+var strG = "\u2764 You!"              // contoh pemakaian Unicode ⇨ hasilnya: ❤ You!
 
 /*
 Ragam karakter escape di JavaScript:
@@ -266,8 +266,8 @@ Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
 
 var strH = "Indonesia";
-var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ❏ hasilnya: Bahasa Indonesia
-var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ❏ hasilnya: Bahasa Indonesia
+var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
+var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 
 // ====================
 // C. Tipe Data Boolean
@@ -347,15 +347,15 @@ console.log(typeof arrSiswa);         // output: object
 var a = 10;
 var b = 2;
 
-console.log(a + b);                   // output: 12   ❏ operator addition (tambah)
-console.log(a - b);                   // output: 8    ❏ operator substraction (kurang)
-console.log(a * b);                   // output: 20   ❏ operator multiplication (kali)
-console.log(a / b);                   // output: 5    ❏ operator division (bagi)
-console.log(a % b);                   // output: 0    ❏ operator modulo (sisa bagi)
-console.log(a ** b);                  // output: 100  ❏ operator exponentiation (pangkat)
+console.log(a + b);                   // output: 12   ⇨ operator addition (tambah)
+console.log(a - b);                   // output: 8    ⇨ operator substraction (kurang)
+console.log(a * b);                   // output: 20   ⇨ operator multiplication (kali)
+console.log(a / b);                   // output: 5    ⇨ operator division (bagi)
+console.log(a % b);                   // output: 0    ⇨ operator modulo (sisa bagi)
+console.log(a ** b);                  // output: 100  ⇨ operator exponentiation (pangkat)
 
-console.log(4+6/5-3*2+3);             // output: 2.2  ❏ operator * dan / diproses lebih awal (precedence: 15)
-console.log((4+6)/(5-3)*2+3);         // output: 13   ❏ operator () diproses lebih awal (precedence: 21)
+console.log(4+6/5-3*2+3);             // output: 2.2  ⇨ operator * dan / diproses lebih awal (precedence: 15)
+console.log((4+6)/(5-3)*2+3);         // output: 13   ⇨ operator () diproses lebih awal (precedence: 21)
 
 /*
 Urutan prioritas operator (Precedence) secara lengkap dapat diakses di:
@@ -368,33 +368,35 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Oper
 
 var c = 10, d = 10, e = 10, f = 10;
 
-console.log(++c);                     // output: 11     ❏ operator pre-increment: langsung tambahkan
+console.log(++c);                     // output: 11     ⇨ operator pre-increment: langsung tambahkan
 console.log(c);                       // output: 11
-console.log(--d);                     // output: 9      ❏ operator pre-decrement: langsung kurangi
+console.log(--d);                     // output: 9      ⇨ operator pre-decrement: langsung kurangi
 console.log(d);                       // output: 9
 
-console.log(e++);                     // output: 10     ❏ operator post-increment: tampilkan dulu, baru tambahkan
+console.log(e++);                     // output: 10     ⇨ operator post-increment: tampilkan dulu, baru tambahkan
 console.log(e);                       // output: 11
-console.log(f--);                     // output: 10     ❏ operator post-decrement: tampilkan dulu, baru kurangi
+console.log(f--);                     // output: 10     ⇨ operator post-decrement: tampilkan dulu, baru kurangi
 console.log(f);                       // output: 9
 
 // ========================
 // C. Operator Perbandingan
 // ========================
 
-console.log(8 == 12);                 // output: false  ❏ operator equality (sama dengan)
-console.log(8 != 12);                 // output: true   ❏ operator inquality (tidak sama dengan)
-console.log(10 < 11);                 // output: true   ❏ operator less than (kurang dari)
-console.log(11 <= 11);                // output: true   ❏ operator less than or equal (kurang dari atau sama dengan)
-console.log(21 > 20);                 // output: true   ❏ operator greater than (lebih dari)
-console.log(21 >= 21);                // output: true   ❏ operator greater than or equal (lebih dari atau sama dengan)
+console.log(8 == 12);                 // output: false  ⇨ operator equality (sama dengan)
+console.log(8 != 12);                 // output: true   ⇨ operator inquality (tidak sama dengan)
+console.log(10 < 11);                 // output: true   ⇨ operator less than (kurang dari)
+console.log(11 <= 11);                // output: true   ⇨ operator less than or equal (kurang dari atau sama dengan)
+console.log(21 > 20);                 // output: true   ⇨ operator greater than (lebih dari)
+console.log(21 >= 21);                // output: true   ⇨ operator greater than or equal (lebih dari atau sama dengan)
 
 console.log(9 == "9");                // output: true
-console.log(1 == true);               // output: true
-console.log(0 == false);              // output: true
+console.log(9 === "9");               // output: false  ⇨ operator strict equality (identik dengan)
+console.log(9 != "9");                // output: false
+console.log(9 !== "9");               // output: true   ⇨ operator strict inequality (tidak identik dengan)
 
-console.log(9 === "9");               // output: false  ❏ operator strict equality (identik)
-console.log(1 === true);              // output: false  ❏ operator strict equality (identik)
-console.log(0 === false);             // output: false  ❏ operator strict equality (identik)
+console.log(1 == true);               // output: true
+console.log(1 === true);              // output: false
+console.log(0 == false);              // output: true
+console.log(0 === false);             // output: false
 
 ```
