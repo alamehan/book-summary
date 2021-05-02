@@ -487,16 +487,22 @@ console.log(!false);                  // output: true   ⇨ not operator (negasi
 console.log(true || true && false);   // output: true   ⇨ operator && diproses lebih awal (precedence: 7)
 
 /*
-Nilai yang dibandingkan menggunakan operator logika harus bertipe boolean, jika tidak,
-akan di konversi secara otomatis berdasarkan ketentuan Falsy & Truthy Value.
-
 Operasi logika di proses dari kiri ke kanan (left-to-right), baca selengkapnya di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
-Selain itu, operasi logika pun mnggunakan prinsip short-circuit-evaluation, maksudnya, jika
+Selain itu, operasi logika pun menggunakan prinsip short-circuit-evaluation, maksudnya jika
 dengan memeriksa 1 nilai saja hasil operasi tersebut sudah diketahui, nilai-nilai lain tidak
 akan diperiksa, kecuali jika terdapat operator && dan || dalam 1 operasi, maka operator &&
-akan dikjalankan terlebih dahulu (karena nilai precedence && lebih tinggi daripada ||) 
+akan dijalankan terlebih dahulu (karena nilai precedence && lebih tinggi daripada ||)
+*/
+
+console.log(true || false || true);   // true bertemu operator ||, stop, sudah pasti hasilnya true
+console.log(false && true && true);   // false bertemu operator &&, stop, sudah pasti hasilnya false
+console.log(true || true && false);   // operator && dulu, hasilnya false, maka true || false, hasilnya true
+
+/*
+Nilai yang dibandingkan menggunakan operator logika harus bertipe boolean, jika tidak,
+akan di konversi secara otomatis berdasarkan ketentuan Falsy & Truthy Value.
 */
 ```
 <hr>
