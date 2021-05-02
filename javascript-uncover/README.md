@@ -297,14 +297,6 @@ console.log(arrSiswa[1]);             // output: Joko
 console.log(arrSiswa[2]);             // output: Sukma
 console.log(arrSiswa[3]);             // output: undefined
 
-console.log(arrAcak);                 // output: [1, 2.0, "tiga", true, null]
-console.log(arrAcak[0]);              // output: 1
-console.log(arrAcak[1]);              // output: 2.0
-console.log(arrAcak[2]);              // output: tiga
-console.log(arrAcak[3]);              // output: true
-console.log(arrAcak[4]);              // output: null
-console.log(arrAcak[5]);              // output: undefined
-
 console.log(arr2D);                   // output: [[2,5],[9,5],[3,5]]
 console.log(arr2D[0]);                // output: [2,5]
 console.log(arr2D[1]);                // output: [9,5]
