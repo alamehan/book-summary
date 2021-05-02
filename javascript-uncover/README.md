@@ -423,8 +423,12 @@ console.log("ali" < "ala");           // output: false  (ali = 97→108→105, a
 console.log("ali" < "alo");           // output: true   (ali = 97→108→105, alo = 97→108→111)
 console.log("ali" < "alika");         // output: true   (ali = 97→108→105, alika = 97→108→105→107→97)
 console.log("ali" < 9999999);         // output: false  (perbandingan String & Number selalu menghasilkan false)
+```
 
-// C3. Falsy & Truthy Value
+```Javascript
+// =======================
+// D. Falsy & Truthy Value
+// =======================
 
 /*
 Dalam operator perbandingan sebuah tipe data akan dikonversi
@@ -461,7 +465,7 @@ console.log('\t\r\n' == 0);           // output: true   (pengecualian)
 
 ```Javascript
 // ==================
-// D. Operator Logika
+// E. Operator Logika
 // ==================
 
 console.log(true && false);           // output: false  ⇨ and operator (true hanya jika kedua nilai true)
