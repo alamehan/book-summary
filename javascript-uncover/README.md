@@ -496,9 +496,9 @@ akan diperiksa, kecuali jika terdapat operator && dan || dalam 1 operasi, maka o
 akan dijalankan terlebih dahulu (karena nilai precedence && lebih tinggi daripada ||)
 */
 
-console.log(true || false || true);   // true bertemu operator ||, stop, sudah pasti hasilnya true
-console.log(false && true && true);   // false bertemu operator &&, stop, sudah pasti hasilnya false
-console.log(true || true && false);   // operator && dulu, hasilnya false, maka true || false, hasilnya true
+console.log(true || false || true);   // kiri ke kanan: true bertemu operator ||, stop, sudah pasti hasilnya true
+console.log(false && true && true);   // kiri ke kanan: false bertemu operator &&, stop, sudah pasti hasilnya false
+console.log(true || true && false);   // operator && duluan, hasilnya false, maka: true || false, hasilnya true
 
 /*
 Nilai yang dibandingkan menggunakan operator logika harus bertipe boolean, jika tidak,
