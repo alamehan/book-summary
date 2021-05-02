@@ -357,4 +357,8 @@ console.log(a ** b);                  // exponentiation (pangkat) ❙ hasilnya: 
 console.log(4+6/5-3*2+3);             // operator * dan / diproses lebih awal (precedence: 15) ❙ hasilnya: 2.2
 console.log((4+6)/(5-3)*2+3);         // operator () diproses lebih awal (precedence: 21) ❙ hasilnya: 13
 
+/*
+Urutan prioritas operator (Precedence) secara lengkap dapat diakses di:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+*/
 ```
