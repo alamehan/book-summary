@@ -72,6 +72,8 @@ A. Inline JavaScript
   </body> 
 </html>
 ```
+<hr>
+
 ```HTML
 ======================
 B. Internal JavaScript
@@ -89,6 +91,8 @@ B. Internal JavaScript
   </body> 
 </html>
 ```
+<hr>
+
 ```HTML
 ======================
 C. External JavaScript
