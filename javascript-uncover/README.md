@@ -499,7 +499,7 @@ akan dijalankan terlebih dahulu (karena nilai precedence && lebih tinggi daripad
 
 console.log(true || false || true);   // kiri ke kanan: true bertemu operator ||, stop, sudah pasti hasilnya true
 console.log(false && true && true);   // kiri ke kanan: false bertemu operator &&, stop, sudah pasti hasilnya false
-console.log(true || true && false);   // operator && duluan, hasilnya false, maka: true || false, hasilnya true
+console.log(true || true && false);   // operator && duluan, menjadi: true || false, hasilnya true
 
 console.log(true && alert("HYA!"));   // fungsi alert() berjalan, karena true bertemu &&, lanjut ke alert()
 console.log(false && alert("HYA!"));  // fungsi alert() tidak berjalan, karena false bertemu &&, stop
@@ -516,10 +516,10 @@ operasi logika non-boolean ini berupa nilai dari posisi terakhir yang diperiksa.
 
 console.log("Hello" || "World");      // output: Hello  ("Hello" ≈ true, lalu bertemu ||, stop, hasilnya string Hello)
 console.log("Hello" && "World");      // output: World  ("Hello" ≈ true, lalu bertemu &&, lanjut, hasilnya string World)
-console.log(true || "World");         // output: true   (true bertemu ||, stop, hasilnya boolean true)
+console.log(true || "World");         // output: true   (true bertemu ||, stop, hasilnya true)
 console.log(false || "World");        // output: World  (false bertemu ||, lanjut, "World" ≈ true, hasilnya string World)
-console.log("Hello" && false);        // output: false  ("Hello" ≈ true, lalu bertemu &&, lanjut, hasilnya boolean false)
-console.log(false && "World");        // output: false  (false bertemu &&, stop, hasilnya boolean false)
+console.log("Hello" && false);        // output: false  ("Hello" ≈ true, lalu bertemu &&, lanjut, hasilnya false)
+console.log(false && "World");        // output: false  (false bertemu &&, stop, hasilnya false)
 
 console.log(false || false && true || "World");   // output: World  (&& duluan, menjadi: false || false || "World", ...)
 console.log(true || false && true || "World");    // output: true   (&& duluan, menjadi: true || false || "World", ...)
