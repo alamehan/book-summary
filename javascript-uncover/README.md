@@ -486,7 +486,9 @@ console.log(true || false);           // output: true   ⇨ or operator (true ji
 console.log(!false);                  // output: true   ⇨ not operator (negasi/kebalikannya)
 console.log(true || true && false);   // output: true   ⇨ operator && diproses lebih awal (precedence: 7)
 
-/*
+// E1. Cara Kerja Operasi Logika
+
+/* 
 Operasi logika di proses dari kiri ke kanan (left-to-right), baca selengkapnya di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
@@ -500,9 +502,19 @@ console.log(true || false || true);   // kiri ke kanan: true bertemu operator ||
 console.log(false && true && true);   // kiri ke kanan: false bertemu operator &&, stop, sudah pasti hasilnya false
 console.log(true || true && false);   // operator && duluan, hasilnya false, maka: true || false, hasilnya true
 
+// E2. Operasi Logika non-Boolean
+
 /*
 Nilai yang dibandingkan menggunakan operator logika harus bertipe boolean, jika tidak,
-akan di konversi secara otomatis berdasarkan ketentuan Falsy & Truthy Value.
+akan di konversi secara otomatis berdasarkan ketentuan Falsy & Truthy Value. Lalu,
+hasil akhir dari operasi logika non-boolean ini berupa nilai akhir dari pemrosesan.
 */
+
+console.log("Hello" || "World");      // output: Hello  ("Hello" ≈ true, lalu bertemu ||, stop, hasilnya string Hello)
+console.log("Hello" && "World");      // output: World  ("Hello" ≈ true, lalu bertemu &&, lanjut, hasilnya string World)
+console.log(true || "World");         // output: true   (true bertemu ||, stop, hasilnya boolean true)
+console.log(false || "World");        // output: World  (false bertemu ||, lanjut, "World" ≈ true, hasilnya string World)
+console.log("Hello" && false);        // output: false  ("Hello" ≈ true, lalu bertemu &&, lanjut, hasilnya boolean false)
+console.log(false && "World");        // output: false  (false bertemu &&, stop, hasilnya boolean false)
 ```
 <hr>
