@@ -443,8 +443,10 @@ console.log("ali" < 9999999);         // output: false  (perbandingan String & N
 // =======================
 
 /*
-Dalam operator perbandingan sebuah tipe data akan dikonversi
-menjadi boolean, apakah itu menjadi true atau menjadi false.
+Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung operator
+yang digunakan. Untuk operator perbandingan, tipe data ini akan dikonversi menjadi
+boolean (true/false). Nilai yang dikonversi menjadi false disebut Falsy Value, dan
+nilai yang dikonversi menjadi true disebut Truthy Value.
 
 Yang dikonversi menjadi false:
 • false
@@ -505,9 +507,9 @@ console.log(true || true && false);   // operator && duluan, hasilnya false, mak
 // E2. Operasi Logika Non-Boolean
 
 /*
-Nilai yang dibandingkan menggunakan operator logika harus bertipe boolean, jika tidak,
-akan di konversi secara otomatis berdasarkan ketentuan Falsy & Truthy Value. Lalu,
-hasil akhir dari operasi logika non-boolean ini berupa nilai akhir dari pemrosesan.
+Nilai yang dibandingkan menggunakan operator logika harus bertipe boolean, jika tidak, akan di
+konversi secara otomatis berdasarkan ketentuan Falsy & Truthy Value. Lalu, hasil akhir dari
+operasi logika non-boolean ini berupa nilai dari posisi terakhir yang diperiksa.
 */
 
 console.log("Hello" || "World");      // output: Hello  ("Hello" ≈ true, lalu bertemu ||, stop, hasilnya string Hello)
@@ -516,5 +518,14 @@ console.log(true || "World");         // output: true   (true bertemu ||, stop, 
 console.log(false || "World");        // output: World  (false bertemu ||, lanjut, "World" ≈ true, hasilnya string World)
 console.log("Hello" && false);        // output: false  ("Hello" ≈ true, lalu bertemu &&, lanjut, hasilnya boolean false)
 console.log(false && "World");        // output: false  (false bertemu &&, stop, hasilnya boolean false)
+
+console.log(false || false && true || "World");   // output: World
+console.log(true || false && true || "World");    // output: true
 ```
 <hr>
+
+```Javascript
+// ==================
+// F. Operator String
+// ==================
+```
