@@ -347,10 +347,16 @@ console.log(typeof arrSiswa);         // hasilnya: object
 var a = 10;
 var b = 5;
 
-console.log(a + b);     // tambah (hasilnya: 15)
-console.log(a - b);     // kurang (hasilnya: 5)
-console.log(a * b);     // kali (hasilnya: 50)
-console.log(a / b);     // bagi (hasilnya: 2)
-console.log(a % b);     // modulo a.k.a sisa bagi (hasilnya: 0)
+console.log(a + b);                   // tambah (hasilnya: 15)
+console.log(a - b);                   // kurang (hasilnya: 5)
+console.log(a * b);                   // kali (hasilnya: 50)
+console.log(a / b);                   // bagi (hasilnya: 2)
+console.log(a % b);                   // modulo a.k.a sisa bagi (hasilnya: 0)
+
+var c = 4+6/5-3*2+3;                  // perkalian & pembagian diproses lebih awal
+var d = (4+6)/(5-3)*2+3;              // value didalam tanda kurung diproses lebih awal
+
+console.log(c);                       // hasilnya: 2.2
+console.log(d);                       // hasilnya: 13
 
 ```
