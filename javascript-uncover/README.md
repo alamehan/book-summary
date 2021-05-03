@@ -565,8 +565,9 @@ JavaScript dan cukup rumit. Sehingga tidak akan dibahas disini.
 // ======================
 
 var g = 10;       // artinya 10 dimasukkan sebagai nilai ke variabel g (operator assignment memiliki precedence: 3)
-var h = 10 + 5;   // jumlahkan 10 + 5 dulu (operator + memiliki precedence: 14), lalu masukkan hasilnya ke variabel h
+var h = 10 + 5;   // jumlahkan 10 + 5 dulu (operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke variabel h
 var i = g + h;    // more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
 
 
 ```
