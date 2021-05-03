@@ -568,7 +568,15 @@ var g = 10;       // artinya 10 dimasukkan sebagai nilai ke variabel g (operator
 var h = 10 + 5;   // jumlahkan 10 + 5 dulu (operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke variabel h
 var i = g + h;    // more: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
+// Operator Gabungan Assignment
 
+var gabA = gabB = gabC = gabD = gabE = 20;
+
+gabA += 10;       // gabA = gabA + 10 🢂 gabA = 20 + 10  (output: 30) 
+gabB -= 10;       // gabB = gabB - 10 🢂 gabB = 20 - 10  (output: 10)
+gabC /= 10;       // gabC = gabC / 10 🢂 gabC = 20 / 10  (output: 2)
+gabD *= 10;       // gabD = gabD * 10 🢂 gabD = 20 * 10  (output: 200) 
+gabE %= 10;       // gabE = gabE % 10 🢂 gabE = 20 % 10  (output: 0)
 
 ```
 
