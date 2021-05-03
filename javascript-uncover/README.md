@@ -341,12 +341,32 @@ Operator typeof digunakan untuk melihat tipe data dari sebuah variabel
 Apakah tipe datanya number, string, boolean, undefined, atau sebuah object. 
 */
 
-console.log(typeof numA);             // output: number
-console.log(typeof strA);             // output: string
-console.log(typeof bolA);             // output: boolean
-console.log(typeof nudA);             // output: object (bukan null)
-console.log(typeof nudB);             // output: undefined
-console.log(typeof arrSiswa);         // output: object
+console.log(typeof numA);                 // output: number
+console.log(typeof strA);                 // output: string
+console.log(typeof bolA);                 // output: boolean
+console.log(typeof nudA);                 // output: object (bukan null)
+console.log(typeof nudB);                 // output: undefined
+console.log(typeof arrSiswa);             // output: object
+
+// Check Tipe Data (Materi Lanjutan)
+
+var num = 10;                             // tipe data: number
+var str = "JavaScript";                   // tipe data: string
+var bol = true;                           // tipe data: boolean
+var nul = null;                           // tipe data: null
+var und = undefined;                      // tipe data: undefined
+var arr = [1, 2, "tiga"];                 // tipe data: array
+var nan = 9/"a";                          // tipe data: NaN
+var inf = 9/0;                            // tipe data: Infinity
+
+console.log(typeof num === "number");     // output: true   (check apakah datanya number)
+console.log(typeof str === "string");     // output: true   (check apakah datanya string)
+console.log(typeof bol === "boolean");    // output: true   (check apakah datanya boolean)
+console.log(nul === null);                // output: true   (check apakah datanya null)
+console.log(und === undefined);           // output: true   (check apakah datanya undefined)
+console.log(inf === Infinity);            // output: true   (check apakah datanya array)
+console.log(Array.isArray(arr));          // output: true   (check apakah datanya array)
+console.log(Number.isNaN(nan));           // output: true   (check apakah datanya NaN)
 ```
 
 <br>
