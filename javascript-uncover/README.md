@@ -294,6 +294,11 @@ var bolB = false;                     // bernilai false, biasanya di pakai di if
 
 var nudA = null;                      // keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
 var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
+
+var und1;
+console.log(und1);                    // output: undefined (var yang dibuat tanpa langsung diisi nilai, menjadi undefined)
+var und2 = [1, 2, 3];
+console.log(und2[3]);                 // output: undefined (mengakses array diluar indeks yang dibuat, menjadi undefined)
 ```
 <hr>
 
@@ -356,15 +361,15 @@ console.log(typeof arrSiswa);         // output: object
 var a = 10;
 var b = 2;
 
-console.log(a + b);                   // output: 12   ⇨ addition (tambah)
-console.log(a - b);                   // output: 8    ⇨ substraction (kurang)
-console.log(a * b);                   // output: 20   ⇨ multiplication (kali)
-console.log(a / b);                   // output: 5    ⇨ division (bagi)
-console.log(a % b);                   // output: 0    ⇨ modulo (sisa bagi)
-console.log(a ** b);                  // output: 100  ⇨ exponentiation (pangkat)
+console.log(a + b);                   // output: 12     ⇨ addition (tambah)
+console.log(a - b);                   // output: 8      ⇨ substraction (kurang)
+console.log(a * b);                   // output: 20     ⇨ multiplication (kali)
+console.log(a / b);                   // output: 5      ⇨ division (bagi)
+console.log(a % b);                   // output: 0      ⇨ modulo (sisa bagi)
+console.log(a ** b);                  // output: 100    ⇨ exponentiation (pangkat)
 
-console.log(4+6/5-3*2+3);             // output: 2.2  ⇨ operator * dan / diproses lebih awal (precedence: 15)
-console.log((4+6)/(5-3)*2+3);         // output: 13   ⇨ operator () diproses lebih awal (precedence: 21)
+console.log(4+6/5-3*2+3);             // output: 2.2    ⇨ operator * dan / diproses lebih awal (precedence: 15)
+console.log((4+6)/(5-3)*2+3);         // output: 13     ⇨ operator () diproses lebih awal (precedence: 21)
 
 /*
 Baca urutan prioritas operator (precedence) secara lengkap di:
