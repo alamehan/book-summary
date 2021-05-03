@@ -540,7 +540,7 @@ console.log(true || false && true || "World");    // output: true   (&& duluan, 
 
 var arr = ["Andri", "Joko", "Sukma"];
 
-strA = arr[0] + " dan " + arr[1] + " adalah teman akrab.";  // string concatenation (sebelum ES6), + sebagai penyambung
+strA = arr[0] + " dan " + arr[1] + " adalah teman akrab.";  // string concatenation (sebelum ES6), "+" sebagai penyambung
 strB = `${arr[0]} dan ${arr[1]} adalah teman akrab`;        // template string (setelah ES6), memakai backtick (``)
 
 // Kasus Konversi Number ke String
