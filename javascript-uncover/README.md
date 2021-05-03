@@ -296,8 +296,9 @@ var nudA = null;                      // keadaan dimana data "kosong", biasanya 
 var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 
 var und1;
-var und2 = [1, 2, 3];
 console.log(und1);                    // output: undefined (var yang dibuat tanpa langsung diisi nilai, menjadi undefined)
+
+var und2 = [1, 2, 3];
 console.log(und2[3]);                 // output: undefined (mengakses array diluar indeks yang dibuat, menjadi undefined)
 ```
 <hr>
