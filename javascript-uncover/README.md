@@ -577,6 +577,33 @@ gabB -= 10;       // gabB = gabB - 10 🡲 gabB = 20 - 10  (output: 10)
 gabC /= 10;       // gabC = gabC / 10 🡲 gabC = 20 / 10  (output: 2)
 gabD *= 10;       // gabD = gabD * 10 🡲 gabD = 20 * 10  (output: 200) 
 gabE %= 10;       // gabE = gabE % 10 🡲 gabE = 20 % 10  (output: 0)
+```
+<hr>
 
+```Javascript
+// ==================
+// I. Operator Spread
+// ==================
+
+/*
+Spread merupakan operator baru di ES6. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan array, salah
+satunya untuk menggabungkan array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama variabel.
+*/
+
+var nilai1 = ["a", "b", "c", "d"];
+var nilai2 = [1, 2, 3, 4];
+
+var nilai3 = [...nilai1, "e", "f"];   // ...nilai1 berarti mengakses seluruh element dari array nilai1
+console.log(nilai3);                  // output: ["a", "b", "c", "d", "e", "f"]
+
+var nilai4 = [0, ...nilai2, 5, 6];    // ...nilai2 berarti mengakses seluruh element dari array nilai2
+console.log(nilai4);                  // output: [0, 1, 2, 3, 4, 5, 6]
+
+var nilai5 = [...nilai3, ...nilai4];
+console.log(nilai5);                  // output: ["a", "b", "c", "d", "e", "f", 0, 1, 2, 3, 4, 5, 6]
 ```
 
+<br>
+<div id="bab08"></div>
+
+# 8. Struktur Logika dan Perulangan <a href="#daftarisi">🡹</a>
