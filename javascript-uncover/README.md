@@ -547,9 +547,9 @@ console.log(10 + 10 + "9");           // output: 209    (string)  dari hasil kon
 <hr>
 
 ```Javascript
-// ==================
+// ===================
 // G. Operator Bitwise
-// ==================
+// ===================
 
 /*
 Operator bitwise adalah operator khusus untuk menangani operasi
@@ -557,3 +557,11 @@ logika bilangan biner. Operator ini sangat jarang digunakan dalam
 JavaScript dan cukup rumit. Sehingga tidak akan dibahas disini.
 */
 ```
+<hr>
+
+```Javascript
+// ======================
+// H. Operator Assignment
+// ======================
+```
+
