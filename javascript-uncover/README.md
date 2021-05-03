@@ -355,7 +355,7 @@ var str = "JavaScript";                   // tipe data: string
 var bol = true;                           // tipe data: boolean
 var nul = null;                           // tipe data: null
 var und = undefined;                      // tipe data: undefined
-var arr = [1, 2, "tiga"];                 // tipe data: array
+var arr = [1, 2, "tiga"];                 // tipe data: Array
 var nan = 9/"a";                          // tipe data: NaN
 var inf = 9/0;                            // tipe data: Infinity
 
