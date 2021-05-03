@@ -572,11 +572,11 @@ var i = g + h;    // more: https://developer.mozilla.org/en-US/docs/Web/JavaScri
 
 var gabA = gabB = gabC = gabD = gabE = 20;
 
-gabA += 10;       // gabA = gabA + 10 ➨ gabA = 20 + 10  (output: 30) 
-gabB -= 10;       // gabB = gabB - 10 ➨ gabB = 20 - 10  (output: 10)
-gabC /= 10;       // gabC = gabC / 10 ➨ gabC = 20 / 10  (output: 2)
-gabD *= 10;       // gabD = gabD * 10 ➨ gabD = 20 * 10  (output: 200) 
-gabE %= 10;       // gabE = gabE % 10 ➨ gabE = 20 % 10  (output: 0)
+gabA += 10;       // gabA = gabA + 10 🡲 gabA = 20 + 10  (output: 30) 
+gabB -= 10;       // gabB = gabB - 10 🡲 gabB = 20 - 10  (output: 10)
+gabC /= 10;       // gabC = gabC / 10 🡲 gabC = 20 / 10  (output: 2)
+gabD *= 10;       // gabD = gabD * 10 🡲 gabD = 20 * 10  (output: 200) 
+gabE %= 10;       // gabE = gabE % 10 🡲 gabE = 20 % 10  (output: 0)
 
 ```
 
