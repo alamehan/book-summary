@@ -639,7 +639,7 @@ console.log(nilai5);                  // output: ["a", "b", "c", "d", "e", "f", 
 // A. Struktur Logika: IF-ELSE
 // ===========================
 
-var nilai = 90;                       // coba ganti nilainya                         
+var nilai = 90;                     
 
 if (nilai >= 0 && nilai <= 100){      // jika nilai lebih dari 0 & kurang dari 100 maka masuk ke kondisi "nested" dibawah
   if (nilai >= 80){
@@ -661,7 +661,7 @@ if (nilai >= 0 && nilai <= 100){      // jika nilai lebih dari 0 & kurang dari 1
 // B. Struktur Logika: SWITCH
 // ==========================
 
-var nilaiTK = 6;                      // coba ganti nilainya     
+var nilaiTK = 6;   
 
 switch(nilaiTK){                      // case 1-5: kurang, case 6-7: cukup, case 8-10: baik, selain itu tidak valid!
   case 1:
@@ -688,7 +688,7 @@ switch(nilaiTK){                      // case 1-5: kurang, case 6-7: cukup, case
 // C. Struktur Logika: Ternary Operator
 // ====================================
 
-var jumlah = 501; // coba ganti nilainya 
+var jumlah = 501;
 var pesan = jumlah > 500 ? "Cukup!" : "Produksi lagi!";
 
 /*
@@ -697,10 +697,10 @@ Apakah jumlah > 500? jika iya (true), kirim string "Cukup!" ke variabel pesan.
 Jika tidak (false) kirim string "Produksi lagi!" ke variabel pesan.
 */
 
-var user = "admin"; // coba ganti nilainya
+var user = "admin";
 var akses = user === "admin" ? true : false;
 
-if (akses){ // ini artinya: jika akses == true
+if (akses){ // ini artinya: jika akses bernilai true
   console.log("Welcome, admin!");
 }
 
