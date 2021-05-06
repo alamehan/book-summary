@@ -641,7 +641,7 @@ console.log(nilai5);                  // output: ["a", "b", "c", "d", "e", "f", 
 
 var nilai = 90;                     
 
-if (nilai >= 0 && nilai <= 100){      // jika nilai lebih dari 0 & kurang dari 100 maka masuk ke kondisi "nested" dibawah
+if (nilai >= 0 && nilai <= 100){      // jika nilai lebih dari 0 dan kurang dari 100 maka masuk ke kondisi "nested" dibawah
   if (nilai >= 80){
     console.log("A");
   } else if (nilai >= 70){
@@ -653,7 +653,7 @@ if (nilai >= 0 && nilai <= 100){      // jika nilai lebih dari 0 & kurang dari 1
   } else{
     console.log("E");
   }
-} else {                              // jika ternyata nilai kurang dari 0 & lebih dari 100 maka menghasilkan tidak valid!
+} else {                              // jika ternyata nilai kurang dari 0 atau lebih dari 100 maka menghasilkan tidak valid!
   console.log("Tidak Valid!");
 }
 
