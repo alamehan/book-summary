@@ -692,21 +692,19 @@ var jumlah = 501;
 var pesan = jumlah > 500 ? "Cukup!" : "Produksi lagi!";
 
 /*
-Cara baca code diatas:
-Apakah jumlah > 500? jika iya (true), kirim string "Cukup!" ke variabel pesan.
-Jika tidak (false) kirim string "Produksi lagi!" ke variabel pesan.
+Cara baca: Apakah jumlah > 500? jika iya (true), kirim string "Cukup!" ke variabel pesan. Jika tidak (false)
+kirim string "Produksi lagi!" ke variabel pesan.
 */
 
 var user = "admin";
 var akses = user === "admin" ? true : false;
 
-if (akses){ // ini artinya: jika akses bernilai true
+if (akses){ // jika akses bernilai true
   console.log("Welcome, admin!");
 }
 
 /*
-Cara baca code diatas:
-Apakah user === "admin"? jika iya, kirim boolean true ke variabel akses, lalu kondisi "if (akses)" akan
-dijalankan. Jika tidak, kirim boolean false ke variabel akses, dan kondisi "if (akses)" tidak jalan.
+Cara baca: Apakah user === "admin"? jika iya, kirim boolean true ke variabel akses, lalu kondisi "if (akses)"
+akan dijalankan. Jika tidak, kirim boolean false ke variabel akses, dan kondisi "if (akses)" tidak jalan.
 */
 ```
