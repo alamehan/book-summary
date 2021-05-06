@@ -633,3 +633,80 @@ console.log(nilai5);                  // output: ["a", "b", "c", "d", "e", "f", 
 <div id="bab08"></div>
 
 # 8. Struktur Logika dan Perulangan <a href="#daftarisi">🡹</a>
+
+```Javascript
+// ===========================
+// A. Struktur Logika: IF-ELSE
+// ===========================
+
+var nilai = 90;                       // coba ganti nilainya                         
+
+if (nilai >= 0 && nilai <= 100){      // jika nilai lebih dari 0 & kurang dari 100 maka masuk ke kondisi "nested" dibawah
+  if (nilai >= 80){
+    console.log("A");
+  } else if (nilai >= 70){
+    console.log("B");
+  } else if (nilai >= 60){
+    console.log("C");
+  } else if (nilai >= 50){
+    console.log("D");
+  } else{
+    console.log("E");
+  }
+} else {                              // jika ternyata nilai kurang dari 0 & lebih dari 100 maka menghasilkan tidak valid!
+  console.log("Tidak Valid!");
+}
+
+// ==========================
+// B. Struktur Logika: SWITCH
+// ==========================
+
+var nilaiTK = 6;                      // coba ganti nilainya     
+
+switch(nilaiTK){                      // case 1-5: kurang, case 6-7: cukup, case 8-10: baik, selain itu tidak valid!
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+    console.log("kurang");
+    break;
+  case 6:
+  case 7:
+    console.log("cukup");
+    break;
+  case 8:
+  case 9:
+  case 10:
+    console.log("baik");
+    break;
+  default:
+    console.log("Tidak Valid!");
+}
+
+// ====================================
+// C. Struktur Logika: Ternary Operator
+// ====================================
+
+var jumlah = 501; // coba ganti nilainya 
+var pesan = jumlah > 500 ? "Cukup!" : "Produksi lagi!";
+
+/*
+Cara baca code diatas:
+Apakah jumlah > 500? jika iya (true), kirim string "Cukup!" ke variabel pesan.
+Jika tidak (false) kirim string "Produksi lagi!" ke variabel pesan.
+*/
+
+var user = "admin"; // coba ganti nilainya
+var akses = user === "admin" ? true : false;
+
+if (akses){ // ini artinya: jika akses == true
+  console.log("Welcome, admin!");
+}
+
+/*
+Cara baca code diatas:
+Apakah user === "admin"? jika iya, kirim boolean true ke variabel akses, lalu kondisi "if (akses)" akan
+dijalankan. Jika tidak, kirim boolean false ke variabel akses, dan kondisi "if (akses)" tidak jalan.
+*/
+```
