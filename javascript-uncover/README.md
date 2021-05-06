@@ -692,8 +692,8 @@ var jumlah = 501;
 var pesan = jumlah > 500 ? "Cukup!" : "Produksi lagi!";
 
 /*
-Cara baca: Apakah jumlah > 500? jika iya (true), kirim string "Cukup!" ke variabel pesan. Jika tidak (false)
-kirim string "Produksi lagi!" ke variabel pesan.
+Cara baca: Apakah jumlah > 500? jika iya (true), kirim string "Cukup!" ke variabel
+pesan. Jika tidak (false) kirim string "Produksi lagi!" ke variabel pesan.
 */
 
 var user = "admin";
