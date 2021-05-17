@@ -364,7 +364,7 @@ console.log(typeof str === "string");     // output: true   (check apakah datany
 console.log(typeof bol === "boolean");    // output: true   (check apakah datanya boolean)
 console.log(nul === null);                // output: true   (check apakah datanya null)
 console.log(und === undefined);           // output: true   (check apakah datanya undefined)
-console.log(inf === Infinity);            // output: true   (check apakah datanya array)
+console.log(inf === Infinity);            // output: true   (check apakah datanya infinity)
 console.log(Array.isArray(arr));          // output: true   (check apakah datanya array)
 console.log(Number.isNaN(nan));           // output: true   (check apakah datanya NaN)
 ```
