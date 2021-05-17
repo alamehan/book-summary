@@ -73,7 +73,6 @@ A. Inline JavaScript
   </body> 
 </html>
 ```
-<hr>
 
 ```HTML
 ======================
@@ -92,7 +91,6 @@ B. Internal JavaScript
   </body> 
 </html>
 ```
-<hr>
 
 ```HTML
 ======================
@@ -241,7 +239,6 @@ var numJ = 0x3E7;                     // heksadesimal (basis 16), diawali 0x
 var numK = 9/"a"; console.log(numK);  // output: NaN (Not a Number)
 var numL = 9/0; console.log(numL);    // output: Infinity (Tak Hingga)
 ```
-<hr>
 
 ```Javascript
 // ===================
@@ -278,7 +275,6 @@ var strH = "Indonesia";
 var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 ```
-<hr>
 
 ```Javascript
 // ====================
@@ -306,7 +302,6 @@ console.log(und2[3]);                 // output: undefined (mengakses array dilu
 var und3 = {nama: "iyan", umur: 24};
 console.log(und3["alamat"]);          // output: undefined (mengakses object diluar key yang dibuat, menjadi undefined)
 ```
-<hr>
 
 ```Javascript
 // ==================
@@ -334,7 +329,6 @@ console.log(arr2D[1][1]);             // output: 5
 console.log(arr2D[2][0]);             // output: 3
 console.log(arr2D[2][1]);             // output: 5
 ```
-<hr>
 
 ```Javascript
 // ===================
@@ -410,7 +404,6 @@ Baca urutan prioritas operator (precedence) secara lengkap di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 */
 ```
-<hr>
 
 ```Javascript
 // ===================================
@@ -429,7 +422,6 @@ console.log(e);                       // output: 11
 console.log(f--);                     // output: 10     ⇨ post-decrement: tampilkan dulu, baru kurangi
 console.log(f);                       // output: 9
 ```
-<hr>
 
 ```Javascript
 // ========================
@@ -472,7 +464,6 @@ console.log("ali" < "alo");           // output: true   (ali = 97→108→105, a
 console.log("ali" < "alika");         // output: true   (ali = 97→108→105, alika = 97→108→105→107→97)
 console.log("ali" < 9999999);         // output: false  (perbandingan String & Number selalu menghasilkan false)
 ```
-<hr>
 
 ```Javascript
 // =======================
@@ -513,7 +504,6 @@ console.log(false == null);           // output: false  (pengecualian)
 console.log(null == undefined);       // output: true   (hasil konversi: false == false) 
 console.log('\t\r\n' == 0);           // output: true   (pengecualian) 
 ```
-<hr>
 
 ```Javascript
 // ==================
@@ -564,7 +554,6 @@ console.log(false && "World");        // output: false  (false bertemu &&, stop,
 console.log(false || false && true || "World");   // output: World  (&& duluan, menjadi: false || false || "World", ...)
 console.log(true || false && true || "World");    // output: true   (&& duluan, menjadi: true || false || "World", ...)
 ```
-<hr>
 
 ```Javascript
 // ==================
@@ -583,7 +572,6 @@ console.log("10" + 10 + 9);           // output: 10109  (string)  dari hasil kon
 console.log(10 + "10" + 9);           // output: 10109  (string)  dari hasil konversi: console.log(10 + "10" + "9");
 console.log(10 + 10 + "9");           // output: 209    (string)  dari hasil konversi: console.log(20 + "9");
 ```
-<hr>
 
 ```Javascript
 // ===================
@@ -596,7 +584,6 @@ logika bilangan biner. Operator ini sangat jarang digunakan dalam
 JavaScript dan cukup rumit. Sehingga tidak akan dibahas disini.
 */
 ```
-<hr>
 
 ```Javascript
 // ======================
@@ -617,7 +604,6 @@ gabC /= 10;       // gabC = gabC / 10 🡲 gabC = 20 / 10  (output: 2)
 gabD *= 10;       // gabD = gabD * 10 🡲 gabD = 20 * 10  (output: 200) 
 gabE %= 10;       // gabE = gabE % 10 🡲 gabE = 20 % 10  (output: 0)
 ```
-<hr>
 
 ```Javascript
 // ==================
@@ -670,7 +656,6 @@ if (nilai >= 0 && nilai <= 100){      // jika nilai >= 0 dan <= 100, masuk ke ko
   console.log("Tidak Valid!");
 }
 ```
-<hr>
 
 ```Javascript
 // ==========================
@@ -700,7 +685,6 @@ switch(nilaiTK){                      // case 1-5: kurang, case 6-7: cukup, case
     console.log("Tidak Valid!");
 }
 ```
-<hr>
 
 ```Javascript
 // ====================================
@@ -727,7 +711,6 @@ Cara baca: Apakah user === "admin"? jika iya, kirim boolean true ke variabel aks
 akan dijalankan. Jika tidak, kirim boolean false ke variabel akses, dan kondisi "if (akses)" tidak jalan.
 */
 ```
-<hr>
 
 ```Javascript
 // ==================
@@ -774,7 +757,6 @@ for (var n=0; n<arrSiswa.length; n++){
 }                                     // output: Andri, Joko, Sukma, Rina, Sari
 
 ```
-<hr>
 
 ```Javascript
 // ====================
@@ -801,7 +783,6 @@ while (j > 1){                        // output: 20, 18, 16, 14, 12
   j--;
 }
 ```
-<hr>
 
 ```Javascript
 // =======================
@@ -825,7 +806,6 @@ do {                                  // output: 1
   j--;
 } while (j > 999);
 ```
-<hr>
 
 ```Javascript
 // =====================
@@ -842,7 +822,6 @@ for (var i of arrSiswa){
   console.log(i);
 }                                     // output: Andri, Joko, Sukma, Rina, Sari
 ```
-<hr>
 
 ```Javascript
 // =====================
@@ -876,4 +855,3 @@ Isi property warna = biru
 Isi property hidupkan = function() {return "Mesin dihidupkan!";}
 */
 ```
-<hr>
