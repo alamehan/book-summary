@@ -721,6 +721,23 @@ akan dijalankan. Jika tidak, kirim boolean false ke variabel akses, dan kondisi 
 // D. Perulangan: FOR
 // ==================
 
+for (var i=1; i<=10; i++){            // output: nomor urut 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  console.log(`Nomor urut ${i}`);
+}
+
+for (var j=20; j>0; j=j-2){           // output: nomor urut 20, 18, 16, 14, 12, 10, 8, 6, 4, 2
+  console.log(`Nomor urut ${j}`);
+}
+
+for (var k=1; k<2; k++){               // output: outer 1 & inner 1, outer 1 & inner 2
+  for (var l=1; l<=2; l++){           
+    console.log(`outer ${k} & inner ${l}`);
+  }
+}
+
+// D1. Perintah Break
+
+// D2. Perintah Continue
 
 ```
 <hr>
