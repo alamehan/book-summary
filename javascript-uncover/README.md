@@ -283,7 +283,9 @@ var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 â
 
 var bolA = true;                      // bernilai true, biasanya di pakai di if, else, while, dan do while
 var bolB = false;                     // bernilai false, biasanya di pakai di if, else, while, dan do while
+```
 
+```Javascript
 // =============================
 // D. Tipe Data Null & Undefined
 // =============================
