@@ -766,13 +766,13 @@ yang mesti dijalankan. Berbeda dengan perulangan FOR yang kita tahu berapa banya
 */
 
 var i = 1;
-while (i <= 10){                       // output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+while (i <= 10){                      // output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   console.log(i);
   i++
 }
 
 var j = 10;
-while (j > 1){                       // output: 20, 18, 16, 14, 12
+while (j > 1){                        // output: 20, 18, 16, 14, 12
   if (j === 5){
     break;
   }
