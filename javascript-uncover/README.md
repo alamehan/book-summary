@@ -806,10 +806,51 @@ do {                                  // output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   i++;
 } while (i <= 10);
 
-var j = 10;
-do {                                  // output: 10
+var j = 1;
+do {                                  // output: 1
   console.log(j);
   j--;
 } while (j > 999);
+```
+<hr>
+
+```Javascript
+// =====================
+// G. Perulangan: FOR OF
+// =====================
+
+/*
+Perulangan FOR OF merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan element array.
+Hasil dari perulangan FOR OF dibawah ini, sama dengan hasil perulangan FOR di point D3 diatas.
+*/
+
+var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
+for (var i of arrSiswa){
+  console.log(i);
+}
+```
+<hr>
+
+```Javascript
+// =====================
+// H. Perulangan: FOR IN
+// =====================
+
+/*
+Perulangan FOR IN merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan seluruh isi object
+(property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi array, namun tidak disarankan.
+*/
+
+var objMobil = {
+  merk: "Toyota Avanza",
+  tipe: "MPV",
+  harga: 200000000,
+  warna: "biru",
+  hidupkan: function() {return "Mesin dihidupkan!";}
+};
+
+for (var i in objMobil) {
+  console.log(`Isi property ${i} = ${objMobil[i]}`);
+}
 ```
 <hr>
