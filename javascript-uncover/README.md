@@ -845,15 +845,22 @@ var objMobil = {
 };
 
 for (var i in objMobil) {
-  console.log(`Isi property ${i} = ${objMobil[i]}`);
+  console.log(`Isi ${i} = ${objMobil[i]}`);
 }
 
 /*
 Output:
-Isi property merk = Toyota Avanza
-Isi property tipe = MPV
-Isi property harga = 200000000
-Isi property warna = biru
-Isi property hidupkan = function() {return "Mesin dihidupkan!";}
+Isi merk = Toyota Avanza
+Isi tipe = MPV
+Isi harga = 200000000
+Isi warna = biru
+Isi hidupkan = function() {return "Mesin dihidupkan!";}
 */
 ```
+
+<br>
+<div id="bab09"></div>
+
+# 9. Function <a href="#daftarisi">🡹</a>
+
+1. 
