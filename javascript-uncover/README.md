@@ -758,7 +758,7 @@ for (var m=10; m>=1; m--){            // output: 10, 9, 8, 7, 6, 5, 4, 3, 1
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
 for (var n=0; n<arrSiswa.length; n++){
   console.log(arrSiswa[n]);
-}
+}                                     // output: Andri, Joko, Sukma, Rina, Sari
 
 ```
 <hr>
@@ -827,7 +827,7 @@ Hasil dari perulangan FOR OF dibawah ini, sama dengan hasil perulangan FOR di po
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
 for (var i of arrSiswa){
   console.log(i);
-}
+}                                     // output: Andri, Joko, Sukma, Rina, Sari
 ```
 <hr>
 
