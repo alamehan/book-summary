@@ -721,23 +721,44 @@ akan dijalankan. Jika tidak, kirim boolean false ke variabel akses, dan kondisi 
 // D. Perulangan: FOR
 // ==================
 
-for (var i=1; i<=10; i++){            // output: nomor urut 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-  console.log(`Nomor urut ${i}`);
+for (var i=1; i<=10; i++){            // output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  console.log(i);
 }
 
-for (var j=20; j>0; j=j-2){           // output: nomor urut 20, 18, 16, 14, 12, 10, 8, 6, 4, 2
-  console.log(`Nomor urut ${j}`);
+for (var j=20; j>0; j=j-2){           // output: 20, 18, 16, 14, 12, 10, 8, 6, 4, 2
+  console.log(j);
 }
 
-for (var k=1; k<2; k++){              // output: outer 1 & inner 1, outer 1 & inner 2
-  for (var l=1; l<=2; l++){           
-    console.log(`outer ${k} & inner ${l}`);
+for (var k=1; k<3; k++){              // output: outer 1 inner 1 s/d outer 2 inner 3
+  for (var l=1; l<=3; l++){           
+    console.log(`outer ${k} inner ${l}`);
   }
 }
 
 // D1. Break: Berhenti memproses perulangan (keluar dari perulangan)
 
+for (var m=10; m>=1; m--){            // output: 10, 9, 8, 7, 6, 5, 4, 3
+  if (m === 2){
+    break;
+  }
+  console.log(m);
+}
+
 // D2. Continue: Berhenti memproses perulangan saat ini & lanjut ke perulangan berikutnya
+
+for (var m=10; m>=1; m--){            // output: 10, 9, 8, 7, 6, 5, 4, 3, 1
+  if (m === 2){
+    continue;
+  }
+  console.log(m);
+}
+```
+<hr>
+
+```Javascript
+// ====================
+// E. Perulangan: WHILE
+// ====================
 
 ```
 <hr>
