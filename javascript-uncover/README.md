@@ -655,7 +655,8 @@ if (nilai >= 0 && nilai <= 100){      // jika nilai >= 0 dan <= 100, masuk ke ko
   }
 } else {
   console.log("Tidak Valid!");
-}```
+}
+```
 <hr>
 
 ```Javascript
