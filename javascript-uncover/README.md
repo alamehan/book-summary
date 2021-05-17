@@ -893,7 +893,7 @@ function ratarata(a, b, c, d){
 console.log(salam("Pagi", "Budi"));   // output: Selamat Pagi Budi!     ⇨ "Pagi" & "Budi" merupakan sebuah argument
 console.log(salam("Malam", "Putri")); // output: Selamat Malam Putri!
 
-console.log(ratarata(1, 2, 3, 4));    // output: 2.5 (hasil dari 10/4)
+console.log(ratarata(1, 2, 3, 4));    // output: 2.5 (hasil dari (1+2+3+4)/4 🡲 10/4)
 console.log(ratarata(1, 2, 3, 4, 5)); // output: 2.5 (argument ke-5 akan diabaikan, karena tidak ada "slot"-nya di function)
 console.log(ratarata(1, 2, 3));       // output: NaN (argument ke-4 tidak ada, maka secara defaultnya nilainya undefined)
 ```
