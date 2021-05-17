@@ -655,8 +655,10 @@ if (nilai >= 0 && nilai <= 100){      // jika nilai >= 0 dan <= 100, masuk ke ko
   }
 } else {
   console.log("Tidak Valid!");
-}
+}```
+<hr>
 
+```Javascript
 // ==========================
 // B. Struktur Logika: SWITCH
 // ==========================
@@ -683,7 +685,10 @@ switch(nilaiTK){                      // case 1-5: kurang, case 6-7: cukup, case
   default:
     console.log("Tidak Valid!");
 }
+```
+<hr>
 
+```Javascript
 // ====================================
 // C. Struktur Logika: Ternary Operator
 // ====================================
@@ -708,3 +713,13 @@ Cara baca: Apakah user === "admin"? jika iya, kirim boolean true ke variabel aks
 akan dijalankan. Jika tidak, kirim boolean false ke variabel akses, dan kondisi "if (akses)" tidak jalan.
 */
 ```
+<hr>
+
+```Javascript
+// ==================
+// D. Perulangan: FOR
+// ==================
+
+
+```
+<hr>
