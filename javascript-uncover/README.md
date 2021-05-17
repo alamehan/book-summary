@@ -753,7 +753,7 @@ for (var m=10; m>=1; m--){            // output: 10, 9, 8, 7, 6, 5, 4, 3, 1
   console.log(m);
 }
 
-// D3. Menampilkan element Array dengan perulangan FOR
+// D3. Menampilkan isi array dengan perulangan FOR
 
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
 for (var n=0; n<arrSiswa.length; n++){
