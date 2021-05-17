@@ -760,5 +760,31 @@ for (var m=10; m>=1; m--){            // output: 10, 9, 8, 7, 6, 5, 4, 3, 1
 // E. Perulangan: WHILE
 // ====================
 
+/*
+Perulangan WHILE cocok digunakan untuk situasi dimana kita tidak tahu berapa banyak perulangan
+yang mesti dijalankan. Berbeda dengan perulangan FOR yang kita tahu berapa banyak perulangannya.
+*/
+
+var i = 1;
+while (i <= 10){                       // output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  console.log(i);
+  i++
+}
+
+var j = 10;
+while (j > 1){                       // output: 20, 18, 16, 14, 12
+  if (j === 5){
+    break;
+  }
+  console.log(j*2);
+  j--
+}
+```
+<hr>
+
+```Javascript
+// =======================
+// F. Perulangan: DO WHILE
+// =======================
 ```
 <hr>
