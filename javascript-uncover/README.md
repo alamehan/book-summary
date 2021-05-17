@@ -729,15 +729,15 @@ for (var j=20; j>0; j=j-2){           // output: nomor urut 20, 18, 16, 14, 12, 
   console.log(`Nomor urut ${j}`);
 }
 
-for (var k=1; k<2; k++){               // output: outer 1 & inner 1, outer 1 & inner 2
+for (var k=1; k<2; k++){              // output: outer 1 & inner 1, outer 1 & inner 2
   for (var l=1; l<=2; l++){           
     console.log(`outer ${k} & inner ${l}`);
   }
 }
 
-// D1. Perintah Break
+// D1. Break: Berhenti memproses perulangan (keluar dari perulangan)
 
-// D2. Perintah Continue
+// D2. Continue: Berhenti memproses perulangan saat ini & lanjut ke perulangan berikutnya
 
 ```
 <hr>
