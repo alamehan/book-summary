@@ -752,6 +752,14 @@ for (var m=10; m>=1; m--){            // output: 10, 9, 8, 7, 6, 5, 4, 3, 1
   }
   console.log(m);
 }
+
+// D3. Menampilkan element Array dengan perulangan FOR
+
+var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
+for (var n=0; n<arrSiswa.length; n++){
+  console.log(arrSiswa[n]);
+}
+
 ```
 <hr>
 
@@ -768,7 +776,7 @@ yang mesti dijalankan. Berbeda dengan perulangan FOR yang kita tahu berapa banya
 var i = 1;
 while (i <= 10){                      // output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   console.log(i);
-  i++
+  i++;
 }
 
 var j = 10;
@@ -777,7 +785,7 @@ while (j > 1){                        // output: 20, 18, 16, 14, 12
     break;
   }
   console.log(j*2);
-  j--
+  j--;
 }
 ```
 <hr>
@@ -786,5 +794,22 @@ while (j > 1){                        // output: 20, 18, 16, 14, 12
 // =======================
 // F. Perulangan: DO WHILE
 // =======================
+
+/*
+Dalam perulangan DO WHILE, kondisi akan di check di akhir, hal ini menyebabkan setidaknya
+perulangan akan diproses 1 kali, walaupun kondisi tersebut sudah tidak terpenuhi sejak awal.
+*/
+
+var i = 1;
+do {                                  // output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  console.log(i);
+  i++;
+} while (i <= 10);
+
+var j = 10;
+do {                                  // output: 10
+  console.log(j);
+  j--;
+} while (j > 999);
 ```
 <hr>
