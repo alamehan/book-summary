@@ -863,4 +863,61 @@ Isi hidupkan = function() {return "Mesin dihidupkan!";}
 
 # 9. Function <a href="#daftarisi">🡹</a>
 
-1. 
+```Javascript
+// A. Function sederhana
+
+function pagiMalam(){
+  console.log("Selamat Pagi!");
+  console.log("Selamat Malam!");
+}
+
+pagiMalam();                          // output: Selamat Pagi!, Selamat Malam!
+
+// B. Function dengan Parameter & Return
+
+function salam(kapan, nama){          // kapan & nama adalah sebuah parameter yang akan menampung nilai dari argument
+  return `Selamat ${kapan} ${nama}!`; // return berfungsi untuk mengembalikan nilai & memberhentikan function
+}
+
+function ratarata(a, b, c, d){
+  var hasil = (a+b+c+d)/4;
+  return hasil;
+}
+
+console.log(salam("Pagi", "Budi"));   // output: Selamat Pagi Budi!     ⇨ "Pagi" & "Budi" merupakan sebuah argument
+console.log(salam("Malam", "Putri")); // output: Selamat Malam Putri!
+console.log(ratarata(1, 2, 3, 4));    // output: 2.5 (hasil dari 10/4)
+console.log(ratarata(1, 2, 3, 4, 5)); // output: 2.5 (argument ke-5 akan diabaikan, karena tidak ada "slot"-nya di function)
+console.log(ratarata(1, 2, 3));       // output: NaN (argument ke-4 tidak ada, maka secara defaultnya nilainya undefined)
+
+// C. Function dengan default Parameter
+
+function tambah(a=10, b=10, c=10, d=10){
+  return a+b+c+d;
+}
+
+function kurang(a, b, c=10, d=10){
+  return a-b-c-d;
+}
+
+function kali(a=10, b=10, c, d){
+  return a*b*c*d;
+}
+
+console.log(tambah());                // output: 40 (hasil dari 10+10+10+10)
+console.log(tambah(20));              // output: 50 (hasil dari 20+10+10+10)
+console.log(tambah(20, 25));          // output: 65 (hasil dari 20+25+10+10)
+console.log(tambah(20, 25, 30));      // output: 85 (hasil dari 20+25+30+10)
+console.log(tambah(20, 25, 30, 15));  // output: 90 (hasil dari 20+25+30+15)
+
+console.log(kurang());                // output: NaN (fungsi kurang butuh minimal 2 argument! untuk parameter a & b)
+console.log(kurang(20));              // output: NaN (fungsi kurang butuh minimal 2 argument! kurang argument ke-2)
+console.log(kurang(20, 25));          // output: -25 (argument c & d jika tidak diisi, maka akan diisi nilai defaultnya)
+console.log(kurang(20, 25, 30));      // output: -45 (hasil dari 20-25-30-10)
+console.log(kurang(20, 25, 30, 15));  // output: -50 (hasil dari 20-25-30-15)
+
+console.log(kali());                  // output: NaN (fungsi kali butuh minimal 4 argument! untuk parameter a, b, c & d)
+console.log(kali(20, 25));            // output: NaN (fungsi kali butuh minimal 4 argument! kurang argument ke-3 & ke-4)
+console.log(kali(20, 25, 30, 15));    // output: 225000 (hasil dari 20*25*30*15)
+console.log(kali(undefined, undefined, 30, 15));  // output: 45000 (hasil dari 10*10*30*15), undefined akan diisi nilai default
+```
