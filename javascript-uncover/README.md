@@ -864,7 +864,9 @@ Isi hidupkan = function() {return "Mesin dihidupkan!";}
 # 9. Function <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// A. Function sederhana
+// =====================
+// A. Function Sederhana
+// =====================
 
 function pagiMalam(){
   console.log("Selamat Pagi!");
@@ -872,8 +874,12 @@ function pagiMalam(){
 }
 
 pagiMalam();                          // output: Selamat Pagi!, Selamat Malam!
+```
 
+```Javascript
+// =====================================
 // B. Function dengan Parameter & Return
+// =====================================
 
 function salam(kapan, nama){          // kapan & nama adalah sebuah parameter yang akan menampung nilai dari argument
   return `Selamat ${kapan} ${nama}!`; // return berfungsi untuk mengembalikan nilai & memberhentikan function
@@ -889,8 +895,11 @@ console.log(salam("Malam", "Putri")); // output: Selamat Malam Putri!
 console.log(ratarata(1, 2, 3, 4));    // output: 2.5 (hasil dari 10/4)
 console.log(ratarata(1, 2, 3, 4, 5)); // output: 2.5 (argument ke-5 akan diabaikan, karena tidak ada "slot"-nya di function)
 console.log(ratarata(1, 2, 3));       // output: NaN (argument ke-4 tidak ada, maka secara defaultnya nilainya undefined)
-
-// C. Function dengan default Parameter
+```
+```Javascript
+// ====================================
+// C. Function dengan Default Parameter
+// ====================================
 
 function tambah(a=10, b=10, c=10, d=10){
   return a+b+c+d;
@@ -920,4 +929,10 @@ console.log(kali());                  // output: NaN (fungsi kali butuh minimal 
 console.log(kali(20, 25));            // output: NaN (fungsi kali butuh minimal 4 argument! kurang argument ke-3 & ke-4)
 console.log(kali(20, 25, 30, 15));    // output: 225000 (hasil dari 20*25*30*15)
 console.log(kali(undefined, undefined, 30, 15));  // output: 45000 (hasil dari 10*10*30*15), undefined akan diisi nilai default
+```
+
+```Javascript
+// ===================================
+// D. Function dengan Arguments Object
+// ===================================
 ```
