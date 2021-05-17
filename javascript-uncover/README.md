@@ -295,11 +295,16 @@ var bolB = false;                     // bernilai false, biasanya di pakai di if
 var nudA = null;                      // keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
 var nudB = undefined;                 // keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 
+// Kasus yang menghasilkan undefined
+
 var und1;
 console.log(und1);                    // output: undefined (var yang dibuat tanpa langsung diisi nilai, menjadi undefined)
 
 var und2 = [1, 2, 3];
 console.log(und2[3]);                 // output: undefined (mengakses array diluar indeks yang dibuat, menjadi undefined)
+
+var und3 = {nama: "iyan", umur: 24};
+console.log(und3["alamat"]);          // output: undefined (mengakses object diluar key yang dibuat, menjadi undefined)
 ```
 <hr>
 
@@ -332,8 +337,16 @@ console.log(arr2D[2][1]);             // output: 5
 <hr>
 
 ```Javascript
+// ===================
+// F. Tipe Data Object
+// ===================
+
+// Coming Soon!
+```
+
+```Javascript
 // ==================
-// F. Operator typeof
+// G. Operator typeof
 // ==================
 
 /*
@@ -837,8 +850,9 @@ for (var i of arrSiswa){
 // =====================
 
 /*
-Perulangan FOR IN merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan seluruh isi object
-(property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi array, namun tidak disarankan.
+Perulangan FOR IN merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan seluruh
+isi object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi array
+(karena array pun termasuk kedalam tipe data Object), namun tidak disarankan.
 */
 
 var objMobil = {
@@ -852,5 +866,14 @@ var objMobil = {
 for (var i in objMobil) {
   console.log(`Isi property ${i} = ${objMobil[i]}`);
 }
+
+/*
+Output:
+Isi property merk = Toyota Avanza
+Isi property tipe = MPV
+Isi property harga = 200000000
+Isi property warna = biru
+Isi property hidupkan = function() {return "Mesin dihidupkan!";}
+*/
 ```
 <hr>
