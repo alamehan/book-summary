@@ -1223,7 +1223,7 @@ function cetakURL(user){              // cetakURL = function cetakURL(){...}  �
   var twtURL = "http://twitter.com/"; // var nama = "Budi Lorem";
   return twtURL+user;                 // var user = "@budilorem";
 }                                     // function cetakURL(user){
-console.log(cetakURL(user));          //   var twtURL = unefined;             🡲 Local Hoisting di dalam function
+console.log(cetakURL(user));          //   var twtURL = undefined;            🡲 Local Hoisting di dalam function
                                       //   var twtURL = "http://twitter.com/";
                                       //   return twtURL+user;
                                       // }
