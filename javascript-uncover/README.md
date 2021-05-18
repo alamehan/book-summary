@@ -1131,28 +1131,50 @@ diisi functionnya itu sendiri. Selanjutya, barulah masuk ke fase execution, dima
 baris per baris, dari atas ke bawah. Gunakan tools visualusasi berikut: http://pythontutor.com/javascript.html
 */
 
-// Contoh A-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-console.log(teksA);                   // console.log(teksA);              🡲 output: ReferenceError teksA is not defined
+// Contoh 1: Variable
 
-// Contoh A-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+// Contoh 1-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teksA);                   // console.log(teksA);              🡲 output: ReferenceError teksA is not defined (STOP!)
+
+// Contoh 1-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(teksB);                   // var teksB = undefined;
-var teksB = "Belajar JS";             // console.log(teksB);              🡲 output: undefined
-                                      // var teksB = "Belajar JS";
+console.log(teksC);                   // console.log(teksB);              🡲 output: undefined
+var teksB = "Belajar JS";             // console.log(teksC);              🡲 output: ReferenceError teksC is not defined (STOP!)
+                                      // var teksB = "Belajar JS";        🡲 baris ini tidak akan dieksekusi, karena error diatas
                                       
-// Contoh A-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-console.log(teksC);                   // var teksC = undefined;
-var teksC = "Belajar JS";             // console.log(teksC);              🡲 output: undefined
-console.log(teksC);                   // var teksC = "Belajar JS";
-                                      // console.log(teksC);              🡲 output: Belajar JS
+// Contoh 1-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teksD);                   // var teksD = undefined;
+var teksD = "Belajar JS";             // console.log(teksD);              🡲 output: undefined
+console.log(teksD);                   // var teksD = "Belajar JS";
+                                      // console.log(teksD);              🡲 output: Belajar JS
 
-// Contoh A-4                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+// Contoh 1-4                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(satu);                    // var satu = undefined;
 console.log(dua);                     // var dua = undefined;
 console.log(tiga);                    // var tiga = undefined;
 var satu = "Belajar HTML";            // console.log(satu);               🡲 output: undefined
 var dua = "Belajar CSS";              // console.log(dua);                🡲 output: undefined
 var tiga = "Belajar JS";              // console.log(tiga);               🡲 output: undefined
-                                      // var satu = "Belajar HTML";
+console.log(satu);                    // var satu = "Belajar HTML";
                                       // var dua = "Belajar CSS";
                                       // var tuga = "Belajar JS";
+                                      // console.log(satu);               🡲 output: Belajar HTML
+
+// Contoh 2: Function
+
+// Contoh 2-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(sapaPagi);                // sapaPagi = function sapaPagi(){ ... }
+console.log(sapaPagi());              // console.log(sapaPagi)            🡲 output: function sapaPagi(){ ... }
+function sapaPagi(){                  // console.log(sapaPagi());         🡲 output: Selamat Pagi!
+  console.log("Selamat Pagi!");       // function sapaPagi(){
+}                                     //   console.log("Selamat Pagi!");
+                                      // }                                🡲 output: undefined (terjadi karena tidak ada return)
+
+// Contoh 2-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(sapaSiang);               // sapaSiang = function sapaSiang(){ ... }
+console.log(sapaSiang());             // console.log(sapaSiang)           🡲 output: function sapaSiang(){ ... }
+function sapaSiang(){                 // console.log(sapaSiang());        🡲 output: Selamat Siang!
+  return "Selamat Siang!";            // function sapaSiang(){
+}                                     //   return "Selamat Siang!";
+                                      // }                                🡲 karena terdapat return, maka tidak ada output apapun
 ```
