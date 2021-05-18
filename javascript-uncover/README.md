@@ -1131,17 +1131,28 @@ diisi functionnya itu sendiri. Selanjutya, barulah masuk ke fase execution, dima
 baris per baris, dari atas ke bawah. Gunakan tools visualusasi berikut: http://pythontutor.com/javascript.html
 */
 
-// Contoh A-1
-console.log(teks);                    // output: ReferenceError teks is not defined
+// Contoh A-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teksA);                   // console.log(teksA);              🡲 output: ReferenceError teksA is not defined
 
-// Contoh A-2                         // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-console.log(teks);                    // var teks = undefined;
-var teks = "Belajar JS";              // console.log(teks);                 🡲 output: undefined
-                                      // var teks = "Belajar JS";
+// Contoh A-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teksB);                   // var teksB = undefined;
+var teksB = "Belajar JS";             // console.log(teksB);              🡲 output: undefined
+                                      // var teksB = "Belajar JS";
                                       
-// Contoh A-3                         // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-console.log(teks);                    // var teks = undefined;
-var teks = "Belajar JS";              // console.log(teks);                 🡲 output: undefined
-console.log(teks);                    // var teks = "Belajar JS";
-                                      // console.log(teks);                 🡲 output: Belajar JS
+// Contoh A-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teksC);                   // var teksC = undefined;
+var teksC = "Belajar JS";             // console.log(teksC);              🡲 output: undefined
+console.log(teksC);                   // var teksC = "Belajar JS";
+                                      // console.log(teksC);              🡲 output: Belajar JS
+
+// Contoh A-4                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(satu);                    // var satu = undefined;
+console.log(dua);                     // var dua = undefined;
+console.log(tiga);                    // var tiga = undefined;
+var satu = "Belajar HTML";            // console.log(satu);               🡲 output: undefined
+var dua = "Belajar CSS";              // console.log(dua);                🡲 output: undefined
+var tiga = "Belajar JS";              // console.log(tiga);               🡲 output: undefined
+                                      // var satu = "Belajar HTML";
+                                      // var dua = "Belajar CSS";
+                                      // var tuga = "Belajar JS";
 ```
