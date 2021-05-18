@@ -1085,7 +1085,7 @@ console.log(e);                       // output: 60 (bukan 15, karena nilai var 
 // ============
 
 /*
-Penggunaan var dapat mempegaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan let tidak mempengaruhi
+Penggunaan var dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan let tidak mempengaruhi
 nilai diluar scope (aman!). let sendiri merupakan fitur baru di ES6, tujuannya untuk memperbaiki masalah di var.
 */
 
