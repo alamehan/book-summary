@@ -1031,7 +1031,6 @@ var a = "Belajar JS";                 // a merupakan global variable, oleh karen
 function foo(){
   console.log(a);                     // a yang diakses disini yaitu a global varibale, berhubung function foo
 }                                     // tidak memiliki local variable a, maka akan "naik" mencari ke global
-
 foo();                                // output: Belajar JS (hasil dari dalam function)
 console.log(a);                       // output: Belajar JS (hasil dari global variable a)
 
@@ -1042,7 +1041,6 @@ function bar(){
   var b = "Belajar CSS";              // b disini merupakan local variable
   console.log(b);                     // b yang diakses disini yaitu b local variable
 }
-
 bar();                                // output: Belajar CSS (hasil dari dalam function)
 console.log(b);                       // output: Belajar JS (hasil dari global variable b)
 
@@ -1053,11 +1051,9 @@ function baz(c, d){
   var d = 40;                         // d disini merupakan local variable
   return c+d;                         // function mengembalikan nilai 60
 }
-
 var c = 5;                            // c disini merupakan global variable
 var d = 10;                           // d disini merupakan global variable
 var e = baz(c, d);                    // argument yang dikirim yaitu baz(5, 10)
-
 console.log(c);                       // output: 5
 console.log(d);                       // output: 10
 console.log(e);                       // output: 60 (bukan 15, karena nilai var c & d tertimpa saat didalam function)
@@ -1069,11 +1065,9 @@ function baz(){
   d = 40;                             // d disini menimpa global variable d (jika didefinisikan tanpa var, maka berefek ke global)
   return c+d;                         // function mengembalikan nilai 60
 }
-
 var c = 5;                            // c disini merupakan global variable
 var d = 10;                           // d disini merupakan global variable
 var e = baz();                        // tidak ada argument yang dikirim
-
 console.log(c);                       // output: 20 (karena sudah tertimpa saat didalam function)
 console.log(d);                       // output: 40 (karena sudah tertimpa saat didalam function)
 console.log(e);                       // output: 60 (bukan 15, karena nilai var c & d tertimpa saat didalam function)
