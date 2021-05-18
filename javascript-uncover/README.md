@@ -1019,4 +1019,46 @@ console.log(rataratav2(2, 4, 8, 16)); // output: 7.5 (hasil dari (2+4+8+16)/4 ðŸ
 // =================
 // E. Variable Scope
 // =================
+
+/*
+Variable Scope adalah istilah tentang sejauh mana sebuah variable masih dapat diakses. Global Variable dapat diakses dari-
+mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup terbatas, milsanya di dalam sebuah function
+*/
+
+// E1. Global Variable
+
+var a = "Belajar JS";                 // a merupakan global variable, oleh karena itu dapat diakses dimana pun
+function foo(){
+  console.log(a);                     // a yang diakses disini yaitu a global varibale, berhubung function foo
+}                                     // tidak memiliki local variable a, maka akan "naik" mencari ke global
+
+foo();                                // output: Belajar JS (hasil dari dalam function)
+console.log(a);                       // output: Belajar JS (hasil dari global variable a)
+
+// E2. Global & Local Variable
+
+var b = "Belajar JS";                 // b disini merupakan global variable
+function bar(){
+  var b = "Belajar CSS";              // b disini merupakan local variable
+  console.log(b);                     // b yang diakses disini yaitu b local variable
+}
+
+bar();                                // output: Belajar CSS (hasil dari dalam function)
+console.log(b);                       // output: Belajar JS (hasil dari global variable b)
+
+// E3. Contoh Variable Scope
+
+function baz(){
+  var c = 20;                         // c disini merupakan local variable
+  var d = 40;                         // d disini merupakan local variable
+  return c+d;                         // function mengembalikan nilai 60
+}
+
+var c = 5;                            // c disini merupakan global variable
+var d = 10;                           // d disini merupakan global variable
+var e = baz();                        // e akan menampung hasil dari function baz() yang bernilai 60
+
+console.log(c);                       // output: 5
+console.log(d);                       // output: 10
+console.log(e);                       // output: 60
 ```
