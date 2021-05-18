@@ -1,3 +1,5 @@
+# JavaScript Uncover by Andre Pratama (Duniailkom.com)
+
 <div id="daftarisi"></div>
 
 # 📖 Daftar Isi JavaScript Uncover:
