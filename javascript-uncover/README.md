@@ -942,7 +942,7 @@ console.log(kali(undefined, undefined, 30, 15));  // output: 45000 (hasil dari 1
 // D1. Array Argument
 
 function numA(){                      // function dibuat tanpa parameter (tanpa wadah untuk argument), namun setiap argument
-  console.log(arguments[0]);          // dapat ditangkap oleh array argument (bawaan Javascript) berapapun jumlahnya (fleksibel)
+  console.log(arguments[0]);          // dapat ditangkap oleh array argument (bawaan JavaScript) berapapun jumlahnya (fleksibel)
   console.log(arguments[1]);
   console.log(arguments[2]);
   console.log(arguments[3]);
@@ -1109,17 +1109,54 @@ var k = 1000;
 for (var k=1; k<3; k++){
   console.log(k);
 }
-console.log(`Harganya Rp.${k}`);       // output: Harganya Rp.3 (nilai k global tertimpa, saat didalam perulangan)
+console.log(`Harganya Rp.${k}`);      // output: Harganya Rp.3 (nilai k global tertimpa, saat didalam perulangan)
 
 let l = 1000;
 for (let l=1; l<3; l++){
   console.log(l);
 }
-console.log(`Harganya Rp.${l}`);       // output: Harganya Rp.1000 (nilai l global tidak tertimpa)
+console.log(`Harganya Rp.${l}`);      // output: Harganya Rp.1000 (nilai l global tidak tertimpa)
 ```
 
 ```Javascript
 // ======================
-// G. Javascript Hoisting
+// G. JavaScript Hoisting
 // ======================
+
+/*
+Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution.
+Di fase creation, pertama-tama JavaScript akan "mengangkat" (hoisting) semua variabel & function yang dibuat
+ke baris paling atas kode program, untuk setiap variable akan diisi nilai undefined, sedangkan function akan
+diisi functionnya itu sendiri. Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi
+baris per baris, dari atas ke bawah. Gunakan tools visualusasi berikut: http://pythontutor.com/javascript.html
+*/
+
+// Contoh A-1
+console.log(teks);                    // output: ReferenceError teks is not defined
+
+// Contoh A-2
+console.log(teks);                    // output: undefined
+var teks = "Belajar JS";
+
+/*
+Yang terjadi dibelakang layar:
+------------------------------
+var teks = undefined;
+console.log(teks);
+var teks = "Belajar JS";
+*/
+
+// Contoh A-3
+console.log(teks);                    // output: undefined
+var teks = "Belajar JS";
+console.log(teks);                    // output: Belajar JS
+
+/*
+Yang terjadi dibelakang layar:
+------------------------------
+var teks = undefined;
+console.log(teks);
+var teks = "Belajar JS";
+console.log(teks);
+*/
 ```
