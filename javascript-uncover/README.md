@@ -1134,29 +1134,14 @@ baris per baris, dari atas ke bawah. Gunakan tools visualusasi berikut: http://p
 // Contoh A-1
 console.log(teks);                    // output: ReferenceError teks is not defined
 
-// Contoh A-2
-console.log(teks);                    // output: undefined
-var teks = "Belajar JS";
-
-/*
-Yang terjadi dibelakang layar:
-------------------------------
-var teks = undefined;
-console.log(teks);
-var teks = "Belajar JS";
-*/
-
-// Contoh A-3
-console.log(teks);                    // output: undefined
-var teks = "Belajar JS";
-console.log(teks);                    // output: Belajar JS
-
-/*
-Yang terjadi dibelakang layar:
-------------------------------
-var teks = undefined;
-console.log(teks);
-var teks = "Belajar JS";
-console.log(teks);
-*/
+// Contoh A-2                         // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teks);                    // var teks = undefined;
+var teks = "Belajar JS";              // console.log(teks);                 🡲 output: undefined
+                                      // var teks = "Belajar JS";
+                                      
+// Contoh A-3                         // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teks);                    // var teks = undefined;
+var teks = "Belajar JS";              // console.log(teks);                 🡲 output: undefined
+console.log(teks);                    // var teks = "Belajar JS";
+                                      // console.log(teks);                 🡲 output: Belajar JS
 ```
