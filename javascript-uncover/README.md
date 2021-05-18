@@ -949,7 +949,7 @@ function numA(){                      // function dibuat tanpa parameter (tanpa 
 numA(20, 25, 30, 15);                 // output: 20, 25, 30, 15
 numA(20, 25);                         // output: 20, 25, undefined, undefined
 
-// D2. argumens.length
+// D2. arguments.length
 
 function numB(){                      // karena array argument merupakan sebuah array, maka kita dapat menghitung jumlah argument
   total = arguments.length;           // yang dikirimkan pada saat pemanggilan function dengan menggunakan property length
