@@ -1190,4 +1190,78 @@ function sapaMalam(){                 // }
                                       //   return "Selamat Malam!";
                                       // }
 
+// Contoh 3: Variable & Function
+
+// Contoh 3-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(sapaSatu());              // var nama = undefined;
+var nama = "Budi";                    // var umur = undefined;
+var umur = 25;                        // sapaSatu = function sapaSatu(){...}
+function sapaSatu(){                  // console.log(sapaSatu());         🡲 output: undefined, undefined tahun!
+  return `${nama}, ${umur} tahun!`;   // var nama = "Budi";
+}                                     // var umur = 25;
+                                      // function sapaSatu(){
+                                      //   return `${nama}, ${umur} tahun!`;
+                                      // }
+
+// Contoh 3-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+var nama = "Budi";                    // var nama = undefined;
+var umur = 25;                        // var umur = undefined;
+console.log(sapaDua());               // sapaDua = function sapaDua(){...}
+function sapaDua(){                   // var nama = "Budi";
+  return `${nama}, ${umur} tahun!`;   // var umur = 25;
+}                                     // console.log(sapaDua());          🡲 Budi, 25 tahun!
+                                      // function sapaDua(){
+                                      //   return `${nama}, ${umur} tahun!`;
+                                      // }
+
+// Contoh 4: Local Hoisting
+
+// Contoh 4-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+var nama = "Budi Lorem";              // var nama = undefined;                🡲 Global Hoisting
+var user = "@budilorem";              // var user = undefined;                🡲 Global Hoisting
+function cetakURL(user){              // cetakURL = function cetakURL(){...}  🡲 Global Hoisting
+  var twtURL = "http://twitter.com/"; // var nama = "Budi Lorem";
+  return twtURL+user;                 // var user = "@budilorem";
+}                                     // function cetakURL(user){
+console.log(cetakURL(user));          //   var twtURL = unefined;             🡲 Local Hoisting di dalam function
+                                      //   var twtURL = "http://twitter.com/";
+                                      //   return twtURL+user;
+                                      // }
+                                      // console.log(cetakURL(user));         🡲 http://twitter.com/@budilorem
+
+// Contoh 4-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+function luar(){                      // luar = function luar(){...}          🡲 Global Hoisting
+  console.log("A");                   // function luar(){
+  function tengah(){                  //   tengah = function tengah(){...}    🡲 Local Hoisting di dalam function
+    console.log("B");                 //   console.log("A");
+    function dalam(){                 //   function tengah(){
+      console.log("C");               //     dalam = function dalam(){...}    🡲 Local Hoisting di dalam function (nested)
+    }                                 //     console.log("B");
+    dalam();                          //     function dalam(){
+  }                                   //       console.log("C");
+  tengah();                           //     }
+}                                     //     dalam();
+luar();                               //   }
+                                      //   tengah();
+                                      // }
+                                      // luar();                              🡲 urutan output: A, B, C
+
+// Contoh 5: More Example             ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+
+function funA(){                      // var nama = undefined;
+  var nama = "Budi";                  // funA = function funA(){...}
+  console.log(nama);                  // funB = function funB(){...}
+}                                     // function funA(){
+function funB(){                      //   var name = undefined;
+  console.log(nama);                  //   var nama = "Budi";
+}                                     //   console.log(nama);
+console.log(nama);                    // }
+var nama = "Jaka";                    // function funB(){
+funA();                               //   console.log(nama);
+funB("Tono");                         // }
+console.log(nama);                    // console.log(nama);                   🡲 output: undefined
+                                      // var nama = "Jaka";
+                                      // funA();                              🡲 output: Budi
+                                      // funB("Tono");                        🡲 output: Jaka (bukan Tono ya!)
+                                      // console.log(nama);                   🡲 output: Jaka
 ```
