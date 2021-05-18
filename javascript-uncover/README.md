@@ -1080,16 +1080,16 @@ console.log(e);                       // output: 60 (bukan 15, karena nilai var 
 ```
 
 ```Javascript
-// ============
-// F. var & let
-// ============
+// =============
+// F. VAR vs LET
+// =============
 
 /*
 Penggunaan var dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan let tidak mempengaruhi
-nilai diluar scope (aman!). let sendiri merupakan fitur baru di ES6, tujuannya untuk memperbaiki masalah di var.
+nilai diluar scope (aman!). let sendiri merupakan fitur baru di ES6, tujuannya untuk "mengganti" penggunaan var.
 */
 
-// F1. Contoh Perbandingan (1)
+// F1. Perbandingan var & let (1)
 
 for (var i=1; i<3; i++){
   console.log(i);
@@ -1101,7 +1101,23 @@ for (let j=1; j<3; j++){
 }
 console.log(j);                       // output: ReferenceError j is not defined
 
-// F1. Contoh Perbandingan (2)
+// F1. Perbandingan var & let (2)
 
+var k = 1000;
+for (var k=1; k<3; k++){
+  console.log(k);
+}
+console.log(`Harganya Rp.${k}`);       // output: Harganya Rp.3 (nilai k global tertimpa, saat didalam perulangan)
 
+let l = 1000;
+for (let l=1; l<3; l++){
+  console.log(l);
+}
+console.log(`Harganya Rp.${l}`);       // output: Harganya Rp.1000 (nilai l global tidak tertimpa)
+```
+
+```Javascript
+// ======================
+// G. Javascript Hoisting
+// ======================
 ```
