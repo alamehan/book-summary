@@ -1028,27 +1028,27 @@ mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup te
 // E1. Global Variable
 
 var a = "Belajar JS";                 // a merupakan global variable, oleh karena itu dapat diakses darimana saja
-function foo(){
+function boo(){
   console.log(a);                     // a yang diakses disini yaitu a global varibale, berhubung function foo
 }                                     // tidak memiliki local variable a, maka akan "naik" mencari ke global
 
-foo();                                // output: Belajar JS (hasil dari dalam function)
+boo();                                // output: Belajar JS (hasil dari dalam function)
 console.log(a);                       // output: Belajar JS (hasil dari global variable a)
 
 // E2. Global & Local Variable
 
 var b = "Belajar JS";                 // b disini merupakan global variable
-function bar(){
+function coo(){
   var b = "Belajar CSS";              // b disini merupakan local variable
   console.log(b);                     // b yang diakses disini yaitu b local variable
 }
 
-bar();                                // output: Belajar CSS (hasil dari dalam function)
+coo();                                // output: Belajar CSS (hasil dari dalam function)
 console.log(b);                       // output: Belajar JS (hasil dari global variable b)
 
 // E3. Contoh dalam Argument (1)
 
-function boo(c, d){
+function doo(c, d){
   var c = 20;                         // c disini merupakan local variable
   var d = 40;                         // d disini merupakan local variable
   return c+d;                         // function mengembalikan nilai 60
@@ -1056,7 +1056,7 @@ function boo(c, d){
 
 var c = 5;                            // c disini merupakan global variable
 var d = 10;                           // d disini merupakan global variable
-var e = boo(c, d);                    // argument yang dikirim yaitu baz(5, 10)
+var e = doo(c, d);                    // argument yang dikirim yaitu baz(5, 10)
 
 console.log(c);                       // output: 5
 console.log(d);                       // output: 10
@@ -1064,7 +1064,7 @@ console.log(e);                       // output: 60 (bukan 15, karena nilai var 
 
 // E4. Contoh dalam Argument (2)
 
-function doo(){
+function foo(){
   c = 20;                             // c disini menimpa global variable c (jika didefinisikan tanpa var, maka berefek ke global)
   d = 40;                             // d disini menimpa global variable d (jika didefinisikan tanpa var, maka berefek ke global)
   return c+d;                         // function mengembalikan nilai 60
@@ -1072,7 +1072,7 @@ function doo(){
 
 var c = 5;                            // c disini merupakan global variable
 var d = 10;                           // d disini merupakan global variable
-var e = doo();                        // tidak ada argument yang dikirim
+var e = foo();                        // tidak ada argument yang dikirim
 
 console.log(c);                       // output: 20 (bukan 5, karena nilai c tertimpa saat didalam function)
 console.log(d);                       // output: 40 (bukan 10, karena nilai d tertimpa saat didalam function)
@@ -1083,4 +1083,25 @@ console.log(e);                       // output: 60 (bukan 15, karena nilai var 
 // ============
 // F. var & let
 // ============
+
+/*
+Penggunaan var dapat mempegaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan let tidak mempengaruhi
+nilai diluar scope (aman!). let sendiri merupakan fitur baru di ES6, tujuannya untuk memperbaiki masalah di var.
+*/
+
+// F1. Contoh Perbandingan (1)
+
+for (var i=1; i<3; i++){
+  console.log(i);
+}
+console.log(i);                       // output: 3
+
+for (let j=1; j<3; j++){
+  console.log(j);
+}
+console.log(j);                       // output: ReferenceError j is not defined
+
+// F1. Contoh Perbandingan (2)
+
+
 ```
