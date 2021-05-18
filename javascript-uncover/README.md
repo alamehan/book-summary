@@ -1027,7 +1027,7 @@ mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup te
 
 // E1. Global Variable
 
-var a = "Belajar JS";                 // a merupakan global variable, oleh karena itu dapat diakses dimana pun
+var a = "Belajar JS";                 // a merupakan global variable, oleh karena itu dapat diakses darimana saja
 function foo(){
   console.log(a);                     // a yang diakses disini yaitu a global varibale, berhubung function foo
 }                                     // tidak memiliki local variable a, maka akan "naik" mencari ke global
