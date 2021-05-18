@@ -978,4 +978,26 @@ console.log(ratarata(2, 4, 8, 16));   // output: 7.5 (hasil dari (2+4+8+16)/4 ðŸ
 
 // D4. Spread Operator
 
+function numC(...arg){                // selain untuk menggabungkan array seperti yang dijelaskan di bab 7 (operator),
+  console.log(arg[0]);                // spread (...) juga dapat digunakan untuk menggantikan peran arguments object.
+  console.log(arg[1]);                // coba bandingkan hasilnya dengan point D1, maka akan sama saja.
+  console.log(arg[2]);                // penulisannya tidak harus ...arg, bisa dengan kata lain, misalnya ...angka, dll
+  console.log(arg[3]);
+}
+
+numC(20, 25, 30, 15);                 // output: 20, 25, 30, 15
+numC(20, 25);                         // output: 20, 25, undefined, undefined
+
+// D5. Argument + Spread Operator
+
+function numD(a, b, ...sisa){         // cara baca: jika function numD dipanggil dengan lebih dari 3 argument, maka argument
+  console.log(a);                     // pertama dan kedua masuk ke variabel a dan b, sisanya disimpan kedalam array sisa
+  console.log(b);
+  console.log(sisa);
+}
+
+numD(20, 25);                         // output: 20, 25, []
+numD(20, 25, 30);                     // output: 20, 25, [30]
+numD(20, 25, 30, 15);                 // output: 20, 25, [30, 15]
+
 ```
