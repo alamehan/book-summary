@@ -1,8 +1,8 @@
-# JavaScript Uncover by Andre Pratama (Duniailkom.com)
+# 📘 JavaScript Uncover by Andre Pratama (Duniailkom.com)
 
 <div id="daftarisi"></div>
 
-# 📖 Daftar Isi JavaScript Uncover:
+# Daftar Isi:
 
 <p align="left">
 	<a href="#bab01">1. Berkenalan Dengan JavaScript</a>&nbsp;<br>
