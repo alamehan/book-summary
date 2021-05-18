@@ -920,14 +920,14 @@ console.log(tambah(20, 25));          // output: 65 (hasil dari 20+25+10+10)
 console.log(tambah(20, 25, 30));      // output: 85 (hasil dari 20+25+30+10)
 console.log(tambah(20, 25, 30, 15));  // output: 90 (hasil dari 20+25+30+15)
 
-console.log(kurang());                // output: NaN (fungsi kurang butuh minimal 2 argument! untuk parameter a & b)
-console.log(kurang(20));              // output: NaN (fungsi kurang butuh minimal 2 argument! kurang argument ke-2)
+console.log(kurang());                // output: NaN (function kurang butuh minimal 2 argument! untuk parameter a & b)
+console.log(kurang(20));              // output: NaN (function kurang butuh minimal 2 argument! kurang argument ke-2)
 console.log(kurang(20, 25));          // output: -25 (argument c & d jika tidak diisi, maka akan diisi nilai defaultnya)
 console.log(kurang(20, 25, 30));      // output: -45 (hasil dari 20-25-30-10)
 console.log(kurang(20, 25, 30, 15));  // output: -50 (hasil dari 20-25-30-15)
 
-console.log(kali());                  // output: NaN (fungsi kali butuh minimal 4 argument! untuk parameter a, b, c & d)
-console.log(kali(20, 25));            // output: NaN (fungsi kali butuh minimal 4 argument! kurang argument ke-3 & ke-4)
+console.log(kali());                  // output: NaN (function kali butuh minimal 4 argument! untuk parameter a, b, c & d)
+console.log(kali(20, 25));            // output: NaN (function kali butuh minimal 4 argument! kurang argument ke-3 & ke-4)
 console.log(kali(20, 25, 30, 15));    // output: 225000 (hasil dari 20*25*30*15)
 console.log(kali(undefined, undefined, 30, 15));  // output: 45000 (hasil dari 10*10*30*15), undefined akan diisi nilai default
 ```
@@ -936,4 +936,46 @@ console.log(kali(undefined, undefined, 30, 15));  // output: 45000 (hasil dari 1
 // ===================================
 // D. Function dengan Arguments Object
 // ===================================
+
+// D1. Array Argument
+
+function numA(){                      // function dibuat tanpa parameter (tanpa wadah untuk argument), namun setiap argument
+  console.log(arguments[0]);          // dapat ditangkap oleh array argument (bawaan Javascript) berapapun jumlahnya (fleksibel)
+  console.log(arguments[1]);
+  console.log(arguments[2]);
+  console.log(arguments[3]);
+}
+
+numA(20, 25, 30, 15);                 // output: 20, 25, 30, 15
+numA(20, 25);                         // output: 20, 25, undefined, undefined
+
+// D2. argumens.length
+
+function numB(){                      // karena array argument merupakan sebuah array, maka kita dapat menghitung jumlah argument
+  total = arguments.length;           // yang dikirimkan pada saat pemanggilan function dengan menggunakan property length
+  return total;
+}
+
+console.log(numB());                  // output: 0 (terdapat 0 argument saat pemanggilan function)
+console.log(numB(20));                // output: 1 (terdapat 1 argument saat pemanggilan function)
+console.log(numB(20, 25));            // output: 2 (terdapat 2 argument saat pemanggilan function)
+console.log(numB(20, 25, 30));        // output: 3 (terdapat 3 argument saat pemanggilan function)
+console.log(numB(20, 25, 30, 15));    // output: 4 (terdapat 4 argument saat pemanggilan function)
+
+// D3. Studi Kasus
+
+function ratarata(){                  // berbekal array argument dan arguments.length, kita bisa membuat sebuah function
+  var totalArg = arguments.length;    // rata-rata yang bisa menerima berarapun jumlah argumentnya (fleksibel)
+  var hasil = 0;
+  for (var i=0; i<totalArg; i++){
+    hasil += arguments[i];
+  }
+  return hasil/totalArg;
+}
+
+console.log(ratarata(2, 4));          // output: 3   (hasil dari (2+4)/2 🡲 6/2)
+console.log(ratarata(2, 4, 8, 16));   // output: 7.5 (hasil dari (2+4+8+16)/4 🡲 30/4)
+
+// D4. Spread Operator
+
 ```
