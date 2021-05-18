@@ -1151,30 +1151,43 @@ console.log(teksD);                   // var teksD = "Belajar JS";
 // Contoh 1-4                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(satu);                    // var satu = undefined;
 console.log(dua);                     // var dua = undefined;
-console.log(tiga);                    // var tiga = undefined;
-var satu = "Belajar HTML";            // console.log(satu);               🡲 output: undefined
-var dua = "Belajar CSS";              // console.log(dua);                🡲 output: undefined
-var tiga = "Belajar JS";              // console.log(tiga);               🡲 output: undefined
-console.log(satu);                    // var satu = "Belajar HTML";
-                                      // var dua = "Belajar CSS";
-                                      // var tuga = "Belajar JS";
+var satu = "Belajar HTML";            // var tiga = undefined;
+var dua = "Belajar CSS";              // console.log(satu);               🡲 output: undefined
+console.log(tiga);                    // console.log(dua);                🡲 output: undefined
+var tiga = "Belajar JS";              // var satu = "Belajar HTML";
+console.log(satu);                    // var dua = "Belajar CSS";
+                                      // console.log(tiga);               🡲 output: undefined
+                                      // var tiga = "Belajar JS";
                                       // console.log(satu);               🡲 output: Belajar HTML
 
 // Contoh 2: Function
 
 // Contoh 2-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-console.log(sapaPagi);                // sapaPagi = function sapaPagi(){ ... }
-console.log(sapaPagi());              // console.log(sapaPagi)            🡲 output: function sapaPagi(){ ... }
+console.log(sapaPagi);                // sapaPagi = function sapaPagi(){...}
+console.log(sapaPagi());              // console.log(sapaPagi)            🡲 output: function sapaPagi(){...}
 function sapaPagi(){                  // console.log(sapaPagi());         🡲 output: Selamat Pagi!
   console.log("Selamat Pagi!");       // function sapaPagi(){
 }                                     //   console.log("Selamat Pagi!");
                                       // }                                🡲 output: undefined (terjadi karena tidak ada return)
 
 // Contoh 2-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-console.log(sapaSiang);               // sapaSiang = function sapaSiang(){ ... }
-console.log(sapaSiang());             // console.log(sapaSiang)           🡲 output: function sapaSiang(){ ... }
+console.log(sapaSiang);               // sapaSiang = function sapaSiang(){...}
+console.log(sapaSiang());             // console.log(sapaSiang)           🡲 output: function sapaSiang(){...}
 function sapaSiang(){                 // console.log(sapaSiang());        🡲 output: Selamat Siang!
   return "Selamat Siang!";            // function sapaSiang(){
 }                                     //   return "Selamat Siang!";
                                       // }                                🡲 karena terdapat return, maka tidak ada output apapun
+
+// Contoh 2-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(sapaSore());              // sapaSore = function sapaSore(){...}
+function sapaSore(){                  // sapaMalam = function sapaMalam(){...}
+  return "Selamat Sore!";             // console.log(sapaSore());         🡲 output: Selamat Sore!
+}                                     // function sapaSore(){
+console.log(sapaMalam());             //   return "Selamat Sore!";
+function sapaMalam(){                 // }
+  return "Selamat Malam!";            // console.log(sapaMalam());        🡲 output: Selamat Malam!
+}                                     // function sapaMalam(){
+                                      //   return "Selamat Malam!";
+                                      // }
+
 ```
