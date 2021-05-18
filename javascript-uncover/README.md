@@ -962,7 +962,7 @@ console.log(numB(20, 25));            // output: 2 (terdapat 2 argument saat pem
 console.log(numB(20, 25, 30));        // output: 3 (terdapat 3 argument saat pemanggilan function)
 console.log(numB(20, 25, 30, 15));    // output: 4 (terdapat 4 argument saat pemanggilan function)
 
-// D3. Studi Kasus
+// D3. Studi Kasus: Rata-Rata
 
 function ratarata(){                  // berbekal array argument dan arguments.length, kita bisa membuat sebuah function
   var totalArg = arguments.length;    // rata-rata yang bisa menerima berarapun jumlah argumentnya (fleksibel)
@@ -1000,4 +1000,23 @@ numD(20, 25);                         // output: 20, 25, []
 numD(20, 25, 30);                     // output: 20, 25, [30]
 numD(20, 25, 30, 15);                 // output: 20, 25, [30, 15]
 
+// D6. Studi Kasus: Rata-Rata V2
+
+function rataratav2(...nilai){        // studi kasus pada point D3, dapat kita buat ulang dengan memanfaatkan spread
+  var totalArg = nilai.length;        // serta perulangan for of, hasilnya aka sama saja, dan juga tetap fleksibel
+  var hasil = 0;
+  for (var i of nilai){
+    hasil += i;
+  }
+  return hasil/totalArg;
+}
+
+console.log(rataratav2(2, 4));        // output: 3   (hasil dari (2+4)/2 🡲 6/2)
+console.log(rataratav2(2, 4, 8, 16)); // output: 7.5 (hasil dari (2+4+8+16)/4 🡲 30/4)
+```
+
+```Javascript
+// =================
+// E. Variable Scope
+// =================
 ```
