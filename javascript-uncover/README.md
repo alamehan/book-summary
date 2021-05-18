@@ -1046,9 +1046,9 @@ function bar(){
 bar();                                // output: Belajar CSS (hasil dari dalam function)
 console.log(b);                       // output: Belajar JS (hasil dari global variable b)
 
-// E3. Contoh Variable Scope
+// E3. Contoh dalam Argument (1)
 
-function baz(){
+function baz(c, d){
   var c = 20;                         // c disini merupakan local variable
   var d = 40;                         // d disini merupakan local variable
   return c+d;                         // function mengembalikan nilai 60
@@ -1056,9 +1056,25 @@ function baz(){
 
 var c = 5;                            // c disini merupakan global variable
 var d = 10;                           // d disini merupakan global variable
-var e = baz();                        // e akan menampung hasil dari function baz() yang bernilai 60
+var e = baz(c, d);                    // argument yang dikirim yaitu baz(5, 10)
 
 console.log(c);                       // output: 5
 console.log(d);                       // output: 10
-console.log(e);                       // output: 60
+console.log(e);                       // output: 60 (bukan 15, karena nilai var c & d tertimpa saat didalam function)
+
+// E4. Contoh dalam Argument (2)
+
+function baz(){
+  c = 20;                             // c disini menimpa global variable c (jika didefinisikan tanpa var, maka berefek ke global)
+  d = 40;                             // d disini menimpa global variable d (jika didefinisikan tanpa var, maka berefek ke global)
+  return c+d;                         // function mengembalikan nilai 60
+}
+
+var c = 5;                            // c disini merupakan global variable
+var d = 10;                           // d disini merupakan global variable
+var e = baz();                        // tidak ada argument yang dikirim
+
+console.log(c);                       // output: 20 (karena sudah tertimpa saat didalam function)
+console.log(d);                       // output: 40 (karena sudah tertimpa saat didalam function)
+console.log(e);                       // output: 60 (bukan 15, karena nilai var c & d tertimpa saat didalam function)
 ```
