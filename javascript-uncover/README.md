@@ -1284,7 +1284,30 @@ let b = "Hello World!";               // ini artinya kita memang harus mendefini
 ```
 
 ```Javascript
-// ======================
-// H. First-Class Citizen
-// ======================
+// ================================
+// H. Function: First-Class Citizen
+// ================================
+
+/*
+Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini berarti:
+➀ Function dapat disimpan ke dalam variable (a.k.a Function Expressions)
+➁ Function dapat digunakan sebagai argument layaknya tipe data biasa
+*/
+
+// H1. Function Expressions
+
+var hitung = function ratarata(a, b){
+  return (a+b)/2;
+}
+console.log(hitung(4, 8));            // output: 6
+console.log(ratarata(4, 8));          // output: ReferenceError ratarata is not defined
+
+// H2. Function Expressions tanpa nama function (a.k.a Anonymous Functions)
+
+var hitung = function (a, b){
+  return (a+b)/2;
+}
+console.log(hitung(4, 8));            // output: 6
+
+// H3. Function sebagai argument
 ```
