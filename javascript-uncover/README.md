@@ -1290,8 +1290,8 @@ let b = "Hello World!";               // ini artinya kita memang harus mendefini
 
 /*
 Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini berarti:
-➀ Function dapat disimpan ke dalam variable (a.k.a Function Expressions)
-➁ Function dapat digunakan sebagai argument layaknya tipe data biasa
+① Function dapat disimpan ke dalam variable (a.k.a Function Expressions)
+② Function dapat digunakan sebagai argument layaknya tipe data biasa
 */
 
 // H1. Function Expressions
