@@ -1268,9 +1268,8 @@ console.log(nama);                    // console.log(nama);               🡲 o
 Kesimpulannya: 
 - Selalu definisikan variable (var) diawal kode program/function, dan sebaiknya langsung diisi nilai, agar tidak undefined.
 - Pemanggilan function bisa dimana saja, tidak peduli pendefinisian functionnya berada di atas maupun bawah kode program.
-- Agar lebih "aman", ganti penggunaan var dengan let. Berbeda dengan var, dimana saat var dipanggil namun belum didefinisikan,
-  maka akan di hoisting dan diisi oleh undefined, sedangkan let "berprilaku professional" dimana saat let dipanggil namun
-  belum didefinisikan, maka akan muncul error (dan ini yang memang seharusnya terjadi). Perhatikan contoh dibawah.
+- Agar lebih "aman", ganti penggunaan var dengan let. Let akan menampilkan error saat ia dipanggil namun belum didefinisikan
+  di baris atas kode program (ini yang seharusnya terjadi), sedangkan var malah diisi undefined. Perhatikan contoh dibawah:
 */
 
 // Contoh 6: VAR vs LET
