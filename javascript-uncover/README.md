@@ -1275,13 +1275,13 @@ Kesimpulannya:
 
 // Contoh 6: VAR vs LET
 
-// Contoh 6-1
+// Contoh 6-1                         ᴠᴀʀ ɪᴛᴜ ᴛɪᴅᴀᴋ ᴀᴍᴀɴ:
 console.log(a);                       // output: undefined
-var a = "Hello World!";
+var a = "Hello World!";               // seharusnya sih error, tapi karena efek hoisting, jadilah undefined (tidak professional)
 
-// Contoh 6-2
+// Contoh 6-2                         ʟᴇᴛ ɪᴛᴜ ᴀᴍᴀɴ & ᴘʀᴏꜰᴇꜱꜱɪᴏɴᴀʟ:
 console.log(b);                       // output: ReferenceError Cannot access 'b' before initialization
-let b = "Hello World!";
+let b = "Hello World!";               // ini artinya kita memang harus mendefinisikan var/let dulu, sebelum dipakai! (professional)
 ```
 
 ```Javascript
