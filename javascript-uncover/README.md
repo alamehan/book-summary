@@ -1209,7 +1209,7 @@ var umur = 25;                        // var umur = undefined;
 console.log(sapaDua());               // sapaDua = function sapaDua(){...}
 function sapaDua(){                   // var nama = "Budi";
   return `${nama}, ${umur} tahun!`;   // var umur = 25;
-}                                     // console.log(sapaDua());          🡲 Budi, 25 tahun!
+}                                     // console.log(sapaDua());          🡲 output: Budi, 25 tahun!
                                       // function sapaDua(){
                                       //   return `${nama}, ${umur} tahun!`;
                                       // }
@@ -1264,4 +1264,29 @@ console.log(nama);                    // console.log(nama);                   �
                                       // funA();                              🡲 output: Budi
                                       // funB("Tono");                        🡲 output: Jaka (bukan Tono ya!)
                                       // console.log(nama);                   🡲 output: Jaka
+
+/*
+Kesimpulannya: 
+- Selalu definisikan variable (var) diawal kode program/function, dan jika perlu langsung diisi nilai, agar tidak undefined.
+- Pemanggilan function bisa dimana saja, tidak peduli pendefinisian functionnya berada di atas maupun bawah kode program.
+- Agar lebih "aman", ganti penggunaan var dengan let. Berbeda dengan var, dimana saat var dipanggil namun belum didefinisikan,
+  maka akan di hoisting dan diisi oleh undefined, sedangkan let "berprilaku lebih professional" dimana saat let dipanggil
+  namun belum didefinisikan, maka akan muncul error (dan ini yang memang seharusnya terjadi). Perhatikan contoh dibawah.
+*/
+
+// Contoh 6: VAR vs LET
+
+// Contoh 6-1
+console.log(a);                       // output: undefined
+var a = "Hello World!";
+
+// Contoh 6-2
+console.log(b);                       // output: ReferenceError Cannot access 'b' before initialization
+let b = "Hello World!";
+```
+
+```Javascript
+// ======================
+// H. First-Class Citizen
+// ======================
 ```
