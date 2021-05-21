@@ -1325,9 +1325,9 @@ console.log(hasil);                   // output: 12
 function rerata(a, b){
   return (a+b)/2;
 }
-function tambah(c, d){                // Step 2, Parameter d akan menangkap function rerata dari argument 
-  return c+d(4, 8);                   // Step 3, d(4, 8) menjadi rerata(4, 8)
+function tambah(c, d){                // Step 2 🡲 Parameter d akan menangkap function rerata dari argument 
+  return c+d(4, 8);                   // Step 3 🡲 Dengan demikian d(4, 8) akan menjadi rerata(4, 8)
 }
-var hasil = tambah(6, rerata);        // Step 1  Mengirim function bernama rerata sebagai sebuah argument
+var hasil = tambah(6, rerata);        // Step 1 🡲 Mengirim function bernama rerata sebagai sebuah argument
 console.log(hasil);                   // output: 12
 ```
