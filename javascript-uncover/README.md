@@ -1296,18 +1296,38 @@ Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini ber
 
 // H1. Function Expressions
 
-var hitung = function ratarata(a, b){
+var hitung = function ratarata(a, b){ // function ratarata disimpan ke dalam variable hitung
   return (a+b)/2;
 }
 console.log(hitung(4, 8));            // output: 6
 console.log(ratarata(4, 8));          // output: ReferenceError ratarata is not defined
 
-// H2. Function Expressions tanpa nama function (a.k.a Anonymous Functions)
+// H2. Anonymous Functions
 
-var hitung = function (a, b){
-  return (a+b)/2;
+var hitung = function (a, b){         // Function Expressions tanpa nama function disebut
+  return (a+b)/2;                     // sebagai Anonymous Functions, nanti banyak dipakai!
 }
 console.log(hitung(4, 8));            // output: 6
 
-// H3. Function sebagai argument
+// H3. Function sebagai Argument (1)
+
+function rerata(a, b){
+  return (a+b)/2;
+}
+function tambah(c, d){
+  return c+d;
+}
+var hasil = tambah(6, rerata(4, 8));  // Hasil return function rerata(4, 8) digunakan sebagai argument
+console.log(hasil);                   // output: 12
+
+// H4. Function sebagai Argument (2)
+
+function rerata(a, b){
+  return (a+b)/2;
+}
+function tambah(c, d){                // Step 2, Parameter d akan menangkap function rerata dari argument 
+  return c+d(4, 8);                   // Step 3, d(4, 8) menjadi rerata(4, 8)
+}
+var hasil = tambah(6, rerata);        // Step 1  Mengirim function bernama rerata sebagai sebuah argument
+console.log(hasil);                   // output: 12
 ```
