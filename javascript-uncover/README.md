@@ -1304,12 +1304,12 @@ console.log(ratarata(4, 8));          // output: ReferenceError ratarata is not 
 
 // H2. Anonymous Functions
 
-var hitung = function (a, b){         // Function Expressions tanpa nama function disebut
-  return (a+b)/2;                     // sebagai Anonymous Functions, nanti banyak dipakai!
+var hitung = function(a, b){          // Function Expressions tanpa nama function disebut sebagai
+  return (a+b)/2;                     // Anonymous Functions, ini yang banyak dipakai nantinya!
 }
 console.log(hitung(4, 8));            // output: 6
 
-// H3. Function sebagai Argument (1)
+// H3. Return Function sebagai Argument
 
 function rerata(a, b){
   return (a+b)/2;
@@ -1320,7 +1320,7 @@ function tambah(c, d){
 var hasil = tambah(6, rerata(4, 8));  // Hasil return function rerata(4, 8) digunakan sebagai argument
 console.log(hasil);                   // output: 12
 
-// H4. Function sebagai Argument (2)
+// H4. Function sebagai Argument (1)
 
 function rerata(a, b){
   return (a+b)/2;
@@ -1330,4 +1330,52 @@ function tambah(c, d){                // Step 2 🡲 Parameter d akan menangkap 
 }
 var hasil = tambah(6, rerata);        // Step 1 🡲 Mengirim function bernama rerata sebagai sebuah argument
 console.log(hasil);                   // output: 12
+
+// H5. Function sebagai Argument (2)
+
+function foo(apa){
+  alert(apa);                         // Step 4 🡲 foo("Belajar JS") akan dieksekusi sebagai alert("Belajar JS")
+}
+function salam(bar){                  // Step 2 🡲 Parameter bar akan menangkap function foo dari argument
+  bar("Belajar JS");                  // Step 3 🡲 Dengan demikian bar("Belajar JS") menjadi foo("Belajar JS")
+}
+salam(foo);                           // Step 1 🡲 Mengirim function bernama foo sebagai sebuah argument
+```
+
+```Javascript
+// =======================
+// I. Arrow Function (ES6)
+// =======================
+
+/*
+Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih
+sederhana secara penulisan syntax, namun intinya bukan itu, melainkan nanti akan banyak dipakai di konsep JavaScript Object.
+*/
+
+// Contoh tanpa Argument
+
+var pagiA = function(){ return "Selamat Pagi!"; };    // Penulisan Function Expressions biasa
+var pagiB = () => { return "Selamat Pagi!"; };        // Penulisan Function Expressions dengan Arrow Function
+
+console.log(pagiA());                 // output: Selamat Pagi!
+console.log(pagiB());                 // output: Selamat Pagi!
+
+// Contoh dengan Argument
+
+var totalA = function(a, b, c){ return a+b+c; };      // Penulisan Function Expressions biasa
+var totalB = (a, b, c) => { return a+b+c; };          // Penulisan Function Expressions dengan Arrow Function
+
+console.log(totalA(1, 2, 3));         // output: 6
+console.log(totalB(1, 2, 3));         // output: 6
+```
+
+<br>
+<div id="bab10"></div>
+
+# 10. JavaScript Object <a href="#daftarisi">🡹</a>
+
+```Javascript
+// ============
+// A. BLABLABLA
+// ============
 ```
