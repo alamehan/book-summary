@@ -1381,9 +1381,9 @@ console.log(totalB(1, 2, 3));                         // output: 6
 # 10. JavaScript Object <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// =========================================
-// A. Pendefinisian Object sebagai Tipe Data
-// =========================================
+// ===========================
+// A. Object sebagai Tipe Data
+// ===========================
 
 /*
 JavaScript menggunakan konsep prototypical inheritance untuk menerapkan konsep pemrograman berbasis object. Singkatnya,
@@ -1394,6 +1394,8 @@ Property merupakan variable yang berada di dalam object, sedangkan method merupa
 Baik property maupun method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana pengi-
 sian variable biasa. Dan diantara property/method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
 */
+
+// A1. Pendefinisian Object
 
 var objA = {};                        // variable objA berisi object kosong
 console.log(typeof objA);             // output: object
@@ -1410,5 +1412,27 @@ var objB = {                          // variable objB berisi object dengan prop
   method2: function(){
     "isi method 2";
   }
-}
+};
+
+// A2. Contoh Aplikasinya
+
+var mobil = {
+  merk: "Avanza",
+  tipe: "MPV",
+  harga: 200000000,
+  warna: biru,
+
+  hidupkan: function(){
+    return "Mesin Dihidupkan!";
+  },
+  pergi: function(tempat){
+    return `Pergi ke ${tempat}`;
+  }
+};
+
+console.log(mobil.merk);              // output: Budi     ⇨ mengakses property menggunakan dot notation (Recommended)
+console.log(mobil["merk"]);           // output: Budi     ⇨ mengakses property menggunakan bracket notation (Not Recommended)
+
+console.log(mobil.hidupkan());        // output: Mesin Dihidupkan!  ⇨ mengakses method tanpa argument
+console.log(mobil.pergi("Bali"));     // output: Pergi ke Bali      ⇨ mengakses method dengan argument
 ```
