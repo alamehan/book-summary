@@ -274,8 +274,8 @@ Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
 
 var strH = "Indonesia";
-var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
-var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
+var strI = "Bahasa " + strH;          // sebelum ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
+var strJ = `Bahasa ${strH}`;          // setelah ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 ```
 
 ```Javascript
@@ -1323,7 +1323,7 @@ function rerata(a, b){
 function tambah(c, d){
   return c+d;
 }
-var hasil = tambah(6, rerata(4, 8));  // Hasil return function rerata(4, 8) digunakan sebagai argument
+var hasil = tambah(6, rerata(4, 8));  // hasil return function rerata(4, 8) digunakan sebagai argument
 console.log(hasil);                   // output: 12
 
 // H4. Function sebagai Argument (1)
@@ -1331,21 +1331,21 @@ console.log(hasil);                   // output: 12
 function rerata(a, b){
   return (a+b)/2;
 }
-function tambah(c, d){                // Step 2 🡲 Parameter d akan menangkap function rerata dari argument 
-  return c+d(4, 8);                   // Step 3 🡲 Dengan demikian d(4, 8) akan menjadi rerata(4, 8)
+function tambah(c, d){                // step 2 🡲 parameter d akan menangkap function rerata dari argument 
+  return c+d(4, 8);                   // step 3 🡲 dengan demikian d(4, 8) akan menjadi rerata(4, 8)
 }
-var hasil = tambah(6, rerata);        // Step 1 🡲 Mengirim function bernama rerata sebagai sebuah argument
+var hasil = tambah(6, rerata);        // step 1 🡲 mengirim function bernama rerata sebagai sebuah argument
 console.log(hasil);                   // output: 12
 
 // H5. Function sebagai Argument (2)
 
 function foo(apa){
-  alert(apa);                         // Step 4 🡲 foo("Belajar JS") akan dieksekusi sebagai alert("Belajar JS")
+  alert(apa);                         // step 4 🡲 foo("Belajar JS") akan dieksekusi sebagai alert("Belajar JS")
 }
-function salam(bar){                  // Step 2 🡲 Parameter bar akan menangkap function foo dari argument
-  bar("Belajar JS");                  // Step 3 🡲 Dengan demikian bar("Belajar JS") menjadi foo("Belajar JS")
+function salam(bar){                  // step 2 🡲 parameter bar akan menangkap function foo dari argument
+  bar("Belajar JS");                  // step 3 🡲 dengan demikian bar("Belajar JS") menjadi foo("Belajar JS")
 }
-salam(foo);                           // Step 1 🡲 Mengirim function bernama foo sebagai sebuah argument
+salam(foo);                           // step 1 🡲 mengirim function bernama foo sebagai sebuah argument
 ```
 
 ```Javascript
@@ -1360,16 +1360,16 @@ sederhana secara penulisan syntax, namun intinya bukan itu, melainkan nanti akan
 
 // Contoh tanpa Argument
 
-var pagiA = function(){ return "Selamat Pagi!"; };    // Penulisan Function Expressions biasa
-var pagiB = () => { return "Selamat Pagi!"; };        // Penulisan Function Expressions dengan Arrow Function
+var pagiA = function(){ return "Selamat Pagi!"; };    // penulisan Function Expressions biasa
+var pagiB = () => { return "Selamat Pagi!"; };        // penulisan Function Expressions dengan Arrow Function
 
 console.log(pagiA());                                 // output: Selamat Pagi!
 console.log(pagiB());                                 // output: Selamat Pagi!
 
 // Contoh dengan Argument
 
-var totalA = function(a, b, c){ return a+b+c; };      // Penulisan Function Expressions biasa
-var totalB = (a, b, c) => { return a+b+c; };          // Penulisan Function Expressions dengan Arrow Function
+var totalA = function(a, b, c){ return a+b+c; };      // penulisan Function Expressions biasa
+var totalB = (a, b, c) => { return a+b+c; };          // penulisan Function Expressions dengan Arrow Function
 
 console.log(totalA(1, 2, 3));                         // output: 6
 console.log(totalB(1, 2, 3));                         // output: 6
@@ -1381,7 +1381,34 @@ console.log(totalB(1, 2, 3));                         // output: 6
 # 10. JavaScript Object <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// ============
-// A. BLABLABLA
-// ============
+// =========================================
+// A. Pendefinisian Object sebagai Tipe Data
+// =========================================
+
+/*
+JavaScript menggunakan konsep prototypical inheritance untuk menerapkan konsep pemrograman berbasis object. Singkatnya,
+untuk membuat object di JavaScript, caranya dengan langsung menulis object tersebut (tidak perlu membuat class, seperti
+yang dilakukan di bahasa pemrograman lain). Di dalam object, terdapat istilah property & method.
+
+Property merupakan variable yang berada di dalam object, sedangkan method merupakan function yang berada di dalam object.
+Baik property maupun method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana pengi-
+sian variable biasa. Dan diantara property/method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
+*/
+
+var objA = {};                        // variable objA berisi object kosong
+console.log(typeof objA);             // output: object
+
+var objB = {                          // variable objB berisi object dengan property & method
+  property1: "isi_property1",
+  property2: "isi_property1",
+  property3: "isi_property1",
+
+  method1: function(){
+    "isi method 1";
+  },
+
+  method2: function(){
+    "isi method 2";
+  }
+}
 ```
