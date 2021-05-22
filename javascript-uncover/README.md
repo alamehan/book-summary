@@ -1360,16 +1360,16 @@ sederhana secara penulisan syntax, namun intinya bukan itu, melainkan nanti akan
 var pagiA = function(){ return "Selamat Pagi!"; };    // Penulisan Function Expressions biasa
 var pagiB = () => { return "Selamat Pagi!"; };        // Penulisan Function Expressions dengan Arrow Function
 
-console.log(pagiA());                 // output: Selamat Pagi!
-console.log(pagiB());                 // output: Selamat Pagi!
+console.log(pagiA());                                 // output: Selamat Pagi!
+console.log(pagiB());                                 // output: Selamat Pagi!
 
 // Contoh dengan Argument
 
 var totalA = function(a, b, c){ return a+b+c; };      // Penulisan Function Expressions biasa
 var totalB = (a, b, c) => { return a+b+c; };          // Penulisan Function Expressions dengan Arrow Function
 
-console.log(totalA(1, 2, 3));         // output: 6
-console.log(totalB(1, 2, 3));         // output: 6
+console.log(totalA(1, 2, 3));                         // output: 6
+console.log(totalB(1, 2, 3));                         // output: 6
 ```
 
 <br>
