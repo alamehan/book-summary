@@ -833,6 +833,8 @@ for (var i of arrSiswa){
 // =====================
 
 /*
+Note: Agar lebih paham, coba baca dulu BAB 10 tentang tipe data Object.
+
 Perulangan FOR IN merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan seluruh
 isi object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi array
 (karena array pun termasuk kedalam tipe data Object), namun tidak disarankan.
