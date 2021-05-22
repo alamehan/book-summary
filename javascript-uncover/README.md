@@ -305,6 +305,7 @@ console.log(und2[3]);                 // output: undefined (mengakses array dilu
 
 var und3 = {nama: "iyan", umur: 24};
 console.log(und3["alamat"]);          // output: undefined (mengakses object diluar key yang dibuat, menjadi undefined)
+                                      // 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
 ```
 
 ```Javascript
@@ -339,7 +340,7 @@ console.log(arr2D[2][1]);             // output: 5
 // F. Tipe Data Object
 // ===================
 
-// Dibahas di BAB 10!
+// 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
 ```
 
 ```Javascript
@@ -491,7 +492,7 @@ Yang dikonversi menjadi false:
 
 Yang dikonversi menjadi true:
 • true
-• {}        (object kosong)
+• {}        (object kosong)           // 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
 • []        (array kosong)
 • 42        (sembarang angka, termasuk pecahan dan negatif, selain 0)
 • "foo"     (sembarang string, selama bukan string kosong)
@@ -833,11 +834,11 @@ for (var i of arrSiswa){
 // =====================
 
 /*
-Note: Agar lebih paham, coba baca dulu BAB 10 tentang tipe data Object.
-
 Perulangan FOR IN merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan seluruh
 isi object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi array
 (karena array pun termasuk kedalam tipe data Object), namun tidak disarankan.
+
+𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
 */
 
 var objMobil = {
