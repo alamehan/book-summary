@@ -1271,9 +1271,9 @@ console.log(nama);                    // console.log(nama);               🡲 o
 // ===================================
 
 /*
-❶ Selalu definisikan variable (var) diawal kode program/function, dan sebaiknya langsung diisi nilai, agar tidak undefined.
-❷ Pemanggilan function bisa dimana saja, tidak peduli pendefinisian functionnya berada di atas maupun bawah kode program.
-❸ Agar lebih "aman", ganti penggunaan var dengan let. Let akan menampilkan error saat ia dipanggil namun belum didefinisikan
+➊ Selalu definisikan variable (var) diawal kode program/function, dan sebaiknya langsung diisi nilai, agar tidak undefined.
+➋ Pemanggilan function bisa dimana saja, tidak peduli pendefinisian functionnya berada di atas maupun bawah kode program.
+➌ Agar lebih "aman", ganti penggunaan var dengan let. Let akan menampilkan error saat ia dipanggil namun belum didefinisikan
   di baris atas kode program (ini yang seharusnya terjadi), sedangkan var malah diisi undefined. Perhatikan contoh dibawah:
 */
 
@@ -1293,8 +1293,8 @@ let b = "Hello World!";               // ini artinya kita memang harus mendefini
 
 /*
 Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini berarti:
-❶ Function dapat disimpan ke dalam variable (a.k.a Function Expressions)
-❷ Function dapat digunakan sebagai argument layaknya tipe data biasa
+➊ Function dapat disimpan ke dalam variable (a.k.a Function Expressions)
+➋ Function dapat digunakan sebagai argument layaknya tipe data biasa
 */
 
 // H1. Function Expressions
