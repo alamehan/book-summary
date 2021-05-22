@@ -1416,7 +1416,7 @@ var objB = {                          // variable objB berisi object dengan prop
 
 // A2. Contoh Aplikasinya
 
-var mobil = {
+var mobil = {                         // variable mobil berisi object seputar mobil (contoh saja)
   merk: "Avanza",
   tipe: "MPV",
   harga: 200000000,
