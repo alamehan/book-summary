@@ -339,7 +339,7 @@ console.log(arr2D[2][1]);             // output: 5
 // F. Tipe Data Object
 // ===================
 
-// Coming Soon!
+// Dibahas di BAB 10!
 ```
 
 ```Javascript
