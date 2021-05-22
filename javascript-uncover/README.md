@@ -1287,9 +1287,9 @@ let b = "Hello World!";               // ini artinya kita memang harus mendefini
 ```
 
 ```Javascript
-// ================================
-// H. Function: First-Class Citizen
-// ================================
+// =======================================
+// H. Function sebagai First-Class Citizen
+// =======================================
 
 /*
 Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini berarti:
