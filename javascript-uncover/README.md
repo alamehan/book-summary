@@ -1119,9 +1119,9 @@ console.log(`Harganya Rp.${l}`);      // output: Harganya Rp.1000 (nilai l globa
 ```
 
 ```Javascript
-// ======================
-// G. JavaScript Hoisting
-// ======================
+// ========================
+// G-1. JavaScript Hoisting
+// ========================
 
 /*
 Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution.
@@ -1263,22 +1263,25 @@ console.log(nama);                    // console.log(nama);               🡲 o
                                       // funA();                          🡲 output: Budi
                                       // funB("Tono");                    🡲 output: Jaka (bukan Tono ya!)
                                       // console.log(nama);               🡲 output: Jaka
+```
+
+```Javascript
+// ===================================
+// G-2. Kesimpulan JavaScript Hoisting
+// ===================================
 
 /*
-Kesimpulannya: 
-- Selalu definisikan variable (var) diawal kode program/function, dan sebaiknya langsung diisi nilai, agar tidak undefined.
-- Pemanggilan function bisa dimana saja, tidak peduli pendefinisian functionnya berada di atas maupun bawah kode program.
-- Agar lebih "aman", ganti penggunaan var dengan let. Let akan menampilkan error saat ia dipanggil namun belum didefinisikan
-  di baris atas kode program (ini yang seharusnya terjadi), sedangkan var malah diisi undefined. Perhatikan contoh dibawah:
+1. Selalu definisikan variable (var) diawal kode program/function, dan sebaiknya langsung diisi nilai, agar tidak undefined.
+2. Pemanggilan function bisa dimana saja, tidak peduli pendefinisian functionnya berada di atas maupun bawah kode program.
+3. Agar lebih "aman", ganti penggunaan var dengan let. Let akan menampilkan error saat ia dipanggil namun belum didefinisikan
+   di baris atas kode program (ini yang seharusnya terjadi), sedangkan var malah diisi undefined. Perhatikan contoh dibawah:
 */
 
-// Contoh 6: VAR vs LET
-
-// Contoh 6-1                         ᴠᴀʀ ɪᴛᴜ ᴛɪᴅᴀᴋ ᴀᴍᴀɴ:
+// Contoh VAR                         ᴠᴀʀ ɪᴛᴜ ᴛɪᴅᴀᴋ ᴀᴍᴀɴ:
 console.log(a);                       // output: undefined
 var a = "Hello World!";               // seharusnya sih error, tapi karena efek hoisting, jadilah undefined (tidak professional)
 
-// Contoh 6-2                         ʟᴇᴛ ɪᴛᴜ ᴀᴍᴀɴ & ᴘʀᴏꜰᴇꜱꜱɪᴏɴᴀʟ:
+// Contoh LET                         ʟᴇᴛ ɪᴛᴜ ᴀᴍᴀɴ & ᴘʀᴏꜰᴇꜱꜱɪᴏɴᴀʟ:
 console.log(b);                       // output: ReferenceError Cannot access 'b' before initialization
 let b = "Hello World!";               // ini artinya kita memang harus mendefinisikan var/let dulu, sebelum dipakai! (professional)
 ```
