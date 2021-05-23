@@ -249,10 +249,10 @@ var numL = 9/0; console.log(numL);    // output: Infinity (Tak Hingga)
 
 var strA = "Hello World!";            // string dengan kutip dua
 var strB = 'Hello World!';            // string dengan kutip satu
-var strC = "Hari Jum'at";             // kutip satu didalam kutip dua
-var strD = 'Dia berkata: "Hey"';      // kutip dua didalam kutip satu
-var strE = "Dia berkata: \"Hey\"";    // kutip dua didalam kutip dua, pakai escape character (\)
-var strF = 'Hari Jum\'at';            // kutip satu didalam kutip satu, pakai escape character (\)
+var strC = "Hari Jum'at";             // kutip satu di dalam kutip dua
+var strD = 'Dia berkata: "Hey"';      // kutip dua di dalam kutip satu
+var strE = "Dia berkata: \"Hey\"";    // kutip dua di dalam kutip dua, pakai escape character (\)
+var strF = 'Hari Jum\'at';            // kutip satu di dalam kutip satu, pakai escape character (\)
 var strG = "\u2764 You!"              // contoh pemakaian Unicode ⇨ hasilnya: ❤ You!
 
 /*
@@ -1065,7 +1065,7 @@ var e = doo(c, d);                    // argument yang dikirim yaitu baz(5, 10)
 
 console.log(c);                       // output: 5
 console.log(d);                       // output: 10
-console.log(e);                       // output: 60 (bukan 15, karena nilai var c & d tertimpa saat didalam function)
+console.log(e);                       // output: 60 (bukan 15, karena nilai var c & d tertimpa saat di dalam function)
 
 // E4. Contoh dalam Argument (2)
 
@@ -1079,9 +1079,9 @@ var c = 5;                            // c disini merupakan global variable
 var d = 10;                           // d disini merupakan global variable
 var e = foo();                        // tidak ada argument yang dikirim
 
-console.log(c);                       // output: 20 (bukan 5, karena nilai c tertimpa saat didalam function)
-console.log(d);                       // output: 40 (bukan 10, karena nilai d tertimpa saat didalam function)
-console.log(e);                       // output: 60 (bukan 15, karena nilai var c & d tertimpa saat didalam function)
+console.log(c);                       // output: 20 (bukan 5, karena nilai c tertimpa saat di dalam function)
+console.log(d);                       // output: 40 (bukan 10, karena nilai d tertimpa saat di dalam function)
+console.log(e);                       // output: 60 (bukan 15, karena nilai var c & d tertimpa saat di dalam function)
 ```
 
 ```Javascript
@@ -1112,7 +1112,7 @@ var k = 1000;
 for (var k=1; k<3; k++){
   console.log(k);
 }
-console.log(`Harganya Rp.${k}`);      // output: Harganya Rp.3 (nilai k global tertimpa, saat didalam perulangan)
+console.log(`Harganya Rp.${k}`);      // output: Harganya Rp.3 (nilai k global tertimpa, saat di dalam perulangan)
 
 let l = 1000;
 for (let l=1; l<3; l++){
@@ -1463,13 +1463,17 @@ mobil.hidupkan = function(){          // menimpa nilai method hidupkan dari obje
 console.log(mobil.merk);              // output: Honda Civic        (nilai property merk sesudah diubah)
 console.log(mobil.tipe);              // output: Sedan              (nilai property tipe sesudah diubah)
 console.log(mobil.hidupkan());        // output: Mesin Dinyalakan!  (hasil return method hidupkan sesudah diubah)
+```
 
-// A6. Nested Object
+```Javascript
+// ================
+// B. Nested Object
+// ================
 
 var mahasiswa = {
   nama: "Budi",
   jurusan: "Informatika",
-  ipk: {
+  ipk: {                              // nested object (object ipk di dalam object mahasiswa)
     semester1: 3.1,
     semester2: 3.6,
   },
@@ -1479,4 +1483,10 @@ var mahasiswa = {
 console.log(mahasiswa.ipk)            // output: {semester1: 3.1, semester2: 3.6}
 console.log(mahasiswa.ipk.semester1)  // output: 3.1                ⇨ mengakses nested object
 console.log(mahasiswa.ipk.semester2)  // output: 3.6                ⇨ mengakses nested object
+```
+
+```Javascript
+// ===================
+// C. Object Reference
+// ===================
 ```
