@@ -181,7 +181,7 @@ Contoh Penggunaan <noscript>
 1. Secara sederhana, variabel adalah “penampung” dari sebuah data. Disebut variabel karena data yang kita simpan bisa berubah-ubah sepanjang kode program (isinya tidak tetap). ```var angka = 192;``` **Operasi Asignment** atau memberikan nilai ke sebuah variabel dibaca dari kanan ke kiri (right-to-left, baca selengkapnya <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">disini</a>). Artinya, 192 “dimasukkan” sebagai nilai ke variabel ```angka```.
 2. JavaScript termasuk ke dalam bahasa pemrograman **Typeless Programming Language**, yakni kelompok bahasa pemrograman yang variabelnya bisa diisi dengan tipe data apa saja tanpa harus dideklarasikan terlebih dahulu.
 3. Apabila anda sering mengikuti tutorial programming dari situs berbahasa inggris, nama variabel **foo**, **bar**, dan **baz** sering digunakan. Ketiganya dikenal sebagai **dummy variabel**, yakni variabel yang fungsinya hanya sebagai contoh. Mirip seperti teks “Lorem Ipsum dolor sit amet” dalam bidang design.
-4. Kita bisa memberi nama apa saja untuk variabel, apakah itu ```angka```, ```foo```, ```bar```, ```andi```, atau ```username```. Selain variabel, kita juga bebas untuk membuat nama konstanta, function, maupun object. Semua inilah yang termasuk kedalam kelompok **Identifier**. Identifier di dalam JavaScript memiliki aturan sebagai berikut:
+4. Kita bisa memberi nama apa saja untuk variabel, apakah itu ```angka```, ```foo```, ```bar```, ```andi```, atau ```username```. Selain variabel, kita juga bebas untuk membuat nama konstanta, function, maupun object. Semua inilah yang termasuk ke dalam kelompok **Identifier**. Identifier di dalam JavaScript memiliki aturan sebagai berikut:
    - Bisa terdiri dari huruf, angka, garis bawah “ _ ” (underscore), dan tanda dollar “ $ “ (dollar sign). Selain itu, dianggap sebagai karakter ilegal (tidak boleh digunakan). 
    - Karakter pertama dari identifier tidak boleh berupa angka. Angka hanya bisa digunakan sebagai karakter kedua dan seterusnya.
    - Bersifat case sensitive, dimana huruf besar dan kecil dianggap berbeda.
@@ -836,7 +836,7 @@ for (var i of arrSiswa){
 /*
 Perulangan FOR IN merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan seluruh
 isi object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi array
-(karena array pun termasuk kedalam tipe data Object), namun tidak disarankan.
+(karena array pun termasuk ke dalam tipe data Object), namun tidak disarankan.
 
 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
 */
@@ -996,7 +996,7 @@ numC(20, 25);                         // output: 20, 25, undefined, undefined
 // D5. Argument + Spread Operator
 
 function numD(a, b, ...sisa){         // cara baca: jika function numD dipanggil dengan lebih dari 3 argument, maka argument
-  console.log(a);                     // pertama dan kedua masuk ke variabel a dan b, sisanya disimpan kedalam array sisa
+  console.log(a);                     // pertama dan kedua masuk ke variabel a dan b, sisanya disimpan ke dalam array sisa
   console.log(b);
   console.log(sisa);
 }
@@ -1391,8 +1391,9 @@ untuk membuat object di JavaScript, caranya dengan langsung menulis object terse
 yang dilakukan di bahasa pemrograman lain). Di dalam object, terdapat istilah property & method.
 
 Property merupakan variable yang berada di dalam object, sedangkan method merupakan function yang berada di dalam object.
-Baik property maupun method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana pengi-
-sian variable biasa. Dan diantara property/method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
+Untuk method, ditulis menggunakan function expressions (anonymous function). Baik property maupun method diberi nilai
+menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian variable biasa. Serta,
+diantara property/method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
 */
 
 // A1. Pendefinisian Object
@@ -1416,11 +1417,10 @@ var objB = {                          // variable objB berisi object dengan prop
 
 // A2. Contoh Aplikasinya
 
-var mobil = {                         // variable mobil berisi object seputar mobil (contoh saja)
-  merk: "Avanza",
+var mobil = {                         // variable mobil berisi object seputar mobil (sebagai contoh saja)
+  merk: "Toyota Avanza",
   tipe: "MPV",
   harga: 200000000,
-  warna: biru,
 
   hidupkan: function(){
     return "Mesin Dihidupkan!";
@@ -1430,9 +1430,53 @@ var mobil = {                         // variable mobil berisi object seputar mo
   }
 };
 
-console.log(mobil.merk);              // output: Budi     ⇨ mengakses property menggunakan dot notation (Recommended)
-console.log(mobil["merk"]);           // output: Budi     ⇨ mengakses property menggunakan bracket notation (Not Recommended)
+// A3. Mengakses Property & Method
 
+console.log(mobil.merk);              // output: Toyota Avanza      ⇨ mengakses property menggunakan dot notation (Recommended)
+console.log(mobil["merk"]);           // output: Toyota Avanza      ⇨ mengakses property menggunakan bracket (Not Recommended)
 console.log(mobil.hidupkan());        // output: Mesin Dihidupkan!  ⇨ mengakses method tanpa argument
 console.log(mobil.pergi("Bali"));     // output: Pergi ke Bali      ⇨ mengakses method dengan argument
+
+// A4. Menambah Property & Method
+
+mobil.warna = "Biru";                 // menambah property warna ke object mobil (ditambahkan di luar pendefinisian object mobil)
+mobil.modif = true;                   // menambah property modif ke object mobil (ditambahkan di luar pendefinisian object mobil)
+mobil.matikan = function(){           // menambah method matikan ke object mobil (ditambahkan di luar pendefinisian object mobil)
+  return "Mesin Dimatikan!";
+};
+console.log(mobil.warna);             // output: Biru
+console.log(mobil.modif);             // output: true
+console.log(mobil.matikan());         // output: Mesin Dimatikan!
+
+// A5. Mengubah nilai Property & Method
+
+console.log(mobil.merk);              // output: Toyota Avanza      (nilai property merk sebelum diubah)
+console.log(mobil.tipe);              // output: MPV                (nilai property tipe sebelum diubah)
+console.log(mobil.hidupkan());        // output: Mesin Dihidupkan!  (hasil return method hidupkan sebelum diubah)
+
+mobil.merk = "Honda Civic";           // menimpa nilai property merk dari object mobil
+mobil.tipe = "Sedan";                 // menimpa nilai property tipe dari object mobil
+mobil.hidupkan = function(){          // menimpa nilai method hidupkan dari object mobil
+  return "Mesin Dinyalakan!";
+};
+
+console.log(mobil.merk);              // output: Honda Civic        (nilai property merk sesudah diubah)
+console.log(mobil.tipe);              // output: Sedan              (nilai property tipe sesudah diubah)
+console.log(mobil.hidupkan());        // output: Mesin Dinyalakan!  (hasil return method hidupkan sesudah diubah)
+
+// A6. Nested Object
+
+var mahasiswa = {
+  nama: "Budi",
+  jurusan: "Informatika",
+  ipk: {
+    semester1: 3.1,
+    semester2: 3.6,
+  },
+  smt: 3
+};
+
+console.log(mahasiswa.ipk)            // output: {semester1: 3.1, semester2: 3.6}
+console.log(mahasiswa.ipk.semester1)  // output: 3.1                ⇨ mengakses nested object
+console.log(mahasiswa.ipk.semester2)  // output: 3.6                ⇨ mengakses nested object
 ```
