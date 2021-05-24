@@ -15,6 +15,7 @@
 	<a href="#bab08">8. Struktur Logika dan Perulangan</a>&nbsp;<br>
 	<a href="#bab09">9. Function</a>&nbsp;<br>
 	<a href="#bab10">10. JavaScript Object</a>&nbsp;<br>
+	<a href="#bab11">11. Object Oriented Programming (OOP)</a>&nbsp;<br>
 </p>
 
 <div id="bab01"></div>
@@ -1543,4 +1544,15 @@ var mhs2Baru = {
 };
 console.log(mhs2 == mhs2Baru);        // output: false  (why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
 console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
+```
+
+<br>
+<div id="bab11"></div>
+
+# 11. Object Oriented Programming (OOP) <a href="#daftarisi">🡹</a>
+
+```Javascript
+// =====================
+// A. Object sebagai OOP
+// =====================
 ```
