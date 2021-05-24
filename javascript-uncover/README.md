@@ -1489,4 +1489,58 @@ console.log(mahasiswa.ipk.semester2)  // output: 3.6                ⇨ mengakse
 // ===================
 // C. Object Reference
 // ===================
+
+// C1. Tipe Data Primitif: Assignment by Value
+
+var motor = "NMax";
+var motorBaru = motor;                // assignment by Value        ⇨ value (nilai) dari var motor di-copy ke var motorBaru
+console.log(motor);                   // output: NMax
+console.log(motorBaru);               // output: NMax
+
+motorBaru = "Ninja";                  // update nilai motorBaru
+console.log(motor);                   // output: NMax               ⇨ nilai dari motor tidak terpengaruh
+console.log(motorBaru);               // output: Ninja              ⇨ nilai dari motorBaru sudah berubah
+
+motor = "PCX";                        // update nilai motor
+console.log(motor);                   // output: PCX
+console.log(motorBaru);               // output: Ninja
+
+// C2. Tipe Data Object: Assignment by Reference
+
+var mobil = {
+  merk: "Toyota Avanza",
+  tipe: "MPV"
+};
+var mobilBaru = mobil;                // assignment by reference    ⇨ reference (alamat memory) mobil di-copy ke mobilBaru
+console.log(mobil.merk);              // output: Toyota Avanza
+console.log(mobilBaru.merk);          // output: Toyota Avanza
+
+mobilBaru.merk = "Honda Civic";       // update nilai mobilBaru.merk
+console.log(mobil.merk);              // output: Honda Civic        ⇨ nilai dari mobil.merk ikut terpengaruh
+console.log(mobilBaru.merk);          // output: Honda Civic        ⇨ nilai dari mobilBaru.merk sudah berubah
+
+mobil.tipe = "Sedan";                 // update nilai mobil.tipe
+console.log(mobil.tipe);              // output: Sedan
+console.log(mobilBaru.tipe);          // output: Sedan
+
+// C3. Efek Assignment by Reference di Operasi Perbandingan
+
+var mhs1 = {
+  nama: "Budi",
+  jurusan: "Informatika"
+};
+var mhs1Baru = mhs1;                  // assignment by reference
+console.log(mhs1 == mhs1Baru);        // output: true
+console.log(mhs1 === mhs1Baru);       // output: true
+
+var mhs2 = {
+  nama: "Joko",
+  jurusan: "Arsitektur"
+};
+var mhs2Baru = {
+  nama: "Joko",
+  jurusan: "Arsitektur"
+};
+console.log(mhs2 == mhs2Baru);        // output: false  (why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
+console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
 ```
