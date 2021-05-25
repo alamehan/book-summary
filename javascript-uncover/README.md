@@ -1638,7 +1638,7 @@ Class, maka sapi, kambing, kuda, dst merupakan object dari Class Binatang. Simak
 
 // B2-1. Sebelum ES6: OOP dengan Constructor Functions (❌)
 
-function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil" (object induk)
+function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil" (object induk mobil)
   this.merk = merkArg;                            // this adalah object khusus 𝘀𝗲𝗯𝗮𝗴𝗮𝗶 𝗽𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗼𝗯𝗷𝗲𝗰𝘁
   this.tipe = tipeArg;                            // 𝘆𝗮𝗻𝗴 𝗻𝗮𝗻𝘁𝗶𝗻𝘆𝗮 𝗱𝗶 𝗯𝘂𝗮𝘁 𝗱𝗮𝗿𝗶 𝗰𝗹𝗮𝘀𝘀 𝗠𝗼𝗯𝗶𝗹 (lihat
   this.harga = hargaArg;                          // point B5 untuk penjalasan lebih detailnya)
@@ -1652,7 +1652,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
 
 // B2-2. Setelah ES6: OOP dengan Class (✔️)
 
-class Mobil{                                      // Class sebagai "blue print mobil" (object induk)
+class Mobil{                                      // Class sebagai "blue print mobil" (object induk mobil)
   constructor(merkArg, tipeArg, hargaArg){        // setiap property wajib berada di dalam method constructor(),
     this.merk = merkArg;                          // yaitu sebuah method yang otomatis dijalankan pada saat proses
     this.tipe = tipeArg;                          // instansiasi/pembuatan object (lihat penjelasan di point B3)
