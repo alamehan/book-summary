@@ -1560,13 +1560,13 @@ console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mh
 
 var teks = "Hello World!";
 var hasil = potongTeks(teks, 6, 10);  // output: Wolrd
-                                      // osumsi sudah terdapat sebuah function potongTeks yang gunanya memotong sebuah teks
+                                      // asumsi sudah terdapat sebuah function potongTeks yang gunanya memotong sebuah teks
 
 // A2. Paradigma: Object Oriented Programming (OOP)
 
 var teks = "Hello World!";
 var hasil = teks.potongTeks(6, 10);   // output: World
-                                      // osumsi terdapat sebuah method (function di dalam objet) potongTeks dari object String
+                                      // asumsi terdapat sebuah method (function di dalam objet) potongTeks dari object String
 
 // A3. Literals vs Object Constructor
 
