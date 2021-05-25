@@ -1615,7 +1615,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
 class Mobil{                                      // Class sebagai "blue print" untuk object nantinya
   constructor(merkArg, tipeArg, hargaArg){        // setiap property wajib berada di dalam method constructor(),
     this.merk = merkArg;                          // yaitu sebuah method yang otomatis dijalankan pada saat proses
-    this.tipe = tipeArg;                          // pembuatan object (instansiasi, lihat penjelasan di point B3)
+    this.tipe = tipeArg;                          // instansiasi/pembuatan object (lihat penjelasan di point B3)
     this.harga = hargaArg;
   }
   hidupkan(){
