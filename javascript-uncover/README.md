@@ -1685,8 +1685,8 @@ console.log(mobilJoko.pergi("Solo"));             // output: Honda Civic pergi k
 /*
 Bisa dilihat bukan? bahwa dengan menerapkan konsep OOP melalui Constructor Functions/Class (kedepannya kita hanya akan menggunakan
 Class saja), kita tidak usah repot-repot menulis object mobil secara manual satu per satu secara berulang (seperti yang dilakukan
-di point B1), cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat object yang diinginkan, mudah dan cepat,
-bahkan jika kita butuh 100 object sekalipun. Hal seperti ini akan sangat terasa manfaatnya jika aplikasi kita sudah besar.
+di point B1), cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat object yang diinginkan melalui proses
+instansiasi, mudah dan cepat, bahkan jika kita butuh 100 object sekalipun. Ini akan terasa manfaatnya saat aplikasi sudah besar.
 */
 
 // B4. Menambah property & method sebuah Class dengan Prototype
