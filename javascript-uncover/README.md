@@ -1556,13 +1556,13 @@ console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mh
 // A. Object sebagai OOP / Object sebagai bagian dari Class
 // ========================================================
 
-// A1. Paradigma: Prosedural
+// A1. Paradigma: Prosedural (berbasiskan Function)
 
 var teks = "Hello World!";
 var hasil = potongTeks(teks, 6, 10);  // output: Wolrd
                                       // osumsi sudah terdapat sebuah function potongTeks yang gunanya memotong sebuah teks
 
-// A2. Paradigma: OOP
+// A2. Paradigma: Object Oriented Programming (OOP)
 
 var teks = "Hello World!";
 var hasil = teks.potongTeks(6, 10);   // output: World
