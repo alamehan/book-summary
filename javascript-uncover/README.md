@@ -1698,3 +1698,11 @@ this adalah object khusus 𝘀𝗲𝗯𝗮𝗴𝗮𝗶 𝗽𝗲𝗻𝗴𝗴𝗮�
 𝗱𝗮𝗿𝗶 𝗰𝗹𝗮𝘀𝘀 𝗠𝗼𝗯𝗶𝗹 ...
 */
 ```
+
+```Javascript
+// ====================================================
+// C. Tambahan Materi (Di luar buku JavaScript Uncover)
+// ====================================================
+
+// Object.create(), Closure, Inheritance, Encapsulation, Callback, Promise, Fetch, Async Await, dll
+```
