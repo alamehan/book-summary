@@ -1552,9 +1552,9 @@ console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mh
 # 11. Object Oriented Programming (OOP) <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// ========================
-// A. Paradigma Pemrograman
-// ========================
+// ==========================================
+// A. Paradigma Pemrograman Prosedural vs OOP
+// ==========================================
 
 // A1. Paradigma: Prosedural (berbasiskan function)
 
