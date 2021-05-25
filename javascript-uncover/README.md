@@ -1556,19 +1556,23 @@ console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mh
 // A. Object sebagai OOP / Object sebagai bagian dari Class
 // ========================================================
 
-// A1. Paradigma: Prosedural (berbasiskan Function)
+// A1. Paradigma: Prosedural (berbasiskan function)
 
 var teks = "Hello World!";
-var hasil = potongTeks(teks, 6, 10);  // output: Wolrd
-                                      // asumsi sudah terdapat sebuah function potongTeks yang gunanya memotong sebuah teks
+var hasil = potongTeks(teks, 6, 10);  // output: World                            ⇨ berbasiskan function
+
+                                      // asumsi terdapat sebuah function potongTeks
+                                      // yang gunanya ya tentu memotong sebuah teks
 
 // A2. Paradigma: Object Oriented Programming (OOP)
 
-var teks = "Hello World!";
-var hasil = teks.potongTeks(6, 10);   // output: World
-                                      // asumsi terdapat sebuah method (function di dalam objet) potongTeks dari object String
+var teks = "Hello World!";            // var teks = new String("Hello World!");   ⇨ jika ditulis dengan cara String object
+var hasil = teks.potongTeks(6, 10);   // output: World                            ⇨ berbasiskan object
 
-// A3. Literals vs Object Constructor
+                                      // asumsi terdapat sebuah method (function di 
+                                      // dalam objet) potongTeks dari String object
+
+// A3. Penulisan Literals vs Object Constructor
 
 var num1 = 52;                        // cara penulisan: Number literals  (✔️ Recommended)
 var num2 = new Number(52);            // cara penulisan: Number object    (❌ Not Recommended)
