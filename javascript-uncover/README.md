@@ -1627,9 +1627,9 @@ var mobilJoko = {
 
 /*
 Object mobilBudi & mobilJoko sebenarnya memiliki property dan method yang sama. Bagaimana jika nanti ada object mobilPutri,
-mobilAndi, dst, misalya anda butuh hingga 100 object mobil (dengan property dan method yang sama), maka akan sangat tidak
+mobilAndi, dst, misalya kita butuh hingga 100 object mobil (dengan property dan method yang sama), maka akan sangat tidak
 efisien jika object tersebut ditulis secara manual satu per satu secara berulang. Oleh karena itulah, konsep OOP hadir
-sebagai solusi, dimana anda dapat menggunakan Class sebagai wadah yang menyediakan semua hal yang dibutuhkan oleh object.
+sebagai solusi, dimana kita dapat menggunakan Class sebagai wadah yang menyediakan semua hal yang dibutuhkan oleh object.
 
 Class berperan sebagai "blue print"/cetakan/sesuatu yang masih abstrak yang menjadi kelompok umum dari object. Misalnya,
 jika Mobil adalah Class, maka mobilBudi, mobilJoko, mobilPutri, dst merupakan object dari Class Mobil. Jika Binatang adalah
@@ -1681,6 +1681,13 @@ console.log(mobilBudi.pergi("Bali"));             // output: Toyota Avanza pergi
 console.log(mobilJoko.merk);                      // output: Honda Civic
 console.log(mobilJoko.hidupkan());                // output: Mesin Honda Civic dihidupkan!
 console.log(mobilJoko.pergi("Solo"));             // output: Honda Civic pergi ke Solo
+
+/*
+Bisa dilihat bukan? bahwa dengan menerapkan konsep OOP melalui Constructor Functions/Class (kedepannya kita hanya akan menggunakan
+Class saja), kita tidak usah repot-repot menulis object mobil secara manual satu per satu secara berulang (seperti yang dilakukan
+di point B1), cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat object yang diinginkan, mudah dan cepat,
+bahkan jika kita butuh 100 object sekalipun. Hal seperti ini akan sangat terasa manfaatnya jika aplikasi kita sudah besar.
+*/
 
 // B4. Menambah property & method sebuah Class dengan Prototype
 
