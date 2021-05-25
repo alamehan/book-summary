@@ -1567,10 +1567,10 @@ var hasil = potongTeks(teks, 6, 10);  // output: World                          
 // A2. Paradigma: Object Oriented Programming (OOP)
 
 var teks = "Hello World!";            // var teks = new String("Hello World!");   ⇨ jika ditulis dengan cara String object
-var hasil = teks.potongTeks(6, 10);   // output: World                            ⇨ berbasiskan object
+var hasil = teks.potongTeks(6, 10);   // output: World                            ⇨ berbasiskan object (ingat: dot notation)
 
-                                      // asumsi terdapat sebuah method (function di 
-                                      // dalam objet) potongTeks dari String object
+                                      // asumsi sudah terdapat sebuah method
+                                      // potongTeks di dalam String object
 
 // A3. Penulisan Literals vs Object Constructor
 
