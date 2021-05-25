@@ -1630,6 +1630,7 @@ class Mobil{                                      // Class sebagai "blue print" 
 
 var mobilBudi = new Mobil("Toyota Avanza", "MPV", 200000000);   // proses instansiasi objek Mobil baru menggunakan keyword new
 var mobilJoko = new Mobil("Honda Civic", "Sedan", 200000000);   // (instansiasi: membuat sesuatu yang berwujud dari yang abstrak)
+
 console.log(mobilBudi instanceof Mobil);          // output: true   ⇨ operator instanceof digunakan memeriksa apakah suatu object
 console.log(mobilJoko instanceof Mobil);          // output: true   ⇨ merupakan instance dari sebuah Constructor Functions/Class
 
