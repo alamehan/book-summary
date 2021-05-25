@@ -1433,8 +1433,8 @@ var mobil = {                         // variable mobil berisi object seputar mo
 
 // A3. Mengakses Property & Method
 
-console.log(mobil.merk);              // output: Toyota Avanza      ⇨ mengakses property menggunakan dot notation (Recommended)
-console.log(mobil["merk"]);           // output: Toyota Avanza      ⇨ mengakses property menggunakan bracket (Not Recommended)
+console.log(mobil.merk);              // output: Toyota Avanza      ⇨ mengakses property menggunakan dot notation (Recommended ✔️)
+console.log(mobil["merk"]);           // output: Toyota Avanza      ⇨ mengakses property menggunakan bracket (Not Recommended ❌)
 console.log(mobil.hidupkan());        // output: Mesin Dihidupkan!  ⇨ mengakses method tanpa argument
 console.log(mobil.pergi("Bali"));     // output: Pergi ke Bali      ⇨ mengakses method dengan argument
 
@@ -1552,7 +1552,45 @@ console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mh
 # 11. Object Oriented Programming (OOP) <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// =====================
-// A. Object sebagai OOP
-// =====================
+// ========================================================
+// A. Object sebagai OOP / Object sebagai bagian dari Class
+// ========================================================
+
+// A1. Paradigma: Prosedural
+
+var teks = "Hello World!";
+var hasil = potongTeks(teks, 6, 10);  // output: Wolrd
+                                      // osumsi sudah terdapat sebuah function potongTeks yang gunanya memotong sebuah teks
+
+// A2. Paradigma: OOP
+
+var teks = "Hello World!";
+var hasil = teks.potongTeks(6, 10);   // output: World
+                                      // osumsi terdapat sebuah method (function di dalam objet) potongTeks dari object String
+
+// A3. Literals vs Object Constructor
+
+var num1 = 52;                        // cara penulisan: Number literals  (Recommended ✔️)
+var num2 = new Number(52);            // cara penulisan: Number object    (Not Recommended ❌)
+
+var str1 = "Belajar JS";              // cara penulisan: String literals  (Recommended ✔️)
+var str2 = new String("Belajar JS");  // cara penulisan: String object    (Not Recommended ❌)
+
+var bol1 = true;                      // cara penulisan: Boolean literals (Recommended ✔️)
+var bol2 = new Boolean(true);         // cara penulisan: Boolean object   (Not Recommended ❌)
+
+var arr1 = [1, 2, 3];                 // cara penulisan: Array literals   (Recommended ✔️)
+var arr2 = new Array(1, 2, 3);        // cara penulisan: Array object     (Not Recommended ❌)
+
+var obj1 = {nama: "Budi", umur: 24};  // cara penulisan: Object literals  (Recommended ✔️)
+var obj2 = new Object();              // cara penulisan: Object object    (Not Recommended ❌)
+obj2.nama = "Budi";
+obj2.umur = 24;
+
+var fun1 = function (a, b){ return a+b; };        // cara penulisan: Function expressions (Recommended ✔️)
+var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function object      (Not Recommended ❌)
+
+// Sebelum ES6: Constructor Functions (Prototype)
+
+// Setelah ES6: Class
 ```
