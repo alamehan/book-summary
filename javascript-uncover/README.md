@@ -1599,12 +1599,49 @@ var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function ob
 // B. Object sebagai OOP / Object sebagai bagian dari Class
 // ========================================================
 
-// B1. Sebelum ES6: OOP dengan Constructor Functions (❌)
+// B1. Tanpa OOP (Pendefinisian object biasa)
+
+var mobilBudi = {
+  merk: "Toyota Avanza",
+  tipe: "MPV",
+  harga: 200000000,
+    hidupkan: function(){
+    return "Mesin Dihidupkan!";
+  },
+  pergi: function(tempat){
+    return `Pergi ke ${tempat}`;
+  }
+};
+
+var mobilJoko = {
+  merk: "Honda Civic",
+  tipe: "Sedan",
+  harga: 200000000,
+    hidupkan: function(){
+    return "Mesin Dihidupkan!";
+  },
+  pergi: function(tempat){
+    return `Pergi ke ${tempat}`;
+  }
+};
+
+/*
+Object mobilBudi & mobilJoko sebenarnya memiliki property dan method yang sama. Bagaimana jika nanti ada object mobilPutri,
+mobilAndi, dst, misalya anda butuh hingga 100 object mobil (dengan property dan method yang sama), maka akan sangat tidak
+efisien jika object tersebut ditulis secara manual satu per satu secara berulang. Oleh karena itulah, konsep OOP hadir
+sebagai solusi, dimana anda dapat menggunakan Class sebagai wadah yang menyediakan semua hal yang dibutuhkan oleh object.
+
+Class berperan sebagai "blue print"/cetakan/sesuatu yang masih abstrak yang menjadi kelompok umum dari object. Misalnya,
+jika Mobil adalah Class, maka mobilBudi, mobilJoko, mobilPutri, dst merupakan object dari Class Mobil. Jika Binatang adalah
+Class, maka sapi, kambing, kuda, dst merupakan object dari Class Binatang. Simak point B2-1, B2-2 & B3 di bawah ini.
+*/
+
+// B2-1. Sebelum ES6: OOP dengan Constructor Functions (❌)
 
 function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil" (object induk)
   this.merk = merkArg;                            // this adalah object khusus 𝘀𝗲𝗯𝗮𝗴𝗮𝗶 𝗽𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗼𝗯𝗷𝗲𝗰𝘁
   this.tipe = tipeArg;                            // 𝘆𝗮𝗻𝗴 𝗻𝗮𝗻𝘁𝗶𝗻𝘆𝗮 𝗱𝗶 𝗯𝘂𝗮𝘁 𝗱𝗮𝗿𝗶 𝗰𝗹𝗮𝘀𝘀 𝗠𝗼𝗯𝗶𝗹 (lihat
-  this.harga = hargaArg;                          // point B4 untuk penjalasan lebih detailnya)
+  this.harga = hargaArg;                          // point B5 untuk penjalasan lebih detailnya)
   this.hidupkan = function() {
     return `Mesin ${this.merk} dihidupkan!`; 
   };
@@ -1613,7 +1650,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
   }
 }
 
-// B2. Setelah ES6: OOP dengan Class (✔️)
+// B2-2. Setelah ES6: OOP dengan Class (✔️)
 
 class Mobil{                                      // Class sebagai "blue print mobil" (object induk)
   constructor(merkArg, tipeArg, hargaArg){        // setiap property wajib berada di dalam method constructor(),
@@ -1645,7 +1682,7 @@ console.log(mobilJoko.merk);                      // output: Honda Civic
 console.log(mobilJoko.hidupkan());                // output: Mesin Honda Civic dihidupkan!
 console.log(mobilJoko.pergi("Solo"));             // output: Honda Civic pergi ke Solo
 
-// B3. Menambah property & method sebuah Class dengan Prototype
+// B4. Menambah property & method sebuah Class dengan Prototype
 
-// B4. Penjelasan keyword this
+// B5. Penjelasan keyword this
 ```
