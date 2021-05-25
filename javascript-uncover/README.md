@@ -1598,7 +1598,7 @@ var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function ob
 // B. Object sebagai OOP / Object sebagai bagian dari Class
 // ========================================================
 
-// B1. Sebelum ES6: OOP dengan Constructor Functions
+// B1. Sebelum ES6: OOP dengan Constructor Functions (❌)
 
 function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print" untuk object nantinya
   this.merk = merkArg;                            // this adalah object khusus 𝘀𝗲𝗯𝗮𝗴𝗮𝗶 𝗽𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗼𝗯𝗷𝗲𝗰𝘁
