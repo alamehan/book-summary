@@ -1630,16 +1630,16 @@ class Mobil{                                      // Class sebagai "blue print" 
 
 var mobilBudi = new Mobil("Toyota Avanza", "MPV", 200000000);   // proses instansiasi objek Mobil baru menggunakan keyword new
 var mobilJoko = new Mobil("Honda Civic", "Sedan", 200000000);   // (instansiasi: membuat sesuatu yang berwujud dari yang abstrak)
-console.log(mobilBudi instanceof Mobil);                        // output: true   ⇨ operator instanceof memeriksa apakah suatu
-console.log(mobilJoko instanceof Mobil);                        // output: true   ⇨ object merupakan instance dari sebuah class
+console.log(mobilBudi instanceof Mobil);          // output: true   ⇨ operator instanceof digunakan memeriksa apakah suatu object
+console.log(mobilJoko instanceof Mobil);          // output: true   ⇨ merupakan instance dari sebuah Constructor Functions/Class
 
-console.log(mobilBudi.merk);
-console.log(mobilBudi.hidupkan());
-console.log(mobilBudi.pergi("Bali"));
+console.log(mobilBudi.merk);                      // output: Toyota Avanza
+console.log(mobilBudi.hidupkan());                // output: Mesin Toyota Avanza dihidupkan!
+console.log(mobilBudi.pergi("Bali"));             // output: Toyota Avanza pergi ke Bali
 
-console.log(mobilJoko.merk);
-console.log(mobilJoko.hidupkan());
-console.log(mobilJoko.pergi("Solo"));
+console.log(mobilJoko.merk);                      // output: Honda Civic
+console.log(mobilJoko.hidupkan());                // output: Mesin Honda Civic dihidupkan!
+console.log(mobilJoko.pergi("Solo"));             // output: Honda Civic pergi ke Solo
 
 // B3. Menambah property & method sebuah Class dengan Prototype
 
