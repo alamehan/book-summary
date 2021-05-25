@@ -1482,8 +1482,8 @@ var mahasiswa = {
 };
 
 console.log(mahasiswa.ipk)            // output: {semester1: 3.1, semester2: 3.6}
-console.log(mahasiswa.ipk.semester1)  // output: 3.1                ⇨ mengakses nested object
-console.log(mahasiswa.ipk.semester2)  // output: 3.6                ⇨ mengakses nested object
+console.log(mahasiswa.ipk.semester1)  // output: 3.1                ⇨ mengakses nested object dengan dot notation
+console.log(mahasiswa.ipk.semester2)  // output: 3.6                ⇨ mengakses nested object dengan dot notation
 ```
 
 ```Javascript
@@ -1591,6 +1591,5 @@ var fun1 = function (a, b){ return a+b; };        // cara penulisan: Function ex
 var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function object      (❌ Not Recommended)
 
 // Sebelum ES6: Constructor Functions (Prototype)
-
 // Setelah ES6: Class
 ```
