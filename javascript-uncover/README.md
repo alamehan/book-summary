@@ -1552,9 +1552,9 @@ console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mh
 # 11. Object Oriented Programming (OOP) <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// ========================================================
-// A. Object sebagai OOP / Object sebagai bagian dari Class
-// ========================================================
+// ========================
+// A. Paradigma Pemrograman
+// ========================
 
 // A1. Paradigma: Prosedural (berbasiskan function)
 
@@ -1589,7 +1589,59 @@ obj2.umur = 24;
 
 var fun1 = function (a, b){ return a+b; };        // cara penulisan: Function expressions (✔️ Recommended)
 var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function object      (❌ Not Recommended)
+```
 
-// Sebelum ES6: Constructor Functions (Prototype)
-// Setelah ES6: Class
+```Javascript
+// ========================================================
+// B. Object sebagai OOP / Object sebagai bagian dari Class
+// ========================================================
+
+// B1. Sebelum ES6: OOP dengan Constructor Functions
+
+function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print" untuk object nantinya
+  this.merk = merkArg;                            // this adalah object khusus 𝘀𝗲𝗯𝗮𝗴𝗮𝗶 𝗽𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗼𝗯𝗷𝗲𝗰𝘁
+  this.tipe = tipeArg;                            // 𝘆𝗮𝗻𝗴 𝗻𝗮𝗻𝘁𝗶𝗻𝘆𝗮 𝗱𝗶 𝗯𝘂𝗮𝘁 𝗱𝗮𝗿𝗶 𝗰𝗹𝗮𝘀𝘀 𝗠𝗼𝗯𝗶𝗹 (lihat
+  this.harga = hargaArg;                          // point B4 untuk penjalasan lebih detailnya)
+  this.hidupkan = function() {
+    return `Mesin ${this.merk} dihidupkan!`; 
+  };
+  this.pergi = function(tempat){
+    return `${this.merk} pergi ke ${tempat}`;
+  }
+}
+
+// B2. Setelah ES6: OOP dengan Class (✔️)
+
+class Mobil{                                      // Class sebagai "blue print" untuk object nantinya
+  constructor(merkArg, tipeArg, hargaArg){        // setiap property wajib berada di dalam method constructor(),
+    this.merk = merkArg;                          // yaitu sebuah method yang otomatis dijalankan pada saat proses
+    this.tipe = tipeArg;                          // pembuatan object (instansiasi, lihat penjelasan di point B3)
+    this.harga = hargaArg;
+  }
+  hidupkan(){
+    return `Mesin ${this.merk} dihidupkan!`;
+  }
+  pergi(tempat){
+    return `${this.merk} pergi ke ${tempat}`;
+  }
+}
+
+// B3. Membuat Object dari Constructor Functions/Class di atas
+
+var mobilBudi = new Mobil("Toyota Avanza", "MPV", 200000000);   // proses instansiasi objek Mobil baru menggunakan keyword new
+var mobilJoko = new Mobil("Honda Civic", "Sedan", 200000000);   // (instansiasi: membuat sesuatu yang berwujud dari yang abstrak)
+console.log(mobilBudi instanceof Mobil);                        // output: true   ⇨ operator instanceof memeriksa apakah suatu
+console.log(mobilJoko instanceof Mobil);                        // output: true   ⇨ object merupakan instance dari sebuah class
+
+console.log(mobilBudi.merk);
+console.log(mobilBudi.hidupkan());
+console.log(mobilBudi.pergi("Bali"));
+
+console.log(mobilJoko.merk);
+console.log(mobilJoko.hidupkan());
+console.log(mobilJoko.pergi("Solo"));
+
+// B3. Menambah property & method sebuah Class dengan Prototype
+
+// B4. Penjelasan keyword this
 ```
