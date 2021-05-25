@@ -1572,16 +1572,12 @@ var hasil = teks.potongTeks(6, 10);   // output: World
 
 var num1 = 52;                        // cara penulisan: Number literals  (Recommended ✔️)
 var num2 = new Number(52);            // cara penulisan: Number object    (Not Recommended ❌)
-
 var str1 = "Belajar JS";              // cara penulisan: String literals  (Recommended ✔️)
 var str2 = new String("Belajar JS");  // cara penulisan: String object    (Not Recommended ❌)
-
 var bol1 = true;                      // cara penulisan: Boolean literals (Recommended ✔️)
 var bol2 = new Boolean(true);         // cara penulisan: Boolean object   (Not Recommended ❌)
-
 var arr1 = [1, 2, 3];                 // cara penulisan: Array literals   (Recommended ✔️)
 var arr2 = new Array(1, 2, 3);        // cara penulisan: Array object     (Not Recommended ❌)
-
 var obj1 = {nama: "Budi", umur: 24};  // cara penulisan: Object literals  (Recommended ✔️)
 var obj2 = new Object();              // cara penulisan: Object object    (Not Recommended ❌)
 obj2.nama = "Budi";
