@@ -1705,7 +1705,7 @@ keyword this akan diganti sesuai dengan instansiasi object Mobil barunya. Jika i
 diganti menjadi mobilBudi. Dengan demikian keyword this ini membuat sebuah Class menjadi "fleksibel". Simak penjelasan berikut:
 */
 
-// instansiasi object mobilBudi (lihat B3)        ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+// saat instansiasi object mobilBudi (lihat B3)   ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 class Mobil{                                      // class Mobil{
   constructor(merkArg, tipeArg, hargaArg){        //   constructor(merkArg, tipeArg, hargaArg){
     this.merk = merkArg;                          //     mobilBudi.merk = merkArg;                🡲 this diganti jadi mobilBudi
@@ -1714,7 +1714,7 @@ class Mobil{                                      // class Mobil{
   }                                               //   }
 }                                                 // }
 
-// instansiasi object mobilJoko (lihat B3)        ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+// saat instansiasi object mobilJoko (lihat B3)   ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 class Mobil{                                      // class Mobil{
   constructor(merkArg, tipeArg, hargaArg){        //   constructor(merkArg, tipeArg, hargaArg){
     this.merk = merkArg;                          //     mobilJoko.merk = merkArg;                🡲 this diganti jadi mobilJoko
