@@ -16,6 +16,8 @@
 	<a href="#bab09">9. Function</a>&nbsp;<br>
 	<a href="#bab10">10. JavaScript Object</a>&nbsp;<br>
 	<a href="#bab11">11. Object Oriented Programming (OOP)</a>&nbsp;<br>
+	<a href="#bab12">12. JavaScript Native Object</a>&nbsp;<br>
+	<a href="#babxx">XX. Materi Tambahan: Advanced JavaScript</a>&nbsp;<br>
 </p>
 
 <div id="bab01"></div>
@@ -1568,12 +1570,12 @@ console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mh
 // A1. Paradigma: Prosedural (berbasiskan function)
 
 // ...                                // asumsi terdapat sebuah function potongTeks yang gunanya ya tentu memotong sebuah teks
-var teks = "Hello World";             // sebenarnya sama aja dengan var teks = new String("Hello World"); (lihat point A3)
+var teks = "Hello World";
 var hasil = potongTeks(teks, 6, 10);  // output: World  ⇨ berbasiskan function
 
 // A2. Paradigma: Object Oriented Programming (OOP)
 
-// ...                                // asumsi sudah terdapat sebuah method potongTeks di dalam String object
+// ...                                // asumsi sudah terdapat sebuah method potongTeks di dalam String object (lihat point C1)
 var teks = new String("Hello World"); // sebenarnya sama aja dengan var teks = "Hello World"; (lihat point A3)
 var hasil = teks.potongTeks(6, 10);   // output: World  ⇨ berbasiskan object (ingat: dot notation)
                                       // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝗻𝗲𝘄 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟯)
@@ -1746,24 +1748,105 @@ class Mobil{                                      // class Mobil{
 ```
 
 ```Javascript
-// =======================================================================
-// C. Tambahan Materi Advanced JavaScript dari: w3schools.com & w3docs.com
-// =======================================================================
+// ==========================================
+// C. JavaScript Native Object (Introduction)
+// ==========================================
+
+/*
+Sampai disini, kita telah membuat object sebagai tipe data (BAB 10) maupun object sebagai OOP-bagian dari Class (BAB 11), keduanya
+merupakan object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki object bawaan (JavaScript Native Object)
+yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak property & method. Daftar lengkap object bawaan
+JavaScript dapat dilihat di: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects.
+
+Di buku ini akan dibahas beberapa diantaranya yang paling populer (dibahas di BAB 12), yaitu:
+• Number      • Math
+• String      • Array
+• Boolean     • RegExp
+• Function    • Date
+
+Sebelumnya, ada beberapa istilah yang perlu diketahui perbedaannya terlebih dahulu, yaitu:
+• Object property             contoh: console.log(Number.MAX_VALUE);                            🡲 output: 1.7976931348623157e+308
+• Object method               contoh: console.log(Number.parseInt("12.045"));                   🡲 output: 12 (number, not string)
+• Object instance property    contoh: var foo = "Belajar JavaScript"; console.log(foo.length);  🡲 output: 18 
+• Object instance method      contoh: var foo = 50.12345; console.log(foo.toPrecision(5));      🡲 output: 50.123
+*/
+
+// C1. Contoh: String (object)
+
+var foo = new String("Hello World");  // Kita tidak pernah mendefinisikan Class String bukan? tetapi kenapa langsung bisa dipakai?
+                                      // itu karena, String merupakan salah satu object bawaan JavaScript. Ingat saat kita instan-
+                                      // siasi object Mobil baru dengan perintah "var mobilBudi = new Mobil(...)", itu bisa kita
+                                      // lakukan karena sebelumnya kita sudah membuat Class Mobil. Nah, String itu "Class bawaan".
+
+console.log(foo.toUpperCase());       // output: HELLO WORLD. Kita tidak pernah mendefinisikan method toUpperCase() bukan? tetapi
+                                      // kenapa langsung bisa dipakai (melalui dot notation)? itu karena, toUpperCase() merupakan 
+                                      // salah satu "instance method" bawaan milik String object, jadi kita bisa langsung pakai.
+console.log(foo.length)               // output: 11. length merupakan salah satu "instance property" bawaan milik String object.
+
+// C2. Contoh: String (literals)
+
+var bar = "Hello World";              // cara penulisan: String literals (lebih "hemat" dibandingkan Object Constructor di atas)
+console.log(bar.toUpperCase());       // output: HELLO WORLD. Ternyata meskipun variable bar didefinisikan secara String literals,
+                                      // bukan secara String object, kita masih tetap bisa memakai "instance method" bawaan String
+                                      // object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A3).
+console.log(bar.length);              // ouput: 11. Kita pun masih tetap bisa memakai "instance property" bawaan String object.
+```
+
+<br>
+<div id="bab12"></div>
+
+# 12. JavaScript Native Object <a href="#daftarisi">🡹</a>
+
+```Javascript
+// ================
+// A. Number Object
+// ================
+
+// ==============
+// B. Math Object
+// ==============
+
+// ================
+// C. String Object
+// ================
+
+// ================
+// D. RegExp Object
+// ================
+
+// ===============
+// E. Array Object
+// ===============
+
+// ==============
+// F. Date Object
+// ==============
+```
+
+<br>
+<div id="babxx"></div>
+
+# XX. Tambahan Materi: Advanced JavaScript <a href="#daftarisi">🡹</a>
+
+```Javascript
+// =====================================
+// A. Sumber: w3schools.com & w3docs.com
+// =====================================
 
 // Inheritance, Encapsulation, dll
 ```
 ```Javascript
-// ==================================================================
-// D. Tambahan Materi Advanced JavaScript dari: Web Programming Unpas
-// ==================================================================
+// ================================
+// B. Sumber: Web Programming Unpas
+// ================================
 
 // Object.create(), Closure, Callback, Promise, Fetch, Async Await, dll
 ```
 
 ```Javascript
-// =========================================================
-// E. Tambahan Materi Advanced JavaScript dari: bukureact.id
-// =========================================================
+// =======================
+// C. Sumber: bukureact.id
+// =======================
 
-// ...
+// Blablabla...
 ```
