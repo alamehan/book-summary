@@ -1559,20 +1559,15 @@ console.log(mhs2 === mhs2Baru);       // output: false  (why? meskipun mhs2 & mh
 
 // A1. Paradigma: Prosedural (berbasiskan function)
 
-// ...                                // asumsi terdapat sebuah function potongTeks
-                                      // yang gunanya ya tentu memotong sebuah teks
-
-var teks = "Hello World!";
-var hasil = potongTeks(teks, 6, 10);  // output: World                            ⇨ berbasiskan function
+// ...                                // asumsi terdapat sebuah function potongTeks yang gunanya ya tentu memotong sebuah teks
+var teks = "Hello World";             // sebenarnya sama aja dengan var teks = new String("Hello World"); (lihat point A3)
+var hasil = potongTeks(teks, 6, 10);  // output: World  ⇨ berbasiskan function
 
 // A2. Paradigma: Object Oriented Programming (OOP)
 
-// ...                                // asumsi sudah terdapat sebuah method
-                                      // potongTeks di dalam String object
-
-var teks = "Hello World!";            // var teks = new String("Hello World!");   ⇨ jika ditulis dengan cara String object
-var hasil = teks.potongTeks(6, 10);   // output: World                            ⇨ berbasiskan object (ingat: dot notation)
-
+// ...                                // asumsi sudah terdapat sebuah method potongTeks di dalam String object
+var teks = new String("Hello World"); // sebenarnya sama aja dengan var teks = "Hello World"; (lihat point A3)
+var hasil = teks.potongTeks(6, 10);   // output: World  ⇨ berbasiskan object (ingat: dot notation)
                                       // Note: terkait keyword new (lihat point B3)
 
 // A3. Penulisan Literals vs Object Constructor
