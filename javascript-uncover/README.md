@@ -342,7 +342,7 @@ console.log(arr2D[2][1]);             // output: 5
 // F. Tipe Data Object
 // ===================
 
-// 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
+// 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
 ```
 
 ```Javascript
@@ -388,7 +388,7 @@ console.log(Number.isNaN(nan));           // output: true   (check apakah datany
 // H. Operator instanceof
 // ======================
 
-// 𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝗼𝗳 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟭!
+// 𝗡𝗼𝘁𝗲: 𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝗼𝗳 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟭!
 ```
 
 <br>
@@ -1576,7 +1576,7 @@ var hasil = potongTeks(teks, 6, 10);  // output: World  ⇨ berbasiskan function
 // ...                                // asumsi sudah terdapat sebuah method potongTeks di dalam String object
 var teks = new String("Hello World"); // sebenarnya sama aja dengan var teks = "Hello World"; (lihat point A3)
 var hasil = teks.potongTeks(6, 10);   // output: World  ⇨ berbasiskan object (ingat: dot notation)
-                                      // Note: terkait keyword new (lihat point B3)
+                                      // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝗻𝗲𝘄 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟯)
 
 // A3. Penulisan Literals vs Object Constructor
 
@@ -1642,7 +1642,7 @@ Class, maka sapi, kambing, kuda, dst merupakan object dari Class Binatang. Simak
 // B2-1. Sebelum ES6: OOP dengan Constructor Functions (❌)
 
 function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil" (object induk mobil)
-  this.merk = merkArg;                            // Note: terkait keyword this (lihat point B5)
+  this.merk = merkArg;                            // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
   this.tipe = tipeArg;
   this.harga = hargaArg;
   this.hidupkan = function() {                    // cara penulisan method: function expressions (anonymous function)
