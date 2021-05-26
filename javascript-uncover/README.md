@@ -1577,7 +1577,7 @@ var hasil = potongTeks(teks, 6, 10);  // output: World  ⇨ berbasiskan function
 
 // ...                                // asumsi sudah terdapat sebuah method potongTeks di dalam String object (lihat point C1)
 var teks = new String("Hello World"); // sebenarnya sama aja dengan var teks = "Hello World"; (lihat point A3)
-var hasil = teks.potongTeks(6, 10);   // output: World  ⇨ berbasiskan object (ingat: dot notation)
+var hasil = teks.potongTeks(6, 10);   // output: World  ⇨ berbasiskan object (mengakses method potongTeks dengan dot notation)
                                       // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝗻𝗲𝘄 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟯)
 
 // A3. Penulisan Literals vs Object Constructor
@@ -1770,12 +1770,12 @@ Sebelumnya, ada beberapa istilah yang perlu diketahui perbedaannya terlebih dahu
 • Object instance property    contoh: var foo = "Belajar JavaScript"; console.log(foo.length);  🡲 output: 18 
 • Object instance method      contoh: var foo = 50.12345; console.log(foo.toPrecision(5));      🡲 output: 50.123
 
-Object property & Object method melekat ke langsung ke Class-nya, contoh di atas: Number.MAX_VALUE & Number.parseInt("12.045"), di-
-mana Number merupakan "Class bawaan", sedangkan MAX_VALUE merupakan Object property-nya & parsetInt() merupakan Object method-nya.
+Object property & Object method melekat langsung ke Object-nya (Class-nya): Number.MAX_VALUE & Number.parseInt("12.045"),
+dimana Number merupakan Object-nya, sedangkan MAX_VALUE sebagai Object property & parsetInt() sebagai Object method-nya.
 
-Object instance property & Object instance method melekat ke instance object-nya (object hasil instansiasi), contoh di atas:
-foo.length & foo.toPrecision(), dimana foo merupakan instance object-nya (foo yang pertama dari Class String & foo yang kedua
-dari Class Number), sedangkan length merupakan Object instance property-nya & toPrecision() merupakan Object instance method-nya. 
+Object instance property & Object instance method melekat ke Instance Object: foo.length & foo.toPrecision(), dimana foo
+merupakan hasil instance dari Object (Class) String (untuk foo.length) & hasil instance dari Object Number (untuk foo.
+toPrecision(5)), sedangkan length sebagai Object instance property & toPrecision() sebagai Object instance method-nya.
 */
 
 // C1. Contoh: String (object)
