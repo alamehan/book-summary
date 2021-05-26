@@ -1699,11 +1699,13 @@ instansiasi, mudah dan cepat, bahkan jika kita butuh 100 object sekalipun. Ini a
 // B5. Penjelasan keyword this
 
 /*
-this adalah object khusus 𝘀𝗲𝗯𝗮𝗴𝗮𝗶 𝗽𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗼𝗯𝗷𝗲𝗰𝘁 𝘆𝗮𝗻𝗴 𝗻𝗮𝗻𝘁𝗶𝗻𝘆𝗮 𝗱𝗶 𝗯𝘂𝗮𝘁
-𝗱𝗮𝗿𝗶 𝗰𝗹𝗮𝘀𝘀 𝘁𝗲𝗿𝘁𝗲𝗻𝘁𝘂. Misal kita mengacu ke Class Mobil di point B2-2, maka:
+this adalah object khusus sebagai pengganti object yang nantinya dibuat dari Class tertentu. Misal kita mengacu ke Class Mobil
+di point B2-2, maka setiap kali instansiasi object Mobil baru menggunakan keyword new, yang terjadi di belakang layar yaitu
+keyword this akan diganti sesuai dengan instansiasi object Mobil barunya. Jika instansisasi object mobilBudi, maka this akan
+diganti menjadi mobilBudi. Dengan demikian keyword this ini membuat sebuah Class menjadi "fleksibel". Simak penjelasan berikut:
 */
 
-// saat instansiasi object mobilBudi (lihat B3)   ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+// instansiasi object mobilBudi (lihat B3)        ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 class Mobil{                                      // class Mobil{
   constructor(merkArg, tipeArg, hargaArg){        //   constructor(merkArg, tipeArg, hargaArg){
     this.merk = merkArg;                          //     mobilBudi.merk = merkArg;                🡲 this diganti jadi mobilBudi
@@ -1712,7 +1714,7 @@ class Mobil{                                      // class Mobil{
   }                                               //   }
 }                                                 // }
 
-// saat instansiasi object mobilJoko (lihat B3)   ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+// instansiasi object mobilJoko (lihat B3)        ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 class Mobil{                                      // class Mobil{
   constructor(merkArg, tipeArg, hargaArg){        //   constructor(merkArg, tipeArg, hargaArg){
     this.merk = merkArg;                          //     mobilJoko.merk = merkArg;                🡲 this diganti jadi mobilJoko
