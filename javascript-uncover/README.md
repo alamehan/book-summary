@@ -383,6 +383,14 @@ console.log(Array.isArray(arr));          // output: true   (check apakah datany
 console.log(Number.isNaN(nan));           // output: true   (check apakah datanya NaN)
 ```
 
+```Javascript
+// ======================
+// H. Operator instanceof
+// ======================
+
+// 𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝗼𝗳 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟭!
+```
+
 <br>
 <div id="bab07"></div>
 
@@ -1686,12 +1694,32 @@ instansiasi, mudah dan cepat, bahkan jika kita butuh 100 object sekalipun. Ini a
 
 // B4. Menambah property & method sebuah Class dengan Prototype
 
+// ...
+
 // B5. Penjelasan keyword this
 
 /*
 this adalah object khusus 𝘀𝗲𝗯𝗮𝗴𝗮𝗶 𝗽𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗼𝗯𝗷𝗲𝗰𝘁 𝘆𝗮𝗻𝗴 𝗻𝗮𝗻𝘁𝗶𝗻𝘆𝗮 𝗱𝗶 𝗯𝘂𝗮𝘁
-𝗱𝗮𝗿𝗶 𝗰𝗹𝗮𝘀𝘀 𝗠𝗼𝗯𝗶𝗹 ...
+𝗱𝗮𝗿𝗶 𝗰𝗹𝗮𝘀𝘀 𝘁𝗲𝗿𝘁𝗲𝗻𝘁𝘂. Misal kita mengacu ke Class Mobil di point B2-2, maka:
 */
+
+// saat instansiasi object mobilBudi (lihat B3)   ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+class Mobil{                                      // class Mobil{
+  constructor(merkArg, tipeArg, hargaArg){        //   constructor(merkArg, tipeArg, hargaArg){
+    this.merk = merkArg;                          //     mobilBudi.merk = merkArg;                🡲 this diganti jadi mobilBudi
+    this.tipe = tipeArg;                          //     mobilBudi.tipe = tipeArg;                🡲 this diganti jadi mobilBudi
+    this.harga = hargaArg;                        //     mobilBudi.harga = hargaArg;              🡲 this diganti jadi mobilBudi
+  }                                               //   }
+}                                                 // }
+
+// saat instansiasi object mobilJoko (lihat B3)   ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+class Mobil{                                      // class Mobil{
+  constructor(merkArg, tipeArg, hargaArg){        //   constructor(merkArg, tipeArg, hargaArg){
+    this.merk = merkArg;                          //     mobilJoko.merk = merkArg;                🡲 this diganti jadi mobilJoko
+    this.tipe = tipeArg;                          //     mobilJoko.tipe = tipeArg;                🡲 this diganti jadi mobilJoko
+    this.harga = hargaArg;                        //     mobilJoko.harga = hargaArg;              🡲 this diganti jadi mobilJoko
+  }                                               //   }
+}                                                 // }
 ```
 
 ```Javascript
