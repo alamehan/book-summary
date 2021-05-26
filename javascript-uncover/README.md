@@ -1769,6 +1769,13 @@ Sebelumnya, ada beberapa istilah yang perlu diketahui perbedaannya terlebih dahu
 • Object method               contoh: console.log(Number.parseInt("12.045"));                   🡲 output: 12 (number, not string)
 • Object instance property    contoh: var foo = "Belajar JavaScript"; console.log(foo.length);  🡲 output: 18 
 • Object instance method      contoh: var foo = 50.12345; console.log(foo.toPrecision(5));      🡲 output: 50.123
+
+Object property & Object method melekat ke langsung ke Class-nya, contoh di atas: Number.MAX_VALUE & Number.parseInt("12.045"), di-
+mana Number merupakan "Class bawaan", sedangkan MAX_VALUE merupakan Object property-nya & parsetInt() merupakan Object method-nya.
+
+Object instance property & Object instance method melekat ke instance object-nya (object hasil instansiasi), contoh di atas:
+foo.length & foo.toPrecision(), dimana foo merupakan instance object-nya (foo yang pertama dari Class String & foo yang kedua
+dari Class Number), sedangkan length merupakan Object instance property-nya & toPrecision() merupakan Object instance method-nya. 
 */
 
 // C1. Contoh: String (object)
