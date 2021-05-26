@@ -1593,8 +1593,8 @@ var obj2 = new Object();              // cara penulisan: Object object    (❌ N
 obj2.nama = "Budi";
 obj2.umur = 24;
 
-var fun1 = function (a, b){ return a+b; };        // cara penulisan: Function expressions (✔️ Recommended)
-var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function object      (❌ Not Recommended)
+var fun1 = function (a, b){ return a+b; };        // cara penulisan: Function expressions/anonymous function  (✔️ Recommended)
+var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function object                          (❌ Not Recommended)
 ```
 
 ```Javascript
@@ -1645,7 +1645,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
   this.merk = merkArg;                            // Note: terkait keyword this (lihat point B5)
   this.tipe = tipeArg;
   this.harga = hargaArg;
-  this.hidupkan = function() {
+  this.hidupkan = function() {                    // cara penulisan method: function expressions (anonymous function)
     return `Mesin ${this.merk} dihidupkan!`; 
   };
   this.pergi = function(tempat){
@@ -1661,7 +1661,7 @@ class Mobil{                                      // Class sebagai "blue print m
     this.tipe = tipeArg;                          // instansiasi/pembuatan object (lihat penjelasan di point B3)
     this.harga = hargaArg;
   }
-  hidupkan(){
+  hidupkan(){                                     // cara penulisan method: langsung ditulis nama functionnya (simple!)
     return `Mesin ${this.merk} dihidupkan!`;
   }
   pergi(tempat){
@@ -1694,9 +1694,18 @@ instansiasi, mudah dan cepat, bahkan jika kita butuh 100 object sekalipun. Ini a
 
 // B4. Menambah property & method sebuah Class dengan Prototype
 
-// ...
+Mobil.prototype.jumlahRoda = 4;                   // menambahkan property jumlahRoda ke Class Mobil (di luar pendefinisian Class)
+Mobil.prototype.pulang = function(tempat){        // menambahkan method pulang ke Class Mobil (di luar pendefinisian Class)
+  return `${this.merk} pulang ke ${tempat}`;      // cara penulisan method: function expressions (anonymous function)
+}
 
-// B5. Penjelasan keyword this
+console.log(mobilBudi.jumlahRoda);                // output: 4
+console.log(mobilBudi.pulang("Bandung"));         // output: Toyota Avanza pulang ke Bandung
+
+console.log(mobilJoko.jumlahRoda);                // output: 4
+console.log(mobilJoko.pulang("Jakarta"));         // output: Honda Civic pulang ke Jakarta
+
+// B5. Penjelasan dibalik keyword this
 
 /*
 this adalah object khusus sebagai pengganti object yang nantinya dibuat dari Class tertentu. Misal kita mengacu ke Class Mobil
@@ -1708,26 +1717,53 @@ diganti menjadi mobilBudi. Dengan demikian keyword this ini membuat sebuah Class
 // saat instansiasi object mobilBudi (lihat B3)   ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 class Mobil{                                      // class Mobil{
   constructor(merkArg, tipeArg, hargaArg){        //   constructor(merkArg, tipeArg, hargaArg){
-    this.merk = merkArg;                          //     mobilBudi.merk = merkArg;                🡲 this diganti jadi mobilBudi
-    this.tipe = tipeArg;                          //     mobilBudi.tipe = tipeArg;                🡲 this diganti jadi mobilBudi
-    this.harga = hargaArg;                        //     mobilBudi.harga = hargaArg;              🡲 this diganti jadi mobilBudi
+    this.merk = merkArg;                          //     mobilBudi.merk = merkArg;                      🡲 this menjadi mobilBudi
+    this.tipe = tipeArg;                          //     mobilBudi.tipe = tipeArg;                      🡲 this menjadi mobilBudi
+    this.harga = hargaArg;                        //     mobilBudi.harga = hargaArg;                    🡲 this menjadi mobilBudi
+  }                                               //   }
+  hidupkan(){                                     //   hidupkan(){
+    return `Mesin ${this.merk} dihidupkan!`;      //     return `Mesin ${mobilBudi.merk} dihidupkan!`;  🡲 this menjadi mobilBudi
+  }                                               //   }
+  pergi(tempat){                                  //   pergi(tempat){
+    return `${this.merk} pergi ke ${tempat}`;     //     return `${mobilBudi.merk} pergi ke ${tempat}`; 🡲 this menjadi mobilBudi
   }                                               //   }
 }                                                 // }
 
 // saat instansiasi object mobilJoko (lihat B3)   ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 class Mobil{                                      // class Mobil{
   constructor(merkArg, tipeArg, hargaArg){        //   constructor(merkArg, tipeArg, hargaArg){
-    this.merk = merkArg;                          //     mobilJoko.merk = merkArg;                🡲 this diganti jadi mobilJoko
-    this.tipe = tipeArg;                          //     mobilJoko.tipe = tipeArg;                🡲 this diganti jadi mobilJoko
-    this.harga = hargaArg;                        //     mobilJoko.harga = hargaArg;              🡲 this diganti jadi mobilJoko
+    this.merk = merkArg;                          //     mobilJoko.merk = merkArg;                      🡲 this menjadi mobilJoko
+    this.tipe = tipeArg;                          //     mobilJoko.tipe = tipeArg;                      🡲 this menjadi mobilJoko
+    this.harga = hargaArg;                        //     mobilJoko.harga = hargaArg;                    🡲 this menjadi mobilJoko
+  }                                               //   }
+  hidupkan(){                                     //   hidupkan(){
+    return `Mesin ${this.merk} dihidupkan!`;      //     return `Mesin ${mobilBudi.merk} dihidupkan!`;  🡲 this menjadi mobilJoko
+  }                                               //   }
+  pergi(tempat){                                  //   pergi(tempat){
+    return `${this.merk} pergi ke ${tempat}`;     //     return `${mobilBudi.merk} pergi ke ${tempat}`; 🡲 this menjadi mobilJoko
   }                                               //   }
 }                                                 // }
 ```
 
 ```Javascript
-// ====================================================
-// C. Tambahan Materi (Di luar buku JavaScript Uncover)
-// ====================================================
+// =======================================================================
+// C. Tambahan Materi Advanced JavaScript dari: w3schools.com & w3docs.com
+// =======================================================================
 
-// Object.create(), Closure, Inheritance, Encapsulation, Callback, Promise, Fetch, Async Await, dll
+// Inheritance, Encapsulation, dll
+```
+```Javascript
+// ==================================================================
+// D. Tambahan Materi Advanced JavaScript dari: Web Programming Unpas
+// ==================================================================
+
+// Object.create(), Closure, Callback, Promise, Fetch, Async Await, dll
+```
+
+```Javascript
+// =========================================================
+// E. Tambahan Materi Advanced JavaScript dari: bukureact.id
+// =========================================================
+
+// ...
 ```
