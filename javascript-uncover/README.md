@@ -1830,10 +1830,8 @@ console.log(Number.isInteger(9007199254740992));      // output: true     ⇨ ch
 console.log(Number.isInteger(3.21456));               // output: false
 console.log(Number.isSafeInteger(9007199254740992));  // output: false    ⇨ sama seperti isInteger, tapi dibatasi standar IEEE-754
 console.log(Number.isSafeInteger(3.21456));           // output: false
-
 console.log(Number.parseFloat("1.23"));               // output: 1.23 (number)  ⇨ mengkonversi String menjadi Number (pecahan)
 console.log(Number.parseFloat("10.3% keuntungan"));   // output: 10.3 (number)  ⤷ selain number akan dihilangkan di output-nya
-
 console.log(Number.parseInt("1.23"));                 // output: 1    (number)  ⇨ mengkonversi String menjadi Number (bulat)
 console.log(Number.parseInt("10.3% keuntungan"));     // output: 10   (number)  ⤷ default: proses sebagai desimal (basis 10)
 console.log(Number.parseInt("10101101", 2));          // output: 173  (number)  ⤷ 2 artinya: proses sebagai biner (basis 2)
@@ -1850,26 +1848,21 @@ console.log(numA.toExponential());    // output: 5.00123e+2       ≈ 5.00123x10
 console.log(numA.toExponential(1));   // output: 5.0e+2           ≈ 5.0x10²
 console.log(numA.toExponential(5));   // output: 5.00123e+2       ≈ 5.00123x10² 
 console.log(numA.toExponential(10));  // output: 5.0012300000e+2  ≈ 5.0012300000x10²
-
 console.log(numA.toFixed());          // output: 500              ⇨ format angka dengan jumlah digit desimal yang tetap
 console.log(numA.toFixed(1));         // output: 500.1
 console.log(numA.toFixed(5));         // output: 500.12300
 console.log(numA.toFixed(10));        // output: 500.1230000000
-
 console.log(numA.toPrecision());      // output: 500.123          ⇨ format total digit angka sesuai dengan nilai di argument
 console.log(numA.toPrecision(1));     // output: 5e+2
 console.log(numA.toPrecision(5));     // output: 500.12
 console.log(numA.toPrecision(10));    // output: 500.1230000
-
 console.log(numB.toString());         // output: 50     (string)  ⇨ mengkonversi Number menjadi String
 console.log(numB.toString(2));        // output: 110010 (string)  ⤷ konversi ke biner (basis 2)
 console.log(numB.toString(8));        // output: 62     (string)  ⤷ konversi ke oktal (basis 8) 
 console.log(numB.toString(16));       // output: 32     (string)  ⤷ konversi ke heksa (basis 16) 
-
 console.log(numC.toLocaleString('id-ID'));  // output: 1.234.500,346  ⇨ konversi Number ke String + memakai format angka lokal
 console.log(numC.toLocaleString('en-US'));  // output: 1,234,500.346  ⤷ en-US: format angka Amerika Serikat (US)
 console.log(numC.toLocaleString('fr-FR'));  // output: 1 234 500,346  ⤷ fr-FR: format angka Perancis
-
 console.log(numC.toLocaleString('id-ID', {style: 'decimal'}));                    // output: 1.234.500,346    (default)
 console.log(numC.toLocaleString('id-ID', {style: 'percent'}));                    // output: 123.450.035%     (persen)
 console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));  // output: Rp 1.234.500,35  (mata uang)
