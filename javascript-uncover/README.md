@@ -1830,6 +1830,7 @@ console.log(Number.isInteger(9007199254740992));      // output: true     ⇨ ch
 console.log(Number.isInteger(3.21456));               // output: false
 console.log(Number.isSafeInteger(9007199254740992));  // output: false    ⇨ sama seperti isInteger, tapi dibatasi standar IEEE-754
 console.log(Number.isSafeInteger(3.21456));           // output: false
+
 console.log(Number.parseFloat("1.23"));               // output: 1.23 (number)  ⇨ mengkonversi String menjadi Number (pecahan)
 console.log(Number.parseFloat("10.3% keuntungan"));   // output: 10.3 (number)  ⤷ selain number akan dihilangkan di output-nya
 console.log(Number.parseInt("1.23"));                 // output: 1    (number)  ⇨ mengkonversi String menjadi Number (bulat)
@@ -1848,18 +1849,19 @@ console.log(numA.toExponential());    // output: 5.00123e+2       ≈ 5.00123x10
 console.log(numA.toExponential(1));   // output: 5.0e+2           ≈ 5.0x10²
 console.log(numA.toExponential(5));   // output: 5.00123e+2       ≈ 5.00123x10² 
 console.log(numA.toExponential(10));  // output: 5.0012300000e+2  ≈ 5.0012300000x10²
-console.log(numA.toFixed());          // output: 500              ⇨ format angka dengan jumlah digit desimal yang tetap
-console.log(numA.toFixed(1));         // output: 500.1
+console.log(numA.toFixed());          // output: 500              ⇨ format angka dengan jumlah digit desimal (angka belakang koma)
+console.log(numA.toFixed(1));         // output: 500.1              yang tetap, toFixed(1) artinya 1 digit angka di belakang koma.
 console.log(numA.toFixed(5));         // output: 500.12300
 console.log(numA.toFixed(10));        // output: 500.1230000000
-console.log(numA.toPrecision());      // output: 500.123          ⇨ format total digit angka sesuai dengan nilai di argument
-console.log(numA.toPrecision(1));     // output: 5e+2
+console.log(numA.toPrecision());      // output: 500.123          ⇨ format angka dengan jumlah digit yang tetap, toPrecision(5)
+console.log(numA.toPrecision(1));     // output: 5e+2               artinya total digit angka berjumlah 5 digit.
 console.log(numA.toPrecision(5));     // output: 500.12
 console.log(numA.toPrecision(10));    // output: 500.1230000
 console.log(numB.toString());         // output: 50     (string)  ⇨ mengkonversi Number menjadi String
 console.log(numB.toString(2));        // output: 110010 (string)  ⤷ konversi ke biner (basis 2)
 console.log(numB.toString(8));        // output: 62     (string)  ⤷ konversi ke oktal (basis 8) 
-console.log(numB.toString(16));       // output: 32     (string)  ⤷ konversi ke heksa (basis 16) 
+console.log(numB.toString(16));       // output: 32     (string)  ⤷ konversi ke heksa (basis 16)
+
 console.log(numC.toLocaleString('id-ID'));  // output: 1.234.500,346  ⇨ konversi Number ke String + memakai format angka lokal
 console.log(numC.toLocaleString('en-US'));  // output: 1,234,500.346  ⤷ en-US: format angka Amerika Serikat (US)
 console.log(numC.toLocaleString('fr-FR'));  // output: 1 234 500,346  ⤷ fr-FR: format angka Perancis (FR)
@@ -1914,4 +1916,89 @@ console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));
 // =======================
 
 // Blablabla...
+```𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝗻𝗲𝘄 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟯)
+
+// A3. Penulisan Literals vs Object Constructor
+
+var num1 = 52;                        // cara penulisan: Number literals  (✔️ Recommended)
+var num2 = new Number(52);            // cara penulisan: Number object    (❌ Not Recommended)
+var str1 = "Belajar JS";              // cara penulisan: String literals  (✔️ Recommended)
+var str2 = new String("Belajar JS");  // cara penulisan: String object    (❌ Not Recommended)
+var bol1 = true;                      // cara penulisan: Boolean literals (✔️ Recommended)
+var bol2 = new Boolean(true);         // cara penulisan: Boolean object   (❌ Not Recommended)
+var arr1 = [1, 2, 3];                 // cara penulisan: Array literals   (✔️ Recommended)
+var arr2 = new Array(1, 2, 3);        // cara penulisan: Array object     (❌ Not Recommended)
+var obj1 = {nama: "Budi", umur: 24};  // cara penulisan: Object literals  (✔️ Recommended)
+var obj2 = new Object();              // cara penulisan: Object object    (❌ Not Recommended)
+obj2.nama = "Budi";
+obj2.umur = 24;
+
+var fun1 = function (a, b){ return a+b; };        // cara penulisan: Function expressions/anonymous function  (✔️ Recommended)
+var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function object                          (❌ Not Recommended)
 ```
+
+```Javascript
+// ========================================================
+// B. Object sebagai OOP / Object sebagai bagian dari Class
+// ========================================================
+
+// B1. Tanpa OOP (Pendefinisian object biasa)
+
+var mobilBudi = {
+  merk: "Toyota Avanza",
+  tipe: "MPV",
+  harga: 200000000,
+    hidupkan: function(){
+    return "Mesin Dihidupkan!";
+  },
+  pergi: function(tempat){
+    return `Pergi ke ${tempat}`;
+  }
+};
+
+var mobilJoko = {
+  merk: "Honda Civic",
+  tipe: "Sedan",
+  harga: 200000000,
+    hidupkan: function(){
+    return "Mesin Dihidupkan!";
+  },
+  pergi: function(tempat){
+    return `Pergi ke ${tempat}`;
+  }
+};
+
+/*
+Object mobilBudi & mobilJoko sebenarnya memiliki property dan method yang sama. Bagaimana jika nanti ada object mobilPutri,
+mobilAndi, dst, misalya kita butuh hingga 100 object mobil (dengan property dan method yang sama), maka akan sangat tidak
+efisien jika object tersebut ditulis secara manual satu per satu secara berulang. Oleh karena itulah, konsep OOP hadir
+sebagai solusi, dimana kita dapat menggunakan Class sebagai wadah yang menyediakan semua hal yang dibutuhkan oleh object.
+
+Class berperan sebagai "blue print"/cetakan/sesuatu yang masih abstrak yang menjadi kelompok umum dari object. Misalnya,
+jika Mobil adalah Class, maka mobilBudi, mobilJoko, mobilPutri, dst merupakan object dari Class Mobil. Jika Binatang adalah
+Class, maka sapi, kambing, kuda, dst merupakan object dari Class Binatang. Simak point B2-1, B2-2 & B3 di bawah ini.
+*/
+
+// B2-1. Sebelum ES6: OOP dengan Constructor Functions (❌)
+
+function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil" (object induk mobil)
+  this.merk = merkArg;                            // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
+  this.tipe = tipeArg;
+  this.harga = hargaArg;
+  this.hidupkan = function() {                    // cara penulisan method: function expressions (anonymous function)
+    return `Mesin ${this.merk} dihidupkan!`; 
+  };
+  this.pergi = function(tempat){
+    return `${this.merk} pergi ke ${tempat}`;
+  }
+}
+
+// B2-2. Setelah ES6: OOP dengan Class (✔️)
+
+class Mobil{                                      // Class sebagai "blue print mobil" (object induk mobil)
+  constructor(merkArg, tipeArg, hargaArg){        // setiap property wajib berada di dalam method constructor(),
+    this.merk = merkArg;                          // yaitu sebuah method yang otomatis dijalankan pada saat proses
+    this.tipe = tipeArg;                          // instansiasi/pembuatan object (lihat penjelasan di point B3)
+    this.harga = hargaArg;
+  }
+  hidupkan(){                                     // cara penulisan method: langsung ditulis nama functionnya (
