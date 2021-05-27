@@ -1849,7 +1849,7 @@ console.log(numA.toExponential(1));   // output: 5.0e+2           ≈ 5.0x10²
 console.log(numA.toExponential(5));   // output: 5.00123e+2       ≈ 5.00123x10² 
 console.log(numA.toExponential(10));  // output: 5.0012300000e+2  ≈ 5.0012300000x10²
 console.log(numA.toFixed());          // output: 500              ⇨ format angka dengan jumlah digit desimal (angka belakang koma)
-console.log(numA.toFixed(1));         // output: 500.1              yang tetap, toFixed(1) artinya 1 digit angka di belakang koma.
+console.log(numA.toFixed(1));         // output: 500.1              yang tetap, toFixed(5) artinya 5 digit angka di belakang koma.
 console.log(numA.toFixed(5));         // output: 500.12300
 console.log(numA.toFixed(10));        // output: 500.1230000000
 console.log(numA.toPrecision());      // output: 500.123          ⇨ format angka dengan jumlah digit yang tetap, toPrecision(5)
