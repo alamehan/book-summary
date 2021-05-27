@@ -1871,6 +1871,47 @@ console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));
 // B. Math Object
 // ==============
 
+// B1. Object property
+
+console.log(Math.E);                  // output: 2.718281828459045        ⇨ angka logaritma natural e
+console.log(Math.LN10);               // output: 2.302585092994046        ⇨ angka logaritma natural 10
+console.log(Math.LN2);                // output: 0.6931471805599453       ⇨ angka logaritma natural 2
+console.log(Math.LOG10E);             // output: 0.4342944819032518       ⇨ angka logaritma natural e basis 10
+console.log(Math.LOG2E);              // output: 1.4426950408889634       ⇨ angka logaritma natural e basis 2
+console.log(Math.PI);                 // output: 3.141592653589793        ⇨ angka pi (π)
+console.log(Math.SQRT1_2);            // output: 0.7071067811865476       ⇨ angka 1 dibagi dengan akar kuadrat 2
+console.log(Math.SQRT2);              // output: 1.4142135623730951       ⇨ angka akar kuadrat dari 2
+
+var jariJari = 7;                                     // studi kasus: contoh penggunaan Math.PI & toFixed() untuk mencari luas
+var luasLingkaran = Math.PI * jariJari * jariJari;    // lingkaran kemudian memformat angkanya dengan jumlah digit desimal = 2
+console.log(luasLingkaran);                           // output: 153.93804002589985
+console.log(luasLingkaran.toFixed(2));                // output: 153.94
+
+// B2. Object method
+
+console.log(Math.floor(12.54));       // output: 12             ⇨ pembulatan ke bawah
+console.log(Math.ceil(12.54));        // output: 13             ⇨ pembulatan ke atas
+console.log(Math.round(12.54));       // output: 13             ⇨ pembulatan ke bawah jika < 0.5 & pembulatan ke atas jika >= 0.5
+console.log(Math.random());           // output: 0.734554...    ⇨ generate angka acak rentang 0-1 (0, 0.9, dst), 1 tidak termasuk
+console.log(Math.max(45,90,12,55));   // output: 90             ⇨ mencari nilai paling besar dari angka yang di input di argument
+console.log(Math.min(45,90,12,55));   // output: 12             ⇨ mencari nilai paling kecil dari angka yang di input di argument
+console.log(Math.abs(-5));            // output: 5              ⇨ menghasilkan nilai absolut, jika angka negatif maka jadi positif
+console.log(Math.pow(5, 2));          // output: 25 ≈ 5²        ⇨ pemangkatan angka (update: sudah diganti dengan operator **)
+console.log(Math.sqrt(81));           // output: 9              ⇨ akar kuadrat dari suatu angka (81 ya 9, karena 81 dari 9x9) 
+console.log(Math.log(10));            // output: 2.302585...    ⇨ mencari nilai logaritma natural (e)
+console.log(Math.log10(1000));        // output: 3              ⇨ mencari nilai logaritma basis 10 (desimal) (biasa digunakan)
+console.log(Math.log2(256));          // output: 8              ⇨ mencari nilai logaritma basis 2 (biner)
+console.log(Math.sin(60));            // output: -0.30481...    ⇨ mencari nilai sinus   (nilai argument: radian, bukan derajat)
+console.log(Math.cos(60));            // output: -0.95241...    ⇨ mencari nilai cosinus (nilai argument: radian, bukan derajat)
+console.log(Math.tan(60));            // output: 0.320040...    ⇨ mencari nilai tangen  (nilai argument: radian, bukan derajat)
+
+var mthA = Math.floor(Math.random()*(10))   // studi kasus: tips untuk generate angka bulat acak rentang 0-9 (tidak lagi pecahan!)
+console.log(mthA);                          // output: 7 (contoh)
+
+var mthA = [45, 90, 12, 55];                // studi kasus: mencari nilai paling besar/kecil dari array (pakai spread operator)
+console.log(Math.max(...mthA));             // output: 90
+console.log(Math.min(...mthA));             // output: 12
+
 // ================
 // C. String Object
 // ================
