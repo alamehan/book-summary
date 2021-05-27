@@ -1862,7 +1862,7 @@ console.log(numB.toString(8));        // output: 62     (string)  ⤷ konversi k
 console.log(numB.toString(16));       // output: 32     (string)  ⤷ konversi ke heksa (basis 16) 
 console.log(numC.toLocaleString('id-ID'));  // output: 1.234.500,346  ⇨ konversi Number ke String + memakai format angka lokal
 console.log(numC.toLocaleString('en-US'));  // output: 1,234,500.346  ⤷ en-US: format angka Amerika Serikat (US)
-console.log(numC.toLocaleString('fr-FR'));  // output: 1 234 500,346  ⤷ fr-FR: format angka Perancis
+console.log(numC.toLocaleString('fr-FR'));  // output: 1 234 500,346  ⤷ fr-FR: format angka Perancis (FR)
 console.log(numC.toLocaleString('id-ID', {style: 'decimal'}));                    // output: 1.234.500,346    (default)
 console.log(numC.toLocaleString('id-ID', {style: 'percent'}));                    // output: 123.450.035%     (persen)
 console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));  // output: Rp 1.234.500,35  (mata uang)
