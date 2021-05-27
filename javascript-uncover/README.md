@@ -1828,7 +1828,7 @@ console.log(Number.isFinite(3.21456));                // output: true     ⇨ ch
 console.log(Number.isFinite(1/0));                    // output: false
 console.log(Number.isInteger(9007199254740992));      // output: true     ⇨ check apakah suatu nilai/variabel berisi angka integer
 console.log(Number.isInteger(3.21456));               // output: false
-console.log(Number.isSafeInteger(9007199254740992));  // output: false    ⇨ sama seperti isInteger, namun dibatasi standar IEEE-754
+console.log(Number.isSafeInteger(9007199254740992));  // output: false    ⇨ sama seperti isInteger, tapi dibatasi standar IEEE-754
 console.log(Number.isSafeInteger(3.21456));           // output: false
 console.log(Number.parseFloat("1.23"));               // output: 1.23 (number)  ⇨ mengkonversi String menjadi Number (pecahan)
 console.log(Number.parseFloat("10.3% keuntungan"));   // output: 10.3 (number)
