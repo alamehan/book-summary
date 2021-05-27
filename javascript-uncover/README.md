@@ -1809,6 +1809,34 @@ console.log(bar.length);              // ouput: 11. Kita pun masih tetap bisa me
 // A. Number Object
 // ================
 
+// A1. Object property
+
+console.log(Number.EPSILON);          // output: 2.220446049250313e-16    ⇨ interval terkecil dari dua angka di dalam JavaScript
+console.log(Number.MAX_VALUE);        // output: 1.7976931348623157e+308  ⇨ angka tertinggi yang bisa ditampung di dalam JavaScript
+console.log(Number.MIN_VALUE);        // output: 5e-324                   ⇨ angka positif terkecil yang bisa ditampung JavaScript
+console.log(Number.MAX_SAFE_INTEGER); // output: 9007199254740991         ⇨ nilai maksimum integer (standar IEEE-754) ≈ 2⁵³-1
+console.log(Number.MIN_SAFE_INTEGER); // output: -9007199254740991        ⇨ nilai minimum integer (standar IEEE-754) ≈ -(2⁵³-1)
+console.log(Number.NaN);              // output: NaN                      ⇨ cara untuk membuat nilai NaN (not a number)
+console.log(Number.POSITIVE_INFINITY) // output: Infinity                 ⇨ cara untuk membuat nilai infinity
+console.log(Number.NEGATIVE_INFINITY) // output: -Infinity                ⇨ cara untuk membuat nilai -infinity
+
+// A2. Object method
+
+console.log(Number.isNaN(5/'a'));                     // output: true     ⇨ check apakah hasil operasi/suatu variabel berisi NaN
+console.log(Number.isNaN(Number.NaN));                // output: true
+console.log(Number.isFinite(3.21456));                // output: true     ⇨ check apakah sebuah nilai/var berisi angka (standar)
+console.log(Number.isFinite(1/0));                    // output: false
+console.log(Number.isInteger(9007199254740992));      // output: true     ⇨ check apakah suatu nilai/variabel berisi angka integer
+console.log(Number.isInteger(3.21456));               // output: false
+console.log(Number.isSafeInteger(9007199254740992));  // output: false    ⇨ sama seperti isInteger, namun dibatasi standar IEEE-754
+console.log(Number.isSafeInteger(3.21456));           // output: false
+console.log(Number.parseFloat("1.23"));               // output: 1.23 (number)  ⇨ mengkonversi String menjadi Number (angka pecahan)
+console.log(Number.parseFloat("10.3% keuntungan"));   // output: 10.3 (number)
+console.log(Number.parseInt("1.23"));                 // output: 1    (number)  ⇨ mengkonversi String menjadi Number (angka bulat)
+console.log(Number.parseInt("10.3% keuntungan"));     // output: 10   (number)
+
+// A3. Object instance method
+
 // ==============
 // B. Math Object
 // ==============
