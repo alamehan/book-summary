@@ -1770,12 +1770,17 @@ Sebelumnya, ada beberapa istilah yang perlu diketahui perbedaannya terlebih dahu
 • Object instance property    contoh: var foo = "Belajar JavaScript"; console.log(foo.length);  🡲 output: 18 
 • Object instance method      contoh: var foo = 50.12345; console.log(foo.toPrecision(5));      🡲 output: 50.123
 
-Object property & Object method melekat langsung ke Object-nya (Class-nya): Number.MAX_VALUE & Number.parseInt("12.045"),
-dimana Number merupakan Object-nya, sedangkan MAX_VALUE sebagai Object property & parsetInt() sebagai Object method-nya.
+⤷ Object property & Object method melekat langsung ke Object-nya (Class-nya): Number.MAX_VALUE & Number.parseInt("12.045"),
+  dimana Number merupakan Object-nya, sedangkan MAX_VALUE sebagai Object property & parsetInt() sebagai Object method-nya.
 
-Object instance property & Object instance method melekat ke Instance Object: foo.length & foo.toPrecision(), dimana foo
-merupakan hasil instance dari Object (Class) String (untuk foo.length) & hasil instance dari Object Number (untuk foo.
-toPrecision(5)), sedangkan length sebagai Object instance property & toPrecision() sebagai Object instance method-nya.
+⤷ Object instance property & Object instance method melekat ke Instance Object: foo.length & foo.toPrecision(), dimana foo
+  merupakan hasil instance dari Object (Class) String (untuk foo.length) & hasil instance dari Object Number (untuk foo.
+  toPrecision(5)), sedangkan length sebagai Object instance property & toPrecision() sebagai Object instance method-nya.
+
+Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property,
+dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja.
+Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang
+umum saja. Referensi lengkap bisa lihat di: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 */
 
 // C1. Contoh: String (object)
