@@ -1913,9 +1913,9 @@ console.log(Math.tan(60));            // output: 0.320040...    ⇨ mencari nila
 var mthA = Math.floor(Math.random()*(10))   // studi kasus: tips untuk generate angka bulat acak rentang 0-9 (tidak lagi pecahan!)
 console.log(mthA);                          // output: 7 (contoh)
 
-var mthA = [45, 90, 12, 55];                // studi kasus: mencari nilai paling besar/kecil dari array (pakai spread operator)
-console.log(Math.max(...mthA));             // output: 90
-console.log(Math.min(...mthA));             // output: 12
+var mthB = [45, 90, 12, 55];                // studi kasus: mencari nilai paling besar/kecil dari array (pakai spread operator)
+console.log(Math.max(...mthB));             // output: 90
+console.log(Math.min(...mthB));             // output: 12
 
 // ================
 // C. String Object
