@@ -1575,7 +1575,7 @@ var hasil = potongTeks(teks, 6, 10);  // output: World  ⇨ berbasiskan function
 
 // A2. Paradigma: Object Oriented Programming (OOP)
 
-// ...                                // asumsi sudah terdapat sebuah method potongTeks di dalam String object (lihat point C1)
+// ...                                // asumsi sudah terdapat sebuah method potongTeks di dalam String Object (lihat point C1)
 var teks = new String("Hello World"); // sebenarnya sama aja dengan var teks = "Hello World"; (lihat point A3)
 var hasil = teks.potongTeks(6, 10);   // output: World  ⇨ berbasiskan object (mengakses method potongTeks dengan dot notation)
                                       // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝗻𝗲𝘄 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟯)
@@ -1585,7 +1585,7 @@ var hasil = teks.potongTeks(6, 10);   // output: World  ⇨ berbasiskan object (
 var num1 = 52;                        // cara penulisan: Number literals  (✔️ Recommended)
 var num2 = new Number(52);            // cara penulisan: Number object    (❌ Not Recommended)
 var str1 = "Belajar JS";              // cara penulisan: String literals  (✔️ Recommended)
-var str2 = new String("Belajar JS");  // cara penulisan: String object    (❌ Not Recommended)
+var str2 = new String("Belajar JS");  // cara penulisan: String Object    (❌ Not Recommended)
 var bol1 = true;                      // cara penulisan: Boolean literals (✔️ Recommended)
 var bol2 = new Boolean(true);         // cara penulisan: Boolean object   (❌ Not Recommended)
 var arr1 = [1, 2, 3];                 // cara penulisan: Array literals   (✔️ Recommended)
@@ -1792,16 +1792,16 @@ var foo = new String("Hello World");  // Kita tidak pernah mendefinisikan Class 
 
 console.log(foo.toUpperCase());       // output: HELLO WORLD. Kita tidak pernah mendefinisikan method toUpperCase() bukan? tetapi
                                       // kenapa langsung bisa dipakai (melalui dot notation)? itu karena, toUpperCase() merupakan 
-                                      // salah satu "instance method" bawaan milik String object, jadi kita bisa langsung pakai.
-console.log(foo.length)               // output: 11. length merupakan salah satu "instance property" bawaan milik String object.
+                                      // salah satu "instance method" bawaan milik String Object, jadi kita bisa langsung pakai.
+console.log(foo.length)               // output: 11. length merupakan salah satu "instance property" bawaan milik String Object.
 
 // C2. Contoh: String (literals)
 
 var bar = "Hello World";              // cara penulisan: String literals (lebih "hemat" dibandingkan Object Constructor di atas)
 console.log(bar.toUpperCase());       // output: HELLO WORLD. Ternyata meskipun variable bar didefinisikan secara String literals,
-                                      // bukan secara String object, kita masih tetap bisa memakai "instance method" bawaan String
+                                      // bukan secara String Object, kita masih tetap bisa memakai "instance method" bawaan String
                                       // object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A3).
-console.log(bar.length);              // ouput: 11. Kita pun masih tetap bisa memakai "instance property" bawaan String object.
+console.log(bar.length);              // ouput: 11. Kita pun masih tetap bisa memakai "instance property" bawaan String Object.
 ```
 
 <br>
@@ -1912,7 +1912,6 @@ console.log(Math.tan(60));            // output: 0.320040...    ⇨ mencari nila
 
 var mthA = Math.floor(Math.random()*(10))   // studi kasus: tips untuk generate angka bulat acak rentang 0-9 (tidak lagi pecahan!)
 console.log(mthA);                          // output: 7 (contoh)
-
 var mthB = [45, 90, 12, 55];                // studi kasus: mencari nilai paling besar/kecil dari array (pakai spread operator)
 console.log(Math.max(...mthB));             // output: 90
 console.log(Math.min(...mthB));             // output: 12
@@ -1920,6 +1919,28 @@ console.log(Math.min(...mthB));             // output: 12
 // ================
 // C. String Object
 // ================
+
+// C1. Object method
+
+console.log(String.fromCharCode(65, 66, 67));               // output: ABC      ⇨ membuat String berdasarkan kode unicode
+console.log(String.fromCharCode(9749, 10052, 12096));       // output: ☕❄⽀   ⤷ penulisan dengan nomor urut desimal
+console.log(String.fromCharCode(0x2615, 0x2744, 0x2F40));   // output: ☕❄⽀   ⤷ penulisan dengan nomor urut heksadesimal (0x...)
+console.log(String.fromCharCode(128656, 128663, 128690));   // output:      ‏‏‎ ‎‎⤷ gagal menampilkan karakter terbaru unicode
+console.log(String.fromCodePoint(65, 66, 67));              // output: ABC      ⇨ membuat String berdasarkan kode unicode (ES6)
+console.log(String.fromCodePoint(9749, 10052, 12096));      // output: ☕❄⽀     fromCodePoint "versi update" dari fromCharCode
+console.log(String.fromCodePoint(0x2615, 0x2744, 0x2F40));  // output: ☕❄⽀
+console.log(String.fromCodePoint(128656, 128663, 128690));  // output: 🚐🚗🚲  ⤷ berhasil menampilkan karakter terbaru unicode
+
+                                                            // Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/ 
+
+// C2. Object instance property
+
+var strA = "Hello World!";
+var strB = "Belajar JavaScript";
+console.log(strA.length);             // output: 12         ⇨ mengambil info panjang karakter dari sebuah String
+console.log(strB.length);             // output: 18         ⤷ banyak digunakan di validasi form, misal syarat minimal 8 karakter
+
+// C3. Object instance method
 
 // ================
 // D. RegExp Object
