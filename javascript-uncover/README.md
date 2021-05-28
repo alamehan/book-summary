@@ -1764,7 +1764,7 @@ Di buku ini akan dibahas beberapa diantaranya yang paling populer (dibahas di BA
 • Boolean     • RegExp
 • Function    • Date
 
-Sebelumnya, ada beberapa istilah yang perlu diketahui perbedaannya terlebih dahulu, yaitu:
+4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya):
 • Object property             contoh: console.log(Number.MAX_VALUE);                            🡲 output: 1.7976931348623157e+308
 • Object method               contoh: console.log(Number.parseInt("12.045"));                   🡲 output: 12 (number, not string)
 • Object instance property    contoh: var foo = "Belajar JavaScript"; console.log(foo.length);  🡲 output: 18 
@@ -1772,10 +1772,14 @@ Sebelumnya, ada beberapa istilah yang perlu diketahui perbedaannya terlebih dahu
 
 ⤷ Object property & Object method melekat langsung ke Object-nya (Class-nya): Number.MAX_VALUE & Number.parseInt("12.045"),
   dimana Number merupakan Object-nya, sedangkan MAX_VALUE sebagai Object property & parsetInt() sebagai Object method-nya.
+  - Penulisan formal: Number.MAX_VALUE, Number.parseInt(), dst. (perhatikan ada polanya, yaitu: Object.property/method())
 
 ⤷ Object instance property & Object instance method melekat ke Instance Object: foo.length & foo.toPrecision(), dimana foo
   merupakan hasil instance dari Object (Class) String (untuk foo.length) & hasil instance dari Object Number (untuk foo.
   toPrecision(5)), sedangkan length sebagai Object instance property & toPrecision() sebagai Object instance method-nya.
+  - Penulisan formal: String.prototype.length, Number.prototype.toPrecision(), dst. (pola: Object.prototype.property/method())
+  - Mengapa perlu tahu penulisan formalnya? Nantinya pada saat buka dokumentasi JavaScript Native Object di MDN, kita dapat
+    dengan mudah membedakan mana Object property/Object method dengan Object instance property/Object instance method.
 
 Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property,
 dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja.
@@ -1941,6 +1945,8 @@ console.log(strA.length);             // output: 12         ⇨ mengambil info p
 console.log(strB.length);             // output: 18         ⤷ banyak digunakan di validasi form, misal syarat minimal 8 karakter
 
 // C3. Object instance method
+
+
 
 // ================
 // D. RegExp Object
