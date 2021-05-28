@@ -1916,6 +1916,7 @@ console.log(Math.tan(60));            // output: 0.320040...    ⇨ mencari nila
 
 var mthA = Math.floor(Math.random()*(10))   // studi kasus: tips untuk generate angka bulat acak rentang 0-9 (tidak lagi pecahan!)
 console.log(mthA);                          // output: 7 (contoh)
+
 var mthB = [45, 90, 12, 55];                // studi kasus: mencari nilai paling besar/kecil dari array (pakai spread operator)
 console.log(Math.max(...mthB));             // output: 90
 console.log(Math.min(...mthB));             // output: 12
@@ -1941,11 +1942,13 @@ console.log(String.fromCodePoint(128656, 128663, 128690));  // output: 🚐🚗�
 
 var strA = "Hello World!";
 var strB = "Belajar JavaScript";
-var strC = "Bandung";
+
 console.log(strA.length);             // output: 12         ⇨ mengambil info panjang karakter dari sebuah String
 console.log(strB.length);             // output: 18         ⤷ banyak digunakan di validasi form, misal syarat minimal 8 karakter
 
 // C3. Object instance method
+
+var strC = "Bandung";
 
 console.log(strC.toLowerCase());            // output: bandung  ⇨ mengubah String menjadi huruf kecil
 console.log(strC.toUpperCase());            // output: BANDUNG  ⇨ mengubah String menjadi huruf besar
@@ -1972,6 +1975,19 @@ console.log(strC.slice(-4));                // output: dung     ⤷ ambil String
                                             // Note: Object instance method substr(), substring() & slice() sangat mirip satu 
                                             // sama lain, perbedaannya hanya pada prilaku argument kedua masing-masing method
 
+var strD = "Bandung kota kembang";
+var strE = "Satu, dua, tiga, empat";
+var strF = "satu,dua;tiga-empat";
+
+console.log(strD.split());                  // output: ["Bandung kota kembang"]         ⇨ split() digunakan untuk memecah sebuah
+console.log(strD.split(""));                // output: ["B", "a", "n", "d" ...]            String menjadi sebuah Array, argument
+console.log(strD.split("", 1));             // output: ["B"]                               pertama diisi karakter "pembatas" yang 
+console.log(strD.split(" "));               // output: ["Bandung", "kota", "kembang"]      digunakan untuk memecah String (atau
+console.log(strD.split(" ", 2));            // output: ["Bandung", "kota"]                 bisa juga diisi dengan RegExp, dibahas
+console.log(strE.split(", "));              // output: ["Satu", "dua", "tiga", "empat"]    di point D), sedangkan argument kedua 
+console.log(strE.split(", ", 3));           // output: ["Satu", "dua", "tiga"]             (optional), diisi dengan jumlah element
+console.log(strF.split(/\W/));              // output: ["Satu", "dua", "tiga", "empat"]    Array yang ingin diambil.
+console.log(strF.split(/\W/, 3));           // output: ["Satu", "dua", "tiga"]
 
 // ================
 // D. RegExp Object
