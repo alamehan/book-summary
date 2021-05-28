@@ -1869,6 +1869,7 @@ console.log(numB.toString());         // output: 50     (string)  ⇨ mengkonver
 console.log(numB.toString(2));        // output: 110010 (string)  ⤷ konversi ke biner (basis 2)
 console.log(numB.toString(8));        // output: 62     (string)  ⤷ konversi ke oktal (basis 8) 
 console.log(numB.toString(16));       // output: 32     (string)  ⤷ konversi ke heksa (basis 16)
+
 console.log(numC.toLocaleString('id-ID'));  // output: 1.234.500,346  ⇨ konversi Number ke String + memakai format angka lokal
 console.log(numC.toLocaleString('en-US'));  // output: 1,234,500.346  ⤷ en-US: format angka Amerika Serikat (US)
 console.log(numC.toLocaleString('fr-FR'));  // output: 1 234 500,346  ⤷ fr-FR: format angka Perancis (FR)
