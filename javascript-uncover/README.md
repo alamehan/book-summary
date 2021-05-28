@@ -1988,7 +1988,7 @@ console.log(strD.split(" ", 2));            // output: ["Bandung", "kota"]      
 console.log(strE.split(", "));              // output: ["Satu", "dua", "tiga", "empat"]    di point D), sedangkan argument kedua 
 console.log(strE.split(", ", 3));           // output: ["Satu", "dua", "tiga"]             (optional), diisi dengan jumlah element
 console.log(strF.split(/\W/));              // output: ["Satu", "dua", "tiga", "empat"]    Array yang ingin diambil.
-console.log(strF.split(/\W/, 3));           // output: ["Satu", "dua", "tiga"]
+console.log(strF.split(/\W/, 3));           // output: ["Satu", "dua", "tiga"]            ⤷ /\W/ merupakan contoh pemakaian RegExp
 
 // ================
 // D. RegExp Object
