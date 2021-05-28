@@ -1941,11 +1941,36 @@ console.log(String.fromCodePoint(128656, 128663, 128690));  // output: 🚐🚗�
 
 var strA = "Hello World!";
 var strB = "Belajar JavaScript";
+var strC = "Bandung";
 console.log(strA.length);             // output: 12         ⇨ mengambil info panjang karakter dari sebuah String
 console.log(strB.length);             // output: 18         ⤷ banyak digunakan di validasi form, misal syarat minimal 8 karakter
 
 // C3. Object instance method
 
+console.log(strC.toLowerCase());            // output: bandung  ⇨ mengubah String menjadi huruf kecil
+console.log(strC.toUpperCase());            // output: BANDUNG  ⇨ mengubah String menjadi huruf besar
+console.log(strC.toLocaleLowerCase());      // output: bandung  ⇨ serupa dengan toLowerCase namun sesuai settingan bahasa lokal
+console.log(strC.toLocaleUpperCase());      // output: BANDUNG  ⇨ serupa dengan toUpperCase namun sesuai settingan bahasa lokal
+console.log(strC.charAt(0));                // output: B        ⇨ menampilkan karakter yang berada di posisi tertentu dari String
+console.log(strC.charAt(5));                // output: n        ⤷ strC.charAt(5) sebenarnya bisa juga diakses dengan strC[5]
+console.log(strC.charCodeAt(0));            // output: 66       ⇨ menampilkan kode unicode dari sebuah karakter di String (B = 66)
+console.log(strC.codePointAt(0));           // output: 66       ⇨ codePointAt (ES6) merupakan "versi update" dari charCodeAt
+
+console.log(strC.substr(2));                // output: ndung    ⇨ ambil String dari indeks ke 2 (depan) s.d. akhir
+console.log(strC.substr(-2));               // output: ng       ⤷ ambil String dari indeks ke 2 (belakang) s.d. akhir
+console.log(strC.substr(2, 4));             // output: ndun     ⤷ ambil String dari indeks ke 2 (depan) sebanyak 4 karakter
+console.log(strC.substr(-4, 3));            // output: dun      ⤷ ambil String dari indeks ke 4 (belakang) sebanyak 3 karakter
+console.log(strC.substring(2));             // output: ndung    ⇨ ambil String dari indeks ke 2 (depan) s.d. akhir
+console.log(strC.substring(2, 4));          // output: nd       ⤷ ambil String dari indeks ke 2 (depan) s.d indeks ke 4 (depan)
+console.log(strC.substring(-4, 6));         // output: Bandun   ⤷ ambil String dari indeks ke 0 s.d indeks ke 6 (negatif jadi 0)
+console.log(strC.substring(4, 0));          // output: Band     ⤷ ambil 4 karakter pertama dari String (indeks ke 0 s.d. ke 4)
+console.log(strC.slice(2));                 // output: ndung    ⇨ ambil String dari indeks ke 2 (depan) s.d. akhir
+console.log(strC.slice(2, 4));              // output: nd       ⤷ ambil String dari indeks ke 2 (depan) s.d indeks ke 4 (depan)
+console.log(strC.slice(-4, 6));             // output: dun      ⤷ ambil String dari indeks ke 4 (belakang) s.d. indeks ke 6 (depan)
+console.log(strC.slice(-4));                // output: dung     ⤷ ambil String dari indeks ke 4 (belakang) s.d. akhir
+
+                                            // Note: Object instance method substr(), substring() & slice() sangat mirip satu 
+                                            // sama lain, perbedaannya hanya pada prilaku argument kedua masing-masing method
 
 
 // ================
