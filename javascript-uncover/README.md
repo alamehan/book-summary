@@ -2020,7 +2020,7 @@ while (posisi !== -1){                  // perulangan berhenti saat posisi = -1 
 console.log(count);                     // output: 6
 
 // =====================================
-// D. Reguler Expression (RegExp) Object
+// D. Regular Expression (RegExp) Object
 // =====================================
 
 // D1. Object instance method
@@ -2033,7 +2033,7 @@ console.log(/buku/.test(regA));         // output: true           ⤷ penulisan 
 console.log(/Buku/.test(regA));         // output: false          ⤷ berlaku juga untuk semua Object instance property & method ✅
 console.log(/Buku/i.test(regA));        // output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
 
-// D2. Pola Reguler Expression (RegExp)
+// D2. Pola Regular Expression (RegExp)
 
 // ➊ Pola RegExp sebagai String
 
@@ -2059,6 +2059,29 @@ console.log(regC.match(/\w*o\w*/g));    // output: null                    akan 
                                         // d (has indices), namun tidak banyak digunakan. Selebihnya lihat dokumentasi di MDN.
 
 // ➌ Menandakan Awal dan Akhir Pola
+
+console.log(/^Belajar/.test(regB));     // output: true                     ⇨ ^ sebagai karakter penanda awal pola          
+console.log(/^Bel/.test(regB));         // output: true       
+console.log(regB.replace(/^/, "GO! ")); // output: GO! Belojar JavaScript
+console.log(/Script$/.test(regB));      // output: true                     ⇨ $ sebagai karakter penanda akhir pola
+console.log(/ipt$/.test(regB));         // output: true
+console.log(regB.replace(/$/, " GO!")); // output: Belajar JavaScript GO!
+
+// ➍ Wildcard
+
+var polaB = /.b../;                     // 1 karakter apa saja + huruf b + minimal 2 karakter apa saja
+var polaC = /^.b..$/;                   // 1 karakter apa saja + huruf b + 2 karakter apa saja = total 4 karakter
+
+console.log(polaB.test("abaa"));        // output: true     ⇨ contoh pemakaian pola = /.b../
+console.log(polaB.test("aba"));         // output: false
+console.log(polaB.test("abbaa"));       // output: true
+console.log(polaB.test("1b11"));        // output: true
+console.log(polaB.test(" b  "));        // output: true
+console.log(polaC.test("abaa"));        // output: true     ⇨ contoh pemakaian pola = /^.b..$/
+console.log(polaC.test("aba"));         // output: false
+console.log(polaC.test("abbaa"));       // output: false
+console.log(polaC.test("1b11"));        // output: true
+console.log(polaC.test(" b  "));        // output: true
 
 // ===============
 // E. Array Object
