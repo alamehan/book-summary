@@ -1592,6 +1592,8 @@ var arr1 = [1, 2, 3];                 // cara penulisan: Array literals   (✔�
 var arr2 = new Array(1, 2, 3);        // cara penulisan: Array object     (❌ Not Recommended)
 var obj1 = {nama: "Budi", umur: 24};  // cara penulisan: Object literals  (✔️ Recommended)
 var obj2 = new Object();              // cara penulisan: Object object    (❌ Not Recommended)
+var reg1 = /ab+c/;                    // cara penulisan: RegExp literals  (✔️ Recommended)          𝗡𝗼𝘁𝗲: 𝗥𝗲𝗴𝗘𝘅𝗽 𝗱𝗶-
+var reg2 = new RegExp("ab+c");        // cara penulisan: RegExp object    (❌ Not Recommended)      𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮
 obj2.nama = "Budi";
 obj2.umur = 24;
 
