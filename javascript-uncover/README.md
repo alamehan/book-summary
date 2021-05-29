@@ -1979,7 +1979,7 @@ console.log(strC.slice(-4));            // output: dung     ⤷ ambil String dar
                                         // sama lain, perbedaannya hanya pada prilaku argument kedua masing-masing method
 
 console.log(strD.split());              // output: ["Bandung kota kembang"]         ⇨ split() dipakai untuk memecah sebuah String
-console.log(strD.split(""));            // output: ["B", "a", "n", "d" ...]            menjadi sebuah Array, argument pertama di
+console.log(strD.split(""));            // output: ["B", "a", "n", "d" ...]            menjadi sebuah Array, argument pertama diisi
 console.log(strD.split("", 1));         // output: ["B"]                               karakter "pembatas" yang digunakan untuk
 console.log(strD.split(" "));           // output: ["Bandung", "kota", "kembang"]      memecah String (atau bisa juga diisi dengan 
 console.log(strD.split(" ", 2));        // output: ["Bandung", "kota"]                 RegExp, dibahas di point D), sedangkan 
@@ -1988,7 +1988,7 @@ console.log(strE.split(", ", 3));       // output: ["Satu", "dua", "tiga"]      
 console.log(strF.split(/\W/));          // output: ["Satu", "dua", "tiga", "empat"]  ⤷ /\W/ merupakan contoh pemakaian RegExp
 console.log(strF.split(/\W/, 3));       // output: ["Satu", "dua", "tiga"]            
 console.log(strG.trim());               // output: username       ⇨ hapus karakter whitespace (tab, dll) di awal & akhir String
-console.log(strC.concat(" Juara"));     // output: Bandung Juara  ⇨ menyambung String (update: sudah ganti jadi operator concat +) 
+console.log(strC.concat(" Juara"));     // output: Bandung Juara  ⇨ menyambung String (update: sudah ganti jadi operator concat+) 
 console.log(strD.includes("kota"));     // output: true           ⇨ check apakah String "kota" ada di dalam String strD
 console.log(strD.includes("kota", 9));  // output: false          ⤷ argument ke 2: 9 menjadi indeks dimana pencarian dimulai
 console.log(strE.startsWith("Satu"));   // output: true           ⇨ check apakah String strE diawali dengan String "Satu"
