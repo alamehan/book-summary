@@ -2008,7 +2008,7 @@ console.log(strD.match(/\w*z\w*/g));    // output: null           ⤷ jika outpu
 console.log(strD.replace("kota", "X")); // output: Bandung X kembang      ⇨ mengganti String dengan String lain (di argument)
 console.log(strD.replace(/a/g, "o"));   // output: Bondung koto kembong   ⤷ argument ke 1: bisa diisi juga dengan RegExp
 
-var strH = "Nama saya Budi Setiawan";   // studi kasus: menghitung berapa kali String "a" muncul di dalam String strX
+var strH = "Nama saya Budi Setiawan";   // studi kasus: menghitung berapa kali String "a" muncul di dalam String strH
 var count = 0;                          // dengan memanfaatkan Object instance method indexOf() dan perulangan while
 var posisi = strH.indexOf("a");
 while (posisi !== -1){                  // perulangan berhenti saat posisi = -1 (artinya String "a" tidak ditemukan lagi)
