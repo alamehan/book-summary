@@ -2045,7 +2045,7 @@ console.log(/Javascript/.test(regB));   // output: false
 console.log(/Belajar/.test(regB));      // output: true
 console.log(/ajar/.test(regB));         // output: true
 
-// ➋ RegExp Flag
+// ➋ RegExp Flag (Penanda)
 
 console.log(/jAvASCriPt/.test(regB));   // output: false                ⇨ flag i (ignore case) untuk mengabaikan Case Sensitive
 console.log(/jAvASCriPt/i.test(regB));  // output: true                    atau disebut juga sebagai Case Insensitive.
@@ -2058,7 +2058,7 @@ console.log(regC.match(/\w*o\w*/g));    // output: null                    akan 
                                         // Note: terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) &
                                         // d (has indices), namun tidak banyak digunakan. Selebihnya lihat dokumentasi di MDN.
 
-// ➌ Menandakan Awal dan Akhir Pola
+// ➌ Pola Awal & Akhir
 
 console.log(/^Belajar/.test(regB));     // output: true                     ⇨ ^ sebagai karakter penanda awal pola          
 console.log(/^Bel/.test(regB));         // output: true       
@@ -2067,21 +2067,40 @@ console.log(/Script$/.test(regB));      // output: true                     ⇨ 
 console.log(/ipt$/.test(regB));         // output: true
 console.log(regB.replace(/$/, " GO!")); // output: Belajar JavaScript GO!
 
-// ➍ Wildcard
+// ➍ Pola Wildcard
 
-var polaB = /.b../;                     // 1 karakter apa saja + huruf b + minimal 2 karakter apa saja
-var polaC = /^.b..$/;                   // 1 karakter apa saja + huruf b + 2 karakter apa saja = total 4 karakter
+                                        // Wildcard, pola yang bisa diganti dengan karakter apa saja, ditulis dengan tanda titik:
+var polaB = /.b../;                     // ⤷ artinya 1 karakter apa saja (bebas) + huruf b + minimal 2 karakter apa saja (bebas)
+var polaC = /^.b..$/;                   // ⤷ artinya 1 karakter apa saja (bebas) + huruf b + 2 karakter (bebas)
 
-console.log(polaB.test("abaa"));        // output: true     ⇨ contoh pemakaian pola = /.b../
+console.log(polaB.test("abaa"));        // output: true     ⇨ contoh pengecheck-an pola /.b../ di dalam String
 console.log(polaB.test("aba"));         // output: false
 console.log(polaB.test("abbaa"));       // output: true
 console.log(polaB.test("1b11"));        // output: true
 console.log(polaB.test(" b  "));        // output: true
-console.log(polaC.test("abaa"));        // output: true     ⇨ contoh pemakaian pola = /^.b..$/
+console.log(polaC.test("abaa"));        // output: true     ⇨ contoh pengecheck-an pola /^.b..$/ di dalam String
 console.log(polaC.test("aba"));         // output: false
 console.log(polaC.test("abbaa"));       // output: false
 console.log(polaC.test("1b11"));        // output: true
 console.log(polaC.test(" b  "));        // output: true
+
+// ➎ Pola Character Set
+
+                                        // Character Set, membuat syarat bahwa hanya karakter tertentu saja yang boleh ditulis:
+var polaD = /[abcde]../;                // ⤷ artinya digit pertama diisi oleh salah satu huruf a/b/c/d/e + min 2 karakter bebas
+var polaE = /[a-e]../;                  // ⤷ [a-e] merupakan alternatif penulisan dari [abcde], lebih simple dan mudah dibaca
+var polaF = /^[a-e][1-9][R-Z]./;        // ⤷ artinya digit pertama a-e + digit kedua 1-9 + digit ketiga R-Z + min 1 karakter bebas
+
+console.log(polaE.test("add"));         // output: true     ⇨ contoh pengecheck-an pola /[a-e]../ di dalam String
+console.log(polaE.test("abaa"));        // output: true
+console.log(polaE.test("fba"));         // output: false
+console.log(polaE.test(" dd"));         // output: false
+console.log(polaE.test("belajar"));     // output: true
+console.log(polaF.test("a9R"));         // output: false    ⇨ contoh pengecheck-an pola /^[a-e][1-9][R-Z]./ di dalam String
+console.log(polaF.test("a9Ra"));        // output: true
+console.log(polaF.test("fa9Ra"));       // output: false
+console.log(polaF.test("e9ZA"));        // output: true
+console.log(polaF.test("e9ZAAAAA"));    // output: true
 
 // ===============
 // E. Array Object
