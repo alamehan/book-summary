@@ -1869,7 +1869,6 @@ console.log(numB.toString());         // output: 50     (string)  ⇨ mengkonver
 console.log(numB.toString(2));        // output: 110010 (string)  ⤷ konversi ke biner (basis 2)
 console.log(numB.toString(8));        // output: 62     (string)  ⤷ konversi ke oktal (basis 8) 
 console.log(numB.toString(16));       // output: 32     (string)  ⤷ konversi ke heksa (basis 16)
-
 console.log(numC.toLocaleString('id-ID'));  // output: 1.234.500,346  ⇨ konversi Number ke String + memakai format angka lokal
 console.log(numC.toLocaleString('en-US'));  // output: 1,234,500.346  ⤷ en-US: format angka Amerika Serikat (US)
 console.log(numC.toLocaleString('fr-FR'));  // output: 1 234 500,346  ⤷ fr-FR: format angka Perancis (FR)
@@ -1991,7 +1990,31 @@ console.log(strF.split(/\W/, 3));       // output: ["Satu", "dua", "tiga"]
 console.log(strG.trim());               // output: username       ⇨ menghapus karakter whitespace (tab, dll) di awal & akhir String
 console.log(strC.concat(" Juara"));     // output: Bandung Juara  ⇨ menyambung String (update: sudah ganti jadi operator concat +) 
 console.log(strD.includes("kota"));     // output: true           ⇨ check apakah String "kota" ada di dalam String strD
-console.log(strD.includes("kota", 9));  // output: true           ⤷ argument ke 2 berupa indeks dimana pencarian akan dimulai
+console.log(strD.includes("kota", 9));  // output: false          ⤷ argument ke 2: 9 menjadi indeks dimana pencarian dimulai
+console.log(strE.startsWith("Satu"));   // output: true           ⇨ check apakah String strE diawali dengan String "Satu"
+console.log(strE.startsWith("dua", 6)); // output: true           ⤷ argument ke 2: 6 menjadi indeks awal String
+console.log(strE.endsWith("empat"));    // output: true           ⇨ check apakah String strE diakhiri dengan String "empat"
+console.log(strE.endsWith("dua", 9));   // output: true           ⤷ argument ke 2: 9 menjadi indeks akhir String
+console.log(strC.repeat(2));            // output: BandungBandung ⇨ mengulang String sebanyak jumlah yang diinput di argument
+console.log(numB.toString());           // output: 50 (String)    ⇨ konversi menjadi tipe data String (primitif)
+console.log(strD.indexOf("kota"));      // output: 8              ⇨ serupa dengan includes(), namun outputnya berupa posisi indeks
+console.log(strD.indexOf("city"));      // output: -1             ⤷ jika output = -1, artinya String yang dicari tidak ditemukan
+console.log(strD.indexOf("kota", 9));   // output: -1             ⤷ argument ke 2: 9 menjadi indeks dimana pencarian dimulai
+console.log(strD.lastIndexOf("kota"));  // output: 8              ⇨ serupa dengan indexOf(), namun pencarian dimulai dari akhir
+console.log(strD.lastIndexOf("ota", 9));// output: 9              ⤷ 9 menjadi indeks dimana pencarian dimulai (bergerak dari 9 ke 0)
+console.log(strD.search(/KOTA/i));      // output: 8              ⇨ serupa dengan indexOf(), namun argument diisi dengan RegExp
+console.log(strD.match(/\w*o\w*/g));    // output: ["kota"]       ⇨ serupa dengan search(), namun output berupa Array
+console.log(strD.match(/\w*z\w*/g));    // output: null           ⤷ jika output = null, artinya tidak ada pola tersebut di String
+console.log(strD.replace("kota", "X")); // output: Bandung X kembang
+
+var strH = "Nama saya Budi Setiawan";   // studi kasus: menghitung berapa kali String "a" muncul di dalam String strX
+var count = 0;                          // dengan memanfaatkan Object instance method indexOf() dan perulangan while
+var posisi = strH.indexOf("a");
+while (posisi !== -1){                  // perulangan berhenti saat posisi = -1 (artinya String "a" tidak ditemukan lagi)
+  count++;                              // count menghitung berapa kali perulangan berjalan = jumlah String "a" muncul
+  posisi = strH.indexOf("a", posisi+1); // perintah di baris ini berarti terus mencari posisi berikutnya dari String "a"
+}
+console.log(count);                     // output: 6
 
 // ================
 // D. RegExp Object
