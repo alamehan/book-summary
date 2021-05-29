@@ -2001,7 +2001,7 @@ console.log(strD.indexOf("kota"));      // output: 8              ⇨ serupa den
 console.log(strD.indexOf("city"));      // output: -1             ⤷ jika output = -1, artinya String yang dicari tidak ditemukan
 console.log(strD.indexOf("kota", 9));   // output: -1             ⤷ argument ke 2: 9 menjadi indeks dimana pencarian dimulai
 console.log(strD.lastIndexOf("kota"));  // output: 8              ⇨ serupa dengan indexOf(), namun pencarian dimulai dari akhir
-console.log(strD.lastIndexOf("ota", 9));// output: 9              ⤷ 9 menjadi indeks dimana pencarian dimulai (bergerak dari 9 ke 0)
+console.log(strD.lastIndexOf("ota", 9));// output: 9              ⤷ 9 menjadi indeks dimana pencarian dimulai (gerak dari 9 ke 0)
 console.log(strD.search(/KOTA/i));      // output: 8              ⇨ serupa dengan indexOf(), namun argument diisi dengan RegExp
 console.log(strD.match(/\w*o\w*/g));    // output: ["kota"]       ⇨ serupa dengan search(), namun output berupa Array
 console.log(strD.match(/\w*z\w*/g));    // output: null           ⤷ jika output = null, artinya tidak ada pola tersebut di String
