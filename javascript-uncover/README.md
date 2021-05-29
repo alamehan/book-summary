@@ -1980,11 +1980,11 @@ console.log(strC.slice(-4));            // output: dung     ⤷ ambil String dar
 
 console.log(strD.split());              // output: ["Bandung kota kembang"]         ⇨ split() digunakan untuk memecah sebuah String
 console.log(strD.split(""));            // output: ["B", "a", "n", "d" ...]            menjadi sebuah Array, argument pertama diisi
-console.log(strD.split("", 1));         // output: ["B"]                               karakter "pembatas" yang digunakan untuk me-
-console.log(strD.split(" "));           // output: ["Bandung", "kota", "kembang"]      mecah String (atau bisa juga diisi dengan Reg
-console.log(strD.split(" ", 2));        // output: ["Bandung", "kota"]                 Exp, dibahas di point D), sedangkan argument
-console.log(strE.split(", "));          // output: ["Satu", "dua", "tiga", "empat"]    kedua (optional), diisi dengan jumlah element
-console.log(strE.split(", ", 3));       // output: ["Satu", "dua", "tiga"]             Array yang ingin diambil.
+console.log(strD.split("", 1));         // output: ["B"]                               karakter "pembatas" yang digunakan untuk
+console.log(strD.split(" "));           // output: ["Bandung", "kota", "kembang"]      memecah String (atau bisa juga diisi dengan 
+console.log(strD.split(" ", 2));        // output: ["Bandung", "kota"]                 RegExp, dibahas di point D), sedangkan 
+console.log(strE.split(", "));          // output: ["Satu", "dua", "tiga", "empat"]    argument kedua (optional), diisi dengan 
+console.log(strE.split(", ", 3));       // output: ["Satu", "dua", "tiga"]             jumlah element Array yang ingin diambil.
 console.log(strF.split(/\W/));          // output: ["Satu", "dua", "tiga", "empat"]  ⤷ /\W/ merupakan contoh pemakaian RegExp
 console.log(strF.split(/\W/, 3));       // output: ["Satu", "dua", "tiga"]            
 console.log(strG.trim());               // output: username       ⇨ menghapus karakter whitespace (tab, dll) di awal & akhir String
