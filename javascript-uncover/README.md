@@ -1988,7 +1988,7 @@ console.log(strE.split(", ", 3));       // output: ["Satu", "dua", "tiga"]      
 console.log(strF.split(/\W/));          // output: ["Satu", "dua", "tiga", "empat"]  ⤷ /\W/ merupakan contoh pemakaian RegExp
 console.log(strF.split(/\W/, 3));       // output: ["Satu", "dua", "tiga"]            
 console.log(strG.trim());               // output: username       ⇨ hapus karakter whitespace (tab, dll) di awal & akhir String
-console.log(strC.concat(" Juara"));     // output: Bandung Juara  ⇨ menyambung String (update: sudah ganti jadi operator concat+) 
+console.log(strC.concat(" Juara"));     // output: Bandung Juara  ⇨ menyambung String (update: diganti menjadi operator concat +) 
 console.log(strD.includes("kota"));     // output: true           ⇨ check apakah String "kota" ada di dalam String strD
 console.log(strD.includes("kota", 9));  // output: false          ⤷ argument ke 2: 9 menjadi indeks dimana pencarian dimulai
 console.log(strE.startsWith("Satu"));   // output: true           ⇨ check apakah String strE diawali dengan String "Satu"
@@ -2005,7 +2005,8 @@ console.log(strD.lastIndexOf("ota", 9));// output: 9              ⤷ 9 menjadi 
 console.log(strD.search(/KOTA/i));      // output: 8              ⇨ serupa dengan indexOf(), namun argument diisi dengan RegExp
 console.log(strD.match(/\w*o\w*/g));    // output: ["kota"]       ⇨ serupa dengan search(), namun output berupa Array
 console.log(strD.match(/\w*z\w*/g));    // output: null           ⤷ jika output = null, artinya tidak ada pola tersebut di String
-console.log(strD.replace("kota", "X")); // output: Bandung X kembang
+console.log(strD.replace("kota", "X")); // output: Bandung X kembang      ⇨ mengganti String dengan String lain (di argument)
+console.log(strD.replace(/a/g, "o"));   // output: Bondung koto kembong   ⤷ argument ke 1: bisa diisi juga dengan RegExp
 
 var strH = "Nama saya Budi Setiawan";   // studi kasus: menghitung berapa kali String "a" muncul di dalam String strX
 var count = 0;                          // dengan memanfaatkan Object instance method indexOf() dan perulangan while
