@@ -2019,9 +2019,21 @@ while (posisi !== -1){                  // perulangan berhenti saat posisi = -1 
 }
 console.log(count);                     // output: 6
 
-// ================
-// D. RegExp Object
-// ================
+// =====================================
+// D. Reguler Expression (RegExp) Object
+// =====================================
+
+// D1. Object instance method
+
+var regA = "Belajar JavaScript dari buku JavaScript Uncover";
+var polaA = /JavaScript/;
+
+console.log(polaA.test(regA));          // output: true           ⇨ check apakah pola /JavaScript/ terdapat di dalam String regA
+console.log(/buku/.test(regA));         // output: true           ⤷ penulisan bisa langsung, tanpa disimpan ke dalam var, hal ini
+console.log(/Buku/.test(regA));         // output: false          ⤷ berlaku juga untuk semua Object instance property & method ✅
+console.log(/Buku/i.test(regA));        // output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
+
+// D2. Pola Reguler Expression (RegExp)
 
 // ===============
 // E. Array Object
