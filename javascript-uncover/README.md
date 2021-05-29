@@ -1979,7 +1979,7 @@ console.log(strC.slice(-4));            // output: dung     ⤷ ambil String dar
                                         // sama lain, perbedaannya hanya pada prilaku argument kedua masing-masing method
 
 console.log(strD.split());              // output: ["Bandung kota kembang"]         ⇨ split() dipakai untuk memecah sebuah String
-console.log(strD.split(""));            // output: ["B", "a", "n", "d" ...]            menjadi sebuah Array, argument pertama diisi
+console.log(strD.split(""));            // output: ["B", "a", "n", "d" ...]            menjadi sebuah Array, argument pertama di
 console.log(strD.split("", 1));         // output: ["B"]                               karakter "pembatas" yang digunakan untuk
 console.log(strD.split(" "));           // output: ["Bandung", "kota", "kembang"]      memecah String (atau bisa juga diisi dengan 
 console.log(strD.split(" ", 2));        // output: ["Bandung", "kota"]                 RegExp, dibahas di point D), sedangkan 
