@@ -2035,6 +2035,31 @@ console.log(/Buku/i.test(regA));        // output: true           ⤷ i artinya 
 
 // D2. Pola Reguler Expression (RegExp)
 
+// ➊ Pola RegExp sebagai String
+
+var regB = "Belajar JavaScript";
+var regC = "Satu Dua Tiga Empat";
+
+console.log(/JavaScript/.test(regB));   // output: true
+console.log(/Javascript/.test(regB));   // output: false
+console.log(/Belajar/.test(regB));      // output: true
+console.log(/ajar/.test(regB));         // output: true
+
+// ➋ RegExp Flag
+
+console.log(/jAvASCriPt/.test(regB));   // output: false                ⇨ flag i (ignore case) untuk mengabaikan Case Sensitive
+console.log(/jAvASCriPt/i.test(regB));  // output: true                    atau disebut juga sebagai Case Insensitive.
+console.log(regB.replace(/a/, "o"));    // output: Belojar JavaScript   ⇨ flag g (global match) untuk mencari seluruh String yang
+console.log(regB.replace(/a/g, "o"));   // output: Belojor JovoScript      cocok dengan pola, hanya bisa dipakai di method yang
+console.log(regB.replace(/a/g, "u"));   // output: Belujur JuvuScript      mendukung banyak pencarian sekaligus, seperti replace(),
+console.log(regC.match(/\w*u\w*/g));    // output: ["Satu", "Dua"]         match() & exec(). Jika flag g tidak ditambahkan, RegExp
+console.log(regC.match(/\w*o\w*/g));    // output: null                    akan langsung berhenti di pola pertama.
+
+                                        // Note: terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) &
+                                        // d (has indices), namun tidak banyak digunakan. Selebihnya lihat dokumentasi di MDN.
+
+// ➌ Menandakan Awal dan Akhir Pola
+
 // ===============
 // E. Array Object
 // ===============
