@@ -2132,6 +2132,26 @@ console.log(polaI.test("a1bcd"));       // output: false
 console.log(polaI.test("a1  "));        // output: true
 console.log(polaI.test("a1   "));       // output: false
 
+// ➏ Pola Negasi Character Set
+
+                                        // Negasi Character Set, artinya pola "selain" di character set, simak contoh berikut:
+var polaJ = /^[a-e]$/;                  // ⤷ artinya: [tepat 1 karakter a-e]
+var polaK = /^[^a-e]$/;                 // ⤷ artinya: [tepat 1 karakter selain a-e] (^ di dalam character set menandakan negasi)
+var polaL = /^[^a-e].[^1-9]b..$/;       // ⤷ artinya: [tepat 1 karakter selain a-e] + [tepat 1 karakter bebas] + [tepat 1
+                                        //            karakter selain 1-9] + [huruf b] + [tepat 2 karakter bebas]
+
+console.log(polaK.test("a"));           // output: false    ⇨ contoh check pola /^[^a-e]$/ di dalam String
+console.log(polaK.test("f"));           // output: true
+console.log(polaK.test("z"));           // output: true
+console.log(polaK.test("zz"));          // output: false
+
+console.log(polaL.test("f$xb--"));      // output: true     ⇨ contoh check pola /^[^a-e].[^1-9]b..$/ di dalam String
+console.log(polaL.test("xyzb00"));      // output: true
+console.log(polaL.test("zzzb  "));      // output: true
+console.log(polaL.test("zz1b  "));      // output: false
+
+// ➐ Membatasi Jumlah Karakter
+
 // ===============
 // E. Array Object
 // ===============
