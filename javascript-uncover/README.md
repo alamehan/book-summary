@@ -2069,38 +2069,68 @@ console.log(regB.replace(/$/, " GO!")); // output: Belajar JavaScript GO!
 
 // ➍ Pola Wildcard
 
-                                        // Wildcard, pola yang bisa diganti dengan karakter apa saja, ditulis dengan tanda titik:
-var polaB = /.b../;                     // ⤷ artinya 1 karakter apa saja (bebas) + huruf b + minimal 2 karakter apa saja (bebas)
-var polaC = /^.b..$/;                   // ⤷ artinya 1 karakter apa saja (bebas) + huruf b + 2 karakter (bebas)
+                                        // Wildcard, pola yang bisa diganti dengan karakter apa saja (bebas), ditulis dengan titik:
+var polaB = /.b../;                     // ⤷ artinya: [minimal 1 karakter bebas] + [huruf b] + [minimal 2 karakter bebas]
+var polaC = /^.b..$/;                   // ⤷ artinya: [tepat 1 karakter apa saja] + [huruf b] + [tepat 2 karakter]
 
-console.log(polaB.test("abaa"));        // output: true     ⇨ contoh pengecheck-an pola /.b../ di dalam String
-console.log(polaB.test("aba"));         // output: false
-console.log(polaB.test("abbaa"));       // output: true
+console.log(polaB.test("abaa"));        // output: true     ⇨ contoh check pola /.b../ di dalam String
 console.log(polaB.test("1b11"));        // output: true
 console.log(polaB.test(" b  "));        // output: true
-console.log(polaC.test("abaa"));        // output: true     ⇨ contoh pengecheck-an pola /^.b..$/ di dalam String
-console.log(polaC.test("aba"));         // output: false
-console.log(polaC.test("abbaa"));       // output: false
+console.log(polaB.test("aaabaaaa"));    // output: true
+console.log(polaB.test("aba"));         // output: false
+console.log(polaB.test("acaa"));        // output: false
+
+console.log(polaC.test("abaa"));        // output: true     ⇨ contoh check pola /^.b..$/ di dalam String
 console.log(polaC.test("1b11"));        // output: true
 console.log(polaC.test(" b  "));        // output: true
+console.log(polaC.test("aaabaaaa"));    // output: false
+console.log(polaC.test("aba"));         // output: false
+console.log(polaC.test("acaa"));        // output: false
 
 // ➎ Pola Character Set
 
                                         // Character Set, membuat syarat bahwa hanya karakter tertentu saja yang boleh ditulis:
-var polaD = /[abcde]../;                // ⤷ artinya digit pertama diisi oleh salah satu huruf a/b/c/d/e + min 2 karakter bebas
-var polaE = /[a-e]../;                  // ⤷ [a-e] merupakan alternatif penulisan dari [abcde], lebih simple dan mudah dibaca
-var polaF = /^[a-e][1-9][R-Z]./;        // ⤷ artinya digit pertama a-e + digit kedua 1-9 + digit ketiga R-Z + min 1 karakter bebas
+var polaD = /[abcde]/;                  // ⤷ artinya: [minimal terdapat 1 karakter diantara huruf a-e]
+var polaE = /[a-e]/;                    // ⤷ [a-e] merupakan alternatif penulisan dari [abcde] (Recommended)
+var polaF = /^[a-e]$/;                  // ⤷ artinya: [tepat terdapat 1 karakter diantara huruf a-e]
+var polaG = /^[a-e][1-9]../;            // ⤷ artinya: [tepat 1 karakter a-e] + [min 1 karakter 1-9] + [min 2 karakter bebas]
+var polaH = /[a-e][1-9]..$/;            // ⤷ artinya: [min 1 karakter a-e] + [tepat 1 karakter 1-9] + [tepat 2 karakter bebas]
+var polaI = /^[a-e][1-9]..$/;           // ⤷ artinya: [tepat 1 karakter a-e] + [tepat 1 karakter 1-9] + [tepat 2 karakter bebas]
 
-console.log(polaE.test("add"));         // output: true     ⇨ contoh pengecheck-an pola /[a-e]../ di dalam String
-console.log(polaE.test("abaa"));        // output: true
-console.log(polaE.test("fba"));         // output: false
-console.log(polaE.test(" dd"));         // output: false
-console.log(polaE.test("belajar"));     // output: true
-console.log(polaF.test("a9R"));         // output: false    ⇨ contoh pengecheck-an pola /^[a-e][1-9][R-Z]./ di dalam String
-console.log(polaF.test("a9Ra"));        // output: true
-console.log(polaF.test("fa9Ra"));       // output: false
-console.log(polaF.test("e9ZA"));        // output: true
-console.log(polaF.test("e9ZAAAAA"));    // output: true
+console.log(polaE.test("a"));           // output: true     ⇨ contoh check pola /[a-e]/ di dalam String
+console.log(polaE.test("f"));           // output: false
+console.log(polaE.test("af"));          // output: true
+console.log(polaE.test("fa"));          // output: true
+console.log(polaE.test("  e  "));       // output: true
+console.log(polaE.test("  g  "));       // output: false
+
+console.log(polaF.test("a"));           // output: true     ⇨ contoh check pola /^[a-e]$/ di dalam String
+console.log(polaF.test("f"));           // output: false
+console.log(polaF.test("af"));          // output: false
+console.log(polaF.test("fa"));          // output: false
+console.log(polaF.test("  e  "));       // output: false
+console.log(polaF.test("  g  "));       // output: false
+
+console.log(polaG.test("a1bc"));        // output: true     ⇨ contoh check pola /^[a-e][1-9]../ di dalam String
+console.log(polaG.test("a197bcxyz"));   // output: true
+console.log(polaG.test("a1    "));      // output: true
+console.log(polaG.test("e123  "));      // output: true
+console.log(polaG.test("f1    "));      // output: false
+console.log(polaG.test("ae1   "));      // output: false
+
+console.log(polaH.test("a1bc"));        // output: true     ⇨ contoh check pola /[a-e][1-9]..$/ di dalam String
+console.log(polaH.test("a1bcd"));       // output: false
+console.log(polaH.test("aa1bc"));       // output: true
+console.log(polaH.test("a1  "));        // output: true
+console.log(polaH.test("a1   "));       // output: false
+console.log(polaH.test("abcde1  "));    // output: true
+
+console.log(polaI.test("a1bc"));        // output: true     ⇨ contoh check pola /^[a-e][1-9]..$/ di dalam String
+console.log(polaI.test("aa1bc"));       // output: false
+console.log(polaI.test("a12bc"));       // output: false
+console.log(polaI.test("a1bcd"));       // output: false
+console.log(polaI.test("a1  "));        // output: true
+console.log(polaI.test("a1   "));       // output: false
 
 // ===============
 // E. Array Object
