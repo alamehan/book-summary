@@ -2257,6 +2257,31 @@ http://emailregex.com/ (pola RegExp yang disusun sangat kompleks, itu tidak lain
 
 // ➓ Pola Logika OR
 
+                                        // RegExp menyediakan karakter khusus untuk membuat kondisi OR yaitu karakter pipe "|":
+var polaY = /aku|dia|kami/;             // ⤷ true jika terdapat setidaknya 1 kata dari 3 kemungkinan di samping (aku/dia/kami)
+
+console.log(polaY.test("aku di sini"));               // output: true
+console.log(polaY.test("dia di sana"));               // output: true
+console.log(polaY.test("akuu dan diaa di Bali"));     // output: true
+console.log(polaY.test("kami belajar JavaScript"));   // output: true
+console.log(polaY.test("Budi belajar JavaScript"));   // output: false
+
+// Bonus: Latihan RegExp
+
+var polaZ = /^[A-Za-z]{1,2}\s*\d{1,4}\s*[A-Za-z]{1,3}$/;    // artinya: [1/2 karakter A-Za-z] + [0/lebih whitespace] +
+                                                            // ⤷ [min 1 & max 4 karakter 0-9] + [0/lebih whitespace] +
+                                                            // ⤷ [min 1 & max 3 karakter A-Za-z], juga karena diawali ^ dan
+                                                            // ⤷ diakhiri $, maka tidak boleh ada karakter sebelum/sesudah String
+                                                            // ⤷ pola RegExp ini merupakan pola untuk memeriksa nomor polisi
+
+console.log(polaZ.test("B 1 RI"));                    // output: true
+console.log(polaZ.test("B1RI"));                      // output: true
+console.log(polaZ.test("DA 9999 XYZ "));              // output: false
+console.log(polaZ.test("DA 9999 XYZ"));               // output: true
+console.log(polaZ.test("bk9he"));                     // output: true
+console.log(polaZ.test("zz 9YES"));                   // output: true
+console.log(polaZ.test("_zz9YES"));                   // output: false
+
 // ===============
 // E. Array Object
 // ===============
