@@ -2232,27 +2232,28 @@ var polaW = /^www\.....\.com$/;         // artinya: [wwww.] + [4 karakter bebas]
 var polaX = /^.+@.+\..+$/;              // pola di samping sama dengan /^.{1,}@.{1,}\..{1,}$/ artinya [1/lebih karakter bebas] +
                                         // ⤷ [@] + [1/lebih karakter bebas] + [.] + [1/lebih karakter bebas] (pola untuk email)
 
-console.log(polaV.test("1a "));         // output: true     ⇨ test pola /^\d\w\s$/ di dalam String "1a "
-console.log(polaV.test("19 "));         // output: true
-console.log(polaV.test("1_ "));         // output: true
-console.log(polaV.test("1a"));          // output: false
+console.log(polaV.test("1a "));                       // output: true     ⇨ test pola /^\d\w\s$/ di dalam String "1a "
+console.log(polaV.test("19 "));                       // output: true
+console.log(polaV.test("1_ "));                       // output: true
+console.log(polaV.test("1a"));                        // output: false
 
-console.log(polaW.test("www.abcd.com"));              // output: true
+console.log(polaW.test("www.abcd.com"));              // output: true     ⇨ test pola /^www\.....\.com$/ di dalam "www.abcd.com"
 console.log(polaW.test("www.xyz1.com"));              // output: true
 console.log(polaW.test("www.123 .com"));              // output: true
-console.log(polaW.test("www.google.com"));            // output: false (karena terdapat 5 karakter bebas, harusnya tepat 4)
+console.log(polaW.test("www.google.com"));            // output: false    false karena terdapat 5 karakter bebas, harusnya tepat 4
 
-console.log(polaX.test("aku@gmail.com"));             // output: true
+console.log(polaX.test("aku@gmail.com"));             // output: true     ⇨ test pola /^.+@.+\..+$/ di dalam "aku@gmail.com"
 console.log(polaX.test("hehe@co.cocok"));             // output: true
 console.log(polaX.test("123@123.12"));                // output: true
 console.log(polaX.test(" @ . "));                     // output: true
 console.log(polaX.test("duniailkom@gmail.com"));      // output: true
 console.log(polaX.test("raihanralam@gmail.com"));     // output: true
 
-                                                      // polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat
-                                                      // " @ . " dianggap true (ya karena memang lolos dari polaX), oleh karena
-                                                      // itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat
-                                                      // dapat gunakan pola RegExp di link berikut: http://emailregex.com/
+/* 
+polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat " @ . " dianggap true (ya karena memang lolos dari polaX),
+oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut:
+http://emailregex.com/ (pola RegExp yang disusun sangat kompleks, itu tidak lain untuk ketepatan pola email yang akurat)
+*/
 
 // ➓ Pola Logika OR
 
