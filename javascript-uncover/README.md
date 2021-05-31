@@ -2296,10 +2296,20 @@ console.log(Array.isArray([]));                       // output: true
 
 var arrA = ["a","b","c","d","e"];
 var arrB = [[1,2],[3,4],[5,6]];
+var arrC = [1,2,3,4,5];
+var arrD = [1,2,3,4,5];
 
 console.log(arrA.length);               // output: 5        ⇨ mengambil info jumlah element dari sebuah Array
 console.log(arrB.length);               // output: 3
 console.log(arrB[0].length);            // output: 2
+
+arrC.length = 3;                        // property length sebuah Array dapat dikurangi
+console.log(arrC);                      // output: [1,2,3]
+console.log(arrC.length);               // output: 3
+
+arrD.length = 7;                        // property length sebuah Array dapat ditambah
+console.log(arrD);                      // output: [1,2,3,4,5,<2 empty slots>]
+console.log(arrD.length);               // output: 7
 
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini sama seperti di BAB 8 (D3). Kondisi (n<arrSiswa.length)
 for (var n=0; n<arrSiswa.length; n++){                      // ⤷ akan selalu di check nilainya dalam setiap perulangan, padahal
@@ -2313,6 +2323,14 @@ for (var n=0; n<panjangArr; n++){                           // ⤷ kondisi, mela
 }                                                           
 
 // E3. Object instance method
+
+var arrE = ["a","b","c"];
+var arrF = [1,2,3];
+
+console.log(arrE.reverse());            // output: ["c","b","a"]          ⇨ membalik urutan element dari sebuah Array
+console.log(arrE);                      // output: ["c","b","a"]          ⤷ method reverse() juga mengubah Array asal
+console.log(arrE.concat(arrF));         // output: ["c","b","a",1,2,3]        ⇨ menggabungkan/menyambung Array
+console.log(arrE.concat(arrF,arrF));    // output: ["c","b","a",1,2,3,1,2,3]  ⤷ argument bisa lebih dari satu
 
 // ==============
 // F. Date Object
