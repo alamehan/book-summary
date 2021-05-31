@@ -2157,7 +2157,7 @@ console.log(polaL.test("zz1b  "));      // output: false
 var polaM = /A{2}1{3}/;                 // ⤷ artinya: [min 2 huruf A] + [min 3 angka 1]
 var polaN = /^A{2}1{3}$/;               // ⤷ artinya: [tepat 2 huruf A] + [tepat 3 angka 1]
 var polaO = /^A{2}1{2,4}$/;             // ⤷ artinya: [tepat 2 huruf A] + [min 2 & max 4 angka 1]
-var polaP = /^A{2}1{2,}$/;              // ⤷ artinya: [tepat 2 huruf A] + [min 2 & max ∞ angka 1]   (∞ artinya tak terbatas)
+var polaP = /^A{2}1{2,}$/;              // ⤷ artinya: [tepat 2 huruf A] + [min 2 & max ∞ angka 1] (∞ artinya tak terbatas)
 var polaQ = /^[A-Z0-9]{2,}z{2}_$/;      // ⤷ artinya: [min 2 huruf A-Z/angka 1-9] + [tepat 2 huruf z] + [karakter underscore: _]
 
 console.log(polaM.test("AA111"));       // output: true     ⇨ test pola /A{2}1{3}/ di dalam String "AA111"
@@ -2184,6 +2184,77 @@ console.log(polaQ.test("AAzz_"));       // output: true     ⇨ test pola /^[A-Z
 console.log(polaQ.test("11zz_"));       // output: true
 console.log(polaQ.test("A1zz_"));       // output: true
 console.log(polaQ.test("1A2B3C4Dzz_")); // output: true
+
+// ➑ Karakter Pembatas Pola
+
+                                        // RegExp menyediakan beberapa karakter khusus untuk membatasi pola, yaitu:
+var polaR = /ab*c/;                     // * sama dengan {0,} maka b* di samping = b{0,}    (artinya 0 atau lebih huruf b)
+var polaS = /ab+c/;                     // + sama dengan {1,} maka b+ di samping = b{1,}    (artinya 1 atau lebih huruf b)
+var polaT = /ab?c/;                     // ? sama dengan {0,1} maka b? di samping = b{0,1}  (artinya 0 atau 1 huruf b)
+
+console.log(polaR.test("abc"));         // output: true     ⇨ test pola /ab*c/ di dalam String "abc"
+console.log(polaR.test("abbbbbc"));     // output: true
+console.log(polaR.test("ac"));          // output: true
+console.log(polaR.test("aaaab"));       // output: false
+
+console.log(polaS.test("abc"));         // output: true     ⇨ test pola /ab+c/ di dalam String "abc"
+console.log(polaS.test("abbbbbc"));     // output: true
+console.log(polaS.test("ac"));          // output: false
+console.log(polaS.test("aaaab"));       // output: false
+
+console.log(polaT.test("abc"));         // output: true     ⇨ test pola /ab?c/ di dalam String "abc"
+console.log(polaT.test("abbbbbc"));     // output: false
+console.log(polaT.test("ac"));          // output: true
+console.log(polaT.test("aaaab"));       // output: false
+
+// ➒ Pola Karakter Khusus
+
+                                        // RegExp menyediakan beberapa karakter khusus untuk mewakiki pola tertentu, yaitu:
+var polaU01 = /\d/;                     // \d sama dengan [0-9]           artinya seluruh digit angka
+var polaU02 = /\D/;                     // \D sama dengan [^0-9]          artinya seluruh digit selain angka
+var polaU03 = /\w/;                     // \w sama dengan [A-Za-z0-9_]    artinya seluruh huruf dan angka serta underscore
+var polaU04 = /\W/;                     // \W sama dengan [^A-Za-z0-9_]   artinya seluruh karakter selain huruf/angka/underscore
+var polaU05 = /\s/;                     // \s sama dengan whitespace                      (spasi, tab, linefeed, form-feed, dll)
+var polaU06 = /\S/;                     // \S sama dengan satu karakter selain whitespace
+var polaU07 = /\t/;                     // \t sama dengan satu karakter tab               (horizontal tab)
+var polaU08 = /\r/;                     // \r sama dengan satu karakter enter             (carriage return)
+var polaU09 = /\n/;                     // \n sama dengan satu karakter new line          (linefeed)
+var polaU10 = /\v/;                     // \v sama dengan satu karakter tab vertikal      (vertical tab)
+var polaU11 = /\f/;                     // \f sama dengan satu karakter form-feed
+var polaU12 = /\./;                     // backslash "\" digunakan sebagai karakter escape, fungsinya untuk mencegah sebuah karak-
+var polaU13 = /\//;                     // ⤷ ter dianggap sebagai karakter khusus, misalnya membuat karakter titik & garis miring,
+                                        // ⤷ kita tidak bisa langsung menulis titik begitu saja (karena akan dianggap wildcard)
+                                        // ⤷ atau menulis langsung garis miring begitu saja (karena akan dianggap comment), oleh
+                                        // ⤷ karena itu untuk menulis titik atau garis miring di dalam RegExp perlu diawali "\"
+
+var polaV = /^\d\w\s$/;                 // pola di samping sama dengan /^[0-9][A-Za-z0-9_][whitespace]$/
+var polaW = /^www\.....\.com$/;         // artinya: [wwww.] + [4 karakter bebas] + [.com] (\. bukan wildcard ya!)
+var polaX = /^.+@.+\..+$/;              // pola di samping sama dengan /^.{1,}@.{1,}\..{1,}$/ artinya [1/lebih karakter bebas] +
+                                        // ⤷ [@] + [1/lebih karakter bebas] + [.] + [1/lebih karakter bebas] (pola untuk email)
+
+console.log(polaV.test("1a "));         // output: true     ⇨ test pola /^\d\w\s$/ di dalam String "1a "
+console.log(polaV.test("19 "));         // output: true
+console.log(polaV.test("1_ "));         // output: true
+console.log(polaV.test("1a"));          // output: false
+
+console.log(polaW.test("www.abcd.com"));              // output: true
+console.log(polaW.test("www.xyz1.com"));              // output: true
+console.log(polaW.test("www.123 .com"));              // output: true
+console.log(polaW.test("www.google.com"));            // output: false (karena terdapat 5 karakter bebas, harusnya tepat 4)
+
+console.log(polaX.test("aku@gmail.com"));             // output: true
+console.log(polaX.test("hehe@co.cocok"));             // output: true
+console.log(polaX.test("123@123.12"));                // output: true
+console.log(polaX.test(" @ . "));                     // output: true
+console.log(polaX.test("duniailkom@gmail.com"));      // output: true
+console.log(polaX.test("raihanralam@gmail.com"));     // output: true
+
+                                                      // polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat
+                                                      // " @ . " dianggap true (ya karena memang lolos dari polaX), oleh karena
+                                                      // itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat
+                                                      // dapat gunakan pola RegExp di link berikut: http://emailregex.com/
+
+// ➓ Pola Logika OR
 
 // ===============
 // E. Array Object
