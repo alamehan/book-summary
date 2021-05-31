@@ -2030,7 +2030,7 @@ var polaA = /JavaScript/;
 
 console.log(polaA.test(regA));          // output: true           ⇨ check apakah pola /JavaScript/ terdapat di dalam String regA
 console.log(/buku/.test(regA));         // output: true           ⤷ penulisan bisa langsung, tanpa disimpan ke dalam var, hal ini
-console.log(/Buku/.test(regA));         // output: false          ⤷ berlaku juga untuk semua Object instance property & method ✅
+console.log(/Buku/.test(regA));         // output: false          ⤷ berlaku juga untuk semua Object instance property & method ⚠️
 console.log(/Buku/i.test(regA));        // output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
 
 // D2. Pola Regular Expression (RegExp)
@@ -2326,11 +2326,30 @@ for (var n=0; n<panjangArr; n++){                           // ⤷ kondisi, mela
 
 var arrE = ["a","b","c"];
 var arrF = [1,2,3];
+var arrG = ["a","b","c","d","e","f","g"];
 
-console.log(arrE.reverse());            // output: ["c","b","a"]          ⇨ membalik urutan element dari sebuah Array
-console.log(arrE);                      // output: ["c","b","a"]          ⤷ method reverse() juga mengubah Array asal
-console.log(arrE.concat(arrF));         // output: ["c","b","a",1,2,3]        ⇨ menggabungkan/menyambung Array
-console.log(arrE.concat(arrF,arrF));    // output: ["c","b","a",1,2,3,1,2,3]  ⤷ argument bisa lebih dari satu
+console.log(arrE.reverse());            // output: ["c","b","a"]          ⇨ membalik urutan element Array
+console.log(arrE);                      // output: ["c","b","a"]          ⤷ method reverse() juga mengubah Array asal ⚠️
+console.log(arrE.concat(arrF));         // output: ["c","b","a",1,2,3]    ⇨ menggabungkan/menyambung Array
+console.log(arrE.concat(arrF,4,5));     // output: ["c","b","a",1,2,3,4,5]⤷ argument bisa lebih dari satu
+console.log(arrG.slice(3));             // output: ["d","e","f","g"]      ⇨ mengambil sebagian element Array
+console.log(arrG.slice(3,5));           // output: ["d","e"]              ⤷ argument ke 1: index awal pengambilan
+console.log(arrG.slice(-5));            // output: ["c","d","e","f","g"]  ⤷ argument ke 2: index akhir pengambilan
+console.log(arrG.slice(-5,-2));         // output: ["c","d","e"]          ⤷ (tetapi tidak termasuk index akhir itu sendiri)
+
+var arrH = [1,2,3,4,5,6];
+var arrI = [1,2,3,4,5,6];
+var arrJ = [1,2,3,4,5,6];
+var arrK = [1,2,3,4,5,6];
+
+console.log(arrH.splice(3));            // output: [4,5,6]                ⇨ menambah atau mengurangi element Array
+console.log(arrH);                      // output: [1,2,3]                ⤷ method splice() juga mengubah Array asal ⚠️
+console.log(arrI.splice(3,2));          // output: [4,5]                  ⤷ argument ke 1: index awal penambahan/pengurangan
+console.log(arrI);                      // output: [1,2,3,6]              ⤷ argument ke 2: jumlah element yang akan dihapus, jika
+console.log(arrJ.splice(3,2,"new"));    // output: [4,5]                  ⤷ diisi 0 (nol), artinya tidak ada element yang dihapus
+console.log(arrJ);                      // output: [1,2,3,"new",6]        ⤷ argument ke 3 dan seterusnya: element Array baru yang
+console.log(arrK.splice(3,0,97,98,99)); // output: []                     ⤷ ingin ditambahkan (dimulai dari index di argument ke 1)
+console.log(arrK);                      // output: [1,2,3,97,98,99,4,5,6]
 
 // ==============
 // F. Date Object
