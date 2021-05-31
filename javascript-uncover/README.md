@@ -2303,11 +2303,11 @@ console.log(arrA.length);               // output: 5        ⇨ mengambil info j
 console.log(arrB.length);               // output: 3
 console.log(arrB[0].length);            // output: 2
 
-arrC.length = 3;                        // property length sebuah Array dapat dikurangi
+arrC.length = 3;                        // property length sebuah Array bisa dikurangi
 console.log(arrC);                      // output: [1,2,3]
 console.log(arrC.length);               // output: 3
 
-arrD.length = 7;                        // property length sebuah Array dapat ditambah
+arrD.length = 7;                        // property length sebuah Array bisa ditambah
 console.log(arrD);                      // output: [1,2,3,4,5,<2 empty slots>]
 console.log(arrD.length);               // output: 7
 
