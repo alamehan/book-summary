@@ -322,8 +322,8 @@ var arrAcak  = [1, 2.0, "tiga", true, null];  // Array 1D berisi beragam tipe da
 var arr2D    = [[2,5], [9,5], [3,5]];         // Array 2D, misalnya untuk koordinat
 
 console.log(arrSiswa);                // output: ["Andri", "Joko", "Sukma"]
-console.log(arrSiswa[0]);             // output: Andri
-console.log(arrSiswa[1]);             // output: Joko
+console.log(arrSiswa[0]);             // output: Andri                        ⇨ Array di JavaScript dimulai dari indeks ke 0,
+console.log(arrSiswa[1]);             // output: Joko                           bukan dari indeks ke 1, ingat baik-baik ya.
 console.log(arrSiswa[2]);             // output: Sukma
 console.log(arrSiswa[3]);             // output: undefined
 
@@ -2294,9 +2294,25 @@ console.log(Array.isArray([]));                       // output: true
 
 // E2. Object instance property
 
-var arrA = ["a", "b", "c", "d", "e"];
+var arrA = ["a","b","c","d","e"];
+var arrB = [[1,2],[3,4],[5,6]];
 
-console.log(arrA.length)                // output: 5        ⇨ mengambil info jumlah element dari sebuah Array
+console.log(arrA.length);               // output: 5        ⇨ mengambil info jumlah element dari sebuah Array
+console.log(arrB.length);               // output: 3
+console.log(arrB[0].length);            // output: 2
+
+var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini sama seperti di BAB 8 (D3). Kondisi (n<arrSiswa.length)
+for (var n=0; n<arrSiswa.length; n++){                      // ⤷ akan selalu di check nilainya dalam setiap perulangan, padahal
+  console.log(arrSiswa[n]);                                 // ⤷ nilai arrSiswa.length tidak pernah berubah (tidak efisien).
+}                                                           // output: Andri, Joko, Sukma, Rina, Sari
+
+var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini merupakan versi perbaikan (lebih efisien) dari contoh
+var panjangArr = arrSiswa.length;                           // ⤷ diatas, karena nilai arrSiswa.length tidak disimpan langsung di
+for (var n=0; n<panjangArr; n++){                           // ⤷ kondisi, melainkan ditampung terlebih dahulu kedalam variable.
+  console.log(arrSiswa[n]);                                 // output: Andri, Joko, Sukma, Rina, Sari
+}                                                           
+
+// E3. Object instance method
 
 // ==============
 // F. Date Object
