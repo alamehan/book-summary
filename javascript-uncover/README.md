@@ -2286,6 +2286,18 @@ console.log(polaZ.test("_zz9YES"));                   // output: false
 // E. Array Object
 // ===============
 
+// E1. Object method
+
+console.log(Array.isArray([1, 2, 3]));                // output: true     ⇨ check apakah sebuah nilai/var bertipe data Array
+console.log(Array.isArray(["satu", 2, null]));        // output: true
+console.log(Array.isArray([]));                       // output: true
+
+// E2. Object instance property
+
+var arrA = ["a", "b", "c", "d", "e"];
+
+console.log(arrA.length)                // output: 5        ⇨ mengambil info jumlah element dari sebuah Array
+
 // ==============
 // F. Date Object
 // ==============
@@ -2304,9 +2316,9 @@ console.log(polaZ.test("_zz9YES"));                   // output: false
 // Inheritance, Encapsulation, dll
 ```
 ```Javascript
-// ================================
-// B. Sumber: Web Programming Unpas
-// ================================
+// =======================================================
+// B. Sumber: Web Programming Unpas & Programmer Zaman Now
+// =======================================================
 
 // Object.create(), Closure, Callback, Promise, Fetch, Async Await, dll
 ```
