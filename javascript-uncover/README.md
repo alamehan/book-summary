@@ -1310,6 +1310,8 @@ let b = "Hello World!";               // ini artinya kita memang harus mendefini
 Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini berarti:
 ➊ Function dapat disimpan ke dalam variable (a.k.a 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀)
 ➋ Function dapat digunakan sebagai argument layaknya tipe data biasa (a.k.a 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
+
+𝗡𝗼𝘁𝗲: 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝘀𝗲𝗰𝗮𝗿𝗮 𝗱𝗲𝘁𝗮𝗶𝗹 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 𝗯𝗮𝗴𝗶𝗮𝗻 𝗘𝟰
 */
 
 // H1. Function Expressions
@@ -2440,6 +2442,21 @@ console.log(arrR.map(akarKuadrat));                   // output: [2,3,4,5]
 console.log(arrS.map(akarKuadrat));                   // output: [6,7,8,9]
 console.log(arrR.map(ganjilGenap));                   // output: ["genap","ganjil","genap","ganjil"]
 console.log(arrS.map(ganjilGenap));                   // output: ["genap","ganjil","genap","ganjil"]
+
+function genapOnly(elm){
+  if (elm%2 === 0){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+                                                      // filter() serupa dengan map(), bedanya hasil return berupa true/false.
+                                                      // Jika true pertahankan element Array, jika false, hapus element tersebut.
+console.log(arrP.filter(genapOnly));                  // output: [2,4]
+console.log(arrQ.filter(genapOnly));                  // output: [6,8]
+console.log(arrR.filter(genapOnly));                  // output: [4,16]
+console.log(arrS.filter(genapOnly));                  // output: [36,64]
 
 // ==============
 // F. Date Object
