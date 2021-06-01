@@ -2452,7 +2452,7 @@ function genapOnly(elm){
 }
 
                                                       // filter() serupa dengan map(), bedanya hasil return berupa true/false.
-                                                      // Jika true pertahankan element Array, jika false, hapus element tersebut.
+                                                      // Jika true pertahankan element Array, jika false hapus element tersebut.
 console.log(arrP.filter(genapOnly));                  // output: [2,4]
 console.log(arrQ.filter(genapOnly));                  // output: [6,8]
 console.log(arrR.filter(genapOnly));                  // output: [4,16]
