@@ -2388,13 +2388,13 @@ data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas m
 
 var arrN = ["a","b","c","d"];
 
-arrN.forEach(                                               // forEach() berfungsi menjalankan function untuk setiap element Array
-  function(element, index, array){                          // ⤷ argument ke 1: nilai element/value Array 
-    console.log(`Index ke-${index} = ${element}`);          // ⤷ argument ke 2: index element/key Array   (optional)
-  }                                                         // ⤷ argument ke 3: isi seluruh Array         (optional)
-);                                                          // ⤷ penulisan argument tidak harus element/index/arrray (bebas saja)
-                                                            // ⤷ peranan argument ke 3 tidak sepenting argument ke 1 & ke 2, oleh
-                                                            // ⤷ karena itu contoh di samping tidak menyertakan console.log(array)
+arrN.forEach(                                         // forEach() berfungsi menjalankan function untuk setiap element Array
+  function(element, index, array){                    // ⤷ argument ke 1: nilai element/value Array 
+    console.log(`Index ke-${index} = ${element}`);    // ⤷ argument ke 2: index element/key Array   (optional)
+  }                                                   // ⤷ argument ke 3: isi seluruh Array         (optional)
+);                                                    // ⤷ penulisan argument tidak harus element/index/arrray (bebas saja)
+                                                      // ⤷ peranan argument ke 3 tidak sepenting argument ke 1 & ke 2, oleh
+                                                      // ⤷ karena itu contoh di samping tidak menyertakan console.log(array)
 
 /* Output:
 Index ke-0 = a
