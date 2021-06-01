@@ -2425,21 +2425,21 @@ Index ke-2 = Putri
 var arrP = [1,2,3,4,5], arrQ = [5,6,7,8,9];
 var arrR = [4,9,16,25], arrS = [36,49,64,81];
 
-function kaliDua(elm){                                // map() serupa dengan forEach(), bedanya method map() mengembalikan sebuah
-  return elm*2;                                       // Array baru (memakai keyword return). map() tidak mengubah Array asal.
-}
-function pangkatTiga(elm){
-  return elm**3;
-}
-function akarKuadrat(elm){
-  return Math.sqrt(elm);
-}
+function kaliDua(elm){ return elm*2; }                                 
+function pangkatTiga(elm){ return elm**3; }
+function akarKuadrat(elm){ return Math.sqrt(elm); }
+function ganjilGenap(elm){ return elm%2 === 0 ? "genap" : "ganjil"; }
+
+                                                      // map() serupa dengan forEach(), bedanya method map() mengembalikan sebuah
+                                                      // Array baru (memakai keyword return). map() tidak mengubah Array asal.
 console.log(arrP.map(kaliDua));                       // output: [2,4,6,8,10]
 console.log(arrQ.map(kaliDua));                       // output: [10,12,14,16,18]
 console.log(arrP.map(pangkatTiga));                   // output: [1,8,27,64,125]
 console.log(arrQ.map(pangkatTiga));                   // output: [125,216,343,512,729]
 console.log(arrR.map(akarKuadrat));                   // output: [2,3,4,5]
 console.log(arrS.map(akarKuadrat));                   // output: [6,7,8,9]
+console.log(arrR.map(ganjilGenap));                   // output: ["genap","ganjil","genap","ganjil"]
+console.log(arrS.map(ganjilGenap));                   // output: ["genap","ganjil","genap","ganjil"]
 
 // ==============
 // F. Date Object
