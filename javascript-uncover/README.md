@@ -1937,7 +1937,6 @@ console.log(String.fromCodePoint(65, 66, 67));              // output: ABC      
 console.log(String.fromCodePoint(9749, 10052, 12096));      // output: ☕❄⽀     fromCodePoint "versi update" dari fromCharCode
 console.log(String.fromCodePoint(0x2615, 0x2744, 0x2F40));  // output: ☕❄⽀
 console.log(String.fromCodePoint(128656, 128663, 128690));  // output: 🚐🚗🚲  ⤷ berhasil menampilkan karakter terbaru unicode
-
                                                             // Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/ 
 
 // C2. Object instance property
@@ -1976,7 +1975,6 @@ console.log(strC.slice(2));             // output: ndung    ⇨ ambil String dar
 console.log(strC.slice(2, 4));          // output: nd       ⤷ ambil String dari indeks ke 2 (depan) s.d indeks ke 4 (depan)
 console.log(strC.slice(-4, 6));         // output: dun      ⤷ ambil String dari indeks ke 4 (belakang) s.d. indeks ke 6 (depan)
 console.log(strC.slice(-4));            // output: dung     ⤷ ambil String dari indeks ke 4 (belakang) s.d. akhir
-
                                         // Note: Object instance method substr(), substring() & slice() sangat mirip satu 
                                         // sama lain, perbedaannya hanya pada prilaku argument kedua masing-masing method
 
@@ -2348,8 +2346,43 @@ console.log(arrI.splice(3,2));          // output: [4,5]                  ⤷ ar
 console.log(arrI);                      // output: [1,2,3,6]              ⤷ argument ke 2: jumlah element yang akan dihapus, jika
 console.log(arrJ.splice(3,2,"new"));    // output: [4,5]                  ⤷ diisi 0 (nol), artinya tidak ada element yang dihapus
 console.log(arrJ);                      // output: [1,2,3,"new",6]        ⤷ argument ke 3 dan seterusnya: element Array baru yang
-console.log(arrK.splice(3,0,97,98,99)); // output: []                     ⤷ ingin ditambahkan (dimulai dari index di argument ke 1)
-console.log(arrK);                      // output: [1,2,3,97,98,99,4,5,6]
+console.log(arrK.splice(3,0,97,98,99)); // output: []                     ⤷ ingin ditambahkan (ditambahkannya dimulai dari index
+console.log(arrK);                      // output: [1,2,3,97,98,99,4,5,6] ⤷ yang diinputkan di argument ke 1)
+
+var arrL = ["a","b","c"];
+var tempA;
+var tempB;
+
+console.log(arrL.join());               // output: a,b,c                  ⇨ menggabungkan element Array menjadi String
+console.log(arrL.join("-"));            // output: a-b-c                  ⤷ argument diisi dengan karakter yang diinginkan sebagai
+console.log(arrL.join(" "));            // output: a b c                  ⤷ pemisah antar element (defaul pemisahnya ialah koma)
+arrL.push("d","e","f");                 // push() untuk menambah element Array ke posisi terakhir (bisa lebih dari 1 argument)
+console.log(arrL);                      // ⤷ output: ["a","b","c","d","e","f"]
+tempA = arrL.pop();                     // pop() untuk mengurangi element Array dari posisi terakhir (hanya 1 elemnt saja)
+console.log(tempA);                     // ⤷ output: f
+console.log(arrL);                      // ⤷ output: ["a","b","c","d","e"]
+arrL.unshift("x","y","z");              // unshift() untuk menambah element Array ke posisi awal (bisa lebih dari 1 argument)
+console.log(arrL);                      // ⤷ output: ["x","y","z","a","b","c","d","e"]
+tempB = arrL.shift();                   // shift() untuk mengurangi element Array dari posisi awal (hanya 1 elemnt saja)
+console.log(tempB);                     // ⤷ output: x
+console.log(arrL);                      // ⤷ output: ["y","z","a","b","c","d","e"]
+                                        // method push(), pop(), unshift() & shift() mengubah Array asal ⚠️
+
+var arrM = ["a","b","c","d"];
+
+console.log(arrM.toString());           // output: a,b,c,d  ⇨ konversi Array menjadi String (serupa dengan join())
+console.log(arrM.toLocaleString());     // output: a,b,c,d  ⇨ konversi Array menjadi String + memakai format bahasa lokal
+console.log(arrM.includes("a"));        // output: true     ⇨ check apakah sebuah nilai ada di dalam element Array
+console.log(arrM.includes("a",1));      // output: false    ⤷ argument ke 2: 1 menjadi indeks dimana pencarian dimulai
+console.log(arrM.includes("e"));        // output: false
+console.log(arrM.indexOf("a"));         // output: 0        ⇨ serupa dengan includes(), namun outputnya berupa posisi indeks
+console.log(arrM.indexOf("a",1));       // output: -1       ⤷ jika output = -1, artinya nilai yang dicari tidak ditemukan
+console.log(arrM.indexOf("e"));         // output: -1
+
+/* 
+Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh argument dari method tersebut berupa
+tipe data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa function.
+*/
 
 // ==============
 // F. Date Object
