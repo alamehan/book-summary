@@ -1308,8 +1308,8 @@ let b = "Hello World!";               // ini artinya kita memang harus mendefini
 
 /*
 Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini berarti:
-➊ Function dapat disimpan ke dalam variable (a.k.a Function Expressions)
-➋ Function dapat digunakan sebagai argument layaknya tipe data biasa
+➊ Function dapat disimpan ke dalam variable (a.k.a 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀)
+➋ Function dapat digunakan sebagai argument layaknya tipe data biasa (a.k.a 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
 */
 
 // H1. Function Expressions
@@ -2379,9 +2379,12 @@ console.log(arrM.indexOf("a"));         // output: 0        ⇨ serupa dengan in
 console.log(arrM.indexOf("a",1));       // output: -1       ⤷ jika output = -1, artinya nilai yang dicari tidak ditemukan
 console.log(arrM.indexOf("e"));         // output: -1
 
+
+// E4. Object instance method (𝗱𝗲𝗻𝗴𝗮𝗻 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
+
 /* 
-Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh argument dari method tersebut berupa
-tipe data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa function.
+Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh argument dari method tersebut berupa tipe
+data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa function (Callback).
 */
 
 // ==============
