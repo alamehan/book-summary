@@ -2404,10 +2404,10 @@ arrN.forEach(tampil);                                 // Simak cara penulisan & 
 arrO.forEach(tampil);                                 // ⤷ lihat, function tampil() bisa dipakai oleh arrN & arrO
 
 /* 
-output dari arrN.forEach(tampil):       output dari arrO.forEach(tampil):
-Index ke-0 = a                          Index ke-0 = Budi
-Index ke-1 = b                          Index ke-1 = Joko
-Index ke-2 = c                          Index ke-2 = Putri
+output dari arrN.forEach(tampil):                     output dari arrO.forEach(tampil):
+Index ke-0 = a                                        Index ke-0 = Budi
+Index ke-1 = b                                        Index ke-1 = Joko
+Index ke-2 = c                                        Index ke-2 = Putri
 Index ke-3 = d
 */                                          
 
