@@ -858,20 +858,19 @@ var objMobil = {
   tipe: "MPV",
   harga: 200000000,
   warna: "biru",
-  hidupkan: function() {return "Mesin dihidupkan!";}
+  hidupkan: function(){return "Mesin dihidupkan!";}
 };
 
-for (var i in objMobil) {
+for (var i in objMobil){
   console.log(`Isi ${i} = ${objMobil[i]}`);
 }
 
-/*
-Output:
+/* Output:
 Isi merk = Toyota Avanza
 Isi tipe = MPV
 Isi harga = 200000000
 Isi warna = biru
-Isi hidupkan = function() {return "Mesin dihidupkan!";}
+Isi hidupkan = function(){return "Mesin dihidupkan!";}
 */
 ```
 
@@ -1649,7 +1648,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
   this.merk = merkArg;                            // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
   this.tipe = tipeArg;
   this.harga = hargaArg;
-  this.hidupkan = function() {                    // cara penulisan method: function expressions (anonymous function)
+  this.hidupkan = function(){                    // cara penulisan method: function expressions (anonymous function)
     return `Mesin ${this.merk} dihidupkan!`; 
   };
   this.pergi = function(tempat){
@@ -2385,6 +2384,23 @@ console.log(arrM.indexOf("e"));         // output: -1
 /* 
 Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh argument dari method tersebut berupa tipe
 data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa function (Callback).
+*/
+
+var arrN = ["a","b","c","d"];
+
+arrN.forEach(                                               // forEach() berfungsi menjalankan function untuk setiap element Array
+  function(element, index, array){                          // ⤷ argument ke 1: nilai element/value Array 
+    console.log(`Index ke-${index} = ${element}`);          // ⤷ argument ke 2: index element/key Array   (optional)
+  }                                                         // ⤷ argument ke 3: isi seluruh Array         (optional)
+);                                                          // ⤷ penulisan argument tidak harus element/index/arrray (bebas saja)
+                                                            // ⤷ peranan argument ke 3 tidak sepenting argument ke 1 & ke 2, oleh
+                                                            // ⤷ karena itu contoh di samping tidak menyertakan console.log(array)
+
+/* Output:
+Index ke-0 = a
+Index ke-1 = b
+Index ke-2 = c
+Index ke-3 = d
 */
 
 // ==============
