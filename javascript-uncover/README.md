@@ -865,7 +865,8 @@ for (var i in objMobil){
   console.log(`Isi ${i} = ${objMobil[i]}`);
 }
 
-/* Output:
+/* 
+output:
 Isi merk = Toyota Avanza
 Isi tipe = MPV
 Isi harga = 200000000
@@ -2349,8 +2350,7 @@ console.log(arrK.splice(3,0,97,98,99)); // output: []                     ⤷ in
 console.log(arrK);                      // output: [1,2,3,97,98,99,4,5,6] ⤷ yang diinputkan di argument ke 1)
 
 var arrL = ["a","b","c"];
-var tempA;
-var tempB;
+var tempA, tempB;
 
 console.log(arrL.join());               // output: a,b,c                  ⇨ menggabungkan element Array menjadi String
 console.log(arrL.join("-"));            // output: a-b-c                  ⤷ argument diisi dengan karakter yang diinginkan sebagai
@@ -2387,6 +2387,7 @@ data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas m
 */
 
 var arrN = ["a","b","c","d"];
+var arrO = ["Budi","Joko","Putri"];
 
 arrN.forEach(                                         // forEach() berfungsi menjalankan function untuk setiap element Array
   function(element, index, array){                    // ⤷ argument ke 1: nilai element/value Array 
@@ -2394,14 +2395,40 @@ arrN.forEach(                                         // forEach() berfungsi men
   }                                                   // ⤷ argument ke 3: isi seluruh Array         (optional)
 );                                                    // ⤷ penulisan argument tidak harus element/index/arrray (bebas saja)
                                                       // ⤷ peranan argument ke 3 tidak sepenting argument ke 1 & ke 2, oleh
-                                                      // ⤷ karena itu contoh di samping tidak menyertakan console.log(array)
+                                                      // ⤷ karena itu contoh di samping tidak menyertakan console.log(array);
 
-/* Output:
-Index ke-0 = a
-Index ke-1 = b
-Index ke-2 = c
+function tampil(elm, idx, arr){                       // Dalam contoh di atas, function Callback secara langsung disimpan dalam
+  console.log(`Index ke-${idx} = ${elm}`);            // argument, namun sebenarnya bisa pula dipisah menjadi function tersendiri
+}                                                     // (dipisahkan keluar), dengan demikian dapat dipakai oleh Array lainnya.
+arrN.forEach(tampil);                                 // Simak cara penulisan & pemanggilan Callback-nya pada contoh di samping.
+arrO.forEach(tampil);                                 // ⤷ lihat, function tampil() bisa dipakai oleh arrN & arrO
+
+/* 
+output dari arrN.forEach(tampil):       output dari arrO.forEach(tampil):
+Index ke-0 = a                          Index ke-0 = Budi
+Index ke-1 = b                          Index ke-1 = Joko
+Index ke-2 = c                          Index ke-2 = Putri
 Index ke-3 = d
-*/
+*/                                          
+
+var arrP = [1,2,3,4,5], arrQ = [5,6,7,8,9];
+var arrR = [4,9,16,25], arrS = [36,49,64,81];
+
+function kaliDua(elm){                                // map() serupa dengan forEach(), bedanya method map() mengembalikan sebuah
+  return elm*2;                                       // Array baru (memakai keyword return). map() tidak mengubah Array asal.
+}
+function pangkatTiga(elm){
+  return elm**3;
+}
+function akarKuadrat(elm){
+  return Math.sqrt(elm);
+}
+console.log(arrP.map(kaliDua));                       // output: [2,4,6,8,10]
+console.log(arrQ.map(kaliDua));                       // output: [10,12,14,16,18]
+console.log(arrP.map(pangkatTiga));                   // output: [1,8,27,64,125]
+console.log(arrQ.map(pangkatTiga));                   // output: [125,216,343,512,729]
+console.log(arrR.map(akarKuadrat));                   // output: [2,3,4,5]
+console.log(arrS.map(akarKuadrat));                   // output: [6,7,8,9]
 
 // ==============
 // F. Date Object
