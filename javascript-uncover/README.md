@@ -2397,6 +2397,14 @@ arrN.forEach(                                         // forEach() berfungsi men
                                                       // ⤷ peranan argument ke 3 tidak sepenting argument ke 1 & ke 2, oleh
                                                       // ⤷ karena itu contoh di samping tidak menyertakan console.log(array);
 
+/*
+output:
+Index ke-0 = a
+Index ke-1 = b
+Index ke-2 = c
+Index ke-3 = d
+*/
+
 function tampil(elm, idx, arr){                       // Dalam contoh di atas, function Callback secara langsung disimpan dalam
   console.log(`Index ke-${idx} = ${elm}`);            // argument, namun sebenarnya bisa pula dipisah menjadi function tersendiri
 }                                                     // (dipisahkan keluar), dengan demikian dapat dipakai oleh Array lainnya.
@@ -2404,11 +2412,14 @@ arrN.forEach(tampil);                                 // Simak cara penulisan & 
 arrO.forEach(tampil);                                 // ⤷ lihat, function tampil() bisa dipakai oleh arrN & arrO
 
 /* 
-output dari arrN.forEach(tampil):                     output dari arrO.forEach(tampil):
-Index ke-0 = a                                        Index ke-0 = Budi
-Index ke-1 = b                                        Index ke-1 = Joko
-Index ke-2 = c                                        Index ke-2 = Putri
+output:
+Index ke-0 = a
+Index ke-1 = b
+Index ke-2 = c
 Index ke-3 = d
+Index ke-0 = Budi
+Index ke-1 = Joko
+Index ke-2 = Putri
 */                                          
 
 var arrP = [1,2,3,4,5], arrQ = [5,6,7,8,9];
