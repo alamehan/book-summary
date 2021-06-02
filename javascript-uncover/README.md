@@ -319,8 +319,17 @@ console.log(und3["alamat"]);          // output: undefined (mengakses object dil
 <hr>
 
 ```Javascript
+// ===================
+// E. Tipe Data Symbol
+// ===================
+
+// 𝗡𝗼𝘁𝗲: 𝗠𝗮𝘁𝗲𝗿𝗶 𝗹𝗮𝗻𝗷𝘂𝘁𝗮𝗻 (𝘁𝗶𝗱𝗮𝗸 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗯𝘂𝗸𝘂 𝗶𝗻𝗶)
+```
+<hr>
+
+```Javascript
 // ==================
-// E. Tipe Data Array
+// F. Tipe Data Array
 // ==================
 
 var arrSiswa = ["Andri", "Joko", "Sukma"];    // Array 1D berisi hanya data string
@@ -347,17 +356,29 @@ console.log(arr2D[2][1]);             // output: 5
 <hr>
 
 ```Javascript
-// ===================
-// F. Tipe Data Object
-// ===================
+// ==================================
+// G. Tipe Data Object, RegExp & Date
+// ==================================
 
-// 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
+// 𝗡𝗼𝘁𝗲:
+// 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬 & 𝟭𝟭!
+// 𝗥𝗲𝗴𝗘𝘅𝗽 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗗)!
+// 𝗗𝗮𝘁𝗲 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗙)!
+```
+<hr>
+
+```Javascript
+// ========================================
+// H. Tipe Data Map, WeakMap, Set & WeakSet
+// ========================================
+
+// 𝗡𝗼𝘁𝗲: 𝗠𝗮𝘁𝗲𝗿𝗶 𝗹𝗮𝗻𝗷𝘂𝘁𝗮𝗻 (𝘁𝗶𝗱𝗮𝗸 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗯𝘂𝗸𝘂 𝗶𝗻𝗶)
 ```
 <hr>
 
 ```Javascript
 // ==================
-// G. Operator typeof
+// I. Operator typeof
 // ==================
 
 /*
@@ -370,36 +391,48 @@ console.log(typeof strA);                 // output: string
 console.log(typeof bolA);                 // output: boolean
 console.log(typeof nudA);                 // output: object (bukan null)
 console.log(typeof nudB);                 // output: undefined
-console.log(typeof arrSiswa);             // output: object
+console.log(typeof arrSiswa);             // output: object (Array termasuk Object)
 
-// Check Tipe Data (Materi Lanjutan)
+// Check Tipe Data (Materi Tambahan)
 
-var num = 10;                             // tipe data: number
-var str = "JavaScript";                   // tipe data: string
-var bol = true;                           // tipe data: boolean
-var nul = null;                           // tipe data: null
-var und = undefined;                      // tipe data: undefined
+var num = 10;                             // tipe data: Number
+var str = "JavaScript";                   // tipe data: String
+var bol = true;                           // tipe data: Boolean
+var nul = null;                           // tipe data: Null
+var und = undefined;                      // tipe data: Undefined
 var arr = [1, 2, "tiga"];                 // tipe data: Array
+var obj = {nama: "Budi", umur: 13};       // tipe data: Object      // 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬 & 𝟭𝟭!
+var reg = /^\d\w\s$/;                     // tipe data: RegExp      // 𝗥𝗲𝗴𝗘𝘅𝗽 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗗)!
+var dat = new Date(2016,11,2,9,30,15);    // tipe data: Date        // 𝗗𝗮𝘁𝗲 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗙)!
 var nan = 9/"a";                          // tipe data: NaN
 var inf = 9/0;                            // tipe data: Infinity
 
-console.log(typeof num === "number");     // output: true   (check apakah datanya number)
-console.log(typeof str === "string");     // output: true   (check apakah datanya string)
-console.log(typeof bol === "boolean");    // output: true   (check apakah datanya boolean)
-console.log(nul === null);                // output: true   (check apakah datanya null)
-console.log(und === undefined);           // output: true   (check apakah datanya undefined)
-console.log(inf === Infinity);            // output: true   (check apakah datanya infinity)
-console.log(Array.isArray(arr));          // output: true   (check apakah datanya array)
+console.log(typeof num === "number");     // output: true   (check apakah datanya Number)
+console.log(typeof str === "string");     // output: true   (check apakah datanya String)
+console.log(typeof bol === "boolean");    // output: true   (check apakah datanya Boolean)
+console.log(nul === null);                // output: true   (check apakah datanya Null)
+console.log(und === undefined);           // output: true   (check apakah datanya Undefined)
+console.log(Array.isArray(arr));          // output: true   (check apakah datanya Array - cara 1)
+console.log(arr instanceof Array);        // output: true   (check apakah datanya Array - cara 2)
+console.log(arr.constructor === Array);   // output: true   (check apakah datanya Array - cara 3)
+console.log(typeof obj === "object");     // output: true   (check apakah datanya Object - cara 1)
+console.log(obj instanceof Object);       // output: true   (check apakah datanya Object - cara 2)
+console.log(obj.constructor === Object);  // output: true   (check apakah datanya Object - cara 3)
+console.log(reg instanceof RegExp);       // output: true   (check apakah datanya RegExp - cara 1)
+console.log(reg.constructor === RegExp);  // output: true   (check apakah datanya RegExp - cara 2)
+console.log(dat instanceof Date);         // output: true   (check apakah datanya Date - cara 1)
+console.log(dat.constructor === Date);    // output: true   (check apakah datanya Date - cara 2)
 console.log(Number.isNaN(nan));           // output: true   (check apakah datanya NaN)
+console.log(inf === Infinity);            // output: true   (check apakah datanya Infinity)
 ```
 <hr>
 
 ```Javascript
 // ======================
-// H. Operator instanceof
+// J. Operator instanceof
 // ======================
 
-// 𝗡𝗼𝘁𝗲: 𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝗼𝗳 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟭!
+// 𝗡𝗼𝘁𝗲: 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿 𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝗼𝗳 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟭 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗕𝟯)!
 ```
 
 <br>
@@ -1630,10 +1663,12 @@ var arr1 = [1, 2, 3];                 // cara penulisan: Array literals   (✔�
 var arr2 = new Array(1, 2, 3);        // cara penulisan: Array object     (❌ Not Recommended)
 var obj1 = {nama: "Budi", umur: 24};  // cara penulisan: Object literals  (✔️ Recommended)
 var obj2 = new Object();              // cara penulisan: Object object    (❌ Not Recommended)
-var reg1 = /ab+c/;                    // cara penulisan: RegExp literals  (✔️ Recommended)          𝗡𝗼𝘁𝗲: 𝗥𝗲𝗴𝗘𝘅𝗽 𝗱𝗶-
-var reg2 = new RegExp("ab+c");        // cara penulisan: RegExp object    (❌ Not Recommended)      𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮
-obj2.nama = "Budi";
-obj2.umur = 24;
+obj2.nama = "Budi";                   // ⤷ property & method didefinisikan
+obj2.umur = 24;                       // ⤷ setelah Object object dibuat
+var reg1 = /ab+c/;                    // cara penulisan: RegExp literals  (✔️ Recommended)      𝗥𝗲𝗴𝗘𝘅𝗽 𝗕𝗔𝗕 𝟭𝟮 (𝗗)!
+var reg2 = new RegExp("ab+c");        // cara penulisan: RegExp object    (❌ Not Recommended)
+var date = new Date(2016,11,2,9,30);  // cara penulisan: Date object      (✔️ Recommended)      𝗗𝗮𝘁𝗲 𝗕𝗔𝗕 𝟭𝟮 (𝗙)!
+                                      // ⤷ Date tidak ada literals-nya
 
 var fun1 = function (a, b){ return a+b; };        // cara penulisan: Function expressions/anonymous function  (✔️ Recommended)
 var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function object                          (❌ Not Recommended)
@@ -2477,8 +2512,10 @@ Index ke-1 = Joko
 Index ke-2 = Putri
 */                                          
 
-var arrP = [1,2,3,4,5], arrQ = [5,6,7,8,9];
-var arrR = [4,9,16,25], arrS = [36,49,64,81];
+var arrP = [1,2,3,4,5];
+var arrQ = [5,6,7,8,9];
+var arrR = [4,9,16,25];
+var arrS = [36,49,64,81];
 
 function kaliDua(elm){ return elm*2; }                                 
 function pangkatTiga(elm){ return elm**3; }
@@ -2532,6 +2569,33 @@ console.log(arrS.find(besarDari10));                  // output: 36
 console.log(arrQ.find(besarDari10));                  // output: undefined
 console.log(arrR.findIndex(besarDari10));             // output: 2
 console.log(arrQ.findIndex(besarDari10));             // output: -1
+
+function tambah(total, elm, idx, arr){
+  return total + elm;
+}
+function pangkat2(total, elm, idx, arr){
+  return total + Math.pow(elm, 2);
+}
+                                                      // reduce() & reduceRight() digunakan untuk memproses total seluruh element
+                                                      // Array dan menghasilkan 1 nilai akhir. reduce() memproses dari awal Array,
+                                                      // sedangkan reduceRight() memproses dari akhir element Array.
+                                                      // ⤷ argument ke 1: variable penampung nilai total
+                                                      // ⤷ argument ke 2: nilai element/value Array
+                                                      // ⤷ argument ke 3: index element/key Array       (optional)
+                                                      // ⤷ argument ke 4: isi seluruh Array             (optional)
+console.log(arrP.reduce(tambah));                     // output: 15   (hasil dari 1+2+3+4+5)
+console.log(arrP.reduce(tambah,10));                  // output: 25   (hasil dari 10+1+2+3+4+5)
+console.log(arrQ.reduce(pangkat2));                   // output: 235  (hasil dari 5+6²+7²+8²+9²)
+console.log(arrQ.reduce(pangkat2,0));                 // output: 255  (hasil dari 0+5²+6²+7²+8²+9²)
+console.log(arrP.reduceRight(tambah));                // output: 15   (hasil dari 5+4+3+2+1)
+console.log(arrP.reduceRight(tambah,10));             // output: 25   (hasil dari 10+5+4+3+2+1)
+console.log(arrQ.reduceRight(pangkat2));              // output: 183  (hasil dari 9+8²+7²+6²+5²)
+console.log(arrQ.reduceRight(pangkat2,0));            // output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
+                                                      // Note: argument ke 1 yang berisi variable penampung nilai total awalnya
+                                                      // ⤷ akan langsung diisi oleh nilai dari element pertama di Array (default),
+                                                      // ⤷ perhatikan proses perhitungan baris console.log(arrQ.reduce(pangkat2));
+                                                      // ⤷ element pertama Array yang bernilai 5 tidak dipangkatkan 2, karena lang-
+                                                      // ⤷ sung disimpan ke dalam variable total. Namun...
 ```
 <hr>
 
