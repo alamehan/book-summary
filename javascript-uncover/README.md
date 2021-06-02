@@ -217,7 +217,7 @@ Var, Let & Const
   </body> 
 </html>
 ```
-9. Berdasarkan contoh diatas: variabel ```harga```, let ```namaLengkap```, dan konstanta ```NILAI_PI``` adalah **Identifier**. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah **Literal**.
+9. Berdasarkan contoh di atas: variabel ```harga```, let ```namaLengkap```, dan konstanta ```NILAI_PI``` adalah **Identifier**. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah **Literal**.
 
 <br>
 <div id="bab06"></div>
@@ -831,7 +831,7 @@ do {                                  // output: 1
 
 /*
 Perulangan FOR OF merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan element array.
-Hasil dari perulangan FOR OF dibawah ini, sama dengan hasil perulangan FOR di point D3 diatas.
+Hasil dari perulangan FOR OF di bawah ini, sama dengan hasil perulangan FOR di point D3 di atas.
 */
 
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
@@ -1155,7 +1155,7 @@ console.log(teksA);                   // console.log(teksA);              🡲 o
 console.log(teksB);                   // 𝘃𝗮𝗿 𝘁𝗲𝗸𝘀𝗕 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
 console.log(teksC);                   // console.log(teksB);              🡲 output: undefined
 var teksB = "Belajar JS";             // console.log(teksC);              🡲 output: ReferenceError teksC is not defined (STOP!)
-                                      // var teksB = "Belajar JS";        🡲 baris ini tidak akan dieksekusi, karena error diatas
+                                      // var teksB = "Belajar JS";        🡲 baris ini tidak akan dieksekusi, karena error di atas
                                       
 // Contoh 1-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(teksD);                   // 𝘃𝗮𝗿 𝘁𝗲𝗸𝘀𝗗 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
@@ -1289,7 +1289,7 @@ console.log(nama);                    // console.log(nama);               🡲 o
 ➊ Selalu definisikan variable (var) diawal kode program/function, dan sebaiknya langsung diisi nilai, agar tidak undefined.
 ➋ Pemanggilan function bisa dimana saja, tidak peduli pendefinisian functionnya berada di atas maupun bawah kode program.
 ➌ Agar lebih "aman", ganti penggunaan var dengan let. Let akan menampilkan error saat ia dipanggil namun belum didefinisikan
-  di baris atas kode program (ini yang seharusnya terjadi), sedangkan var malah diisi undefined. Perhatikan contoh dibawah:
+  di baris atas kode program (ini yang seharusnya terjadi), sedangkan var malah diisi undefined. Perhatikan contoh di bawah:
 */
 
 // Contoh VAR                         ᴠᴀʀ ɪᴛᴜ ᴛɪᴅᴀᴋ ᴀᴍᴀɴ:
@@ -2317,7 +2317,7 @@ for (var n=0; n<arrSiswa.length; n++){                      // ⤷ akan selalu d
 }                                                           // output: Andri, Joko, Sukma, Rina, Sari
 
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini merupakan versi perbaikan (lebih efisien) dari contoh
-var panjangArr = arrSiswa.length;                           // ⤷ diatas, karena nilai arrSiswa.length tidak disimpan langsung di
+var panjangArr = arrSiswa.length;                           // ⤷ di atas, karena nilai arrSiswa.length tidak disimpan langsung di
 for (var n=0; n<panjangArr; n++){                           // ⤷ kondisi, melainkan ditampung terlebih dahulu kedalam variable.
   console.log(arrSiswa[n]);                                 // output: Andri, Joko, Sukma, Rina, Sari
 }                                                           
@@ -2392,10 +2392,11 @@ var arrN = ["a","b","c","d"];
 var arrO = ["Budi","Joko","Putri"];
 
 arrN.forEach(                                         // forEach() berfungsi menjalankan function untuk setiap element Array
-  function(element, index, array){                    // ⤷ argument ke 1: nilai element/value Array 
-    console.log(`Index ke-${index} = ${element}`);    // ⤷ argument ke 2: index element/key Array   (optional)
-  }                                                   // ⤷ argument ke 3: isi seluruh Array         (optional)
-);                                                    // ⤷ penulisan argument tidak harus element/index/arrray (bebas saja)
+  function(element, index, array){                    // (mirip seperti perulangan for of, jalan sebanyak jumlah element di Array)
+    console.log(`Index ke-${index} = ${element}`);    // ⤷ argument ke 1: nilai element/value Array 
+  }                                                   // ⤷ argument ke 2: index element/key Array   (optional)
+);                                                    // ⤷ argument ke 3: isi seluruh Array         (optional)
+                                                      // ⤷ penulisan argument tidak harus element/index/arrray (bebas saja)
                                                       // ⤷ peranan argument ke 3 tidak sepenting argument ke 1 & ke 2, oleh
                                                       // ⤷ karena itu contoh di samping tidak menyertakan console.log(array);
 
@@ -2443,20 +2444,42 @@ console.log(arrS.map(akarKuadrat));                   // output: [6,7,8,9]
 console.log(arrR.map(ganjilGenap));                   // output: ["genap","ganjil","genap","ganjil"]
 console.log(arrS.map(ganjilGenap));                   // output: ["genap","ganjil","genap","ganjil"]
 
-function genapOnly(elm){
-  if (elm%2 === 0){
-    return true;
-  } else {
-    return false;
-  }
+function genapOnly(elm){                              // Jika genap return true, jika ganjil return false. Sebenarnya bisa juga
+  return (elm%2 === 0);                               // ditulis dengan IF-ELSE, namun tidak efisien (baris kode-nya panjang).
 }
-
+function besarDari10(elm){                            // Jika lebih dari 10 return true, jika tidak, return false. Sama seperti
+  return (elm>10);                                    // genapOnly(), sebenarnya bisa ditulis dengan IF-ELSE, tapi tidak efisien.
+}
                                                       // filter() serupa dengan map(), bedanya hasil return berupa true/false.
                                                       // Jika true pertahankan element Array, jika false hapus element tersebut.
 console.log(arrP.filter(genapOnly));                  // output: [2,4]
 console.log(arrQ.filter(genapOnly));                  // output: [6,8]
 console.log(arrR.filter(genapOnly));                  // output: [4,16]
 console.log(arrS.filter(genapOnly));                  // output: [36,64]
+
+                                                      // every() berfungsi memeriksa apakah seluruh element Array memenuhi syarat
+                                                      // tertentu (syarat kita definisikan sendiri di dalam function). Jika ya
+                                                      // (seluruh element menghasilkan true), maka method every() akan me-return
+                                                      // true. Namun jika tidak (ada salah satu saja element yang menghasilkan 
+                                                      // false), maka method every () akan me-return false.
+console.log(arrR.every(besarDari10));                 // output: false  (karena terdapat nilai 4 & 9 yang memang kurang dari 10)
+console.log(arrS.every(besarDari10));                 // output: true   (karena semua element di arrS bernilai lebih besar dari 10)
+
+                                                      // some() serupa dengan every(), bedanya syaratnya terbalik, yaitu method
+                                                      // some() akan me-return true jika ada salah satu element saja yang meng-
+                                                      // hasilkan true (memenuhi syarat yang telah didefinisikan).
+console.log(arrQ.some(besarDari10));                  // output: false  (karena semua element di arrQ bernilai lebih kecil dari 10)
+console.log(arrR.some(besarDari10));                  // output: true   (karena terdapat nilai 16 & 25 yang memang memenuhi syarat)
+
+                                                      // find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array
+                                                      // berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan
+                                                      // me-return nilai yang ditemukan pertama kali. find() akan me-return nilai
+                                                      // element Arrray tersebut, sedangkan findIndex() me-return index Array-nya.
+console.log(arrR.find(besarDari10));                  // output: 16
+console.log(arrS.find(besarDari10));                  // output: 36
+console.log(arrQ.find(besarDari10));                  // output: undefined
+console.log(arrR.findIndex(besarDari10));             // output: 2
+console.log(arrQ.findIndex(besarDari10));             // output: -1
 
 // ==============
 // F. Date Object
