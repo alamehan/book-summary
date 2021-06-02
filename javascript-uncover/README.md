@@ -1879,7 +1879,9 @@ console.log(numC.toLocaleString('fr-FR'));  // output: 1 234 500,346  ⤷ fr
 console.log(numC.toLocaleString('id-ID', {style: 'decimal'}));                    // output: 1.234.500,346    (default)
 console.log(numC.toLocaleString('id-ID', {style: 'percent'}));                    // output: 123.450.035%     (persen)
 console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));  // output: Rp 1.234.500,35  (mata uang)
+```
 
+```Javascript
 // ==============
 // B. Math Object
 // ==============
@@ -1924,7 +1926,9 @@ console.log(mthA);                          // output: 7 (contoh)
 var mthB = [45, 90, 12, 55];                // studi kasus: mencari nilai paling besar/kecil dari array (pakai spread operator)
 console.log(Math.max(...mthB));             // output: 90
 console.log(Math.min(...mthB));             // output: 12
+```
 
+```Javascript
 // ================
 // C. String Object
 // ================
@@ -2018,7 +2022,9 @@ while (posisi !== -1){                  // perulangan berhenti saat posisi = -1 
   posisi = strH.indexOf("a", posisi+1); // perintah di baris ini berarti terus mencari posisi berikutnya dari String "a"
 }
 console.log(count);                     // output: 6
+```
 
+```Javascript
 // =====================================
 // D. Regular Expression (RegExp) Object
 // =====================================
@@ -2281,7 +2287,9 @@ console.log(polaZ.test("DA 9999 XYZ"));               // output: true
 console.log(polaZ.test("bk9he"));                     // output: true
 console.log(polaZ.test("zz 9YES"));                   // output: true
 console.log(polaZ.test("_zz9YES"));                   // output: false
+```
 
+```Javascript
 // ===============
 // E. Array Object
 // ===============
@@ -2480,7 +2488,9 @@ console.log(arrS.find(besarDari10));                  // output: 36
 console.log(arrQ.find(besarDari10));                  // output: undefined
 console.log(arrR.findIndex(besarDari10));             // output: 2
 console.log(arrQ.findIndex(besarDari10));             // output: -1
+```
 
+```Javascript
 // ==============
 // F. Date Object
 // ==============
