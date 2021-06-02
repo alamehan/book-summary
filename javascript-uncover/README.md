@@ -78,6 +78,7 @@ A. Inline JavaScript
   </body> 
 </html>
 ```
+<hr>
 
 ```HTML
 ======================
@@ -96,6 +97,7 @@ B. Internal JavaScript
   </body> 
 </html>
 ```
+<hr>
 
 ```HTML
 ======================
@@ -245,6 +247,7 @@ var numJ = 0x3E7;                     // heksadesimal (basis 16), diawali 0x
 var numK = 9/"a"; console.log(numK);  // output: NaN (Not a Number)
 var numL = 9/0; console.log(numL);    // output: Infinity (Tak Hingga)
 ```
+<hr>
 
 ```Javascript
 // ===================
@@ -281,6 +284,7 @@ var strH = "Indonesia";
 var strI = "Bahasa " + strH;          // sebelum ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 var strJ = `Bahasa ${strH}`;          // setelah ada fitur Template String ES6 ⇨ hasilnya: Bahasa Indonesia
 ```
+<hr>
 
 ```Javascript
 // ====================
@@ -290,6 +294,7 @@ var strJ = `Bahasa ${strH}`;          // setelah ada fitur Template String ES6 �
 var bolA = true;                      // bernilai true, biasanya di pakai di if, else, while, dan do while
 var bolB = false;                     // bernilai false, biasanya di pakai di if, else, while, dan do while
 ```
+<hr>
 
 ```Javascript
 // =============================
@@ -311,6 +316,7 @@ var und3 = {nama: "iyan", umur: 24};
 console.log(und3["alamat"]);          // output: undefined (mengakses object diluar key yang dibuat, menjadi undefined)
                                       // 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
 ```
+<hr>
 
 ```Javascript
 // ==================
@@ -338,6 +344,7 @@ console.log(arr2D[1][1]);             // output: 5
 console.log(arr2D[2][0]);             // output: 3
 console.log(arr2D[2][1]);             // output: 5
 ```
+<hr>
 
 ```Javascript
 // ===================
@@ -346,6 +353,7 @@ console.log(arr2D[2][1]);             // output: 5
 
 // 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
 ```
+<hr>
 
 ```Javascript
 // ==================
@@ -384,6 +392,7 @@ console.log(inf === Infinity);            // output: true   (check apakah datany
 console.log(Array.isArray(arr));          // output: true   (check apakah datanya array)
 console.log(Number.isNaN(nan));           // output: true   (check apakah datanya NaN)
 ```
+<hr>
 
 ```Javascript
 // ======================
@@ -421,6 +430,7 @@ Baca urutan prioritas operator (precedence) secara lengkap di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 */
 ```
+<hr>
 
 ```Javascript
 // ===================================
@@ -439,6 +449,7 @@ console.log(e);                       // output: 11
 console.log(f--);                     // output: 10     ⇨ post-decrement: tampilkan dulu, baru kurangi
 console.log(f);                       // output: 9
 ```
+<hr>
 
 ```Javascript
 // ========================
@@ -481,6 +492,7 @@ console.log("ali" < "alo");           // output: true   (ali = 97→108→105, a
 console.log("ali" < "alika");         // output: true   (ali = 97→108→105, alika = 97→108→105→107→97)
 console.log("ali" < 9999999);         // output: false  (perbandingan String & Number selalu menghasilkan false)
 ```
+<hr>
 
 ```Javascript
 // =======================
@@ -521,6 +533,7 @@ console.log(false == null);           // output: false  (pengecualian)
 console.log(null == undefined);       // output: true   (hasil konversi: false == false) 
 console.log('\t\r\n' == 0);           // output: true   (pengecualian) 
 ```
+<hr>
 
 ```Javascript
 // ==================
@@ -571,6 +584,7 @@ console.log(false && "World");        // output: false  (false bertemu &&, stop,
 console.log(false || false && true || "World");   // output: World  (&& duluan, menjadi: false || false || "World", ...)
 console.log(true || false && true || "World");    // output: true   (&& duluan, menjadi: true || false || "World", ...)
 ```
+<hr>
 
 ```Javascript
 // ==================
@@ -589,6 +603,7 @@ console.log("10" + 10 + 9);           // output: 10109  (string)  dari hasil kon
 console.log(10 + "10" + 9);           // output: 10109  (string)  dari hasil konversi: console.log(10 + "10" + "9");
 console.log(10 + 10 + "9");           // output: 209    (string)  dari hasil konversi: console.log(20 + "9");
 ```
+<hr>
 
 ```Javascript
 // ===================
@@ -601,6 +616,7 @@ logika bilangan biner. Operator ini sangat jarang digunakan dalam
 JavaScript dan cukup rumit. Sehingga tidak akan dibahas disini.
 */
 ```
+<hr>
 
 ```Javascript
 // ======================
@@ -621,6 +637,7 @@ gabC /= 10;       // gabC = gabC / 10 🡲 gabC = 20 / 10  (output: 2)
 gabD *= 10;       // gabD = gabD * 10 🡲 gabD = 20 * 10  (output: 200) 
 gabE %= 10;       // gabE = gabE % 10 🡲 gabE = 20 % 10  (output: 0)
 ```
+<hr>
 
 ```Javascript
 // ==================
@@ -673,6 +690,7 @@ if (nilai >= 0 && nilai <= 100){      // jika nilai >= 0 dan <= 100, masuk ke ko
   console.log("Tidak Valid!");
 }
 ```
+<hr>
 
 ```Javascript
 // ==========================
@@ -702,6 +720,7 @@ switch(nilaiTK){                      // case 1-5: kurang, case 6-7: cukup, case
     console.log("Tidak Valid!");
 }
 ```
+<hr>
 
 ```Javascript
 // ====================================
@@ -728,6 +747,7 @@ Cara baca: Apakah user === "admin"? jika iya, kirim boolean true ke variabel aks
 akan dijalankan. Jika tidak, kirim boolean false ke variabel akses, dan kondisi "if (akses)" tidak jalan.
 */
 ```
+<hr>
 
 ```Javascript
 // ==================
@@ -774,6 +794,7 @@ for (var n=0; n<arrSiswa.length; n++){
 }                                     // output: Andri, Joko, Sukma, Rina, Sari
 
 ```
+<hr>
 
 ```Javascript
 // ====================
@@ -800,6 +821,7 @@ while (j > 1){                        // output: 20, 18, 16, 14, 12
   j--;
 }
 ```
+<hr>
 
 ```Javascript
 // =======================
@@ -823,6 +845,7 @@ do {                                  // output: 1
   j--;
 } while (j > 999);
 ```
+<hr>
 
 ```Javascript
 // =====================
@@ -839,6 +862,7 @@ for (var i of arrSiswa){
   console.log(i);
 }                                     // output: Andri, Joko, Sukma, Rina, Sari
 ```
+<hr>
 
 ```Javascript
 // =====================
@@ -892,6 +916,7 @@ function pagiMalam(){
 
 pagiMalam();                          // output: Selamat Pagi!, Selamat Malam!
 ```
+<hr>
 
 ```Javascript
 // =====================================
@@ -914,6 +939,8 @@ console.log(ratarata(1, 2, 3, 4));    // output: 2.5 (hasil dari (1+2+3+4)/4 �
 console.log(ratarata(1, 2, 3, 4, 5)); // output: 2.5 (argument ke-5 akan diabaikan, karena tidak ada "slot"-nya di function)
 console.log(ratarata(1, 2, 3));       // output: NaN (argument ke-4 tidak ada, maka secara defaultnya nilainya undefined)
 ```
+<hr>
+
 ```Javascript
 // ====================================
 // C. Function dengan Default Parameter
@@ -948,6 +975,7 @@ console.log(kali(20, 25));            // output: NaN (function kali butuh minima
 console.log(kali(20, 25, 30, 15));    // output: 225000 (hasil dari 20*25*30*15)
 console.log(kali(undefined, undefined, 30, 15));  // output: 45000 (hasil dari 10*10*30*15), undefined akan diisi nilai default
 ```
+<hr>
 
 ```Javascript
 // ===================================
@@ -1031,6 +1059,7 @@ function rataratav2(...nilai){        // studi kasus pada point D3, dapat kita b
 console.log(rataratav2(2, 4));        // output: 3   (hasil dari (2+4)/2 🡲 6/2)
 console.log(rataratav2(2, 4, 8, 16)); // output: 7.5 (hasil dari (2+4+8+16)/4 🡲 30/4)
 ```
+<hr>
 
 ```Javascript
 // =================
@@ -1095,6 +1124,7 @@ console.log(c);                       // output: 20 (bukan 5, karena nilai c ter
 console.log(d);                       // output: 40 (bukan 10, karena nilai d tertimpa saat di dalam function)
 console.log(e);                       // output: 60 (bukan 15, karena nilai var c & d tertimpa saat di dalam function)
 ```
+<hr>
 
 ```Javascript
 // =============
@@ -1132,6 +1162,7 @@ for (let l=1; l<3; l++){
 }
 console.log(`Harganya Rp.${l}`);      // output: Harganya Rp.1000 (nilai l global tidak tertimpa)
 ```
+<hr>
 
 ```Javascript
 // ========================
@@ -1279,6 +1310,7 @@ console.log(nama);                    // console.log(nama);               🡲 o
                                       // funB("Tono");                    🡲 output: Jaka (bukan Tono ya!)
                                       // console.log(nama);               🡲 output: Jaka
 ```
+<hr>
 
 ```Javascript
 // ===================================
@@ -1300,6 +1332,7 @@ var a = "Hello World!";               // seharusnya sih error, tapi karena efek 
 console.log(b);                       // output: ReferenceError Cannot access 'b' before initialization
 let b = "Hello World!";               // ini artinya kita memang harus mendefinisikan var/let dulu, sebelum dipakai! (professional)
 ```
+<hr>
 
 ```Javascript
 // =======================================
@@ -1361,6 +1394,7 @@ function salam(bar){                  // step 2 🡲 parameter bar akan menangka
 }
 salam(foo);                           // step 1 🡲 mengirim function bernama foo sebagai sebuah argument
 ```
+<hr>
 
 ```Javascript
 // =======================
@@ -1478,6 +1512,7 @@ console.log(mobil.merk);              // output: Honda Civic        (nilai prope
 console.log(mobil.tipe);              // output: Sedan              (nilai property tipe sesudah diubah)
 console.log(mobil.hidupkan());        // output: Mesin Dinyalakan!  (hasil return method hidupkan sesudah diubah)
 ```
+<hr>
 
 ```Javascript
 // ================
@@ -1498,6 +1533,7 @@ console.log(mahasiswa.ipk)            // output: {semester1: 3.1, semester2: 3.6
 console.log(mahasiswa.ipk.semester1)  // output: 3.1                ⇨ mengakses nested object dengan dot notation
 console.log(mahasiswa.ipk.semester2)  // output: 3.6                ⇨ mengakses nested object dengan dot notation
 ```
+<hr>
 
 ```Javascript
 // ===================
@@ -1602,6 +1638,7 @@ obj2.umur = 24;
 var fun1 = function (a, b){ return a+b; };        // cara penulisan: Function expressions/anonymous function  (✔️ Recommended)
 var fun2 = new Function('a', 'b', 'return a+b');  // cara penulisan: Function object                          (❌ Not Recommended)
 ```
+<hr>
 
 ```Javascript
 // ========================================================
@@ -1750,6 +1787,7 @@ class Mobil{                                      // class Mobil{
   }                                               //   }
 }                                                 // }
 ```
+<hr>
 
 ```Javascript
 // ==========================================
@@ -1882,6 +1920,7 @@ console.log(numC.toLocaleString('id-ID', {style: 'decimal'}));                  
 console.log(numC.toLocaleString('id-ID', {style: 'percent'}));                    // output: 123.450.035%     (persen)
 console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));  // output: Rp 1.234.500,35  (mata uang)
 ```
+<hr>
 
 ```Javascript
 // ==============
@@ -1929,6 +1968,7 @@ var mthB = [45, 90, 12, 55];                // studi kasus: mencari nilai paling
 console.log(Math.max(...mthB));             // output: 90
 console.log(Math.min(...mthB));             // output: 12
 ```
+<hr>
 
 ```Javascript
 // ================
@@ -2025,6 +2065,7 @@ while (posisi !== -1){                  // perulangan berhenti saat posisi = -1 
 }
 console.log(count);                     // output: 6
 ```
+<hr>
 
 ```Javascript
 // =====================================
@@ -2290,6 +2331,7 @@ console.log(polaZ.test("bk9he"));                     // output: true
 console.log(polaZ.test("zz 9YES"));                   // output: true
 console.log(polaZ.test("_zz9YES"));                   // output: false
 ```
+<hr>
 
 ```Javascript
 // ===============
@@ -2491,6 +2533,7 @@ console.log(arrQ.find(besarDari10));                  // output: undefined
 console.log(arrR.findIndex(besarDari10));             // output: 2
 console.log(arrQ.findIndex(besarDari10));             // output: -1
 ```
+<hr>
 
 ```Javascript
 // ==============
