@@ -2553,6 +2553,8 @@ console.log(arrQ.findIndex(besarDari10));             // output: -1
 
 // Inheritance, Encapsulation, dll
 ```
+<hr>
+
 ```Javascript
 // =======================================================
 // B. Sumber: Web Programming Unpas & Programmer Zaman Now
@@ -2560,6 +2562,7 @@ console.log(arrQ.findIndex(besarDari10));             // output: -1
 
 // Object.create(), Closure, Callback, Promise, Fetch, Async Await, dll
 ```
+<hr>
 
 ```Javascript
 // =======================
