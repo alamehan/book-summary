@@ -314,7 +314,7 @@ console.log(und2[3]);                 // output: undefined (mengakses array dilu
 
 var und3 = {nama: "iyan", umur: 24};
 console.log(und3["alamat"]);          // output: undefined (mengakses object diluar key yang dibuat, menjadi undefined)
-                                      // 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
+                                      // 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬 & 𝟭𝟭
 ```
 <hr>
 
@@ -361,9 +361,9 @@ console.log(arr2D[2][1]);             // output: 5
 // ==================================
 
 // 𝗡𝗼𝘁𝗲:
-// 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬 & 𝟭𝟭!
-// 𝗥𝗲𝗴𝗘𝘅𝗽 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗗)!
-// 𝗗𝗮𝘁𝗲 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗙)!
+// 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬 & 𝟭𝟭
+// 𝗥𝗲𝗴𝗘𝘅𝗽 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗗)
+// 𝗗𝗮𝘁𝗲 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗙)
 ```
 <hr>
 
@@ -401,9 +401,9 @@ var bol = true;                           // tipe data: Boolean
 var nul = null;                           // tipe data: Null
 var und = undefined;                      // tipe data: Undefined
 var arr = [1, 2, "tiga"];                 // tipe data: Array
-var obj = {nama: "Budi", umur: 13};       // tipe data: Object      // 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬 & 𝟭𝟭!
-var reg = /^\d\w\s$/;                     // tipe data: RegExp      // 𝗥𝗲𝗴𝗘𝘅𝗽 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗗)!
-var dat = new Date(2016,11,2,9,30,15);    // tipe data: Date        // 𝗗𝗮𝘁𝗲 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗙)!
+var obj = {nama: "Budi", umur: 13};       // tipe data: Object      // 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬 & 𝟭𝟭
+var reg = /^\d\w\s$/;                     // tipe data: RegExp      // 𝗥𝗲𝗴𝗘𝘅𝗽 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗗)
+var dat = new Date(2016,11,2,9,30,15);    // tipe data: Date        // 𝗗𝗮𝘁𝗲 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗙)
 var nan = 9/"a";                          // tipe data: NaN
 var inf = 9/0;                            // tipe data: Infinity
 
@@ -432,7 +432,7 @@ console.log(inf === Infinity);            // output: true   (check apakah datany
 // J. Operator instanceof
 // ======================
 
-// 𝗡𝗼𝘁𝗲: 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿 𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝗼𝗳 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟭 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗕𝟯)!
+// 𝗡𝗼𝘁𝗲: 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿 𝗶𝗻𝘀𝘁𝗮𝗻𝗰𝗲𝗼𝗳 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟭 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗕𝟯)
 ```
 
 <br>
@@ -549,7 +549,7 @@ Yang dikonversi menjadi false:
 
 Yang dikonversi menjadi true:
 • true
-• {}        (object kosong)           // 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
+• {}        (object kosong)           // 𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬 & 𝟭𝟭
 • []        (array kosong)
 • 42        (sembarang angka, termasuk pecahan dan negatif, selain 0)
 • "foo"     (sembarang string, selama bukan string kosong)
@@ -907,7 +907,7 @@ Perulangan FOR IN merupakan fitur baru dari ES6, digunakan khusus untuk menampil
 isi object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi array
 (karena array pun termasuk ke dalam tipe data Object), namun tidak disarankan.
 
-𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬!
+𝗡𝗼𝘁𝗲: 𝗢𝗯𝗷𝗲𝗰𝘁 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟬 & 𝟭𝟭
 */
 
 var objMobil = {
@@ -1377,7 +1377,7 @@ Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini ber
 ➊ Function dapat disimpan ke dalam variable (a.k.a 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀)
 ➋ Function dapat digunakan sebagai argument layaknya tipe data biasa (a.k.a 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
 
-𝗡𝗼𝘁𝗲: 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝘀𝗲𝗰𝗮𝗿𝗮 𝗱𝗲𝘁𝗮𝗶𝗹 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 𝗯𝗮𝗴𝗶𝗮𝗻 𝗘𝟰
+𝗡𝗼𝘁𝗲: 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝘀𝗲𝗰𝗮𝗿𝗮 𝗱𝗲𝘁𝗮𝗶𝗹 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗘𝟰)
 */
 
 // H1. Function Expressions
