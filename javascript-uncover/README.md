@@ -1817,6 +1817,8 @@ console.log(bar.length);              // ouput: 11. Kita pun masih tetap bisa me
 
 # 12. JavaScript Native Object <a href="#daftarisi">🡹</a>
 
+<img src="images/2-4-nativeobject.png">
+
 ```Javascript
 // ================
 // A. Number Object
