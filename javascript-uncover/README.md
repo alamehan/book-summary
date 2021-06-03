@@ -2,8 +2,6 @@
 
 <div id="daftarisi"></div>
 
-# Daftar Isi:
-
 | Judul BAB                                                     	| Estimasi Baca 	|
 |---------------------------------------------------------------	|---------------	|
 | <a href="#bab01">1. Berkenalan Dengan JavaScript</a>          	| ± 2 menit     	|
@@ -19,6 +17,9 @@
 | <a href="#bab11">11. Object Oriented Programming (OOP)</a>    	| ± 10 menit    	|
 | <a href="#bab12">12. JavaScript Native Object</a>             	| ± X menit     	|
 | <a href="#babxx">XX. Materi Tambahan: Advanced JavaScript</a> 	| ± X menit     	|
+
+<!-- Estimasi baca hasil generate dari  : https://wordcounter.net/ -->
+<!-- Markdown table hasil generate dari : https://www.tablesgenerator.com/markdown_tables -->
 
 <div id="bab01"></div>
 
