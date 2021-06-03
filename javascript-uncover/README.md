@@ -5,19 +5,19 @@
 # Daftar Isi:
 
 <p align="left">
-	<a href="#bab01">1. Berkenalan Dengan JavaScript          (± 2 menit)</a>&nbsp;<br>
-	<a href="#bab02">2. Sejarah dan Perkembangan JavaScript   (± 5 menit)</a>&nbsp;<br>
-	<a href="#bab03">3. Menjalankan Kode Program JavaScript   (± 4 menit)</a>&nbsp;<br>
-	<a href="#bab04">4. Aturan Dasar, Variabel dan Konstanta  (± 1 menit)</a>&nbsp;<br>
-	<a href="#bab05">5. Variabel dan Konstanta                (± 4 menit)</a>&nbsp;<br>
-	<a href="#bab06">6. Tipe Data JavaScript                  (± 7 menit)</a>&nbsp;<br>
-	<a href="#bab07">7. Operator JavaScript                   (± 8 menit)</a>&nbsp;<br>
-	<a href="#bab08">8. Struktur Logika dan Perulangan        (± 4 menit)</a>&nbsp;<br>
-	<a href="#bab09">9. Function                              (± 17 menit)</a>&nbsp;<br>
-	<a href="#bab10">10. JavaScript Object                    (± 4 menit)</a>&nbsp;<br>
-	<a href="#bab11">11. Object Oriented Programming (OOP)    (± 10 menit)</a>&nbsp;<br>
-	<a href="#bab12">12. JavaScript Native Object             (± X menit)</a>&nbsp;<br>
-	<a href="#babxx">XX. Materi Tambahan: Advanced JavaScript (± X menit)</a>&nbsp;<br>
+	<a href="#bab01">1. Berkenalan Dengan JavaScript          \t\t\t\t\t(± 2 menit)</a>&nbsp;<br>
+	<a href="#bab02">2. Sejarah dan Perkembangan JavaScript   \t\t(± 5 menit)</a>&nbsp;<br>
+	<a href="#bab03">3. Menjalankan Kode Program JavaScript   \t\t(± 4 menit)</a>&nbsp;<br>
+	<a href="#bab04">4. Aturan Dasar, Variabel dan Konstanta  \t(± 1 menit)</a>&nbsp;<br>
+	<a href="#bab05">5. Variabel dan Konstanta                \t\t\t\t\t\t\t\t(± 4 menit)</a>&nbsp;<br>
+	<a href="#bab06">6. Tipe Data JavaScript                  \t\t\t\t\t\t\t\t\t(± 7 menit)</a>&nbsp;<br>
+	<a href="#bab07">7. Operator JavaScript                   \t\t\t\t\t\t\t\t\t\t(± 8 menit)</a>&nbsp;<br>
+	<a href="#bab08">8. Struktur Logika dan Perulangan        \t\t\t\t(± 4 menit)</a>&nbsp;<br>
+	<a href="#bab09">9. Function                              \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t(± 17 menit)</a>&nbsp;<br>
+	<a href="#bab10">10. JavaScript Object                    \t\t\t\t\t\t\t\t\t\t(± 4 menit)</a>&nbsp;<br>
+	<a href="#bab11">11. Object Oriented Programming (OOP)    \t\t(± 10 menit)</a>&nbsp;<br>
+	<a href="#bab12">12. JavaScript Native Object             \t\t\t\t\t\t\t(± X menit)</a>&nbsp;<br>
+	<a href="#babxx">XX. Materi Tambahan: Advanced JavaScript \t(± X menit)</a>&nbsp;<br>
 </p>
 
 <div id="bab01"></div>
