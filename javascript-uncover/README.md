@@ -2644,11 +2644,15 @@ console.log(arrP.reduceRight(tambah));                // output: 15   (hasil dar
 console.log(arrP.reduceRight(tambah,10));             // output: 25   (hasil dari 10+5+4+3+2+1)
 console.log(arrQ.reduceRight(pangkat2));              // output: 183  (hasil dari 9+8²+7²+6²+5²)
 console.log(arrQ.reduceRight(pangkat2,0));            // output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
-                                                      // Note: argument ke 1 yang berisi variable penampung nilai total awalnya
+                                                      // Note: argument ke 1 yang berisi variable penampung nilai total, awalnya
                                                       // ⤷ akan langsung diisi oleh nilai dari element pertama di Array (default),
                                                       // ⤷ perhatikan proses perhitungan baris console.log(arrQ.reduce(pangkat2));
-                                                      // ⤷ element pertama Array yang bernilai 5 tidak dipangkatkan 2, karena lang-
-                                                      // ⤷ sung disimpan ke dalam variable total. Namun...
+                                                      // ⤷ element pertama arrQ yang bernilai 5 tidak dipangkatkan 2, karena lang-
+                                                      // ⤷ sung disimpan ke dalam variable total. Untuk menghindari hal seperti
+                                                      // ⤷ ini, kita dapat mengatur berapa nilai awal untuk variable total dengan 
+                                                      // ⤷ cara menyisipkan argument setelah Callback. Perhatikan proses perhi- 
+                                                      // ⤷ tungan pada baris console.log(arrQ.reduce(pangkat2,0)); variable total
+                                                      // ⤷ diisi oleh nilai 0 pada awalnya, tidak lagi 5.
 ```
 <hr>
 
