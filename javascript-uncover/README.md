@@ -386,10 +386,17 @@ Operator typeof digunakan untuk melihat tipe data dari sebuah variabel
 Apakah tipe datanya number, string, boolean, undefined, atau sebuah object. 
 */
 
+var numA = 100;
+var strA = "Hello World!";
+var bolA = true;
+var nudA = null;
+var nudB = undefined;
+var arrSiswa = ["Andri", "Joko", "Sukma"];
+
 console.log(typeof numA);                 // output: number
 console.log(typeof strA);                 // output: string
 console.log(typeof bolA);                 // output: boolean
-console.log(typeof nudA);                 // output: object (bukan null)
+console.log(typeof nudA);                 // output: object (bukan Null)
 console.log(typeof nudB);                 // output: undefined
 console.log(typeof arrSiswa);             // output: object (Array termasuk Object)
 
