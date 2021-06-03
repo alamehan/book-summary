@@ -1467,7 +1467,7 @@ selamatPagi("Budi");                      // step 4 🡲 Jalankan Factory Functi
                                           // output: Pagi, Budi!
 selamatPagi("Joko");                      // output: Pagi, Joko!
 
-// H6. Contoh IIFE
+// H8. Contoh IIFE
 
 var sapa = (function(waktu){              // IIFE ditulis dengan pola (function() {...})(); penjelasan: pada saat di assign ke  
   var waktu = "Pagi";                     // variable sapa, function(waktu) akan langsung menjalankan Inner Function-nya, yaitu 
