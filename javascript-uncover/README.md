@@ -2644,15 +2644,35 @@ console.log(arrP.reduceRight(tambah));                // output: 15   (hasil dar
 console.log(arrP.reduceRight(tambah,10));             // output: 25   (hasil dari 10+5+4+3+2+1)
 console.log(arrQ.reduceRight(pangkat2));              // output: 183  (hasil dari 9+8²+7²+6²+5²)
 console.log(arrQ.reduceRight(pangkat2,0));            // output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
-                                                      // Note: argument ke 1 yang berisi variable penampung nilai total, awalnya
-                                                      // ⤷ akan langsung diisi oleh nilai dari element pertama di Array (default),
-                                                      // ⤷ perhatikan proses perhitungan baris console.log(arrQ.reduce(pangkat2));
-                                                      // ⤷ element pertama arrQ yang bernilai 5 tidak dipangkatkan 2, karena lang-
-                                                      // ⤷ sung disimpan ke dalam variable total. Untuk menghindari hal seperti
-                                                      // ⤷ ini, kita dapat mengatur berapa nilai awal untuk variable total dengan 
-                                                      // ⤷ cara menyisipkan argument setelah Callback. Perhatikan proses perhi- 
-                                                      // ⤷ tungan pada baris console.log(arrQ.reduce(pangkat2,0)); variable total
-                                                      // ⤷ diisi oleh nilai 0 pada awalnya, tidak lagi 5.
+
+/*
+Note: Argument ke 1 yang berisi variable penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di
+Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5
+tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam variable total. Untuk menghindari hal seperti ini, kita dapat
+mengatur nilai awal untuk variable total dengan cara menyisipkan argument tambahan setelah Callback. Perhatikan proses perhitungan
+pada baris console.log(arrQ.reduce(pangkat2,0)), variable total diisi oleh nilai 0 diawal, sesuai dengan argument tambahan yang
+disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
+*/
+
+var arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
+var arrU = [3,5,2,8,1,31,22,44,33,11];
+
+                                                      // sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode
+                                                      // ⤷ method sort() juga mengubah Array asal ⚠️
+arrT.sort(); console.log(arrT);                       // output: ["Aldo","Budi","Erpan","Joko","Zaki"]
+arrU.sort(); console.log(arrU);                       // output: [1,11,2,22,3,31,33,44,5,8]
+                                                      // ⤷ terjadi karena Number mula-mula akan dikonversi menjadi String, lalu
+                                                      // ⤷ selanjutnya barulah diurutkan berdasarkan nomor urut Unicode-nya
+
+var arrV = [3,5,2,8,1,31,22,44,33,11];
+
+function bandingkan(a, b){                            // function ini mempunyai logika sebagai berikut:
+  return a-b;                                         // ⤷ jika a < b, return angka negatif, artinya a diurutkan sebelum b.
+}                                                     // ⤷ jika a > b, return angka positif, artinya a diurutkan setelah b.
+                                                      // ⤷ jika a = b, return 0, artinya a dan b sama, urutan tidak berubah.
+
+arrV.sort(bandingkan);                                // sort() yang menggunakan Callback sebagai pengatur urutan element Array
+console.log(arrV);                                    // output: [1,2,3,5,8,11,22,31,33,44]
 ```
 <hr>
 
@@ -2681,7 +2701,7 @@ console.log(arrQ.reduceRight(pangkat2,0));            // output: 255  (hasil dar
 // B. Sumber: Web Programming Unpas & Programmer Zaman Now
 // =======================================================
 
-// Object.create(), Closure, Callback, Promise, Fetch, Async Await, dll
+// Object.create(), Promise, Fetch, Async Await, dll
 ```
 <hr>
 
