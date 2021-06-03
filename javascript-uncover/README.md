@@ -1368,14 +1368,16 @@ let b = "Hello World!";               // ini artinya kita memang harus mendefini
 <hr>
 
 ```Javascript
-// =======================================
-// H. Function sebagai First-Class Citizen
-// =======================================
+// ============================================================
+// H. Function sebagai First-Class Citizen/First-Class Function
+// ============================================================
 
 /*
 Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini berarti:
-➊ Function dapat disimpan ke dalam variable (a.k.a 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀)
-➋ Function dapat digunakan sebagai argument layaknya tipe data biasa (a.k.a 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
+➊ Function dapat disimpan ke dalam variable, disebut 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀.
+  ⤷ Function Expressions tanpa nama function, disebut 𝗔𝗻𝗼𝗻𝘆𝗺𝗼𝘂𝘀 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀.
+➋ Function dapat digunakan sebagai argument layaknya tipe data biasa, disebut 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸.
+  ⤷ Function yang memiliki Callback sebagai argument, disebut 𝗛𝗶𝗴𝗵𝗲𝗿 𝗢𝗿𝗱𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
 
 𝗡𝗼𝘁𝗲: 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝘀𝗲𝗰𝗮𝗿𝗮 𝗱𝗲𝘁𝗮𝗶𝗹 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗘𝟰)
 */
@@ -1426,6 +1428,55 @@ function salam(bar){                  // step 2 🡲 parameter bar akan menangka
   bar("Belajar JS");                  // step 3 🡲 dengan demikian bar("Belajar JS") menjadi foo("Belajar JS")
 }
 salam(foo);                           // step 1 🡲 mengirim function bernama foo sebagai sebuah argument
+
+/* (Tambahan)
+Selain uraian di atas, ada pula beberapa istilah lainnya terkait function yang perlu diketahui, yaitu:
+➊ Function yang berada di dalam function, disebut 𝗜𝗻𝗻𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
+➋ Inner Function yang memiliki akses ke parent scope-nya (𝗢𝘂𝘁𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻) atau dengan kata
+  lain yang menggunakan data/variable yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
+➌ Function dari hasil function lainnya (baru berjalan setengahnya), disebut 𝗙𝗮𝗰𝘁𝗼𝗿𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
+➍ 𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲𝗹𝘆-𝗶𝗻𝘃𝗼𝗸𝗲𝗱 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀 (𝗜𝗜𝗙𝗘), lihat contohnya di bawah, point H8.
+*/
+
+// H6. Contoh Closure
+
+function init(){
+  var nama = "Budi";
+  function tampilNama(){                  // Di dalam function tampilNama() tidak terdapat pendefinisian variable nama, sehingga
+    console.log(nama);                    // perintah console.log(nama) akan "mencari keluar", dan ditemukanlah variable nama di 
+  }                                       // parent-nya, lalu digunakan. Dengan demikian function tampilNama() disebut Closure.
+  tampilNama();
+}
+init();                                   // output: Budi
+
+// H7. Contoh Factory Function
+
+function ucapkanSalam(waktu){             // step 2 🡲 parameter waktu akan menangkap String Pagi dari argument
+  return function(nama){
+    console.log(`${waktu}, ${nama}!`);
+  }
+}
+var selamatPagi = ucapkanSalam("Pagi");   // step 1 🡲 Jalankan function ucapkanSalam() dengan argument Pagi.
+                                          // step 3 🡲 Simpan hasilnya ke dalam variable selamatPagi, ini artinya di dalam
+                                          //           variable selamatPagi kini sudah terdapat waktu yang berisi Pagi.
+selamatPagi("Budi");                      // step 4 🡲 Jalankan Factory Function selamatPagi, ini artinya selamatPagi() kini 
+                                          //           merupakan function yang berjalan dari hasil function ucapkanSalam().
+                                          //           Argument Budi kemudian dikirim untuk mengisi parameter nama.
+                                          // output: Pagi, Budi!
+selamatPagi("Joko");                      // output: Pagi, Joko!
+
+// H6. Contoh IIFE
+
+var sapa = (function(waktu){              // IIFE ditulis dengan pola (function() {...})(); penjelasan: pada saat di assign ke  
+  var waktu = "Pagi";                     // variable sapa, function(waktu) akan langsung menjalankan Inner Function-nya, yaitu 
+  return function(nama){                  // function(nama). Selebihnya tentang IIFE: https://flaviocopes.com/javascript-iife/
+    console.log(`${waktu}, ${nama}!`);
+  }
+})();
+
+sapa("Budi");                             // output: Pagi, Budi!
+sapa("Joko");                             // output: Pagi, Joko!
+
 ```
 <hr>
 
