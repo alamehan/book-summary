@@ -1408,7 +1408,7 @@ function tambah(c, d){
 var hasil = tambah(6, rerata(4, 8));  // hasil return function rerata(4, 8) digunakan sebagai argument
 console.log(hasil);                   // output: 12
 
-// H4. Function sebagai Argument (1)
+// H4. Function sebagai Argument (Callback)
 
 function rerata(a, b){
   return (a+b)/2;
@@ -1416,10 +1416,10 @@ function rerata(a, b){
 function tambah(c, d){                // step 2 🡲 parameter d akan menangkap function rerata dari argument 
   return c+d(4, 8);                   // step 3 🡲 dengan demikian d(4, 8) akan menjadi rerata(4, 8)
 }
-var hasil = tambah(6, rerata);        // step 1 🡲 mengirim function bernama rerata sebagai sebuah argument
+var hasil = tambah(6, rerata);        // step 1 🡲 mengirim function bernama rerata (Callback) sebagai sebuah argument
 console.log(hasil);                   // output: 12
 
-// H5. Function sebagai Argument (2)
+// H5. Function sebagai Argument (Callback)
 
 function foo(apa){
   alert(apa);                         // step 4 🡲 foo("Belajar JS") akan dieksekusi sebagai alert("Belajar JS")
@@ -1427,7 +1427,7 @@ function foo(apa){
 function salam(bar){                  // step 2 🡲 parameter bar akan menangkap function foo dari argument
   bar("Belajar JS");                  // step 3 🡲 dengan demikian bar("Belajar JS") menjadi foo("Belajar JS")
 }
-salam(foo);                           // step 1 🡲 mengirim function bernama foo sebagai sebuah argument
+salam(foo);                           // step 1 🡲 mengirim function bernama foo (Callback) sebagai sebuah argument
 
 /* (Tambahan)
 Selain uraian di atas, ada pula beberapa istilah lainnya terkait function yang perlu diketahui, yaitu:
