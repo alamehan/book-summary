@@ -1378,8 +1378,6 @@ Hal yang unik dari JavaScript yaitu function dianggap sebagai tipe data, ini ber
   ⤷ Function Expressions tanpa nama function, disebut 𝗔𝗻𝗼𝗻𝘆𝗺𝗼𝘂𝘀 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀.
 ➋ Function dapat digunakan sebagai argument layaknya tipe data biasa, disebut 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸.
   ⤷ Function yang memiliki Callback sebagai argument, disebut 𝗛𝗶𝗴𝗵𝗲𝗿 𝗢𝗿𝗱𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
-
-𝗡𝗼𝘁𝗲: 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝘀𝗲𝗰𝗮𝗿𝗮 𝗱𝗲𝘁𝗮𝗶𝗹 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗘𝟰)
 */
 
 // H1. Function Expressions
@@ -1408,7 +1406,7 @@ function tambah(c, d){
 var hasil = tambah(6, rerata(4, 8));  // hasil return function rerata(4, 8) digunakan sebagai argument
 console.log(hasil);                   // output: 12
 
-// H4. Function sebagai Argument (Callback)
+// H4. Function sebagai Argument (1)
 
 function rerata(a, b){
   return (a+b)/2;
@@ -1416,10 +1414,11 @@ function rerata(a, b){
 function tambah(c, d){                // step 2 🡲 parameter d akan menangkap function rerata dari argument 
   return c+d(4, 8);                   // step 3 🡲 dengan demikian d(4, 8) akan menjadi rerata(4, 8)
 }
-var hasil = tambah(6, rerata);        // step 1 🡲 mengirim function bernama rerata (Callback) sebagai sebuah argument
+var hasil = tambah(6, rerata);        // step 1 🡲 mengirim function bernama rerata sebagai sebuah argument
+                                      // Note: rerata merupakan Callback & tambah merupakan Higher Order Function
 console.log(hasil);                   // output: 12
 
-// H5. Function sebagai Argument (Callback)
+// H5. Function sebagai Argument (2)
 
 function foo(apa){
   alert(apa);                         // step 4 🡲 foo("Belajar JS") akan dieksekusi sebagai alert("Belajar JS")
@@ -1428,9 +1427,12 @@ function salam(bar){                  // step 2 🡲 parameter bar akan menangka
   bar("Belajar JS");                  // step 3 🡲 dengan demikian bar("Belajar JS") menjadi foo("Belajar JS")
 }
 salam(foo);                           // step 1 🡲 mengirim function bernama foo (Callback) sebagai sebuah argument
+                                      // Note: foo merupakan Callback & salam merupakan Higher Order Function
 
-/* (Tambahan)
-Selain uraian di atas, ada pula beberapa istilah lainnya terkait function yang perlu diketahui, yaitu:
+/*
+𝗡𝗼𝘁𝗲: 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝘀𝗲𝗰𝗮𝗿𝗮 𝗱𝗲𝘁𝗮𝗶𝗹 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗘𝟰)
+
+Tambahan: Selain uraian di atas, ada pula beberapa istilah lainnya terkait function yang perlu diketahui.
 ➊ Function yang berada di dalam function, disebut 𝗜𝗻𝗻𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
 ➋ Inner Function yang memiliki akses ke parent scope-nya (𝗢𝘂𝘁𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻) atau dengan kata
   lain yang menggunakan data/variable yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
