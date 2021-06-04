@@ -2725,6 +2725,25 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 // ==============
 // F. Date Object
 // ==============
+
+// F1. Membuat Date Object
+
+// F2. Object instance method
+
+// ➊ Getter UTC
+
+// ➋ Setter UTC
+
+// ➌ Getter Locale
+
+// ➍ Setter Locale
+
+// F3. Latihan Program
+
+// ➊ Menampilkan Tanggal dengan Format Tertentu
+
+// ➋ Menghitung Selisih Tanggal
+
 ```
 
 <br>
@@ -2733,6 +2752,13 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 # XX. Tambahan Materi: Advanced JavaScript <a href="#daftarisi">🡹</a>
 
 ```Javascript
+/*
+Tambahin Library JS popular yang spesifik menangani kasus tertetu, misalnya:
+- MomentJS untuk keperluan Date
+- ... untuk Array
+- dst
+*/
+
 // =====================================
 // A. Sumber: w3schools.com & w3docs.com
 // =====================================
