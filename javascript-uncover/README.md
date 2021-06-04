@@ -460,6 +460,9 @@ console.log(inf === Infinity);            // Output: true   (Check apakah datany
 
 # 7. Operator JavaScript <a href="#daftarisi">🡹</a>
 
+<img src="images/BAB-7.png">
+
+
 ```Javascript
 // ======================
 // A. Operator Aritmatika
