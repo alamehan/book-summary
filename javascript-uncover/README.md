@@ -462,7 +462,6 @@ console.log(inf === Infinity);            // Output: true   (Check apakah datany
 
 <img src="images/BAB-7.png">
 
-
 ```Javascript
 // ======================
 // A. Operator Aritmatika
@@ -723,6 +722,8 @@ console.log(nilai5);                  // Output: ["a", "b", "c", "d", "e", "f", 
 
 # 8. Struktur Logika dan Perulangan <a href="#daftarisi">🡹</a>
 
+<img src="images/BAB-8.png">
+
 ```Javascript
 // ===========================
 // A. Struktur Logika: IF-ELSE
@@ -779,9 +780,9 @@ switch(nilaiTK){                      // Case 1-5: kurang, case 6-7: cukup, case
 <hr>
 
 ```Javascript
-// ====================================
-// C. Struktur Logika: Ternary Operator
-// ====================================
+// ================================================
+// C. Struktur Logika: Conditional Ternary Operator
+// ================================================
 
 var jumlah = 501;
 var pesan = jumlah > 500 ? "Cukup!" : "Produksi lagi!";
@@ -806,8 +807,14 @@ akan dijalankan. Jika tidak, kirim Boolean false ke Variable akses, dan kondisi 
 <hr>
 
 ```Javascript
+// ===============================================
+// D. Struktur Logika: Nullish Coalescing Operator
+// ===============================================
+```
+
+```Javascript
 // ==================
-// D. Perulangan: FOR
+// E. Perulangan: FOR
 // ==================
 
 for (var i=1; i<=10; i++){            // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
@@ -824,7 +831,7 @@ for (var k=1; k<3; k++){              // Output: outer 1 inner 1 s/d outer 2 inn
   }
 }
 
-// D1. Break: Berhenti memproses perulangan (keluar dari perulangan)
+// E1. Break: Berhenti memproses perulangan (keluar dari perulangan)
 
 for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3
   if (m === 2){
@@ -833,7 +840,7 @@ for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3
   console.log(m);
 }
 
-// D2. Continue: Berhenti memproses perulangan saat ini & lanjut ke perulangan berikutnya
+// E2. Continue: Berhenti memproses perulangan saat ini & lanjut ke perulangan berikutnya
 
 for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
   if (m === 2){
@@ -842,7 +849,7 @@ for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
   console.log(m);
 }
 
-// D3. Menampilkan element Erray dengan perulangan FOR
+// E3. Menampilkan element Erray dengan perulangan FOR
 
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
 for (var n=0; n<arrSiswa.length; n++){
@@ -854,7 +861,7 @@ for (var n=0; n<arrSiswa.length; n++){
 
 ```Javascript
 // ====================
-// E. Perulangan: WHILE
+// F. Perulangan: WHILE
 // ====================
 
 /*
@@ -881,7 +888,7 @@ while (j > 1){                        // Output: 20, 18, 16, 14, 12
 
 ```Javascript
 // =======================
-// F. Perulangan: DO WHILE
+// G. Perulangan: DO WHILE
 // =======================
 
 /*
@@ -905,12 +912,12 @@ do {                                  // Output: 1
 
 ```Javascript
 // =====================
-// G. Perulangan: FOR OF
+// H. Perulangan: FOR OF
 // =====================
 
 /*
 Perulangan FOR OF merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan element Erray.
-Hasil dari perulangan FOR OF di bawah ini, sama dengan hasil perulangan FOR di point D3 di atas.
+Hasil dari perulangan FOR OF di bawah ini, sama dengan hasil perulangan FOR di point E3 di atas.
 */
 
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
@@ -922,7 +929,7 @@ for (var i of arrSiswa){
 
 ```Javascript
 // =====================
-// H. Perulangan: FOR IN
+// I. Perulangan: FOR IN
 // =====================
 
 /*
