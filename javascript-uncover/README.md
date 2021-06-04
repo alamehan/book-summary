@@ -310,9 +310,9 @@ var bolB = false;                     // Bernilai false, biasanya di pakai di if
 <hr>
 
 ```Javascript
-// =============================
-// D. Tipe Data Null & Undefined
-// =============================
+// ======================================
+// D. Tipe Data Nullish: Null & Undefined
+// ======================================
 
 var nudA = null;                      // Keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
 var nudB = undefined;                 // Keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
@@ -810,6 +810,19 @@ akan dijalankan. Jika tidak, kirim Boolean false ke Variable akses, dan kondisi 
 // ===============================================
 // D. Struktur Logika: Nullish Coalescing Operator
 // ===============================================
+
+var dataDariLuar1;
+data1 = dataDariLuar1 ?? "Nilai Default";
+console.log(data1);                   // Output: Nilai Default  (karena sebelumnya dataDariLuar1 bernilai undefined)
+
+/*
+Cara baca: Apakah dataDariLuar1 bernilai Null atau Undefined? jika iya (true), isi dataDariLuar1 dengan
+String "Nilai Default". Jika tidak (bukan null/undefined), tidak perlu dilakukan apapun.
+*/
+
+var dataDariLuar2 = "Ada isinya";
+data2 = dataDariLuar2 ?? "Nilai Defailt";
+console.log(data2);                   // Output: Ada isinya   (karena sebelumnya dataDariLuar2 memang sudah ada isinya)
 ```
 
 ```Javascript
