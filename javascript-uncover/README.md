@@ -1,6 +1,8 @@
 # 📘 JavaScript Uncover
 
-Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi tambahan, gabungan dari website <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a>, <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>, <a href="https://bukureact.id/">BukuReact.id</a>, <a href="https://www.w3schools.com/">W3Schools</a> dan <a href="https://www.w3docs.com/">W3Docs</a>.
+Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi tambahan (pelengkap), gabungan dari website <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a>, <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>, <a href="https://bukureact.id/">BukuReact.id</a>, <a href="https://www.w3schools.com/">W3Schools</a> dan <a href="https://www.w3docs.com/">W3Docs</a>. Semoga bermanfaat 😊. 
+
+**Summary by**: alamehan.github.io
 
 <div id="daftarisi"></div>
 
