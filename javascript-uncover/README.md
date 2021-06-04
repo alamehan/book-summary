@@ -2728,6 +2728,14 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 
 // F1. Membuat Date Object
 
+var datA = new Date();                                // Cara penulisan 1: Tanpa argument apapun
+console.log(datA);                                    // output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
+                                                      // ⤷ menampilkan waktu saat kode console.log(datA) diproses
+
+var datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Dengan 7 argument
+console.log(datB);                                    // output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
+                                                      // ⤷ menampilkan waktu sesuai dengan yang diinput di argument
+
 // F2. Object instance method
 
 // ➊ Getter UTC
