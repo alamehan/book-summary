@@ -1,5 +1,7 @@
 # 📘 JavaScript Uncover by Andre Pratama (Duniailkom.com)
 
+<img src="images/COVER.png">
+
 <div id="daftarisi"></div>
 
 | Judul BAB                                                     	| Estimasi Baca 	|
