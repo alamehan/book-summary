@@ -2728,13 +2728,50 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 
 // F1. Membuat Date Object
 
-var datA = new Date();                                // Cara penulisan 1: Tanpa argument apapun
-console.log(datA);                                    // output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
-                                                      // ⤷ menampilkan waktu saat kode console.log(datA) diproses
+// ➊ Tanpa argument
+
+var datA = new Date();                                // Cara penulisan 1: Tanpa argument
+console.log(datA);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
+                                                      // ⤷ Menampilkan waktu saat kode console.log(datA) dieksekusi
+                                                      // ⤷ Kode dieksekusi di Jawa Barat Indonesia (WIB), oleh karena itu muncul 
+                                                      // ⤷ GMT+0700 yang artinya waktu di WIB lebih cepat 7 jam dari waktu GMT/UTC
+                                                      // ⤷ (standard waktu internasional), berarti waktu di GMT yaitu 17:35:22.
+
+// ➋ Dengan 7 argument
 
 var datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Dengan 7 argument
-console.log(datB);                                    // output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
-                                                      // ⤷ menampilkan waktu sesuai dengan yang diinput di argument
+                                                      // ⤷ Argument ke 1: tahun
+                                                      // ⤷ Argument ke 2: bulan     (Indeks dimulai dari 0 = Januari, dst)
+                                                      // ⤷ Argument ke 3: hari
+                                                      // ⤷ Argument ke 4: jam
+                                                      // ⤷ Argument ke 5: menit
+                                                      // ⤷ Argument ke 6: detik
+                                                      // ⤷ Argument ke 7: milidetik
+                                                      // ⤷ Kita tidak harus menginput ke 7 argument ini sekaligus (optional),
+                                                      // ⤷ namun jika menginput hanya argument ke 1 saja, secara otomatis JS
+                                                      // ⤷ membacanya sebagai milidetik, bukan tahun, catat baik-baik ya.
+console.log(datB);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
+                                                      // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di argument
+
+// ➌ Dengan 1 argument dateString
+
+var datC = new Date("04 Jun 2021 17:42:22");          // Cara penulisan 3: Dengan 1 argument dateString
+                                                      // ⤷ dateString yaitu String yang berformat tanggal, nantinya String ini
+                                                      // ⤷ akan dikonversi menjadi Date oleh JS. Contoh di samping merupakan salah
+                                                      // ⤷ satu format penulisan saja, karena terdapat banyak format dateString
+                                                      // ⤷ misalnya "06/04/2021 17:42:22" atau "June 04, 2021 17:42:22", dll.
+console.log(datC);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
+                                                      // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di argument
+
+// ➍ Dengan 1 argument angka milidetik
+
+var datD = new Date(1622803342000);                   // Cara penulisan 4: Dengan 1 argument angka milidetik
+                                                      // ⤷ Argument merupakan total milidetik sejak tanggal 1 Januari 1970 atau
+                                                      // ⤷ yang disebut UNIX Epoch Time. Dalam contoh di samping 1622803342000
+                                                      // ⤷ milidetik berarti ± 51 tahun 167 hari 10 jam 42 menit 22 detik
+                                                      // ⤷ semenjak 1 Januari 1970, maka itu berarti ± 4 Juni 2021.
+console.log(datD);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
+                                                      // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di argument
 
 // F2. Object instance method
 
