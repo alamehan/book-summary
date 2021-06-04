@@ -1988,7 +1988,7 @@ console.log(bar.length);              // Output: 11. Kita pun masih tetap bisa m
 
 # 12. JavaScript Native Object <a href="#daftarisi">🡹</a>
 
-<img src="images/2-4-nativeobject.png">
+<img src="images/BAB-12-1.png">
 
 ```Javascript
 // ================
