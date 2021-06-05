@@ -2819,7 +2819,7 @@ console.log(datE.toString());           // Output: Sat Jun 05 2021 07:55:30     
                                         //         GMT+0700 (GMT+07:00)           ⤷ Misalnya jika dibuat ke dalam jendela alert()
 
 console.log(datE.getFullYear());        // Output: 2021                           ⇨ Tahun S.Lokal
-console.log(datE.getMonth());           // Output: 5                              ⇨ Bulan S.Lokal (Indeks dari 0, 5 artinya Juni)  
+console.log(datE.getMonth());           // Output: 5                              ⇨ Bulan S.Lokal (Indeks dari 0, 5 artinya Juni)
 console.log(datE.getDate());            // Output: 5                              ⇨ Tanggal S.Lokal
 console.log(datE.getDay());             // Output: 6                              ⇨ Hari S.Lokal  (Indeks dari 0, 6 artinya Sabtu)
 console.log(datE.getHours());           // Output: 7                              ⇨ Jam S.Lokal
