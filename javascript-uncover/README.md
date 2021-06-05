@@ -2803,7 +2803,7 @@ console.log(datE.getUTCFullYear());     // Output: 2021                         
 console.log(datE.getUTCMonth());        // Output: 5                              ⇨ Bulan UTC     (Indeks dari 0, 5 artinya Juni)
 console.log(datE.getUTCDate());         // Output: 5                              ⇨ Tanggal UTC
 console.log(datE.getUTCDay());          // Output: 6                              ⇨ Hari UTC      (Indeks dari 0, 6 artinya Sabtu)
-console.log(datE.getUTCHours());        // Output: 0                              ⇨ Jam UTC       (Hasil dari waktu di WIB - 7 jam)
+console.log(datE.getUTCHours());        // Output: 0                              ⇨ Jam UTC       (Hasil dari waktu di WIB-7 jam)
 console.log(datE.getUTCMinutes());      // Output: 55                             ⇨ Menit UTC
 console.log(datE.getUTCSeconds());      // Output: 30                             ⇨ Detik UTC
 console.log(datE.getUTCMilliseconds()); // Output: 215                            ⇨ Milidetik UTC
