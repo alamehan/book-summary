@@ -19,7 +19,8 @@ Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/j
 | <a href="#bab09">9. Function</a>                              	| ± 17 menit    	|
 | <a href="#bab10">10. JavaScript Object</a>                    	| ± 4 menit     	|
 | <a href="#bab11">11. Object Oriented Programming (OOP)</a>    	| ± 10 menit    	|
-| <a href="#bab12">12. JavaScript Native Object</a>             	| ± X menit     	|
+| <a href="#bab12">12. JavaScript Native Object</a>             	| ± 40 menit     	|
+| <a href="#bab13">13. Global Property dan Global Function</a>    | ± X menit     	|
 | <a href="#babxx">XX. Materi Tambahan: Advanced JavaScript</a> 	| ± X menit     	|
 
 <!-- Estimasi baca hasil generate dari  : https://wordcounter.net/ -->
@@ -2953,6 +2954,25 @@ console.log(hasil);                         // Output: 0 Tahun 6 Bulan 18 Hari
 Note: Program menghitung selisih tanggal ini belum sempurna, karena tidak memperhitungkan aspek lainnya seperti tahun kabisat dan
 perbedaan hari dalam tiap bulan. Untuk pemrosesan Date yang lebih advanced, pelajari library JavaScript seperti 𝗠𝗼𝗺𝗲𝗻𝘁𝗝𝗦.
 */
+```
+
+<br>
+<div id="bab13"></div>
+
+# 13. Global Property dan Global Function <a href="#daftarisi">🡹</a>
+
+```Javascript
+// ==================
+// A. Global Property
+// ==================
+
+// ...
+
+// ==================
+// B. Global Function
+// ==================
+
+// ...
 ```
 
 <br>
