@@ -547,7 +547,7 @@ console.log("a" < "b");               // Output: true   (a = 97, b = 98)
 console.log("a" < "A");               // Output: false  (a = 97, A = 65)
 console.log("ali" < "ala");           // Output: false  (ali = 97→108→105, ala = 97→108→97)
 console.log("ali" < "alo");           // Output: true   (ali = 97→108→105, alo = 97→108→111)
-console.log("ali" < "alika");         // Output: true   (ali = 97→108→105, alika = 97→108→105→107→97)
+console.log("ali" < "alika");         // Output: true   (String yang lebih pendek akan dianggap lebih kecil) 
 console.log("ali" < 9999999);         // Output: false  (Perbandingan String & Number selalu menghasilkan false)
 ```
 <hr>
