@@ -2775,13 +2775,64 @@ console.log(datD);                                    // Output: Fri Jun 04 2021
 
 // F2. Object instance method
 
-// ➊ Getter UTC
+/*
+GMT atau UTC merupakan standard waktu internasional. WIB merupakan waktu untuk daerah Jawa Barat, Indonesia (dimana konten ini
+ditulis). GMT/UTC dengan WIB memiliki selisih waktu, dimana WIB lebih cepat 7 jam dibandingkan GMT/UTC. Misalnya:
+Sabtu, 5 Juni 2021 pukul 07:55:30 WIB   ⇨ Sabtu, 5 Juni 2021 pukul 00:55:30 GMT   (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
+Sabtu, 5 Juni 2021 pukul 03:30:00 WIB   ⇨ Sabtu, 4 Juni 2021 pukul 20:30:00 GMT   (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
 
-// ➋ Setter UTC
+Method Getter & Setter UTC yang akan dijelaskan di bawah menampilkan tanggal dan waktu dalam UTC (standard waktu internasional),
+Method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di sistem lokal, dalam kasus ini WIB (Jawa Barat).
+⤷ Dari mana JavaScript tahu sistem lokal memakai waktu WIB? Dari web browser, dimana web browser mengambilnya dari sistem operasi,
+  yakni settingan tanggal dari Windows. Umumnya, tampilan seperti inilah yang akan dipakai di website nanti.
 
-// ➌ Getter Locale
+𝗡𝗼𝘁𝗲: Method Getter UTC & Getter Locale pada contoh di bawah, dieksekusi pada Sabtu, 5 Juni 2021, pukul 07:55:30, di Jawa Barat.
+*/
 
-// ➍ Setter Locale
+// ➊ Getter UTC (Waktu UTC)
+
+var datE = new Date();
+
+console.log(datE.toISOString());        // Output: 2021-06-05T00:55:30.215Z       ⇨ Tanggal dalam format ISO 
+console.log(datE.toJSON());             // Output: 2021-06-05T00:55:30.215Z       ⇨ Sama seperti toISOString()
+console.log(datE.toUTCString());        // Output: Sat, 05 Jun 2021 00:55:30 GMT  ⇨ Tanggal dalam format UTC
+console.log(datE.valueOf());            // Output: 1622854530215                  ⇨ Milidetik sejak 1 Januari 1970 hingga saat ini
+console.log(datE.getTime());            // Output: 1622854530215                  ⇨ Milidetik sejak 1 Januari 1970 hingga saat ini
+
+console.log(datE.getUTCFullYear());     // Output: 2021                           ⇨ Tahun UTC
+console.log(datE.getUTCMonth());        // Output: 5                              ⇨ Bulan UTC     (Indeks dari 0, 5 artinya Juni)
+console.log(datE.getUTCDate());         // Output: 5                              ⇨ Tanggal UTC
+console.log(datE.getUTCDay());          // Output: 6                              ⇨ Hari UTC      (Indeks dari 0, 6 artinya Sabtu)
+console.log(datE.getUTCHours());        // Output: 0                              ⇨ Jam UTC       (Hasil dari waktu di WIB - 7 jam)
+console.log(datE.getUTCMinutes());      // Output: 55                             ⇨ Menit UTC
+console.log(datE.getUTCSeconds());      // Output: 30                             ⇨ Detik UTC
+console.log(datE.getUTCMilliseconds()); // Output: 215                            ⇨ Milidetik UTC
+
+// ➋ Getter Locale (Waktu Sistem Lokal)
+
+console.log(datE.toDateString());       // Output: Sat Jun 05 2021                ⇨ Hari Bulan Tanggal Tahun
+console.log(datE.toTimeString());       // Output: 07:55:30 GMT+0700 (GMT+07:00)  ⇨ Jam Menit Detik
+console.log(datE.toLocaleDateString()); // Output: 6/5/2021             ⇨ Serupa toDateString(), namun format sesuai sistem lokal
+console.log(datE.toLocaleTimeString()); // Output: 7:55:30 AM           ⇨ Serupa toTimeString(), namun format sesuai sistem lokal
+console.log(datE.toLocaleString());     // Output: 6/5/2021, 7:55:30 AM ⇨ Gabungan toLocaleDateString() & toLocaleTimeString()
+console.log(datE.toString());           // Output: Sat Jun 05 2021 07:55:30       ⇨ Tampilan default ketika Date "dipaksa" tampil
+                                        //         GMT+0700 (GMT+07:00)           ⤷ Misalnya jika dibuat ke dalam jendela alert()
+
+console.log(datE.getFullYear());        // Output: 2021                           ⇨ Tahun S.Lokal
+console.log(datE.getMonth());           // Output: 5                              ⇨ Bulan S.Lokal (Indeks dari 0, 5 artinya Juni)  
+console.log(datE.getDate());            // Output: 5                              ⇨ Tanggal S.Lokal
+console.log(datE.getDay());             // Output: 6                              ⇨ Hari S.Lokal  (Indeks dari 0, 6 artinya Sabtu)
+console.log(datE.getHours());           // Output: 7                              ⇨ Jam S.Lokal
+console.log(datE.getMinutes());         // Output: 55                             ⇨ Menit S.Lokal
+console.log(datE.getSeconds());         // Output: 30                             ⇨ Detik S.Lokal
+console.log(datE.getMilliseconds());    // Output: 215                            ⇨ Milidetik S.Lokal
+console.log(datE.getTimezoneOffset());  // Output: -420                           ⇨ Selisih waktu antara UTC dengan waktu S.lokal
+                                        //                                        ⤷ dalam satuan milidetik, dimana ini berarti:
+                                        //                                        ⤷ -420 milidetik = -7 jam = 7 jam selisih waktu
+
+// ➌ Setter UTC (Waktu UTC)
+
+// ➍ Setter Locale (Waktu Sistem Lokal)
 
 // F3. Latihan Program
 
