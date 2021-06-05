@@ -2763,9 +2763,9 @@ var datC = new Date("04 Jun 2021 17:42:22");          // Cara penulisan 3: Denga
 console.log(datC);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di argument
 
-// ➍ Dengan 1 argument angka milidetik
+// ➍ Dengan 1 argument milidetik
 
-var datD = new Date(1622803342000);                   // Cara penulisan 4: Dengan 1 argument angka milidetik
+var datD = new Date(1622803342000);                   // Cara penulisan 4: Dengan 1 argument milidetik
                                                       // ⤷ Argument merupakan total milidetik sejak tanggal 1 Januari 1970 atau
                                                       // ⤷ yang disebut UNIX Epoch Time. Dalam contoh di samping 1622803342000
                                                       // ⤷ milidetik berarti ± 51 tahun 167 hari 10 jam 42 menit 22 detik
