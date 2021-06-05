@@ -2978,9 +2978,9 @@ JavaScript pun memiliki Global property & Global function yang tidak "melekat" k
 // A. Global Property
 // ==================
 
-var boo = NaN;                          // Membuat tipe data NaN secara manual        (sama dengan Number.NaN)
-var coo = Infinity;                     // Membuat tipe data Infinity secara manual   (sama dengan Number.POSITIVE_INFINITY)
-var doo = -Infinity;                    // Membuat tipe data -Infinity secara manual  (sama dengan Number.NEGATIVE_INFINITY)
+var boo = NaN;                          // Membuat tipe data NaN secara manual        ⇨ Sama dengan Number.NaN
+var coo = Infinity;                     // Membuat tipe data Infinity secara manual   ⇨ Sama dengan Number.POSITIVE_INFINITY
+var doo = -Infinity;                    // Membuat tipe data -Infinity secara manual  ⇨ Sama dengan Number.NEGATIVE_INFINITY
 var foo = undefined;                    // Membuat tipe data undefined secara manual
 var goo = null;                         // Membuat tipe data null secara manual
 
@@ -2994,8 +2994,34 @@ console.log(goo);                       // Output: null
 // B. Global Function
 // ==================
 
+// B1. Dibawah ini sudah kita dipelajari
 
+console.log(isNaN(5/'a'));              // Output: true   ⇨ Sama dengan Number.isNaN(5/'a')
+console.log(isFinite(1/0));             // Output: false  ⇨ Sama dengan Number.isFinite(1/0)
+console.log(parseFloat("1.23"));        // Output: 1.23   ⇨ Sama dengan Number.parseFloat("1.23")
+console.log(parseInt("1.23"));          // Output: 1      ⇨ Sama dengan Number.parseInt("1.23")
 
+// B2. Function eval()
+
+var hoo = "100+30";
+var joo = "var bar = 500*3";
+var koo = "alert('Hello World')";
+
+console.log(hoo);                       // Output: 100+30                 (String)
+console.log(joo);                       // Output: var bar = 500*3        (String)
+console.log(koo);                       // Output: alert('Hello World')   (String)
+
+console.log(eval(hoo));                 // Output: 130                            ⇨ evail() digunakan untuk memproses String men-
+eval(joo); console.log(bar);            // Output: 1500                              jadi perintah JavaScript. Biasanya dipakai
+eval(koo);                              // Output: Muncul Popup "Hello World"        pada saat penggunaan API & script dari luar.
+
+// B3. Function encodeURI() & encodeURIComponent()
+
+// ...
+
+// B4. Function decodeURI() & decodeURIComponent()
+
+// ...
 ```
 
 <br>
