@@ -2786,7 +2786,9 @@ Method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di 
 ⤷ Dari mana JavaScript tahu sistem lokal memakai waktu WIB? Dari web browser, dimana web browser mengambilnya dari sistem operasi,
   yakni settingan tanggal dari Windows. Umumnya, tampilan seperti inilah yang akan dipakai di website nanti.
 
-𝗡𝗼𝘁𝗲: Method Getter UTC & Getter Locale pada contoh di bawah, dieksekusi pada Sabtu, 5 Juni 2021, pukul 07:55:30, di Jawa Barat.
+𝗡𝗼𝘁𝗲: 
+- Method Getter UTC & Getter Locale pada contoh di bawah dieksekusi pada    : Sabtu, 5 Juni 2021, pukul 07:55:30 (di Jawa Barat)
+- Method Setter UTC & Setter Locale pada contoh di bawah dibuat ke tanggal  : Sabtu, 5 Juni 2021, pukul 10:55:30
 */
 
 // ➊ Getter UTC (Waktu UTC)
@@ -2812,9 +2814,9 @@ console.log(datE.getUTCMilliseconds()); // Output: 215                          
 
 console.log(datE.toDateString());       // Output: Sat Jun 05 2021                ⇨ Hari Bulan Tanggal Tahun
 console.log(datE.toTimeString());       // Output: 07:55:30 GMT+0700 (GMT+07:00)  ⇨ Jam Menit Detik
-console.log(datE.toLocaleDateString()); // Output: 6/5/2021             ⇨ Serupa toDateString(), namun format sesuai sistem lokal
-console.log(datE.toLocaleTimeString()); // Output: 7:55:30 AM           ⇨ Serupa toTimeString(), namun format sesuai sistem lokal
-console.log(datE.toLocaleString());     // Output: 6/5/2021, 7:55:30 AM ⇨ Gabungan toLocaleDateString() & toLocaleTimeString()
+console.log(datE.toLocaleDateString()); // Output: 6/5/2021                       ⇨ Serupa toDateString(), format = sistem lokal
+console.log(datE.toLocaleTimeString()); // Output: 7:55:30 AM                     ⇨ Serupa toTimeString(), format = sistem lokal
+console.log(datE.toLocaleString());     // Output: 6/5/2021, 7:55:30 AM           ⇨ toLocaleDateString() & toLocaleTimeString()
 console.log(datE.toString());           // Output: Sat Jun 05 2021 07:55:30       ⇨ Tampilan default ketika Date "dipaksa" tampil
                                         //         GMT+0700 (GMT+07:00)           ⤷ Misalnya jika dibuat ke dalam jendela alert()
 
@@ -2827,16 +2829,75 @@ console.log(datE.getMinutes());         // Output: 55                           
 console.log(datE.getSeconds());         // Output: 30                             ⇨ Detik S.Lokal
 console.log(datE.getMilliseconds());    // Output: 215                            ⇨ Milidetik S.Lokal
 console.log(datE.getTimezoneOffset());  // Output: -420                           ⇨ Selisih waktu antara UTC dengan waktu S.lokal
-                                        //                                        ⤷ dalam satuan milidetik, dimana ini berarti:
                                         //                                        ⤷ -420 milidetik = -7 jam = 7 jam selisih waktu
 
 // ➌ Setter UTC (Waktu UTC)
 
+var datF = new Date(0);       console.log(datF.toUTCString());    // Output: Thu, 01 Jan 1970 00:00:00 GMT  ⇨ UNIX Epoch
+datF.setUTCFullYear(2021);    console.log(datF.toUTCString());    // Output: Fri, 01 Jan 2021 00:00:00 GMT  ⇨ Ubah tahun
+datF.setUTCMonth(5);          console.log(datF.toUTCString());    // Output: Tue, 01 Jun 2021 00:00:00 GMT  ⇨ Ubah bulan
+datF.setUTCDate(5);           console.log(datF.toUTCString());    // Output: Sat, 05 Jun 2021 00:00:00 GMT  ⇨ Ubah tanggal
+datF.setUTCHours(10);         console.log(datF.toUTCString());    // Output: Sat, 05 Jun 2021 10:00:00 GMT  ⇨ Ubah jam
+datF.setUTCMinutes(55);       console.log(datF.toUTCString());    // Output: Sat, 05 Jun 2021 10:55:00 GMT  ⇨ Ubah menit
+datF.setUTCSeconds(30);       console.log(datF.toUTCString());    // Output: Sat, 05 Jun 2021 10:55:30 GMT  ⇨ Ubah detik
+datF.setUTCMilliseconds(215); console.log(datF.toISOString());    // Output: 2021-06-05T10:55:30.215Z       ⇨ Ubah milidetik
+
 // ➍ Setter Locale (Waktu Sistem Lokal)
+
+var datG = new Date(0);       console.log(datG.toLocaleString()); // Output: 1/1/1970, 7:00:00 AM           ⇨ UNIX Epoch (+7 jam)
+datG.setFullYear(2021);       console.log(datG.toLocaleString()); // Output: 1/1/2021, 7:00:00 AM           ⇨ Ubah tahun
+datG.setMonth(5);             console.log(datG.toLocaleString()); // Output: 6/1/2021, 7:00:00 AM           ⇨ Ubah bulan
+datG.setDate(5);              console.log(datG.toLocaleString()); // Output: 6/5/2021, 7:00:00 AM           ⇨ Ubah tanggal
+datG.setHours(10);            console.log(datG.toLocaleString()); // Output: 6/5/2021, 10:00:00 AM          ⇨ Ubah jam
+datG.setMinutes(55);          console.log(datG.toLocaleString()); // Output: 6/5/2021, 10:55:00 AM          ⇨ Ubah menit
+datG.setSeconds(30);          console.log(datG.toLocaleString()); // Output: 6/5/2021, 10:55:30 AM          ⇨ Ubah detik
+datG.setMilliseconds(125);    console.log(datG.toISOString());    // Output: 2021-06-05T03:55:30.125Z       ⇨ Ubah milidetik
 
 // F3. Latihan Program
 
 // ➊ Menampilkan Tanggal dengan Format Tertentu
+
+var datH    = new Date();
+var tahun   = datH.getFullYear();
+var bulan   = datH.getMonth();
+var tanggal = datH.getDate();
+var hari    = datH.getDay();
+var jam     = datH.getHours();
+var menit   = datH.getMinutes();
+var detik   = datH.getSeconds();
+var mdetik  = datH.getMilliseconds();
+
+var namaHari;
+var namaBulan;
+
+switch (hari){
+  case 0: namaHari = "Minggu";  break;
+  case 1: namaHari = "Senin";   break;
+  case 2: namaHari = "Selasa";  break;
+  case 3: namaHari = "Rabu";    break;
+  case 4: namaHari = "Kamis";   break;
+  case 5: namaHari = "Jumat";   break;
+  case 6: namaHari = "Sabtu";   break;
+}
+
+switch (bulan){
+  case 0: namaBulan = "Januari";    break;
+  case 1: namaBulan = "Februari";   break;
+  case 2: namaBulan = "Maret";      break;
+  case 3: namaBulan = "April";      break;
+  case 4: namaBulan = "Mei";        break;
+  case 5: namaBulan = "Juni";       break;
+  case 6: namaBulan = "Juli";       break;
+  case 7: namaBulan = "Agustus";    break;
+  case 8: namaBulan = "September";  break;
+  case 9: namaBulan = "Oktober";    break;
+  case 10: namaBulan = "November";  break;
+  case 11: namaBulan = "Desember";  break;
+}
+
+var hasil = `${namaHari}, ${tanggal} ${namaBulan} ${tahun} ${jam}:${menit}:${detik}`;
+console.log(hasil); // Output: Sabtu, 5 Juni 2021 13:23:16
+                    // ⤷ Format yang umum digunakan di Indonesia
 
 // ➋ Menghitung Selisih Tanggal
 
