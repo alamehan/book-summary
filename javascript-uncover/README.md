@@ -2951,7 +2951,7 @@ console.log(hasil);                         // Output: 0 Tahun 6 Bulan 18 Hari
 
 /*
 Note: Program menghitung selisih tanggal ini belum sempurna, karena tidak memperhitungkan aspek lainnya seperti tahun kabisat dan
-perbedaan hari dalam tiap bulan. Untuk pemrosesan Date yang lebih advanced, bisa pelajari & eksplorasi library bernama MomentJS.
+perbedaan hari dalam tiap bulan. Untuk pemrosesan Date yang lebih advanced, pelajari library JavaScript seperti 𝗠𝗼𝗺𝗲𝗻𝘁𝗝𝗦.
 */
 ```
 
