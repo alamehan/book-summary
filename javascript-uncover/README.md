@@ -2858,20 +2858,20 @@ datG.setMilliseconds(125);    console.log(datG.toISOString());    // Output: 202
 // ➊ Menampilkan Tanggal dengan Format Tertentu
 
 var datH    = new Date();
-var tahun   = datH.getFullYear();
-var bulan   = datH.getMonth();
-var tanggal = datH.getDate();
-var hari    = datH.getDay();
-var jam     = datH.getHours();
-var menit   = datH.getMinutes();
-var detik   = datH.getSeconds();
-var mdetik  = datH.getMilliseconds();
+var tahun   = datH.getFullYear();           // Dapatkan tahun     (Getter Locale)
+var bulan   = datH.getMonth();              // Dapatkan bulan     (Getter Locale)
+var tanggal = datH.getDate();               // Dapatkan tanggal   (Getter Locale)
+var hari    = datH.getDay();                // Dapatkan hari      (Getter Locale)
+var jam     = datH.getHours();              // Dapatkan jam       (Getter Locale)
+var menit   = datH.getMinutes();            // Dapatkan menit     (Getter Locale)
+var detik   = datH.getSeconds();            // Dapatkan detik     (Getter Locale)
+var mdetik  = datH.getMilliseconds();       // Dapatkan milidetik (Getter Locale)
 
 var namaHari;
 var namaBulan;
 
-switch (hari){
-  case 0: namaHari = "Minggu";  break;
+switch (hari){                              // Memanfaatkan index hari untuk membuat
+  case 0: namaHari = "Minggu";  break;      // nama hari dalam Bahasa Indonesia
   case 1: namaHari = "Senin";   break;
   case 2: namaHari = "Selasa";  break;
   case 3: namaHari = "Rabu";    break;
@@ -2880,8 +2880,8 @@ switch (hari){
   case 6: namaHari = "Sabtu";   break;
 }
 
-switch (bulan){
-  case 0: namaBulan = "Januari";    break;
+switch (bulan){                             // Memanfaatkan index bulan untuk membuat
+  case 0: namaBulan = "Januari";    break;  // nama bulan dalam Bahasa Indonesia
   case 1: namaBulan = "Februari";   break;
   case 2: namaBulan = "Maret";      break;
   case 3: namaBulan = "April";      break;
@@ -2896,11 +2896,63 @@ switch (bulan){
 }
 
 var hasil = `${namaHari}, ${tanggal} ${namaBulan} ${tahun} ${jam}:${menit}:${detik}`;
-console.log(hasil); // Output: Sabtu, 5 Juni 2021 13:23:16
-                    // ⤷ Format yang umum digunakan di Indonesia
+console.log(hasil);                         // Output: Sabtu, 5 Juni 2021 13:25:30 (Waktu dimana kode dieksekusi)
+                                            // ⤷ Format seperti ini umum digunakan di Indonesia
 
 // ➋ Menghitung Selisih Tanggal
 
+                                            // Membuat Date Object dengan 1 argument dateString
+var tglAwal   = new Date("06/05/2021");     // Variable tglAwal diisi dengan 5 Juni 2021          Note: Perhatikan, urutan tanggal
+var tglAkhir  = new Date("12/20/2021");     // Variable tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik ⚠️
+
+var timeAwal  = tglAwal.getTime();          // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAwal (5 Juni 2021)
+var timeAkhir = tglAkhir.getTime();         // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAkhir (12 Desember 2021)
+
+var selisihTgl = timeAkhir-timeAwal;        // Menghitung selisih milidetek antara tglAwal dengan tglAkhir
+console.log(Math.abs(selisihTgl));          // Output: 17107200000 (Dalam milidetik)
+                                            // ⤷ Math.abs() digunakan untuk mendapatkan angka multak (jika negatif jadi positif)
+
+var ms1Hari_coba     = 1000*60*60*24;               // Menghitung banyak milidetik dalam 1 hari
+var selisihHari_coba = selisihTgl/ms1Hari_coba;     // Dapatkan selisih hari
+console.log(`Selisih = ${selisihHari_coba} hari`);  // Output: Selisih = 198 hari
+
+/*
+Tantangan selanjutnya, bagaimana mengkonversi 198 hari ini menjadi sekian tahun, sekian bulan dan sekian hari?
+Di bawah ini merupakan contoh algoritma (lebih ke ilustrasi menjawab persoalan) yang dapat diaplikasikan.
+
+500 hari itu berapa tahun, berapa bulan dan berapa hari?
+⤷ Pertama, bagi 500 dengan 365, 500/365 = 1.37. Artinya 500 hari sama dengan 1.37 tahun.
+  Simpan angka 1 tahun, dan kita akan konversi kelebihan 0.37 tahun menjadi bulan dan hari.
+⤷ Kedua, karena 500 hari terdiri dari 1 tahun lebih, sisa hari bisa didapat dengan rumus 500-(1*365) = 135.
+  Dengan mengasumsikan 1 bulan = 30 hari, maka 135 hari sama dengan 135/30 = 4.5 bulan.
+  Simpan angka 4 bulan, dan kita akan konversi kelebihan 0.5 bulan ini menjadi hari.
+⤷ Ketiga, sisa hari didapat dari pengurangan jumlah tahun dan jumlah bulan.
+  Ini bisa dicari dengan rumus 500-(1*365)-(4*30) = 15 hari.
+⤷ Akhirnya didapat bahwa 500 hari = 1 tahun 4 bulan 15 hari.
+
+Sekarang, bagaimana dengan 198 hari? Mari kita hitung.
+⤷ Jumlah tahun  = 198/365 = 0.54            Artinya tidak cukup 1 tahun. Simpan 0.
+⤷ Jumlah bulan  = 198-(0*365)/30 = 6.6      Artinya terdapat 6 bulan lebih. Simpan 6, dan kita akan cari berapa hari lebihnya.
+⤷ Jumlah hari   = 198-(0*365)-(6*30) = 18   Akhirnya didapat bahwa 198 hari = 0 tahun 6 bulan 18 hari.
+
+Di bawah ini merupakan implementasinya:
+*/
+
+var ms1Hari   = 1000*60*60*24;              // Menghitung banyak milidetik dalam 1 hari
+var ms1Bulan  = 1000*60*60*24*30;           // Menghitung banyak milidetik dalam 1 bulan
+var ms1Tahun  = 1000*60*60*24*365;          // Menghitung banyak milidetik dalam 1 tahun
+
+var selisihTahun  = Math.floor(selisihTgl/ms1Tahun);                                                  // Dapatkan selisih tahun
+var selisihBulan  = Math.floor((selisihTgl-(selisihTahun*ms1Tahun))/ms1Bulan);                        // Dapatkan selisih bulan
+var selisihHari   = Math.floor((selisihTgl-(selisihTahun*ms1Tahun)-(selisihBulan*ms1Bulan))/ms1Hari); // Dapatkan selisih hari
+
+var hasil = `${selisihTahun} Tahun ${selisihBulan} Bulan ${selisihHari} Hari`;
+console.log(hasil);                         // Output: 0 Tahun 6 Bulan 18 Hari
+
+/*
+Note: Program menghitung selisih tanggal ini belum sempurna, karena tidak memperhitungkan aspek lainnya seperti tahun kabisat dan
+perbedaan hari dalam tiap bulan. Untuk pemrosesan Date yang lebih advanced, bisa pelajari & eksplorasi library bernama MomentJS.
+*/
 ```
 
 <br>
@@ -2909,34 +2961,7 @@ console.log(hasil); // Output: Sabtu, 5 Juni 2021 13:23:16
 # XX. Tambahan Materi: Advanced JavaScript <a href="#daftarisi">🡹</a>
 
 ```Javascript
-/*
-Tambahin Library JS popular yang spesifik menangani kasus tertetu, misalnya:
-- MomentJS untuk keperluan Date
-- ... untuk Array
-- dst
-*/
-
-// =====================================
-// A. Sumber: w3schools.com & w3docs.com
-// =====================================
-
 // Inheritance, Encapsulation, dll
-```
-<hr>
-
-```Javascript
-// =======================================================
-// B. Sumber: Web Programming Unpas & Programmer Zaman Now
-// =======================================================
-
 // Object.create(), Promise, Fetch, Async Await, dll
-```
-<hr>
-
-```Javascript
-// =======================
-// C. Sumber: bukureact.id
-// =======================
-
-// Blablabla...
+// Ambil dari bukureact.id (intisari dari modern JavaScript)
 ```
