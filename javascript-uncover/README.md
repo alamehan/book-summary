@@ -3011,7 +3011,7 @@ console.log(hoo);                       // Output: 100+30                 (Strin
 console.log(joo);                       // Output: var bar = 500*3        (String)
 console.log(koo);                       // Output: alert('Hello World')   (String)
 
-console.log(eval(hoo));                 // Output: 130                            ⇨ evail() digunakan untuk memproses String men-
+console.log(eval(hoo));                 // Output: 130                            ⇨ eval() digunakan untuk memproses String men-
 eval(joo); console.log(bar);            // Output: 1500                              jadi perintah JavaScript. Biasanya dipakai
 eval(koo);                              // Output: Muncul Popup "Hello World"        pada saat penggunaan API & script dari luar.
 
