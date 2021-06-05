@@ -2966,17 +2966,36 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 # 13. Global Property dan Global Function <a href="#daftarisi">🡹</a>
 
 ```Javascript
+
+/*
+Selain Object property, Object method, Object instance property & Object instance method yang telah dibahas di BAB sebelumnya,
+JavaScript pun memiliki Global property & Global function yang tidak "melekat" ke object apapun, dan bisa diakses dari mana saja.
+
+𝗡𝗼𝘁𝗲: 𝗝𝘂𝗺𝗹𝗮𝗵𝗻𝘆𝗮 𝘁𝗶𝗱𝗮𝗸 𝗯𝗮𝗻𝘆𝗮𝗸 & 𝘀𝗲𝗯𝗮𝗴𝗶𝗮𝗻 𝗯𝗲𝘀𝗮𝗿 𝘀𝘂𝗱𝗮𝗵 𝗸𝗶𝘁𝗮 𝗽𝗲𝗹𝗮𝗷𝗮𝗿𝗶.
+*/
+
 // ==================
 // A. Global Property
 // ==================
 
-// ...
+var boo = NaN;                          // Membuat tipe data NaN secara manual        (sama dengan Number.NaN)
+var coo = Infinity;                     // Membuat tipe data Infinity secara manual   (sama dengan Number.POSITIVE_INFINITY)
+var doo = -Infinity;                    // Membuat tipe data -Infinity secara manual  (sama dengan Number.NEGATIVE_INFINITY)
+var foo = undefined;                    // Membuat tipe data undefined secara manual
+var goo = null;                         // Membuat tipe data null secara manual
+
+console.log(boo);                       // Output: NaN
+console.log(coo);                       // Output: Infinity
+console.log(doo);                       // Output: -Infinity
+console.log(foo);                       // Output: undefined
+console.log(goo);                       // Output: null
 
 // ==================
 // B. Global Function
 // ==================
 
-// ...
+
+
 ```
 
 <br>
