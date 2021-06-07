@@ -3017,11 +3017,18 @@ eval(koo);                              // Output: Muncul Popup "Hello World"   
 
 // B3. Function encodeURI() & encodeURIComponent()
 
-// ...
+var loo = "http://www.duniailkom.com/Belajar #JavaScript";
+var moo = encodeURI(loo);               // encodeURI() untuk Encode beberapa karakter khusus yang biasanya ada di URI (URL).
+var noo = encodeURIComponent(loo);      // encodeURIComponent() sama saja, namun dengan Encode lebih banyak karakter.
+
+console.log(moo);                       // Output: http://www.duniailkom.com/Belajar%20#JavaScript
+console.log(noo);                       // Output: http%3A%2F%2Fwww.duniailkom.com%2FBelajar%20%23JavaScript
 
 // B4. Function decodeURI() & decodeURIComponent()
 
-// ...
+                                        // decodeURI() & decodeURIComponent() merupakan kebalikan dari Encode, yaitu Decode.
+console.log(decodeURI(moo));            // Output: http://www.duniailkom.com/Belajar #JavaScript
+console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Belajar #JavaScript
 ```
 
 <br>
