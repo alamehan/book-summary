@@ -1962,6 +1962,8 @@ Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property,
 dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja.
 Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang
 umum saja. Referensi lengkap bisa lihat di: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+
+⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 */
 
 // C1. Contoh: String (object)
@@ -2214,7 +2216,7 @@ var polaA = /JavaScript/;
 
 console.log(polaA.test(regA));          // Output: true           ⇨ Check apakah pola /JavaScript/ terdapat di dalam String regA
 console.log(/buku/.test(regA));         // Output: true           ⤷ Penulisan bisa langsung, tanpa disimpan ke dalam var, hal ini
-console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku juga untuk semua Object instance property & method ⚠️
+console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku juga untuk semua Object instance property & method 💬
 console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
 
 // D2. Pola Regular Expression (RegExp)
@@ -2516,7 +2518,7 @@ var arrF = [1,2,3];
 var arrG = ["a","b","c","d","e","f","g"];
 
 console.log(arrE.reverse());            // Output: ["c","b","a"]          ⇨ Membalik urutan element Array
-console.log(arrE);                      // Output: ["c","b","a"]          ⤷ Method reverse() juga mengubah Array asal ⚠️
+console.log(arrE);                      // Output: ["c","b","a"]          ⤷ Method reverse() bersifat Mutating ⚠️
 console.log(arrE.concat(arrF));         // Output: ["c","b","a",1,2,3]    ⇨ Menggabungkan/menyambung Array
 console.log(arrE.concat(arrF,4,5));     // Output: ["c","b","a",1,2,3,4,5]⤷ Argument bisa lebih dari satu
 console.log(arrG.slice(3));             // Output: ["d","e","f","g"]      ⇨ Mengambil sebagian element Array
@@ -2530,7 +2532,7 @@ var arrJ = [1,2,3,4,5,6];
 var arrK = [1,2,3,4,5,6];
 
 console.log(arrH.splice(3));            // Output: [4,5,6]                ⇨ Menambah atau mengurangi element Array
-console.log(arrH);                      // Output: [1,2,3]                ⤷ Method splice() juga mengubah Array asal ⚠️
+console.log(arrH);                      // Output: [1,2,3]                ⤷ Method splice() bersifat Mutating ⚠️
 console.log(arrI.splice(3,2));          // Output: [4,5]                  ⤷ Argument ke 1: index awal penambahan/pengurangan
 console.log(arrI);                      // Output: [1,2,3,6]              ⤷ Argument ke 2: jumlah element yang akan dihapus, jika
 console.log(arrJ.splice(3,2,"new"));    // Output: [4,5]                  ⤷ Diisi 0 (nol), artinya tidak ada element yang dihapus
@@ -2554,7 +2556,7 @@ console.log(arrL);                      // ⤷ Output: ["x","y","z","a","b","c",
 tempB = arrL.shift();                   // shift() untuk mengurangi element Array dari posisi awal (hanya 1 elemnt saja)
 console.log(tempB);                     // ⤷ Output: x
 console.log(arrL);                      // ⤷ Output: ["y","z","a","b","c","d","e"]
-                                        // method push(), pop(), unshift() & shift() mengubah Array asal ⚠️
+                                        // method push(), pop(), unshift() & shift() bersifat Mutating ⚠️
 
 var arrM = ["a","b","c","d"];
 
@@ -2705,7 +2707,7 @@ var arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
 var arrU = [3,5,2,8,1,31,22,44,33,11];
 
                                                       // sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode
-                                                      // ⤷ method sort() juga mengubah Array asal ⚠️
+                                                      // ⤷ method sort() bersifat Mutating ⚠️
 arrT.sort(); console.log(arrT);                       // Output: ["Aldo","Budi","Erpan","Joko","Zaki"]
 arrU.sort(); console.log(arrU);                       // Output: [1,11,2,22,3,31,33,44,5,8]
                                                       // ⤷ Terjadi karena Number mula-mula akan dikonversi menjadi String, lalu
@@ -2905,7 +2907,7 @@ console.log(hasil);                         // Output: Sabtu, 5 Juni 2021 13:25:
 
                                             // Membuat Date Object dengan 1 argument dateString
 var tglAwal   = new Date("06/05/2021");     // Variable tglAwal diisi dengan 5 Juni 2021          Note: Perhatikan, urutan tanggal
-var tglAkhir  = new Date("12/20/2021");     // Variable tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik ⚠️
+var tglAkhir  = new Date("12/20/2021");     // Variable tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik 💬
 
 var timeAwal  = tglAwal.getTime();          // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAwal (5 Juni 2021)
 var timeAkhir = tglAkhir.getTime();         // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAkhir (12 Desember 2021)
@@ -3041,4 +3043,11 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 // Inheritance, Encapsulation, dll
 // Object.create(), Promise, Fetch, Async Await, dll
 // Ambil dari bukureact.id (intisari dari modern JavaScript)
+/*
+Tambahkan Top Library JS yang sudah diurutkan berdasarkan topik:
+- Urusan Date               : moment.js
+- Urusan Grafik             : chart.js
+- Urusan Visualisasi Data   : D3.js
+- Dan seterusnya ...
+*/
 ```
