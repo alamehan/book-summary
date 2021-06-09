@@ -3058,7 +3058,10 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 <img src="images/BAB-14-2.png">
 
-2. Contoh...
+2. Sebelum mengenal DOM lebih detail, ada satu istilah lain, yakni **BOM (Browser Object Model)**. BOM adalah model dari seluruh Object yang ada di dalam web browser. Artinya, BOM merupakan ruang lingkup yang lebih luas daripada DOM. DOM itu sendiri merupakan bagian dari BOM yang hanya berurusan dengan dokumen HTML (yakni seluruh tag yang ada di HTML).
+
+<img src="images/BAB-14-3.png">
+
 3. Contoh...
 
 <br>
