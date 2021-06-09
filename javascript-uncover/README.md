@@ -1,6 +1,6 @@
 # 📘 JavaScript Uncover
 
-Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi tambahan (pelengkap), gabungan dari website <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a>, <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>, <a href="https://bukureact.id/">BukuReact.id</a>, <a href="https://www.w3schools.com/">W3Schools</a> dan <a href="https://www.w3docs.com/">W3Docs</a>. Semoga bermanfaat 😊. 
+Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi tambahan (pelengkap), gabungan dari website <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a>, <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>, <a href="https://bukureact.id/">BukuReact.id</a>, <a href="https://www.w3schools.com/">W3Schools</a> dan <a href="https://www.w3docs.com/">W3Docs</a>. Untuk Cheat Sheet dapat diakses di <a href="https://www.w3schools.com/jsref/default.asp">W3Schools | JavaScript Reference</a>. Semoga bermanfaat 😊. 
 
 **Summary by**: alamehan.github.io
 
@@ -3069,6 +3069,8 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 // A. Windows Object
 // =================
 
+// A1. Kasus tanpa penulisan window
+
 var foo = "Hello World";
 function salam(a){
   console.log(`Hello ${a}`);
@@ -3079,6 +3081,24 @@ window.salam("Bandung");                  // Output: Hello Bandung              
 console.log(window.Math.PI);              // Output: 3.141592653589793            ⇨ Sama dengan console.log(Math.PI);
 console.log(window.Number.isNaN(5/'a'));  // Output: true                         ⇨ Sama dengan console.log(Number.isNaN(5/'a'));
 window.alert("Hello World!");             // Output: Muncul Popup "Hello World"   ⇨ Sama dengan alert("Hello World!");
+
+// A2. Window Property
+
+console.log(window.location);             // Output: ▶Location  (expand)
+console.log(window.history);              // Output: ▶History   (expand)
+console.log(window.navigator);            // Output: ▶Navigator (expand)
+console.log(window.screen);               // Output: ▶Screen    (expand)
+console.log(window.document);             // Output: ▶#document (expand)
+
+// A3. Window Method
+
+window.alert("Hello World!");             // Output: Muncul Popup "Hello World!"
+window.prompt("Masukkan Nama!");          // Output: Muncul Popup Input "Masukkan Nama!"
+window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "Anda Setuju?"
+window.open();                            // Output: Muncul New Tab di Browser
+window.print();                           // Output: Muncul Menu Print di Browser
+
+                                          // Window Property & Method Lainnya: https://www.w3schools.com/jsref/obj_window.asp
 
 // ==================
 // B. Document Object
