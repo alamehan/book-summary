@@ -3062,7 +3062,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 <img src="images/BAB-14-3.png">
 
-1. **Window Object** berperan sebagai Global Object, dengan demikian semua Variable, Function hingga Object di JavaScript "melekat" langsung ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama dengan ```console.log(window.Math.PI);```. Namun, karena status Global Object-nya, penulisan ```window``` tidak diharuskan, web browser akan menambahkannya secara otomatis.
+1. **Window Object** berperan sebagai Global Object. Semua Variable, Function hingga Object di JavaScript "melekat" langsung ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama dengan ```console.log(window.Math.PI);```. Namun, karena status Global Object-nya, penulisan ```window``` tidak diharuskan, web browser akan menambahkannya secara otomatis.
 
 ```Javascript
 // =================
