@@ -2217,7 +2217,7 @@ var polaA = /JavaScript/;
 
 console.log(polaA.test(regA));          // Output: true           ⇨ Check apakah pola /JavaScript/ terdapat di dalam String regA
 console.log(/buku/.test(regA));         // Output: true           ⤷ Penulisan bisa langsung, tanpa disimpan ke dalam var, hal ini
-console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku juga untuk semua Object instance property & method 💬
+console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku juga untuk semua Object instance property & method 🔔
 console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
 
 // D2. Pola Regular Expression (RegExp)
@@ -2908,7 +2908,7 @@ console.log(hasil);                         // Output: Sabtu, 5 Juni 2021 13:25:
 
                                             // Membuat Date Object dengan 1 argument dateString
 var tglAwal   = new Date("06/05/2021");     // Variable tglAwal diisi dengan 5 Juni 2021          Note: Perhatikan, urutan tanggal
-var tglAkhir  = new Date("12/20/2021");     // Variable tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik 💬
+var tglAkhir  = new Date("12/20/2021");     // Variable tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik 🔔
 
 var timeAwal  = tglAwal.getTime();          // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAwal (5 Juni 2021)
 var timeAkhir = tglAkhir.getTime();         // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAkhir (12 Desember 2021)
@@ -3107,7 +3107,8 @@ window.print();                           // Output: Muncul Menu Print di Browse
 
 // B1. Document Property
 
-console.log(document.URL);                // Output: http://127.0.0.1:5500/contoh.html  ⇨ URL lengkap dari dokumen HTML
+console.log(window.document.URL);         // Output: http://127.0.0.1:5500/contoh.html  ⇨ URL lengkap dari dokumen HTML
+                                          // Note: Dari sini hingga seterusnya penulisan window tidak akan disertakan 🔔
 console.log(document.baseURI);            // Output: http://127.0.0.1:5500/contoh.html  ⇨ Absolute base URI dari dokumen
 console.log(document.domain);             // Output: 127.0.0.1                          ⇨ Nama domain server yang memuat dokumen
 console.log(document.lastModified);       // Output: 06/10/2021 00:22:21                ⇨ Tanggal & waktu dokumen terakhir diubah
