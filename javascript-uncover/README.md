@@ -3062,7 +3062,22 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 <img src="images/BAB-14-3.png">
 
-3. Contoh...
+1. Dalam diagram di atas, Window Object berperan sebagal Global Object. Seluruh Object lain (termasuk Document Object) merupakan turunan dari Window Object. Dengan statusnya sebagai Global Object, semua Variable, Function hingga Object di JavaScript "melekat" ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```, namun karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis). Simak contoh berikut:
+
+```Javascript
+var foo = "Hello World";
+function salam(a){
+  console.log(`Hello ${a}`);
+}
+
+console.log(window.foo);                  // Output: Hello World                  ⇨ Sama dengan console.log(foo);
+window.salam("Bandung");                  // Output: Hello Bandung                ⇨ Sama dengan salam("Bandung");
+console.log(window.Math.PI);              // Output: 3.141592653589793            ⇨ Sama dengan console.log(Math.PI);
+console.log(window.Number.isNaN(5/'a'));  // Output: true                         ⇨ Sama dengan console.log(Number.isNaN(5/'a'));
+window.alert("Hello World!");             // Output: Muncul Popup "Hello World"   ⇨ Sama dengan alert("Hello World!"); 
+```
+
+4. ...
 
 <br>
 <div id="babxx"></div>
