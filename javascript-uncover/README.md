@@ -3040,7 +3040,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 # 14. Document Object Model <a href="#daftarisi">🡹</a>
 
-1. **Materi tentang JavaScript sudah selesai!** Mulai dari sini JavaScript akan digunakan untuk merakit komponen DOM (pemrosesan DOM tidak harus selalu menggunakan JavaScript, hanya saja JavaScript memang sangat dominan dan nyaris tidak tersaingi). DOM Merupakan pemodelan dokumen HTML ke dalam bentuk Object. Artinya, setiap tag-tag HTML seperti ```<h1>```, ```<p>``` atau ```<form>``` dimodelkan menjadi sebuah Object. Sebagaimana layaknya object, tag-tag HTML ini nantinya memiliki property dan method yang bisa digunakan untuk mengatur tampilan. “Model” yang dipakai di dalam DOM adalah dengan “memetakan” seluruh object HTML layaknya sebuah **pohon (tree)**. Simak contoh berikut:
+1. **Materi tentang JavaScript sudah selesai!** Mulai dari sini JavaScript akan digunakan untuk merakit komponen DOM (pemrosesan DOM tidak harus selalu menggunakan JavaScript, hanya saja JavaScript memang sangat dominan dan nyaris tidak tersaingi). DOM Merupakan pemodelan dokumen HTML ke dalam bentuk Object. Artinya, setiap tag-tag HTML seperti ```<h1>```, ```<p>``` atau ```<form>``` dimodelkan menjadi sebuah Object. Sebagaimana layaknya object, tag-tag HTML ini nantinya memiliki property dan method yang bisa digunakan untuk mengatur tampilan. “Model” yang dipakai di dalam DOM adalah dengan “memetakan” seluruh object HTML layaknya sebuah **pohon (tree)**.
    
 ```HTML
 <!DOCTYPE html>
