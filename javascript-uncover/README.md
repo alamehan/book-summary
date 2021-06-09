@@ -256,8 +256,8 @@ var numA = 100;                       // Angka bulat
 var numB = -100;                      // Angka bulat negatif
 var numC = 0.66634;                   // Angka pecahan
 var numD = -0.66634;                  // Angka pecahan negatif
-var numE = 3e3;                       // 3 x 10^3
-var numF = 0.4e-3;                    // 0.4 x 10^-3
+var numE = 3e3;                       // ≈ 3 x 10^3
+var numF = 0.4e-3;             ≈0.4 x 10^-3
 var numG = 999;                       // Desimal (basis 10)
 var numH = 0b1111100111;              // Biner (basis 2), diawali 0b
 var numI = 0o1747;                    // Oktal (basis 8), diawali 0o
@@ -3084,19 +3084,19 @@ window.alert("Hello World!");             // Output: Muncul Popup "Hello World" 
 
 // A2. Window Property
 
-console.log(window.location);             // Output: ▶Location  (Object)        ⇨ Sama dengan console.log(location);
-console.log(window.history);              // Output: ▶History   (Object)        ⇨ Sama dengan console.log(history);
-console.log(window.navigator);            // Output: ▶Navigator (Object)        ⇨ Sama dengan console.log(navigator);
-console.log(window.screen);               // Output: ▶Screen    (Object)        ⇨ Sama dengan console.log(screen);
-console.log(window.document);             // Output: ▶#document (Object)        ⇨ Sama dengan console.log(document);
+console.log(window.location);             // Output: ▶Location  (Object)         ≈ console.log(location);
+console.log(window.history);              // Output: ▶History   (Object)         ≈ console.log(history);
+console.log(window.navigator);            // Output: ▶Navigator (Object)         ≈ console.log(navigator);
+console.log(window.screen);               // Output: ▶Screen    (Object)         ≈ console.log(screen);
+console.log(window.document);             // Output: ▶#document (Object)         ≈ console.log(document);
 
 // A3. Window Method
 
-window.alert("Hello World!");             // Output: Muncul Popup "Hello World!"            ⇨ Sama dengan alert("Hello World!");
-window.prompt("Masukkan Nama!");          // Output: Muncul Popup Input "Masukkan Nama!"    ⇨ Sama dengan prompt("Masukkan Nama!");
-window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "Anda Setuju?" ⇨ Sama dengan confirm("Anda Setuju?");
-window.open();                            // Output: Muncul New Tab di Browser              ⇨ Sama dengan open();
-window.print();                           // Output: Muncul Menu Print di Browser           ⇨ Sama dengan print();
+window.alert("Hello World!");             // Output: Muncul Popup "Hello World!"            ≈ alert("Hello World!");
+window.prompt("Masukkan Nama!");          // Output: Muncul Popup Input "Masukkan Nama!"    ≈ prompt("Masukkan Nama!");
+window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "Anda Setuju?" ≈ confirm("Anda Setuju?");
+window.open();                            // Output: Muncul New Tab di Browser              ≈ open();
+window.print();                           // Output: Muncul Menu Print di Browser           ≈ print();
 
                                           // Window Property & Method Lainnya: 
                                           // https://www.w3schools.com/jsref/obj_window.asp
@@ -3126,9 +3126,9 @@ console.log(document.getElementsByTagName());
 console.log(document.querySelector());          // Document Property & Method Lainnya:
 console.log(document.querySelectorAll());       // https://www.w3schools.com/jsref/dom_obj_document.asp
 
-// ==============
-// C. Node Object
-// ==============
+// =================================================
+// C. Window ➜ Document Object (DOM) ➜ Node Object
+// =================================================
 
 // ...
 ```
