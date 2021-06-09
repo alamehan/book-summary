@@ -3098,7 +3098,8 @@ window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "An
 window.open();                            // Output: Muncul New Tab di Browser              ⇨ Sama dengan open();
 window.print();                           // Output: Muncul Menu Print di Browser           ⇨ Sama dengan print();
 
-                                          // Window Property & Method Lainnya: https://www.w3schools.com/jsref/obj_window.asp
+                                          // Window Property & Method Lainnya: 
+                                          // https://www.w3schools.com/jsref/obj_window.asp
 
 // ==================================
 // B. Window ➜ Document Object (DOM)
@@ -3106,11 +3107,11 @@ window.print();                           // Output: Muncul Menu Print di Browse
 
 // B1. Document Property
 
-console.log(document.URL);                // Output: http://127.0.0.1:5500/contoh.html  ⇨ Return URL lengkap dari dokumen HTML
-console.log(document.baseURI);            // Output: http://127.0.0.1:5500/contoh.html  ⇨ Return absolute base URI dari dokumen
-console.log(document.domain);             // Output: 127.0.0.1                          ⇨ Return nama domain server yang memuat dokumen
-console.log(document.lastModified);       // Output: 06/10/2021 00:22:21                ⇨ Return tanggal dan waktu dokumen terakhir diubah
-console.log(document.title);              // Output: Belajar JS                         ⇨ Return/Sets judul dari dokumen
+console.log(document.URL);                // Output: http://127.0.0.1:5500/contoh.html  ⇨ URL lengkap dari dokumen HTML
+console.log(document.baseURI);            // Output: http://127.0.0.1:5500/contoh.html  ⇨ Absolute base URI dari dokumen
+console.log(document.domain);             // Output: 127.0.0.1                          ⇨ Nama domain server yang memuat dokumen
+console.log(document.lastModified);       // Output: 06/10/2021 00:22:21                ⇨ Tanggal dan waktu dokumen terakhir diubah
+console.log(document.title);              // Output: Belajar JS                         ⇨ Judul dari dokumen
 
 // B2. Document Method
 
@@ -3122,10 +3123,8 @@ console.log(document.getElementById());
 console.log(document.getElementsByClassName());
 console.log(document.getElementsByName());
 console.log(document.getElementsByTagName());
-console.log(document.querySelector());
-console.log(document.querySelectorAll());
-
-                                                // Document Property & Method Lainnya: https://www.w3schools.com/jsref/dom_obj_document.asp
+console.log(document.querySelector());          // Document Property & Method Lainnya:
+console.log(document.querySelectorAll());       // https://www.w3schools.com/jsref/dom_obj_document.asp
 
 // ==============
 // C. Node Object
