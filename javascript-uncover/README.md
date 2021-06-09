@@ -3062,7 +3062,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 <img src="images/BAB-14-3.png">
 
-1. Dalam diagram di atas, Window Object berperan sebagal Global Object. Seluruh Object lain (termasuk Document Object) merupakan turunan dari Window Object. Dengan statusnya sebagai Global Object, semua Variable, Function hingga Object di JavaScript "melekat" ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```, namun karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
+3. Dalam diagram di atas, Window Object berperan sebagal Global Object. Seluruh Object lain (termasuk Document Object) merupakan turunan dari Window Object. Dengan statusnya sebagai Global Object, semua Variable, Function hingga Object di JavaScript "melekat" ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```, namun karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
 
 ```Javascript
 var foo = "Hello World";
