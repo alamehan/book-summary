@@ -3076,29 +3076,29 @@ function salam(a){
   console.log(`Hello ${a}`);
 }
 
-console.log(window.foo);                    // Output: Hello World                  ⇨ Sama dengan console.log(foo);
-window.salam("Bandung");                    // Output: Hello Bandung                ⇨ Sama dengan salam("Bandung");
-console.log(window.Math.PI);                // Output: 3.141592653589793            ⇨ Sama dengan console.log(Math.PI);
-console.log(window.Number.isNaN(5/'a'));    // Output: true                         ⇨ Sama dengan console.log(Number.isNaN(5/'a'));
-window.alert("Hello World!");               // Output: Muncul Popup "Hello World"   ⇨ Sama dengan alert("Hello World!");
+console.log(window.foo);                  // Output: Hello World                 ⇨ Sama dengan console.log(foo);
+window.salam("Bandung");                  // Output: Hello Bandung               ⇨ Sama dengan salam("Bandung");
+console.log(window.Math.PI);              // Output: 3.141592653589793           ⇨ Sama dengan console.log(Math.PI);
+console.log(window.Number.isNaN(5/'a'));  // Output: true                        ⇨ Sama dengan console.log(Number.isNaN(5/'a'));
+window.alert("Hello World!");             // Output: Muncul Popup "Hello World"  ⇨ Sama dengan alert("Hello World!");
 
 // A2. Window Property
 
-console.log(window.location);               // Output: ▶Location  (expand)  ⇨ Sama dengan console.log(location);  ⇨ Return Location Object
-console.log(window.history);                // Output: ▶History   (expand)  ⇨ Sama dengan console.log(history);   ⇨ Return History Object
-console.log(window.navigator);              // Output: ▶Navigator (expand)  ⇨ Sama dengan console.log(navigator); ⇨ Return Navigator Object
-console.log(window.screen);                 // Output: ▶Screen    (expand)  ⇨ Sama dengan console.log(screen);    ⇨ Return Screen Object
-console.log(window.document);               // Output: ▶#document (expand)  ⇨ Sama dengan console.log(document);  ⇨ Return Document Object
+console.log(window.location);             // Output: ▶Location  (Object)        ⇨ Sama dengan console.log(location);
+console.log(window.history);              // Output: ▶History   (Object)        ⇨ Sama dengan console.log(history);
+console.log(window.navigator);            // Output: ▶Navigator (Object)        ⇨ Sama dengan console.log(navigator);
+console.log(window.screen);               // Output: ▶Screen    (Object)        ⇨ Sama dengan console.log(screen);
+console.log(window.document);             // Output: ▶#document (Object)        ⇨ Sama dengan console.log(document);
 
 // A3. Window Method
 
-window.alert("Hello World!");               // Output: Muncul Popup "Hello World!"              ⇨ Sama dengan alert("Hello World!");
-window.prompt("Masukkan Nama!");            // Output: Muncul Popup Input "Masukkan Nama!"      ⇨ Sama dengan prompt("Masukkan Nama!");
-window.confirm("Anda Setuju?");             // Output: Muncul Popup Konfirmasi "Anda Setuju?"   ⇨ Sama dengan confirm("Anda Setuju?");
-window.open();                              // Output: Muncul New Tab di Browser                ⇨ Sama dengan open();
-window.print();                             // Output: Muncul Menu Print di Browser             ⇨ Sama dengan print();
+window.alert("Hello World!");             // Output: Muncul Popup "Hello World!"            ⇨ Sama dengan alert("Hello World!");
+window.prompt("Masukkan Nama!");          // Output: Muncul Popup Input "Masukkan Nama!"    ⇨ Sama dengan prompt("Masukkan Nama!");
+window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "Anda Setuju?" ⇨ Sama dengan confirm("Anda Setuju?");
+window.open();                            // Output: Muncul New Tab di Browser              ⇨ Sama dengan open();
+window.print();                           // Output: Muncul Menu Print di Browser           ⇨ Sama dengan print();
 
-                                            // Window Property & Method Lainnya: https://www.w3schools.com/jsref/obj_window.asp
+                                          // Window Property & Method Lainnya: https://www.w3schools.com/jsref/obj_window.asp
 
 // ==================================
 // B. Window ➜ Document Object (DOM)
@@ -3106,11 +3106,11 @@ window.print();                             // Output: Muncul Menu Print di Brow
 
 // B1. Document Property
 
-console.log(document.URL);                  // Output: http://127.0.0.1:5500/contoh.html  ⇨ Return URL lengkap dari dokumen HTML
-console.log(document.baseURI);              // Output: http://127.0.0.1:5500/contoh.html  ⇨ Return absolute base URI dari dokumen
-console.log(document.domain);               // Output: 127.0.0.1                          ⇨ Return nama domain server yang memuat dokumen
-console.log(document.lastModified);         // Output: 06/10/2021 00:22:21                ⇨ Return tanggal dan waktu dokumen terakhir diubah
-console.log(document.title);                // Output: Belajar JS                         ⇨ Return/Sets judul dari dokumen
+console.log(document.URL);                // Output: http://127.0.0.1:5500/contoh.html  ⇨ Return URL lengkap dari dokumen HTML
+console.log(document.baseURI);            // Output: http://127.0.0.1:5500/contoh.html  ⇨ Return absolute base URI dari dokumen
+console.log(document.domain);             // Output: 127.0.0.1                          ⇨ Return nama domain server yang memuat dokumen
+console.log(document.lastModified);       // Output: 06/10/2021 00:22:21                ⇨ Return tanggal dan waktu dokumen terakhir diubah
+console.log(document.title);              // Output: Belajar JS                         ⇨ Return/Sets judul dari dokumen
 
 // B2. Document Method
 
