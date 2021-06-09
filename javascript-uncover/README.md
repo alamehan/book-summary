@@ -3058,13 +3058,15 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 <img src="images/BAB-14-2.png">
 
-2. Sebelum mengenal DOM lebih detail, ada satu istilah lain, yakni **BOM (Browser Object Model)**. BOM adalah model dari seluruh Object yang ada di dalam web browser. Artinya, BOM merupakan ruang lingkup yang lebih luas daripada DOM. DOM itu sendiri merupakan bagian dari BOM yang hanya berurusan dengan dokumen HTML (yakni seluruh tag yang ada di HTML).
+2. **BOM (Browser Object Model)** adalah model dari seluruh Object yang ada di dalam web browser. Artinya BOM merupakan ruang lingkup yang lebih luas daripada DOM. BOM terdiri dari banyak Object di dalamnya, seperti Location Object, History Object, Navigator Object, Screen Object, dan tentu saja Document Object (DOM). Semua Object BOM ini berada langsung di bawah Window Object. Window Object berperan sebagai Global Object. Dengan statusnya sebagai Global Object, maka semua Variable, Function hingga Object di JavaScript "melekat" langsung ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```, namun karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
 
 <img src="images/BAB-14-3.png">
 
-3. Dalam diagram di atas, Window Object berperan sebagal Global Object. Seluruh Object lain (termasuk Document Object) merupakan turunan dari Window Object. Dengan statusnya sebagai Global Object, semua Variable, Function hingga Object di JavaScript "melekat" ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```, namun karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
-
 ```Javascript
+// =================
+// A. Windows Object
+// =================
+
 var foo = "Hello World";
 function salam(a){
   console.log(`Hello ${a}`);
@@ -3074,10 +3076,19 @@ console.log(window.foo);                  // Output: Hello World                
 window.salam("Bandung");                  // Output: Hello Bandung                ⇨ Sama dengan salam("Bandung");
 console.log(window.Math.PI);              // Output: 3.141592653589793            ⇨ Sama dengan console.log(Math.PI);
 console.log(window.Number.isNaN(5/'a'));  // Output: true                         ⇨ Sama dengan console.log(Number.isNaN(5/'a'));
-window.alert("Hello World!");             // Output: Muncul Popup "Hello World"   ⇨ Sama dengan alert("Hello World!"); 
-```
+window.alert("Hello World!");             // Output: Muncul Popup "Hello World"   ⇨ Sama dengan alert("Hello World!");
 
-4. ...
+// ==================
+// B. Document Object
+// ==================
+
+var bar = window.document;
+
+console.log(bar.URL);                     // Output: http://127.0.0.1:5500/contoh.html
+console.log(bar.lastModified);            // Output: 06/10/2021 00:22:21
+console.log(bar.contentType);             // Output: text/html
+console.log(bar.title);                   // Output: Belajar JS
+```
 
 <br>
 <div id="babxx"></div>
