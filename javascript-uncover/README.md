@@ -3090,6 +3090,12 @@ console.log(bar.URL);                     // Output: http://127.0.0.1:5500/conto
 console.log(bar.lastModified);            // Output: 06/10/2021 00:22:21
 console.log(bar.contentType);             // Output: text/html
 console.log(bar.title);                   // Output: Belajar JS
+
+// ==============
+// C. Node Object
+// ==============
+
+// ...
 ```
 
 <br>
