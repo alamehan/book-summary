@@ -3115,9 +3115,9 @@ window.print();                           // Output: Muncul Menu Print di Browse
 <hr>
 
 ```Javascript
-// =========================================
-// B. Window Object ➜ Document Object (DOM)
-// =========================================
+// ===================================
+// B. Window Object ➜ Document Object
+// ===================================
 
 // B1. Document property
 
@@ -3154,9 +3154,9 @@ document.removeEventListener();
 <hr>
 
 ```Javascript
-// ========================================================
-// C. Window Object ➜ Document Object (DOM) ➜ Node Object
-// ========================================================
+// ==================================================
+// C. Window Object ➜ Document Object ➜ Node Object
+// ==================================================
 ```
 
 ```HTML
