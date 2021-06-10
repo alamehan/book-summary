@@ -3069,7 +3069,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 // A. Windows Object
 // =================
 
-// A1. Ingat: Penulisan window itu optional
+// A1. Penulisan window itu optional
 
 var foo = "Hello World";
 function salam(a){
