@@ -3134,14 +3134,14 @@ console.log(document.title);              // Output: Belajar JS                 
 document.write("Hello World");            // Menulis ekspresi HTML atau kode JavaScript ke dokumen
 document.writeln("Hello World");          // Sama seperti write() namun menambah baris baru untuk setiap statement
 
-document.createElement();                 // Method ini hingga createEvent() dibawah digunakan untuk membuat "Sesuatu" di DOM
-document.createTextNode();                // ⤷ Dibahas selengkapnya di bagian C3 (di bawah)
+document.createElement();                 // Method createElement() & createTextNode() dibahas di bagian C3 (di bawah)
+document.createTextNode();
 document.createAttribute();
 document.createEvent();
 
-document.addEventListener();              // Method ini hingga querySelecterAll() di bawah digunakan untuk memanipulasi DOM
-document.removeEventListener();           // ⤷ Dibahas selengkapnya di bagian ... (di bawah)
-document.getElementById();
+document.addEventListener();              
+document.removeEventListener();           
+document.getElementById();                // Method ini hingga querySelecterAll() dibahas di bagian ... (di bawah)
 document.getElementsByClassName();
 document.getElementsByName();
 document.getElementsByTagName();          // Document Property & Method Lainnya:
