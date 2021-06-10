@@ -3165,7 +3165,7 @@ var bar = document.childNodes[1].childNodes[2].childNodes[3]; // Variable bar be
 
 console.log(bar.tagName);                           // Output: 𝗣
 console.log(bar.nodeName);                          // Output: 𝗣
-console.log(bar.nodeType);                          // Output: 𝟭
+console.log(bar.nodeType);                          // Output: 𝟭  (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
 console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹
 console.log(bar.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
 console.log(bar.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
