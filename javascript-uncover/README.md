@@ -3108,7 +3108,23 @@ window.print();                           // Output: Muncul Menu Print di Browse
                                           // Window Property & Method Lainnya: 
                                           // https://www.w3schools.com/jsref/obj_window.asp
                                           // https://developer.mozilla.org/en-US/docs/Web/API/Window
+```
 
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1>Belajar JavaScript</h1>
+    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+  </body>
+</html>
+```
+
+```Javascript
 // ==================================
 // B. Window ➜ Document Object (DOM)
 // ==================================
@@ -3209,10 +3225,12 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
 
 // C3. Node Method
 
+
+
                                                     // Node Property & Method Lainnya:
                                                     // https://www.w3schools.com/jsref/dom_obj_all.asp
-                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Element
                                                     // https://developer.mozilla.org/en-US/docs/Web/API/Node
+                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Element
 ```
 
 <br>
