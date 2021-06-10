@@ -3185,7 +3185,7 @@ console.log(bar.outerText);                         // Output: Sedang belajar Ja
 Note: Jika nilai dari Property textContent diubah, misalya dengan perintah bar.textContent = "Teks Baru", maka tentunya tek yang
 tampil di halaman HTML pun ikut berubah. Selamat! inilah pertama kalinya kita memanipulasi/mengubah element HTML menggunakan
 JavaScript, dan Property textContent hanya salah satunya saja. Nantinya kita juga bisa mengubah atribut hingga style CSS.
-⤷ Manulipasi tidak hanya berlaku untuk element <p> saja! misalnya: var baz = document.childNodes[1].childNodes[0].childNodes[3]; 
+⤷ Manipulasi tidak hanya berlaku untuk element <p> saja! misalnya: var baz = document.childNodes[1].childNodes[0].childNodes[3]; 
   Maka variable bar akan berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>, selanjutnya kita coba ubah nilainya dengan menjalankan perintah 
   baz.textContent = "Title Dokumen Berubah!". Perhatikan teks yang tampil di tab dokumen HTML pun ikut berubah. Menarik bukan?
 */
