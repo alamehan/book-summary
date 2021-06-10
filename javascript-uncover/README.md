@@ -3168,7 +3168,7 @@ document.querySelectorAll();              // https://developer.mozilla.org/en-US
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
   </body>
   <script>
-    // Script disini
+    // Script di C1 & C2 simpan disini
   </script>
 </html>
 ```
@@ -3263,6 +3263,8 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
     console.log(nodeP.nodeName);                    // Output: P
     console.log(nodeEm.nodeName);                   // Output: EM
     console.log(nodeB.nodeName);                    // Output: B
+
+    // Script di C3 simpan disini
   </script>
 </html>
 ```
