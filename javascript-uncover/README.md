@@ -3258,12 +3258,6 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
     var nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
     var nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
 
-    console.log(nodeBody.nodeName);                           // Output: BODY
-    console.log(nodeH1.nodeName);                             // Output: H1
-    console.log(nodeP.nodeName);                              // Output: P
-    console.log(nodeEm.nodeName);                             // Output: EM
-    console.log(nodeB.nodeName);                              // Output: B
-
     // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
   </script>
 </html>
