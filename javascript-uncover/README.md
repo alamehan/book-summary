@@ -2508,7 +2508,7 @@ for (var n=0; n<arrSiswa.length; n++){                      // ⤷ akan selalu d
 
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini merupakan versi perbaikan (lebih efisien) dari contoh
 var panjangArr = arrSiswa.length;                           // ⤷ di atas, karena nilai arrSiswa.length tidak disimpan langsung di
-for (var n=0; n<panjangArr; n++){                           // ⤷ kondisi, melainkan ditampung terlebih dahulu kedalam Variable.
+for (var n=0; n<panjangArr; n++){                           // ⤷ kondisi, melainkan ditampung terlebih dahulu ke dalam Variable.
   console.log(arrSiswa[n]);                                 // Output: Andri, Joko, Sukma, Rina, Sari
 }                                                           
 
@@ -3127,8 +3127,14 @@ console.log(document.title);              // Output: Belajar JS                 
 
 document.write("Hello World");            // Menulis ekspresi HTML atau kode JavaScript ke dokumen
 document.writeln("Hello World");          // Sama seperti write() namun menambah baris baru untuk setiap statement
+
+document.createElement();                 // Method ini hingga createEvent() dibawah digunakan untuk membuat "Sesuatu" di DOM
+document.createTextNode();                // ⤷ Dibahas selengkapnya di bagian C3 (di bawah)
+document.createAttribute();
+document.createEvent();
+
 document.addEventListener();              // Method ini hingga querySelecterAll() di bawah digunakan untuk memanipulasi DOM
-document.removeEventListener();           // ⤷ Dibahas selengkapnya di bagian ... di bawah
+document.removeEventListener();           // ⤷ Dibahas selengkapnya di bagian ... (di bawah)
 document.getElementById();
 document.getElementsByClassName();
 document.getElementsByName();
@@ -3256,6 +3262,16 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
 
 ```Javascript
 // C3. Node Method
+
+var nodeP_new     = document.createElement("p");              // Membuat Element Node baru, dalam kasus ini tag <𝗽>
+var nodeText_new  = document.createTextNode("Paragraf Baru"); // Membuat Text Node baru, dalam kasus ini "Paragraf Baru"
+                                                              // Note: Method createElement() & createTextNode() bukan milik
+                                                              //       Node Object, melainkan milik Document Object.
+
+nodeP_new.appendChild(nodeText_new);                // Memasukkan Text Node "Paragraf Baru" ke dalam Element Node <𝗽>
+                                                    // ⤷ Hasilnya yaitu menjadi: <𝗽>Paragraf Baru</𝗽>
+nodeBody.appendChild(nodeP_new);                    // Memasukkan <𝗽>Paragraf Baru</𝗽> ke dalam <𝗯𝗼𝗱𝘆> (sebagai Node terakhir)
+                                                    // ⤷ Hasilnya coba check sendiri, akan ada paragraf baru di halaman HTML.
 
 
 
