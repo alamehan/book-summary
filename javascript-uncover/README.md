@@ -3083,10 +3083,10 @@ console.log(window.Number.isNaN(5/'a'));  // Output: true                       
 
 // A2. Window Property
 
-window.console.log(1+1);                      // Output: 2                              ≈ console.log(1+1);
-window.console.info({nama:"Budi", umur:24});  // Output: {nama: "Budi", umur: 24}       ≈ console.info({nama:"Budi", umur:24});
-window.console.table({nama:"Budi", umur:24}); // Output: Tabel (check sendiri)          ≈ console.table({nama:"Budi", umur:24});
-window.console.dir({nama:"Budi", umur:24});   // Output: ▶Object                        ≈ console.dir({nama:"Budi", umur:24});
+window.console.log(1+1);                  // Output: 2                            ≈ console.log(1+1);
+window.console.info({nama:"A", umur:7});  // Output: {nama: "A", umur: 7}         ≈ console.info({nama:"A", umur:7});
+window.console.table({nama:"A", umur:7}); // Output: Tabel (check sendiri)        ≈ console.table({nama:"A", umur:7});
+window.console.dir({nama:"A", umur:7});   // Output: ▶Object                      ≈ console.dir({nama:"A", umur:7});
 
                                           // console merupakan salah satu property window. Memiliki beberapa method, diantaranya
                                           // log(), info(), table(), dir(), dan: https://www.w3schools.com/jsref/obj_console.asp
