@@ -3154,36 +3154,41 @@ console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[1]);  
 console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[2]);  // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
 console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  // Output: <𝗯>dari Duniailkom</𝗯>
 
-                                                              // Note: Karakter Carriage Return adalah karakter enter/baris baru,
-                                                              // Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
-                                                              // masalah yang sering membuat pusing jika menulusuri struktur DOM
-                                                              // tree satu per satu secara manual. Solusinya? Dibahas di ...
+/*
+Note: Karakter Carriage Return adalah karakter enter/baris baru. Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
+masalah yang sering membuat pusing jika menulusuri struktur DOM tree satu per satu secara manual. Solusinya? Dibahas di ...
+*/
 
 // C2. Node Property
 
 var bar = document.childNodes[1].childNodes[2].childNodes[3]; // Variable bar berisi <𝗽> ... </𝗽>
 
-console.log(bar.nodeName);                                    // Output: 𝗣
-console.log(bar.nodeType);                                    // Output: 𝟭
-console.log(bar.nodeValue);                                   // Output: 𝗻𝘂𝗹𝗹
-console.log(bar.textContent);                                 // Output: Sedang Belajar JavaScript dari Duniailkom
-console.log(bar.ownerDocument);                               // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (𝗢𝗯𝗷𝗲𝗰𝘁)
-console.log(bar.parentNode);                                  // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
-console.log(bar.parentElement);                               // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
-console.log(bar.childNodes);                                  // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟰) [𝘁𝗲𝘅𝘁, 𝗲𝗺, 𝘁𝗲𝘅𝘁, 𝗯]
-console.log(bar.firstChild);                                  // Output: "Sedang Belajar"
-console.log(bar.lastChild);                                   // Output: <𝗯>dari Duniailkom</𝗯>
-console.log(bar.previousSibling);                             // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
-console.log(bar.previousSibling.previousSibling);             // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
-console.log(bar.nextSibling);                                 // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
-console.log(bar.nextSibling.nextSibling);                     // Output: <𝘀𝗰𝗿𝗶𝗽𝘁></𝘀𝗰𝗿𝗶𝗽𝘁>
+console.log(bar.nodeName);                          // Output: 𝗣
+console.log(bar.nodeType);                          // Output: 𝟭
+console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹
+console.log(bar.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
+console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (𝗢𝗯𝗷𝗲𝗰𝘁)
+console.log(bar.parentNode);                        // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+console.log(bar.parentElement);                     // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+console.log(bar.childNodes);                        // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟰) [𝘁𝗲𝘅𝘁, 𝗲𝗺, 𝘁𝗲𝘅𝘁, 𝗯]  ❌ Text Node ikut dihitung
+console.log(bar.childElementCount);                 // Output: 𝟮                                ✔️ Text Node tidak dihitung
+console.log(bar.firstChild);                        // Output: "Sedang Belajar"             ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.lastChild);                         // Output: <𝗯>dari Duniailkom</𝗯>       ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.previousSibling);                   // Output: #𝘁𝗲𝘅𝘁                         ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.previousSibling.previousSibling);   // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>  ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.nextSibling);                       // Output: #𝘁𝗲𝘅𝘁                         ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.nextSibling.nextSibling);           // Output: <𝘀𝗰𝗿𝗶𝗽𝘁> ... </𝘀𝗰𝗿𝗶𝗽𝘁>          ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.firstElementChild);                 // Output: <𝗲𝗺>JavaScript</𝗲𝗺>         ✔️ Lebih Mudah (tanpa Text Node)
+console.log(bar.lastElementChild);                  // Output: <𝗯>dari Duniailkom</𝗯>       ✔️ Lebih Mudah (tanpa Text Node)
+console.log(bar.previousElementSibling);            // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>  ✔️ Lebih Mudah (tanpa Text Node)
+console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶𝗽𝘁> ... </𝘀𝗰𝗿𝗶𝗽𝘁>          ✔️ Lebih Mudah (tanpa Text Node)
 
 // C3. Node Method
 
-                                                              // Node Property & Method Lainnya:
-                                                              // https://www.w3schools.com/jsref/dom_obj_all.asp
-                                                              // https://developer.mozilla.org/en-US/docs/Web/API/Element
-                                                              // https://developer.mozilla.org/en-US/docs/Web/API/Node
+                                                    // Node Property & Method Lainnya:
+                                                    // https://www.w3schools.com/jsref/dom_obj_all.asp
+                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Element
+                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Node
 ```
 
 <br>
