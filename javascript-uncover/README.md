@@ -2447,8 +2447,8 @@ http://emailregex.com/ (pola RegExp yang disusun sangat kompleks, itu tidak lain
                                         // RegExp menyediakan karakter khusus untuk membuat kondisi OR yaitu karakter pipe "|":
 var polaY = /aku|dia|kami/;             // ⤷ true jika terdapat setidaknya 1 kata dari 3 kemungkinan di samping (aku/dia/kami)
 
-console.log(polaY.test("aku di sini"));               // Output: true
-console.log(polaY.test("dia di sana"));               // Output: true
+console.log(polaY.test("aku disini"));                // Output: true
+console.log(polaY.test("dia disana"));                // Output: true
 console.log(polaY.test("akuu dan diaa di Bali"));     // Output: true
 console.log(polaY.test("kami belajar JavaScript"));   // Output: true
 console.log(polaY.test("Budi belajar JavaScript"));   // Output: false
