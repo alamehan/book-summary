@@ -3142,7 +3142,7 @@ document.querySelectorAll();              // https://developer.mozilla.org/en-US
 // Note: Script di bawah mengacu ke dokumen HTML di awal bab 14
 // ============================================================
 
-// C1. Menelusuri Struktur DOM (Cara Manual)
+// C1. Menelusuri Struktur DOM (𝗖𝗮𝗿𝗮 𝗠𝗮𝗻𝘂𝗮𝗹)
 
 console.log(document.childNodes[0]);                                            // Output: <!𝗗𝗢𝗖𝗧𝗬𝗣𝗘 𝗵𝘁𝗺𝗹>
 console.log(document.childNodes[1]);                                            // Output: <𝗵𝘁𝗺𝗹> ... </𝗵𝘁𝗺𝗹>
