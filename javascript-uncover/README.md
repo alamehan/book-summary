@@ -3080,7 +3080,6 @@ console.log(window.foo);                  // Output: Hello World                
 window.salam("Bandung");                  // Output: Hello Bandung               ⇨ Sama dengan salam("Bandung");
 console.log(window.Math.PI);              // Output: 3.141592653589793           ⇨ Sama dengan console.log(Math.PI);
 console.log(window.Number.isNaN(5/'a'));  // Output: true                        ⇨ Sama dengan console.log(Number.isNaN(5/'a'));
-window.alert("Hello World!");             // Output: Muncul Popup "Hello World"  ⇨ Sama dengan alert("Hello World!");
 
 // A2. Window Property
 
@@ -3117,16 +3116,16 @@ console.log(document.title);              // Output: Belajar JS                 
 
 // B2. Document Method
 
-console.log(document.write("Hello World"));     // Menulis ekspresi HTML atau kode JavaScript ke dokumen
-console.log(document.writeln("Hello World"));   // Sama seperti write() namun menambah baris baru untuk setiap statement
-console.log(document.addEventListener());       // Method ini hingga querySelecterAll() di bawah digunakan untuk memanipulasi DOM
-console.log(document.removeEventListener());    // ⤷ Dibahas selengkapnya di bagian ... di bawah
-console.log(document.getElementById());
-console.log(document.getElementsByClassName());
-console.log(document.getElementsByName());
-console.log(document.getElementsByTagName());
-console.log(document.querySelector());          // Document Property & Method Lainnya:
-console.log(document.querySelectorAll());       // https://www.w3schools.com/jsref/dom_obj_document.asp
+document.write("Hello World");            // Menulis ekspresi HTML atau kode JavaScript ke dokumen
+document.writeln("Hello World");          // Sama seperti write() namun menambah baris baru untuk setiap statement
+document.addEventListener();              // Method ini hingga querySelecterAll() di bawah digunakan untuk memanipulasi DOM
+document.removeEventListener();           // ⤷ Dibahas selengkapnya di bagian ... di bawah
+document.getElementById();
+document.getElementsByClassName();
+document.getElementsByName();
+document.getElementsByTagName();
+document.querySelector();                 // Document Property & Method Lainnya:
+document.querySelectorAll();              // https://www.w3schools.com/jsref/dom_obj_document.asp
 
 // =================================================
 // C. Window ➜ Document Object (DOM) ➜ Node Object
