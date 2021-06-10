@@ -3173,17 +3173,22 @@ var bar = document.childNodes[1].childNodes[2].childNodes[3]; // Variable bar be
 
 console.log(bar.tagName);                           // Output: 𝗣
 console.log(bar.nodeName);                          // Output: 𝗣
-console.log(bar.nodeType);                          // Output: 𝟭  (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
-console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹
-console.log(bar.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
+console.log(bar.nodeType);                          // Output: 𝟭 (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
+console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
+console.log(bar.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom (Bisa diubah nilainya 🔔)
 console.log(bar.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
 console.log(bar.outerHTML);                         // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽>
 console.log(bar.innerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
 console.log(bar.outerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
 
+                                                    // Note: Jika nilai dari Property textContent diubah, misalya dengan perintah
+                                                    // bar.textContent = "Teks Baru", maka tentunya teks yang tampil di halaman
+                                                    // HTML pun ikut berubah. Selamat! inilah pertama kalinya kita memanipulasi
+                                                    // element HTML menggunakan JavaScript, textContent hanya salah satunya saja.
+
 console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (𝗢𝗯𝗷𝗲𝗰𝘁)
 console.log(bar.parentNode);                        // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
-console.log(bar.parentElement);                     // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+console.log(bar.parentElement);                     // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆> (Akan null jika parent bukan Element Node)
 console.log(bar.childNodes);                        // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟰) [𝘁𝗲𝘅𝘁, 𝗲𝗺, 𝘁𝗲𝘅𝘁, 𝗯]  ❌ Text Node ikut dihitung
 console.log(bar.children);                          // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [𝗲𝗺, 𝗯]       ✔️ Text Node tidak dihitung
 console.log(bar.childElementCount);                 // Output: 𝟮
