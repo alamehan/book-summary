@@ -2993,7 +2993,10 @@ console.log(coo);                       // Output: Infinity
 console.log(doo);                       // Output: -Infinity
 console.log(foo);                       // Output: undefined
 console.log(goo);                       // Output: null
+```
+<hr>
 
+```Javascript
 // ==================
 // B. Global Function
 // ==================
@@ -3108,7 +3111,10 @@ window.print();                           // Output: Muncul Menu Print di Browse
                                           // Window Property & Method Lainnya: 
                                           // https://www.w3schools.com/jsref/obj_window.asp
                                           // https://developer.mozilla.org/en-US/docs/Web/API/Window
+```
+<hr>
 
+```Javascript
 // ==================================
 // B. Window ➜ Document Object (DOM)
 // ==================================
@@ -3142,6 +3148,7 @@ document.getElementsByTagName();          // Document Property & Method Lainnya:
 document.querySelector();                 // https://www.w3schools.com/jsref/dom_obj_document.asp
 document.querySelectorAll();              // https://developer.mozilla.org/en-US/docs/Web/API/Document
 ```
+<hr>
 
 ```Javascript
 // =================================================
