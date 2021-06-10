@@ -3135,7 +3135,9 @@ document.getElementsByName();
 document.getElementsByTagName();          // Document Property & Method Lainnya:
 document.querySelector();                 // https://www.w3schools.com/jsref/dom_obj_document.asp
 document.querySelectorAll();              // https://developer.mozilla.org/en-US/docs/Web/API/Document
+```
 
+```Javascript
 // =================================================
 // C. Window ➜ Document Object (DOM) ➜ Node Object
 // =================================================
@@ -3152,6 +3154,9 @@ document.querySelectorAll();              // https://developer.mozilla.org/en-US
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
   </body>
+  <script>
+    // Script disini
+  </script>
 </html>
 ```
 
@@ -3220,7 +3225,36 @@ console.log(bar.firstElementChild);                 // Output: <𝗲𝗺>JavaScr
 console.log(bar.lastElementChild);                  // Output: <𝗯>dari Duniailkom</𝗯>       ✔️ Lebih Mudah (tanpa Text Node)
 console.log(bar.previousElementSibling);            // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>  ✔️ Lebih Mudah (tanpa Text Node)
 console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶𝗽𝘁> ... </𝘀𝗰𝗿𝗶𝗽𝘁>          ✔️ Lebih Mudah (tanpa Text Node)
+```
 
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1>Belajar JavaScript</h1>
+    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+  </body>
+  <script>
+    var nodeBody  = document.childNodes[1].childNodes[2];     // Berisi <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+    var nodeH1    = nodeBody.childNodes[1];                   // Berisi <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
+    var nodeP     = nodeBody.childNodes[3];                   // Berisi <𝗽> ... </𝗽>
+    var nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
+    var nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
+
+    console.log(nodeBody.nodeName);                 // Output: BODY
+    console.log(nodeH1.nodeName);                   // Output: H1
+    console.log(nodeP.nodeName);                    // Output: P
+    console.log(nodeEm.nodeName);                   // Output: EM
+    console.log(nodeB.nodeName);                    // Output: B
+  </script>
+</html>
+```
+
+```Javascript
 // C3. Node Method
 
 
