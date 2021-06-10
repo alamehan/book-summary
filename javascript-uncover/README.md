@@ -3273,9 +3273,9 @@ var nodeText_new1 = document.createTextNode("Text Baru 1");   //       milik Nod
 var nodeText_new2 = document.createTextNode("Text Baru 2");
 var nodeText_new3 = document.createTextNode("Text Baru 3");
 
-nodeP_new1.appendChild(nodeText_new1);                        // Hasilnya menjadi: <𝗽>Text Baru 1</𝗽>
-nodeP_new2.appendChild(nodeText_new2);                        // Hasilnya menjadi: <𝗵𝟮>Text Baru 2</𝗵𝟮>
-nodeP_new3.appendChild(nodeText_new3);                        // Hasilnya menjadi: <𝘀𝗽𝗮𝗻>Text Baru 3</𝘀𝗽𝗮𝗻>
+nodeP_new1.appendChild(nodeText_new1);              // Hasilnya menjadi: <𝗽>Text Baru 1</𝗽>
+nodeP_new2.appendChild(nodeText_new2);              // Hasilnya menjadi: <𝗵𝟮>Text Baru 2</𝗵𝟮>
+nodeP_new3.appendChild(nodeText_new3);              // Hasilnya menjadi: <𝘀𝗽𝗮𝗻>Text Baru 3</𝘀𝗽𝗮𝗻>
 
 nodeBody.appendChild(nodeP_new1);                   // Memasukkan <𝗽>Text Baru 1</𝗽> ke dalam <𝗯𝗼𝗱𝘆> (sebagai Node terakhir)
 nodeBody.insertBefore(nodeP_new2, nodeH1);          // Memasukkan <𝗵𝟮>Text Baru 2</𝗵𝟮> sebelum <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
