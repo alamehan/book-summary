@@ -3139,41 +3139,51 @@ document.querySelectorAll();              // https://developer.mozilla.org/en-US
 console.log(document.childNodes[0]);                                            // Output: <!𝗗𝗢𝗖𝗧𝗬𝗣𝗘 𝗵𝘁𝗺𝗹>
 console.log(document.childNodes[1]);                                            // Output: <𝗵𝘁𝗺𝗹> ... </𝗵𝘁𝗺𝗹>
 console.log(document.childNodes[1].childNodes[0]);                              // Output: <𝗵𝗲𝗮𝗱> ... </𝗵𝗲𝗮𝗱>
+console.log(document.childNodes[1].childNodes[0].childNodes[0]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[0].childNodes[1]);                // Output: <𝗺𝗲𝘁𝗮 𝗰𝗵𝗮𝗿𝘀𝗲𝘁="𝘂𝘁𝗳-𝟴">
+console.log(document.childNodes[1].childNodes[0].childNodes[2]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[0].childNodes[3]);                // Output: <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
+console.log(document.childNodes[1].childNodes[1]);                              // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
 console.log(document.childNodes[1].childNodes[2]);                              // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
 console.log(document.childNodes[1].childNodes[2].childNodes[0]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
-console.log(document.childNodes[1].childNodes[2].childNodes[1]);                // Output: <𝗵𝟭>𝗕𝗲𝗹𝗮𝗷𝗮𝗿 𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁</𝗵𝟭>
+console.log(document.childNodes[1].childNodes[2].childNodes[1]);                // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
 console.log(document.childNodes[1].childNodes[2].childNodes[2]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
 console.log(document.childNodes[1].childNodes[2].childNodes[3]);                // Output: <𝗽> ... </𝗽>
-console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[0]);  // Output: "𝗦𝗲𝗱𝗮𝗻𝗴 𝗕𝗲𝗹𝗮𝗷𝗮𝗿"
-console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[1]);  // Output: <𝗲𝗺>𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁</𝗲𝗺>
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[0]);  // Output: "Sedang Belajar"
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[1]);  // Output: <𝗲𝗺>JavaScript</𝗲𝗺>
 console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[2]);  // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
-console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  // Output: <𝗯>𝗱𝗮𝗿𝗶 𝗗𝘂𝗻𝗶𝗮𝗶𝗹𝗸𝗼𝗺</𝗯>
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  // Output: <𝗯>dari Duniailkom</𝗯>
+
+                                                              // Note: Karakter Carriage Return adalah karakter enter/baris baru,
+                                                              // Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
+                                                              // masalah yang sering membuat pusing jika menulusuri struktur DOM
+                                                              // tree satu per satu secara manual. Solusinya? Dibahas di ...
 
 // C2. Node Property
 
 var bar = document.childNodes[1].childNodes[2].childNodes[3]; // Variable bar berisi <𝗽> ... </𝗽>
 
-console.log(bar.nodeName);                        // Output: 𝗣
-console.log(bar.nodeType);                        // Output: 𝟭
-console.log(bar.nodeValue);                       // Output: 𝗻𝘂𝗹𝗹
-console.log(bar.textContent);                     // Output: 𝗦𝗲𝗱𝗮𝗻𝗴 𝗯𝗲𝗹𝗮𝗷𝗮𝗿 𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗮𝗿𝗶 𝗗𝘂𝗻𝗶𝗮𝗶𝗹𝗸𝗼𝗺
-console.log(bar.ownerDocument);                   // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (𝗢𝗯𝗷𝗲𝗰𝘁)
-console.log(bar.parentNode);                      // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
-console.log(bar.parentElement);                   // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
-console.log(bar.childNodes);                      // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟰) [𝘁𝗲𝘅𝘁, 𝗲𝗺, 𝘁𝗲𝘅𝘁, 𝗯]
-console.log(bar.firstChild);                      // Output: "𝗦𝗲𝗱𝗮𝗻𝗴 𝗕𝗲𝗹𝗮𝗷𝗮𝗿"
-console.log(bar.lastChild);                       // Output: <𝗯>𝗱𝗮𝗿𝗶 𝗗𝘂𝗻𝗶𝗮𝗶𝗹𝗸𝗼𝗺</𝗯>
-console.log(bar.previousSibling);                 // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
-console.log(bar.previousSibling.previousSibling); // Output: <𝗵𝟭>𝗕𝗲𝗹𝗮𝗷𝗮𝗿 𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁</𝗵𝟭>
-console.log(bar.nextSibling);                     // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
-console.log(bar.nextSibling.nextSibling);         // Output: <𝘀𝗰𝗿𝗶𝗽𝘁></𝘀𝗰𝗿𝗶𝗽𝘁>
+console.log(bar.nodeName);                                    // Output: 𝗣
+console.log(bar.nodeType);                                    // Output: 𝟭
+console.log(bar.nodeValue);                                   // Output: 𝗻𝘂𝗹𝗹
+console.log(bar.textContent);                                 // Output: Sedang Belajar JavaScript dari Duniailkom
+console.log(bar.ownerDocument);                               // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (𝗢𝗯𝗷𝗲𝗰𝘁)
+console.log(bar.parentNode);                                  // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+console.log(bar.parentElement);                               // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+console.log(bar.childNodes);                                  // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟰) [𝘁𝗲𝘅𝘁, 𝗲𝗺, 𝘁𝗲𝘅𝘁, 𝗯]
+console.log(bar.firstChild);                                  // Output: "Sedang Belajar"
+console.log(bar.lastChild);                                   // Output: <𝗯>dari Duniailkom</𝗯>
+console.log(bar.previousSibling);                             // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(bar.previousSibling.previousSibling);             // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
+console.log(bar.nextSibling);                                 // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(bar.nextSibling.nextSibling);                     // Output: <𝘀𝗰𝗿𝗶𝗽𝘁></𝘀𝗰𝗿𝗶𝗽𝘁>
 
 // C3. Node Method
 
-                                          // Node Property & Method Lainnya:
-                                          // https://www.w3schools.com/jsref/dom_obj_all.asp
-                                          // https://developer.mozilla.org/en-US/docs/Web/API/Element
-                                          // https://developer.mozilla.org/en-US/docs/Web/API/Node
+                                                              // Node Property & Method Lainnya:
+                                                              // https://www.w3schools.com/jsref/dom_obj_all.asp
+                                                              // https://developer.mozilla.org/en-US/docs/Web/API/Element
+                                                              // https://developer.mozilla.org/en-US/docs/Web/API/Node
 ```
 
 <br>
