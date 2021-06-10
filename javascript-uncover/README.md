@@ -3258,11 +3258,11 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
     var nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
     var nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
 
-    console.log(nodeBody.nodeName);                 // Output: BODY
-    console.log(nodeH1.nodeName);                   // Output: H1
-    console.log(nodeP.nodeName);                    // Output: P
-    console.log(nodeEm.nodeName);                   // Output: EM
-    console.log(nodeB.nodeName);                    // Output: B
+    console.log(nodeBody.nodeName);                           // Output: BODY
+    console.log(nodeH1.nodeName);                             // Output: H1
+    console.log(nodeP.nodeName);                              // Output: P
+    console.log(nodeEm.nodeName);                             // Output: EM
+    console.log(nodeB.nodeName);                              // Output: B
 
     // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
   </script>
@@ -3272,17 +3272,26 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
 ```Javascript
 // C3. Node Method
 
-var nodeP_new     = document.createElement("p");              // Membuat Element Node baru, dalam kasus ini tag <𝗽>
-var nodeText_new  = document.createTextNode("Paragraf Baru"); // Membuat Text Node baru, dalam kasus ini "Paragraf Baru"
-                                                              // Note: Method createElement() & createTextNode() bukan milik
-                                                              //       Node Object, melainkan milik Document Object.
+var nodeP_new1    = document.createElement("p");              // createElement() untuk Membuat Element Node baru
+var nodeP_new2    = document.createElement("h2");             // createTextNode() untuk Membuat Text Node baru
+var nodeP_new3    = document.createElement("span");           // Note: Method createElement() & createTextNode() bukan
+var nodeText_new1 = document.createTextNode("Text Baru 1");   //       milik Node Object, melainkan milik Document Object.
+var nodeText_new2 = document.createTextNode("Text Baru 2");
+var nodeText_new3 = document.createTextNode("Text Baru 3");
 
-nodeP_new.appendChild(nodeText_new);                // Memasukkan Text Node "Paragraf Baru" ke dalam Element Node <𝗽>
-                                                    // ⤷ Hasilnya yaitu menjadi: <𝗽>Paragraf Baru</𝗽>
-nodeBody.appendChild(nodeP_new);                    // Memasukkan <𝗽>Paragraf Baru</𝗽> ke dalam <𝗯𝗼𝗱𝘆> (sebagai Node terakhir)
-                                                    // ⤷ Hasilnya coba check sendiri, akan ada paragraf baru di halaman HTML.
+nodeP_new1.appendChild(nodeText_new1);                        // Hasilnya menjadi: <𝗽>Text Baru 1</𝗽>
+nodeP_new2.appendChild(nodeText_new2);                        // Hasilnya menjadi: <𝗵𝟮>Text Baru 2</𝗵𝟮>
+nodeP_new3.appendChild(nodeText_new3);                        // Hasilnya menjadi: <𝘀𝗽𝗮𝗻>Text Baru 3</𝘀𝗽𝗮𝗻>
 
-
+nodeBody.appendChild(nodeP_new1);                   // Memasukkan <𝗽>Text Baru 1</𝗽> ke dalam <𝗯𝗼𝗱𝘆> (sebagai Node terakhir)
+nodeBody.insertBefore(nodeP_new2, nodeH1);          // Memasukkan <𝗵𝟮>Text Baru 2</𝗵𝟮> sebelum <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
+nodeBody.replaceChild(nodeP_new3, nodeH1);          // Mengganti <𝗵𝟭>Belajar JavaScript</𝗵𝟭> menjadi <𝘀𝗽𝗮𝗻>Text Baru 3</𝘀𝗽𝗮𝗻>
+var ambil = nodeP.removeChild(nodeB);               // Menghapus <𝗯>dari Duniailkom</𝗯> dari <𝗽> ... </𝗽> (disimpan di Var)
+var klon1 = nodeP.cloneNode(true);                  // Copy nodeP dengan Childnya : <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺></𝗽>
+var klon2 = nodeP.cloneNode(false);                 // Copy nodeP tanpa Childnya  : <𝗽></𝗽>
+console.log(nodeP.contains(nodeEm));                // Output: true   ⇨ Check apakah nodeP memiliki Child nodeEm di dalamnya
+console.log(klon1.hasChildNodes());                 // Output: true   ⇨ Check apakah klon1 memiliki Child (meskipun hanya 1)
+console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya berisi <𝗽></𝗽> (artinya tidak punya Child)
 
                                                     // Node Property & Method Lainnya:
                                                     // https://www.w3schools.com/jsref/dom_obj_all.asp
