@@ -1993,7 +1993,7 @@ console.log(bar.length);              // Output: 11. Kita pun masih tetap bisa m
 
 # 12. JavaScript Native Object <a href="#daftarisi">🡹</a>
 
-<img src="images/BAB-12-1.png">
+<img src="images/BAB-12-2.png">
 
 ```Javascript
 // ================
@@ -3043,6 +3043,8 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 # 14. Document Object Model <a href="#daftarisi">🡹</a>
 
+<img src="images/BAB-14-2.png">
+
 1. **Materi tentang JavaScript sudah selesai!** Mulai dari sini JavaScript akan digunakan untuk merakit komponen DOM (pemrosesan DOM tidak harus selalu menggunakan JavaScript, hanya saja JavaScript memang sangat dominan dan nyaris tidak tersaingi). DOM Merupakan pemodelan dokumen HTML ke dalam bentuk Object. Artinya, setiap tag-tag HTML seperti ```<h1>```, ```<p>``` atau ```<form>``` dimodelkan menjadi sebuah Object. Sebagaimana layaknya object, tag-tag HTML ini nantinya memiliki property dan method yang bisa digunakan untuk mengatur tampilan. “Model” yang dipakai di dalam DOM adalah dengan “memetakan” seluruh object HTML layaknya sebuah **pohon (tree)**.
    
 ```HTML
@@ -3059,11 +3061,11 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 </html>
 ```
 
-<img src="images/BAB-14-2.png">
+<img src="images/BAB-14-3.png">
 
 2. **BOM (Browser Object Model)** adalah model dari seluruh Object yang ada di dalam web browser. Artinya BOM merupakan ruang lingkup yang lebih luas daripada DOM. BOM terdiri dari banyak Object di dalamnya, seperti Location Object, History Object, Navigator Object, Screen Object, dan tentu saja Document Object (DOM). Semua Object BOM ini berada langsung di bawah Window Object.
 
-<img src="images/BAB-14-3.png">
+<img src="images/BAB-14-4.png">
 
 3. **Window Object** berperan sebagai Global Object. Semua Variable, Function hingga Object di JavaScript "melekat" langsung ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```. Namun, karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
 
