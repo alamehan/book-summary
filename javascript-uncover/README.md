@@ -3137,16 +3137,19 @@ document.writeln("Hello World");          // Sama seperti write() namun menambah
 document.createElement();                 // Method createElement() & createTextNode() dibahas di bagian C3 (di bawah)
 document.createTextNode();
 document.createAttribute();
-document.createEvent();
-
-document.addEventListener();              
-document.removeEventListener();           
 document.getElementById();                // Method ini hingga querySelecterAll() dibahas di bagian ... (di bawah)
 document.getElementsByClassName();
 document.getElementsByName();
-document.getElementsByTagName();          // Document Property & Method Lainnya:
-document.querySelector();                 // https://www.w3schools.com/jsref/dom_obj_document.asp
-document.querySelectorAll();              // https://developer.mozilla.org/en-US/docs/Web/API/Document
+document.getElementsByTagName();
+document.querySelector();
+document.querySelectorAll();
+document.createEvent();                   // Method ini hingga removeEventListener() dibahas di bagian ... (di bawah)
+document.addEventListener();              
+document.removeEventListener();   
+
+                                          // Document Property & Method Lainnya:
+                                          // https://www.w3schools.com/jsref/dom_obj_document.asp
+                                          // https://developer.mozilla.org/en-US/docs/Web/API/Document
 ```
 <hr>
 
