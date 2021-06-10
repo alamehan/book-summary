@@ -3099,6 +3099,7 @@ window.print();                           // Output: Muncul Menu Print di Browse
 
                                           // Window Property & Method Lainnya: 
                                           // https://www.w3schools.com/jsref/obj_window.asp
+                                          // https://developer.mozilla.org/en-US/docs/Web/API/Window
 
 // ==================================
 // B. Window ➜ Document Object (DOM)
@@ -3123,15 +3124,22 @@ document.removeEventListener();           // ⤷ Dibahas selengkapnya di bagian 
 document.getElementById();
 document.getElementsByClassName();
 document.getElementsByName();
-document.getElementsByTagName();
-document.querySelector();                 // Document Property & Method Lainnya:
-document.querySelectorAll();              // https://www.w3schools.com/jsref/dom_obj_document.asp
+document.getElementsByTagName();          // Document Property & Method Lainnya:
+document.querySelector();                 // https://www.w3schools.com/jsref/dom_obj_document.asp
+document.querySelectorAll();              // https://developer.mozilla.org/en-US/docs/Web/API/Document
 
-// =================================================
-// C. Window ➜ Document Object (DOM) ➜ Node Object
-// =================================================
+// =========================================================
+// C. Window ➜ Document Object (DOM) ➜ Element Node Object
+// =========================================================
 
-// ...
+// C1. Element Node Property
+
+// C2. Element Node Method
+
+                                          // Element Node Property & Method Lainnya:
+                                          // https://www.w3schools.com/jsref/dom_obj_all.asp
+                                          // https://developer.mozilla.org/en-US/docs/Web/API/Element
+                                          // https://developer.mozilla.org/en-US/docs/Web/API/Node
 ```
 
 <br>
