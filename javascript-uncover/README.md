@@ -3084,7 +3084,7 @@ window.salam("Bandung");                  // Output: Hello Bandung              
 console.log(window.Math.PI);              // Output: 3.141592653589793           ⇨ Sama dengan console.log(Math.PI);
 console.log(window.Number.isNaN(5/'a'));  // Output: true                        ⇨ Sama dengan console.log(Number.isNaN(5/'a'));
 
-// A2. Window Property
+// A2. Window property
 
 window.console.log(1+1);                  // Output: 2                            ≈ console.log(1+1);
 window.console.info({nama:"A", umur:7});  // Output: {nama: "A", umur: 7}         ≈ console.info({nama:"A", umur:7});
@@ -3100,7 +3100,7 @@ console.log(window.navigator);            // Output: ▶Navigator (Object)      
 console.log(window.screen);               // Output: ▶Screen    (Object)         ≈ console.log(screen);
 console.log(window.document);             // Output: ▶#document (Object)         ≈ console.log(document);
 
-// A3. Window Method
+// A3. Window method
 
 window.alert("Hello World!");             // Output: Muncul Popup "Hello World!"            ≈ alert("Hello World!");
 window.prompt("Masukkan Nama!");          // Output: Muncul Popup Input "Masukkan Nama!"    ≈ prompt("Masukkan Nama!");
@@ -3119,7 +3119,7 @@ window.print();                           // Output: Muncul Menu Print di Browse
 // B. Window ➜ Document Object (DOM)
 // ==================================
 
-// B1. Document Property
+// B1. Document property
 
 console.log(window.document.URL);         // Output: http://127.0.0.1:5500/contoh.html  ⇨ URL lengkap dari dokumen HTML
 console.log(window.document.baseURI);     // Output: http://127.0.0.1:5500/contoh.html  ⇨ Absolute base URI dari dokumen
@@ -3129,7 +3129,7 @@ console.log(document.domain);             // Output: 127.0.0.1                  
 console.log(document.lastModified);       // Output: 06/10/2021 00:22:21                ⇨ Tanggal & waktu dokumen terakhir diubah
 console.log(document.title);              // Output: Belajar JS                         ⇨ Judul dari dokumen
 
-// B2. Document Method
+// B2. Document method
 
 document.write("Hello World");            // Menulis ekspresi HTML atau kode JavaScript ke dokumen
 document.writeln("Hello World");          // Sama seperti write() namun menambah baris baru untuk setiap statement
@@ -3177,7 +3177,7 @@ document.removeEventListener();
 ```
 
 ```Javascript
-// C1. Menelusuri Struktur DOM (𝗖𝗮𝗿𝗮 𝗠𝗮𝗻𝘂𝗮𝗹 🔔)
+// C1. Menelusuri struktur DOM (𝗖𝗮𝗿𝗮 𝗺𝗮𝗻𝘂𝗮𝗹 🔔)
 
 console.log(document.childNodes[0]);                                            // Output: <!𝗗𝗢𝗖𝗧𝗬𝗣𝗘 𝗵𝘁𝗺𝗹>
 console.log(document.childNodes[1]);                                            // Output: <𝗵𝘁𝗺𝗹> ... </𝗵𝘁𝗺𝗹>
@@ -3202,7 +3202,7 @@ Note: Karakter Carriage Return adalah karakter enter/baris baru. Karakter terseb
 masalah yang 𝘀𝗲𝗿𝗶𝗻𝗴 𝗺𝗲𝗺𝗯𝘂𝗮𝘁 𝗽𝘂𝘀𝗶𝗻𝗴 jika menelusuri struktur DOM tree satu per satu secara manual. Solusinya? Lihat ...
 */
 
-// C2. Node Property
+// C2. Node property
 
 var bar = document.childNodes[1].childNodes[2].childNodes[3]; // Variable bar berisi <𝗽> ... </𝗽>
 
@@ -3267,7 +3267,7 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
 ```
 
 ```Javascript
-// C3. Node Method
+// C3. Node method
 
 var nodeP_new1    = document.createElement("p");              // createElement() untuk Membuat Element Node baru
 var nodeP_new2    = document.createElement("h2");             // createTextNode() untuk Membuat Text Node baru
