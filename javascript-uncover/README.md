@@ -3108,23 +3108,7 @@ window.print();                           // Output: Muncul Menu Print di Browse
                                           // Window Property & Method Lainnya: 
                                           // https://www.w3schools.com/jsref/obj_window.asp
                                           // https://developer.mozilla.org/en-US/docs/Web/API/Window
-```
 
-```HTML
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Belajar JavaScript</title>
-  </head>
-  <body>
-    <h1>Belajar JavaScript</h1>
-    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
-  </body>
-</html>
-```
-
-```Javascript
 // ==================================
 // B. Window ➜ Document Object (DOM)
 // ==================================
@@ -3152,12 +3136,26 @@ document.getElementsByTagName();          // Document Property & Method Lainnya:
 document.querySelector();                 // https://www.w3schools.com/jsref/dom_obj_document.asp
 document.querySelectorAll();              // https://developer.mozilla.org/en-US/docs/Web/API/Document
 
-// ============================================================
+// =================================================
 // C. Window ➜ Document Object (DOM) ➜ Node Object
-// ============================================================
-// Note: Script di bawah mengacu ke dokumen HTML di awal bab 14
-// ============================================================
+// =================================================
+```
 
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1>Belajar JavaScript</h1>
+    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+  </body>
+</html>
+```
+
+```Javascript
 // C1. Menelusuri Struktur DOM (𝗖𝗮𝗿𝗮 𝗠𝗮𝗻𝘂𝗮𝗹)
 
 console.log(document.childNodes[0]);                                            // Output: <!𝗗𝗢𝗖𝗧𝗬𝗣𝗘 𝗵𝘁𝗺𝗹>
