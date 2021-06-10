@@ -3179,7 +3179,6 @@ console.log(bar.parentElement);                     // Output: <𝗯𝗼𝗱𝘆
 console.log(bar.childNodes);                        // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟰) [𝘁𝗲𝘅𝘁, 𝗲𝗺, 𝘁𝗲𝘅𝘁, 𝗯]  ❌ Text Node ikut dihitung
 console.log(bar.children);                          // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [𝗲𝗺, 𝗯]       ✔️ Text Node tidak dihitung
 console.log(bar.childElementCount);                 // Output: 𝟮
-
 console.log(bar.firstChild);                        // Output: "Sedang Belajar"             ❌ Bikin Pusing (dengan Text Node)
 console.log(bar.lastChild);                         // Output: <𝗯>dari Duniailkom</𝗯>       ❌ Bikin Pusing (dengan Text Node)
 console.log(bar.previousSibling);                   // Output: #𝘁𝗲𝘅𝘁                         ❌ Bikin Pusing (dengan Text Node)
