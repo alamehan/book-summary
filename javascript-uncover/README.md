@@ -3128,15 +3128,32 @@ document.getElementsByTagName();          // Document Property & Method Lainnya:
 document.querySelector();                 // https://www.w3schools.com/jsref/dom_obj_document.asp
 document.querySelectorAll();              // https://developer.mozilla.org/en-US/docs/Web/API/Document
 
-// =========================================================
-// C. Window ➜ Document Object (DOM) ➜ Element Node Object
-// =========================================================
+// ============================================================
+// C. Window ➜ Document Object (DOM) ➜ Node Object
+// ============================================================
+// Note: Script di bawah mengacu ke dokumen HTML di awal bab 14
+// ============================================================
 
-// C1. Element Node Property
+// C1. Menelusuri Struktur DOM (Cara Manual)
 
-// C2. Element Node Method
+console.log(document.childNodes[0]);                                            // Output: <!𝗗𝗢𝗖𝗧𝗬𝗣𝗘 𝗵𝘁𝗺𝗹>
+console.log(document.childNodes[1]);                                            // Output: <𝗵𝘁𝗺𝗹> ... </𝗵𝘁𝗺𝗹>
+console.log(document.childNodes[1].childNodes[0]);                              // Output: <𝗵𝗲𝗮𝗱> ... </𝗵𝗲𝗮𝗱>
+console.log(document.childNodes[1].childNodes[2]);                              // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+console.log(document.childNodes[1].childNodes[2].childNodes[0]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[2].childNodes[1]);                // Output: <𝗵𝟭>𝗕𝗲𝗹𝗮𝗷𝗮𝗿 𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁</𝗵𝟭>
+console.log(document.childNodes[1].childNodes[2].childNodes[2]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[2].childNodes[3]);                // Output: <𝗽> ... </𝗽>
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[0]);  // Output: "𝗦𝗲𝗱𝗮𝗻𝗴 𝗕𝗲𝗹𝗮𝗷𝗮𝗿"
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[1]);  // Output: <𝗲𝗺>𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁</𝗲𝗺>
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[2]);  // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  // Output: <𝗯>𝗱𝗮𝗿𝗶 𝗗𝘂𝗻𝗶𝗮𝗶𝗹𝗸𝗼𝗺</𝗯>
 
-                                          // Element Node Property & Method Lainnya:
+// C2. Node Property
+
+// C3. Node Method
+
+                                          // Node Property & Method Lainnya:
                                           // https://www.w3schools.com/jsref/dom_obj_all.asp
                                           // https://developer.mozilla.org/en-US/docs/Web/API/Element
                                           // https://developer.mozilla.org/en-US/docs/Web/API/Node
