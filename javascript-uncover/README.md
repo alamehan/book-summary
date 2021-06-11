@@ -22,6 +22,7 @@ Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/j
 | <a href="#bab12">12. JavaScript Native Object</a>             	| ± 40 menit     	|
 | <a href="#bab13">13. Global Property dan Global Function</a>    | ± 2 menit     	|
 | <a href="#bab14">14. Document Object Model (DOM)</a>            | ± X menit     	|
+| <a href="#bab15">15. DOM Event</a>                              | ± X menit     	|
 | <a href="#babxx">XX. Materi Tambahan: Advanced JavaScript</a> 	| ± X menit     	|
 | <p>Estimasi Total Durasi Baca</p> 	                            | ± 3 Jam         |
 
@@ -257,7 +258,7 @@ var numB = -100;                      // Angka bulat negatif
 var numC = 0.66634;                   // Angka pecahan
 var numD = -0.66634;                  // Angka pecahan negatif
 var numE = 3e3;                       // ≈ 3 x 10^3
-var numF = 0.4e-3;             ≈0.4 x 10^-3
+var numF = 0.4e-3;                    // ≈0.4 x 10^-3
 var numG = 999;                       // Desimal (basis 10)
 var numH = 0b1111100111;              // Biner (basis 2), diawali 0b
 var numI = 0o1747;                    // Oktal (basis 8), diawali 0o
@@ -3110,7 +3111,7 @@ window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "An
 window.open();                            // Output: Muncul New Tab di Browser              ≈ open();
 window.print();                           // Output: Muncul Menu Print di Browser           ≈ print();
 
-                                          // Window Property & Method Lainnya: 
+                                          // Referensi window property & method Lainnya: 
                                           // https://www.w3schools.com/jsref/obj_window.asp
                                           // https://developer.mozilla.org/en-US/docs/Web/API/Window
 ```
@@ -3136,20 +3137,13 @@ console.log(document.title);            // Output: Belajar JS                   
 document.write("Hello World");          // Menulis ekspresi HTML atau kode JavaScript ke dokumen
 document.writeln("Hello World");        // Sama seperti write() namun menambah baris baru untuk setiap statement
 
-document.createElement();               // Method createElement() & createTextNode() dibahas di bagian C3 (di bawah)
-document.createTextNode();
-document.createAttribute();
-document.getElementById();              // Method ini hingga querySelecterAll() dibahas di bagian D (di bawah)
-document.getElementsByClassName();
-document.getElementsByTagName();
-document.getElementsByName();
-document.querySelector();
-document.querySelectorAll();
-document.createEvent();                 // Method ini hingga removeEventListener() dibahas di BAB 15 bagian ...
-document.addEventListener();              
-document.removeEventListener();   
+                                        // Document method lainnya dibahas di bagian:
+                                        // ⤷ C3 (di bawah) 🡲 createElement(), createTextNode() & createAttribute().
+                                        // ⤷ D  (di bawah) 🡲 getElementById(), getElementsByClassName(), getElementsByTagName(),
+                                        //                    getElementsByName(), querySelector() & querySelectorAll().
+                                        // ⤷ BAB 15 (A)    🡲 createEvent(), addEventListener() & removeEventListener().
 
-                                        // Document Property & Method Lainnya:
+                                        // Referensi document property & method Lainnya:
                                         // https://www.w3schools.com/jsref/dom_obj_document.asp
                                         // https://developer.mozilla.org/en-US/docs/Web/API/Document
 ```
@@ -3212,6 +3206,7 @@ console.log(bar.tagName);                           // Output: 𝗣
 console.log(bar.nodeName);                          // Output: 𝗣
 console.log(bar.nodeType);                          // Output: 𝟭 (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
 console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
+
 console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (Object)
 console.log(bar.parentNode);                        // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
 console.log(bar.parentElement);                     // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆> (Akan null jika parent bukan Element Node)
@@ -3232,6 +3227,9 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
                                                     // Note:
                                                     // ⤷ 𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁: Kumpulan Node (Element Node & Text Node). 
                                                     // ⤷ 𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻: Kumpulan Node, tetapi khusus Element Node saja.
+
+                                                    // Node property lainnya dibahas di bagian:
+                                                    // ⤷ E1 (di bawah) 🡲 textContent, innerHTML, outerHTML, innerText, outerTxt.
 ```
 
 ```HTML
@@ -3263,9 +3261,9 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
 var nodeP_new1    = document.createElement("p");              // createElement() untuk Membuat Element Node baru
 var nodeP_new2    = document.createElement("h2");             // createTextNode() untuk Membuat Text Node baru
 var nodeP_new3    = document.createElement("span");           // Note: Method createElement() & createTextNode() bukan
-var nodeText_new1 = document.createTextNode("Text Baru 1");   //       milik Node Object, melainkan milik Document Object.
-var nodeText_new2 = document.createTextNode("Text Baru 2");
-var nodeText_new3 = document.createTextNode("Text Baru 3");
+var nodeText_new1 = document.createTextNode("Text Baru 1");   //       milik Node Object, melainkan milik Document Object
+var nodeText_new2 = document.createTextNode("Text Baru 2");   //       (lihat bagian B di atas). Selain itu, terdapat juga
+var nodeText_new3 = document.createTextNode("Text Baru 3");   //       method createAttribute(), namun tidak dibahas disini.
 
 nodeP_new1.appendChild(nodeText_new1);              // Hasilnya menjadi: <𝗽>Text Baru 1</𝗽>
 nodeP_new2.appendChild(nodeText_new2);              // Hasilnya menjadi: <𝗵𝟮>Text Baru 2</𝗵𝟮>
@@ -3281,7 +3279,11 @@ console.log(nodeP.contains(nodeEm));                // Output: true   ⇨ Check 
 console.log(klon1.hasChildNodes());                 // Output: true   ⇨ Check apakah klon1 memiliki Child (meskipun hanya 1)
 console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya berisi <𝗽></𝗽> (artinya tidak punya Child)
 
-                                                    // Node Property & Method Lainnya:
+                                                    // Node method lainnya dibahas di bagian:
+                                                    // ⤷ E2 (di bawah) 🡲 hasAttribute(), getAttribute(), setAttribute(),
+                                                    //                    removeAttribute() & attributes.
+
+                                                    // Referensi node property & method Lainnya:
                                                     // https://www.w3schools.com/jsref/dom_obj_all.asp
                                                     // https://developer.mozilla.org/en-US/docs/Web/API/Node
                                                     // https://developer.mozilla.org/en-US/docs/Web/API/Element
@@ -3467,6 +3469,17 @@ console.log(doo);                                   // Output: <𝗵𝟭 id="jud
 
 // ...
 
+```
+
+<br>
+<div id="bab15"></div>
+
+# 15. DOM Event <a href="#daftarisi">🡹</a>
+
+```Javascript
+// document.createEvent();
+// document.addEventListener();              
+// document.removeEventListener();   
 ```
 
 <br>
