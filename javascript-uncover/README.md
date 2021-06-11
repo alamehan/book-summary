@@ -3152,7 +3152,6 @@ document.removeEventListener();
                                         // Document Property & Method Lainnya:
                                         // https://www.w3schools.com/jsref/dom_obj_document.asp
                                         // https://developer.mozilla.org/en-US/docs/Web/API/Document
-                                        // https://developer.mozilla.org/en-US/docs/Web/API/Element
 ```
 <hr>
 
@@ -3305,6 +3304,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
                                                     // Node Property & Method Lainnya:
                                                     // https://www.w3schools.com/jsref/dom_obj_all.asp
                                                     // https://developer.mozilla.org/en-US/docs/Web/API/Node
+                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Element
 ```
 
 ```Javascript
