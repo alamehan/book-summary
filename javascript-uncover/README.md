@@ -3145,7 +3145,7 @@ document.getElementsByTagName();
 document.getElementsByName();
 document.querySelector();
 document.querySelectorAll();
-document.createEvent();                 // Method ini hingga removeEventListener() dibahas di BAB 16 bagian ...
+document.createEvent();                 // Method ini hingga removeEventListener() dibahas di BAB 15 bagian ...
 document.addEventListener();              
 document.removeEventListener();   
 
