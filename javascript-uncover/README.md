@@ -3460,7 +3460,7 @@ console.log(doo.attributes[0]);                     // Output: id="judul"
 console.log(doo.attributes[1]);                     // Output: title="Sedang belajar"
 console.log(doo.attributes.length);                 // Output: 2
 
-doo.removeAttribute("title");                       //                          ⇨ Menghapus sebuah atribut (tentu + nilainya)
+doo.removeAttribute("title");                       //                          ⇨ Menghapus sebuah atribut beserta nilainya
 console.log(doo);                                   // Output: <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
 
 // E3. Memanipulasi style CSS di tag HTML
