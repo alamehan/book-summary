@@ -3298,6 +3298,62 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
                                                     // https://developer.mozilla.org/en-US/docs/Web/API/Element
 ```
 
+```Javascript
+// C4. Studi Kasus: Menambahkan Table ke Dalam DOM
+```
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Belajar JavaScript</title>
+  <style>
+    table, tr, td {
+      border-collapse: collapse;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Belajar JavaScript</h1>
+  <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+</body>
+<script>
+  // 1. Siapkan Variable shorcut untuk Node
+  var nodeBody  = document.childNodes[1].childNodes[2];
+  var nodeP     = nodeBody.childNodes[3];
+
+  // 2. Buat tag <table> & siapkan beberapa Variable untuk looping
+  var nodeTable = document.createElement("table");
+  var nodeTr, nodeTd1, nodeTd2, nomorUrut, nomorAcak, nomorAcakText;
+
+  for (var i=1; i<=10; i++) {
+    // 3. Buat 1 tag <tr>, 2 tag <td>, text node (nomor urut & acak)
+    nodeTr        = document.createElement("tr");
+    nodeTd1       = document.createElement("td");
+    nodeTd2       = document.createElement("td");
+    nomorUrut     = document.createTextNode(i);
+    nomorAcak     = Math.floor((Math.random() * 90)) + 10; // Rentang 10-99
+    nomorAcakText = document.createTextNode(nomorAcak);
+
+    // 4. Rangkai text node ➜ <td> ➜ <tr> ➜ <table>
+    nodeTd1.appendChild(nomorUrut);
+    nodeTd2.appendChild(nomorAcakText);
+    nodeTr.appendChild(nodeTd1);
+    nodeTr.appendChild(nodeTd2);
+    nodeTable.appendChild(nodeTr);
+  }
+
+  // 5. Masukkan tag <table> kedalam DOM, posisi sebelum tag <p>
+  nodeBody.insertBefore(nodeTable, nodeP);
+</script>
+
+</html>
+```
+
 <br>
 <div id="babxx"></div>
 
