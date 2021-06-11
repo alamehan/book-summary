@@ -21,7 +21,7 @@ Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/j
 | <a href="#bab11">11. Object Oriented Programming (OOP)</a>    	| ± 10 menit    	|
 | <a href="#bab12">12. JavaScript Native Object</a>             	| ± 40 menit     	|
 | <a href="#bab13">13. Global Property dan Global Function</a>    | ± 2 menit     	|
-| <a href="#bab14">14. Document Object Model (DOM)</a>            | ± 9 menit     	|
+| <a href="#bab14">14. Document Object Model (DOM)</a>            | ± 10 menit     	|
 | <a href="#bab15">15. Document dan Element Object</a>            | ± X menit     	|
 | <a href="#babxx">XX. Materi Tambahan: Advanced JavaScript</a> 	| ± X menit     	|
 | <p>Estimasi Total Durasi Baca</p> 	                            | ± 3 Jam         |
