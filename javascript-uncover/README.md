@@ -3448,16 +3448,25 @@ coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹�
 console.log(doo.hasAttribute("id"));                // Output: true             ⇨ Memeriksa apakah doo memiliki atribut id
 console.log(doo.hasAttribute("class"));             // Output: false            ⇨ Memeriksa apakah doo memiliki atribut class
 console.log(doo.getAttribute("id"));                // Output: judul            ⇨ Mengambil nilai dari suatu atribut
+
 doo.setAttribute("title", "Sedang belajar");        //                          ⇨ Menambah/menimpa sebuah atribut + nilainya
 console.log(doo.hasAttribute("title"));             // Output: true             ⤷ Argument ke 1: Nama atributenya
 console.log(doo.getAttribute("title"));             // Output: Sedang belajar   ⤷ Argument ke 2: Nilai atributnya
 console.log(doo);                                   // Output: <𝗵𝟭 id="judul" title="Sedang belajar">Belajar JavaScript</𝗵𝟭>
+
+                                                    // Menampilkan seluruh atribut beserta nilainya, dari sebuah tag HTML:
+console.log(doo.attributes);                        // Output: ▶𝗡𝗮𝗺𝗲𝗱𝗡𝗼𝗱𝗲𝗠𝗮𝗽 [id="judul", title="Sedang belajar"] (length: 2)
+console.log(doo.attributes[0]);                     // Output: id="judul"
+console.log(doo.attributes[1]);                     // Output: title="Sedang belajar"
+console.log(doo.attributes.length);                 // Output: 2
+
 doo.removeAttribute("title");                       //                          ⇨ Menghapus sebuah atribut (tentu + nilainya)
 console.log(doo);                                   // Output: <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
 
 // E3. Memanipulasi style CSS di tag HTML
 
 // ...
+
 ```
 
 <br>
