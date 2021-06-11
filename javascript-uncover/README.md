@@ -3208,30 +3208,10 @@ masalah yang 𝘀𝗲𝗿𝗶𝗻𝗴 𝗺𝗲𝗺𝗯𝘂𝗮𝘁 𝗽𝘂𝘀�
 
 var bar = document.childNodes[1].childNodes[2].childNodes[3]; // Variable bar berisi <𝗽> ... </𝗽>
 
-console.log(bar.tagName);               // Output: 𝗣
-console.log(bar.nodeName);              // Output: 𝗣
-console.log(bar.nodeType);              // Output: 𝟭 (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
-console.log(bar.nodeValue);             // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
-console.log(bar.textContent);           // Output: Sedang Belajar JavaScript dari Duniailkom (Bisa diubah nilainya 🔔)
-console.log(bar.innerHTML);             // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯> (🔔)
-console.log(bar.outerHTML);             // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽> (🔔)
-console.log(bar.innerText);             // Output: Sedang belajar JavaScript dari Duniailkom
-console.log(bar.outerText);             // Output: Sedang belajar JavaScript dari Duniailkom
-
-/*
-Note: Jika nilai dari Property textContent diubah, misalya dengan perintah bar.textContent = "Teks Baru", maka teks yang
-tampil di halaman HTML pun ikut berubah. Selamat! inilah pertama kalinya kita memanipulasi/mengubah element HTML menggunakan
-JavaScript, dan Property textContent hanya salah satunya saja. Nantinya kita juga bisa mengubah atribut hingga style CSS.
-⤷ Manipulasi tidak hanya berlaku untuk element <p> saja! misalnya: var baz = document.childNodes[1].childNodes[0].childNodes[3]; 
-  Maka variable bar akan berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>, selanjutnya kita coba ubah nilainya dengan menjalankan perintah 
-  baz.textContent = "Title Dokumen Berubah!". Perhatikan teks yang tampil di tab dokumen HTML pun ikut berubah. Menarik bukan?
-⤷ Kekurangan dari textContent yaitu jika misal kita menjalankan perintah bar.textContent = "<b>Teks Baru</b>", maka tag HTML <b>
-  akan terbaca sebagai teks biasa (bukan sebagai tag <b>). Oleh karena itu lebih baik menggunakan innerHTML atau outerHTML, misal 
-  bar.innerHTML = "<b>Teks Baru</b>", dengan demikian tag HTML <b> akan membuat teks menjadi tebal (sesuai dengan fungsi tag <b>).
-⤷ innerHTML berisi konten yang ada di dalam tag yang dipilih (namun tidak termasuk tag yang dipilihnya itu sendiri), sedangkan
-  outerHTML berisi konten lengkap beserta tag yang dipilihnya. Ubah konten di dalam tag? innerHTML. Ubah tag + konten? outerHTML.
-*/
-
+console.log(bar.tagName);                           // Output: 𝗣
+console.log(bar.nodeName);                          // Output: 𝗣
+console.log(bar.nodeType);                          // Output: 𝟭 (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
+console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
 console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (Object)
 console.log(bar.parentNode);                        // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
 console.log(bar.parentElement);                     // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆> (Akan null jika parent bukan Element Node)
@@ -3422,14 +3402,47 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 // =============================================================
 // E. Window Object ➜ Document Object ➜ Node Object (Lanjutan)
 // =============================================================
+```
 
-/*
-Di BAB bagian C2 (di atas) sudah dibahas sedikit mengenai Node property textContent, innerHTML dan outerHTML. Tidak lain
-kegunaannya untuk memanipulasi tag HTML beserta konten isinya. Selain itu, kita pun dapat memanipulasi atribut di sebuah
-tag HTML hingga menambahkan Inline Style CSS atau bahkan sebuah Class CSS. Dan inilah yang akan dibahas disini.
-*/
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1 id="judul">Belajar JavaScript</h1>
+    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+    <script>
+      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+    </script>
+  </body>
+</html>
+```
 
-// ...
+```Javascript
+
+// E1. Memanipulasi tag HTML + konten isinya
+
+var baz = document.querySelector("p");              // Variable bar berisi <𝗽> ... </𝗽>
+
+console.log(baz.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
+console.log(baz.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
+console.log(baz.outerHTML);                         // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽>
+console.log(baz.innerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
+console.log(baz.outerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
+                                                    // ⤷ innerHTML berisi konten yang ada di dalam tag yang dipilih
+                                                    // ⤷ outerHTML berisi tag yang dipilih lengkap beserta konten isinya
+
+baz.textContent = "<b>Teks baru 1!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> terbaca sebagai teks biasa)
+baz.innerHTML   = "<b>Teks baru 2!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> membuat teks menjadi tebal)
+baz.outerHTML   = "<h1>Teks baru 3!</h1>"           // Mengubah <𝗽> ... </𝗽> + konten isinya   (diganti menjadi <𝗵𝟭> ... </𝗵𝟭>)
+                                                    // ⤷ Note: Jalankan Script di tab console, dan lihat perubahannya secara live!
+                                                  
+// E2. Memanipulasi atribut di tag HTML
+
+// E3. Memanipulasi style CSS di tag HTML
 ```
 
 <br>
