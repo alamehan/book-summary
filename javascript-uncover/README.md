@@ -3139,7 +3139,7 @@ document.writeln("Hello World");        // Sama seperti write() namun menambah b
 document.createElement();               // Method createElement() & createTextNode() dibahas di bagian C3 (di bawah)
 document.createTextNode();
 document.createAttribute();
-document.getElementById();              // Method ini hingga querySelecterAll() dibahas di BAB 15 bagian A1
+document.getElementById();              // Method ini hingga querySelecterAll() dibahas di bagian D (di bawah)
 document.getElementsByClassName();
 document.getElementsByTagName();
 document.getElementsByName();
@@ -3424,9 +3424,9 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 // =============================================================
 
 /*
-Di BAB 14 bagian C2 sudah dibahas sedikit mengenai Node property textContent, innerHTML dan outerHTML. Tidak lain kegunaannya
-untuk memanipulasi tag HTML beserta konten isinya. Selain itu, kita pun dapat memanipulasi atribut di sebuah tag HTML hingga
-menambahkan Inline Style CSS atau bahkan sebuah Class CSS. Dan inilah yang akan dibahas disini.
+Di BAB bagian C2 (di atas) sudah dibahas sedikit mengenai Node property textContent, innerHTML dan outerHTML. Tidak lain
+kegunaannya untuk memanipulasi tag HTML beserta konten isinya. Selain itu, kita pun dapat memanipulasi atribut di sebuah
+tag HTML hingga menambahkan Inline Style CSS atau bahkan sebuah Class CSS. Dan inilah yang akan dibahas disini.
 */
 
 // ...
