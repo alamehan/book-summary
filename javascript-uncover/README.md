@@ -3126,7 +3126,7 @@ window.print();                           // Output: Muncul Menu Print di Browse
 
 console.log(window.document.URL);       // Output: http://127.0.0.1:5500/contoh.html  ⇨ URL lengkap dari dokumen HTML
 console.log(window.document.baseURI);   // Output: http://127.0.0.1:5500/contoh.html  ⇨ Absolute base URI dari dokumen
-                                          
+
                                         // Note: Dari sini hingga seterusnya penulisan window tidak akan disertakan 🔔
 console.log(document.domain);           // Output: 127.0.0.1                          ⇨ Nama domain server yang memuat dokumen
 console.log(document.lastModified);     // Output: 06/10/2021 00:22:21                ⇨ Tanggal & waktu dokumen terakhir diubah
