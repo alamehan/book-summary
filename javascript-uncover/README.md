@@ -3124,35 +3124,35 @@ window.print();                           // Output: Muncul Menu Print di Browse
 
 // B1. Document property
 
-console.log(window.document.URL);         // Output: http://127.0.0.1:5500/contoh.html  ⇨ URL lengkap dari dokumen HTML
-console.log(window.document.baseURI);     // Output: http://127.0.0.1:5500/contoh.html  ⇨ Absolute base URI dari dokumen
+console.log(window.document.URL);       // Output: http://127.0.0.1:5500/contoh.html  ⇨ URL lengkap dari dokumen HTML
+console.log(window.document.baseURI);   // Output: http://127.0.0.1:5500/contoh.html  ⇨ Absolute base URI dari dokumen
                                           
-                                          // Note: Dari sini hingga seterusnya penulisan window tidak akan disertakan 🔔
-console.log(document.domain);             // Output: 127.0.0.1                          ⇨ Nama domain server yang memuat dokumen
-console.log(document.lastModified);       // Output: 06/10/2021 00:22:21                ⇨ Tanggal & waktu dokumen terakhir diubah
-console.log(document.title);              // Output: Belajar JS                         ⇨ Judul dari dokumen
+                                        // Note: Dari sini hingga seterusnya penulisan window tidak akan disertakan 🔔
+console.log(document.domain);           // Output: 127.0.0.1                          ⇨ Nama domain server yang memuat dokumen
+console.log(document.lastModified);     // Output: 06/10/2021 00:22:21                ⇨ Tanggal & waktu dokumen terakhir diubah
+console.log(document.title);            // Output: Belajar JS                         ⇨ Judul dari dokumen
 
 // B2. Document method
 
-document.write("Hello World");            // Menulis ekspresi HTML atau kode JavaScript ke dokumen
-document.writeln("Hello World");          // Sama seperti write() namun menambah baris baru untuk setiap statement
+document.write("Hello World");          // Menulis ekspresi HTML atau kode JavaScript ke dokumen
+document.writeln("Hello World");        // Sama seperti write() namun menambah baris baru untuk setiap statement
 
-document.createElement();                 // Method createElement() & createTextNode() dibahas di bagian C3 (di bawah)
+document.createElement();               // Method createElement() & createTextNode() dibahas di bagian C3 (di bawah)
 document.createTextNode();
 document.createAttribute();
-document.getElementById();                // Method ini hingga querySelecterAll() dibahas di BAB 15 bagian A1
+document.getElementById();              // Method ini hingga querySelecterAll() dibahas di BAB 15 bagian A1
 document.getElementsByClassName();
-document.getElementsByName();
 document.getElementsByTagName();
+document.getElementsByName();
 document.querySelector();
 document.querySelectorAll();
-document.createEvent();                   // Method ini hingga removeEventListener() dibahas di BAB 16 bagian ...
+document.createEvent();                 // Method ini hingga removeEventListener() dibahas di BAB 16 bagian ...
 document.addEventListener();              
 document.removeEventListener();   
 
-                                          // Document Property & Method Lainnya:
-                                          // https://www.w3schools.com/jsref/dom_obj_document.asp
-                                          // https://developer.mozilla.org/en-US/docs/Web/API/Document
+                                        // Document Property & Method Lainnya:
+                                        // https://www.w3schools.com/jsref/dom_obj_document.asp
+                                        // https://developer.mozilla.org/en-US/docs/Web/API/Document
 ```
 <hr>
 
@@ -3377,9 +3377,12 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
     <title>Belajar JavaScript</title>
   </head>
   <body>
-    <h1 id="judul" class="kalimat">Belajar JavaScript</h1>
-    <h1>JavaScript itu <b>menyenangkan</b></h1>
-    <p class="kalimat">Sedang belajar <em id="miring">JavaScript</em> <b>dari Duniailkom</b></p>
+    <h1 id="judul">Belajar JavaScript</h1>
+    <h2 class="kelas-a">JavaScript itu <b>menyenangkan</b></h2>
+    <p class="kelas-a">Sedang belajar <em id="miring">JavaScript</em> <b>dari Duniailkom</b></p>
+    <p><b>Duniailkom</b> menyajikan banyak materi Web Programming</p>
+    <input type="text" name="isian" value="Isian 1">
+    <input type="text" name="isian" value="Isian 2">
     <script>
       // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗔𝟭 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
@@ -3390,15 +3393,28 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
 ```Javascript
 // A1. Menelusuri struktur DOM (𝗖𝗮𝗿𝗮 𝟮: 𝗺𝘂𝗱𝗮𝗵/𝗰𝗲𝗽𝗮𝘁 🔔)
 
-var nodeH1    = document.getElementById("judul");
-var nodeEm    = document.getElementById("miring");
-var nodeClass = document.getElementsByClassName("kalimat");
-var nodeTag   = document.getElementsByTagName("h1");
+var nodeEm    = document.getElementById("miring");            // Mencari Element Node berdasarkan nilai atribut id
+var nodeClass = document.getElementsByClassName("kelas-a");   // Mencari Element Node berdasarkan class tertentu
+var nodeTag   = document.getElementsByTagName("p");           // Mencari Element Node berdasarkan nama tag
+var nodeName  = document.getElementsByName("isian");          // Mencari Element Node berdasarkan nilai atribut name
+var nodeQS    = document.querySelector("p b");                // Mencari Element Node menggunakan 𝗦𝗲𝗹𝗲𝗰𝘁𝗼𝗿 𝗖𝗦𝗦
+var nodeQSA   = document.querySelectorAll("p b");             // ⤷ querySelector() mengambil element yang ditemukan pertama saja
+                                                              // ⤷ querySelectorAll() mengambil seluruh element yang ditemukan
 
-console.log(nodeH1);      // Output: <𝗵𝟭 id="judul" class="kalimat">Belajar JavaScript</𝗵𝟭>
-console.log(nodeEm);      // Output: <𝗲𝗺 id="miring">JavaScript</𝗲𝗺>
-console.log(nodeClass);   // Output: ▶HTMLCollection(2) [h1#judul.kalimat, p.kalimat]
-console.log(nodeTag)      // Output: ▶HTMLCollection(2) [h1#judul.kalimat, h1]
+console.log(nodeEm);                    // Output: <𝗲𝗺 id="miring">JavaScript</𝗲𝗺>
+console.log(nodeClass);                 // Output: ▶HTMLCollection(2) [h2.kelas-a, p.kelas-a]
+console.log(nodeClass[0]);              // Output: <𝗵𝟮 class="kelas-a"> ... </𝗵𝟮>
+console.log(nodeClass[1]);              // Output: <𝗽 class="kelas-a"> ... </𝗽>
+console.log(nodeTag);                   // Output: ▶HTMLCollection(2) [p.kelas-a, p]
+console.log(nodeTag[0]);                // Output: <𝗽 class="kelas-a"> ... </𝗽>
+console.log(nodeTag[1]);                // Output: <𝗽> ... </𝗽>
+console.log(nodeName);                  // Output: ▶NodeList(2) [input, input]
+console.log(nodeName[0]);               // Output: <𝗶𝗻𝗽𝘂𝘁 type="text" name="isian" value="Isian 1">
+console.log(nodeName[1]);               // Output: <𝗶𝗻𝗽𝘂𝘁 type="text" name="isian" value="Isian 2">
+console.log(nodeQS);                    // Output: <𝗯>dari Duniailkom</𝗯>
+console.log(nodeQSA);                   // Output: ▶NodeList(2) [b, b]
+console.log(nodeQSA[0]);                // Output: <𝗯>dari Duniailkom</𝗯>
+console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 ```
 
 <br>
