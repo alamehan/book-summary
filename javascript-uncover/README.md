@@ -296,7 +296,7 @@ Ragam karakter escape di JavaScript:
 11. \xXX  : Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX
 12. \uXXXX: Karakter Unicode dengan menggunakan empat digit heksa XXXX
 
-Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
+📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
 
 var strH = "Indonesia";
@@ -487,7 +487,7 @@ console.log(4+6/5-3*2+3);             // Output: 2.2    ⇨ Operator * dan / dip
 console.log((4+6)/(5-3)*2+3);         // Output: 13     ⇨ Operator () diproses lebih awal (precedence: 21)
 
 /*
-Baca urutan prioritas operator (precedence) secara lengkap di:
+📚 Baca urutan prioritas operator (precedence) secara lengkap di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 */
 ```
@@ -542,7 +542,7 @@ console.log(true > false)             // Output: true   (Ingat: true = 1, false 
 // C2. Perbandingan String 
 
 /*
-Setiap karakter dalam String menggunakan nomor urut
+📚 Setiap karakter dalam String menggunakan nomor urut
 desimal di ASCII-Code: https://www.ascii-code.com/
 */
 
@@ -609,7 +609,7 @@ console.log(true || true && false);   // Output: true   ⇨ Operator && diproses
 // E1. Cara Kerja Operasi Logika
 
 /* 
-Operasi logika di proses dari kiri ke kanan (left-to-right), baca selengkapnya di:
+📚 Operasi logika di proses dari kiri ke kanan (left-to-right), baca selengkapnya di:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
 Selain itu, operasi logika pun menggunakan prinsip short-circuit-evaluation, maksudnya jika
@@ -686,7 +686,7 @@ JavaScript dan cukup rumit. Sehingga tidak akan dibahas disini.
 
 var g = 10;       // Artinya 10 dimasukkan sebagai nilai ke Variable g (operator assignment memiliki precedence: 3)
 var h = 10 + 5;   // Jumlahkan 10 + 5 dulu (operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable h
-var i = g + h;    // More: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+var i = g + h;    // 📚 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
 // Operator Gabungan Assignment
 
@@ -819,7 +819,7 @@ akan dijalankan. Jika tidak, kirim Boolean false ke Variable akses, dan kondisi 
 
 var dataDariLuar1;
 data1 = dataDariLuar1 ?? "Nilai Default";
-console.log(data1);                   // Output: Nilai Default  (karena sebelumnya dataDariLuar1 bernilai undefined)
+console.log(data1);                   // Output: Nilai Default (karena sebelumnya dataDariLuar1 bernilai undefined)
 
 /*
 Cara baca: Apakah dataDariLuar1 bernilai Null atau Undefined? jika iya (true), isi dataDariLuar1 dengan
@@ -828,7 +828,7 @@ String "Nilai Default". Jika tidak (bukan null/undefined), tidak perlu dilakukan
 
 var dataDariLuar2 = "Ada isinya";
 data2 = dataDariLuar2 ?? "Nilai Defailt";
-console.log(data2);                   // Output: Ada isinya   (karena sebelumnya dataDariLuar2 memang sudah ada isinya)
+console.log(data2);                   // Output: Ada isinya (karena sebelumnya dataDariLuar2 memang sudah ada isinya)
 ```
 
 ```Javascript
@@ -1256,7 +1256,7 @@ Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fa
 Di fase creation, pertama-tama JavaScript akan "mengangkat" (hoisting) semua Variable & Function yang dibuat
 ke baris paling atas kode program, untuk setiap Variable akan diisi nilai Undefined, sedangkan Function akan
 diisi Functionnya itu sendiri. Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi
-baris per baris, dari atas ke bawah. Gunakan tools visualusasi berikut: http://pythontutor.com/javascript.html
+baris per baris, dari atas ke bawah. 📚 Pakai tools visualusasi berikut: http://pythontutor.com/javascript.html
 */
 
 // Contoh 1: Variable
@@ -1520,7 +1520,7 @@ selamatPagi("Joko");                      // Output: Pagi, Joko!
 
 var sapa = (function(waktu){              // IIFE ditulis dengan pola (function() {...})(); penjelasan: pada saat di assign ke  
   var waktu = "Pagi";                     // Variable sapa, function(waktu) akan langsung menjalankan Inner Function-nya, yaitu 
-  return function(nama){                  // function(nama). Selebihnya tentang IIFE: https://flaviocopes.com/javascript-iife/
+  return function(nama){                  // function(nama). 📚 Tentang IIFE: https://flaviocopes.com/javascript-iife/
     console.log(`${waktu}, ${nama}!`);
   }
 })();
@@ -1825,7 +1825,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
   this.merk = merkArg;                            // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
   this.tipe = tipeArg;
   this.harga = hargaArg;
-  this.hidupkan = function(){                    // Cara penulisan method: Function expressions (Anonymous Function)
+  this.hidupkan = function(){                     // Cara penulisan method: Function expressions (Anonymous Function)
     return `Mesin ${this.merk} dihidupkan!`; 
   };
   this.pergi = function(tempat){
@@ -1934,7 +1934,7 @@ class Mobil{                                      // class Mobil{
 /*
 Sampai disini, kita telah membuat object sebagai tipe data (BAB 10) maupun object sebagai OOP-bagian dari Class (BAB 11), keduanya
 merupakan object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki object bawaan (JavaScript Native Object)
-yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak property & method. Daftar lengkap object bawaan
+yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak property & method. 📚 Daftar lengkap object bawaan
 JavaScript dapat dilihat di: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 Di buku ini akan dibahas beberapa diantaranya yang paling populer (dibahas di BAB 12), yaitu:
@@ -1963,7 +1963,7 @@ Di buku ini akan dibahas beberapa diantaranya yang paling populer (dibahas di BA
 Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property,
 dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja.
 Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang
-umum saja. Referensi lengkap bisa lihat di: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+umum saja. 📚 Referensi lengkap lihat di: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 */
@@ -2124,7 +2124,7 @@ console.log(String.fromCodePoint(65, 66, 67));              // Output: ABC      
 console.log(String.fromCodePoint(9749, 10052, 12096));      // Output: ☕❄⽀     fromCodePoint "Versi Update" dari fromCharCode
 console.log(String.fromCodePoint(0x2615, 0x2744, 0x2F40));  // Output: ☕❄⽀
 console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗🚲  ⤷ Berhasil menampilkan karakter terbaru unicode
-                                                            // Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/ 
+                                                            // 📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/ 
 
 // C2. Object instance property
 
@@ -2440,7 +2440,7 @@ console.log(polaX.test("raihanralam@gmail.com"));     // Output: true
 /* 
 polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat " @ . " dianggap true (ya karena memang lolos dari polaX),
 oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut:
-http://emailregex.com/ (pola RegExp yang disusun sangat kompleks, itu tidak lain untuk ketepatan pola email yang akurat)
+📚 http://emailregex.com/ (pola RegExp yang disusun sangat kompleks, itu tidak lain untuk ketepatan pola email yang akurat)
 */
 
 // ➓ Pola Logika OR
@@ -3095,7 +3095,7 @@ window.console.table({nama:"A", umur:7}); // Output: Tabel (check sendiri)      
 window.console.dir({nama:"A", umur:7});   // Output: ▶Object                      ≈ console.dir({nama:"A", umur:7});
 
                                           // console merupakan salah satu property window. Memiliki beberapa method, diantaranya
-                                          // log(), info(), table(), dir(), dan: https://www.w3schools.com/jsref/obj_console.asp
+                                          // log(), info(), table(), dir(). 📚 https://www.w3schools.com/jsref/obj_console.asp
 
 console.log(window.location);             // Output: ▶Location  (Object)         ≈ console.log(location);
 console.log(window.history);              // Output: ▶History   (Object)         ≈ console.log(history);
@@ -3111,7 +3111,7 @@ window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "An
 window.open();                            // Output: Muncul New Tab di Browser              ≈ open();
 window.print();                           // Output: Muncul Menu Print di Browser           ≈ print();
 
-                                          // Referensi window property & method Lainnya: 
+                                          // 📚 Referensi window property & method lainnya:
                                           // https://www.w3schools.com/jsref/obj_window.asp
                                           // https://developer.mozilla.org/en-US/docs/Web/API/Window
 ```
@@ -3194,7 +3194,7 @@ var bar = document.childNodes[1].childNodes[2].childNodes[3]; // Variable bar be
 
 console.log(bar.tagName);                           // Output: 𝗣
 console.log(bar.nodeName);                          // Output: 𝗣
-console.log(bar.nodeType);                          // Output: 𝟭 (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
+console.log(bar.nodeType);                          // Output: 𝟭 (📚 https://www.w3schools.com/jsref/prop_node_nodetype.asp)
 console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
 console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (Object)
 console.log(bar.parentNode);                        // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
@@ -3360,7 +3360,7 @@ var nodeQS    = document.querySelector("p b");                // Mencari Element
 var nodeQSA   = document.querySelectorAll("p b");             // ⤷ querySelector() mengambil element yang ditemukan pertama saja
                                                               // ⤷ querySelectorAll() mengambil seluruh element yang ditemukan
 
-                                                              // Referensi document property & method Lainnya:
+                                                              // 📚 Referensi document property & method lainnya:
                                                               // https://www.w3schools.com/jsref/dom_obj_document.asp
                                                               // https://developer.mozilla.org/en-US/docs/Web/API/Document
 
@@ -3451,7 +3451,7 @@ console.log(doo);                                   // Output: <𝗵𝟭 id="jud
 
 // ...
 
-                                                    // Referensi node property & method Lainnya:
+                                                    // 📚 Referensi node property & method lainnya:
                                                     // https://www.w3schools.com/jsref/dom_obj_all.asp
                                                     // https://developer.mozilla.org/en-US/docs/Web/API/Node
                                                     // https://developer.mozilla.org/en-US/docs/Web/API/Element
