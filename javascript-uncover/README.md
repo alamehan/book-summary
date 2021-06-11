@@ -21,8 +21,7 @@ Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/j
 | <a href="#bab11">11. Object Oriented Programming (OOP)</a>    	| ± 10 menit    	|
 | <a href="#bab12">12. JavaScript Native Object</a>             	| ± 40 menit     	|
 | <a href="#bab13">13. Global Property dan Global Function</a>    | ± 2 menit     	|
-| <a href="#bab14">14. Document Object Model (DOM)</a>            | ± 10 menit     	|
-| <a href="#bab15">15. Document dan Element Object</a>            | ± X menit     	|
+| <a href="#bab14">14. Document Object Model (DOM)</a>            | ± X menit     	|
 | <a href="#babxx">XX. Materi Tambahan: Advanced JavaScript</a> 	| ± X menit     	|
 | <p>Estimasi Total Durasi Baca</p> 	                            | ± 3 Jam         |
 
@@ -3153,6 +3152,7 @@ document.removeEventListener();
                                         // Document Property & Method Lainnya:
                                         // https://www.w3schools.com/jsref/dom_obj_document.asp
                                         // https://developer.mozilla.org/en-US/docs/Web/API/Document
+                                        // https://developer.mozilla.org/en-US/docs/Web/API/Element
 ```
 <hr>
 
@@ -3361,15 +3361,11 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
   </body>
 </html>
 ```
-
-<br>
-<div id="bab15"></div>
-
-# 15. Document dan Element Object <a href="#daftarisi">🡹</a>
+<hr>
 
 ```Javascript
 // ==============================================
-// A. Window Object ➜ Document Object (Lanjutan)
+// D. Window Object ➜ Document Object (Lanjutan)
 // ==============================================
 ```
 
@@ -3395,7 +3391,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
 ```
 
 ```Javascript
-// A1. Menelusuri struktur DOM (𝗖𝗮𝗿𝗮 𝟮: 𝗺𝘂𝗱𝗮𝗵/𝗰𝗲𝗽𝗮𝘁 🔔)
+// Menelusuri struktur DOM (𝗖𝗮𝗿𝗮 𝟮: 𝗺𝘂𝗱𝗮𝗵/𝗰𝗲𝗽𝗮𝘁 🔔)
 
 var nodeEm    = document.getElementById("miring");            // Mencari Element Node berdasarkan nilai atribut id
 var nodeClass = document.getElementsByClassName("kelas-a");   // Mencari Element Node berdasarkan class tertentu
@@ -3423,13 +3419,17 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 <hr>
 
 ```Javascript
-// =========================================================================
-// B. Window Object ➜ Document Object ➜ Node Object ➜ Element Node Object
-// =========================================================================
+// =============================================================
+// E. Window Object ➜ Document Object ➜ Node Object (Lanjutan)
+// =============================================================
 
-                                        // Element Node Property & Method Lainnya:
-                                        // https://www.w3schools.com/jsref/dom_obj_all.asp
-                                        // https://developer.mozilla.org/en-US/docs/Web/API/Element
+/*
+Di BAB 14 bagian C2 sudah dibahas sedikit mengenai Node property textContent, innerHTML dan outerHTML. Tidak lain kegunaannya
+untuk memanipulasi tag HTML beserta konten isinya. Selain itu, kita pun dapat memanipulasi atribut di sebuah tag HTML hingga
+menambahkan Inline Style CSS atau bahkan sebuah Class CSS. Dan inilah yang akan dibahas disini.
+*/
+
+// ...
 ```
 
 <br>
