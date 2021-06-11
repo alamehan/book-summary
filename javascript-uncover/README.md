@@ -3209,15 +3209,15 @@ masalah yang 𝘀𝗲𝗿𝗶𝗻𝗴 𝗺𝗲𝗺𝗯𝘂𝗮𝘁 𝗽𝘂𝘀�
 
 var bar = document.childNodes[1].childNodes[2].childNodes[3]; // Variable bar berisi <𝗽> ... </𝗽>
 
-console.log(bar.tagName);                           // Output: 𝗣
-console.log(bar.nodeName);                          // Output: 𝗣
-console.log(bar.nodeType);                          // Output: 𝟭 (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
-console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
-console.log(bar.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom (Bisa diubah nilainya 🔔)
-console.log(bar.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯> (🔔)
-console.log(bar.outerHTML);                         // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽> (🔔)
-console.log(bar.innerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
-console.log(bar.outerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
+console.log(bar.tagName);               // Output: 𝗣
+console.log(bar.nodeName);              // Output: 𝗣
+console.log(bar.nodeType);              // Output: 𝟭 (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
+console.log(bar.nodeValue);             // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
+console.log(bar.textContent);           // Output: Sedang Belajar JavaScript dari Duniailkom (Bisa diubah nilainya 🔔)
+console.log(bar.innerHTML);             // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯> (🔔)
+console.log(bar.outerHTML);             // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽> (🔔)
+console.log(bar.innerText);             // Output: Sedang belajar JavaScript dari Duniailkom
+console.log(bar.outerText);             // Output: Sedang belajar JavaScript dari Duniailkom
 
 /*
 Note: Jika nilai dari Property textContent diubah, misalya dengan perintah bar.textContent = "Teks Baru", maka tentunya tek yang
