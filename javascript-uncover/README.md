@@ -3438,6 +3438,7 @@ console.log(boo.innerText);                         // Output: Sedang belajar Ja
 console.log(boo.outerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
                                                     // ⤷ innerHTML berisi konten yang ada di dalam tag yang dipilih
                                                     // ⤷ outerHTML berisi tag yang dipilih lengkap beserta konten isinya
+                                                    // ⤷ innerText & outerText (dalam banyak kasus) jarang sekali digunakan
 
 boo.textContent = "<b>Teks baru 1!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> terbaca sebagai teks biasa)
 boo.innerHTML   = "<b>Teks baru 2!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> membuat teks menjadi tebal)
