@@ -3228,11 +3228,11 @@ JavaScript, dan Property textContent hanya salah satunya saja. Nantinya kita jug
   baz.textContent = "Title Dokumen Berubah!". Perhatikan teks yang tampil di tab dokumen HTML pun ikut berubah. Menarik bukan?
 */
 
-console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (𝗢𝗯𝗷𝗲𝗰𝘁)
+console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (Object)
 console.log(bar.parentNode);                        // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
 console.log(bar.parentElement);                     // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆> (Akan null jika parent bukan Element Node)
-console.log(bar.childNodes);                        // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟰) [𝘁𝗲𝘅𝘁, 𝗲𝗺, 𝘁𝗲𝘅𝘁, 𝗯]  ❌ Text Node ikut dihitung
-console.log(bar.children);                          // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [𝗲𝗺, 𝗯]       ✔️ Text Node tidak dihitung
+console.log(bar.childNodes);                        // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟰) [text, em, text, b]   ❌ Text Node ikut dihitung
+console.log(bar.children);                          // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [em, b]         ✔️ Text Node tidak dihitung
 console.log(bar.childElementCount);                 // Output: 𝟮
 console.log(bar.firstChild);                        // Output: "Sedang Belajar"             ❌ Bikin Pusing (dengan Text Node)
 console.log(bar.lastChild);                         // Output: <𝗯>dari Duniailkom</𝗯>       ❌ Bikin Pusing (dengan Text Node)
@@ -3402,17 +3402,17 @@ var nodeQSA   = document.querySelectorAll("p b");             // ⤷ querySelect
                                                               // ⤷ querySelectorAll() mengambil seluruh element yang ditemukan
 
 console.log(nodeEm);                    // Output: <𝗲𝗺 id="miring">JavaScript</𝗲𝗺>
-console.log(nodeClass);                 // Output: ▶HTMLCollection(2) [h2.kelas-a, p.kelas-a]
+console.log(nodeClass);                 // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [h2.kelas-a, p.kelas-a]
 console.log(nodeClass[0]);              // Output: <𝗵𝟮 class="kelas-a"> ... </𝗵𝟮>
 console.log(nodeClass[1]);              // Output: <𝗽 class="kelas-a"> ... </𝗽>
-console.log(nodeTag);                   // Output: ▶HTMLCollection(2) [p.kelas-a, p]
+console.log(nodeTag);                   // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [p.kelas-a, p]
 console.log(nodeTag[0]);                // Output: <𝗽 class="kelas-a"> ... </𝗽>
 console.log(nodeTag[1]);                // Output: <𝗽> ... </𝗽>
-console.log(nodeName);                  // Output: ▶NodeList(2) [input, input]
+console.log(nodeName);                  // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟮) [input, input]
 console.log(nodeName[0]);               // Output: <𝗶𝗻𝗽𝘂𝘁 type="text" name="isian" value="Isian 1">
 console.log(nodeName[1]);               // Output: <𝗶𝗻𝗽𝘂𝘁 type="text" name="isian" value="Isian 2">
 console.log(nodeQS);                    // Output: <𝗯>dari Duniailkom</𝗯>
-console.log(nodeQSA);                   // Output: ▶NodeList(2) [b, b]
+console.log(nodeQSA);                   // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟮) [b, b]
 console.log(nodeQSA[0]);                // Output: <𝗯>dari Duniailkom</𝗯>
 console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 ```
