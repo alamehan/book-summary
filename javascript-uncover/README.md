@@ -3214,8 +3214,8 @@ console.log(bar.nodeName);                          // Output: 𝗣
 console.log(bar.nodeType);                          // Output: 𝟭 (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
 console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
 console.log(bar.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom (Bisa diubah nilainya 🔔)
-console.log(bar.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
-console.log(bar.outerHTML);                         // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽>
+console.log(bar.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯> (🔔)
+console.log(bar.outerHTML);                         // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽> (🔔)
 console.log(bar.innerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
 console.log(bar.outerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
 
@@ -3226,6 +3226,7 @@ JavaScript, dan Property textContent hanya salah satunya saja. Nantinya kita jug
 ⤷ Manipulasi tidak hanya berlaku untuk element <p> saja! misalnya: var baz = document.childNodes[1].childNodes[0].childNodes[3]; 
   Maka variable bar akan berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>, selanjutnya kita coba ubah nilainya dengan menjalankan perintah 
   baz.textContent = "Title Dokumen Berubah!". Perhatikan teks yang tampil di tab dokumen HTML pun ikut berubah. Menarik bukan?
+⤷ Kekurangan dari textContent yaitu ...
 */
 
 console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (Object)
@@ -3300,7 +3301,6 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
                                                     // Node Property & Method Lainnya:
                                                     // https://www.w3schools.com/jsref/dom_obj_all.asp
                                                     // https://developer.mozilla.org/en-US/docs/Web/API/Node
-                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Element
 ```
 
 ```Javascript
@@ -3415,6 +3415,17 @@ console.log(nodeQS);                    // Output: <𝗯>dari Duniailkom</𝗯>
 console.log(nodeQSA);                   // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟮) [b, b]
 console.log(nodeQSA[0]);                // Output: <𝗯>dari Duniailkom</𝗯>
 console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
+```
+<hr>
+
+```Javascript
+// =========================================================================
+// B. Window Object ➜ Document Object ➜ Node Object ➜ Element Node Object
+// =========================================================================
+
+                                        // Element Node Property & Method Lainnya:
+                                        // https://www.w3schools.com/jsref/dom_obj_all.asp
+                                        // https://developer.mozilla.org/en-US/docs/Web/API/Element
 ```
 
 <br>
