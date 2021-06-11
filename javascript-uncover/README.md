@@ -3136,16 +3136,6 @@ console.log(document.title);            // Output: Belajar JS                   
 
 document.write("Hello World");          // Menulis ekspresi HTML atau kode JavaScript ke dokumen
 document.writeln("Hello World");        // Sama seperti write() namun menambah baris baru untuk setiap statement
-
-                                        // Document method lainnya dibahas di bagian:
-                                        // ⤷ C3 (di bawah) 🡲 createElement(), createTextNode() & createAttribute().
-                                        // ⤷ D  (di bawah) 🡲 getElementById(), getElementsByClassName(), getElementsByTagName(),
-                                        //                    getElementsByName(), querySelector() & querySelectorAll().
-                                        // ⤷ BAB 15 (A)    🡲 createEvent(), addEventListener() & removeEventListener().
-
-                                        // Referensi document property & method Lainnya:
-                                        // https://www.w3schools.com/jsref/dom_obj_document.asp
-                                        // https://developer.mozilla.org/en-US/docs/Web/API/Document
 ```
 <hr>
 
@@ -3206,7 +3196,6 @@ console.log(bar.tagName);                           // Output: 𝗣
 console.log(bar.nodeName);                          // Output: 𝗣
 console.log(bar.nodeType);                          // Output: 𝟭 (Lihat: https://www.w3schools.com/jsref/prop_node_nodetype.asp)
 console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
-
 console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (Object)
 console.log(bar.parentNode);                        // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
 console.log(bar.parentElement);                     // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆> (Akan null jika parent bukan Element Node)
@@ -3227,9 +3216,6 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
                                                     // Note:
                                                     // ⤷ 𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁: Kumpulan Node (Element Node & Text Node). 
                                                     // ⤷ 𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻: Kumpulan Node, tetapi khusus Element Node saja.
-
-                                                    // Node property lainnya dibahas di bagian:
-                                                    // ⤷ E1 (di bawah) 🡲 textContent, innerHTML, outerHTML, innerText, outerTxt.
 ```
 
 ```HTML
@@ -3278,15 +3264,6 @@ var klon2 = nodeP.cloneNode(false);                 // Copy nodeP tanpa Childnya
 console.log(nodeP.contains(nodeEm));                // Output: true   ⇨ Check apakah nodeP memiliki Child nodeEm di dalamnya
 console.log(klon1.hasChildNodes());                 // Output: true   ⇨ Check apakah klon1 memiliki Child (meskipun hanya 1)
 console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya berisi <𝗽></𝗽> (artinya tidak punya Child)
-
-                                                    // Node method lainnya dibahas di bagian:
-                                                    // ⤷ E2 (di bawah) 🡲 hasAttribute(), getAttribute(), setAttribute(),
-                                                    //                    removeAttribute() & attributes.
-
-                                                    // Referensi node property & method Lainnya:
-                                                    // https://www.w3schools.com/jsref/dom_obj_all.asp
-                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Node
-                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Element
 ```
 
 ```Javascript
@@ -3383,6 +3360,10 @@ var nodeQS    = document.querySelector("p b");                // Mencari Element
 var nodeQSA   = document.querySelectorAll("p b");             // ⤷ querySelector() mengambil element yang ditemukan pertama saja
                                                               // ⤷ querySelectorAll() mengambil seluruh element yang ditemukan
 
+                                                              // Referensi document property & method Lainnya:
+                                                              // https://www.w3schools.com/jsref/dom_obj_document.asp
+                                                              // https://developer.mozilla.org/en-US/docs/Web/API/Document
+
 console.log(nodeEm);                    // Output: <𝗲𝗺 id="miring">JavaScript</𝗲𝗺>
 console.log(nodeClass);                 // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [h2.kelas-a, p.kelas-a]
 console.log(nodeClass[0]);              // Output: <𝗵𝟮 class="kelas-a"> ... </𝗵𝟮>
@@ -3470,6 +3451,10 @@ console.log(doo);                                   // Output: <𝗵𝟭 id="jud
 
 // ...
 
+                                                    // Referensi node property & method Lainnya:
+                                                    // https://www.w3schools.com/jsref/dom_obj_all.asp
+                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Node
+                                                    // https://developer.mozilla.org/en-US/docs/Web/API/Element
 ```
 
 <br>
@@ -3478,6 +3463,7 @@ console.log(doo);                                   // Output: <𝗵𝟭 id="jud
 # 15. DOM Event <a href="#daftarisi">🡹</a>
 
 ```Javascript
+// DIBAWAH TERMASUK KEDALAM DOCUMENT METHOD
 // document.createEvent();
 // document.addEventListener();              
 // document.removeEventListener();   
