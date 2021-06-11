@@ -3220,13 +3220,17 @@ console.log(bar.innerText);             // Output: Sedang belajar JavaScript dar
 console.log(bar.outerText);             // Output: Sedang belajar JavaScript dari Duniailkom
 
 /*
-Note: Jika nilai dari Property textContent diubah, misalya dengan perintah bar.textContent = "Teks Baru", maka tentunya tek yang
+Note: Jika nilai dari Property textContent diubah, misalya dengan perintah bar.textContent = "Teks Baru", maka teks yang
 tampil di halaman HTML pun ikut berubah. Selamat! inilah pertama kalinya kita memanipulasi/mengubah element HTML menggunakan
 JavaScript, dan Property textContent hanya salah satunya saja. Nantinya kita juga bisa mengubah atribut hingga style CSS.
 ⤷ Manipulasi tidak hanya berlaku untuk element <p> saja! misalnya: var baz = document.childNodes[1].childNodes[0].childNodes[3]; 
   Maka variable bar akan berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>, selanjutnya kita coba ubah nilainya dengan menjalankan perintah 
   baz.textContent = "Title Dokumen Berubah!". Perhatikan teks yang tampil di tab dokumen HTML pun ikut berubah. Menarik bukan?
-⤷ Kekurangan dari textContent yaitu ...
+⤷ Kekurangan dari textContent yaitu jika misal kita menjalankan perintah bar.textContent = "<b>Teks Baru</b>", maka tag HTML <b>
+  akan terbaca sebagai teks biasa (bukan sebagai tag <b>). Oleh karena itu lebih baik menggunakan innerHTML atau outerHTML, misal 
+  bar.innerHTML = "<b>Teks Baru</b>", dengan demikian tag HTML <b> akan membuat teks menjadi tebal (sesuai dengan fungsi tag <b>).
+⤷ innerHTML berisi konten yang ada di dalam tag yang dipilih (namun tidak termasuk tag yang dipilihnya itu sendiri), sedangkan
+  outerHTML berisi konten lengkap beserta tag yang dipilihnya. Ubah konten di dalam tag? innerHTML. Ubah tag + konten? outerHTML.
 */
 
 console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (Object)
