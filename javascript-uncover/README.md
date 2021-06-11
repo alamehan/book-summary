@@ -3246,8 +3246,8 @@ console.log(bar.previousElementSibling);            // Output: <𝗵𝟭>Belajar
 console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶𝗽𝘁> ... </𝘀𝗰𝗿𝗶𝗽𝘁>          ✔️ Lebih Mudah (tanpa Text Node)
 
                                                     // Note:
-                                                    // ⤷ 𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁 : Kumpulan Node (Element Node & Text Node). 
-                                                    // ⤷ 𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻 : Kumpulan Node, tetapi khusus Element Node saja.
+                                                    // ⤷ 𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁: Kumpulan Node (Element Node & Text Node). 
+                                                    // ⤷ 𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻: Kumpulan Node, tetapi khusus Element Node saja.
 ```
 
 ```HTML
