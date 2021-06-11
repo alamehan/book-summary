@@ -41,7 +41,7 @@ Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/j
 4. **Server Side Programming**: Untuk menjalankan kode program PHP kita harus menggunakan aplikasi seperti Apache web server (yang merupakan bagian dari XAMPP). Kita tidak bisa melihat kode PHP yang digunakan sebuah website secara langsung layaknya HTML, CSS dan JavaScript.
 5. Perkembangan JavaScript yang sangat pesat akhir-akhir ini melahirkan banyak penerapan lain dari JavaScript. Sebagai contoh, **Node.js** adalah penggunaan JavaScript di sisi server. Dalam buku ini kita hanya fokus membahas penggunaan JavaScript di sisi client (di dalam web browser).
 6. Apa yang akan kita pelajari dalam buku ini terdiri dari 2 kelompok besar: JavaScript dan **DOM (Document Object Model)**. JavaScript adalah bahasa pemrograman, sedangkan DOM merupakan objek HTML yang akan kita manipulasi, seperti teks, gambar, form, tombol, title bar web browser, event, dll. Bahasa pemrograman JavaScript dikembangkan oleh ECMA, sedangkan DOM dikembangkan oleh W3C (organisasi yang juga membuat standar HTML dan CSS). Bisa dibilang, JavaScript sepenuhnya terpisah dari HTML.
-7. Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika anda merasa jenuh dengan pembahasan dari bab 2 hingga 13, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi objek HTML yang nantinya diakses lewat DOM mulai dari bab 14 hingga akhir buku.
+7. Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika anda merasa jenuh dengan pembahasan dari BAB 2 hingga 13, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi objek HTML yang nantinya diakses lewat DOM mulai dari BAB 14 hingga akhir buku.
 
 <br>
 <div id="bab02"></div>
@@ -210,9 +210,9 @@ Contoh Penggunaan <noscript>
    - Harus selain dari **reserved keyword**, yakni kata khusus yang berfungsi sebagai perintah di dalam pemrograman JavaScript, seperti ```var```, ```while```, ```function```, dll.
 5. Di CSS kita menggunakan cara penulisan selector yang dipisah dengan tanda “ - ”, seperti ```main-box```, ```left-sidebar```, dan ```single-post```. Di PHP kita mengenal **Snake Case**, yakni menggunakan huruf kecil dan tanda underscore sebagai pemisah Variable, seperti ```jumlah_barang```, ```nama_dosen```, dan ```alamat_siswa```. Di JavaScript menggunakan **CamelCase**. CamelCase adalah cara penulisan Variable dimana jika sebuah Variable terdiri dari beberapa kata, huruf pertama dari kata kedua dan seterusnya diubah menjadi huruf besar, seperti: ```banyakAnggota```, ```totalBiaya```, ```mainBox```, atau ```jumlahKlikSatuHari```. Jika Variable tersebut hanya terdiri dari 1 kata, ditulis dengan huruf kecil semua.
 6. **Strict Mode** memaksa JavaScript menampilkan error (di Tab Console) pada kode program yang seharusnya bisa berjalan “normal”. Tujuannya, meminimalisir kemungkinan bug karena penulisan yang salah, typo, dan berbagai hal lain. Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu anda gunakan, terutama jika terdapat kode JavaScript pendahulu yang terlalu rumit untuk diubah semuanya. Strict Mode akan membuat web browser menampilkan error dimana sebelumnya hanya ada **“silent error”**. Salah satunya ketika membuat Variable tanpa perintah ```var```. Untuk masuk ke dalam Strict Mode, tambahkan String ```"use strict";``` di baris pertama kode JavaScript atau di baris paling awal dari sebuah Function.
-7. EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah ```let``` untuk membuat Variable (sebagai alternatif dari ```var```). Perbedaan mendasar dari ```var``` dan ```let``` adalah terkait dengan **Variable scope**, yakni di bagian mana sebuah Variable masih bisa diakses. Penjelasan mengenai Variable scope akan saya bahas pada bab tentang Function.
+7. EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah ```let``` untuk membuat Variable (sebagai alternatif dari ```var```). Perbedaan mendasar dari ```var``` dan ```let``` adalah terkait dengan **Variable scope**, yakni di bagian mana sebuah Variable masih bisa diakses. Penjelasan mengenai Variable scope akan saya bahas pada BAB tentang Function.
 8. Konstanta (```const```) dapat dikatakan sebagai Variable yang tidak bisa diubah sepanjang kode program. Setelah Konstanta ditulis dan diberi nilai awal, isi Konstanta tersebut tidak bisa ditukar dengan nilai lain. Berbeda dengan Variable yang menggunakan **CamelCase**, Konstanta biasa ditulis menggunakan huruf besar dan garis bawah (underscore) sebagai pemisah kata.
-9. Rekap format penulisan: Variable diawali huruf kecil (```total```, ```totalBiaya```, dst), Konstanta huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). **Class dibahas di bab 11**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variabel, Konstanta maupun Class.
+9. Rekap format penulisan: Variable diawali huruf kecil (```total```, ```totalBiaya```, dst), Konstanta huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). **Class dibahas di BAB 11**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variabel, Konstanta maupun Class.
 ```HTML
 ================
 Var, Let & Const
@@ -246,7 +246,7 @@ Var, Let & Const
 <img src="images/BAB-6.png">
 
 1. Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif (primitive type), dan tipe data object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Di dalam JavaScript terdapat 6 **tipe data primitif**, yaitu: **Number, String, Boolean, Null, Undefined, Symbol**. Sedangkan tipe data object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya bermacam-macam. Adapun **tipe data object** bawaan JavaScript yaitu: **Array, RegExp, Date, Map, WeakMap, Set, WeakSet.**
-2. Untuk tipe data Object, dalam bab ini saya hanya membahas Object Array. Tipe data Object Date dan RegExp akan dibahas dalam bab tersendiri karena butuh penjelasan yang cukup panjang, termasuk cara membuat object bentukan sendiri. Tipe data Symbol, Map, WeakMap, Set dan WeakSet adalah tipe data baru dalam ECMAScript 6. Tipe data ini tidak akan saya bahas karena termasuk materi lanjutan yang cukup kompleks untuk pemula.
+2. Untuk tipe data Object, dalam BAB ini saya hanya membahas Object Array. Tipe data Object Date dan RegExp akan dibahas dalam BAB tersendiri karena butuh penjelasan yang cukup panjang, termasuk cara membuat object bentukan sendiri. Tipe data Symbol, Map, WeakMap, Set dan WeakSet adalah tipe data baru dalam ECMAScript 6. Tipe data ini tidak akan saya bahas karena termasuk materi lanjutan yang cukup kompleks untuk pemula.
 
 ```Javascript
 // ===================
@@ -1105,7 +1105,7 @@ console.log(ratarata(2, 4, 8, 16));   // Output: 7.5 (hasil dari (2+4+8+16)/4 �
 
 // D4. Spread Operator
 
-function numC(...arg){                // Selain untuk menggabungkan Array seperti yang dijelaskan di bab 7 (operator),
+function numC(...arg){                // Selain untuk menggabungkan Array seperti yang dijelaskan di BAB 7 (operator),
   console.log(arg[0]);                // spread (...) juga dapat digunakan untuk menggantikan peran arguments Object.
   console.log(arg[1]);                // Coba bandingkan hasilnya dengan point D1, maka akan sama saja.
   console.log(arg[2]);                // Penulisannya tidak harus ...arg, bisa dengan kata lain, misalnya ...angka, dll
@@ -3140,13 +3140,13 @@ document.writeln("Hello World");          // Sama seperti write() namun menambah
 document.createElement();                 // Method createElement() & createTextNode() dibahas di bagian C3 (di bawah)
 document.createTextNode();
 document.createAttribute();
-document.getElementById();                // Method ini hingga querySelecterAll() dibahas di bagian ... (di bawah)
+document.getElementById();                // Method ini hingga querySelecterAll() dibahas di BAB 15 bagian A1
 document.getElementsByClassName();
 document.getElementsByName();
 document.getElementsByTagName();
 document.querySelector();
 document.querySelectorAll();
-document.createEvent();                   // Method ini hingga removeEventListener() dibahas di bagian ... (di bawah)
+document.createEvent();                   // Method ini hingga removeEventListener() dibahas di BAB 16 bagian ...
 document.addEventListener();              
 document.removeEventListener();   
 
@@ -3180,7 +3180,7 @@ document.removeEventListener();
 ```
 
 ```Javascript
-// C1. Menelusuri struktur DOM (𝗖𝗮𝗿𝗮 𝗺𝗮𝗻𝘂𝗮𝗹 🔔)
+// C1. Menelusuri struktur DOM (𝗖𝗮𝗿𝗮 𝟭: 𝗺𝗮𝗻𝘂𝗮𝗹/𝘀𝘂𝗹𝗶𝘁 🔔)
 
 console.log(document.childNodes[0]);                                            // Output: <!𝗗𝗢𝗖𝗧𝗬𝗣𝗘 𝗵𝘁𝗺𝗹>
 console.log(document.childNodes[1]);                                            // Output: <𝗵𝘁𝗺𝗹> ... </𝗵𝘁𝗺𝗹>
@@ -3244,6 +3244,10 @@ console.log(bar.firstElementChild);                 // Output: <𝗲𝗺>JavaScr
 console.log(bar.lastElementChild);                  // Output: <𝗯>dari Duniailkom</𝗯>       ✔️ Lebih Mudah (tanpa Text Node)
 console.log(bar.previousElementSibling);            // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>  ✔️ Lebih Mudah (tanpa Text Node)
 console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶𝗽𝘁> ... </𝘀𝗰𝗿𝗶𝗽𝘁>          ✔️ Lebih Mudah (tanpa Text Node)
+
+                                                    // Note:
+                                                    // ⤷ 𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁 : Kumpulan Node (Element Node & Text Node). 
+                                                    // ⤷ 𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻 : Kumpulan Node, tetapi khusus Element Node saja.
 ```
 
 ```HTML
@@ -3360,7 +3364,41 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
 # 15. Document dan Element Object <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// ...
+// ==============================================
+// A. Window Object ➜ Document Object (Lanjutan)
+// ==============================================
+```
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1 id="judul" class="kalimat">Belajar JavaScript</h1>
+    <h1>JavaScript itu <b>menyenangkan</b></h1>
+    <p class="kalimat">Sedang belajar <em id="miring">JavaScript</em> <b>dari Duniailkom</b></p>
+    <script>
+      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗔𝟭 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+    </script>
+  </body>
+</html>
+```
+
+```Javascript
+// A1. Menelusuri struktur DOM (𝗖𝗮𝗿𝗮 𝟮: 𝗺𝘂𝗱𝗮𝗵/𝗰𝗲𝗽𝗮𝘁 🔔)
+
+var nodeH1    = document.getElementById("judul");
+var nodeEm    = document.getElementById("miring");
+var nodeClass = document.getElementsByClassName("kalimat");
+var nodeTag   = document.getElementsByTagName("h1");
+
+console.log(nodeH1);      // Output: <𝗵𝟭 id="judul" class="kalimat">Belajar JavaScript</𝗵𝟭>
+console.log(nodeEm);      // Output: <𝗲𝗺 id="miring">JavaScript</𝗲𝗺>
+console.log(nodeClass);   // Output: ▶HTMLCollection(2) [h1#judul.kalimat, p.kalimat]
+console.log(nodeTag)      // Output: ▶HTMLCollection(2) [h1#judul.kalimat, h1]
 ```
 
 <br>
