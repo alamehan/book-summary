@@ -3364,7 +3364,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
     <input type="text" name="isian" value="Isian 1">
     <input type="text" name="isian" value="Isian 2">
     <script>
-      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗔𝟭 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
   </body>
 </html>
@@ -3425,24 +3425,39 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 
 // E1. Memanipulasi tag HTML + konten isinya
 
-var baz = document.querySelector("p");              // Variable bar berisi <𝗽> ... </𝗽>
+var boo = document.querySelector("p");              // Variable boo berisi <𝗽> ... </𝗽>
+var coo = document.querySelector("title");          // Variable coo berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
+var doo = document.querySelector("h1");             // Variable doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
 
-console.log(baz.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
-console.log(baz.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
-console.log(baz.outerHTML);                         // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽>
-console.log(baz.innerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
-console.log(baz.outerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
+console.log(boo.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
+console.log(boo.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
+console.log(boo.outerHTML);                         // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽>
+console.log(boo.innerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
+console.log(boo.outerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
                                                     // ⤷ innerHTML berisi konten yang ada di dalam tag yang dipilih
                                                     // ⤷ outerHTML berisi tag yang dipilih lengkap beserta konten isinya
 
-baz.textContent = "<b>Teks baru 1!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> terbaca sebagai teks biasa)
-baz.innerHTML   = "<b>Teks baru 2!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> membuat teks menjadi tebal)
-baz.outerHTML   = "<h1>Teks baru 3!</h1>"           // Mengubah <𝗽> ... </𝗽> + konten isinya   (diganti menjadi <𝗵𝟭> ... </𝗵𝟭>)
-                                                    // ⤷ Note: Jalankan Script di tab console, dan lihat perubahannya secara live!
+boo.textContent = "<b>Teks baru 1!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> terbaca sebagai teks biasa)
+boo.innerHTML   = "<b>Teks baru 2!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> membuat teks menjadi tebal)
+boo.outerHTML   = "<h1>Teks baru 3!</h1>"           // Mengubah <𝗽> ... </𝗽> + konten isinya   (diganti menjadi <𝗵𝟭> ... </𝗵𝟭>)
+coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹𝗲> ... </𝘁𝗶𝘁𝗹𝗲> yang ada di <head> pun konten isinya bisa diubah
+                                                    // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
                                                   
 // E2. Memanipulasi atribut di tag HTML
 
+console.log(doo.hasAttribute("id"));                // Output: true             ⇨ Memeriksa apakah doo memiliki atribut id
+console.log(doo.hasAttribute("class"));             // Output: false            ⇨ Memeriksa apakah doo memiliki atribut class
+console.log(doo.getAttribute("id"));                // Output: judul            ⇨ Mengambil nilai dari suatu atribut
+doo.setAttribute("title", "Sedang belajar");        //                          ⇨ Menambah/menimpa sebuah atribut + nilainya
+console.log(doo.hasAttribute("title"));             // Output: true             ⤷ Argument ke 1: Nama atributenya
+console.log(doo.getAttribute("title"));             // Output: Sedang belajar   ⤷ Argument ke 2: Nilai atributnya
+console.log(doo);                                   // Output: <𝗵𝟭 id="judul" title="Sedang belajar">Belajar JavaScript</𝗵𝟭>
+doo.removeAttribute("title");                       //                          ⇨ Menghapus sebuah atribut (tentu + nilainya)
+console.log(doo);                                   // Output: <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
+
 // E3. Memanipulasi style CSS di tag HTML
+
+// ...
 ```
 
 <br>
