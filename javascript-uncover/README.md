@@ -3171,10 +3171,10 @@ document.removeEventListener();
   <body>
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+    <script>
+      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟭 & 𝗖𝟮 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+    </script>
   </body>
-  <script>
-    // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟭 & 𝗖𝟮 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
-  </script>
 </html>
 ```
 
@@ -3255,16 +3255,16 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
   <body>
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
-  </body>
-  <script>
-    var nodeBody  = document.childNodes[1].childNodes[2];     // Berisi <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
-    var nodeH1    = nodeBody.childNodes[1];                   // Berisi <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
-    var nodeP     = nodeBody.childNodes[3];                   // Berisi <𝗽> ... </𝗽>
-    var nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
-    var nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
+    <script>
+      var nodeBody  = document.childNodes[1].childNodes[2];     // Berisi <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+      var nodeH1    = nodeBody.childNodes[1];                   // Berisi <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
+      var nodeP     = nodeBody.childNodes[3];                   // Berisi <𝗽> ... </𝗽>
+      var nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
+      var nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
 
-    // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
-  </script>
+      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+    </script>
+  </body>
 </html>
 ```
 
@@ -3317,40 +3317,39 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
       }
     </style>
   </head>
-
   <body>
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+    <script>
+      // 1. Siapkan Variable shorcut untuk Node
+      var nodeBody = document.childNodes[1].childNodes[2];
+      var nodeP = nodeBody.childNodes[3];
+  
+      // 2. Buat tag <table> & siapkan beberapa Variable untuk looping
+      var nodeTable = document.createElement("table");
+      var nodeTr, nodeTd1, nodeTd2, nomorUrut, nomorAcak, nomorAcakText;
+  
+      for (var i = 1; i <= 10; i++) {
+        // 3. Buat 1 tag <tr>, 2 tag <td>, text node (nomor urut & acak)
+        nodeTr = document.createElement("tr");
+        nodeTd1 = document.createElement("td");
+        nodeTd2 = document.createElement("td");
+        nomorUrut = document.createTextNode(i);
+        nomorAcak = Math.floor(Math.random() * 90) + 10; // Rentang 10-99
+        nomorAcakText = document.createTextNode(nomorAcak);
+  
+        // 4. Rangkai text node ➜ <td> ➜ <tr> ➜ <table>
+        nodeTd1.appendChild(nomorUrut);
+        nodeTd2.appendChild(nomorAcakText);
+        nodeTr.appendChild(nodeTd1);
+        nodeTr.appendChild(nodeTd2);
+        nodeTable.appendChild(nodeTr);
+      }
+  
+      // 5. Masukkan tag <table> kedalam DOM, posisi sebelum tag <p>
+      nodeBody.insertBefore(nodeTable, nodeP);
+    </script>
   </body>
-  <script>
-    // 1. Siapkan Variable shorcut untuk Node
-    var nodeBody = document.childNodes[1].childNodes[2];
-    var nodeP = nodeBody.childNodes[3];
-
-    // 2. Buat tag <table> & siapkan beberapa Variable untuk looping
-    var nodeTable = document.createElement("table");
-    var nodeTr, nodeTd1, nodeTd2, nomorUrut, nomorAcak, nomorAcakText;
-
-    for (var i = 1; i <= 10; i++) {
-      // 3. Buat 1 tag <tr>, 2 tag <td>, text node (nomor urut & acak)
-      nodeTr = document.createElement("tr");
-      nodeTd1 = document.createElement("td");
-      nodeTd2 = document.createElement("td");
-      nomorUrut = document.createTextNode(i);
-      nomorAcak = Math.floor(Math.random() * 90) + 10; // Rentang 10-99
-      nomorAcakText = document.createTextNode(nomorAcak);
-
-      // 4. Rangkai text node ➜ <td> ➜ <tr> ➜ <table>
-      nodeTd1.appendChild(nomorUrut);
-      nodeTd2.appendChild(nomorAcakText);
-      nodeTr.appendChild(nodeTd1);
-      nodeTr.appendChild(nodeTd2);
-      nodeTable.appendChild(nodeTr);
-    }
-
-    // 5. Masukkan tag <table> kedalam DOM, posisi sebelum tag <p>
-    nodeBody.insertBefore(nodeTable, nodeP);
-  </script>
 </html>
 ```
 
