@@ -3397,6 +3397,7 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
   <body>
     <h1 id="judul">Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+    <p style="color: blue;">Mohon tidak mengganggu, terimakasih!</p>
     <script>
       // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
@@ -3411,6 +3412,9 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 var boo = document.querySelector("p");              // Variable boo berisi <𝗽> ... </𝗽>
 var coo = document.querySelector("title");          // Variable coo berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
 var doo = document.querySelector("h1");             // Variable doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
+var foo = document.querySelector("p:nth-child(3)"); // Variable foo berisi <𝗽 style="color: blue;"> ... </𝗽>
+                                                    // ⤷ Cara baca: Cari tag <p> yang berada pada urutan ke 3 dalam
+                                                    //              sebuah parent element (dalam kasus ini: <body>)
 
 console.log(boo.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
 console.log(boo.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
@@ -3433,7 +3437,7 @@ console.log(doo.hasAttribute("id"));                // Output: true             
 console.log(doo.hasAttribute("class"));             // Output: false            ⇨ Memeriksa apakah doo memiliki atribut class
 console.log(doo.getAttribute("id"));                // Output: judul            ⇨ Mengambil nilai dari suatu atribut
 
-doo.setAttribute("title", "Sedang belajar");        //                          ⇨ Menambah/menimpa sebuah atribut + nilainya
+doo.setAttribute("title", "Sedang belajar");        // Menambah/menimpa sebuah atribut + nilainya
 console.log(doo.hasAttribute("title"));             // Output: true             ⤷ Argument ke 1: Nama atributenya
 console.log(doo.getAttribute("title"));             // Output: Sedang belajar   ⤷ Argument ke 2: Nilai atributnya
 console.log(doo);                                   // Output: <𝗵𝟭 id="judul" title="Sedang belajar">Belajar JavaScript</𝗵𝟭>
@@ -3444,10 +3448,19 @@ console.log(doo.attributes[0]);                     // Output: id="judul"
 console.log(doo.attributes[1]);                     // Output: title="Sedang belajar"
 console.log(doo.attributes.length);                 // Output: 2
 
-doo.removeAttribute("title");                       //                          ⇨ Menghapus sebuah atribut beserta nilainya
+doo.removeAttribute("title");                       // Menghapus sebuah atribut beserta nilainya
 console.log(doo);                                   // Output: <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
 
 // E3. Memanipulasi style CSS di tag HTML
+
+console.log(foo.style);                             // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "color"]  ⇨ Menampilkan seluruh 𝗜𝗻𝗹𝗶𝗻𝗲
+console.log(foo.style[0]);                          // Output: color                               𝗖𝗦𝗦 dari sebuah tag HTML
+console.log(foo.style[1]);                          // Output: undefined
+console.log(foo.style.color);                       // Output: blue                             ⇨ Menampilkan secara spesifik
+console.log(foo.style.backgroundColor);             // Output: (kosong)                            𝗜𝗻𝗹𝗶𝗻𝗲 𝗖𝗦𝗦 tertentu
+
+foo.style.backgroundColor = "salmon";               // Menambah/menimpa sebuah 𝗜𝗻𝗹𝗶𝗻𝗲 𝗖𝗦𝗦 di tag HTML
+foo.style.fontSize = "1.4em";                       // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
 
 // ...
 
