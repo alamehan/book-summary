@@ -2000,6 +2000,8 @@ console.log(bar.length);              // Output: 11. Kita pun masih tetap bisa m
 
 # 12. JavaScript Native Object <a href="#daftarisi">🡹</a>
 
+<img src="images/BAB-12-1.png">
+
 <img src="images/BAB-12-2.png">
 
 ```Javascript
@@ -2975,6 +2977,8 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 <div id="bab13"></div>
 
 # 13. Global Property dan Global Function <a href="#daftarisi">🡹</a>
+
+<img src="images/BAB-13.png">
 
 ```Javascript
 
