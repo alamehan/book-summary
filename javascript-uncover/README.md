@@ -3135,8 +3135,11 @@ console.log(document.title);            // Output: Belajar JS                   
 
 // B2. Document method
 
-document.write("Hello World");          // Menulis ekspresi HTML atau kode JavaScript ke dokumen
+document.write("Hello World");          // Menulis ekspresi/teks HTML atau kode JavaScript ke dokumen
 document.writeln("Hello World");        // Sama seperti write() namun menambah baris baru untuk setiap statement
+                                        // ⤷ Note: Biasanya banyak dipakai di tutorial-tutorial di Internet. Namun untuk
+                                        //         proses debugging, console.log() lebih banyak (dan lebih disarankan)
+                                        //         digunakan, karena menampilkan informasi yang lebih lengkap.
 ```
 <hr>
 
@@ -3398,12 +3401,23 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
       p:nth-child(3){
         text-decoration: underline;
       }
+      .merah {
+        color: red;
+      }
+      .hijau {
+        color: green;
+      }
+      .tebal {
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
     <h1 id="judul">Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
     <p style="color: blue;">Mohon tidak mengganggu, terimakasih!</p>
+    <div class="merah tebal">Materi pertama tentang Variable</div>
+    <div class="merah">Materi kedua tentang Function</div>
     <script>
       // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
@@ -3417,10 +3431,6 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 
 var boo = document.querySelector("p");              // Variable boo berisi <𝗽> ... </𝗽>
 var coo = document.querySelector("title");          // Variable coo berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
-var doo = document.querySelector("h1");             // Variable doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
-var foo = document.querySelector("p:nth-child(3)"); // Variable foo berisi <𝗽 style="color: blue;"> ... </𝗽>
-                                                    // ⤷ Cara baca: Cari tag <p> yang berada pada urutan ke 3 dalam
-                                                    //              sebuah parent element (dalam kasus ini: <body>)
 
 console.log(boo.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
 console.log(boo.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
@@ -3439,6 +3449,8 @@ coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹�
                                                   
 // E2. Memanipulasi atribut di tag HTML
 
+var doo = document.querySelector("h1");             // Variable doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
+
 console.log(doo.hasAttribute("id"));                // Output: true             ⇨ Memeriksa apakah doo memiliki atribut id
 console.log(doo.hasAttribute("class"));             // Output: false            ⇨ Memeriksa apakah doo memiliki atribut class
 console.log(doo.getAttribute("id"));                // Output: judul            ⇨ Mengambil nilai dari suatu atribut
@@ -3454,10 +3466,17 @@ console.log(doo.attributes[0]);                     // Output: id="judul"
 console.log(doo.attributes[1]);                     // Output: title="Sedang belajar"
 console.log(doo.attributes.length);                 // Output: 2
 
-doo.removeAttribute("title");                       // Menghapus sebuah atribut beserta nilainya
+doo.removeAttribute("title");                       // Menghapus sebuah atribut + nilainya (Mempengaruhi baris kode diatasnya ⚠️)
+                                                    // ⤷ Note: Meskipun atribut "title" di hapus di baris ini, namun saat check
+                                                    //         di tag HTML-nya melalui console.log(doo) (lihat di baris atas),
+                                                    //         maka atribut "title" sudah dianggap tidak ada.
 console.log(doo);                                   // Output: <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
 
 // E3. Memanipulasi Style CSS di tag HTML
+
+var foo = document.querySelector("p:nth-child(3)"); // Variable foo berisi <𝗽 style="color: blue;"> ... </𝗽>
+                                                    // ⤷ Cara baca: Cari tag <p> yang berada pada urutan ke 3 dalam
+                                                    //              sebuah parent element (dalam kasus ini: <body>)
 
 console.log(foo.style);                             // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "color"]  ⇨ Menampilkan seluruh 𝗜𝗻𝗹𝗶𝗻𝗲
 console.log(foo.style[0]);                          // Output: color                               𝗖𝗦𝗦 dari sebuah tag HTML
@@ -3471,7 +3490,7 @@ foo.style.fontSize = "1.4em";                       // ⤷ Jalankan Script di ta
 
 var goo = getComputedStyle(foo);                    // Manampilkan seluruh Style CSS (bukan hanya dari inline CSS saja)
                                                     // ⤷ Method getComputedStyle() milik Window Object (lihat bagian A di atas)
-                                                    
+
 console.log(goo);                                   // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "align-content", ...]
 console.log(goo.length);                            // Output: 325 (Total 325 Style CSS sebagai nilai awal bawaan browser)
 console.log(goo[0]);                                // Output: align-content
@@ -3479,6 +3498,34 @@ console.log(goo[324]);                              // Output: -webkit-writing-m
 console.log(goo.color);                             // Output: rgb(0, 0, 255)                   (Format yang dipakai: RGB)
 console.log(goo.backgroundColor);                   // Output: rgba(0, 0, 0, 0)                 (Format yang dipakai: RGB)
 console.log(goo.textDecoration);                    // Output: underline solid rgb(0, 0, 255)   (Format yang dipakai: RGB)
+
+// E4. Memanipulasi Class CSS di tag HTML
+
+var hoo = document.querySelector("div:nth-child(4)");   // Variable hoo berisi <𝗱𝗶𝘃 class="merah tebal"> ... </𝗱𝗶𝘃>
+var joo = document.querySelector("div:nth-child(5)");   // Variable hoo berisi <𝗱𝗶𝘃 class="merah"> ... </𝗱𝗶𝘃>
+
+                                                    // Menampilkan seluruh Class CSS yang digunakan sebuah tag HTML:
+console.log(hoo.className);                         // Output: merah tebal
+console.log(hoo.classList);                         // Output: ▶𝗗𝗢𝗠𝗧𝗼𝗸𝗲𝗻𝗟𝗶𝘀𝘁(𝟮) ["merah", "tebal"]
+console.log(hoo.classList[0]);                      // Output: merah
+console.log(hoo.classList[1]);                      // Output: tebal
+console.log(hoo.classList.length);                  // Output: 2                ⇨ Memeriksa jumlah Class yang digunakan
+console.log(hoo.classList.contains("tebal"));       // Output: true             ⇨ Memeriksa apakah memakai Class tertentu
+
+hoo.className = "hijau";                            // Menimpa Class terdahulu  (dalam kasus ini: merah tebal 🡲 hijau)
+console.log(hoo.className);                         // Output: hijau
+
+console.log(joo.className);                         // Output: merah
+console.log(joo.classList);                         // Output: ▶𝗗𝗢𝗠𝗧𝗼𝗸𝗲𝗻𝗟𝗶𝘀𝘁 ["merah"]
+console.log(joo.classList[0]);                      // Output: merah
+console.log(joo.classList[1]);                      // Output: undefined
+console.log(joo.classList.length);                  // Output: 1
+console.log(joo.classList.contains("tebal"));       // Output: false
+
+joo.classList.add("tebal");                         // Menambah Class tertentu
+console.log(joo.className);                         // Output: merah tebal
+joo.classList.remove("merah");                      // Menghapus Class tertentu
+console.log(joo.className);                         // Output: tebal
 
                                                     // 📚 Referensi node property & method lainnya:
                                                     // https://www.w3schools.com/jsref/dom_obj_all.asp
@@ -3492,7 +3539,7 @@ console.log(goo.textDecoration);                    // Output: underline solid r
 # 15. DOM Event <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// DIBAWAH TERMASUK KEDALAM DOCUMENT METHOD
+// DIBAWAH TERMASUK KEDALAM DOCUMENT METHOD:
 // document.createEvent();
 // document.addEventListener();              
 // document.removeEventListener();   
