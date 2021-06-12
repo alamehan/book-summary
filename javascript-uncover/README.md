@@ -3110,6 +3110,7 @@ window.prompt("Masukkan Nama!");          // Output: Muncul Popup Input "Masukka
 window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "Anda Setuju?" ≈ confirm("Anda Setuju?");
 window.open();                            // Output: Muncul New Tab di Browser              ≈ open();
 window.print();                           // Output: Muncul Menu Print di Browser           ≈ print();
+window.getComputedStyle();                // Output: (Menampilkan seluruh Style CSS)
 
                                           // 📚 Referensi window property & method lainnya:
                                           // https://www.w3schools.com/jsref/obj_window.asp
@@ -3393,6 +3394,11 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
   <head>
     <meta charset="utf-8">
     <title>Belajar JavaScript</title>
+    <style>
+      p:nth-child(3){
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <h1 id="judul">Belajar JavaScript</h1>
@@ -3458,11 +3464,21 @@ console.log(foo.style[0]);                          // Output: color            
 console.log(foo.style[1]);                          // Output: undefined
 console.log(foo.style.color);                       // Output: blue                             ⇨ Menampilkan secara spesifik
 console.log(foo.style.backgroundColor);             // Output: (kosong)                            𝗜𝗻𝗹𝗶𝗻𝗲 𝗖𝗦𝗦 tertentu
+console.log(foo.style.textDecoration);              // Output: (kosong)
 
 foo.style.backgroundColor = "salmon";               // Menambah/menimpa sebuah 𝗜𝗻𝗹𝗶𝗻𝗲 𝗖𝗦𝗦 di tag HTML
 foo.style.fontSize = "1.4em";                       // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
 
-// ...
+var goo = getComputedStyle(foo);                    // Manampilkan seluruh Style CSS (bukan hanya dari inline CSS saja)
+                                                    // ⤷ Method getComputedStyle() milik Window Object (lihat bagian A di atas)
+                                                    
+console.log(goo);                                   // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "align-content", ...]
+console.log(goo.length);                            // Output: 325 (Total 325 Style CSS sebagai nilai awal bawaan browser)
+console.log(goo[0]);                                // Output: align-content
+console.log(goo[324]);                              // Output: -webkit-writing-mode
+console.log(goo.color);                             // Output: rgb(0, 0, 255)                   (Format yang dipakai: RGB)
+console.log(goo.backgroundColor);                   // Output: rgba(0, 0, 0, 0)                 (Format yang dipakai: RGB)
+console.log(goo.textDecoration);                    // Output: underline solid rgb(0, 0, 255)   (Format yang dipakai: RGB)
 
                                                     // 📚 Referensi node property & method lainnya:
                                                     // https://www.w3schools.com/jsref/dom_obj_all.asp
