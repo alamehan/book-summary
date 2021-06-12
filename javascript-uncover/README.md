@@ -3451,7 +3451,7 @@ console.log(doo.attributes.length);                 // Output: 2
 doo.removeAttribute("title");                       // Menghapus sebuah atribut beserta nilainya
 console.log(doo);                                   // Output: <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
 
-// E3. Memanipulasi style CSS di tag HTML
+// E3. Memanipulasi Style CSS di tag HTML
 
 console.log(foo.style);                             // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "color"]  ⇨ Menampilkan seluruh 𝗜𝗻𝗹𝗶𝗻𝗲
 console.log(foo.style[0]);                          // Output: color                               𝗖𝗦𝗦 dari sebuah tag HTML
