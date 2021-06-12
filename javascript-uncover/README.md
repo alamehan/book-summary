@@ -986,6 +986,8 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 
 # 9. Function <a href="#daftarisi">🡹</a>
 
+<img src="images/BAB-9.png">
+
 ```Javascript
 // =====================
 // A. Function Sederhana
@@ -1563,6 +1565,8 @@ console.log(totalB(1, 2, 3));                         // Output: 6
 
 # 10. JavaScript Object <a href="#daftarisi">🡹</a>
 
+<img src="images/BAB-10.png">
+
 ```Javascript
 // ===========================
 // A. Object sebagai Tipe Data
@@ -1734,6 +1738,8 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 <div id="bab11"></div>
 
 # 11. Object Oriented Programming (OOP) <a href="#daftarisi">🡹</a>
+
+<img src="images/BAB-11.png">
 
 ```Javascript
 // ==========================================
