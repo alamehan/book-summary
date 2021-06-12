@@ -3447,7 +3447,7 @@ boo.outerHTML   = "<h1>Teks baru 3!</h1>"           // Mengubah <𝗽> ... </�
 coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹𝗲> ... </𝘁𝗶𝘁𝗹𝗲> yang ada di <head> pun konten isinya bisa diubah
                                                     // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
                                                   
-// E2. Memanipulasi atribut di tag HTML
+// E2. Mematribut di tag HTML
 
 var doo = document.querySelector("h1");             // Variable doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
 
@@ -3539,7 +3539,7 @@ console.log(joo.className);                         // Output: tebal
 # 15. DOM Event <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// DIBAWAH TERMASUK KEDALAM DOCUMENT METHOD:
+// Dibawah ini termasuk kedalam Document Object:
 // document.createEvent();
 // document.addEventListener();              
 // document.removeEventListener();   
