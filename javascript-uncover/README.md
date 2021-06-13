@@ -3570,12 +3570,15 @@ console.log(joo.className);                         // Output: tebal
     <title>Belajar JavaScript</title>
   </head>
   <body>
-    <h1 onclick="alert('Saya di klik');">Heading 1 (Click)</h1>
-    <h2 ondblclick="alert('Saya di double klik');">Heading 2 (Double Click)</h2>
-    <h3 oncontextmenu="alert('Saya di klik kanan');">Heading 3 (Right Click)</h3>
-    <h4 onmouseenter="alert('Pointer masuk ke element H4');">Heading 4 (Mouse Enter)</h4>
-    <h5 onmouseover="alert('Pointer berada di atas element H5');">Heading 5 (Mouse Over)</h5>
-    <h6 onmouseleave="alert('Pointer keluar dari element H6');">Heading 6 (Mouse Leave)</h6>
+    <span onclick="alert('Saya di klik');">Click</span><br>
+    <span ondblclick="alert('Saya di double klik');">Double Click</span><br>
+    <span oncontextmenu="alert('Saya di klik kanan');">Right Click</span><br>
+    <span onmouseenter="alert('Pointer masuk ke element');">Mouse Enter</span><br>
+    <span onmouseover="alert('Pointer berada di atas element');">Mouse Over</span><br>
+    <span onmouseleave="alert('Pointer keluar dari element');">Mouse Leave</span><br>
+
+    <h1 onclick="document.querySelector('p').innerHTML='Paragraf 1 muncul!';">Klik saya</h1>
+    <p></p> <!-- Awalnya kosong, namun tag p akan diisi melalui manipulasi DOM di baris atas -->
   </body>
 </html>
 ```
