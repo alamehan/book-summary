@@ -3549,11 +3549,50 @@ console.log(joo.className);                         // Output: tebal
 # 15. DOM Event <a href="#daftarisi">🡹</a>
 
 1. Di dalam DOM, event adalah segala sesuatu yang bisa kita lakukan dengan halaman web, seperti men-klik sebuah tombol, klik kanan paragraf, menggeser cursor mouse ke atas sebuah menu, menginput sesuatu ke dalam form, menekan tombol tab atau enter, dll.
-2. Ketika event terjadi, kita bisa menyiapkan kode JavaScript untuk melakukan sesuatu, yakni sebagai respon dari event tersebut. Misalnya saat sebuah tombol di klik, tampilkan pesan ```alert()```, atau ketika cursor mouse berada di atas menu, ubah warna background menu tersebut. Secara teknis, kode program yang dibuat untuk “menangkap” event ini dikenal dengan istilah **event handler** atau **event listener**.
-3. Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah. Secara garis besar di kelompokkan dalam beberapa tipe (mouse, keyboard, form, drag and drop, wheel, touch, gestures, gamepad, virtual reality, speech, mutation, svg, dll), yang paling banyak digunakan adalah event mouse, keyboard, dan form. Inilah yang akan dibahas di buku ini.
-
+2. Ketika event terjadi, kita bisa menyiapkan kode JavaScript untuk melakukan sesuatu, yakni sebagai respon dari event tersebut. Misalnya saat sebuah tombol di klik, tampilkan pesan ```alert()```, atau ketika cursor mouse berada di atas menu, ubah warna background menu tersebut. Secara teknis, kode program yang dibuat untuk “menangkap” event ini dikenal dengan istilah **Event Handler** atau **Event Listener**.
+3. Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah. Secara garis besar di kelompokkan dalam beberapa tipe (mouse, keyboard, form, drag and drop, wheel, touch, gestures, gamepad, virtual reality, speech, mutation, svg, dll), yang paling banyak digunakan adalah event mouse, keyboard, dan form. Ke tiga event inilah yang akan dibahas di buku ini.
 
 ```Javascript
+// =====================
+// A. 3 Cara Input Event
+// =====================
+```
+
+```Javascript
+// A1. Event Handler dari atribut HTML
+```
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1 onclick="alert('Saya di klik');">Heading 1 (Click)</h1>
+    <h2 ondblclick="alert('Saya di double klik');">Heading 2 (Double Click)</h2>
+    <h3 oncontextmenu="alert('Saya di klik kanan');">Heading 3 (Right Click)</h3>
+    <h4 onmouseenter="alert('Pointer masuk ke element H4');">Heading 4 (Mouse Enter)</h4>
+    <h5 onmouseover="alert('Pointer berada di atas element H5');">Heading 5 (Mouse Over)</h5>
+    <h6 onmouseleave="alert('Pointer keluar dari element H6');">Heading 6 (Mouse Leave)</h6>
+  </body>
+</html>
+```
+
+```Javascript
+// A2. Event Handler dari property Element
+
+// A3. Event Handler dari method Element
+
+// ===============
+// B. Event Object
+// ===============
+
+// ========================
+// C. Event Prevent Default
+// ========================
+
 // Dibawah ini termasuk kedalam Document Object:
 // document.addEventListener();              
 // document.removeEventListener();
