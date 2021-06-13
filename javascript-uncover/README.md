@@ -3548,11 +3548,18 @@ console.log(joo.className);                         // Output: tebal
 
 # 15. DOM Event <a href="#daftarisi">🡹</a>
 
+1. Di dalam DOM, event adalah segala sesuatu yang bisa kita lakukan dengan halaman web, seperti men-klik sebuah tombol, klik kanan paragraf, menggeser cursor mouse ke atas sebuah menu, menginput sesuatu ke dalam form, menekan tombol tab, menekan tombol enter, dll. 
+2. Ketika event terjadi, kita bisa menyiapkan kode JavaScript untuk melakukan sesuatu, yakni sebagai respon dari event tersebut. Misalnya saat sebuah tombol di klik, tampilkan pesan alert(), atau ketika cursor mouse berada di atas menu, ubah warna background menu tersebut. Secara teknis, kode program yang dibuat untuk “menangkap” event ini dikenal dengan istilah **event handler** atau **event listener**.
+3. Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah. Secara garis besar di kelompokkan dalam beberapa tipe (mouse, keyboard, form, drag and drop, wheel, touch, gestures, gamepad, virtual reality, speech, mutation, svg, dll), yang paling banyak digunakan adalah event mouse, keyboard, dan form.
+
+
 ```Javascript
 // Dibawah ini termasuk kedalam Document Object:
-// document.createEvent();
 // document.addEventListener();              
-// document.removeEventListener();   
+// document.removeEventListener();
+// attachEvent();                                    // For browsers that don't support the addEventListener()
+// detachEvent();                                    // For browsers that do not support the removeEventListener()
+// document.createEvent();
 ```
 
 <br>
