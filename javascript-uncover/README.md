@@ -326,6 +326,11 @@ console.log(fragmen);                 // Output: <div>
                                       //           <h1>Bahasa Indonesia</h1>
                                       //           <h2>24 ditambah 6 = 30</h2>
                                       //         </div>
+
+/*
+📚 Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan sebagai Tagged Templates Literals.
+selebihnya simak video berikut: https://www.youtube.com/watch?v=sbjkjjCcz8M
+*/
 ```
 <hr>
 
