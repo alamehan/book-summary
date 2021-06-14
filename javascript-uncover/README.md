@@ -3556,7 +3556,7 @@ console.log(joo.className);                         // Output: tebal
 ```
 
 ```HTML
-<!-- A1. Event Handler dari atribut HTML (❌ Not Recommended) -->
+<!-- A1. Event Handler dari atribut HTML -->
 
 <!DOCTYPE html>
 <html>
@@ -3588,7 +3588,7 @@ console.log(joo.className);                         // Output: tebal
 ```
 
 ```HTML
-<!-- A2. Event Handler dari property Element (❌ Not Recommended) -->
+<!-- A2. Event Handler dari property Element -->
 
 <!DOCTYPE html>
 <html>
