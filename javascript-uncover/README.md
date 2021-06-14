@@ -296,9 +296,36 @@ Ragam karakter escape di JavaScript:
 📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 */
 
-var strH = "Indonesia";
-var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ Hasilnya: Bahasa Indonesia
-var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ Hasilnya: Bahasa Indonesia
+// Template String (Template Literals)
+
+var strH = "Indonesia";               // Coba ganti nilainya menjadi String apapun (bebas)
+var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ Menggunakan concatenation (+)
+var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ Langsung di dalam backtick (``)
+console.log(strJ);                    // Output: Bahasa Indonesia
+
+var number  = 24;                                         // Coba ganti nilainya menjadi berapapun (bebas)
+var result  = `${number} ditambah 6 = ${number+6}`;       // Template String bisa dipakai juga untuk expressions
+console.log(result);                                      // Output: 24 ditambah 6 = 30
+
+                                                          // Bahkan untuk expressions yang kompleks sekalipun
+console.log(`${(number%2==0) ? "genap":"ganjil" }`);      // Output: genap                    // 𝗟𝗶𝗵𝗮𝘁 𝗕𝗔𝗕 𝟴 (𝗖)
+console.log(`${alert("Hello!")}`);                        // Output: Muncul Popup "Hello!"    // 𝗟𝗶𝗵𝗮𝘁 𝗕𝗔𝗕 𝟭𝟰 (𝗔𝟯)
+
+var multiln = `String baris 1
+String baris 2
+String baris 3`;                      // Template String bisa digunakan untuk membuat multi-line String
+console.log(multiln);                 // Output: String baris 1
+                                      //         String baris 2
+                                      //         String baris 3
+
+var fragmen = `<div>
+  <h1>${strJ}</h1>
+  <h2>${result}</h2>
+</div>`;                              // Bahkan juga bisa digunakan untuk membuat HTML Fragments
+console.log(fragmen);                 // Output: <div>
+                                      //           <h1>Bahasa Indonesia</h1>
+                                      //           <h2>24 ditambah 6 = 30</h2>
+                                      //         </div>
 ```
 <hr>
 
