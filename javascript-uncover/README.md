@@ -3550,9 +3550,9 @@ console.log(joo.className);                         // Output: tebal
 3. Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah. Secara garis besar di kelompokkan dalam beberapa tipe (mouse, keyboard, form, drag and drop, wheel, touch, gestures, gamepad, virtual reality, speech, mutation, svg, dll), yang paling banyak digunakan adalah event mouse, keyboard, dan form. Ke tiga event inilah yang akan dibahas di buku ini.
 
 ```Javascript
-// =====================
-// A. 3 Cara Input Event
-// =====================
+// =============================
+// A. 3 Cara Input Event Handler
+// =============================
 ```
 
 ```HTML
