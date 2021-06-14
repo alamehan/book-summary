@@ -3578,15 +3578,84 @@ console.log(joo.className);                         // Output: tebal
     <span onmouseleave="alert('Pointer keluar dari element');">Mouse Leave</span><br>
 
     <h1 onclick="document.querySelector('p').innerHTML='Paragraf 1 muncul!';">Klik saya</h1>
-    <p></p> <!-- Awalnya kosong, namun tag p akan diisi melalui manipulasi DOM di baris atas -->
+    <p></p> <!-- Awalnya kosong, namun tag p akan diisi melalui manipulasi DOM di baris bawah -->
+
+    <h1 onclick="tampilkan();">Klik saya juga</h1>
+    <p></p> <!-- Awalnya kosong, namun tag p akan diisi melalui manipulasi DOM di baris bawah -->
+    
+    <script>
+      function tampilkan(){
+        document.querySelector("p:nth-child(16)").innerHTML="Paragraf 2 muncul!";
+      }
+    </script>
   </body>
 </html>
 ```
 
 ```Javascript
 // A2. Event Handler dari property Element
+```
 
-// A3. Event Handler dari method Element
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1 id="judul1">Klik saya</h1>
+    <p></p>
+
+    <h1 id="judul2">Klik saya juga</h1>
+    <p></p>
+
+    <h1 id="judul3">Klik saya juga dong</h1>
+    </p></p>
+
+    <script>
+      // Cara penulisan 1: Dengan input Function ke property
+      function tampilkan1(){
+        document.querySelector('p').innerHTML="Paragraf 1 muncul!";
+      }
+      var nodeH1A = document.getElementById("judul1");
+      nodeH1A.onclick = tampilkan1;
+
+      // Cara penulisan 2: Dengan Anonymous Function
+      var nodeH1B = document.getElementById("judul2");
+      nodeH1B.onclick = function(){
+        document.querySelector('p:nth-child(4)').innerHTML="Paragraf 2 muncul!";
+      }
+
+      // Menambahkan beberapa event sekaligus (Contoh disini memakai cara penulisan 1)
+      function tampilkanClick(){
+        nodeP3.innerHTML="Saya di klik";
+      }
+      function tampilkanDoubleClick(){
+        nodeP3.innerHTML="Saya di double klik";
+      }
+      function tampilkanCotextMenu(){
+        nodeP3.innerHTML="Saya di klik kanan";
+      }
+      var nodeH1C = document.getElementById("judul3");     
+      var nodeP3  = document.querySelector('p:nth-child(6)');
+      nodeH1C.onclick       = tampilkanClick;
+      nodeH1C.ondblclick    = tampilkanDoubleClick;
+      nodeH1C.oncontextmenu = tampilkanCotextMenu;
+      // nodeH1C.onclick       = null;   // Berikan nilai null ke property untuk menghapus event
+      // nodeH1C.ondblclick    = null;   // Saat ini dilakukan maka event tidak akan berjalan
+      // nodeH1C.oncontextmenu = null;   // Coba jalankan Script di tab console 🔔
+    </script>
+  </body>
+</html>
+```
+
+```Javascript
+
+```
+
+```Javascript
+// A3. Event Handler dari method Element (✔️ Recommended)
 
 // ===============
 // B. Event Object
