@@ -1102,22 +1102,22 @@ function ratarata(){                  // Berbekal A argument dan arguments.lengt
 console.log(ratarata(2, 4));          // Output: 3   (hasil dari (2+4)/2 🡲 6/2)
 console.log(ratarata(2, 4, 8, 16));   // Output: 7.5 (hasil dari (2+4+8+16)/4 🡲 30/4)
 
-// D4. Spread Operator sebagai Rest Parameter
+// D4. Rest Parameter (1)
 
 function numC(...arg){                // Selain untuk menggabungkan Array seperti yang dijelaskan di BAB 7 (operator),
   console.log(arg[0]);                // spread (...) juga dapat digunakan untuk menggantikan peran arguments Object,
-  console.log(arg[1]);                // dan inilah yang disebut dengan 𝗥𝗲𝘀𝘁 𝗣𝗮𝗿𝗮𝗺𝗲𝘁𝗲𝗿.
-  console.log(arg[2]);                // Coba bandingkan hasilnya dengan point D1, maka akan sama saja.
-  console.log(arg[3]);                // Penulisannya tidak harus ...arg, bisa dengan kata lain, misalnya ...angka, dll
+  console.log(arg[1]);                // dan inilah yang disebut dengan 𝗥𝗲𝘀𝘁 𝗣𝗮𝗿𝗮𝗺𝗲𝘁𝗲𝗿. Hasil sama saja dengan point D1.
+  console.log(arg[2]);                // Penulisannya tidak harus ...arg, bisa dengan kata lain, misalnya ...angka, dll
+  console.log(arg[3]);
 }
 
 numC(20, 25, 30, 15);                 // Output: 20, 25, 30, 15
 numC(20, 25);                         // Output: 20, 25, undefined, undefined
 
-// D5. Argument + Spread Operator
+// D5. Rest Parameter (2)
 
 function numD(a, b, ...sisa){         // Cara baca: jika Function numD dipanggil dengan lebih dari 3 argument, maka argument
-  console.log(a);                     // pertama dan kedua masuk ke Variable a dan b, sisanya disimpan ke dalam Array sisa
+  console.log(a);                     // pertama dan kedua masuk ke Variable a dan b, sisanya disimpan ke dalam Rest Parameter
   console.log(b);
   console.log(sisa);
 }
@@ -1128,7 +1128,7 @@ numD(20, 25, 30, 15);                 // Output: 20, 25, [30, 15]
 
 // D6. Studi Kasus: Rata-Rata V2
 
-function rataratav2(...nilai){        // Studi kasus pada point D3, dapat kita buat ulang dengan memanfaatkan spread
+function rataratav2(...nilai){        // Studi kasus pada point D3, dapat kita buat ulang dengan memanfaatkan Rest Parameter
   var totalArg = nilai.length;        // serta perulangan for of, hasilnya aka sama saja, dan juga tetap fleksibel
   var hasil = 0;
   for (var i of nilai){
