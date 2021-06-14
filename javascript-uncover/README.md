@@ -3777,14 +3777,18 @@ console.log(joo.className);                         // Output: tebal
 # XX. Tambahan Materi: Advanced JavaScript <a href="#daftarisi">🡹</a>
 
 ```Javascript
-// Inheritance, Encapsulation, dll
-// Object.create(), Promise, Fetch, Async Await, dll
-// Ambil dari bukureact.id (intisari dari modern JavaScript)
 /*
-Tambahkan Top Library JS yang sudah diurutkan berdasarkan topik:
+Semua fitur di E6+:
+- Kembali bahas template string, arrow function, dll secara detail
+- Inheritance, Encapsulation, dll
+- Object.create(), Promise, Fetch, Async Await, dll
+- Ambil dari bukureact.id (intisari dari modern JavaScript)
+- ...
+
+TOP JS Library berdasarkan topik:
 - Urusan Date               : moment.js
 - Urusan Grafik             : chart.js
 - Urusan Visualisasi Data   : D3.js
-- Dan seterusnya ...
+- ...
 */
 ```
