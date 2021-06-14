@@ -3607,20 +3607,20 @@ console.log(joo.className);                         // Output: tebal
     </p></p>
 
     <script>
-      // Cara penulisan 1: Dengan input Function ke property
+      // ➊ Cara penulisan 1: Dengan input Function ke property
       function tampilkan1(){
         document.querySelector("p").innerHTML="Paragraf 1 muncul!";
       }
       var nodeH1A = document.getElementById("judul1");
       nodeH1A.onclick = tampilkan1;
 
-      // Cara penulisan 2: Dengan Anonymous Function
+      // ➋ Cara penulisan 2: Dengan Anonymous Function
       var nodeH1B = document.getElementById("judul2");
       nodeH1B.onclick = function(){
         document.querySelector("p:nth-child(4)").innerHTML="Paragraf 2 muncul!";
       }
 
-      // Menambahkan beberapa event berbeda sekaligus (Contoh disini memakai cara penulisan 1)
+      // ➌ Menambahkan beberapa event berbeda sekaligus (Contoh disini memakai cara penulisan 1)
       function tampilkanClick(){
         nodeP3.innerHTML="Saya di klik";
       }
@@ -3636,6 +3636,8 @@ console.log(joo.className);                         // Output: tebal
       nodeH1C.onclick       = tampilkanClick;
       nodeH1C.ondblclick    = tampilkanDoubleClick;
       nodeH1C.oncontextmenu = tampilkanContextMenu;
+
+      // ➍ Menghapus event tertentu yang dipilih
       // nodeH1C.onclick       = null;   // Berikan nilai null ke property untuk menghapus event
       // nodeH1C.ondblclick    = null;   // Saat ini dilakukan maka event tidak akan berjalan
       // nodeH1C.oncontextmenu = null;   // Coba jalankan Script di tab console 🔔
@@ -3666,7 +3668,7 @@ console.log(joo.className);                         // Output: tebal
     <p></p>
 
     <script>
-      // Cara penulisan 1: Dengan input Function sebagai argument
+      // ➊ Cara penulisan 1: Dengan input Function sebagai argument
       function tampilkanClick(){
         nodeP1.innerHTML="Saya di klik";
       }
@@ -3683,7 +3685,7 @@ console.log(joo.className);                         // Output: tebal
       nodeH1A.addEventListener("dblclick", tampilkanDoubleClick);
       nodeH1A.addEventListener("contextmenu", tampilkanContextMenu);
 
-      // Cara penulisan 2: Dengan Anonymous Function
+      // ➋ Cara penulisan 2: Dengan Anonymous Function
       var nodeH1B = document.getElementById("judul2");
       var nodeP2  = document.querySelector("p:nth-child(4)");
       
@@ -3697,7 +3699,7 @@ console.log(joo.className);                         // Output: tebal
         nodeP2.innerHTML="Saya di klik kanan";
       });
 
-      // Menggabungkan multiple event yang sama (Contoh disini memakai cara penulisan 1)
+      // ➌ Menggabungkan multiple event yang sama (Contoh disini memakai cara penulisan 1)
       function tampilkanPAtas(){
         nodeP3.innerHTML="P atas muncul!";
       }
@@ -3714,6 +3716,8 @@ console.log(joo.className);                         // Output: tebal
       nodeH1C.addEventListener("click", tampilkanPAtas);
       nodeH1C.addEventListener("click", tampilkanPTengah);
       nodeH1C.addEventListener("click", tampilkanPBawah);
+
+      // ➍ Menghapus event tertentu yang dipilih
       // nodeH1C.removeEventListener("click", tampilkanPTengah); // Menghapus event tertentu yang dipilih
       // nodeH1C.removeEventListener("click", tampilkanPBawah);  // Coba jalankan Script di tab console 🔔
     </script>
