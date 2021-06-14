@@ -329,7 +329,7 @@ console.log(fragmen);                 // Output: <div>
 
 /*
 📚 Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan sebagai Tagged Templates Literals.
-selebihnya simak video berikut: https://www.youtube.com/watch?v=sbjkjjCcz8M
+Selebihnya mengenai Tagged Templates Literals, simak video berikut: https://www.youtube.com/watch?v=sbjkjjCcz8M
 */
 ```
 <hr>
