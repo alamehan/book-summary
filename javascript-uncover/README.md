@@ -76,9 +76,7 @@ Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/j
 <img src="images/BAB-3-1.png">
 
 ```HTML
-====================
-A. Inline JavaScript
-====================
+<!-- A. Inline JavaScript -->
 
 <html>
   <head>
@@ -94,9 +92,7 @@ A. Inline JavaScript
 <hr>
 
 ```HTML
-======================
-B. Internal JavaScript
-======================
+<!-- B. Internal JavaScript -->
 
 <html>
   <head>
@@ -113,9 +109,7 @@ B. Internal JavaScript
 <hr>
 
 ```HTML
-======================
-C. External JavaScript
-======================
+<!-- C. External JavaScript -->
 
 <html>
   <head>
@@ -135,9 +129,7 @@ C. External JavaScript
 6. Dengan tambahan atribut **async**, kode HTML tetap diproses sembari mendownload file JavaScript. Dengan kata lain, web browser tidak masuk ke dalam Render-Blocking JavaScript. Atribut **defer** digunakan untuk mengatur kapan file JavaScript dijalankan. Dengan atribut ini, file JavaScript baru di download dan dieksekusi setelah seluruh kode HTML selesai diproses. Efek dari atribut **async** dan **defer** mungkin terdengar sama. Perbedaaan mendasar adalah, **async** digunakan untuk mengatur cara eksekusi kode JavaScript, sedangkan **defer** untuk mengatur kapan file JavaScript tersebut di download dan diproses.
 7. Tambahan atribut **async** dan **defer** dari HTML5 membawa perubahan terkait posisi terbaik peletakan kode JavaScript. Standar saat ini adalah menempatkan kode JavaScript di bagian ```<head>``` dengan tambahan atribut **async**. Alasannya, web browser bisa langsung mengeksekusi file JavaScript pada saat yang bersamaan dengan proses kode HTML, sehingga website dapat ditampilkan dengan lebih cepat (tidak mengalami Render-Blocking JavaScript). Untuk kode JavaScript yang tidak terlalu penting (dan bisa menunggu), tambahkan atribut **defer**. Sebagai tambahan, atribut **async** dan **defer** hanya berlaku untuk external JavaScript. Untuk internal JavaScript, atribut ini akan diabaikan dan posisi terbaik tetap di bagian bawah tag ```<body>```.
 ```HTML
-=============================================
-Posisi Terbaik Internal & External JavaScript
-=============================================
+<!-- Posisi Terbaik Internal & External JavaScript -->
 
 <html>
   <head>
@@ -159,10 +151,9 @@ Posisi Terbaik Internal & External JavaScript
 10. Tab Inspector (1) bisa digunakan untuk menelusuri seluruh kode HTML yang terdapat di dalam halaman web (2), di sisi kanan kita bisa melihat kode CSS yang digunakan oleh tag HTML tersebut (3). Jika anda sering mengedit kode CSS, tab Inspector ini sangat bermanfaat untuk melihat dan menjalankan (mengedit) kode CSS tanpa perlu mengubah file asli.
 11. Tab yang sering kita akses selama membuat kode program JavaScript adalah **Tab Console**, yang berada di sebelah kanan tab Inspector. Apabila kode yang anda buat tidak berjalan sebagaimana mestinya, hal pertama yang harus dilakukan adalah memeriksa tab Console ini. Selain menampilkan pesan error, di dalam tab Console kita juga bisa menjalankan kode program JavaScript secara langsung, tanpa harus menulisnya di dalam file HTML. Fungsi ```console.log()``` berguna untuk menampilkan hasil kode program ke tab Console.
 12. Salah satu kelemahan (sekaligus keunggulan) dari JavaScript adalah, pengunjung web bisa mematikan JavaScript yang ada di web browser mereka. Tag ```<noscript>``` bisa digunakan untuk menampilkan teks keterangan yang hanya bisa terlihat pada web browser yang tidak memiliki JavaScript (atau JavaScriptnya dimatikan).
+
 ```HTML
-============================
-Contoh Penggunaan <noscript>
-============================
+<!-- Contoh Penggunaan <noscript> -->
 
 <html>
   <head>
@@ -213,10 +204,9 @@ Contoh Penggunaan <noscript>
 7. EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah ```let``` untuk membuat Variable (sebagai alternatif dari ```var```). Perbedaan mendasar dari ```var``` dan ```let``` adalah terkait dengan **Variable scope**, yakni di bagian mana sebuah Variable masih bisa diakses. Penjelasan mengenai Variable scope akan saya bahas pada BAB tentang Function.
 8. Konstanta (```const```) dapat dikatakan sebagai Variable yang tidak bisa diubah sepanjang kode program. Setelah Konstanta ditulis dan diberi nilai awal, isi Konstanta tersebut tidak bisa ditukar dengan nilai lain. Berbeda dengan Variable yang menggunakan **CamelCase**, Konstanta biasa ditulis menggunakan huruf besar dan garis bawah (underscore) sebagai pemisah kata.
 9. Rekap format penulisan: Variable diawali huruf kecil (```total```, ```totalBiaya```, dst), Konstanta huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). **Class dibahas di BAB 11**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variabel, Konstanta maupun Class.
+
 ```HTML
-================
-Var, Let & Const
-================
+<!-- Var, Let & Const -->
 
 <html>
   <head>
@@ -236,7 +226,7 @@ Var, Let & Const
   </body> 
 </html>
 ```
-9. Berdasarkan contoh di atas: Variable ```harga```, let ```namaLengkap```, dan Konstanta ```NILAI_PI``` adalah **Identifier**. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah **Literal**.
+1. Berdasarkan contoh di atas: Variable ```harga```, let ```namaLengkap```, dan Konstanta ```NILAI_PI``` adalah **Identifier**. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah **Literal**.
 
 <br>
 <div id="bab06"></div>
