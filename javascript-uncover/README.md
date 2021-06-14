@@ -306,31 +306,6 @@ console.log(strJ);                    // Output: Bahasa Indonesia
 var number  = 24;                                         // Coba ganti nilainya menjadi berapapun (bebas)
 var result  = `${number} ditambah 6 = ${number+6}`;       // Template String bisa dipakai juga untuk expressions
 console.log(result);                                      // Output: 24 ditambah 6 = 30
-
-                                                          // Bahkan untuk expressions yang kompleks sekalipun
-console.log(`${(number%2==0) ? "genap":"ganjil" }`);      // Output: genap                    // 𝗟𝗶𝗵𝗮𝘁 𝗕𝗔𝗕 𝟴 (𝗖)
-console.log(`${alert("Hello!")}`);                        // Output: Muncul Popup "Hello!"    // 𝗟𝗶𝗵𝗮𝘁 𝗕𝗔𝗕 𝟭𝟰 (𝗔𝟯)
-
-var multiln = `String baris 1
-String baris 2
-String baris 3`;                      // Template String bisa digunakan untuk membuat multi-line String
-console.log(multiln);                 // Output: String baris 1
-                                      //         String baris 2
-                                      //         String baris 3
-
-var fragmen = `<div>
-  <h1>${strJ}</h1>
-  <h2>${result}</h2>
-</div>`;                              // Bahkan juga bisa digunakan untuk membuat HTML Fragments
-console.log(fragmen);                 // Output: <div>
-                                      //           <h1>Bahasa Indonesia</h1>
-                                      //           <h2>24 ditambah 6 = 30</h2>
-                                      //         </div>
-
-/*
-📚 Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan sebagai Tagged Templates Literals.
-Selebihnya mengenai Tagged Templates Literals, simak video berikut: https://www.youtube.com/watch?v=sbjkjjCcz8M
-*/
 ```
 <hr>
 
@@ -3777,6 +3752,44 @@ console.log(joo.className);                         // Output: tebal
 # XX. Tambahan Materi: Advanced JavaScript <a href="#daftarisi">🡹</a>
 
 ```Javascript
+/*
+Beberapa fitur ES6+ sebenarnya sudah dibahas di BAB-BAB sebelumya secara singkat saja.
+Di BAB ini, akan kembali membahas fitur ES6+ lebih banyak lagi dan secara mendetail.
+*/
+
+// ==================
+// A. Template String
+// ==================
+
+var number  = 24;                                         // Template String bisa dipakai untuk expressions kompleks
+console.log(`${(number%2==0) ? "genap":"ganjil" }`);      // Output: genap
+console.log(`${alert("Hello!")}`);                        // Output: Muncul Popup "Hello!"
+
+var multiln = `String baris 1
+String baris 2
+String baris 3`;                      // Template String bisa digunakan untuk membuat multi-line String
+console.log(multiln);                 // Output: String baris 1
+                                      //         String baris 2
+                                      //         String baris 3
+
+var fragmen = `<div>
+  <h1>${number*10}</h1>
+  <h2>WOW!</h2>
+</div>`;                              // Bahkan juga bisa digunakan untuk membuat HTML Fragments
+console.log(fragmen);                 // Output: <div>
+                                      //           <h1>240</h1>
+                                      //           <h2>WOW!</h2>
+                                      //         </div>
+
+/*
+📚 Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan sebagai Tagged Templates Literals.
+Selebihnya mengenai Tagged Templates Literals, simak video berikut: https://www.youtube.com/watch?v=sbjkjjCcz8M
+*/
+
+// ==================
+// B. ...............
+// ==================
+
 /*
 Semua fitur di E6+:
 - Kembali bahas template string, arrow function, dll secara detail
