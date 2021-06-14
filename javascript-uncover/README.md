@@ -3558,11 +3558,9 @@ console.log(joo.className);                         // Output: tebal
 // =====================
 ```
 
-```Javascript
-// A1. Event Handler dari atribut HTML (❌ Not Recommended)
-```
-
 ```HTML
+<!-- A1. Event Handler dari atribut HTML (❌ Not Recommended) -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -3592,11 +3590,9 @@ console.log(joo.className);                         // Output: tebal
 </html>
 ```
 
-```Javascript
-// A2. Event Handler dari property Element (❌ Not Recommended)
-```
-
 ```HTML
+<!-- A2. Event Handler dari property Element (❌ Not Recommended) -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -3651,11 +3647,9 @@ console.log(joo.className);                         // Output: tebal
 </html>
 ```
 
-```Javascript
-// A3. Event Handler dari method Element (✔️ Recommended)
-```
-
 ```HTML
+<!-- A3. Event Handler dari method Element (✔️ Recommended) -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -3735,16 +3729,13 @@ console.log(joo.className);                         // Output: tebal
 // B. Event Object
 // ===============
 
+// ...
+
 // ========================
 // C. Event Prevent Default
 // ========================
 
-// Dibawah ini termasuk kedalam Document Object:
-// document.addEventListener();              
-// document.removeEventListener();
-// attachEvent();                                    // For browsers that don't support the addEventListener()
-// detachEvent();                                    // For browsers that do not support the removeEventListener()
-// document.createEvent();
+// ...
 ```
 
 <br>
