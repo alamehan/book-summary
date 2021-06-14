@@ -2288,7 +2288,7 @@ console.log(polaC.test("acaa"));        // Output: false
 
                                         // Character Set, membuat syarat bahwa hanya karakter tertentu saja yang boleh ditulis:
 var polaD = /[abcde]/;                  // ⤷ Artinya: [minimal terdapat 1 karakter diantara huruf a-e]
-var polaE = /[a-e]/;                    // ⤷ [a-e] merupakan alternatif penulisan dari [abcde] (Recommended)
+var polaE = /[a-e]/;                    // ⤷ [a-e] merupakan alternatif penulisan dari [abcde] (✔️ Recommended)
 var polaF = /^[a-e]$/;                  // ⤷ Artinya: [tepat terdapat 1 karakter diantara huruf a-e]
 var polaG = /^[a-e][1-9]../;            // ⤷ Artinya: [tepat 1 karakter a-e] + [min 1 karakter 1-9] + [min 2 karakter bebas]
 var polaH = /[a-e][1-9]..$/;            // ⤷ Artinya: [min 1 karakter a-e] + [tepat 1 karakter 1-9] + [tepat 2 karakter bebas]
@@ -3559,7 +3559,7 @@ console.log(joo.className);                         // Output: tebal
 ```
 
 ```Javascript
-// A1. Event Handler dari atribut HTML
+// A1. Event Handler dari atribut HTML (❌ Not Recommended)
 ```
 
 ```HTML
@@ -3578,10 +3578,10 @@ console.log(joo.className);                         // Output: tebal
     <span onmouseleave="alert('Pointer keluar dari element');">Mouse Leave</span><br>
 
     <h1 onclick="document.querySelector('p').innerHTML='Paragraf 1 muncul!';">Klik saya</h1>
-    <p></p> <!-- Awalnya kosong, namun tag p akan diisi melalui manipulasi DOM di baris bawah -->
+    <p></p> <!-- tag p sebagai placeholder/penampung hasil ketika event terjadi-->
 
     <h1 onclick="tampilkan();">Klik saya juga</h1>
-    <p></p> <!-- Awalnya kosong, namun tag p akan diisi melalui manipulasi DOM di baris bawah -->
+    <p></p> <!-- tag p sebagai placeholder/penampung hasil ketika event terjadi-->
     
     <script>
       function tampilkan(){
@@ -3593,7 +3593,7 @@ console.log(joo.className);                         // Output: tebal
 ```
 
 ```Javascript
-// A2. Event Handler dari property Element
+// A2. Event Handler dari property Element (❌ Not Recommended)
 ```
 
 ```HTML
@@ -3616,7 +3616,7 @@ console.log(joo.className);                         // Output: tebal
     <script>
       // Cara penulisan 1: Dengan input Function ke property
       function tampilkan1(){
-        document.querySelector('p').innerHTML="Paragraf 1 muncul!";
+        document.querySelector("p").innerHTML="Paragraf 1 muncul!";
       }
       var nodeH1A = document.getElementById("judul1");
       nodeH1A.onclick = tampilkan1;
@@ -3624,24 +3624,25 @@ console.log(joo.className);                         // Output: tebal
       // Cara penulisan 2: Dengan Anonymous Function
       var nodeH1B = document.getElementById("judul2");
       nodeH1B.onclick = function(){
-        document.querySelector('p:nth-child(4)').innerHTML="Paragraf 2 muncul!";
+        document.querySelector("p:nth-child(4)").innerHTML="Paragraf 2 muncul!";
       }
 
-      // Menambahkan beberapa event sekaligus (Contoh disini memakai cara penulisan 1)
+      // Menambahkan beberapa event berbeda sekaligus (Contoh disini memakai cara penulisan 1)
       function tampilkanClick(){
         nodeP3.innerHTML="Saya di klik";
       }
       function tampilkanDoubleClick(){
         nodeP3.innerHTML="Saya di double klik";
       }
-      function tampilkanCotextMenu(){
+      function tampilkanContextMenu(){
         nodeP3.innerHTML="Saya di klik kanan";
       }
+
       var nodeH1C = document.getElementById("judul3");     
-      var nodeP3  = document.querySelector('p:nth-child(6)');
+      var nodeP3  = document.querySelector("p:nth-child(6)");
       nodeH1C.onclick       = tampilkanClick;
       nodeH1C.ondblclick    = tampilkanDoubleClick;
-      nodeH1C.oncontextmenu = tampilkanCotextMenu;
+      nodeH1C.oncontextmenu = tampilkanContextMenu;
       // nodeH1C.onclick       = null;   // Berikan nilai null ke property untuk menghapus event
       // nodeH1C.ondblclick    = null;   // Saat ini dilakukan maka event tidak akan berjalan
       // nodeH1C.oncontextmenu = null;   // Coba jalankan Script di tab console 🔔
@@ -3651,12 +3652,85 @@ console.log(joo.className);                         // Output: tebal
 ```
 
 ```Javascript
+// A3. Event Handler dari method Element (✔️ Recommended)
+```
 
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1 id="judul1">Klik saya</h1>
+    <p></p>
+
+    <h1 id="judul2">Klik saya juga</h1>
+    <p></p>
+
+    <h1 id="judul3">Klik saya juga dong</h1>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <script>
+      // Cara penulisan 1: Dengan input Function sebagai argument
+      function tampilkanClick(){
+        nodeP1.innerHTML="Saya di klik";
+      }
+      function tampilkanDoubleClick(){
+        nodeP1.innerHTML="Saya di double klik";
+      }
+      function tampilkanContextMenu(){
+        nodeP1.innerHTML="Saya di klik kanan";
+      }
+
+      var nodeH1A = document.getElementById("judul1");
+      var nodeP1  = document.querySelector("p");
+      nodeH1A.addEventListener("click", tampilkanClick);
+      nodeH1A.addEventListener("dblclick", tampilkanDoubleClick);
+      nodeH1A.addEventListener("contextmenu", tampilkanContextMenu);
+
+      // Cara penulisan 2: Dengan Anonymous Function
+      var nodeH1B = document.getElementById("judul2");
+      var nodeP2  = document.querySelector("p:nth-child(4)");
+      
+      nodeH1B.addEventListener("click", function() {
+        nodeP2.innerHTML="Saya di klik";
+      });
+      nodeH1B.addEventListener("dblclick", function() {
+        nodeP2.innerHTML="Saya di double klik";
+      });
+      nodeH1B.addEventListener("contextmenu", function() {
+        nodeP2.innerHTML="Saya di klik kanan";
+      });
+
+      // Menggabungkan multiple event yang sama (Contoh disini memakai cara penulisan 1)
+      function tampilkanPAtas(){
+        nodeP3.innerHTML="P atas muncul!";
+      }
+      function tampilkanPTengah(){
+        nodeP4.innerHTML="P tengah muncul!";
+      }
+      function tampilkanPBawah(){
+        nodeP5.innerHTML="P bawah muncul!";
+      }
+      var nodeH1C = document.getElementById("judul3");
+      var nodeP3  = document.querySelector("p:nth-child(6)");
+      var nodeP4  = document.querySelector("p:nth-child(7)");
+      var nodeP5  = document.querySelector("p:nth-child(8)");
+      nodeH1C.addEventListener("click", tampilkanPAtas);
+      nodeH1C.addEventListener("click", tampilkanPTengah);
+      nodeH1C.addEventListener("click", tampilkanPBawah);
+      // nodeH1C.removeEventListener("click", tampilkanPTengah); // Menghapus event tertentu yang dipilih
+      // nodeH1C.removeEventListener("click", tampilkanPBawah);  // Coba jalankan Script di tab console 🔔
+    </script>
+  </body>
+</html>
 ```
 
 ```Javascript
-// A3. Event Handler dari method Element (✔️ Recommended)
-
 // ===============
 // B. Event Object
 // ===============
