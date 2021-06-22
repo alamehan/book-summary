@@ -1868,7 +1868,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang b
   return mobil;                                   // Note: Di baris akhir Function Declaration harus ada return
 }
 
-// ➌ Membuat Object dari Function Declaration di atas
+// ➌ Membuat Object dari point 1 & 2 di atas
 
 let mobilBudi = Mobil("Toyota Avanza", "MPV", 200000000);   // Proses instansiasi objek Mobil baru (tanpa keyword new)
 let mobilJoko = Mobil("Honda Civic", "Sedan", 200000000);
@@ -1916,7 +1916,7 @@ class Mobil{                                      // Class sebagai "blue print m
   }
 }
 
-// ➌ Membuat Object dari Constructor Functions/Class di atas
+// ➌ Membuat Object dari point 1 & 2 di atas
 
 let mobilBudi = new Mobil("Toyota Avanza", "MPV", 200000000);   // Proses instansiasi objek Mobil baru menggunakan keyword new
 let mobilJoko = new Mobil("Honda Civic", "Sedan", 200000000);   // (Instansiasi: membuat sesuatu yang berwujud dari yang abstrak)
