@@ -1002,7 +1002,8 @@ function pagiMalam(){
   console.log("Selamat Malam!");
 }
 
-pagiMalam();                          // Output: Selamat Pagi!, Selamat Malam!
+pagiMalam();                          // Output: Selamat Pagi!
+                                      //         Selamat Malam!
 ```
 <hr>
 
@@ -1052,8 +1053,8 @@ console.log(tambah(20, 25));          // Output: 65 (Hasil dari 20+25+10+10)
 console.log(tambah(20, 25, 30));      // Output: 85 (Hasil dari 20+25+30+10)
 console.log(tambah(20, 25, 30, 15));  // Output: 90 (Hasil dari 20+25+30+15)
 
-console.log(kurang());                // Output: NaN (Function kurang butuh minimal 2 argument! untuk parameter a & b)
-console.log(kurang(20));              // Output: NaN (Function kurang butuh minimal 2 argument! kurang argument ke-2)
+console.log(kurang());                // Output: NaN (Function kurang() butuh minimal 2 argument! untuk parameter a & b)
+console.log(kurang(20));              // Output: NaN (Function kurang() butuh minimal 2 argument! kurang argument ke-2)
 console.log(kurang(20, 25));          // Output: -25 (Argument c & d jika tidak diisi, maka akan diisi nilai defaultnya)
 console.log(kurang(20, 25, 30));      // Output: -45 (Hasil dari 20-25-30-10)
 console.log(kurang(20, 25, 30, 15));  // Output: -50 (Hasil dari 20-25-30-15)
@@ -1097,7 +1098,7 @@ console.log(numB(20, 25, 30, 15));    // Output: 4 (Terdapat 4 argument saat pem
 
 // D3. Studi Kasus: Rata-Rata
 
-function ratarata(){                  // Berbekal A argument dan arguments.length, kita bisa membuat sebuah Function
+function ratarata(){                  // Berbekal Array argument dan arguments.length, kita bisa membuat sebuah Function
   var totalArg = arguments.length;    // rata-rata yang bisa menerima berarapun jumlah argumentnya (fleksibel)
   var hasil = 0;
   for (var i=0; i<totalArg; i++){
@@ -1163,7 +1164,7 @@ mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup te
 
 var a = "Belajar JS";                 // a merupakan global Variable, oleh karena itu dapat diakses darimana saja
 function boo(){
-  console.log(a);                     // a yang diakses disini yaitu a global varibale, berhubung Function foo
+  console.log(a);                     // a yang diakses disini yaitu a global varibale, berhubung Function boo
 }                                     // tidak memiliki local Variable a, maka akan "naik" mencari ke global
 
 boo();                                // Output: Belajar JS (Hasil dari dalam Function)
@@ -1190,7 +1191,7 @@ function doo(c, d){
 
 var c = 5;                            // c disini merupakan global Variable
 var d = 10;                           // d disini merupakan global Variable
-var e = doo(c, d);                    // Argument yang dikirim yaitu baz(5, 10)
+var e = doo(c, d);                    // Argument yang dikirim yaitu doo(5, 10)
 
 console.log(c);                       // Output: 5
 console.log(d);                       // Output: 10
@@ -1299,9 +1300,9 @@ console.log(satu);                    // var dua = "Belajar CSS";
 // Contoh 2-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(sapaPagi);                // 𝘀𝗮𝗽𝗮𝗣𝗮𝗴𝗶 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘀𝗮𝗽𝗮𝗣𝗮𝗴𝗶(){...}
 console.log(sapaPagi());              // console.log(sapaPagi)            🡲 Output: function sapaPagi(){...}
-function sapaPagi(){                  // console.log(sapaPagi());         🡲 Output: Selamat Pagi!
-  console.log("Selamat Pagi!");       // function sapaPagi(){
-}                                     //   console.log("Selamat Pagi!");
+function sapaPagi(){                  // console.log(sapaPagi());         🡲 Output: Selamat Pagi! (Function bisa berjalan! padahal
+  console.log("Selamat Pagi!");       // function sapaPagi(){                                       pendefinisiannya dibawah, ini
+}                                     //   console.log("Selamat Pagi!");                            terjadi akibat efek hoisting)
                                       // }                                🡲 Output: undefined (terjadi karena tidak ada return)
 
 // Contoh 2-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
