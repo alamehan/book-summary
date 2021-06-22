@@ -1883,7 +1883,9 @@ console.log(mobilBudi.pergi("Bali"));             // Output: Toyota Avanza pergi
 console.log(mobilJoko.merk);                      // Output: Honda Civic
 console.log(mobilJoko.hidupkan());                // Output: Mesin Honda Civic dihidupkan!
 console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi ke Solo
+```
 
+```JavaScript
 // B3. Dengan OOP: Menggunakan Cara Baru (✔️)
 
 // ➊ OOP dengan Constructor Functions (Sebelum ES6)
@@ -1938,7 +1940,9 @@ Class saja), kita tidak usah repot-repot menulis object mobil secara manual satu
 di point B1), cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat object yang diinginkan melalui proses
 instansiasi, mudah dan cepat, bahkan jika kita butuh 100 object sekalipun. Ini akan terasa manfaatnya saat aplikasi sudah besar.
 */
+```
 
+```JavaScript
 // B4. Menambah property & method sebuah Class dengan Prototype
 
 Mobil.prototype.jumlahRoda = 4;                   // Menambahkan property jumlahRoda ke Class Mobil (di luar pendefinisian Class)
