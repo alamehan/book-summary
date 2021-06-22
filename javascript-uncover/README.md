@@ -1551,7 +1551,7 @@ var add = (function(){                    // Penjelasan: pada saat di assign ke 
 })();
 
 counter = 100;                            // Misal tidak sengaja menimpa nilai var counter di Global
-console.log(add());                       // Output: 1 
+console.log(add());                       // Output: 1  (var counter di dalam function tidak ikut terpengaruh)
 console.log(add());                       // Output: 2
 console.log(add());                       // Output: 3
 
@@ -1563,7 +1563,7 @@ var add = function(){
 };
 
 counter = 100;                            // Misal tidak sengaja menimpa nilai var counter di Global
-console.log(add());                       // Output: 101
+console.log(add());                       // Output: 101  (var counter di dalam function ikut terpengaruh)
 console.log(add());                       // Output: 102
 console.log(add());                       // Output: 103
 
