@@ -1540,7 +1540,7 @@ selamatPagi("Joko");                      // Output: Pagi, Joko!    ⇨ Menjalan
 
 // H8-1. Function Expression VS IIFE
 
-cetak = function(){                       // Cara penulisan Function Expression (Annonymous Function) biasa
+cetak = function(){                       // Cara penulisan Function Expressions (Annonymous Function) biasa
   for (let i = 1; i <= 10; i++){
     console.log(i);
   }
@@ -1548,7 +1548,7 @@ cetak = function(){                       // Cara penulisan Function Expression 
 cetak();                                  // Panggil Function untuk dijalankan
 
 (function(){                              // Cara penulisan IIFE. Dengan cara seperti ini Function akan langsung dijalankan tanpa
-  for (let i = 1; i <= 10; i++){          // perlu dipanggil terlebih dahulu layaknya Function Declaration/Expression biasa. IIFE
+  for (let i = 1; i <= 10; i++){          // perlu dipanggil terlebih dahulu layaknya Function Declaration/Expressions biasa. IIFE
     console.log(i);                       // ditulis dengan pola (function() {...})(); Awalnya, dahulu IIFE digunakan untuk mem-
   }                                       // buat Function Scope (lihat kembali point F di atas), tujuannya agar Variable (var)
 })();                                     // yang berada di dalam IIFE seolah bersifat Private dan tidak bisa diakses dari luar.
