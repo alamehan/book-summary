@@ -1485,7 +1485,9 @@ function salam(bar){                  // Step 2 🡲 parameter bar akan menangka
 }
 salam(foo);                           // Step 1 🡲 mengirim Function bernama foo (Callback) sebagai sebuah argument
                                       // Note: foo merupakan Callback & salam merupakan Higher Order Function
+```
 
+```JavaScript
 /*
 𝗡𝗼𝘁𝗲: 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸 𝘀𝗲𝗰𝗮𝗿𝗮 𝗱𝗲𝘁𝗮𝗶𝗹 𝗱𝗶𝗯𝗮𝗵𝗮𝘀 𝗱𝗶 𝗕𝗔𝗕 𝟭𝟮 (𝗯𝗮𝗴𝗶𝗮𝗻 𝗘𝟰)
 
@@ -1830,7 +1832,9 @@ Class berperan sebagai "blue print"/cetakan/sesuatu yang masih abstrak yang menj
 jika Mobil adalah Class, maka mobilBudi, mobilJoko, mobilPutri, dst merupakan object dari Class Mobil. Jika Binatang adalah
 Class, maka sapi, kambing, kuda, dst merupakan object dari Class Binatang. Simak penjelasan di point B2 & B3 di bawah ini.
 */
+```
 
+```JavaScript
 // B2. Dengan OOP: Menggunakan Cara Lama (❌)
 
 // ➊ OOP dengan Function Declaration
