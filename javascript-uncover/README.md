@@ -1497,8 +1497,8 @@ salam(foo);                           // Step 1 🡲 mengirim Function bernama f
 Tambahan: Selain uraian di atas, ada pula beberapa istilah lainnya terkait Function yang perlu diketahui.
 ➊ Function yang berada di dalam Function, disebut 𝗜𝗻𝗻𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
 ➋ Inner Function yang memiliki akses ke parent scope-nya (𝗢𝘂𝘁𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻) atau dengan kata lain yang
-  menggunakan data/Variable/Let yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
-➌ Function yang berjalan dari hasil Function lainnya (sudah jalan setengahnya), disebut 𝗙𝗮𝗰𝘁𝗼𝗿𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
+   menggunakan data/Variable/Let yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
+➌ Function yang berjalan dari hasil Function lainnya (sudah jalan ½ nya), disebut 𝗙𝗮𝗰𝘁𝗼𝗿𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
 ➍ 𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲𝗹𝘆-𝗶𝗻𝘃𝗼𝗸𝗲𝗱 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀 (𝗜𝗜𝗙𝗘), lihat contohnya di bawah, point H8.
 */
 
