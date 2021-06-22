@@ -1393,7 +1393,7 @@ function funB(){                      //   𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂�
 console.log(nama);                    // function funB(){                 🡲 Tidak ada parameter yang menangkap argument
 var nama = "Jaka";                    //   console.log(nama);             🡲 Baris ini akan mencari variable "nama" di Global
 funA();                               //   console.log(arguments[0]);     🡲 Argument yang dikirim akan masuk ke Array Argument
-funB("Tono");                         // }
+funB("Tono");                         // }                                   ⤷ (Lihat lagi point D1 & D4 di atas)
 console.log(nama);                    // console.log(nama);               🡲 Output: undefined
                                       // var nama = "Jaka";
                                       // funA();                          🡲 Output: Budi
