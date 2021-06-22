@@ -1498,7 +1498,7 @@ Tambahan: Selain uraian di atas, ada pula beberapa istilah lainnya terkait Funct
 ➊ Function yang berada di dalam Function, disebut 𝗜𝗻𝗻𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
 ➋ Inner Function yang memiliki akses ke parent scope-nya (𝗢𝘂𝘁𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻) atau dengan kata lain yang
   menggunakan data/Variable/Let yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
-➌ Function yang berjalan dari hasil Function lainnya (baru berjalan setengahnya), disebut 𝗙𝗮𝗰𝘁𝗼𝗿𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
+➌ Function yang berjalan dari hasil Function lainnya (sudah jalan setengahnya), disebut 𝗙𝗮𝗰𝘁𝗼𝗿𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
 ➍ 𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲𝗹𝘆-𝗶𝗻𝘃𝗼𝗸𝗲𝗱 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀 (𝗜𝗜𝗙𝗘), lihat contohnya di bawah, point H8.
 */
 
@@ -1523,10 +1523,11 @@ function ucapkanSalam(waktu){             // function ucapkanSalam(waktu){
   return tampilkan;                       // }
 }
                                           // Cara baca: 
-var selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam() dengan mengirim argument berupa String Pagi
-                                          // ⤷ Parameter waktu akan menangkap String Pagi dari argument, lalu me-return tampilkan
-                                          // ⤷ Simpan hasilnya (Function sudah berjalan setengahnya) ke dalam Variable selamatPagi 
-                                          //   artinya di dalam Variable selamatPagi kini sudah terdapat waktu yang berisi Pagi
+var selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam() dengan mengirim argument berupa String "Pagi"
+                                          // ⤷ Parameter waktu di ucapkanSalam(waktu) akan menangkap String "Pagi" dari argument
+                                          // ⤷ Function ucapkanSalam() akan me-return (bukan menjalankan) Function tampilkan yang
+                                          //   kini sudah berisi nilai dari waktu, yaitu String "Pagi" (Anggap: sudah jalan ½ nya)
+                                          // ⤷ Simpan hasil return tersebut kedalam Variable selamatPagi
 
 selamatPagi("Budi");                      // Output: Pagi, Budi!    ⇨ Menjalankan Factory Function selamatPagi("Budi");
 selamatPagi("Joko");                      // Output: Pagi, Joko!    ⇨ Menjalankan Factory Function selamatPagi("Joko");
@@ -1542,37 +1543,30 @@ var sapa = (function(waktu){              // var sapa = (function(waktu){
   return tampilkan;                       // })();
 })();
                                           // Cara baca:
-                                          // ⤷ Pada saat di assign ke Variable sapa, function(waktu) akan langsung menjalankan
-                                          //   function tampilkan(nama){ ... }, tidak lagi berjalan setengahnya seperti pada
-                                          //   kasus Factory Function.
+                                          // ⤷ Pada saat di assign ke Variable sapa, Anonymous function(waktu) akan langsung men-
+                                          //   jalankan Inner Function-nya, yaitu function tampilkan(nama){ ... }, tidak ada lagi
+                                          //   istilah "sudah berjalan setengahnya" seperti pada kasus Factory Function.
+
+sapa("Budi");                             // Output: Pagi, Budi!    ⇨ Menjalankan IIFE sapa("Budi");
+sapa("Joko");                             // Output: Pagi, Joko!    ⇨ Menjalankan IIFE sapa("Joko");                                      
 
                                           // IIFE ditulis dengan pola (function() {...})();
-                                          
-                                      
-
-
-var sapa = (function(waktu){              // IIFE ditulis dengan pola (function() {...})(); Penjelasan: pada saat di assign ke  
-  var waktu = "Pagi";                     // Variable sapa, function(waktu) akan langsung menjalankan Inner Function-nya, yaitu
-  return function(nama){                  // 
-    console.log(`${waktu}, ${nama}!`);    // 📚 Selebihnya tentang IIFE: https://flaviocopes.com/javascript-iife/
-  }
-})();
-
-sapa("Budi");                             // Output: Pagi, Budi!
-sapa("Joko");                             // Output: Pagi, Joko!
+                                          // 📚 Selebihnya tentang IIFE: https://flaviocopes.com/javascript-iife/
 
 // H9. Contoh IIFE (2)
 
-var add = (function(){                    // Penjelasan: pada saat di assign ke Variable add, Outer Function akan langsung
-  var counter = 0;                        // menjalankan Inner Function-nya. Tidak lagi jalan setengahnya seperti di kasus
-  return function(){                      // Factory Function. Selain itu, pada contoh ini, Variable counter seolah seperti
-    return ++counter;                     // Private (tidak bisa diakses dari luar, tetapi nilainya tetap dipertahankan
-  }                                       // karena ia menjadi Closure). Agar lebih jelas, bandingkan dengan contoh di H10.
+                                          // ᴘᴇɴᴜʟɪꜱᴀɴ ʟᴇʙɪʜ ʀɪɴɢᴋᴀꜱ:
+var add = (function(){                    // var add = (function(){
+  var counter = 0;                        //   var counter = 0;
+  function tambah(){                      //   return function(){
+    return ++counter;                     //     return ++counter;
+  }                                       //   } 
+  return tambah;                          // })();
 })();
 
 counter = 100;                            // Misal tidak sengaja menimpa nilai var counter di Global
-console.log(add());                       // Output: 1  (var counter di dalam function tidak ikut terpengaruh)
-console.log(add());                       // Output: 2
+console.log(add());                       // Output: 1  ⇨ var counter di dalam function tidak ikut terpengaruh, seolah Private.
+console.log(add());                       // Output: 2     ⤷ Bandingkan dengan contoh tanpa IIFE di point H10 di bawah 
 console.log(add());                       // Output: 3
 
 // H10. Contoh Tanpa IIFE
@@ -1583,7 +1577,7 @@ var add = function(){
 };
 
 counter = 100;                            // Misal tidak sengaja menimpa nilai var counter di Global
-console.log(add());                       // Output: 101  (var counter di dalam function ikut terpengaruh)
+console.log(add());                       // Output: 101  ⇨ var counter di dalam function ikut terpengaruh, dan ini tidak baik.
 console.log(add());                       // Output: 102
 console.log(add());                       // Output: 103
 
