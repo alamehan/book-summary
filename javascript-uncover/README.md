@@ -1311,7 +1311,7 @@ console.log(sapaSiang());             // console.log(sapaSiang)           🡲 O
 function sapaSiang(){                 // console.log(sapaSiang());        🡲 Output: Selamat Siang!
   return "Selamat Siang!";            // function sapaSiang(){
 }                                     //   return "Selamat Siang!";
-                                      // }                                🡲 Karena terdapat return, maka tidak ada Output apapun
+                                      // }                                🡲 Karena terdapat return, maka tidak ada Output undefined
 
 // Contoh 2-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(sapaSore());              // 𝘀𝗮𝗽𝗮𝗦𝗼𝗿𝗲 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘀𝗮𝗽𝗮𝗦𝗼𝗿𝗲(){...}
@@ -1370,7 +1370,7 @@ function luar(){                      // 𝗹𝘂𝗮𝗿 = 𝗳𝘂𝗻𝗰𝘁
   function tengah(){                  //   𝘁𝗲𝗻𝗴𝗮𝗵 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘁𝗲𝗻𝗴𝗮𝗵(){...} 🡲 Local Hoisting di dalam Function
     console.log("B");                 //   console.log("A");
     function dalam(){                 //   function tengah(){
-      console.log("C");               //     𝗱𝗮𝗹𝗮𝗺 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗱𝗮𝗹𝗮𝗺(){...} 🡲 Local Hoisting di dalam Function
+      console.log("C");               //     𝗱𝗮𝗹𝗮𝗺 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗱𝗮𝗹𝗮𝗺(){...} 🡲 Local Hoisting di dalam Function (nested)
     }                                 //     console.log("B");
     dalam();                          //     function dalam(){
   }                                   //       console.log("C");
@@ -1386,17 +1386,18 @@ function funA(){                      // 𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂�
   var nama = "Budi";                  // 𝗳𝘂𝗻𝗔 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗳𝘂𝗻𝗔(){...}
   console.log(nama);                  // 𝗳𝘂𝗻𝗕 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗳𝘂𝗻𝗕(){...}
 }                                     // function funA(){
-function funB(){                      //   𝘃𝗮𝗿 𝗻𝗮𝗺𝗲 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+function funB(){                      //   𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
   console.log(nama);                  //   var nama = "Budi";
 }                                     //   console.log(nama);
 console.log(nama);                    // }
-var nama = "Jaka";                    // function funB(){
+var nama = "Jaka";                    // function funB(){                 🡲 Tidak ada parameter yang akan menangkap argument
 funA();                               //   console.log(nama);
 funB("Tono");                         // }
 console.log(nama);                    // console.log(nama);               🡲 Output: undefined
                                       // var nama = "Jaka";
                                       // funA();                          🡲 Output: Budi
-                                      // funB("Tono");                    🡲 Output: Jaka (bukan Tono ya!)
+                                      // funB("Tono");                    🡲 Output: Jaka (bukan Tono ya!, karena funB() tidak
+                                      //                                                   menangkap argument apapun)
                                       // console.log(nama);               🡲 Output: Jaka
 ```
 <hr>
