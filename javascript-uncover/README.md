@@ -1523,10 +1523,10 @@ function ucapkanSalam(waktu){             // function ucapkanSalam(waktu){
   return tampilkan;                       // }
 }
                                           // Cara baca: 
-var selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam() dengan mengirim argument berupa String "Pagi"
-                                          // ⤷ Parameter waktu di ucapkanSalam(waktu) akan menangkap String "Pagi" dari argument
-                                          // ⤷ Function ucapkanSalam() akan me-return (bukan menjalankan) Function tampilkan yang
-                                          //   kini sudah berisi nilai dari waktu, yaitu String "Pagi" (Anggap: sudah jalan ½ nya)
+var selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam() dengan mengirim argument berupa String "Pa
+                                          // ⤷ Parameter waktu di ucapkanSalam(waktu) akan menangkap String "Pagi" dari argum
+                                          // ⤷ Function ucapkanSalam() akan me-return (bukan menjalankan) Function tampilkan y
+                                          //   kini sudah berisi nilai dari waktu, yaitu String "Pagi" (sudah jalan ½ nya)
                                           // ⤷ Simpan hasil return tersebut kedalam Variable selamatPagi
 
 selamatPagi("Budi");                      // Output: Pagi, Budi!    ⇨ Menjalankan Factory Function selamatPagi("Budi");
