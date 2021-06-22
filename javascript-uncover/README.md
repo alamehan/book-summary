@@ -1442,7 +1442,7 @@ Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data, ini ber
 
 // H1. Function Expressions
 
-var hitung = function ratarata(a, b){ // Function ratarata disimpan ke dalam Variable hitung
+let hitung = function ratarata(a, b){ // Function ratarata disimpan ke dalam Let hitung
   return (a+b)/2;
 }
 console.log(hitung(4, 8));            // Output: 6
@@ -1450,7 +1450,7 @@ console.log(ratarata(4, 8));          // Output: ReferenceError ratarata is not 
 
 // H2. Anonymous Functions
 
-var hitung = function(a, b){          // Function Expressions tanpa nama Function disebut sebagai
+let hitung = function(a, b){          // Function Expressions tanpa nama Function disebut sebagai
   return (a+b)/2;                     // Anonymous Functions, ini yang banyak dipakai nantinya!
 }
 console.log(hitung(4, 8));            // Output: 6
@@ -1463,7 +1463,7 @@ function rerata(a, b){
 function tambah(c, d){
   return c+d;
 }
-var hasil = tambah(6, rerata(4, 8));  // Hasil return Function rerata(4, 8) digunakan sebagai argument
+let hasil = tambah(6, rerata(4, 8));  // Hasil return Function rerata(4, 8) digunakan sebagai argument
 console.log(hasil);                   // Output: 12
 
 // H4. Function sebagai Argument (1)
@@ -1474,7 +1474,7 @@ function rerata(a, b){
 function tambah(c, d){                // Step 2 🡲 parameter d akan menangkap Function rerata dari argument 
   return c+d(4, 8);                   // Step 3 🡲 dengan demikian d(4, 8) akan menjadi rerata(4, 8)
 }
-var hasil = tambah(6, rerata);        // Step 1 🡲 mengirim Function bernama rerata sebagai sebuah argument
+let hasil = tambah(6, rerata);        // Step 1 🡲 mengirim Function bernama rerata sebagai sebuah argument
                                       // Note: rerata merupakan Callback & tambah merupakan Higher Order Function
 console.log(hasil);                   // Output: 12
 
@@ -1496,8 +1496,8 @@ salam(foo);                           // Step 1 🡲 mengirim Function bernama f
 
 Tambahan: Selain uraian di atas, ada pula beberapa istilah lainnya terkait Function yang perlu diketahui.
 ➊ Function yang berada di dalam Function, disebut 𝗜𝗻𝗻𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
-➋ Inner Function yang memiliki akses ke parent scope-nya (𝗢𝘂𝘁𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻) atau dengan kata lain yang
-   menggunakan data/Variable/Let yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
+➋ Inner Function yang memiliki akses ke parent scope-nya (𝗢𝘂𝘁𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻) atau dengan kata
+   lain yang menggunakan data/Var/Let yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
 ➌ Function yang berjalan dari hasil Function lainnya (sudah jalan ½ nya), disebut 𝗙𝗮𝗰𝘁𝗼𝗿𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
 ➍ 𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲𝗹𝘆-𝗶𝗻𝘃𝗼𝗸𝗲𝗱 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀 (𝗜𝗜𝗙𝗘), lihat contohnya di bawah, point H8.
 */
@@ -1505,9 +1505,9 @@ Tambahan: Selain uraian di atas, ada pula beberapa istilah lainnya terkait Funct
 // H6. Contoh Closure
 
 function init(){
-  var nama = "Budi";
-  function tampilNama(){                  // Di dalam Function tampilNama() tidak terdapat pendefinisian Variable nama, sehingga
-    console.log(nama);                    // perintah console.log(nama) akan "mencari keluar", dan ditemukanlah Variable nama di
+  let nama = "Budi";
+  function tampilNama(){                  // Di dalam Function tampilNama() tidak terdapat pendefinisian Let nama, sehingga
+    console.log(nama);                    // perintah console.log(nama) akan "mencari keluar", dan ditemukanlah Let nama di
   }                                       // parent-nya, lalu digunakan. Dengan demikian Function tampilNama() disebut Closure.
   tampilNama();
 }
@@ -1523,11 +1523,11 @@ function ucapkanSalam(waktu){             // function ucapkanSalam(waktu){
   return tampilkan;                       // }
 }
                                           // Cara baca:
-var selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam() dengan mengirim argument berupa String "Pagi"
+let selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam() dengan mengirim argument berupa String "Pagi"
                                           // ⤷ Parameter waktu di ucapkanSalam(waktu) akan menangkap String "Pagi" dari argument
                                           // ⤷ Function ucapkanSalam() akan me-return (bukan menjalankan) Function tampilkan yang
                                           //   sudah menampung nilai dari waktu, yaitu String "Pagi" (Anggap: Sudah jalan ½ nya)
-                                          // ⤷ Simpan hasil return tersebut kedalam Variable selamatPagi
+                                          // ⤷ Simpan hasil return tersebut kedalam Let selamatPagi
 
 selamatPagi("Budi");                      // Output: Pagi, Budi!    ⇨ Menjalankan Factory Function selamatPagi("Budi");
 selamatPagi("Joko");                      // Output: Pagi, Joko!    ⇨ Menjalankan Factory Function selamatPagi("Joko");
@@ -1535,16 +1535,16 @@ selamatPagi("Joko");                      // Output: Pagi, Joko!    ⇨ Menjalan
 // H8. Contoh IIFE (1)
 
                                           // ᴘᴇɴᴜʟɪꜱᴀɴ ʟᴇʙɪʜ ʀɪɴɢᴋᴀꜱ:
-var sapa = (function(waktu){              // var sapa = (function(waktu){
-  var waktu = "Pagi";                     //   var waktu = "Pagi";
+let sapa = (function(waktu){              // let sapa = (function(waktu){
+  waktu = "Pagi";                         //   waktu = "Pagi";
   function tampilkan(nama){               //   return function(nama){
     console.log(`${waktu}, ${nama}!`);    //     console.log(`${waktu}, ${nama}!`);
   }                                       //   }
   return tampilkan;                       // })();
 })();
                                           // Cara baca:
-                                          // ⤷ Pada saat di assign ke Variable sapa, Anonymous function(waktu) akan langsung men-
-                                          //   jalankan Inner Function-nya, yaitu function tampilkan(nama){ ... }, tidak ada lagi
+                                          // ⤷ Pada saat di assign ke Let sapa, Anonymous function(waktu) akan langsung menjalan-
+                                          //   kan Inner Function-nya, yaitu function tampilkan(nama){ ... }, tidak ada lagi
                                           //   istilah "sudah berjalan setengahnya" seperti pada kasus Factory Function.
 
 sapa("Budi");                             // Output: Pagi, Budi!    ⇨ Menjalankan IIFE sapa("Budi");
@@ -1556,28 +1556,28 @@ sapa("Joko");                             // Output: Pagi, Joko!    ⇨ Menjalan
 // H9. Contoh IIFE (2)
 
                                           // ᴘᴇɴᴜʟɪꜱᴀɴ ʟᴇʙɪʜ ʀɪɴɢᴋᴀꜱ:
-var add = (function(){                    // var add = (function(){
-  var counter = 0;                        //   var counter = 0;
+let add = (function(){                    // let add = (function(){
+  let counter = 0;                        //   let counter = 0;
   function tambah(){                      //   return function(){
     return ++counter;                     //     return ++counter;
   }                                       //   } 
   return tambah;                          // })();
 })();
 
-counter = 100;                            // Misal tidak sengaja menimpa nilai var counter di Global
-console.log(add());                       // Output: 1  ⇨ var counter di dalam function tidak ikut terpengaruh, seolah Private.
+counter = 100;                            // Misal tidak sengaja menimpa nilai let counter di Global
+console.log(add());                       // Output: 1  ⇨ let counter di dalam function tidak ikut terpengaruh, seolah Private.
 console.log(add());                       // Output: 2     ⤷ Bandingkan dengan contoh tanpa IIFE di point H10 di bawah
 console.log(add());                       // Output: 3
 
 // H10. Contoh Tanpa IIFE
 
-var counter = 0;
-var add = function(){
+let counter = 0;
+let add = function(){
   return ++counter;
 };
 
-counter = 100;                            // Misal tidak sengaja menimpa nilai var counter di Global
-console.log(add());                       // Output: 101  ⇨ var counter di dalam function ikut terpengaruh, dan ini tidak baik.
+counter = 100;                            // Misal tidak sengaja menimpa nilai let counter di Global
+console.log(add());                       // Output: 101  ⇨ let counter di dalam function ikut terpengaruh, dan ini tidak baik.
 console.log(add());                       // Output: 102
 console.log(add());                       // Output: 103
 
@@ -1596,16 +1596,16 @@ sederhana secara penulisan syntax. Namun tidak hanya itu, di BAB Advanced JavaSc
 
 // Contoh tanpa Argument
 
-var pagiA = function(){ return "Selamat Pagi!"; };    // Penulisan Function Expressions biasa
-var pagiB = () => { return "Selamat Pagi!"; };        // Penulisan Function Expressions dengan Arrow Function
+let pagiA = function(){ return "Selamat Pagi!"; };    // Penulisan Function Expressions biasa
+let pagiB = () => { return "Selamat Pagi!"; };        // Penulisan Function Expressions dengan Arrow Function
 
 console.log(pagiA());                                 // Output: Selamat Pagi!
 console.log(pagiB());                                 // Output: Selamat Pagi!
 
 // Contoh dengan Argument
 
-var totalA = function(a, b, c){ return a+b+c; };      // Penulisan Function Expressions biasa
-var totalB = (a, b, c) => { return a+b+c; };          // Penulisan Function Expressions dengan Arrow Function
+let totalA = function(a, b, c){ return a+b+c; };      // Penulisan Function Expressions biasa
+let totalB = (a, b, c) => { return a+b+c; };          // Penulisan Function Expressions dengan Arrow Function
 
 console.log(totalA(1, 2, 3));                         // Output: 6
 console.log(totalB(1, 2, 3));                         // Output: 6
@@ -1628,18 +1628,18 @@ JavaScript menggunakan konsep prototypical inheritance untuk menerapkan konsep p
 untuk membuat object di JavaScript, caranya dengan langsung menulis object tersebut (tidak perlu membuat class, seperti
 yang dilakukan di bahasa pemrograman lain). Di dalam object, terdapat istilah property & method.
 
-Property merupakan Variable yang berada di dalam object, sedangkan method merupakan Function yang berada di dalam object.
+Property merupakan Var/Let yang berada di dalam object, sedangkan method merupakan Function yang berada di dalam object.
 Untuk method, ditulis menggunakan Function expressions (Anonymous Function). Baik property maupun method diberi nilai
-menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian Variable biasa. Serta,
+menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian Var/Let biasa. Serta,
 diantara property/method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
 */
 
 // A1. Pendefinisian Object
 
-var objA = {};                        // Variable objA berisi object kosong
+let objA = {};                        // Let objA berisi object kosong
 console.log(typeof objA);             // Output: object
 
-var objB = {                          // Variable objB berisi object dengan property & method
+let objB = {                          // Let objB berisi object dengan property & method
   property1: "isi_property1",
   property2: "isi_property1",
   property3: "isi_property1",
@@ -1655,7 +1655,7 @@ var objB = {                          // Variable objB berisi object dengan prop
 
 // A2. Contoh Aplikasinya
 
-var mobil = {                         // Variable mobil berisi object seputar mobil (sebagai contoh saja)
+let mobil = {                         // Let mobil berisi object seputar mobil (sebagai contoh saja)
   merk: "Toyota Avanza",
   tipe: "MPV",
   harga: 200000000,
@@ -1709,7 +1709,7 @@ console.log(mobil.hidupkan());        // Output: Mesin Dinyalakan!  (Hasil retur
 // B. Nested Object
 // ================
 
-var mahasiswa = {
+let mahasiswa = {
   nama: "Budi",
   jurusan: "Informatika",
   ipk: {                              // Nested object (object ipk di dalam object mahasiswa)
@@ -1732,8 +1732,8 @@ console.log(mahasiswa.ipk.semester2)  // Output: 3.6                ⇨ Mengakse
 
 // C1. Tipe Data Primitif: Assignment by Value
 
-var motor = "NMax";
-var motorBaru = motor;                // Assignment by Value        ⇨ Value (nilai) dari var motor di-copy ke var motorBaru
+let motor = "NMax";
+let motorBaru = motor;                // Assignment by Value        ⇨ Value (nilai) dari let motor di-copy ke let motorBaru
 console.log(motor);                   // Output: NMax
 console.log(motorBaru);               // Output: NMax
 
@@ -1747,11 +1747,11 @@ console.log(motorBaru);               // Output: Ninja
 
 // C2. Tipe Data Object: Assignment by Reference
 
-var mobil = {
+let mobil = {
   merk: "Toyota Avanza",
   tipe: "MPV"
 };
-var mobilBaru = mobil;                // Assignment by reference    ⇨ Reference (alamat memory) mobil di-copy ke mobilBaru
+let mobilBaru = mobil;                // Assignment by reference    ⇨ Reference (alamat memory) mobil di-copy ke mobilBaru
 console.log(mobil.merk);              // Output: Toyota Avanza
 console.log(mobilBaru.merk);          // Output: Toyota Avanza
 
@@ -1765,19 +1765,19 @@ console.log(mobilBaru.tipe);          // Output: Sedan
 
 // C3. Efek Assignment by Reference di Operasi Perbandingan
 
-var mhs1 = {
+let mhs1 = {
   nama: "Budi",
   jurusan: "Informatika"
 };
-var mhs1Baru = mhs1;                  // Assignment by reference
+let mhs1Baru = mhs1;                  // Assignment by reference
 console.log(mhs1 == mhs1Baru);        // Output: true
 console.log(mhs1 === mhs1Baru);       // Output: true
 
-var mhs2 = {
+let mhs2 = {
   nama: "Joko",
   jurusan: "Arsitektur"
 };
-var mhs2Baru = {
+let mhs2Baru = {
   nama: "Joko",
   jurusan: "Arsitektur"
 };
@@ -1800,37 +1800,37 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 // A1. Paradigma: Prosedural (berbasiskan Function)
 
 // ...                                // Asumsi terdapat sebuah Function potongTeks yang gunanya ya tentu memotong sebuah teks
-var teks = "Hello World";
-var hasil = potongTeks(teks, 6, 10);  // Output: World  ⇨ Berbasiskan Function
+let teks = "Hello World";
+let hasil = potongTeks(teks, 6, 10);  // Output: World  ⇨ Berbasiskan Function
 
 // A2. Paradigma: Object Oriented Programming (OOP)
 
 // ...                                // Asumsi sudah terdapat sebuah method potongTeks di dalam String Object (lihat point C1)
-var teks = new String("Hello World"); // Sebenarnya sama aja dengan var teks = "Hello World"; (lihat point A3)
-var hasil = teks.potongTeks(6, 10);   // Output: World  ⇨ berbasiskan object (mengakses method potongTeks dengan dot notation)
+let teks = new String("Hello World"); // Sebenarnya sama aja dengan let teks = "Hello World"; (lihat point A3)
+let hasil = teks.potongTeks(6, 10);   // Output: World  ⇨ berbasiskan object (mengakses method potongTeks dengan dot notation)
                                       // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝗻𝗲𝘄 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟯)
 
 // A3. Penulisan Literals vs Object Constructor
 
-var num1 = 52;                        // Cara penulisan: Number literals  (✔️ Recommended)
-var num2 = new Number(52);            // Cara penulisan: Number object    (❌ Not Recommended)
-var str1 = "Belajar JS";              // Cara penulisan: String literals  (✔️ Recommended)
-var str2 = new String("Belajar JS");  // Cara penulisan: String Object    (❌ Not Recommended)
-var bol1 = true;                      // Cara penulisan: Boolean literals (✔️ Recommended)
-var bol2 = new Boolean(true);         // Cara penulisan: Boolean object   (❌ Not Recommended)
-var arr1 = [1, 2, 3];                 // Cara penulisan: Array literals   (✔️ Recommended)
-var arr2 = new Array(1, 2, 3);        // Cara penulisan: Array object     (❌ Not Recommended)
-var obj1 = {nama: "Budi", umur: 24};  // Cara penulisan: Object literals  (✔️ Recommended)
-var obj2 = new Object();              // Cara penulisan: Object object    (❌ Not Recommended)
+let num1 = 52;                        // Cara penulisan: Number literals  (✔️ Recommended)
+let num2 = new Number(52);            // Cara penulisan: Number object    (❌ Not Recommended)
+let str1 = "Belajar JS";              // Cara penulisan: String literals  (✔️ Recommended)
+let str2 = new String("Belajar JS");  // Cara penulisan: String Object    (❌ Not Recommended)
+let bol1 = true;                      // Cara penulisan: Boolean literals (✔️ Recommended)
+let bol2 = new Boolean(true);         // Cara penulisan: Boolean object   (❌ Not Recommended)
+let arr1 = [1, 2, 3];                 // Cara penulisan: Array literals   (✔️ Recommended)
+let arr2 = new Array(1, 2, 3);        // Cara penulisan: Array object     (❌ Not Recommended)
+let obj1 = {nama: "Budi", umur: 24};  // Cara penulisan: Object literals  (✔️ Recommended)
+let obj2 = new Object();              // Cara penulisan: Object object    (❌ Not Recommended)
 obj2.nama = "Budi";                   // ⤷ property & method didefinisikan
 obj2.umur = 24;                       // ⤷ setelah Object object dibuat
-var reg1 = /ab+c/;                    // Cara penulisan: RegExp literals  (✔️ Recommended)      𝗥𝗲𝗴𝗘𝘅𝗽 𝗕𝗔𝗕 𝟭𝟮 (𝗗)!
-var reg2 = new RegExp("ab+c");        // Cara penulisan: RegExp object    (❌ Not Recommended)
-var date = new Date(2016,11,2,9,30);  // Cara penulisan: Date object      (✔️ Recommended)      𝗗𝗮𝘁𝗲 𝗕𝗔𝗕 𝟭𝟮 (𝗙)!
+let reg1 = /ab+c/;                    // Cara penulisan: RegExp literals  (✔️ Recommended)      𝗥𝗲𝗴𝗘𝘅𝗽 𝗕𝗔𝗕 𝟭𝟮 (𝗗)!
+let reg2 = new RegExp("ab+c");        // Cara penulisan: RegExp object    (❌ Not Recommended)
+let date = new Date(2016,11,2,9,30);  // Cara penulisan: Date object      (✔️ Recommended)      𝗗𝗮𝘁𝗲 𝗕𝗔𝗕 𝟭𝟮 (𝗙)!
                                       // ⤷ Date tidak ada literals-nya
 
-var fun1 = function (a, b){ return a+b; };        // Cara penulisan: Function Expressions/Anonymous Function  (✔️ Recommended)
-var fun2 = new Function('a', 'b', 'return a+b');  // Cara penulisan: Function object                          (❌ Not Recommended)
+let fun1 = function (a, b){ return a+b; };        // Cara penulisan: Function Expressions/Anonymous Function  (✔️ Recommended)
+let fun2 = new Function('a', 'b', 'return a+b');  // Cara penulisan: Function object                          (❌ Not Recommended)
 ```
 <hr>
 
@@ -1841,7 +1841,7 @@ var fun2 = new Function('a', 'b', 'return a+b');  // Cara penulisan: Function ob
 
 // B1. Tanpa OOP (Pendefinisian object biasa)
 
-var mobilBudi = {
+let mobilBudi = {
   merk: "Toyota Avanza",
   tipe: "MPV",
   harga: 200000000,
@@ -1853,7 +1853,7 @@ var mobilBudi = {
   }
 };
 
-var mobilJoko = {
+let mobilJoko = {
   merk: "Honda Civic",
   tipe: "Sedan",
   harga: 200000000,
@@ -2064,8 +2064,8 @@ Di buku ini akan dibahas beberapa diantaranya yang paling populer (dibahas di BA
 4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya):
 • Object property             Contoh: console.log(Number.MAX_VALUE);                            🡲 Output: 1.7976931348623157e+308
 • Object method               Contoh: console.log(Number.parseInt("12.045"));                   🡲 Output: 12 (Number, not String)
-• Object instance property    Contoh: var foo = "Belajar JavaScript"; console.log(foo.length);  🡲 Output: 18 
-• Object instance method      Contoh: var foo = 50.12345; console.log(foo.toPrecision(5));      🡲 Output: 50.123
+• Object instance property    Contoh: let foo = "Belajar JavaScript"; console.log(foo.length);  🡲 Output: 18 
+• Object instance method      Contoh: let foo = 50.12345; console.log(foo.toPrecision(5));      🡲 Output: 50.123
 
 ⤷ Object property & Object method melekat langsung ke Object-nya (Class-nya): Number.MAX_VALUE & Number.parseInt("12.045"),
   dimana Number merupakan Object-nya, sedangkan MAX_VALUE sebagai Object property & parsetInt() sebagai Object method-nya.
@@ -2088,9 +2088,9 @@ umum saja. 📚 Referensi lengkap lihat di: https://developer.mozilla.org/en-US/
 
 // C1. Contoh: String (object)
 
-var foo = new String("Hello World");  // Kita tidak pernah mendefinisikan Class String bukan? tetapi kenapa langsung bisa dipakai?
+let foo = new String("Hello World");  // Kita tidak pernah mendefinisikan Class String bukan? tetapi kenapa langsung bisa dipakai?
                                       // itu karena, String merupakan salah satu object bawaan JavaScript. Ingat saat kita instan-
-                                      // siasi object Mobil baru dengan perintah "var mobilBudi = new Mobil(...)", itu bisa kita
+                                      // siasi object Mobil baru dengan perintah "let mobilBudi = new Mobil(...)", itu bisa kita
                                       // lakukan karena sebelumnya kita sudah membuat Class Mobil. Nah, String itu "Class bawaan".
 
 console.log(foo.toUpperCase());       // Output: HELLO WORLD. Kita tidak pernah mendefinisikan method toUpperCase() bukan? tetapi
@@ -2100,8 +2100,8 @@ console.log(foo.length)               // Output: 11. length merupakan salah satu
 
 // C2. Contoh: String (literals)
 
-var bar = "Hello World";              // Cara penulisan: String literals (lebih "hemat" dibandingkan Object Constructor di atas)
-console.log(bar.toUpperCase());       // Output: HELLO WORLD. Ternyata meskipun Variable bar didefinisikan secara String literals,
+let bar = "Hello World";              // Cara penulisan: String literals (lebih "hemat" dibandingkan Object Constructor di atas)
+console.log(bar.toUpperCase());       // Output: HELLO WORLD. Ternyata meskipun Var/Let bar didefinisikan secara String literals,
                                       // bukan secara String Object, kita masih tetap bisa memakai "Instance method" bawaan String
                                       // object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A3).
 console.log(bar.length);              // Output: 11. Kita pun masih tetap bisa memakai "Instance property" bawaan String Object.
@@ -2134,11 +2134,11 @@ console.log(Number.NEGATIVE_INFINITY) // Output: -Infinity                ⇨ Ca
 
 // A2. Object method
 
-console.log(Number.isNaN(5/'a'));                     // Output: true     ⇨ Check apakah hasil operasi/suatu Variable berisi NaN
+console.log(Number.isNaN(5/'a'));                     // Output: true     ⇨ Check apakah hasil operasi/suatu Var/Let berisi NaN
 console.log(Number.isNaN(Number.NaN));                // Output: true
-console.log(Number.isFinite(3.21456));                // Output: true     ⇨ Check apakah sebuah nilai/var berisi angka (Standar)
+console.log(Number.isFinite(3.21456));                // Output: true     ⇨ Check apakah sebuah nilai/Var/Let berisi angka standar
 console.log(Number.isFinite(1/0));                    // Output: false
-console.log(Number.isInteger(9007199254740992));      // Output: true     ⇨ Check apakah suatu nilai/Variable berisi angka integer
+console.log(Number.isInteger(9007199254740992));      // Output: true     ⇨ Check apakah suatu nilai/Var/Let berisi angka integer
 console.log(Number.isInteger(3.21456));               // Output: false
 console.log(Number.isSafeInteger(9007199254740992));  // Output: false    ⇨ Sama seperti isInteger, tapi dibatasi standar IEEE-754
 console.log(Number.isSafeInteger(3.21456));           // Output: false
@@ -2197,8 +2197,8 @@ console.log(Math.PI);                 // Output: 3.141592653589793        ⇨ An
 console.log(Math.SQRT1_2);            // Output: 0.7071067811865476       ⇨ Angka 1 dibagi dengan akar kuadrat 2
 console.log(Math.SQRT2);              // Output: 1.4142135623730951       ⇨ Angka akar kuadrat dari 2
 
-var jariJari = 7;                                     // Studi kasus: contoh penggunaan Math.PI & toFixed() untuk mencari luas
-var luasLingkaran = Math.PI * jariJari * jariJari;    // lingkaran kemudian memformat angkanya dengan jumlah digit desimal = 2
+let jariJari = 7;                                     // Studi kasus: contoh penggunaan Math.PI & toFixed() untuk mencari luas
+let luasLingkaran = Math.PI * jariJari * jariJari;    // lingkaran kemudian memformat angkanya dengan jumlah digit desimal = 2
 console.log(luasLingkaran);                           // Output: 153.93804002589985
 console.log(luasLingkaran.toFixed(2));                // Output: 153.94
 
@@ -2220,10 +2220,10 @@ console.log(Math.sin(60));            // Output: -0.30481...    ⇨ Mencari nila
 console.log(Math.cos(60));            // Output: -0.95241...    ⇨ Mencari nilai cosinus (Nilai argument: radian, bukan derajat)
 console.log(Math.tan(60));            // Output: 0.320040...    ⇨ Mencari nilai tangen  (Nilai argument: radian, bukan derajat)
 
-var mthA = Math.floor(Math.random()*(10))   // Studi kasus: tips untuk generate angka bulat acak rentang 0-9 (tidak lagi pecahan!)
+let mthA = Math.floor(Math.random()*(10))   // Studi kasus: tips untuk generate angka bulat acak rentang 0-9 (tidak lagi pecahan!)
 console.log(mthA);                          // Output: 7 (contoh)
 
-var mthB = [45, 90, 12, 55];                // Studi kasus: mencari nilai paling besar/kecil dari Array (pakai spread operator)
+let mthB = [45, 90, 12, 55];                // Studi kasus: mencari nilai paling besar/kecil dari Array (pakai spread operator)
 console.log(Math.max(...mthB));             // Output: 90
 console.log(Math.min(...mthB));             // Output: 12
 ```
@@ -2248,19 +2248,19 @@ console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗�
 
 // C2. Object instance property
 
-var strA = "Hello World!";
-var strB = "Belajar JavaScript";
+let strA = "Hello World!";
+let strB = "Belajar JavaScript";
 
 console.log(strA.length);               // Output: 12       ⇨ Mengambil info panjang karakter dari sebuah String
 console.log(strB.length);               // Output: 18       ⤷ Banyak digunakan di validasi form, misal syarat minimal 8 karakter
 
 // C3. Object instance method
 
-var strC = "Bandung";
-var strD = "Bandung kota kembang";
-var strE = "Satu, dua, tiga, empat";
-var strF = "satu,dua;tiga-empat";
-var strG = "  username  ";
+let strC = "Bandung";
+let strD = "Bandung kota kembang";
+let strE = "Satu, dua, tiga, empat";
+let strF = "satu,dua;tiga-empat";
+let strG = "  username  ";
 
 console.log(strC.toLowerCase());        // Output: bandung  ⇨ Mengubah String menjadi huruf kecil
 console.log(strC.toUpperCase());        // Output: BANDUNG  ⇨ Mengubah String menjadi huruf besar
@@ -2315,9 +2315,9 @@ console.log(strD.match(/\w*z\w*/g));    // Output: null           ⤷ Jika Outpu
 console.log(strD.replace("kota", "X")); // Output: Bandung X kembang      ⇨ Mengganti String dengan String lain (di argument)
 console.log(strD.replace(/a/g, "o"));   // Output: Bondung koto kembong   ⤷ Argument ke 1: bisa diisi juga dengan RegExp
 
-var strH = "Nama saya Budi Setiawan";   // Studi kasus: menghitung berapa kali String "a" muncul di dalam String strH
-var count = 0;                          // Dengan memanfaatkan Object instance method indexOf() dan perulangan while
-var posisi = strH.indexOf("a");
+let strH = "Nama saya Budi Setiawan";   // Studi kasus: menghitung berapa kali String "a" muncul di dalam String strH
+let count = 0;                          // Dengan memanfaatkan Object instance method indexOf() dan perulangan while
+let posisi = strH.indexOf("a");
 while (posisi !== -1){                  // Perulangan berhenti saat posisi = -1 (Artinya String "a" tidak ditemukan lagi)
   count++;                              // count menghitung berapa kali perulangan berjalan = jumlah String "a" muncul
   posisi = strH.indexOf("a", posisi+1); // Perintah di baris ini berarti terus mencari posisi berikutnya dari String "a"
@@ -2333,11 +2333,11 @@ console.log(count);                     // Output: 6
 
 // D1. Object instance method
 
-var regA = "Belajar JavaScript dari buku JavaScript Uncover";
-var polaA = /JavaScript/;
+let regA = "Belajar JavaScript dari buku JavaScript Uncover";
+let polaA = /JavaScript/;
 
 console.log(polaA.test(regA));          // Output: true           ⇨ Check apakah pola /JavaScript/ terdapat di dalam String regA
-console.log(/buku/.test(regA));         // Output: true           ⤷ Penulisan bisa langsung, tanpa disimpan ke dalam var, hal ini
+console.log(/buku/.test(regA));         // Output: true           ⤷ Penulisan bisa langsung, tanpa disimpan ke dalam Let, hal ini
 console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku juga untuk semua Object instance property & method 🔔
 console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
 
@@ -2345,8 +2345,8 @@ console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya 
 
 // ➊ Pola RegExp sebagai String
 
-var regB = "Belajar JavaScript";
-var regC = "Satu Dua Tiga Empat";
+let regB = "Belajar JavaScript";
+let regC = "Satu Dua Tiga Empat";
 
 console.log(/JavaScript/.test(regB));   // Output: true
 console.log(/Javascript/.test(regB));   // Output: false
@@ -2378,8 +2378,8 @@ console.log(regB.replace(/$/, " GO!")); // Output: Belajar JavaScript GO!
 // ➍ Pola Wildcard
 
                                         // Wildcard, pola yang bisa diganti dengan karakter apa saja (bebas), ditulis dengan titik:
-var polaB = /.b../;                     // ⤷ Artinya: [minimal 1 karakter bebas] + [huruf b] + [minimal 2 karakter bebas]
-var polaC = /^.b..$/;                   // ⤷ Artinya: [tepat 1 karakter apa saja] + [huruf b] + [tepat 2 karakter]
+let polaB = /.b../;                     // ⤷ Artinya: [minimal 1 karakter bebas] + [huruf b] + [minimal 2 karakter bebas]
+let polaC = /^.b..$/;                   // ⤷ Artinya: [tepat 1 karakter apa saja] + [huruf b] + [tepat 2 karakter]
                                         // ⤷ ^ diawal dan $ diakhir, artinya tidak boleh ada karakter lain sebelum & sesudah String
 
 console.log(polaB.test("abaa"));        // Output: true     ⇨ Test pola /.b../ di dalam String "abaa"
@@ -2399,12 +2399,12 @@ console.log(polaC.test("acaa"));        // Output: false
 // ➎ Pola Character Set
 
                                         // Character Set, membuat syarat bahwa hanya karakter tertentu saja yang boleh ditulis:
-var polaD = /[abcde]/;                  // ⤷ Artinya: [minimal terdapat 1 karakter diantara huruf a-e]
-var polaE = /[a-e]/;                    // ⤷ [a-e] merupakan alternatif penulisan dari [abcde] (✔️ Recommended)
-var polaF = /^[a-e]$/;                  // ⤷ Artinya: [tepat terdapat 1 karakter diantara huruf a-e]
-var polaG = /^[a-e][1-9]../;            // ⤷ Artinya: [tepat 1 karakter a-e] + [min 1 karakter 1-9] + [min 2 karakter bebas]
-var polaH = /[a-e][1-9]..$/;            // ⤷ Artinya: [min 1 karakter a-e] + [tepat 1 karakter 1-9] + [tepat 2 karakter bebas]
-var polaI = /^[a-e][1-9]..$/;           // ⤷ Artinya: [tepat 1 karakter a-e] + [tepat 1 karakter 1-9] + [tepat 2 karakter bebas]
+let polaD = /[abcde]/;                  // ⤷ Artinya: [minimal terdapat 1 karakter diantara huruf a-e]
+let polaE = /[a-e]/;                    // ⤷ [a-e] merupakan alternatif penulisan dari [abcde] (✔️ Recommended)
+let polaF = /^[a-e]$/;                  // ⤷ Artinya: [tepat terdapat 1 karakter diantara huruf a-e]
+let polaG = /^[a-e][1-9]../;            // ⤷ Artinya: [tepat 1 karakter a-e] + [min 1 karakter 1-9] + [min 2 karakter bebas]
+let polaH = /[a-e][1-9]..$/;            // ⤷ Artinya: [min 1 karakter a-e] + [tepat 1 karakter 1-9] + [tepat 2 karakter bebas]
+let polaI = /^[a-e][1-9]..$/;           // ⤷ Artinya: [tepat 1 karakter a-e] + [tepat 1 karakter 1-9] + [tepat 2 karakter bebas]
 
 console.log(polaE.test("a"));           // Output: true     ⇨ Test pola /[a-e]/ di dalam String "a"
 console.log(polaE.test("f"));           // Output: false
@@ -2444,9 +2444,9 @@ console.log(polaI.test("a1   "));       // Output: false
 // ➏ Pola Negasi Character Set
 
                                         // Negasi Character Set, artinya pola "selain" di character set, simak contoh berikut:
-var polaJ = /^[a-e]$/;                  // ⤷ Artinya: [tepat 1 karakter a-e]
-var polaK = /^[^a-e]$/;                 // ⤷ Artinya: [tepat 1 karakter selain a-e] (^ di dalam character set menandakan negasi)
-var polaL = /^[^a-e].[^1-9]b..$/;       // ⤷ Artinya: [tepat 1 karakter selain a-e] + [tepat 1 karakter bebas] + [tepat 1
+let polaJ = /^[a-e]$/;                  // ⤷ Artinya: [tepat 1 karakter a-e]
+let polaK = /^[^a-e]$/;                 // ⤷ Artinya: [tepat 1 karakter selain a-e] (^ di dalam character set menandakan negasi)
+let polaL = /^[^a-e].[^1-9]b..$/;       // ⤷ Artinya: [tepat 1 karakter selain a-e] + [tepat 1 karakter bebas] + [tepat 1
                                         //            karakter selain 1-9] + [huruf b] + [tepat 2 karakter bebas]
 
 console.log(polaK.test("a"));           // Output: false    ⇨ Test pola /^[^a-e]$/ di dalam String "a"
@@ -2462,11 +2462,11 @@ console.log(polaL.test("zz1b  "));      // Output: false
 // ➐ Membatasi Jumlah Karakter
 
                                         // Karakter yang digunakan untuk membuat pola batas jumlah karakter yaitu kurung kurawal:
-var polaM = /A{2}1{3}/;                 // ⤷ Artinya: [min 2 huruf A] + [min 3 angka 1]
-var polaN = /^A{2}1{3}$/;               // ⤷ Artinya: [tepat 2 huruf A] + [tepat 3 angka 1]
-var polaO = /^A{2}1{2,4}$/;             // ⤷ Artinya: [tepat 2 huruf A] + [min 2 & max 4 angka 1]
-var polaP = /^A{2}1{2,}$/;              // ⤷ Artinya: [tepat 2 huruf A] + [min 2 & max ∞ angka 1] (∞ artinya tak terbatas)
-var polaQ = /^[A-Z0-9]{2,}z{2}_$/;      // ⤷ Artinya: [min 2 huruf A-Z/angka 1-9] + [tepat 2 huruf z] + [karakter underscore: _]
+let polaM = /A{2}1{3}/;                 // ⤷ Artinya: [min 2 huruf A] + [min 3 angka 1]
+let polaN = /^A{2}1{3}$/;               // ⤷ Artinya: [tepat 2 huruf A] + [tepat 3 angka 1]
+let polaO = /^A{2}1{2,4}$/;             // ⤷ Artinya: [tepat 2 huruf A] + [min 2 & max 4 angka 1]
+let polaP = /^A{2}1{2,}$/;              // ⤷ Artinya: [tepat 2 huruf A] + [min 2 & max ∞ angka 1] (∞ artinya tak terbatas)
+let polaQ = /^[A-Z0-9]{2,}z{2}_$/;      // ⤷ Artinya: [min 2 huruf A-Z/angka 1-9] + [tepat 2 huruf z] + [karakter underscore: _]
 
 console.log(polaM.test("AA111"));       // Output: true     ⇨ Test pola /A{2}1{3}/ di dalam String "AA111"
 console.log(polaM.test("xyzAA111xyz")); // Output: true
@@ -2496,9 +2496,9 @@ console.log(polaQ.test("1A2B3C4Dzz_")); // Output: true
 // ➑ Karakter Pembatas Pola
 
                                         // RegExp menyediakan beberapa karakter khusus untuk membatasi pola, yaitu:
-var polaR = /ab*c/;                     // * sama dengan {0,} maka b* di samping = b{0,}    (Artinya 0 atau lebih huruf b)
-var polaS = /ab+c/;                     // + sama dengan {1,} maka b+ di samping = b{1,}    (Artinya 1 atau lebih huruf b)
-var polaT = /ab?c/;                     // ? sama dengan {0,1} maka b? di samping = b{0,1}  (Artinya 0 atau 1 huruf b)
+let polaR = /ab*c/;                     // * sama dengan {0,} maka b* di samping = b{0,}    (Artinya 0 atau lebih huruf b)
+let polaS = /ab+c/;                     // + sama dengan {1,} maka b+ di samping = b{1,}    (Artinya 1 atau lebih huruf b)
+let polaT = /ab?c/;                     // ? sama dengan {0,1} maka b? di samping = b{0,1}  (Artinya 0 atau 1 huruf b)
 
 console.log(polaR.test("abc"));         // Output: true     ⇨ Test pola /ab*c/ di dalam String "abc"
 console.log(polaR.test("abbbbbc"));     // Output: true
@@ -2518,26 +2518,26 @@ console.log(polaT.test("aaaab"));       // Output: false
 // ➒ Pola Karakter Khusus
 
                                         // RegExp menyediakan beberapa karakter khusus untuk mewakiki pola tertentu, yaitu:
-var polaU01 = /\d/;                     // \d sama dengan [0-9]           Artinya seluruh digit angka
-var polaU02 = /\D/;                     // \D sama dengan [^0-9]          Artinya seluruh digit selain angka
-var polaU03 = /\w/;                     // \w sama dengan [A-Za-z0-9_]    Artinya seluruh huruf dan angka serta underscore
-var polaU04 = /\W/;                     // \W sama dengan [^A-Za-z0-9_]   Artinya seluruh karakter selain huruf/angka/underscore
-var polaU05 = /\s/;                     // \s sama dengan whitespace                      (Spasi, tab, linefeed, form-feed, dll)
-var polaU06 = /\S/;                     // \S sama dengan satu karakter selain whitespace
-var polaU07 = /\t/;                     // \t sama dengan satu karakter tab               (Horizontal tab)
-var polaU08 = /\r/;                     // \r sama dengan satu karakter enter             (Carriage return)
-var polaU09 = /\n/;                     // \n sama dengan satu karakter new line          (Linefeed)
-var polaU10 = /\v/;                     // \v sama dengan satu karakter tab vertikal      (Vertical tab)
-var polaU11 = /\f/;                     // \f sama dengan satu karakter form-feed
-var polaU12 = /\./;                     // Backslash "\" digunakan sebagai karakter escape, fungsinya untuk mencegah sebuah karak-
-var polaU13 = /\//;                     // ⤷ ter dianggap sebagai karakter khusus, misalnya membuat karakter titik & garis miring,
+let polaU01 = /\d/;                     // \d sama dengan [0-9]           Artinya seluruh digit angka
+let polaU02 = /\D/;                     // \D sama dengan [^0-9]          Artinya seluruh digit selain angka
+let polaU03 = /\w/;                     // \w sama dengan [A-Za-z0-9_]    Artinya seluruh huruf dan angka serta underscore
+let polaU04 = /\W/;                     // \W sama dengan [^A-Za-z0-9_]   Artinya seluruh karakter selain huruf/angka/underscore
+let polaU05 = /\s/;                     // \s sama dengan whitespace                      (Spasi, tab, linefeed, form-feed, dll)
+let polaU06 = /\S/;                     // \S sama dengan satu karakter selain whitespace
+let polaU07 = /\t/;                     // \t sama dengan satu karakter tab               (Horizontal tab)
+let polaU08 = /\r/;                     // \r sama dengan satu karakter enter             (Carriage return)
+let polaU09 = /\n/;                     // \n sama dengan satu karakter new line          (Linefeed)
+let polaU10 = /\v/;                     // \v sama dengan satu karakter tab vertikal      (Vertical tab)
+let polaU11 = /\f/;                     // \f sama dengan satu karakter form-feed
+let polaU12 = /\./;                     // Backslash "\" digunakan sebagai karakter escape, fungsinya untuk mencegah sebuah karak-
+let polaU13 = /\//;                     // ⤷ ter dianggap sebagai karakter khusus, misalnya membuat karakter titik & garis miring,
                                         // ⤷ kita tidak bisa langsung menulis titik begitu saja (karena akan dianggap wildcard)
                                         // ⤷ atau menulis langsung garis miring begitu saja (karena akan dianggap comment), oleh
                                         // ⤷ karena itu untuk menulis titik atau garis miring di dalam RegExp perlu diawali "\"
 
-var polaV = /^\d\w\s$/;                 // Pola di samping sama dengan /^[0-9][A-Za-z0-9_][whitespace]$/
-var polaW = /^www\.....\.com$/;         // Artinya: [wwww.] + [4 karakter bebas] + [.com] (\. bukan wildcard ya!)
-var polaX = /^.+@.+\..+$/;              // Pola di samping sama dengan /^.{1,}@.{1,}\..{1,}$/ artinya [1/lebih karakter bebas] +
+let polaV = /^\d\w\s$/;                 // Pola di samping sama dengan /^[0-9][A-Za-z0-9_][whitespace]$/
+let polaW = /^www\.....\.com$/;         // Artinya: [wwww.] + [4 karakter bebas] + [.com] (\. bukan wildcard ya!)
+let polaX = /^.+@.+\..+$/;              // Pola di samping sama dengan /^.{1,}@.{1,}\..{1,}$/ artinya [1/lebih karakter bebas] +
                                         // ⤷ [@] + [1/lebih karakter bebas] + [.] + [1/lebih karakter bebas] (pola untuk email)
 
 console.log(polaV.test("1a "));                       // Output: true     ⇨ Test pola /^\d\w\s$/ di dalam String "1a "
@@ -2566,7 +2566,7 @@ oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akur
 // ➓ Pola Logika OR
 
                                         // RegExp menyediakan karakter khusus untuk membuat kondisi OR yaitu karakter pipe "|":
-var polaY = /aku|dia|kami/;             // ⤷ true jika terdapat setidaknya 1 kata dari 3 kemungkinan di samping (aku/dia/kami)
+let polaY = /aku|dia|kami/;             // ⤷ true jika terdapat setidaknya 1 kata dari 3 kemungkinan di samping (aku/dia/kami)
 
 console.log(polaY.test("aku disini"));                // Output: true
 console.log(polaY.test("dia disana"));                // Output: true
@@ -2576,7 +2576,7 @@ console.log(polaY.test("Budi belajar JavaScript"));   // Output: false
 
 // Bonus: Latihan RegExp
 
-var polaZ = /^[A-Za-z]{1,2}\s*\d{1,4}\s*[A-Za-z]{1,3}$/;    // Artinya: [1/2 karakter A-Za-z] + [0/lebih whitespace] +
+let polaZ = /^[A-Za-z]{1,2}\s*\d{1,4}\s*[A-Za-z]{1,3}$/;    // Artinya: [1/2 karakter A-Za-z] + [0/lebih whitespace] +
                                                             // ⤷ [min 1 & max 4 karakter 0-9] + [0/lebih whitespace] +
                                                             // ⤷ [min 1 & max 3 karakter A-Za-z], juga karena diawali ^ dan
                                                             // ⤷ diakhiri $, maka tidak boleh ada karakter sebelum/sesudah String
@@ -2605,10 +2605,10 @@ console.log(Array.isArray([]));                       // Output: true
 
 // E2. Object instance property
 
-var arrA = ["a","b","c","d","e"];
-var arrB = [[1,2],[3,4],[5,6]];
-var arrC = [1,2,3,4,5];
-var arrD = [1,2,3,4,5];
+let arrA = ["a","b","c","d","e"];
+let arrB = [[1,2],[3,4],[5,6]];
+let arrC = [1,2,3,4,5];
+let arrD = [1,2,3,4,5];
 
 console.log(arrA.length);               // Output: 5        ⇨ Mengambil info jumlah element dari sebuah Array
 console.log(arrB.length);               // Output: 3
@@ -2622,22 +2622,22 @@ arrD.length = 7;                        // Property length sebuah Array bisa dit
 console.log(arrD);                      // Output: [1,2,3,4,5,<2 empty slots>]
 console.log(arrD.length);               // Output: 7
 
-var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini sama seperti di BAB 8 (D3). Kondisi (n<arrSiswa.length)
-for (var n=0; n<arrSiswa.length; n++){                      // ⤷ akan selalu di check nilainya dalam setiap perulangan, padahal
+let arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini sama seperti di BAB 8 (D3). Kondisi (n<arrSiswa.length)
+for (let n=0; n<arrSiswa.length; n++){                      // ⤷ akan selalu di check nilainya dalam setiap perulangan, padahal
   console.log(arrSiswa[n]);                                 // ⤷ nilai arrSiswa.length tidak pernah berubah (tidak efisien).
 }                                                           // Output: Andri, Joko, Sukma, Rina, Sari
 
-var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini merupakan versi perbaikan (lebih efisien) dari contoh
-var panjangArr = arrSiswa.length;                           // ⤷ di atas, karena nilai arrSiswa.length tidak disimpan langsung di
-for (var n=0; n<panjangArr; n++){                           // ⤷ kondisi, melainkan ditampung terlebih dahulu ke dalam Variable.
+let arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini merupakan versi perbaikan (lebih efisien) dari contoh
+let panjangArr = arrSiswa.length;                           // ⤷ di atas, karena nilai arrSiswa.length tidak disimpan langsung di
+for (let n=0; n<panjangArr; n++){                           // ⤷ kondisi, melainkan ditampung terlebih dahulu ke dalam sebuah Let.
   console.log(arrSiswa[n]);                                 // Output: Andri, Joko, Sukma, Rina, Sari
 }                                                           
 
 // E3. Object instance method
 
-var arrE = ["a","b","c"];
-var arrF = [1,2,3];
-var arrG = ["a","b","c","d","e","f","g"];
+let arrE = ["a","b","c"];
+let arrF = [1,2,3];
+let arrG = ["a","b","c","d","e","f","g"];
 
 console.log(arrE.reverse());            // Output: ["c","b","a"]          ⇨ Membalik urutan element Array
 console.log(arrE);                      // Output: ["c","b","a"]          ⤷ Method reverse() bersifat Mutating ⚠️
@@ -2648,10 +2648,10 @@ console.log(arrG.slice(3,5));           // Output: ["d","e"]              ⤷ Ar
 console.log(arrG.slice(-5));            // Output: ["c","d","e","f","g"]  ⤷ Argument ke 2: index akhir pengambilan
 console.log(arrG.slice(-5,-2));         // Output: ["c","d","e"]          ⤷ (Tetapi tidak termasuk index akhir itu sendiri)
 
-var arrH = [1,2,3,4,5,6];
-var arrI = [1,2,3,4,5,6];
-var arrJ = [1,2,3,4,5,6];
-var arrK = [1,2,3,4,5,6];
+let arrH = [1,2,3,4,5,6];
+let arrI = [1,2,3,4,5,6];
+let arrJ = [1,2,3,4,5,6];
+let arrK = [1,2,3,4,5,6];
 
 console.log(arrH.splice(3));            // Output: [4,5,6]                ⇨ Menambah atau mengurangi element Array
 console.log(arrH);                      // Output: [1,2,3]                ⤷ Method splice() bersifat Mutating ⚠️
@@ -2662,8 +2662,8 @@ console.log(arrJ);                      // Output: [1,2,3,"new",6]        ⤷ Ar
 console.log(arrK.splice(3,0,97,98,99)); // Output: []                     ⤷ Ingin ditambahkan (ditambahkannya dimulai dari index
 console.log(arrK);                      // Output: [1,2,3,97,98,99,4,5,6] ⤷ yang diinputkan di argument ke 1)
 
-var arrL = ["a","b","c"];
-var tempA, tempB;
+let arrL = ["a","b","c"];
+let tempA, tempB;
 
 console.log(arrL.join());               // Output: a,b,c                  ⇨ Menggabungkan element Array menjadi String
 console.log(arrL.join("-"));            // Output: a-b-c                  ⤷ Argument diisi dengan karakter yang diinginkan sebagai
@@ -2680,7 +2680,7 @@ console.log(tempB);                     // ⤷ Output: x
 console.log(arrL);                      // ⤷ Output: ["y","z","a","b","c","d","e"]
                                         // method push(), pop(), unshift() & shift() bersifat Mutating ⚠️
 
-var arrM = ["a","b","c","d"];
+let arrM = ["a","b","c","d"];
 
 console.log(arrM.toString());           // Output: a,b,c,d  ⇨ Konversi Array menjadi String (serupa dengan join())
 console.log(arrM.toLocaleString());     // Output: a,b,c,d  ⇨ Konversi Array menjadi String + memakai format bahasa lokal
@@ -2699,8 +2699,8 @@ Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, se
 data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 */
 
-var arrN = ["a","b","c","d"];
-var arrO = ["Budi","Joko","Putri"];
+let arrN = ["a","b","c","d"];
+let arrO = ["Budi","Joko","Putri"];
 
 arrN.forEach(                                         // forEach() berfungsi menjalankan Function untuk setiap element Array
   function(element, index, array){                    // (mirip seperti perulangan for of, jalan sebanyak jumlah element di Array)
@@ -2736,10 +2736,10 @@ Index ke-1 = Joko
 Index ke-2 = Putri
 */                                          
 
-var arrP = [1,2,3,4,5];
-var arrQ = [5,6,7,8,9];
-var arrR = [4,9,16,25];
-var arrS = [36,49,64,81];
+let arrP = [1,2,3,4,5];
+let arrQ = [5,6,7,8,9];
+let arrR = [4,9,16,25];
+let arrS = [36,49,64,81];
 
 function kaliDua(elm){ return elm*2; }                                 
 function pangkatTiga(elm){ return elm**3; }
@@ -2803,7 +2803,7 @@ function pangkat2(total, elm, idx, arr){
                                                       // reduce() & reduceRight() digunakan untuk memproses total seluruh element
                                                       // Array dan menghasilkan 1 nilai akhir. reduce() memproses dari awal Array,
                                                       // sedangkan reduceRight() memproses dari akhir element Array.
-                                                      // ⤷ argument ke 1: Variable penampung nilai total
+                                                      // ⤷ argument ke 1: Var/Let penampung nilai total
                                                       // ⤷ argument ke 2: nilai element/value Array
                                                       // ⤷ argument ke 3: index element/key Array       (optional)
                                                       // ⤷ argument ke 4: isi seluruh Array             (optional)
@@ -2817,16 +2817,16 @@ console.log(arrQ.reduceRight(pangkat2));              // Output: 183  (hasil dar
 console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
 
 /*
-Note: Argument ke 1 yang berisi Variable penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di
+Note: Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di
 Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5
-tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Variable total. Untuk menghindari hal seperti ini, kita dapat
-mengatur nilai awal untuk Variable total dengan cara menyisipkan argument tambahan setelah Callback. Perhatikan proses perhitungan
-pada baris console.log(arrQ.reduce(pangkat2,0)), Variable total diisi oleh nilai 0 diawal, sesuai dengan argument tambahan yang
+tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat
+mengatur nilai awal untuk Var/Let total dengan cara menyisipkan argument tambahan setelah Callback. Perhatikan proses perhitungan
+pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan argument tambahan yang
 disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
 */
 
-var arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
-var arrU = [3,5,2,8,1,31,22,44,33,11];
+let arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
+let arrU = [3,5,2,8,1,31,22,44,33,11];
 
                                                       // sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode
                                                       // ⤷ method sort() bersifat Mutating ⚠️
@@ -2835,7 +2835,7 @@ arrU.sort(); console.log(arrU);                       // Output: [1,11,2,22,3,31
                                                       // ⤷ Terjadi karena Number mula-mula akan dikonversi menjadi String, lalu
                                                       // ⤷ selanjutnya barulah diurutkan berdasarkan nomor urut Unicode-nya
 
-var arrV = [3,5,2,8,1,31,22,44,33,11];
+let arrV = [3,5,2,8,1,31,22,44,33,11];
 
 function bandingkan(a, b){                            // Function ini mempunyai logika sebagai berikut:
   return a-b;                                         // ⤷ Jika a < b, return angka negatif, artinya a diurutkan sebelum b.
@@ -2856,7 +2856,7 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 
 // ➊ Tanpa argument
 
-var datA = new Date();                                // Cara penulisan 1: Tanpa argument
+let datA = new Date();                                // Cara penulisan 1: Tanpa argument
 console.log(datA);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu saat kode console.log(datA) dieksekusi
                                                       // ⤷ Kode dieksekusi di Jawa Barat Indonesia (WIB), oleh karena itu muncul 
@@ -2865,7 +2865,7 @@ console.log(datA);                                    // Output: Fri Jun 04 2021
 
 // ➋ Dengan 7 argument
 
-var datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Dengan 7 argument
+let datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Dengan 7 argument
                                                       // ⤷ Argument ke 1: tahun
                                                       // ⤷ Argument ke 2: bulan     (Indeks dimulai dari 0 = Januari, dst)
                                                       // ⤷ Argument ke 3: hari
@@ -2881,7 +2881,7 @@ console.log(datB);                                    // Output: Fri Jun 04 2021
 
 // ➌ Dengan 1 argument dateString
 
-var datC = new Date("04 Jun 2021 17:42:22");          // Cara penulisan 3: Dengan 1 argument dateString
+let datC = new Date("04 Jun 2021 17:42:22");          // Cara penulisan 3: Dengan 1 argument dateString
                                                       // ⤷ dateString yaitu String yang berformat tanggal, nantinya String ini
                                                       // ⤷ akan dikonversi menjadi Date oleh JS. Contoh di samping merupakan salah
                                                       // ⤷ satu format penulisan saja, karena terdapat banyak format dateString
@@ -2891,7 +2891,7 @@ console.log(datC);                                    // Output: Fri Jun 04 2021
 
 // ➍ Dengan 1 argument milidetik
 
-var datD = new Date(1622803342000);                   // Cara penulisan 4: Dengan 1 argument milidetik
+let datD = new Date(1622803342000);                   // Cara penulisan 4: Dengan 1 argument milidetik
                                                       // ⤷ Argument merupakan total milidetik sejak tanggal 1 Januari 1970 atau
                                                       // ⤷ yang disebut UNIX Epoch Time. Dalam contoh di samping 1622803342000
                                                       // ⤷ milidetik berarti ± 51 tahun 167 hari 10 jam 42 menit 22 detik
@@ -2919,7 +2919,7 @@ Method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di 
 
 // ➊ Getter UTC (Waktu UTC)
 
-var datE = new Date();
+let datE = new Date();
 
 console.log(datE.toISOString());        // Output: 2021-06-05T00:55:30.215Z       ⇨ Tanggal dalam format ISO 
 console.log(datE.toJSON());             // Output: 2021-06-05T00:55:30.215Z       ⇨ Sama seperti toISOString()
@@ -2959,7 +2959,7 @@ console.log(datE.getTimezoneOffset());  // Output: -420                         
 
 // ➌ Setter UTC (Waktu UTC)
 
-var datF = new Date(0);       console.log(datF.toUTCString());    // Output: Thu, 01 Jan 1970 00:00:00 GMT  ⇨ UNIX Epoch
+let datF = new Date(0);       console.log(datF.toUTCString());    // Output: Thu, 01 Jan 1970 00:00:00 GMT  ⇨ UNIX Epoch
 datF.setUTCFullYear(2021);    console.log(datF.toUTCString());    // Output: Fri, 01 Jan 2021 00:00:00 GMT  ⇨ Ubah tahun
 datF.setUTCMonth(5);          console.log(datF.toUTCString());    // Output: Tue, 01 Jun 2021 00:00:00 GMT  ⇨ Ubah bulan
 datF.setUTCDate(5);           console.log(datF.toUTCString());    // Output: Sat, 05 Jun 2021 00:00:00 GMT  ⇨ Ubah tanggal
@@ -2970,7 +2970,7 @@ datF.setUTCMilliseconds(215); console.log(datF.toISOString());    // Output: 202
 
 // ➍ Setter Locale (Waktu Sistem Lokal)
 
-var datG = new Date(0);       console.log(datG.toLocaleString()); // Output: 1/1/1970, 7:00:00 AM           ⇨ UNIX Epoch (+7 jam)
+let datG = new Date(0);       console.log(datG.toLocaleString()); // Output: 1/1/1970, 7:00:00 AM           ⇨ UNIX Epoch (+7 jam)
 datG.setFullYear(2021);       console.log(datG.toLocaleString()); // Output: 1/1/2021, 7:00:00 AM           ⇨ Ubah tahun
 datG.setMonth(5);             console.log(datG.toLocaleString()); // Output: 6/1/2021, 7:00:00 AM           ⇨ Ubah bulan
 datG.setDate(5);              console.log(datG.toLocaleString()); // Output: 6/5/2021, 7:00:00 AM           ⇨ Ubah tanggal
@@ -2983,18 +2983,18 @@ datG.setMilliseconds(125);    console.log(datG.toISOString());    // Output: 202
 
 // ➊ Menampilkan Tanggal dengan Format Tertentu
 
-var datH    = new Date();
-var tahun   = datH.getFullYear();           // Dapatkan tahun     (Getter Locale)
-var bulan   = datH.getMonth();              // Dapatkan bulan     (Getter Locale)
-var tanggal = datH.getDate();               // Dapatkan tanggal   (Getter Locale)
-var hari    = datH.getDay();                // Dapatkan hari      (Getter Locale)
-var jam     = datH.getHours();              // Dapatkan jam       (Getter Locale)
-var menit   = datH.getMinutes();            // Dapatkan menit     (Getter Locale)
-var detik   = datH.getSeconds();            // Dapatkan detik     (Getter Locale)
-var mdetik  = datH.getMilliseconds();       // Dapatkan milidetik (Getter Locale)
+let datH    = new Date();
+let tahun   = datH.getFullYear();           // Dapatkan tahun     (Getter Locale)
+let bulan   = datH.getMonth();              // Dapatkan bulan     (Getter Locale)
+let tanggal = datH.getDate();               // Dapatkan tanggal   (Getter Locale)
+let hari    = datH.getDay();                // Dapatkan hari      (Getter Locale)
+let jam     = datH.getHours();              // Dapatkan jam       (Getter Locale)
+let menit   = datH.getMinutes();            // Dapatkan menit     (Getter Locale)
+let detik   = datH.getSeconds();            // Dapatkan detik     (Getter Locale)
+let mdetik  = datH.getMilliseconds();       // Dapatkan milidetik (Getter Locale)
 
-var namaHari;
-var namaBulan;
+let namaHari;
+let namaBulan;
 
 switch (hari){                              // Memanfaatkan index hari untuk membuat
   case 0: namaHari = "Minggu";  break;      // nama hari dalam Bahasa Indonesia
@@ -3021,25 +3021,25 @@ switch (bulan){                             // Memanfaatkan index bulan untuk me
   case 11: namaBulan = "Desember";  break;
 }
 
-var hasil = `${namaHari}, ${tanggal} ${namaBulan} ${tahun} ${jam}:${menit}:${detik}`;
+let hasil = `${namaHari}, ${tanggal} ${namaBulan} ${tahun} ${jam}:${menit}:${detik}`;
 console.log(hasil);                         // Output: Sabtu, 5 Juni 2021 13:25:30 (Waktu dimana kode dieksekusi)
                                             // ⤷ Format seperti ini umum digunakan di Indonesia
 
 // ➋ Menghitung Selisih Tanggal
 
                                             // Membuat Date Object dengan 1 argument dateString
-var tglAwal   = new Date("06/05/2021");     // Variable tglAwal diisi dengan 5 Juni 2021          Note: Perhatikan, urutan tanggal
-var tglAkhir  = new Date("12/20/2021");     // Variable tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik 🔔
+let tglAwal   = new Date("06/05/2021");     // Let tglAwal diisi dengan 5 Juni 2021          Note: Perhatikan, urutan tanggal
+let tglAkhir  = new Date("12/20/2021");     // Let tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik 🔔
 
-var timeAwal  = tglAwal.getTime();          // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAwal (5 Juni 2021)
-var timeAkhir = tglAkhir.getTime();         // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAkhir (12 Desember 2021)
+let timeAwal  = tglAwal.getTime();          // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAwal (5 Juni 2021)
+let timeAkhir = tglAkhir.getTime();         // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAkhir (12 Desember 2021)
 
-var selisihTgl = timeAkhir-timeAwal;        // Menghitung selisih milidetek antara tglAwal dengan tglAkhir
+let selisihTgl = timeAkhir-timeAwal;        // Menghitung selisih milidetek antara tglAwal dengan tglAkhir
 console.log(Math.abs(selisihTgl));          // Output: 17107200000 (Dalam milidetik)
                                             // ⤷ Math.abs() digunakan untuk mendapatkan angka multak (jika negatif jadi positif)
 
-var ms1Hari_coba     = 1000*60*60*24;               // Menghitung banyak milidetik dalam 1 hari
-var selisihHari_coba = selisihTgl/ms1Hari_coba;     // Dapatkan selisih hari
+let ms1Hari_coba     = 1000*60*60*24;               // Menghitung banyak milidetik dalam 1 hari
+let selisihHari_coba = selisihTgl/ms1Hari_coba;     // Dapatkan selisih hari
 console.log(`Selisih = ${selisihHari_coba} hari`);  // Output: Selisih = 198 hari
 
 /*
@@ -3064,15 +3064,15 @@ Sekarang, bagaimana dengan 198 hari? Mari kita hitung.
 Di bawah ini merupakan implementasi algoritma untuk mencari selisih tanggal (berdasarkan ilustrasi di atas):
 */
 
-var ms1Hari   = 1000*60*60*24;              // Menghitung banyak milidetik dalam 1 hari
-var ms1Bulan  = 1000*60*60*24*30;           // Menghitung banyak milidetik dalam 1 bulan
-var ms1Tahun  = 1000*60*60*24*365;          // Menghitung banyak milidetik dalam 1 tahun
+let ms1Hari   = 1000*60*60*24;              // Menghitung banyak milidetik dalam 1 hari
+let ms1Bulan  = 1000*60*60*24*30;           // Menghitung banyak milidetik dalam 1 bulan
+let ms1Tahun  = 1000*60*60*24*365;          // Menghitung banyak milidetik dalam 1 tahun
 
-var selisihTahun  = Math.floor(selisihTgl/ms1Tahun);                                                  // Dapatkan selisih tahun
-var selisihBulan  = Math.floor((selisihTgl-(selisihTahun*ms1Tahun))/ms1Bulan);                        // Dapatkan selisih bulan
-var selisihHari   = Math.floor((selisihTgl-(selisihTahun*ms1Tahun)-(selisihBulan*ms1Bulan))/ms1Hari); // Dapatkan selisih hari
+let selisihTahun  = Math.floor(selisihTgl/ms1Tahun);                                                  // Dapatkan selisih tahun
+let selisihBulan  = Math.floor((selisihTgl-(selisihTahun*ms1Tahun))/ms1Bulan);                        // Dapatkan selisih bulan
+let selisihHari   = Math.floor((selisihTgl-(selisihTahun*ms1Tahun)-(selisihBulan*ms1Bulan))/ms1Hari); // Dapatkan selisih hari
 
-var hasil = `${selisihTahun} Tahun ${selisihBulan} Bulan ${selisihHari} Hari`;
+let hasil = `${selisihTahun} Tahun ${selisihBulan} Bulan ${selisihHari} Hari`;
 console.log(hasil);                         // Output: 0 Tahun 6 Bulan 18 Hari
 
 /*
@@ -3105,11 +3105,11 @@ JavaScript pun memiliki Global property & Global function yang tidak "melekat" k
 // A. Global Property
 // ==================
 
-var boo = NaN;                          // Membuat tipe data NaN secara manual        ⇨ Sama dengan Number.NaN
-var coo = Infinity;                     // Membuat tipe data Infinity secara manual   ⇨ Sama dengan Number.POSITIVE_INFINITY
-var doo = -Infinity;                    // Membuat tipe data -Infinity secara manual  ⇨ Sama dengan Number.NEGATIVE_INFINITY
-var foo = undefined;                    // Membuat tipe data undefined secara manual
-var goo = null;                         // Membuat tipe data null secara manual
+let boo = NaN;                          // Membuat tipe data NaN secara manual        ⇨ Sama dengan Number.NaN
+let coo = Infinity;                     // Membuat tipe data Infinity secara manual   ⇨ Sama dengan Number.POSITIVE_INFINITY
+let doo = -Infinity;                    // Membuat tipe data -Infinity secara manual  ⇨ Sama dengan Number.NEGATIVE_INFINITY
+let foo = undefined;                    // Membuat tipe data undefined secara manual
+let goo = null;                         // Membuat tipe data null secara manual
 
 console.log(boo);                       // Output: NaN
 console.log(coo);                       // Output: Infinity
@@ -3133,12 +3133,12 @@ console.log(parseInt("1.23"));          // Output: 1      ⇨ Sama dengan Number
 
 // B2. Function eval()
 
-var hoo = "100+30";
-var joo = "var bar = 500*3";
-var koo = "alert('Hello World')";
+let hoo = "100+30";
+let joo = "let bar = 500*3";
+let koo = "alert('Hello World')";
 
 console.log(hoo);                       // Output: 100+30                 (String)
-console.log(joo);                       // Output: var bar = 500*3        (String)
+console.log(joo);                       // Output: let bar = 500*3        (String)
 console.log(koo);                       // Output: alert('Hello World')   (String)
 
 console.log(eval(hoo));                 // Output: 130                            ⇨ eval() digunakan untuk memproses String men-
@@ -3147,9 +3147,9 @@ eval(koo);                              // Output: Muncul Popup "Hello World"   
 
 // B3. Function encodeURI() & encodeURIComponent()
 
-var loo = "http://www.duniailkom.com/Belajar #JavaScript";
-var moo = encodeURI(loo);               // encodeURI() untuk Encode beberapa karakter khusus yang biasanya ada di URI (URL).
-var noo = encodeURIComponent(loo);      // encodeURIComponent() sama saja, namun dengan Encode lebih banyak karakter.
+let loo = "http://www.duniailkom.com/Belajar #JavaScript";
+let moo = encodeURI(loo);               // encodeURI() untuk Encode beberapa karakter khusus yang biasanya ada di URI (URL).
+let noo = encodeURIComponent(loo);      // encodeURIComponent() sama saja, namun dengan Encode lebih banyak karakter.
 
 console.log(moo);                       // Output: http://www.duniailkom.com/Belajar%20#JavaScript
 console.log(noo);                       // Output: http%3A%2F%2Fwww.duniailkom.com%2FBelajar%20%23JavaScript
@@ -3190,7 +3190,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 <img src="images/BAB-14-4.png">
 
-3. **Window Object** berperan sebagai Global Object. Semua Variable, Function hingga Object di JavaScript "melekat" langsung ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```. Namun, karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
+3. **Window Object** berperan sebagai Global Object. Semua Var/Let, Function hingga Object di JavaScript "melekat" langsung ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```. Namun, karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
 
 ```Javascript
 // =================
@@ -3199,7 +3199,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 // A1. Penulisan window itu optional
 
-var foo = "Hello World";
+let foo = "Hello World";
 function salam(a){
   console.log(`Hello ${a}`);
 }
@@ -3316,7 +3316,7 @@ masalah yang 𝘀𝗲𝗿𝗶𝗻𝗴 𝗺𝗲𝗺𝗯𝘂𝗮𝘁 𝗽𝘂𝘀�
 
 // C2. Node property
 
-var bar = document.childNodes[1].childNodes[2].childNodes[3]; // Variable bar berisi <𝗽> ... </𝗽>
+let bar = document.childNodes[1].childNodes[2].childNodes[3]; // Let bar berisi <𝗽> ... </𝗽>
 
 console.log(bar.tagName);                           // Output: 𝗣
 console.log(bar.nodeName);                          // Output: 𝗣
@@ -3355,11 +3355,11 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
     <script>
-      var nodeBody  = document.childNodes[1].childNodes[2];     // Berisi <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
-      var nodeH1    = nodeBody.childNodes[1];                   // Berisi <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
-      var nodeP     = nodeBody.childNodes[3];                   // Berisi <𝗽> ... </𝗽>
-      var nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
-      var nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
+      let nodeBody  = document.childNodes[1].childNodes[2];     // Berisi <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+      let nodeH1    = nodeBody.childNodes[1];                   // Berisi <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
+      let nodeP     = nodeBody.childNodes[3];                   // Berisi <𝗽> ... </𝗽>
+      let nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
+      let nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
 
       // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
@@ -3370,12 +3370,12 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
 ```Javascript
 // C3. Node method
 
-var nodeP_new1    = document.createElement("p");              // createElement() untuk Membuat Element Node baru
-var nodeP_new2    = document.createElement("h2");             // createTextNode() untuk Membuat Text Node baru
-var nodeP_new3    = document.createElement("span");           // Note: Method createElement() & createTextNode() bukan
-var nodeText_new1 = document.createTextNode("Text Baru 1");   //       milik Node Object, melainkan milik Document Object
-var nodeText_new2 = document.createTextNode("Text Baru 2");   //       (lihat bagian B di atas). Selain itu, terdapat juga
-var nodeText_new3 = document.createTextNode("Text Baru 3");   //       method createAttribute(), namun tidak dibahas disini.
+let nodeP_new1    = document.createElement("p");              // createElement() untuk Membuat Element Node baru
+let nodeP_new2    = document.createElement("h2");             // createTextNode() untuk Membuat Text Node baru
+let nodeP_new3    = document.createElement("span");           // Note: Method createElement() & createTextNode() bukan
+let nodeText_new1 = document.createTextNode("Text Baru 1");   //       milik Node Object, melainkan milik Document Object
+let nodeText_new2 = document.createTextNode("Text Baru 2");   //       (lihat bagian B di atas). Selain itu, terdapat juga
+let nodeText_new3 = document.createTextNode("Text Baru 3");   //       method createAttribute(), namun tidak dibahas disini.
 
 nodeP_new1.appendChild(nodeText_new1);              // Hasilnya menjadi: <𝗽>Text Baru 1</𝗽>
 nodeP_new2.appendChild(nodeText_new2);              // Hasilnya menjadi: <𝗵𝟮>Text Baru 2</𝗵𝟮>
@@ -3384,9 +3384,9 @@ nodeP_new3.appendChild(nodeText_new3);              // Hasilnya menjadi: <𝘀�
 nodeBody.appendChild(nodeP_new1);                   // Memasukkan <𝗽>Text Baru 1</𝗽> ke dalam <𝗯𝗼𝗱𝘆> (sebagai Node terakhir)
 nodeBody.insertBefore(nodeP_new2, nodeH1);          // Memasukkan <𝗵𝟮>Text Baru 2</𝗵𝟮> sebelum <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
 nodeBody.replaceChild(nodeP_new3, nodeH1);          // Mengganti <𝗵𝟭>Belajar JavaScript</𝗵𝟭> menjadi <𝘀𝗽𝗮𝗻>Text Baru 3</𝘀𝗽𝗮𝗻>
-var ambil = nodeP.removeChild(nodeB);               // Menghapus <𝗯>dari Duniailkom</𝗯> dari <𝗽> ... </𝗽> (disimpan di Var)
-var klon1 = nodeP.cloneNode(true);                  // Copy nodeP dengan Childnya : <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺></𝗽>
-var klon2 = nodeP.cloneNode(false);                 // Copy nodeP tanpa Childnya  : <𝗽></𝗽>
+let ambil = nodeP.removeChild(nodeB);               // Menghapus <𝗯>dari Duniailkom</𝗯> dari <𝗽> ... </𝗽> (disimpan di Let)
+let klon1 = nodeP.cloneNode(true);                  // Copy nodeP dengan Childnya : <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺></𝗽>
+let klon2 = nodeP.cloneNode(false);                 // Copy nodeP tanpa Childnya  : <𝗽></𝗽>
 console.log(nodeP.contains(nodeEm));                // Output: true   ⇨ Check apakah nodeP memiliki Child nodeEm di dalamnya
 console.log(klon1.hasChildNodes());                 // Output: true   ⇨ Check apakah klon1 memiliki Child (meskipun hanya 1)
 console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya berisi <𝗽></𝗽> (artinya tidak punya Child)
@@ -3415,15 +3415,15 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
     <script>
-      // 1. Siapkan Variable shorcut untuk Node
-      var nodeBody  = document.childNodes[1].childNodes[2];
-      var nodeP     = nodeBody.childNodes[3];
+      // 1. Siapkan Let shorcut untuk Node
+      let nodeBody  = document.childNodes[1].childNodes[2];
+      let nodeP     = nodeBody.childNodes[3];
   
-      // 2. Buat tag <table> & siapkan beberapa Variable untuk looping
-      var nodeTable = document.createElement("table");
-      var nodeTr, nodeTd1, nodeTd2, nomorUrut, nomorAcak, nomorAcakText;
+      // 2. Buat tag <table> & siapkan beberapa Let untuk looping
+      let nodeTable = document.createElement("table");
+      let nodeTr, nodeTd1, nodeTd2, nomorUrut, nomorAcak, nomorAcakText;
   
-      for (var i = 1; i <= 10; i++) {
+      for (let i = 1; i <= 10; i++) {
         // 3. Buat 1 tag <tr>, 2 tag <td>, text node (nomor urut & acak)
         nodeTr        = document.createElement("tr");
         nodeTd1       = document.createElement("td");
@@ -3478,12 +3478,12 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
 ```Javascript
 // Menelusuri struktur DOM (𝗖𝗮𝗿𝗮 𝟮: 𝗺𝘂𝗱𝗮𝗵/𝗰𝗲𝗽𝗮𝘁 🔔)
 
-var nodeEm    = document.getElementById("miring");            // Mencari Element Node berdasarkan nilai atribut id
-var nodeClass = document.getElementsByClassName("kelas-a");   // Mencari Element Node berdasarkan class tertentu
-var nodeTag   = document.getElementsByTagName("p");           // Mencari Element Node berdasarkan nama tag
-var nodeName  = document.getElementsByName("isian");          // Mencari Element Node berdasarkan nilai atribut name
-var nodeQS    = document.querySelector("p b");                // Mencari Element Node menggunakan 𝗦𝗲𝗹𝗲𝗰𝘁𝗼𝗿 𝗖𝗦𝗦
-var nodeQSA   = document.querySelectorAll("p b");             // ⤷ querySelector() mengambil element yang ditemukan pertama saja
+let nodeEm    = document.getElementById("miring");            // Mencari Element Node berdasarkan nilai atribut id
+let nodeClass = document.getElementsByClassName("kelas-a");   // Mencari Element Node berdasarkan class tertentu
+let nodeTag   = document.getElementsByTagName("p");           // Mencari Element Node berdasarkan nama tag
+let nodeName  = document.getElementsByName("isian");          // Mencari Element Node berdasarkan nilai atribut name
+let nodeQS    = document.querySelector("p b");                // Mencari Element Node menggunakan 𝗦𝗲𝗹𝗲𝗰𝘁𝗼𝗿 𝗖𝗦𝗦
+let nodeQSA   = document.querySelectorAll("p b");             // ⤷ querySelector() mengambil element yang ditemukan pertama saja
                                                               // ⤷ querySelectorAll() mengambil seluruh element yang ditemukan
 
                                                               // 📚 Referensi document property & method lainnya:
@@ -3551,8 +3551,8 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 
 // E1. Memanipulasi tag HTML + konten isinya
 
-var boo = document.querySelector("p");              // Variable boo berisi <𝗽> ... </𝗽>
-var coo = document.querySelector("title");          // Variable coo berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
+let boo = document.querySelector("p");              // Let boo berisi <𝗽> ... </𝗽>
+let coo = document.querySelector("title");          // Let coo berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
 
 console.log(boo.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
 console.log(boo.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
@@ -3571,7 +3571,7 @@ coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹�
                                                   
 // E2. Mematribut di tag HTML
 
-var doo = document.querySelector("h1");             // Variable doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
+let doo = document.querySelector("h1");             // Let doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
 
 console.log(doo.hasAttribute("id"));                // Output: true             ⇨ Memeriksa apakah doo memiliki atribut id
 console.log(doo.hasAttribute("class"));             // Output: false            ⇨ Memeriksa apakah doo memiliki atribut class
@@ -3596,7 +3596,7 @@ console.log(doo);                                   // Output: <𝗵𝟭 id="jud
 
 // E3. Memanipulasi Style CSS di tag HTML
 
-var foo = document.querySelector("p:nth-child(3)"); // Variable foo berisi <𝗽 style="color: blue;"> ... </𝗽>
+let foo = document.querySelector("p:nth-child(3)"); // Let foo berisi <𝗽 style="color: blue;"> ... </𝗽>
                                                     // ⤷ Cara baca: Cari tag <p> yang berada pada urutan ke 3 dalam
                                                     //              sebuah parent element (dalam kasus ini: <body>)
 
@@ -3610,7 +3610,7 @@ console.log(foo.style.textDecoration);              // Output: (kosong)
 foo.style.backgroundColor = "salmon";               // Menambah/menimpa sebuah 𝗜𝗻𝗹𝗶𝗻𝗲 𝗖𝗦𝗦 di tag HTML
 foo.style.fontSize = "1.4em";                       // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
 
-var goo = getComputedStyle(foo);                    // Manampilkan seluruh Style CSS (bukan hanya dari inline CSS saja)
+let goo = getComputedStyle(foo);                    // Manampilkan seluruh Style CSS (bukan hanya dari inline CSS saja)
                                                     // ⤷ Method getComputedStyle() milik Window Object (lihat bagian A di atas)
 
 console.log(goo);                                   // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "align-content", ...]
@@ -3623,8 +3623,8 @@ console.log(goo.textDecoration);                    // Output: underline solid r
 
 // E4. Memanipulasi Class CSS di tag HTML
 
-var hoo = document.querySelector("div:nth-child(4)");   // Variable hoo berisi <𝗱𝗶𝘃 class="merah tebal"> ... </𝗱𝗶𝘃>
-var joo = document.querySelector("div:nth-child(5)");   // Variable hoo berisi <𝗱𝗶𝘃 class="merah"> ... </𝗱𝗶𝘃>
+let hoo = document.querySelector("div:nth-child(4)");   // Let hoo berisi <𝗱𝗶𝘃 class="merah tebal"> ... </𝗱𝗶𝘃>
+let joo = document.querySelector("div:nth-child(5)");   // Let hoo berisi <𝗱𝗶𝘃 class="merah"> ... </𝗱𝗶𝘃>
 
                                                     // Menampilkan seluruh Class CSS yang digunakan sebuah tag HTML:
 console.log(hoo.className);                         // Output: merah tebal
@@ -3726,11 +3726,11 @@ console.log(joo.className);                         // Output: tebal
       function tampilkan1(){
         document.querySelector("p").innerHTML="Paragraf 1 muncul!";
       }
-      var nodeH1A = document.getElementById("judul1");
+      let nodeH1A = document.getElementById("judul1");
       nodeH1A.onclick = tampilkan1;
 
       // ➋ Cara penulisan 2: Dengan Anonymous Function
-      var nodeH1B = document.getElementById("judul2");
+      let nodeH1B = document.getElementById("judul2");
       nodeH1B.onclick = function(){
         document.querySelector("p:nth-child(4)").innerHTML="Paragraf 2 muncul!";
       }
@@ -3746,8 +3746,8 @@ console.log(joo.className);                         // Output: tebal
         nodeP3.innerHTML="Saya di klik kanan";
       }
 
-      var nodeH1C = document.getElementById("judul3");     
-      var nodeP3  = document.querySelector("p:nth-child(6)");
+      let nodeH1C = document.getElementById("judul3");     
+      let nodeP3  = document.querySelector("p:nth-child(6)");
       nodeH1C.onclick       = tampilkanClick;
       nodeH1C.ondblclick    = tampilkanDoubleClick;
       nodeH1C.oncontextmenu = tampilkanContextMenu;
@@ -3794,15 +3794,15 @@ console.log(joo.className);                         // Output: tebal
         nodeP1.innerHTML="Saya di klik kanan";
       }
 
-      var nodeH1A = document.getElementById("judul1");
-      var nodeP1  = document.querySelector("p");
+      let nodeH1A = document.getElementById("judul1");
+      let nodeP1  = document.querySelector("p");
       nodeH1A.addEventListener("click", tampilkanClick);
       nodeH1A.addEventListener("dblclick", tampilkanDoubleClick);
       nodeH1A.addEventListener("contextmenu", tampilkanContextMenu);
 
       // ➋ Cara penulisan 2: Dengan Anonymous Function
-      var nodeH1B = document.getElementById("judul2");
-      var nodeP2  = document.querySelector("p:nth-child(4)");
+      let nodeH1B = document.getElementById("judul2");
+      let nodeP2  = document.querySelector("p:nth-child(4)");
       
       nodeH1B.addEventListener("click", function() {
         nodeP2.innerHTML="Saya di klik";
@@ -3824,10 +3824,10 @@ console.log(joo.className);                         // Output: tebal
       function tampilkanPBawah(){
         nodeP5.innerHTML="P bawah muncul!";
       }
-      var nodeH1C = document.getElementById("judul3");
-      var nodeP3  = document.querySelector("p:nth-child(6)");
-      var nodeP4  = document.querySelector("p:nth-child(7)");
-      var nodeP5  = document.querySelector("p:nth-child(8)");
+      let nodeH1C = document.getElementById("judul3");
+      let nodeP3  = document.querySelector("p:nth-child(6)");
+      let nodeP4  = document.querySelector("p:nth-child(7)");
+      let nodeP5  = document.querySelector("p:nth-child(8)");
       nodeH1C.addEventListener("click", tampilkanPAtas);
       nodeH1C.addEventListener("click", tampilkanPTengah);
       nodeH1C.addEventListener("click", tampilkanPBawah);
@@ -3869,18 +3869,18 @@ Di BAB ini, akan kembali membahas fitur ES6+ lebih banyak lagi dan secara mendet
 // A. Template String
 // ==================
 
-var number  = 24;                                         // Template String bisa dipakai untuk expressions kompleks
+let number  = 24;                                         // Template String bisa dipakai untuk expressions kompleks
 console.log(`${(number%2==0) ? "genap":"ganjil" }`);      // Output: genap
 console.log(`${alert("Hello!")}`);                        // Output: Muncul Popup "Hello!"
 
-var multiln = `String baris 1
+let multiln = `String baris 1
 String baris 2
 String baris 3`;                      // Template String bisa digunakan untuk membuat multi-line String
 console.log(multiln);                 // Output: String baris 1
                                       //         String baris 2
                                       //         String baris 3
 
-var fragmen = `<div>
+let fragmen = `<div>
   <h1>${number*10}</h1>
   <h2>WOW!</h2>
 </div>`;                              // Bahkan juga bisa digunakan untuk membuat HTML Fragments
