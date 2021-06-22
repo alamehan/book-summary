@@ -1388,16 +1388,17 @@ function funA(){                      // 𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂�
 }                                     // function funA(){
 function funB(){                      //   𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
   console.log(nama);                  //   var nama = "Budi";
-}                                     //   console.log(nama);
-console.log(nama);                    // }
-var nama = "Jaka";                    // function funB(){                 🡲 Tidak ada parameter yang akan menangkap argument
-funA();                               //   console.log(nama);             🡲 Baris ini akan mencari variable "nama" di Global
+  console.log(arguments[0]);          //   console.log(nama);
+}                                     // } 
+console.log(nama);                    // function funB(){                 🡲 Tidak ada parameter yang menangkap argument
+var nama = "Jaka";                    //   console.log(nama);             🡲 Baris ini akan mencari variable "nama" di Global
+funA();                               //   console.log(arguments[0]);     🡲 Argument yang dikirim akan masuk ke Array Argument
 funB("Tono");                         // }
 console.log(nama);                    // console.log(nama);               🡲 Output: undefined
                                       // var nama = "Jaka";
                                       // funA();                          🡲 Output: Budi
-                                      // funB("Tono");                    🡲 Output: Jaka (bukan Tono ya!, karena funB() tidak
-                                      //                                                   menangkap argument apapun)
+                                      // funB("Tono");                    🡲 Output: Jaka  (dari var "nama" di luar Function)
+                                      //                                             Tono  (dari Array Arguments)
                                       // console.log(nama);               🡲 Output: Jaka
 ```
 <hr>
