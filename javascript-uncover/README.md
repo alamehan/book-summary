@@ -1892,7 +1892,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
   this.merk   = merkArg;                          // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
   this.tipe   = tipeArg;                          // Note: Tidak perlu ada deklarasi Object kosong dan keyword return
   this.harga  = hargaArg;                         //       di baris akhir Function, karena dengan menggunakan Constructor
-  this.hidupkan = function(){                     //       Function, di belakang layar JavaScript secara otomatis membuat:
+  this.hidupkan = function(){                     //       Functions, di belakang layar JavaScript secara otomatis membuat:
     return `Mesin ${this.merk} dihidupkan!`;      //       ⤷ 𝗹𝗲𝘁 𝘁𝗵𝗶𝘀 = 𝗢𝗯𝗷𝗲𝗰𝘁.𝗰𝗿𝗲𝗮𝘁𝗲(𝗠𝗼𝗯𝗶𝗹.𝗽𝗿𝗼𝘁𝗼𝘁𝘆𝗽𝗲);
   }                                               //       ⤷ 𝗿𝗲𝘁𝘂𝗿𝗻 𝘁𝗵𝗶𝘀;
   this.pergi = function(tempat){
