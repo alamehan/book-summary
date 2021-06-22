@@ -993,9 +993,9 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 <img src="images/BAB-9.png">
 
 ```Javascript
-// =====================
-// A. Function Sederhana
-// =====================
+// ===================================
+// A. Function Declaration (Sederhana)
+// ===================================
 
 function pagiMalam(){
   console.log("Selamat Pagi!");
@@ -1828,32 +1828,62 @@ sebagai solusi, dimana kita dapat menggunakan Class sebagai wadah yang menyediak
 
 Class berperan sebagai "blue print"/cetakan/sesuatu yang masih abstrak yang menjadi kelompok umum dari object. Misalnya,
 jika Mobil adalah Class, maka mobilBudi, mobilJoko, mobilPutri, dst merupakan object dari Class Mobil. Jika Binatang adalah
-Class, maka sapi, kambing, kuda, dst merupakan object dari Class Binatang. Simak point B2-1, B2-2 & B3 di bawah ini.
+Class, maka sapi, kambing, kuda, dst merupakan object dari Class Binatang. Simak point B2-1, B2-2, B2-3 & B3 di bawah ini.
 */
 
-// B2-1. Sebelum ES6: OOP dengan Constructor Functions (❌)
+// B2-1. Sebelum ES6: OOP dengan Function Declaration (❌)
 
-function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil" (Object induk mobil)
-  this.merk = merkArg;                            // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
-  this.tipe = tipeArg;
-  this.harga = hargaArg;
+function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang berfungsi sebagai "blue print mobil"
+  let mobil   = {};                               // Note: Harus ada deklarasi Object kosong, sebagai "penampung"
+  mobil.merk  = merkArg;
+  mobil.tipe  = tipeArg;
+  mobil.harga = hargaArg;
+  mobil.hidupkan = function(){                    // Cara penulisan method: Function expressions (Anonymous Function)
+    return `Mesin ${mobil.merk} dihidupkan!`; 
+  }
+  mobil.pergi = function(tempat){
+    return `${mobil.merk} pergi ke ${tempat}`;
+  }
+  return mobil;                                   // Note: Di baris akhir Function Declaration harus ada return
+}
+
+let mobilBudi = Mobil("Toyota Avanza", "MPV", 200000000);   // Membuat Object dari Function Declaration di atas
+let mobilJoko = Mobil("Honda Civic", "Sedan", 200000000);   // (Perhatikan bahwa tidak menggunakan keyword new)
+
+console.log(mobilBudi instanceof Mobil);          // Output: false  ⇨ Karena memang kita tidak instansiasi Object
+console.log(mobilJoko instanceof Mobil);          // Output: false     dengan keyword new (Lihat point B3 di bawah)
+
+console.log(mobilBudi.merk);                      // Output: Toyota Avanza
+console.log(mobilBudi.hidupkan());                // Output: Mesin Toyota Avanza dihidupkan!
+console.log(mobilBudi.pergi("Bali"));             // Output: Toyota Avanza pergi ke Bali
+
+console.log(mobilJoko.merk);                      // Output: Honda Civic
+console.log(mobilJoko.hidupkan());                // Output: Mesin Honda Civic dihidupkan!
+console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi ke Solo
+
+// B2-2. Sebelum ES6: OOP dengan Constructor Functions (✔️)
+
+function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil"
+  this.merk   = merkArg;                          // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
+  this.tipe   = tipeArg;                          // Note: Tidak perlu ada deklarasi Object kosong dan
+  this.harga  = hargaArg;                         //       keyword return di baris akhir Function
   this.hidupkan = function(){                     // Cara penulisan method: Function expressions (Anonymous Function)
     return `Mesin ${this.merk} dihidupkan!`; 
-  };
+  }
   this.pergi = function(tempat){
     return `${this.merk} pergi ke ${tempat}`;
   }
 }
 
-// B2-2. Setelah ES6: OOP dengan Class (✔️)
+// B2-3. Setelah ES6: OOP dengan Class (✔️)
 
-class Mobil{                                      // Class sebagai "blue print mobil" (Object induk mobil)
+class Mobil{                                      // Class sebagai "blue print mobil"
   constructor(merkArg, tipeArg, hargaArg){        // Setiap property wajib berada di dalam method constructor(),
-    this.merk = merkArg;                          // yaitu sebuah method yang otomatis dijalankan pada saat proses
-    this.tipe = tipeArg;                          // instansiasi/pembuatan object (lihat penjelasan di point B3)
-    this.harga = hargaArg;
+    this.merk   = merkArg;                        // yaitu sebuah method yang otomatis dijalankan pada saat proses
+    this.tipe   = tipeArg;                        // instansiasi/pembuatan object (lihat penjelasan di point B3)
+    this.harga  = hargaArg;
   }
-  hidupkan(){                                     // Cara penulisan method: langsung ditulis nama Functionnya (simple!)
+  hidupkan(){                                     // Cara penulisan method: Langsung ditulis nama Functionnya (simple!)
     return `Mesin ${this.merk} dihidupkan!`;
   }
   pergi(tempat){
@@ -1863,11 +1893,11 @@ class Mobil{                                      // Class sebagai "blue print m
 
 // B3. Membuat Object dari Constructor Functions/Class di atas
 
-var mobilBudi = new Mobil("Toyota Avanza", "MPV", 200000000);   // Proses instansiasi objek Mobil baru menggunakan keyword new
-var mobilJoko = new Mobil("Honda Civic", "Sedan", 200000000);   // (Instansiasi: membuat sesuatu yang berwujud dari yang abstrak)
+let mobilBudi = new Mobil("Toyota Avanza", "MPV", 200000000);   // Proses instansiasi objek Mobil baru menggunakan keyword new
+let mobilJoko = new Mobil("Honda Civic", "Sedan", 200000000);   // (Instansiasi: membuat sesuatu yang berwujud dari yang abstrak)
 
 console.log(mobilBudi instanceof Mobil);          // Output: true   ⇨ Operator instanceof digunakan memeriksa apakah suatu object
-console.log(mobilJoko instanceof Mobil);          // Output: true   ⇨ merupakan instance dari sebuah Constructor Functions/Class
+console.log(mobilJoko instanceof Mobil);          // Output: true      merupakan instance dari sebuah Constructor Functions/Class
 
 console.log(mobilBudi.merk);                      // Output: Toyota Avanza
 console.log(mobilBudi.hidupkan());                // Output: Mesin Toyota Avanza dihidupkan!
@@ -1878,7 +1908,7 @@ console.log(mobilJoko.hidupkan());                // Output: Mesin Honda Civic d
 console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi ke Solo
 
 /*
-Bisa dilihat bukan? bahwa dengan menerapkan konsep OOP melalui Constructor Functions/Class (kedepannya kita hanya akan menggunakan
+Bisa dilihat bahwa dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan
 Class saja), kita tidak usah repot-repot menulis object mobil secara manual satu per satu secara berulang (seperti yang dilakukan
 di point B1), cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat object yang diinginkan melalui proses
 instansiasi, mudah dan cepat, bahkan jika kita butuh 100 object sekalipun. Ini akan terasa manfaatnya saat aplikasi sudah besar.
@@ -1901,7 +1931,7 @@ console.log(mobilJoko.pulang("Jakarta"));         // Output: Honda Civic pulang 
 
 /*
 this adalah object khusus sebagai pengganti object yang nantinya dibuat dari Class tertentu. Misal kita mengacu ke Class Mobil
-di point B2-2, maka setiap kali instansiasi object Mobil baru menggunakan keyword new, yang terjadi di belakang layar yaitu
+di point B2-3, maka setiap kali instansiasi object Mobil baru menggunakan keyword new, yang terjadi di belakang layar yaitu
 keyword this akan diganti sesuai dengan instansiasi object Mobil barunya. Jika instansisasi object mobilBudi, maka this akan
 diganti menjadi mobilBudi. Dengan demikian keyword this ini membuat sebuah Class menjadi "fleksibel". Simak penjelasan berikut:
 */
