@@ -1564,8 +1564,8 @@ let add = (function(){                    // let add = (function(){
   return tambah;                          // })();
 })();
 
-counter = 100;                            // Misal tidak sengaja menimpa nilai let counter di Global
-console.log(add());                       // Output: 1  ⇨ let counter di dalam function tidak ikut terpengaruh, seolah Private.
+counter = 100;                            // Misal tidak sengaja menimpa nilai Let counter di Global
+console.log(add());                       // Output: 1  ⇨ Let counter di dalam function tidak ikut terpengaruh, seolah Private.
 console.log(add());                       // Output: 2     ⤷ Bandingkan dengan contoh tanpa IIFE di point H10 di bawah
 console.log(add());                       // Output: 3
 
@@ -1576,8 +1576,8 @@ let add = function(){
   return ++counter;
 };
 
-counter = 100;                            // Misal tidak sengaja menimpa nilai let counter di Global
-console.log(add());                       // Output: 101  ⇨ let counter di dalam function ikut terpengaruh, dan ini tidak baik.
+counter = 100;                            // Misal tidak sengaja menimpa nilai Let counter di Global
+console.log(add());                       // Output: 101  ⇨ Let counter di dalam function ikut terpengaruh, dan ini tidak baik.
 console.log(add());                       // Output: 102
 console.log(add());                       // Output: 103
 
