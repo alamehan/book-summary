@@ -16,7 +16,7 @@ Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/j
 | <a href="#bab06">6. Tipe Data JavaScript</a>                  	| ± 7 menit     	|
 | <a href="#bab07">7. Operator JavaScript</a>                   	| ± 8 menit     	|
 | <a href="#bab08">8. Struktur Logika dan Perulangan</a>        	| ± 4 menit     	|
-| <a href="#bab09">9. Function</a>                              	| ± 17 menit    	|
+| <a href="#bab09">9. Function</a>                              	| ± 18 menit    	|
 | <a href="#bab10">10. JavaScript Object</a>                    	| ± 4 menit     	|
 | <a href="#bab11">11. Object Oriented Programming (OOP)</a>    	| ± 12 menit    	|
 | <a href="#bab12">12. JavaScript Native Object</a>             	| ± 40 menit     	|
@@ -1529,9 +1529,9 @@ selamatPagi("Budi");                      // Step 4 🡲 Jalankan Factory Functi
                                           // Output: Pagi, Budi!
 selamatPagi("Joko");                      // Output: Pagi, Joko!
 
-// H8. Contoh IIFE
+// H8. Contoh IIFE (1)
 
-var sapa = (function(waktu){              // IIFE ditulis dengan pola (function() {...})(); penjelasan: pada saat di assign ke  
+var sapa = (function(waktu){              // IIFE ditulis dengan pola (function() {...})(); Penjelasan: pada saat di assign ke  
   var waktu = "Pagi";                     // Variable sapa, function(waktu) akan langsung menjalankan Inner Function-nya, yaitu 
   return function(nama){                  // function(nama). 📚 Tentang IIFE: https://flaviocopes.com/javascript-iife/
     console.log(`${waktu}, ${nama}!`);
@@ -1540,6 +1540,32 @@ var sapa = (function(waktu){              // IIFE ditulis dengan pola (function(
 
 sapa("Budi");                             // Output: Pagi, Budi!
 sapa("Joko");                             // Output: Pagi, Joko!
+
+// H9. Contoh IIFE (2)
+
+var add = (function(){                    // Penjelasan: pada saat di assign ke Variable add, Outer Function akan langsung
+  var counter = 0;                        // menjalankan Inner Function-nya. Tidak lagi jalan setengahnya seperti di kasus
+  return function(){                      // Factory Function. Selain itu, pada contoh ini, Variable counter seolah seperti
+    return ++counter;                     // Private (tidak bisa diakses dari luar, tetapi nilainya tetap dipertahankan
+  }                                       // karena ia menjadi Closure). Agar lebih jelas, bandingkan dengan contoh di H10.
+})();
+
+counter = 100;                            // Misal tidak sengaja menimpa nilai var counter di Global
+console.log(add());                       // Output: 1 
+console.log(add());                       // Output: 2
+console.log(add());                       // Output: 3
+
+// H10. Contoh Tanpa IIFE
+
+var counter = 0;
+var add = function(){
+  return ++counter;
+};
+
+counter = 100;                            // Misal tidak sengaja menimpa nilai var counter di Global
+console.log(add());                       // Output: 101
+console.log(add());                       // Output: 102
+console.log(add());                       // Output: 103
 
 ```
 <hr>
