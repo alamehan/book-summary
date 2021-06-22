@@ -1393,7 +1393,7 @@ function funB(){                      //   𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂�
 console.log(nama);                    // function funB(){                 🡲 Tidak ada parameter yang menangkap argument
 var nama = "Jaka";                    //   console.log(nama);             🡲 Baris ini akan mencari variable "nama" di Global
 funA();                               //   console.log(arguments[0]);     🡲 Argument yang dikirim akan masuk ke Array Argument
-funB("Tono");                         // }                                   ⤷ (Lihat lagi point D1 & D4 di atas)
+funB("Tono");                         // }                                   ⤷ Lihat lagi point D1 & D4 di atas
 console.log(nama);                    // console.log(nama);               🡲 Output: undefined
                                       // var nama = "Jaka";
                                       // funA();                          🡲 Output: Budi
@@ -1496,9 +1496,9 @@ salam(foo);                           // Step 1 🡲 mengirim Function bernama f
 
 Tambahan: Selain uraian di atas, ada pula beberapa istilah lainnya terkait Function yang perlu diketahui.
 ➊ Function yang berada di dalam Function, disebut 𝗜𝗻𝗻𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
-➋ Inner Function yang memiliki akses ke parent scope-nya (𝗢𝘂𝘁𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻) atau dengan kata
-  lain yang menggunakan data/Variable yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
-➌ Function dari hasil Function lainnya (baru berjalan setengahnya), disebut 𝗙𝗮𝗰𝘁𝗼𝗿𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
+➋ Inner Function yang memiliki akses ke parent scope-nya (𝗢𝘂𝘁𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻) atau dengan kata lain yang
+  menggunakan data/Variable/Let yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
+➌ Function yang berjalan dari hasil Function lainnya (baru berjalan setengahnya), disebut 𝗙𝗮𝗰𝘁𝗼𝗿𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
 ➍ 𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲𝗹𝘆-𝗶𝗻𝘃𝗼𝗸𝗲𝗱 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀 (𝗜𝗜𝗙𝗘), lihat contohnya di bawah, point H8.
 */
 
@@ -1515,26 +1515,46 @@ init();                                   // Output: Budi
 
 // H7. Contoh Factory Function
 
-function ucapkanSalam(waktu){             // Step 2 🡲 parameter waktu akan menangkap String Pagi dari argument
-  return function(nama){
-    console.log(`${waktu}, ${nama}!`);
-  }
+                                          // ᴘᴇɴᴜʟɪꜱᴀɴ ʟᴇʙɪʜ ʀɪɴɢᴋᴀꜱ:
+function ucapkanSalam(waktu){             // function ucapkanSalam(waktu){
+  function tampilkan(nama){               //   return function(nama){
+    console.log(`${waktu}, ${nama}!`);    //     console.log(`${waktu}, ${nama}!`);
+  }                                       //   }
+  return tampilkan;                       // }
 }
-var selamatPagi = ucapkanSalam("Pagi");   // Step 1 🡲 Jalankan Function ucapkanSalam() dengan argument Pagi.
-                                          // Step 3 🡲 Simpan hasilnya ke dalam Variable selamatPagi, ini artinya di dalam
-                                          //           Variable selamatPagi kini sudah terdapat waktu yang berisi Pagi.
-selamatPagi("Budi");                      // Step 4 🡲 Jalankan Factory Function selamatPagi, ini artinya selamatPagi() kini 
-                                          //           merupakan Function yang berjalan dari hasil Function ucapkanSalam().
-                                          //           Argument Budi kemudian dikirim untuk mengisi parameter nama.
-                                          // Output: Pagi, Budi!
-selamatPagi("Joko");                      // Output: Pagi, Joko!
+                                          // Cara baca: 
+var selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam() dengan mengirim argument berupa String Pagi
+                                          // ⤷ Parameter waktu akan menangkap String Pagi dari argument, lalu me-return tampilkan
+                                          // ⤷ Simpan hasilnya (Function sudah berjalan setengahnya) ke dalam Variable selamatPagi 
+                                          //   artinya di dalam Variable selamatPagi kini sudah terdapat waktu yang berisi Pagi
+
+selamatPagi("Budi");                      // Output: Pagi, Budi!    ⇨ Menjalankan Factory Function selamatPagi("Budi");
+selamatPagi("Joko");                      // Output: Pagi, Joko!    ⇨ Menjalankan Factory Function selamatPagi("Joko");
 
 // H8. Contoh IIFE (1)
 
+                                          // ᴘᴇɴᴜʟɪꜱᴀɴ ʟᴇʙɪʜ ʀɪɴɢᴋᴀꜱ:
+var sapa = (function(waktu){              // var sapa = (function(waktu){
+  var waktu = "Pagi";                     //   var waktu = "Pagi";
+  function tampilkan(nama){               //   return function(nama){
+    console.log(`${waktu}, ${nama}!`);    //     console.log(`${waktu}, ${nama}!`);
+  }                                       //   }
+  return tampilkan;                       // })();
+})();
+                                          // Cara baca:
+                                          // ⤷ Pada saat di assign ke Variable sapa, function(waktu) akan langsung menjalankan
+                                          //   function tampilkan(nama){ ... }, tidak lagi berjalan setengahnya seperti pada
+                                          //   kasus Factory Function.
+
+                                          // IIFE ditulis dengan pola (function() {...})();
+                                          
+                                      
+
+
 var sapa = (function(waktu){              // IIFE ditulis dengan pola (function() {...})(); Penjelasan: pada saat di assign ke  
-  var waktu = "Pagi";                     // Variable sapa, function(waktu) akan langsung menjalankan Inner Function-nya, yaitu 
-  return function(nama){                  // function(nama). 📚 Tentang IIFE: https://flaviocopes.com/javascript-iife/
-    console.log(`${waktu}, ${nama}!`);
+  var waktu = "Pagi";                     // Variable sapa, function(waktu) akan langsung menjalankan Inner Function-nya, yaitu
+  return function(nama){                  // 
+    console.log(`${waktu}, ${nama}!`);    // 📚 Selebihnya tentang IIFE: https://flaviocopes.com/javascript-iife/
   }
 })();
 
