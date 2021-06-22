@@ -1546,7 +1546,7 @@ sapa("Joko");                             // Output: Pagi, Joko!
 
 /*
 Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih
-sederhana secara penulisan syntax, namun intinya bukan itu, melainkan nanti akan banyak dipakai di konsep JavaScript Object.
+sederhana secara penulisan syntax. Namun tidak hanya itu, di BAB Advanced JavaScript nanti akan dibahas fitur lanjutannya.
 */
 
 // Contoh tanpa Argument
