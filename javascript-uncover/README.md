@@ -1221,8 +1221,8 @@ console.log(e);                       // Output: 60 (Bukan 15, karena nilai var 
 // =============
 
 /*
-Penggunaan var dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan let tidak mempengaruhi
-nilai diluar scope (aman!). let sendiri merupakan fitur baru di ES6, tujuannya untuk "mengganti" penggunaan var.
+Penggunaan Var dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan Let tidak mempengaruhi
+nilai diluar scope (aman!). Let sendiri merupakan fitur baru di ES6, tujuannya untuk "mengganti" penggunaan Var.
 */
 
 // F1. Perbandingan var & let (1)
@@ -1230,14 +1230,18 @@ nilai diluar scope (aman!). let sendiri merupakan fitur baru di ES6, tujuannya u
 for (var i=1; i<3; i++){
   console.log(i);
 }
-console.log(i);                       // Output: 3
+console.log(i);                       // Output: 3                                ⇨ Var bersifat Function Scope, artinya bisa
+                                      //                                             diakses dari luar (tidak Private). Function
+                                      //                                             Scope artinya cakupan scopenya itu Function.
 
 for (let j=1; j<3; j++){
   console.log(j);
 }
-console.log(j);                       // Output: ReferenceError j is not defined
+console.log(j);                       // Output: ReferenceError j is not defined  ⇨ Let bersifat Block Scope, artinya tidak bisa
+                                      //                                             diakses dari luar (Private). Block Scope ar-
+                                      //                                             tinya cakupan scopenya Block, yaitu tanda {}.
 
-// F1. Perbandingan var & let (2)
+// F2. Perbandingan var & let (2)
 
 var k = 1000;
 for (var k=1; k<3; k++){
@@ -1499,15 +1503,15 @@ Tambahan: Selain uraian di atas, ada pula beberapa istilah lainnya terkait Funct
 ➋ Inner Function yang memiliki akses ke parent scope-nya (𝗢𝘂𝘁𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻) atau dengan kata
    lain yang menggunakan data/Var/Let yang ada di parent scope-nya, disebut 𝗖𝗹𝗼𝘀𝘂𝗿𝗲.
 ➌ Function yang berjalan dari hasil Function lainnya (sudah jalan ½ nya), disebut 𝗙𝗮𝗰𝘁𝗼𝗿𝘆 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
-➍ 𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲𝗹𝘆-𝗶𝗻𝘃𝗼𝗸𝗲𝗱 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀 (𝗜𝗜𝗙𝗘), lihat contohnya di bawah, point H8.
+➍ 𝗜𝗺𝗺𝗲𝗱𝗶𝗮𝘁𝗲𝗹𝘆-𝗶𝗻𝘃𝗼𝗸𝗲𝗱 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗘𝘅𝗽𝗿𝗲𝘀𝘀𝗶𝗼𝗻𝘀 (𝗜𝗜𝗙𝗘), selebihnya lihat contohnya di point H8 di bawah.
 */
 
 // H6. Contoh Closure
 
 function init(){
   let nama = "Budi";
-  function tampilNama(){                  // Di dalam Function tampilNama() tidak terdapat pendefinisian Let nama, sehingga
-    console.log(nama);                    // perintah console.log(nama) akan "mencari keluar", dan ditemukanlah Let nama di
+  function tampilNama(){                  // Di dalam Function tampilNama() tidak terdapat pendefinisian Var/Let nama, sehingga
+    console.log(nama);                    // perintah console.log(nama) akan "mencari keluar" scope, dan ditemukanlah Let nama di
   }                                       // parent-nya, lalu digunakan. Dengan demikian Function tampilNama() disebut Closure.
   tampilNama();
 }
@@ -1532,7 +1536,7 @@ let selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam(
 selamatPagi("Budi");                      // Output: Pagi, Budi!    ⇨ Menjalankan Factory Function selamatPagi("Budi");
 selamatPagi("Joko");                      // Output: Pagi, Joko!    ⇨ Menjalankan Factory Function selamatPagi("Joko");
 
-// H8-1. Contoh IIFE (1)
+// H8-1. Function Expression VS IIFE
 
 cetak = function(){                       // Cara penulisan Function Expression (Annonymous Function) biasa
   for (let i = 1; i <= 10; i++){
@@ -1541,13 +1545,16 @@ cetak = function(){                       // Cara penulisan Function Expression 
 }
 cetak();                                  // Panggil Function untuk dijalankan
 
-(function(){                              // Cara penulisan IIFE, dengan cara seperti ini Function akan langsung dijalankan
-  for (let i = 1; i <= 10; i++){          // tanpa perlu dipanggil terlebih dahulu seperti contoh di atas. IIFE ditulis
-    console.log(i);                       // dengan pola (function() {...})(); 📚: https://flaviocopes.com/javascript-iife/
-  }
-})();
+(function(){                              // Cara penulisan IIFE. Dengan cara seperti ini Function akan langsung dijalankan tanpa
+  for (let i = 1; i <= 10; i++){          // perlu dipanggil terlebih dahulu layaknya Function Declaration/Expression biasa. IIFE
+    console.log(i);                       // ditulis dengan pola (function() {...})(); Awalnya, dahulu IIFE digunakan untuk mem-
+  }                                       // buat Function Scope (lihat kembali point F di atas), tujuannya agar Variable (var)
+})();                                     // yang berada di dalam IIFE seolah bersifat Private dan tidak bisa diakses dari luar.
+                                          // Namun semenjak ES6, kita tidak perlu repot lagi membuat IIFE, karena cukup gunakan
+                                          // Let sebagai pengganti Var. Prilaku Let sudah Block Scope (seolah Private), tidak
+                                          // lagi Function Scope seperti Var. Kegunaan lainnya dari IIFE, simak contoh di bawah.
 
-// H8-2. Contoh IIFE (2)
+// H8-2. Contoh IIFE (1)
 
                                           // ᴘᴇɴᴜʟɪꜱᴀɴ ʟᴇʙɪʜ ʀɪɴɢᴋᴀꜱ:
 let sapa = (function(waktu){              // let sapa = (function(waktu){
@@ -1558,14 +1565,14 @@ let sapa = (function(waktu){              // let sapa = (function(waktu){
   return tampilkan;                       // })();
 })();
                                           // Cara baca:
-                                          // ⤷ Pada saat di assign ke Let sapa, Anonymous function(waktu) akan langsung menjalan-
-                                          //   kan Inner Function-nya, yaitu function tampilkan(nama){ ... }, tidak ada lagi
-                                          //   istilah "sudah berjalan setengahnya" seperti pada kasus Factory Function.
+                                          // ⤷ Pada saat di assign ke Let sapa, Anonymous function(waktu) akan langsung berjalan
+                                          //   begitu pula Inner Function-nya, yaitu function tampilkan(nama){ ... }. Hal ini
+                                          //   berbeda dengan kasus di Factory Function yang "hanya berjalan ½ nya".
 
 sapa("Budi");                             // Output: Pagi, Budi!    ⇨ Menjalankan IIFE sapa("Budi");
 sapa("Joko");                             // Output: Pagi, Joko!    ⇨ Menjalankan IIFE sapa("Joko");
 
-// H8-3. Contoh IIFE (3)
+// H8-3. Contoh IIFE (2)
 
                                           // ᴘᴇɴᴜʟɪꜱᴀɴ ʟᴇʙɪʜ ʀɪɴɢᴋᴀꜱ:
 let add = (function(){                    // let add = (function(){
@@ -1576,23 +1583,9 @@ let add = (function(){                    // let add = (function(){
   return tambah;                          // })();
 })();
 
-counter = 100;                            // Misal tidak sengaja menimpa nilai Let counter di Global
-console.log(add());                       // Output: 1  ⇨ Let counter di dalam function tidak ikut terpengaruh, seolah Private.
-console.log(add());                       // Output: 2     ⤷ Bandingkan dengan contoh tanpa IIFE di point H8-4 di bawah
-console.log(add());                       // Output: 3
-
-// H8-4. Contoh Tanpa IIFE
-
-let counter = 0;
-let add = function(){
-  return ++counter;
-};
-
-counter = 100;                            // Misal tidak sengaja menimpa nilai Let counter di Global
-console.log(add());                       // Output: 101  ⇨ Let counter di dalam function ikut terpengaruh, dan ini tidak baik.
-console.log(add());                       // Output: 102
-console.log(add());                       // Output: 103
-
+console.log(add());                       // Output: 1              ⇨ Menjalankan IIFE add();
+console.log(add());                       // Output: 2              ⇨ Menjalankan IIFE add();
+console.log(add());                       // Output: 3              ⇨ Menjalankan IIFE add();
 ```
 <hr>
 
