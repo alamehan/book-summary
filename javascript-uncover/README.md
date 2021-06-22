@@ -1249,13 +1249,13 @@ var k = 1000;
 for (var k=1; k<3; k++){
   console.log(k);
 }
-console.log(`Harganya Rp.${k}`);      // Output: Harganya Rp.3 (Nilai k global tertimpa, saat di dalam perulangan)
+console.log(`Harganya Rp.${k}`);      // Output: Harganya Rp.3      (Nilai k global tertimpa, saat di dalam perulangan)
 
 let l = 1000;
 for (let l=1; l<3; l++){
   console.log(l);
 }
-console.log(`Harganya Rp.${l}`);      // Output: Harganya Rp.1000 (Nilai l global tidak tertimpa)
+console.log(`Harganya Rp.${l}`);      // Output: Harganya Rp.1000   (Nilai l global tidak tertimpa)
 ```
 <hr>
 
