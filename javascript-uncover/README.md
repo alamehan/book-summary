@@ -1532,7 +1532,22 @@ let selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam(
 selamatPagi("Budi");                      // Output: Pagi, Budi!    ⇨ Menjalankan Factory Function selamatPagi("Budi");
 selamatPagi("Joko");                      // Output: Pagi, Joko!    ⇨ Menjalankan Factory Function selamatPagi("Joko");
 
-// H8. Contoh IIFE (1)
+// H8-1. Contoh IIFE (1)
+
+cetak = function(){                       // Cara penulisan Function Expression (Annonymous Function) biasa
+  for (let i = 1; i <= 10; i++){
+    console.log(i);
+  }
+}
+cetak();                                  // Panggil Function untuk dijalankan
+
+(function(){                              // Cara penulisan IIFE, dengan cara seperti ini Function akan langsung dijalankan
+  for (let i = 1; i <= 10; i++){          // tanpa perlu dipanggil terlebih dahulu seperti contoh di atas. IIFE ditulis
+    console.log(i);                       // dengan pola (function() {...})(); 📚: https://flaviocopes.com/javascript-iife/
+  }
+})();
+
+// H8-2. Contoh IIFE (2)
 
                                           // ᴘᴇɴᴜʟɪꜱᴀɴ ʟᴇʙɪʜ ʀɪɴɢᴋᴀꜱ:
 let sapa = (function(waktu){              // let sapa = (function(waktu){
@@ -1550,10 +1565,7 @@ let sapa = (function(waktu){              // let sapa = (function(waktu){
 sapa("Budi");                             // Output: Pagi, Budi!    ⇨ Menjalankan IIFE sapa("Budi");
 sapa("Joko");                             // Output: Pagi, Joko!    ⇨ Menjalankan IIFE sapa("Joko");
 
-                                          // IIFE ditulis dengan pola (function() {...})();
-                                          // 📚 Selebihnya tentang IIFE: https://flaviocopes.com/javascript-iife/
-
-// H9. Contoh IIFE (2)
+// H8-3. Contoh IIFE (3)
 
                                           // ᴘᴇɴᴜʟɪꜱᴀɴ ʟᴇʙɪʜ ʀɪɴɢᴋᴀꜱ:
 let add = (function(){                    // let add = (function(){
@@ -1566,10 +1578,10 @@ let add = (function(){                    // let add = (function(){
 
 counter = 100;                            // Misal tidak sengaja menimpa nilai Let counter di Global
 console.log(add());                       // Output: 1  ⇨ Let counter di dalam function tidak ikut terpengaruh, seolah Private.
-console.log(add());                       // Output: 2     ⤷ Bandingkan dengan contoh tanpa IIFE di point H10 di bawah
+console.log(add());                       // Output: 2     ⤷ Bandingkan dengan contoh tanpa IIFE di point H8-4 di bawah
 console.log(add());                       // Output: 3
 
-// H10. Contoh Tanpa IIFE
+// H8-4. Contoh Tanpa IIFE
 
 let counter = 0;
 let add = function(){
