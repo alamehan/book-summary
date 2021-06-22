@@ -1398,7 +1398,7 @@ console.log(nama);                    // console.log(nama);               🡲 O
                                       // var nama = "Jaka";
                                       // funA();                          🡲 Output: Budi
                                       // funB("Tono");                    🡲 Output: Jaka  (dari var "nama" di luar Function)
-                                      //                                             Tono  (dari Array Arguments)
+                                      //                                             Tono  (dari Array Argument)
                                       // console.log(nama);               🡲 Output: Jaka
 ```
 <hr>
