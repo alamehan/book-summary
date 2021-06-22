@@ -1507,7 +1507,7 @@ Tambahan: Selain uraian di atas, ada pula beberapa istilah lainnya terkait Funct
 function init(){
   var nama = "Budi";
   function tampilNama(){                  // Di dalam Function tampilNama() tidak terdapat pendefinisian Variable nama, sehingga
-    console.log(nama);                    // perintah console.log(nama) akan "mencari keluar", dan ditemukanlah Variable nama di 
+    console.log(nama);                    // perintah console.log(nama) akan "mencari keluar", dan ditemukanlah Variable nama di
   }                                       // parent-nya, lalu digunakan. Dengan demikian Function tampilNama() disebut Closure.
   tampilNama();
 }
@@ -1522,11 +1522,11 @@ function ucapkanSalam(waktu){             // function ucapkanSalam(waktu){
   }                                       //   }
   return tampilkan;                       // }
 }
-                                          // Cara baca: 
-var selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam() dengan mengirim argument berupa String "Pa
-                                          // ⤷ Parameter waktu di ucapkanSalam(waktu) akan menangkap String "Pagi" dari argum
-                                          // ⤷ Function ucapkanSalam() akan me-return (bukan menjalankan) Function tampilkan y
-                                          //   kini sudah berisi nilai dari waktu, yaitu String "Pagi" (sudah jalan ½ nya)
+                                          // Cara baca:
+var selamatPagi = ucapkanSalam("Pagi");   // ⤷ Jalankan Function ucapkanSalam() dengan mengirim argument berupa String "Pagi"
+                                          // ⤷ Parameter waktu di ucapkanSalam(waktu) akan menangkap String "Pagi" dari argument
+                                          // ⤷ Function ucapkanSalam() akan me-return (bukan menjalankan) Function tampilkan yang
+                                          //   kini sudah berisi nilai dari waktu, yaitu String "Pagi" (Anggap: sudah jalan ½ nya)
                                           // ⤷ Simpan hasil return tersebut kedalam Variable selamatPagi
 
 selamatPagi("Budi");                      // Output: Pagi, Budi!    ⇨ Menjalankan Factory Function selamatPagi("Budi");
@@ -1548,7 +1548,7 @@ var sapa = (function(waktu){              // var sapa = (function(waktu){
                                           //   istilah "sudah berjalan setengahnya" seperti pada kasus Factory Function.
 
 sapa("Budi");                             // Output: Pagi, Budi!    ⇨ Menjalankan IIFE sapa("Budi");
-sapa("Joko");                             // Output: Pagi, Joko!    ⇨ Menjalankan IIFE sapa("Joko");                                      
+sapa("Joko");                             // Output: Pagi, Joko!    ⇨ Menjalankan IIFE sapa("Joko");
 
                                           // IIFE ditulis dengan pola (function() {...})();
                                           // 📚 Selebihnya tentang IIFE: https://flaviocopes.com/javascript-iife/
@@ -1566,7 +1566,7 @@ var add = (function(){                    // var add = (function(){
 
 counter = 100;                            // Misal tidak sengaja menimpa nilai var counter di Global
 console.log(add());                       // Output: 1  ⇨ var counter di dalam function tidak ikut terpengaruh, seolah Private.
-console.log(add());                       // Output: 2     ⤷ Bandingkan dengan contoh tanpa IIFE di point H10 di bawah 
+console.log(add());                       // Output: 2     ⤷ Bandingkan dengan contoh tanpa IIFE di point H10 di bawah
 console.log(add());                       // Output: 3
 
 // H10. Contoh Tanpa IIFE
