@@ -1230,16 +1230,18 @@ nilai diluar scope (aman!). Let sendiri merupakan fitur baru di ES6, tujuannya u
 for (var i=1; i<3; i++){
   console.log(i);
 }
-console.log(i);                       // Output: 3                                ⇨ Var bersifat Function Scope, artinya bisa
-                                      //                                             diakses dari luar (tidak Private). Function
-                                      //                                             Scope artinya cakupan scopenya itu Function.
+console.log(i);                       // Output: 3                                ⇨ Var bersifat Function Scope, artinya cakupan
+                                      //                                             scopenya itu Function. Sehingga pada contoh
+                                      //                                             di samping, Var masih bisa diakses dari luar
+                                      //                                             (ini tidak aman!), seolah tidak Private.
 
 for (let j=1; j<3; j++){
   console.log(j);
 }
-console.log(j);                       // Output: ReferenceError j is not defined  ⇨ Let bersifat Block Scope, artinya tidak bisa
-                                      //                                             diakses dari luar (Private). Block Scope ar-
-                                      //                                             tinya cakupan scopenya Block, yaitu tanda {}.
+console.log(j);                       // Output: ReferenceError j is not defined  ⇨ Let bersifat Block Scope, artinya cakupan
+                                      //                                             scopenya itu tanda {}. Sehingga pada contoh
+                                      //                                             di samping, Let tidak bisa diakses dari luar
+                                      //                                             (dan menghasilkan Error), seolah Private.
 
 // F2. Perbandingan var & let (2)
 
