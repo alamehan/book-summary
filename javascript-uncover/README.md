@@ -1311,7 +1311,7 @@ console.log(sapaSiang());             // console.log(sapaSiang)           🡲 O
 function sapaSiang(){                 // console.log(sapaSiang());        🡲 Output: Selamat Siang!
   return "Selamat Siang!";            // function sapaSiang(){
 }                                     //   return "Selamat Siang!";
-                                      // }                                🡲 Karena terdapat return, maka tidak ada Output undefined
+                                      // }                                🡲 Karena ada return, maka tidak ada Output: undefined
 
 // Contoh 2-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(sapaSore());              // 𝘀𝗮𝗽𝗮𝗦𝗼𝗿𝗲 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘀𝗮𝗽𝗮𝗦𝗼𝗿𝗲(){...}
