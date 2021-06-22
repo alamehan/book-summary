@@ -1902,7 +1902,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
 
 // ➋ OOP dengan Class (Setelah ES6)
 
-class Mobil{                                      // Class sebagai "blue print mobil" (Kedepannya Class inilah yang sering digunakan)
+class Mobil{                                      // Class sebagai "blue print mobil" (Kedepannya Class inilah yang akan digunakan)
   constructor(merkArg, tipeArg, hargaArg){        // Note: Setiap property wajib berada di dalam method constructor(), 
     this.merk   = merkArg;                        //       yaitu sebuah method yang otomatis dijalankan pada saat proses
     this.tipe   = tipeArg;                        //       instansiasi/pembuatan object.
