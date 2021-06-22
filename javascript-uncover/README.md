@@ -1391,7 +1391,7 @@ function funB(){                      //   𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂�
 }                                     //   console.log(nama);
 console.log(nama);                    // }
 var nama = "Jaka";                    // function funB(){                 🡲 Tidak ada parameter yang akan menangkap argument
-funA();                               //   console.log(nama);
+funA();                               //   console.log(nama);             🡲 Baris ini akan mencari variable "nama" di Global
 funB("Tono");                         // }
 console.log(nama);                    // console.log(nama);               🡲 Output: undefined
                                       // var nama = "Jaka";
