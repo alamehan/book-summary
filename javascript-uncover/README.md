@@ -1067,9 +1067,9 @@ console.log(kali(undefined, undefined, 30, 15));  // Output: 45000 (Hasil dari 1
 <hr>
 
 ```Javascript
-// ===================================
-// D. Function dengan Arguments Object
-// ===================================
+// ====================================================
+// D. Function dengan Arguments Object (Array Argument)
+// ====================================================
 
 // D1. Array Argument
 
@@ -1113,7 +1113,7 @@ console.log(ratarata(2, 4, 8, 16));   // Output: 7.5 (hasil dari (2+4+8+16)/4 �
 // D4. Rest Parameter (1)
 
 function numC(...arg){                // Selain untuk menggabungkan Array seperti yang dijelaskan di BAB 7 (operator),
-  console.log(arg[0]);                // spread (...) juga dapat digunakan untuk menggantikan peran arguments Object,
+  console.log(arg[0]);                // spread (...) juga dapat digunakan untuk menggantikan peran Arguments Object,
   console.log(arg[1]);                // dan inilah yang disebut dengan 𝗥𝗲𝘀𝘁 𝗣𝗮𝗿𝗮𝗺𝗲𝘁𝗲𝗿. Hasil sama saja dengan point D1.
   console.log(arg[2]);                // Penulisannya tidak harus ...arg, bisa dengan kata lain, misalnya ...angka, dll
   console.log(arg[3]);
