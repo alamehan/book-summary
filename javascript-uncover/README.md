@@ -1444,6 +1444,7 @@ Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data, ini ber
   ⤷ Function Expressions tanpa nama Function, disebut 𝗔𝗻𝗼𝗻𝘆𝗺𝗼𝘂𝘀 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝘀.
 ➋ Function dapat digunakan sebagai argument layaknya tipe data biasa, disebut 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸.
   ⤷ Function yang memiliki Callback sebagai argument, disebut 𝗛𝗶𝗴𝗵𝗲𝗿 𝗢𝗿𝗱𝗲𝗿 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻.
+➌ Function dapat digunakan sebagai return value dari function lainnya (lihat point H7).
 */
 
 // H1. Function Expressions
