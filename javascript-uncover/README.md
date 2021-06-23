@@ -1601,7 +1601,7 @@ Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan 
 sederhana secara penulisan syntax. Namun tidak hanya itu, di BAB Advanced JavaScript nanti akan dibahas fitur lanjutannya.
 */
 
-// Contoh tanpa Argument
+// I1. Contoh tanpa Argument
 
 let pagiA = function(){ return "Selamat Pagi!"; };    // Penulisan Function Expressions biasa
 let pagiB = () => { return "Selamat Pagi!"; };        // Penulisan Function Expressions dengan Arrow Function
@@ -1612,7 +1612,7 @@ console.log(pagiA());                                 // Output: Selamat Pagi!
 console.log(pagiB());                                 // Output: Selamat Pagi!
 console.log(pagiC());                                 // Output: Selamat Pagi!
 
-// Contoh dengan 1 Argument
+// I2. Contoh dengan 1 Argument
 
 let sapaA = function(nama){ return `Hi ${nama}!`; };  // Penulisan Function Expressions biasa
 let sapaB = (nama) => `Hi ${nama}!`;                  // Penulisan Function Expressions dengan Arrow Function
@@ -1623,7 +1623,7 @@ console.log(sapaA("Budi"));
 console.log(sapaB("Budi"));
 console.log(sapaC("Budi"));
 
-// Contoh dengan banyak Argument
+// I3. Contoh dengan banyak Argument
 
 let totalA = function(a, b, c){ return a+b+c; };      // Penulisan Function Expressions biasa
 let totalB = (a, b, c) => a+b+c;                      // Penulisan Function Expressions dengan Arrow Function
@@ -1631,7 +1631,7 @@ let totalB = (a, b, c) => a+b+c;                      // Penulisan Function Expr
 console.log(totalA(1, 2, 3));                         // Output: 6
 console.log(totalB(1, 2, 3));                         // Output: 6
 
-// Studi Kasus 1: Return sebagai Array
+// I4. Studi Kasus 1: Return sebagai Array
 
 let arrSiswa = ["Budi", "Joko", "Sukma"];
 
@@ -1645,7 +1645,7 @@ let jumlahHurufB = arrSiswa.map(nama => nama.length); // Penulisan dengan Arrow 
 console.log(jumlahHurufA);                            // Output: [4, 4, 5]
 console.log(jumlahHurufB);                            // Output: [4, 4, 5]
 
-// Studi Kasus 2: Return sebagai Object
+// I5. Studi Kasus 2: Return sebagai Object
 
 let jumlahHurufC = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
   return {nama: nama, jumlah: nama.length}; 
