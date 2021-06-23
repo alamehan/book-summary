@@ -1626,21 +1626,22 @@ console.log(sapaC("Budi"));
 // I3. Contoh dengan banyak Argument
 
 let totalA = function(a, b, c){ return a+b+c; };      // Penulisan Function Expressions biasa
-let totalB = (a, b, c) => a+b+c;                      // Penulisan Function Expressions dengan Arrow Function
+let totalB = (a, b, c) => { return a+b+c; };          // Penulisan Function Expressions dengan Arrow Function (1)
+let totalC = (a, b, c) => a+b+c;                      // Penulisan Function Expressions dengan Arrow Function (2)
 
 console.log(totalA(1, 2, 3));                         // Output: 6
 console.log(totalB(1, 2, 3));                         // Output: 6
+console.log(totalC(1, 2, 3));                         // Output: 6
 
 // I4. Studi Kasus 1: Return sebagai Array
 
 let arrSiswa = ["Budi", "Joko", "Sukma"];
 
 let jumlahHurufA = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
-  return nama.length; 
+  return nama.length;                                 // Note: Object instance method "map" dibahas di BAB 12 bagian E3
 });
 
 let jumlahHurufB = arrSiswa.map(nama => nama.length); // Penulisan dengan Arrow Function
-                                                      // Note: Object instance method "map" dibahas di BAB 12 bagian E3
 
 console.log(jumlahHurufA);                            // Output: [4, 4, 5]
 console.log(jumlahHurufB);                            // Output: [4, 4, 5]
