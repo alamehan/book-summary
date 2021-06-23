@@ -1605,17 +1605,67 @@ sederhana secara penulisan syntax. Namun tidak hanya itu, di BAB Advanced JavaSc
 
 let pagiA = function(){ return "Selamat Pagi!"; };    // Penulisan Function Expressions biasa
 let pagiB = () => { return "Selamat Pagi!"; };        // Penulisan Function Expressions dengan Arrow Function
+let pagiC = () => "Selamat Pagi!";                    // Note: Bahkan jika isi Function hanya berupa return ... saja, maka
+                                                      //       keyword return serta {} tidak perlu ditulis, keren bukan?
 
 console.log(pagiA());                                 // Output: Selamat Pagi!
 console.log(pagiB());                                 // Output: Selamat Pagi!
+console.log(pagiC());                                 // Output: Selamat Pagi!
 
-// Contoh dengan Argument
+// Contoh dengan 1 Argument
+
+let sapaA = function(nama){ return `Hi ${nama}!`; };  // Penulisan Function Expressions biasa
+let sapaB = (nama) => `Hi ${nama}!`;                  // Penulisan Function Expressions dengan Arrow Function
+let sapaC = nama => `Hi ${nama}!`;                    // Note: Bahkan jika jumlah parameter hanya 1 saja, maka tanda ()
+                                                      //       tidak perlu ditulis, lebih keren lagi bukan?
+
+console.log(sapaA("Budi"));
+console.log(sapaB("Budi"));
+console.log(sapaC("Budi"));
+
+// Contoh dengan banyak Argument
 
 let totalA = function(a, b, c){ return a+b+c; };      // Penulisan Function Expressions biasa
-let totalB = (a, b, c) => { return a+b+c; };          // Penulisan Function Expressions dengan Arrow Function
+let totalB = (a, b, c) => a+b+c;                      // Penulisan Function Expressions dengan Arrow Function
 
 console.log(totalA(1, 2, 3));                         // Output: 6
 console.log(totalB(1, 2, 3));                         // Output: 6
+
+// Studi Kasus 1: Return sebagai Array
+
+let arrSiswa = ["Budi", "Joko", "Sukma"];
+
+let jumlahHurufA = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
+  return nama.length; 
+});
+
+let jumlahHurufB = arrSiswa.map(nama => nama.length); // Penulisan dengan Arrow Function
+                                                      // Note: Object instance method "map" dibahas di BAB 12 bagian E3
+
+console.log(jumlahHurufA);                            // Output: [4, 4, 5]
+console.log(jumlahHurufB);                            // Output: [4, 4, 5]
+
+// Studi Kasus 2: Return sebagai Object
+
+let jumlahHurufC = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
+  return {nama: nama, jumlah: nama.length}; 
+});
+
+let jumlahHurufD = arrSiswa.map(nama => ({            // Penulisan dengan Arrow Function (1)
+  nama: nama, jumlah: nama.length                     // Note: Saat ingin return Object di Arrow Function,
+}));                                                  //       tidak bisa langsung ditulis dengan cara:
+                                                      //       ⤷ arrSiswa.map(nama => {nama: nama});
+                                                      //       karena tanda {} akan dianggap sebagai pembuka function,
+                                                      //       caranya bungkus terlebih dahulu menggunakan tanda ():
+                                                      //       ⤷ arrSiswa.map(nama => ({nama: nama}));
+
+let jumlahHurufE = arrSiswa.map(nama => {             // Penulisan dengan Arrow Function (2)
+  return {nama: nama, jumlah: nama.length}            // Note: Jika pusing dengan cara penulisan di atas, gunakan cara
+})                                                    //       standard saja, yaitu membuka block Function dengan {}.
+
+console.log(jumlahHurufC);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
+console.log(jumlahHurufD);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
+console.log(jumlahHurufE);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 ```
 
 <br>
