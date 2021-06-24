@@ -361,14 +361,38 @@ var strH = `Hello World!`;            // String dengan backtick (Template String
 | \\                	| Garis miring (backslash)                                       	|
 | \xXX              	| Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX 	|
 | \uXXXX            	| Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
-
-📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
+| 📚 Bonus           	| Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/   	|
 
 ### 𝐃. Boolean
 
+```Javascript
+var bolA = true;                      // Bernilai true, biasanya di pakai di if, else, while, dan do while
+var bolB = false;                     // Bernilai false, biasanya di pakai di if, else, while, dan do while
+```
+
 ### 𝐄. Null & Undefined
 
+```Javascript
+var nudA = null;                      // Keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
+var nudB = undefined;                 // Keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
+```
+
+#### Kasus yang menghasilkan Undefined:
+
+```Javascript
+var und1;
+console.log(und1);                    // Output: undefined (Var yang dibuat tanpa langsung diisi nilai, menjadi Undefined)
+
+var und2 = [1, 2, 3];
+console.log(und2[3]);                 // Output: undefined (Mengakses Array diluar indeks yang dibuat, menjadi Undefined)
+
+var und3 = {nama: "iyan", umur: 24};
+console.log(und3["alamat"]);          // Output: undefined (Mengakses Object diluar key yang dibuat, menjadi Undefined)
+```
+
 ### 𝐅. Symbol
+
+> 🚧 Tidak dibahas.
 
 ### 𝐆. Array
 
