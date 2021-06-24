@@ -472,7 +472,21 @@ console.log(arr2D[1][1]);             // Output: 5
 Operator Precedence atau Prioritas Operator menentukan bagaimana suatu operator dieksekusi. Operator dengan prioritas lebih tinggi akan dioperasikan terlebih dahulu. Ada operator yang dioperasikan dari kiri ke kanan (left-to-right), ada pula yang dari kanan ke kiri (right-to-left).
 
 📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses di link MDN berikut:<br>
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+### 𝐁. Falsy & Truthy Value
+
+Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung operator yang digunakan. Untuk operator perbandingan, tipe data ini akan dikonversi menjadi Boolean (true/false). Nilai yang dikonversi menjadi false disebut Falsy Value, dan nilai yang dikonversi menjadi true disebut Truthy Value.
+
+| Falsy Value 	| Keterangan      	|   	| Truthy Value 	| Keterangan                                                 	|
+|-------------	|-----------------	|---	|--------------	|------------------------------------------------------------	|
+| false       	| Nilai false     	|   	| true         	| Nilai true                                                 	|
+| null        	| Nilai null      	|   	| {}           	| Object kosong                                              	|
+| undefined   	| Nilai undefined 	|   	| []           	| Array kosong                                               	|
+| 0           	| Angka nol       	|   	| 42           	| Sembarang angka (termasuk pecahan dan negatif), selain nol 	|
+| NaN         	| Nilai NaN       	|   	| "foo"        	| Sembarang string, selama bukan string kosong               	|
+| ''          	| String kosong   	|   	| infinity     	| Nilai infinity                                             	|
+| ""          	| String kosong   	|   	| -infinity    	| Nilai -infinity                                            	|
   
 <hr>
 <div id="bab2_3"></div>
