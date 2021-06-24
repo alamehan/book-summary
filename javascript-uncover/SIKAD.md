@@ -420,7 +420,9 @@ console.log(arr2D[2][1]);             // Output: 5
 ### 𝐇. Object, RegExp & Date
 
 > 🔔 Object dibahas di bab 2-6 & bab 3
+> 
 > 🔔 RegExp dibahas di bab 3-2 D
+> 
 > 🔔 Date dibahas di bab 3-2 F
 
 ### 𝐈. Map & WeakMap
