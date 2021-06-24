@@ -344,33 +344,23 @@ var strD = 'Dia berkata: "Hey"';      // Kutip dua di dalam kutip satu
 var strE = "Dia berkata: \"Hey\"";    // Kutip dua di dalam kutip dua, pakai escape character (\)
 var strF = 'Hari Jum\'at';            // Kutip satu di dalam kutip satu, pakai escape character (\)
 var strG = "\u2764 You!"              // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
-
-// Template String (Template Literals)
-
-var strH = "Indonesia";               // Coba ganti nilainya menjadi String apapun (bebas)
-var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ Menggunakan concatenation (+)
-var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ Langsung di dalam backtick (``)
-console.log(strJ);                    // Output: Bahasa Indonesia
-
-var number  = 24;                                         // Coba ganti nilainya menjadi berapapun (bebas)
-var result  = `${number} ditambah 6 = ${number+6}`;       // Template String bisa dipakai juga untuk expressions
-console.log(result);                                      // Output: 24 ditambah 6 = 30
+var strH = `Hello World!`;            // String dengan backtick (Template String ES6)
 ```
 
-| Karakter 	| Kegunaan                                                       	|
-|----------	|----------------------------------------------------------------	|
-| \0       	| Karakter NUL                                                   	|
-| \b       	| Backspace                                                      	|
-| \t       	| Horizontal tab                                                 	|
-| \n       	| Newline                                                        	|
-| \v       	| Vertical tab                                                   	|
-| \f       	| Form feed                                                      	|
-| \r       	| Carriage return                                                	|
-| \"       	| Tanda kutip dua (double quote)                                 	|
-| \'       	| Tanda kutip satu (apostrophe atau single quote)                	|
-| \\       	| Garis miring (backslash)                                       	|
-| \xXX     	| Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX 	|
-| \uXXXX   	| Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
+| Escape Characters 	| Kegunaan                                                       	|
+|-------------------	|----------------------------------------------------------------	|
+| \0                	| Karakter NUL                                                   	|
+| \b                	| Backspace                                                      	|
+| \t                	| Horizontal tab                                                 	|
+| \n                	| Newline                                                        	|
+| \v                	| Vertical tab                                                   	|
+| \f                	| Form feed                                                      	|
+| \r                	| Carriage return                                                	|
+| \"                	| Tanda kutip dua (double quote)                                 	|
+| \'                	| Tanda kutip satu (apostrophe atau single quote)                	|
+| \\                	| Garis miring (backslash)                                       	|
+| \xXX              	| Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX 	|
+| \uXXXX            	| Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
 
 📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 
