@@ -304,11 +304,9 @@ Pada contoh di bawah: Var ```harga```, Let ```namaLengkap```, dan Const ```NILAI
 
 > 𝐓𝐢𝐩𝐞 𝐃𝐚𝐭𝐚 𝐎𝐛𝐣𝐞𝐜𝐭
 > > - [X] 𝐆. Array
-> > - [X] 𝐇. Object
-> > - [X] 𝐈. RegExp
-> > - [X] 𝐉. Date
-> > - [ ] 𝐊. Map & WeakMap
-> > - [ ] 𝐋. Set & WeakSet
+> > - [X] 𝐇. Object, RegExp & Date
+> > - [ ] 𝐈. Map & WeakMap
+> > - [ ] 𝐉. Set & WeakSet
 
 Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif, dan tipe data object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Yang termasuk ke dalam **tipe data primitif**, yaitu: **Number, NaN, Infinity, String, Boolean, Null, Undefined, dan Symbol**. Sedangkan tipe data object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya beragam. Adapun yang termasuk ke dalam **tipe data object**, yaitu: **Array, Object, RegExp, Date, Map, WeakMap, Set, dan WeakSet.**
 
@@ -419,23 +417,17 @@ console.log(arr2D[2][0]);             // Output: 3
 console.log(arr2D[2][1]);             // Output: 5
 ```
 
-### 𝐇. Object
+### 𝐇. Object, RegExp & Date
 
-> 🔔 Dibahas di bab 2-6 & bab 3
+> 🔔 Object dibahas di bab 2-6 & bab 3
+> 🔔 RegExp dibahas di bab 3-2 D
+> 🔔 Date dibahas di bab 3-2 F
 
-### 𝐈. RegExp
-
-> 🔔 Dibahas di bab 3-2 D
-
-### 𝐉. Date
-
-> 🔔 Dibahas di bab 3-2 F
-
-### 𝐊. Map & WeakMap
+### 𝐈. Map & WeakMap
 
 > 🚧 Tidak dibahas
 
-### 𝐋. Set & WeakSet
+### 𝐉. Set & WeakSet
 
 > 🚧 Tidak dibahas
   
