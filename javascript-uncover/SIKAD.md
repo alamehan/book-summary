@@ -1139,7 +1139,7 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
   
 <div id="bab3_3"></div>
   
-### 3-3. Global Property & Function <a href="#daftar_isi_bab3">🡅</a>
+## 3-3. Global Property & Function <a href="#daftar_isi_bab3">🡅</a>
   
 > - [X] 𝐀. Global Property
 > - [X] 𝐁. Global Function
@@ -1165,27 +1165,27 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 
 <div id="bab4_1"></div>
   
-### 4-1. Pengantar DOM <a href="#daftar_isi_bab4">🡅</a>
+## 4-1. Pengantar DOM <a href="#daftar_isi_bab4">🡅</a>
   
 <div id="bab4_2"></div>
   
-### 4-2. Window Object <a href="#daftar_isi_bab4">🡅</a>
+## 4-2. Window Object <a href="#daftar_isi_bab4">🡅</a>
   
 <div id="bab4_3"></div>
   
-### 4-3. Document Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
+## 4-3. Document Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
   
 <div id="bab4_4"></div>
   
-### 4-4. Node Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
+## 4-4. Node Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
   
 <div id="bab4_5"></div>
   
-### 4-5. Document Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
+## 4-5. Document Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
   
 <div id="bab4_6"></div>
   
-### 4-6. Node Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
+## 4-6. Node Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
   
 </details>
 
