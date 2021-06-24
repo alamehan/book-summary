@@ -199,6 +199,42 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
 <details>
 <summary>Klik untuk membuka!</summary>
   
+<div id="daftar_isi_bab4"></div>
+<br>
+  
+| Bab 4                                               	| Estimasi Baca 	|
+|-----------------------------------------------------	|---------------	|
+| <a href="#bab4_1">4-1. Pengantar DOM</a><br>        	| X Menit       	|
+| <a href="#bab4_2">4-2. Window Object</a>            	| X Menit       	|
+| <a href="#bab4_3">4-3. Document Object (Part 1)</a> 	| X Menit       	|
+| <a href="#bab4_4">4-4. Node Object (Part 1)</a>     	| X Menit       	|
+| <a href="#bab4_5">4-5. Document Object (Part 2)</a> 	| X Menit       	|
+| <a href="#bab4_6">4-6. Node Object (Part 2)</a>     	| X Menit       	|
+
+<div id="bab4_1"></div>
+  
+### 4-1. Pengantar DOM <a href="#daftar_isi_bab4">🡅</a>
+  
+<div id="bab4_2"></div>
+  
+### 4-2. Window Object <a href="#daftar_isi_bab4">🡅</a>
+  
+<div id="bab4_3"></div>
+  
+### 4-3. Document Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
+  
+<div id="bab4_4"></div>
+  
+### 4-4. Node Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
+  
+<div id="bab4_5"></div>
+  
+### 4-5. Document Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
+  
+<div id="bab4_6"></div>
+  
+### 4-6. Node Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
+  
 </details>
 
 ## ⑤ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 🦸‍♂️
