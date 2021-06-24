@@ -290,6 +290,7 @@ Pada contoh di bawah: Var ```harga```, Let ```namaLengkap```, dan Const ```NILAI
 | <a href="#bab2_5">2-5. Function</a>        	| X Menit       	|
 | <a href="#bab2_6">2-6. Object</a>          	| X Menit       	|
   
+<hr>
 <div id="bab2_1"></div>
   
 ## 2-1. Tipe Data <a href="#daftar_isi_bab2">🡅</a>
@@ -433,6 +434,7 @@ console.log(arr2D[2][1]);             // Output: 5
 
 > 🚧 Tidak dibahas
   
+<hr>
 <div id="bab2_2"></div>
   
 ## 2-2. Operator <a href="#daftar_isi_bab2">🡅</a>
@@ -453,6 +455,7 @@ console.log(arr2D[2][1]);             // Output: 5
 > > - [X] 𝐊. Operator Spread
 > > - [ ] 𝐋. Operator Bitwise
   
+<hr>
 <div id="bab2_3"></div>
   
 ## 2-3. Struktur Logika <a href="#daftar_isi_bab2">🡅</a>
@@ -462,6 +465,7 @@ console.log(arr2D[2][1]);             // Output: 5
 > - [X] 𝐂. Operator Conditional Ternary
 > - [X] 𝐃. Operator Nullish Coalescing
   
+<hr>
 <div id="bab2_4"></div>
 
 ## 2-4. Perulangan <a href="#daftar_isi_bab2">🡅</a>
@@ -472,6 +476,7 @@ console.log(arr2D[2][1]);             // Output: 5
 > - [X] 𝐃. For of
 > - [X] 𝐄. For in
   
+<hr>
 <div id="bab2_5"></div>
   
 ## 2-5. Function <a href="#daftar_isi_bab2">🡅</a>
@@ -498,6 +503,7 @@ console.log(arr2D[2][1]);             // Output: 5
 > > - [X] 𝐎. IImmediately-invoked Function Expression (IIFE)
 > > - [X] 𝐏. Arrow Function
   
+<hr>
 <div id="bab2_6"></div>
   
 ## 2-6. Object <a href="#daftar_isi_bab2">🡅</a>
@@ -522,6 +528,7 @@ console.log(arr2D[2][1]);             // Output: 5
 | <a href="#bab3_2">3-2. JavaScript Native Object</a>        	| X Menit       	|
 | <a href="#bab3_3">3-3. Global Property & Function</a>      	| X Menit       	|
   
+<hr>
 <div id="bab3_1"></div>
   
 ## 3-1. Object Oriented Programming <a href="#daftar_isi_bab3">🡅</a>
@@ -530,6 +537,7 @@ console.log(arr2D[2][1]);             // Output: 5
 > - [X] 𝐁. Object Sebagai OOP
 > - [X] 𝐂. Pengantar Native Object
   
+<hr>
 <div id="bab3_2"></div>
   
 ## 3-2. JavaScript Native Object <a href="#daftar_isi_bab3">🡅</a>
@@ -1493,6 +1501,7 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 */
 ```
   
+<hr>
 <div id="bab3_3"></div>
   
 ## 3-3. Global Property & Function <a href="#daftar_isi_bab3">🡅</a>
@@ -1519,26 +1528,32 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 | <a href="#bab4_5">4-5. Document Object (Part 2)</a> 	| X Menit       	|
 | <a href="#bab4_6">4-6. Node Object (Part 2)</a>     	| X Menit       	|
 
+<hr>
 <div id="bab4_1"></div>
   
 ## 4-1. Pengantar DOM <a href="#daftar_isi_bab4">🡅</a>
   
+<hr>
 <div id="bab4_2"></div>
   
 ## 4-2. Window Object <a href="#daftar_isi_bab4">🡅</a>
   
+<hr>
 <div id="bab4_3"></div>
   
 ## 4-3. Document Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
   
+<hr>
 <div id="bab4_4"></div>
   
 ## 4-4. Node Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
   
+<hr>
 <div id="bab4_5"></div>
   
 ## 4-5. Document Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
   
+<hr>
 <div id="bab4_6"></div>
   
 ## 4-6. Node Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
