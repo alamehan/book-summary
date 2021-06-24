@@ -304,9 +304,9 @@ Pada contoh di bawah: Var ```harga```, Let ```namaLengkap```, dan Const ```NILAI
 
 > 𝐓𝐢𝐩𝐞 𝐃𝐚𝐭𝐚 𝐎𝐛𝐣𝐞𝐜𝐭
 > > - [X] 𝐆. Array
-> > - [X] 𝐇. Object (Bab ...)
-> > - [X] 𝐈. RegExp (Bab ...)
-> > - [X] 𝐉. Date (Bab ...)
+> > - [X] 𝐇. Object
+> > - [X] 𝐈. RegExp
+> > - [X] 𝐉. Date
 > > - [ ] 𝐊. Map & WeakMap
 > > - [ ] 𝐋. Set & WeakSet
 
@@ -392,19 +392,52 @@ console.log(und3["alamat"]);          // Output: undefined (Mengakses Object dil
 
 ### 𝐅. Symbol
 
-> 🚧 Tidak dibahas.
+> 🚧 Tidak dibahas
 
 ### 𝐆. Array
 
-### 𝐇. Object (Bab ...)
+```Javascript
+var arrSiswa = ["Andri", "Joko", "Sukma"];      // Array 1D berisi hanya data String
+var arrAcak  = [1, 2.0, "tiga", true, null];    // Array 1D berisi beragam tipe data
+var arr2D    = [[2,5], [9,5], [3,5]];           // Array 2D, misalnya untuk koordinat
 
-### 𝐈. RegExp (Bab ...)
+console.log(arrSiswa);                // Output: ["Andri", "Joko", "Sukma"]
+console.log(arrSiswa[0]);             // Output: Andri                        ⇨ Array di JavaScript dimulai dari indeks ke 0,
+console.log(arrSiswa[1]);             // Output: Joko                            bukan dari indeks ke 1, ingat baik-baik ya.
+console.log(arrSiswa[2]);             // Output: Sukma
+console.log(arrSiswa[3]);             // Output: undefined
 
-### 𝐉. Date (Bab ...)
+console.log(arr2D);                   // Output: [[2,5],[9,5],[3,5]]
+console.log(arr2D[0]);                // Output: [2,5]
+console.log(arr2D[1]);                // Output: [9,5]
+console.log(arr2D[2]);                // Output: [3,5]
+console.log(arr2D[0][0]);             // Output: 2
+console.log(arr2D[0][1]);             // Output: 5
+console.log(arr2D[1][0]);             // Output: 9
+console.log(arr2D[1][1]);             // Output: 5
+console.log(arr2D[2][0]);             // Output: 3
+console.log(arr2D[2][1]);             // Output: 5
+```
+
+### 𝐇. Object
+
+> 🔔 Dibahas di bab 2-6 & bab 3
+
+### 𝐈. RegExp
+
+> 🔔 Dibahas di bab 3-2 D
+
+### 𝐉. Date
+
+> 🔔 Dibahas di bab 3-2 F
 
 ### 𝐊. Map & WeakMap
 
+> 🚧 Tidak dibahas
+
 ### 𝐋. Set & WeakSet
+
+> 🚧 Tidak dibahas
   
 <div id="bab2_2"></div>
   
