@@ -471,7 +471,7 @@ console.log(arr2D[1][1]);             // Output: 5
 
 Operator Precedence atau Prioritas Operator menentukan bagaimana suatu operator dieksekusi. Operator dengan prioritas lebih tinggi akan dioperasikan terlebih dahulu. Ada operator yang dioperasikan dari kiri ke kanan (left-to-right), ada pula yang dari kanan ke kiri (right-to-left).
 
-📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses di link MDN berikut:
+📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses di link MDN berikut:<br>
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence.
   
 <hr>
