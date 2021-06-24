@@ -1,8 +1,10 @@
+<div id="top"></div>
+
 # JavaScript Uncover by Andre Pratama
 **Dirangkum dan penambahan konten oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a><br>
 **Note**: Semua keterangan terkait mengacu ke bab sekian, segera perbaiki, karena strukturnya udah berubah.
 
-## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋
+## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -268,7 +270,7 @@ Pada contoh di bawah: Var ```harga```, Let ```namaLengkap```, dan Const ```NILAI
 
 </details>
 
-## ② 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒶𝓈𝒶𝓇 👨‍💻
+## ② 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒶𝓈𝒶𝓇 👨‍💻 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -380,7 +382,7 @@ Pada contoh di bawah: Var ```harga```, Let ```namaLengkap```, dan Const ```NILAI
   
 </details>
 
-## ③ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒪𝒪𝒫 🚀
+## ③ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒪𝒪𝒫 🚀 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -1374,7 +1376,7 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
   
 </details>
 
-## ④ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒪𝑀 🧩
+## ④ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒪𝑀 🧩 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -1417,14 +1419,14 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
   
 </details>
 
-## ⑤ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 🦸‍♂️
+## ⑤ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 🦸‍♂️ <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
   
 </details>
 
-## ⑥ 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖
+## ⑥ 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
