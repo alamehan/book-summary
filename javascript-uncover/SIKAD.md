@@ -18,25 +18,25 @@
   
 <div id="bab1_1"></div>
   
-### 1-1. Kenalan dengan JavaScript <a href="#daftar_isi_bab1">🡅</a>
+## 1-1. Kenalan dengan JavaScript <a href="#daftar_isi_bab1">🡅</a>
 
 JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CSS, PHP, MySQL dan JavaScript. Bersama-sama dengan HTML dan CSS, ketiganya berbagi peran masing-masing. HTML digunakan untuk membuat struktur dan isi dari halaman web (content). CSS untuk mempercantik tampilan website (design). Sedangkan JavaScript berfungsi menangani interaksi (behavior).“HTML for content, CSS for presentation and JavaScript for behavior”.
 
 <div id="bab1_2"></div>
   
-### 1-2. Sejarah & Perkembangan <a href="#daftar_isi_bab1">🡅</a>
+## 1-2. Sejarah & Perkembangan <a href="#daftar_isi_bab1">🡅</a>
   
 <div id="bab1_3"></div>
   
-### 1-3. Menjalankan Kode <a href="#daftar_isi_bab1">🡅</a>
+## 1-3. Menjalankan Kode <a href="#daftar_isi_bab1">🡅</a>
   
 <div id="bab1_4"></div>
   
-### 1-4. Aturan Dasar <a href="#daftar_isi_bab1">🡅</a>
+## 1-4. Aturan Dasar <a href="#daftar_isi_bab1">🡅</a>
 
 <div id="bab1_5"></div>
   
-### 1-5. Variabel <a href="#daftar_isi_bab1">🡅</a>
+## 1-5. Variabel <a href="#daftar_isi_bab1">🡅</a>
   
 </details>
 
@@ -59,7 +59,7 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
   
 <div id="bab2_1"></div>
   
-### 2-1. Tipe Data <a href="#daftar_isi_bab2">🡅</a>
+## 2-1. Tipe Data <a href="#daftar_isi_bab2">🡅</a>
   
 > 𝐓𝐢𝐩𝐞 𝐃𝐚𝐭𝐚 𝐏𝐫𝐢𝐦𝐢𝐭𝐢𝐟
 > > - [X] 𝐀. Number
@@ -79,7 +79,7 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
   
 <div id="bab2_2"></div>
   
-### 2-2. Operator <a href="#daftar_isi_bab2">🡅</a>
+## 2-2. Operator <a href="#daftar_isi_bab2">🡅</a>
   
 > 𝐏𝐞𝐧𝐭𝐢𝐧𝐠 𝐔𝐧𝐭𝐮𝐤 𝐃𝐢𝐤𝐞𝐭𝐚𝐡𝐮𝐢
 > > - [X] 𝐀. Operator Precedence
@@ -99,7 +99,7 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
   
 <div id="bab2_3"></div>
   
-### 2-3. Struktur Logika <a href="#daftar_isi_bab2">🡅</a>
+## 2-3. Struktur Logika <a href="#daftar_isi_bab2">🡅</a>
   
 > - [X] 𝐀. If & Else
 > - [X] 𝐁. Switch
@@ -108,7 +108,7 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
   
 <div id="bab2_4"></div>
 
-### 2-4. Perulangan <a href="#daftar_isi_bab2">🡅</a>
+## 2-4. Perulangan <a href="#daftar_isi_bab2">🡅</a>
   
 > - [X] 𝐀. For
 > - [X] 𝐁. While
@@ -118,7 +118,7 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
   
 <div id="bab2_5"></div>
   
-### 2-5. Function <a href="#daftar_isi_bab2">🡅</a>
+## 2-5. Function <a href="#daftar_isi_bab2">🡅</a>
   
 > 𝐊𝐨𝐧𝐬𝐞𝐩 𝐔𝐭𝐚𝐦𝐚
 > > - [X] 𝐀. Function Declaration
@@ -144,7 +144,7 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
   
 <div id="bab2_6"></div>
   
-### 2-6. Object <a href="#daftar_isi_bab2">🡅</a>
+## 2-6. Object <a href="#daftar_isi_bab2">🡅</a>
   
 > - [X] 𝐀. Object Sebagai Tipe Data
 > - [X] 𝐁. Nested Object
@@ -168,7 +168,7 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
   
 <div id="bab3_1"></div>
   
-### 3-1. Object Oriented Programming <a href="#daftar_isi_bab3">🡅</a>
+## 3-1. Object Oriented Programming <a href="#daftar_isi_bab3">🡅</a>
   
 > - [X] 𝐀. Prosedural VS OOP
 > - [X] 𝐁. Object Sebagai OOP
@@ -176,7 +176,7 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
   
 <div id="bab3_2"></div>
   
-### 3-2. JavaScript Native Object <a href="#daftar_isi_bab3">🡅</a>
+## 3-2. JavaScript Native Object <a href="#daftar_isi_bab3">🡅</a>
   
 > - [X] 𝐀. Number Object
 > - [X] 𝐁. Math Object
@@ -185,13 +185,9 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
 > - [X] 𝐄. Array Object
 > - [X] 𝐅. Date Object
 
-#### 𝐀. Number Object
+### 𝐀. Number Object
 
 ```Javascript
-// ================
-// A. Number Object
-// ================
-
 // A1. Object property
 
 console.log(Number.EPSILON);          // Output: 2.220446049250313e-16    ⇨ Interval terkecil dari dua angka di dalam JS
@@ -251,13 +247,9 @@ console.log(numC.toLocaleString('id-ID', {style: 'percent'}));                  
 console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));  // Output: Rp 1.234.500,35  (Mata uang)
 ```
 
-#### 𝐁. Math Object
+### 𝐁. Math Object
 
 ```Javascript
-// ==============
-// B. Math Object
-// ==============
-
 // B1. Object property
 
 console.log(Math.E);                  // Output: 2.718281828459045        ⇨ Angka logaritma natural e
@@ -300,13 +292,9 @@ console.log(Math.max(...mthB));             // Output: 90
 console.log(Math.min(...mthB));             // Output: 12
 ```
 
-#### 𝐂. String Object
+### 𝐂. String Object
 
 ```Javascript
-// ================
-// C. String Object
-// ================
-
 // C1. Object method
 
 console.log(String.fromCharCode(65, 66, 67));               // Output: ABC      ⇨ Membuat String berdasarkan kode unicode
@@ -398,13 +386,9 @@ while (posisi !== -1){                  // Perulangan berhenti saat posisi = -1 
 console.log(count);                     // Output: 6
 ```
 
-#### 𝐃. RegExp Object
+### 𝐃. RegExp Object
 
 ```Javascript
-// =====================================
-// D. Regular Expression (RegExp) Object
-// =====================================
-
 // D1. Object instance method
 
 let regA = "Belajar JavaScript dari buku JavaScript Uncover";
@@ -665,13 +649,9 @@ console.log(polaZ.test("zz 9YES"));                   // Output: true
 console.log(polaZ.test("_zz9YES"));                   // Output: false
 ```
 
-#### 𝐄. Array Object
+### 𝐄. Array Object
 
 ```Javascript
-// ===============
-// E. Array Object
-// ===============
-
 // E1. Object method
 
 console.log(Array.isArray([1, 2, 3]));                // Output: true     ⇨ Check apakah sebuah nilai/var bertipe data Array
@@ -921,13 +901,9 @@ arrV.sort(bandingkan);                                // sort() yang menggunakan
 console.log(arrV);                                    // Output: [1,2,3,5,8,11,22,31,33,44]
 ```
 
-#### 𝐅. Date Object
+### 𝐅. Date Object
 
 ```Javascript
-// ==============
-// F. Date Object
-// ==============
-
 // F1. Membuat Date Object
 
 // ➊ Tanpa argument
