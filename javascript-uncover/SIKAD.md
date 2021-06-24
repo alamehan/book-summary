@@ -1,5 +1,6 @@
 # JavaScript Uncover by Andre Pratama
 **Dirangkum dan penambahan konten oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a>
+**Note**: Semua keterangan terkait mengacu ke bab sekian, segera perbaiki, karena strukturnya udah berubah.
 
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋
 
@@ -17,6 +18,7 @@
 | <a href="#bab1_4">1-4. Aturan Dasar</a>              	| X Menit       	|
 | <a href="#bab1_5">1-5. Variabel</a>                  	| X Menit       	|
   
+<hr>
 <div id="bab1_1"></div>
   
 ## 1-1. Kenalan dengan JavaScript <a href="#daftar_isi_bab1">🡅</a>
@@ -33,8 +35,9 @@ Perkembangan JavaScript yang sangat pesat akhir-akhir ini melahirkan banyak pene
 
 Apa yang akan kita pelajari dalam buku ini terdiri dari 2 kelompok besar: JavaScript dan **DOM (Document Object Model)**. JavaScript adalah bahasa pemrograman, sedangkan DOM merupakan objek HTML yang akan kita manipulasi, seperti teks, gambar, form, tombol, title bar web browser, event, dll. Bahasa pemrograman JavaScript dikembangkan oleh ECMA, sedangkan DOM dikembangkan oleh W3C (organisasi yang juga membuat standar HTML dan CSS). Bisa dibilang, JavaScript sepenuhnya terpisah dari HTML.
 
-Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika anda merasa jenuh dengan pembahasan dari BAB 2 hingga 13, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi objek HTML yang nantinya diakses lewat DOM mulai dari BAB 14 hingga akhir buku.
+Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika anda merasa jenuh dengan pembahasan dari bab 2 hingga 13, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi objek HTML yang nantinya diakses lewat DOM mulai dari bab 14 hingga akhir buku.
 
+<hr>
 <div id="bab1_2"></div>
 
 ## 1-2. Sejarah & Perkembangan <a href="#daftar_isi_bab1">🡅</a>
@@ -69,6 +72,7 @@ Namun perlu juga dipahami bahwa walaupun materi di eBook JavaScript Uncover suda
 
 Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat diakses <a href="https://www.jetbrains.com/lp/javascript-25/">disini</a>. Daftar feature baru dari mulai **ES6 hingga ES.Next** dapat diakses di <a href="https://en.wikipedia.org/wiki/ECMAScript">Wikipedia</a>, <a href="https://www.javascripttutorial.net/es-next/">JavaScriptTutorial</a>, <a href="https://jsfeatures.in/">JSFeatures</a>, <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">FreeCodeCamp</a>, <a href="https://github.com/daumann/ECMAScript-new-features-list">GitHub</a>, <a href="https://javascript.info/">JavaScriptInfo</a>.
   
+<hr>
 <div id="bab1_3"></div>
   
 ## 1-3. Menjalankan Kode <a href="#daftar_isi_bab1">🡅</a>
@@ -184,10 +188,38 @@ Tab yang sering kita akses selama membuat kode program JavaScript adalah **Tab C
 
 Salah satu kelemahan (sekaligus keunggulan) dari JavaScript adalah, pengunjung web bisa mematikan JavaScript yang ada di web browser mereka. Tag ```<noscript>``` bisa digunakan untuk menampilkan teks keterangan yang hanya bisa terlihat pada web browser yang tidak memiliki JavaScript (atau JavaScriptnya dimatikan).
   
+<hr>
 <div id="bab1_4"></div>
   
 ## 1-4. Aturan Dasar <a href="#daftar_isi_bab1">🡅</a>
 
+> - [X] 𝐀. Statement
+> - [X] 𝐁. Case Sensitive
+> - [X] 𝐂. Whitespace
+> - [X] 𝐃. Indenting
+> - [X] 𝐄. Comment
+
+### 𝐀. Statement
+
+**Statement** adalah sebutan untuk sebuah baris perintah JavaScript. Walaupun saya menggunakan kata “baris”, bisa saja sebuah Statement butuh beberapa baris (seperti Function). Atau dalam 1 baris bisa terdiri dari beberapa Statement. Setiap Statement diakhiri dengan tanda titik koma (semi colon): ‘ ; ‘. Sebenarnya, tanda titik koma untuk mengakhiri Statement JavaScript ini adalah opsional. Artinya, boleh tidak ditulis sepanjang Statement tersebut harus berada dalam baris baru (1 Statement, 1 baris). Sebaiknya kita tetap menambahkan tanda titik koma untuk mengakhiri setiap Statement di dalam JavaScript.
+
+### 𝐁. Case Sensitive
+
+**Case Sensitivity**: JavaScript termasuk bahasa pemrograman yang bersifat case sensitif, artinya huruf besar dan huruf kecil dianggap berbeda. Salah menulis huruf sangat sering terjadi, misalnya pada saat pendefinisian Variable.
+
+### 𝐂. Whitespace
+
+**Whitespace** mengacu pada karakter yang digunakan untuk memberikan ruang horizontal atau vertikal antara karakter lain, atau dengan kata lain karakter “kosong” seperti spasi, tab, atau baris baru (new line). Secara umum di dalam JavaScript whitespace akan diabaikan.
+
+### 𝐃. Indenting
+
+**Indenting** adalah istilah yang digunakan untuk menambahkan spasi atau tab diawal baris kode program. Tujuannya agar kode program lebih mudah dibaca terutama jika kode program tersebut sudah mencapai puluhan atau ratusan baris kode program. 
+
+### 𝐄. Comment
+
+**Comment** atau baris komentar adalah sebutan untuk kode program yang tidak akan di eksekusi oleh JavaScript. Selain sebagai dokumentasi, komentar juga sering digunakan untuk menghentikan sementara baris kode program. Di JavaScript, Comment ditulis menggunakan karakter ```// komentar``` (untuk single line) & ```/* komentar */``` (untuk multi line). Di sepanjang contoh kode yang disertakan di bab-bab selanjutnya, penggunaan Comment akan banyak sekali ditemukan (sebagai keterangan baris sebuah kode).
+
+<hr>
 <div id="bab1_5"></div>
   
 ## 1-5. Variabel <a href="#daftar_isi_bab1">🡅</a>
@@ -831,7 +863,7 @@ arrD.length = 7;                        // Property length sebuah Array bisa dit
 console.log(arrD);                      // Output: [1,2,3,4,5,<2 empty slots>]
 console.log(arrD.length);               // Output: 7
 
-let arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini sama seperti di BAB 8 (D3). Kondisi (n<arrSiswa.length)
+let arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini sama seperti di bab 8 (D3). Kondisi (n<arrSiswa.length)
 for (let n=0; n<arrSiswa.length; n++){                      // ⤷ akan selalu di check nilainya dalam setiap perulangan, padahal
   console.log(arrSiswa[n]);                                 // ⤷ nilai arrSiswa.length tidak pernah berubah (tidak efisien).
 }                                                           // Output: Andri, Joko, Sukma, Rina, Sari
