@@ -185,9 +185,9 @@ JavaScript merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CS
 > - [X] 𝐄. Array Object
 > - [X] 𝐅. Date Object
 
-#### 𝐀. Number Object
+𝐀. Number Object
 
-```JavaScript
+```Javascript
 // A1. Object property
 
 console.log(Number.EPSILON);          // Output: 2.220446049250313e-16    ⇨ Interval terkecil dari dua angka di dalam JS
@@ -198,7 +198,8 @@ console.log(Number.MIN_SAFE_INTEGER); // Output: -9007199254740991        ⇨ Ni
 console.log(Number.NaN);              // Output: NaN                      ⇨ Cara untuk membuat nilai NaN (Not a Number)
 console.log(Number.POSITIVE_INFINITY) // Output: Infinity                 ⇨ Cara untuk membuat nilai infinity
 console.log(Number.NEGATIVE_INFINITY) // Output: -Infinity                ⇨ Cara untuk membuat nilai -infinity
-
+```
+```JavaScript
 // A2. Object method
 
 console.log(Number.isNaN(5/'a'));                     // Output: true     ⇨ Check apakah hasil operasi/suatu Var/Let berisi NaN
@@ -216,6 +217,36 @@ console.log(Number.parseInt("10.3% keuntungan"));     // Output: 10   (number)  
 console.log(Number.parseInt("10101101", 2));          // Output: 173  (number)  ⤷ 2 artinya: proses sebagai biner (Basis 2)
 console.log(Number.parseInt("255", 8));               // Output: 173  (number)  ⤷ 8 artinya: proses sebagai oktal (Basis 8)
 console.log(Number.parseInt("AD", 16));               // Output: 173  (number)  ⤷ 8 artinya: proses sebagai heksa (Basis 16)
+```
+```JavaScript
+// A3. Object instance method
+
+numA = 500.123;
+numB = 50;
+numC = 1234500.346;
+
+console.log(numA.toExponential());    // Output: 5.00123e+2       ≈ 5.00123x10² ⇨ Format angka menjadi scientific notation
+console.log(numA.toExponential(1));   // Output: 5.0e+2           ≈ 5.0x10²
+console.log(numA.toExponential(5));   // Output: 5.00123e+2       ≈ 5.00123x10² 
+console.log(numA.toExponential(10));  // Output: 5.0012300000e+2  ≈ 5.0012300000x10²
+console.log(numA.toFixed());          // Output: 500              ⇨ Format angka dengan jumlah digit desimal (angka belakang koma)
+console.log(numA.toFixed(1));         // Output: 500.1              yang tetap, toFixed(5) artinya 5 digit angka di belakang koma.
+console.log(numA.toFixed(5));         // Output: 500.12300
+console.log(numA.toFixed(10));        // Output: 500.1230000000
+console.log(numA.toPrecision());      // Output: 500.123          ⇨ Format angka dengan jumlah digit yang tetap, toPrecision(5)
+console.log(numA.toPrecision(1));     // Output: 5e+2               artinya total digit angka berjumlah 5 digit.
+console.log(numA.toPrecision(5));     // Output: 500.12
+console.log(numA.toPrecision(10));    // Output: 500.1230000
+console.log(numB.toString());         // Output: 50     (string)  ⇨ Mengkonversi Number menjadi String
+console.log(numB.toString(2));        // Output: 110010 (string)  ⤷ Konversi ke biner (Basis 2)
+console.log(numB.toString(8));        // Output: 62     (string)  ⤷ Konversi ke oktal (Basis 8) 
+console.log(numB.toString(16));       // Output: 32     (string)  ⤷ Konversi ke heksa (Basis 16)
+console.log(numC.toLocaleString('id-ID'));  // Output: 1.234.500,346  ⇨ Konversi Number ke String + memakai format angka lokal
+console.log(numC.toLocaleString('en-US'));  // Output: 1,234,500.346  ⤷ en-US: Format angka Amerika Serikat (US)
+console.log(numC.toLocaleString('fr-FR'));  // Output: 1 234 500,346  ⤷ fr-FR: Format angka Perancis (FR)
+console.log(numC.toLocaleString('id-ID', {style: 'decimal'}));                    // Output: 1.234.500,346    (Default)
+console.log(numC.toLocaleString('id-ID', {style: 'percent'}));                    // Output: 123.450.035%     (Persen)
+console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));  // Output: Rp 1.234.500,35  (Mata uang)
 ```
 
 #### 𝐁. Math Object
