@@ -314,9 +314,65 @@ Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni ti
 
 ### 𝐀. Number
 
+```Javascript
+var numA = 100;                       // Angka bulat
+var numB = -100;                      // Angka bulat negatif
+var numC = 0.66634;                   // Angka pecahan
+var numD = -0.66634;                  // Angka pecahan negatif
+var numE = 3e3;                       // ≈ 3 x 10^3
+var numF = 0.4e-3;                    // ≈0.4 x 10^-3
+var numG = 999;                       // Desimal (basis 10)
+var numH = 0b1111100111;              // Biner (basis 2), diawali 0b
+var numI = 0o1747;                    // Oktal (basis 8), diawali 0o
+var numJ = 0x3E7;                     // Heksadesimal (basis 16), diawali 0x
+```
+
 ### 𝐁. NaN & Infinity
 
+```JavaScript
+var numK = 9/"a"; console.log(numK);  // Output: NaN (Not a Number)
+var numL = 9/0; console.log(numL);    // Output: Infinity (Tak Hingga)
+```
+
 ### 𝐂. String
+
+```Javascript
+var strA = "Hello World!";            // String dengan kutip dua
+var strB = 'Hello World!';            // String dengan kutip satu
+var strC = "Hari Jum'at";             // Kutip satu di dalam kutip dua
+var strD = 'Dia berkata: "Hey"';      // Kutip dua di dalam kutip satu
+var strE = "Dia berkata: \"Hey\"";    // Kutip dua di dalam kutip dua, pakai escape character (\)
+var strF = 'Hari Jum\'at';            // Kutip satu di dalam kutip satu, pakai escape character (\)
+var strG = "\u2764 You!"              // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
+
+// Template String (Template Literals)
+
+var strH = "Indonesia";               // Coba ganti nilainya menjadi String apapun (bebas)
+var strI = "Bahasa " + strH;          // Sebelum ada fitur Template String ES6 ⇨ Menggunakan concatenation (+)
+var strJ = `Bahasa ${strH}`;          // Setelah ada fitur Template String ES6 ⇨ Langsung di dalam backtick (``)
+console.log(strJ);                    // Output: Bahasa Indonesia
+
+var number  = 24;                                         // Coba ganti nilainya menjadi berapapun (bebas)
+var result  = `${number} ditambah 6 = ${number+6}`;       // Template String bisa dipakai juga untuk expressions
+console.log(result);                                      // Output: 24 ditambah 6 = 30
+```
+
+| Karakter 	| Kegunaan                                                       	|
+|----------	|----------------------------------------------------------------	|
+| \0       	| Karakter NUL                                                   	|
+| \b       	| Backspace                                                      	|
+| \t       	| Horizontal tab                                                 	|
+| \n       	| Newline                                                        	|
+| \v       	| Vertical tab                                                   	|
+| \f       	| Form feed                                                      	|
+| \r       	| Carriage return                                                	|
+| \"       	| Tanda kutip dua (double quote)                                 	|
+| \'       	| Tanda kutip satu (apostrophe atau single quote)                	|
+| \\       	| Garis miring (backslash)                                       	|
+| \xXX     	| Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX 	|
+| \uXXXX   	| Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
+
+📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 
 ### 𝐃. Boolean
 
