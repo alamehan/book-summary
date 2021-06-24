@@ -414,9 +414,7 @@ console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya 
 
 ```JavaScript
 // D2. Pola Regular Expression (RegExp)
-```
 
-```JavaScript
 // ➊ Pola RegExp sebagai String
 
 let regB = "Belajar JavaScript";
@@ -942,9 +940,7 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 
 ```Javascript
 // F1. Membuat Date Object
-```
 
-```Javascript
 // ➊ Tanpa argument
 
 let datA = new Date();                                // Cara penulisan 1: Tanpa argument
