@@ -328,9 +328,22 @@ var numJ = 0x3E7;                     // Heksadesimal (basis 16), diawali 0x
 
 ### 𝐁. NaN & Infinity
 
-```JavaScript
-var numK = 9/"a"; console.log(numK);  // Output: NaN (Not a Number)
-var numL = 9/0; console.log(numL);    // Output: Infinity (Tak Hingga)
+```Javascript
+var numK = NaN;                       // Keadaan dimana data bukan "angka yang sah/legal"
+var numL = Infinity;                  // Keadaan dimana data "angka tak hingga"
+var numM = -Infinity;                 // Keadaan dimana data "angka negatif tak hingga)
+```
+#### Kasus yang menghasilkan NaN & Infinity:
+
+```Javascript
+var numN = 9/"a";                     // Membagi angka dengan bukan angka menghasilkan NaN
+console.log(numK);                    // Output: NaN (Not a Number)
+
+var numO = 9/0;                       // Membagi angka dengan nol menghasilkan Infinity
+console.log(numL);                    // Output: Infinity (Tak Hingga)
+
+var numP = -9/0;                      // Membagi angka negatif dengan nol menghasilkan -Infinity
+console.log(numP);                    // Output: -Infinity (Negatif Tak Hingga)
 ```
 
 ### 𝐂. String
@@ -343,7 +356,10 @@ var strD = 'Dia berkata: "Hey"';      // Kutip dua di dalam kutip satu
 var strE = "Dia berkata: \"Hey\"";    // Kutip dua di dalam kutip dua, pakai escape character (\)
 var strF = 'Hari Jum\'at';            // Kutip satu di dalam kutip satu, pakai escape character (\)
 var strG = "\u2764 You!"              // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
+
 var strH = `Hello World!`;            // String dengan backtick (Template String ES6)
+var strI = `"Hei!", Jum'at today.`;   // Kutip satu & dua di dalam backtick
+var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
 ```
 
 | Escape Characters 	| Kegunaan                                                       	|
@@ -379,14 +395,14 @@ var nudB = undefined;                 // Keadaan dimana data "tidak terdefinisi"
 #### Kasus yang menghasilkan Undefined:
 
 ```Javascript
-var und1;
-console.log(und1);                    // Output: undefined (Var yang dibuat tanpa langsung diisi nilai, menjadi Undefined)
+var und1;                             // Var yang dibuat tanpa langsung diisi nilai menjadi Undefined
+console.log(und1);                    // Output: undefined
 
-var und2 = [1, 2, 3];
-console.log(und2[3]);                 // Output: undefined (Mengakses Array diluar indeks yang dibuat, menjadi Undefined)
+var und2 = [1, 2, 3];                 // Mengakses Array diluar indeks yang dibuat menghasilkan Undefined
+console.log(und2[3]);                 // Output: undefined
 
-var und3 = {nama: "iyan", umur: 24};
-console.log(und3["alamat"]);          // Output: undefined (Mengakses Object diluar key yang dibuat, menjadi Undefined)
+var und3 = {nama: "iyan", umur: 24};  // Mengakses Object diluar key yang dibuat menghasilkan Undefined
+console.log(und3["alamat"]);          // Output: undefined
 ```
 
 ### 𝐅. Symbol
@@ -398,24 +414,20 @@ console.log(und3["alamat"]);          // Output: undefined (Mengakses Object dil
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma"];      // Array 1D berisi hanya data String
 var arrAcak  = [1, 2.0, "tiga", true, null];    // Array 1D berisi beragam tipe data
-var arr2D    = [[2,5], [9,5], [3,5]];           // Array 2D, misalnya untuk koordinat
+var arr2D    = [[2,5], [9,5]];                  // Array 2D, misalnya untuk koordinat
 
 console.log(arrSiswa);                // Output: ["Andri", "Joko", "Sukma"]
 console.log(arrSiswa[0]);             // Output: Andri                        ⇨ Array di JavaScript dimulai dari indeks ke 0,
 console.log(arrSiswa[1]);             // Output: Joko                            bukan dari indeks ke 1, ingat baik-baik ya.
 console.log(arrSiswa[2]);             // Output: Sukma
-console.log(arrSiswa[3]);             // Output: undefined
 
-console.log(arr2D);                   // Output: [[2,5],[9,5],[3,5]]
+console.log(arr2D);                   // Output: [[2,5],[9,5]]
 console.log(arr2D[0]);                // Output: [2,5]
 console.log(arr2D[1]);                // Output: [9,5]
-console.log(arr2D[2]);                // Output: [3,5]
 console.log(arr2D[0][0]);             // Output: 2
 console.log(arr2D[0][1]);             // Output: 5
 console.log(arr2D[1][0]);             // Output: 9
 console.log(arr2D[1][1]);             // Output: 5
-console.log(arr2D[2][0]);             // Output: 3
-console.log(arr2D[2][1]);             // Output: 5
 ```
 
 ### 𝐇. Object, RegExp & Date
