@@ -1,5 +1,5 @@
 # JavaScript Uncover by Andre Pratama
-**Dirangkum dan penambahan konten oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a>
+**Dirangkum dan penambahan konten oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a><br>
 **Note**: Semua keterangan terkait mengacu ke bab sekian, segera perbaiki, karena strukturnya udah berubah.
 
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋
