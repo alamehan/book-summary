@@ -476,7 +476,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Oper
 
 ### 𝐁. Falsy & Truthy Value
 
-Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung operator yang digunakan. Untuk operator perbandingan, tipe data ini akan dikonversi menjadi Boolean (true/false). Nilai yang dikonversi menjadi false disebut Falsy Value, dan nilai yang dikonversi menjadi true disebut Truthy Value.
+Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung operator yang digunakan. Untuk operator perbandingan, tipe data ini akan dikonversi menjadi Boolean (true/false). Nilai yang dikonversi menjadi false disebut Falsy Value, dan nilai yang dikonversi menjadi true disebut Truthy Value. Simak tabel Falsy & Truthy Value berikut:
 
 | Falsy Value 	| Keterangan      	|   	| Truthy Value 	| Keterangan                                                 	|
 |-------------	|-----------------	|---	|--------------	|------------------------------------------------------------	|
@@ -487,6 +487,20 @@ Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung op
 | NaN         	| Nilai NaN       	|   	| "foo"        	| Sembarang string, selama bukan string kosong               	|
 | ''          	| String kosong   	|   	| infinity     	| Nilai infinity                                             	|
 | ""          	| String kosong   	|   	| -infinity    	| Nilai -infinity                                            	|
+
+#### Kasus Falsy & Truthy Value:
+
+```Javascript
+console.log('' == '0');               // Output: false  (Hasil konversi: false == true)
+console.log(0 == '');                 // Output: true   (Hasil konversi: false == false) 
+console.log(0 == '0');                // Output: true   (Bukan operator indentik, jadinya true) 
+console.log(false == 'false');        // Output: false  (Hasil konversi: false == true) 
+console.log(false == '0');            // Output: true   (Bukan operator indentik & false kan bernilai 0, jadinya true) 
+console.log(false == undefined);      // Output: false  (Pengecualian) 
+console.log(false == null);           // Output: false  (Pengecualian) 
+console.log(null == undefined);       // Output: true   (Hasil konversi: false == false) 
+console.log('\t\r\n' == 0);           // Output: true   (Pengecualian) 
+```
   
 <hr>
 <div id="bab2_3"></div>
