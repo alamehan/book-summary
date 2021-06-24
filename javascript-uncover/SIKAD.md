@@ -1,4 +1,4 @@
-# JavaScript Mastery
+# JavaScript Uncover by Andre Pratama
 **Summary by**: <a href="https://alamehan.github.io/">alamehan.github.io</a>
 
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋
