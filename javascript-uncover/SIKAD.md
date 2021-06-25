@@ -1233,6 +1233,8 @@ console.log(e);                       // Output: 60 (Bukan 15, karena nilai var 
 
 Penggunaan Var dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan Let tidak mempengaruhi nilai diluar scope (aman!). Var bersifat **Function Scope**, artinya cakupan scopenya itu Function, seolah tidak Private (jika memang mendefinisikan Var tidak berada dalam sebuah Function). Sedangkat Let bersifat **Block Scope**, artinya cakupan scopenya itu tanda block yaitu {}, seolah menjadi Private. Let sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan Var. Namun selain Let ada juga Const, yang mana jika didefinisikan dan langsung diberi nilai awal, isi Const tersebut tidak bisa diubah sepanjang kode program (isinya tetap).
 
+#### ⤷ Var & Let (1)
+
 ```Javascript
 for (var i=1; i<3; i++){
   console.log(i);
@@ -1245,7 +1247,11 @@ for (let j=1; j<3; j++){
 }
 console.log(j);                       // Output: ReferenceError j is not defined
                                       // Let tidak bisa diakses dari luar For (ini aman!), seolah Private.
+```
 
+#### ⤷ Var & Let (2)
+
+```Javascript
 var k = 1000;
 for (var k=1; k<3; k++){
   console.log(k);
@@ -1257,7 +1263,11 @@ for (let l=1; l<3; l++){
   console.log(l);
 }
 console.log(`Harganya Rp.${l}`);      // Output: Harganya Rp.1000   (Nilai l global tidak tertimpa & memang ini yang diinginkan)
+```
 
+#### ⤷ Const
+
+```Javascript
 const PI = 3.14;
 PI = 4;                               // Output: TypeError Assignment to constant variable  (Const tidak bisa ditimpa nilai baru)
 ```
