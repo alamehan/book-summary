@@ -1039,9 +1039,9 @@ function ratarata(a, b, c, d){
 console.log(salam("Pagi", "Budi"));   // Output: Selamat Pagi Budi!     ⇨ "Pagi" & "Budi" merupakan sebuah argument
 console.log(salam("Malam", "Putri")); // Output: Selamat Malam Putri!   ⇨ "Malam" & "Putri" merupakan sebuah argument
 
-console.log(ratarata(1, 2, 3, 4));    // Output: 2.5 (Hasil dari (1+2+3+4)/4 🡲 10/4)
-console.log(ratarata(1, 2, 3, 4, 5)); // Output: 2.5 (Argument ke-5 akan diabaikan, karena tidak ada "slot"-nya di Function)
-console.log(ratarata(1, 2, 3));       // Output: NaN (Argument ke-4 tidak ada, maka secara defaultnya nilainya Undefined)
+console.log(ratarata(1, 2, 3, 4));    // Output: 2.5  (Hasil dari (1+2+3+4)/4 🡲 10/4)
+console.log(ratarata(1, 2, 3, 4, 5)); // Output: 2.5  (Argument ke-5 akan diabaikan, karena tidak ada "slot"-nya di Function)
+console.log(ratarata(1, 2, 3));       // Output: NaN  (Argument ke-4 tidak ada, maka secara defaultnya nilainya Undefined)
 ```
 
 ### 𝐂. Default Parameter
@@ -1101,11 +1101,11 @@ function numB(){                      // Karena Array argument merupakan sebuah 
   return total;
 }
 
-console.log(numB());                  // Output: 0 (Terdapat 0 argument saat pemanggilan Function)
-console.log(numB(20));                // Output: 1 (Terdapat 1 argument saat pemanggilan Function)
-console.log(numB(20, 25));            // Output: 2 (Terdapat 2 argument saat pemanggilan Function)
-console.log(numB(20, 25, 30));        // Output: 3 (Terdapat 3 argument saat pemanggilan Function)
-console.log(numB(20, 25, 30, 15));    // Output: 4 (Terdapat 4 argument saat pemanggilan Function)
+console.log(numB());                  // Output: 0  (Terdapat 0 argument saat pemanggilan Function)
+console.log(numB(20));                // Output: 1  (Terdapat 1 argument saat pemanggilan Function)
+console.log(numB(20, 25));            // Output: 2  (Terdapat 2 argument saat pemanggilan Function)
+console.log(numB(20, 25, 30));        // Output: 3  (Terdapat 3 argument saat pemanggilan Function)
+console.log(numB(20, 25, 30, 15));    // Output: 4  (Terdapat 4 argument saat pemanggilan Function)
 ```
 
 #### ⤷ Studi Kasus: Rata-Rata (V1)
