@@ -1291,13 +1291,17 @@ console.log(teksB);                   // var teksB = undefined;           🡲 �
 console.log(teksC);                   // console.log(teksB);              🡲 Output: undefined
 var teksB = "Belajar JS";             // console.log(teksC);              🡲 Output: ReferenceError teksC is not defined
                                       // teksB = "Belajar JS";            🡲 Baris ini tidak akan dieksekusi, karena error di atas
-                                      
+```
+
+```Javascript
 // Contoh 1-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(teksD);                   // var teksD = undefined;           🡲 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜 ("𝙙𝙞𝙣𝙖𝙞𝙠𝙠𝙖𝙣" 𝙠𝙚 𝙖𝙩𝙖𝙨)
 var teksD = "Belajar JS";             // console.log(teksD);              🡲 Output: undefined
 console.log(teksD);                   // teksD = "Belajar JS";
                                       // console.log(teksD);              🡲 Output: Belajar JS
+```
 
+```Javascript
 // Contoh 1-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(satu);                    // var satu = undefined;            🡲 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜 ("𝙙𝙞𝙣𝙖𝙞𝙠𝙠𝙖𝙣" 𝙠𝙚 𝙖𝙩𝙖𝙨)
 console.log(dua);                     // var dua = undefined;             🡲 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜 ("𝙙𝙞𝙣𝙖𝙞𝙠𝙠𝙖𝙣" 𝙠𝙚 𝙖𝙩𝙖𝙨)
@@ -1321,7 +1325,9 @@ function sapaPagi(){                  // console.log(sapaPagi());           🡲
   console.log("Selamat Pagi!");       // function sapaPagi(){                  ⤷ Function bisa berjalan! padahal pendefinisiannya
 }                                     //   console.log("Selamat Pagi!");         dibawah, ini terjadi akibat efek hoisting.
                                       // }                                  🡲 Output: undefined (terjadi karena tidak ada return)
+```
 
+```Javascript
 // Contoh 2-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(sapaSiang);               // sapaSiang=function sapaSiang(){..} 🡲 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜 ("𝙙𝙞𝙣𝙖𝙞𝙠𝙠𝙖𝙣" 𝙠𝙚 𝙖𝙩𝙖𝙨)
 console.log(sapaSiang());             // console.log(sapaSiang)             🡲 Output: function sapaSiang(){..}
@@ -1329,7 +1335,9 @@ function sapaSiang(){                 // console.log(sapaSiang());          🡲
   return "Selamat Siang!";            // function sapaSiang(){
 }                                     //   return "Selamat Siang!";
                                       // }                                  🡲 Karena ada return, maka tidak ada Output: undefined
+```
 
+```Javascript
 // Contoh 2-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 console.log(sapaSore());              // sapaSore=function sapaSore(){..}   🡲 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜 ("𝙙𝙞𝙣𝙖𝙞𝙠𝙠𝙖𝙣" 𝙠𝙚 𝙖𝙩𝙖𝙨)
 function sapaSore(){                  // sapaMalam=function sapaMalam(){..} 🡲 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜 ("𝙙𝙞𝙣𝙖𝙞𝙠𝙠𝙖𝙣" 𝙠𝙚 𝙖𝙩𝙖𝙨)
@@ -1356,7 +1364,9 @@ function sapaSatu(){                  // console.log(sapaSatu());         🡲 O
                                       // function sapaSatu(){
                                       //   return `${nama}, ${umur} tahun!`;
                                       // }
+```
 
+```Javascript
 // Contoh 3-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 var nama = "Budi";                    // var nama = undefined;            🡲 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜 ("𝙙𝙞𝙣𝙖𝙞𝙠𝙠𝙖𝙣" 𝙠𝙚 𝙖𝙩𝙖𝙨)
 var umur = 25;                        // var umur = undefined;            🡲 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜 ("𝙙𝙞𝙣𝙖𝙞𝙠𝙠𝙖𝙣" 𝙠𝙚 𝙖𝙩𝙖𝙨)
@@ -1384,7 +1394,9 @@ console.log(cetakURL(user));          //   var twtURL = undefined;        🡲 �
                                       //   return twtURL+user;
                                       // }
                                       // console.log(cetakURL(user));     🡲 Output: http://twitter.com/@budilorem
+```
 
+```Javascript
 // Contoh 4-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 function luar(){                      // luar = function luar(){..}       🡲 𝙂𝙡𝙤𝙗𝙖𝙡 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜
   console.log("A");                   // function luar(){
