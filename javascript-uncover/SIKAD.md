@@ -1026,11 +1026,147 @@ console.log(pagiMalam);               // Output: pagiMalam(){
 
 ### 𝐁. Parameter, Argument & Return
 
+```Javascript
+function salam(kapan, nama){          // Kapan & nama adalah sebuah parameter yang akan menampung nilai dari argument
+  return `Selamat ${kapan} ${nama}!`; // return berfungsi untuk mengembalikan nilai & memberhentikan Function
+}
+
+function ratarata(a, b, c, d){
+  var hasil = (a+b+c+d)/4;
+  return hasil;
+}
+
+console.log(salam("Pagi", "Budi"));   // Output: Selamat Pagi Budi!     ⇨ "Pagi" & "Budi" merupakan sebuah argument
+console.log(salam("Malam", "Putri")); // Output: Selamat Malam Putri!   ⇨ "Malam" & "Putri" merupakan sebuah argument
+
+console.log(ratarata(1, 2, 3, 4));    // Output: 2.5 (Hasil dari (1+2+3+4)/4 🡲 10/4)
+console.log(ratarata(1, 2, 3, 4, 5)); // Output: 2.5 (Argument ke-5 akan diabaikan, karena tidak ada "slot"-nya di Function)
+console.log(ratarata(1, 2, 3));       // Output: NaN (Argument ke-4 tidak ada, maka secara defaultnya nilainya Undefined)
+```
+
 ### 𝐂. Default Parameter
+
+```Javascript
+// ====================================
+// C. Function dengan Default Parameter
+// ====================================
+
+function tambah(a=10, b=10, c=10, d=10){  // Seluruh paramter memiliki nilai default
+  return a+b+c+d;
+}
+
+function kurang(a, b, c=10, d=10){        // 2 parameter terakhir memiliki nilai default
+  return a-b-c-d;
+}
+
+function kali(a=10, b=10, c, d){          // 2 parameter pertama memiliki nilai default
+  return a*b*c*d;
+}
+
+console.log(tambah());                // Output: 40   (Hasil dari 10+10+10+10)
+console.log(tambah(20));              // Output: 50   (Hasil dari 20+10+10+10)
+console.log(tambah(20, 25));          // Output: 65   (Hasil dari 20+25+10+10)
+console.log(tambah(20, 25, 30));      // Output: 85   (Hasil dari 20+25+30+10)
+console.log(tambah(20, 25, 30, 15));  // Output: 90   (Hasil dari 20+25+30+15)
+
+console.log(kurang());                // Output: NaN  (Function kurang() butuh minimal 2 argument! untuk parameter a & b)
+console.log(kurang(20));              // Output: NaN  (Function kurang() butuh minimal 2 argument! kurang argument ke-2)
+console.log(kurang(20, 25));          // Output: -25  (Argument c & d jika tidak diisi, maka akan diisi nilai defaultnya)
+console.log(kurang(20, 25, 30));      // Output: -45  (Hasil dari 20-25-30-10)
+console.log(kurang(20, 25, 30, 15));  // Output: -50  (Hasil dari 20-25-30-15)
+
+console.log(kali());                  // Output: NaN  (Function kali butuh minimal 4 argument! untuk parameter a, b, c & d)
+console.log(kali(20, 25));            // Output: NaN  (Function kali butuh minimal 4 argument! kurang argument ke-3 & ke-4)
+console.log(kali(20, 25, 30, 15));    // Output: 225000 (Hasil dari 20*25*30*15)
+console.log(kali(undefined, undefined, 30, 15));  // Output: 45000 (Hasil dari 10*10*30*15), Undefined akan diisi nilai default
+```
 
 ### 𝐃. Arguments Object
 
+#### ⤷ Array Argument
+
+```Javascript
+function numA(){                      // Function numA() dibuat tanpa parameter (tanpa wadah untuk argument), namun sebenarnya
+  console.log(arguments[0]);          // setiap argument akan ditangkap oleh Array argument (Arguments Object) bawaan JavaScript.
+  console.log(arguments[1]);
+  console.log(arguments[2]);
+  console.log(arguments[3]);
+}
+
+numA(20, 25, 30, 15);                 // Output: 20, 25, 30, 15
+numA(20, 25);                         // Output: 20, 25, undefined, undefined
+```
+
+#### ⤷ arguments.length
+
+```Javascript
+function numB(){                      // Karena Array argument merupakan sebuah Array, maka kita dapat menghitung jumlah argument
+  total = arguments.length;           // yang dikirimkan pada saat pemanggilan Function dengan menggunakan property length.
+  return total;
+}
+
+console.log(numB());                  // Output: 0 (Terdapat 0 argument saat pemanggilan Function)
+console.log(numB(20));                // Output: 1 (Terdapat 1 argument saat pemanggilan Function)
+console.log(numB(20, 25));            // Output: 2 (Terdapat 2 argument saat pemanggilan Function)
+console.log(numB(20, 25, 30));        // Output: 3 (Terdapat 3 argument saat pemanggilan Function)
+console.log(numB(20, 25, 30, 15));    // Output: 4 (Terdapat 4 argument saat pemanggilan Function)
+```
+
+#### ⤷ Studi Kasus: Rata-Rata (V1)
+
+```Javascript
+function ratarata(){                  // Berbekal Array argument dan arguments.length, kita bisa membuat sebuah Function
+  var totalArg = arguments.length;    // rata-rata yang bisa menerima berarapun jumlah argumentnya (fleksibel).
+  var hasil = 0;
+  for (var i=0; i<totalArg; i++){
+    hasil += arguments[i];
+  }
+  return hasil/totalArg;
+}
+
+console.log(ratarata(2, 4));          // Output: 3    (Hasil dari (2+4)/2 🡲 6/2)
+console.log(ratarata(2, 4, 8, 16));   // Output: 7.5  (Hasil dari (2+4+8+16)/4 🡲 30/4)
+```
+
 ### 𝐄. Rest Parameter
+
+```Javascript
+function numC(...arg){                // Selain untuk menggabungkan Array seperti yang sudah dibahas di bab 2-2 L, Spread (...)
+  console.log(arg[0]);                // juga dapat digunakan untuk menggantikan peran Arguments Object, dan inilah yang disebut
+  console.log(arg[1]);                // dentan Rest Parameter. Hasil pemanggilan Function sama saja dengan point A di atas.
+  console.log(arg[2]);                // Note: Penulisannya tidak harus ...arg, bisa dengan kata lain, misalnya ...angka, dll.
+  console.log(arg[3]);
+}
+
+numC(20, 25, 30, 15);                 // Output: 20, 25, 30, 15
+numC(20, 25);                         // Output: 20, 25, undefined, undefined
+
+function numD(a, b, ...sisa){         // Cara baca: jika Function numD dipanggil dengan lebih dari 3 argument, maka argument
+  console.log(a);                     // pertama dan kedua masuk ke Variable a dan b, sisanya disimpan ke dalam Rest Parameter.
+  console.log(b);
+  console.log(sisa);
+}
+
+numD(20, 25);                         // Output: 20, 25, []
+numD(20, 25, 30);                     // Output: 20, 25, [30]
+numD(20, 25, 30, 15);                 // Output: 20, 25, [30, 15]
+```
+
+#### ⤷ Studi Kasus: Rata-Rata (V2)
+
+```Javascript
+function rataratav2(...nilai){        // Studi kasus rata-rata pada point D di atas, dapat kita buat ulang dengan memanfaatkan
+  var totalArg = nilai.length;        // Rest Parameter serta perulangan for of, hasilnya aka sama saja.
+  var hasil = 0;
+  for (var i of nilai){
+    hasil += i;
+  }
+  return hasil/totalArg;
+}
+
+console.log(rataratav2(2, 4));        // Output: 3    (hasil dari (2+4)/2 🡲 6/2)
+console.log(rataratav2(2, 4, 8, 16)); // Output: 7.5  (hasil dari (2+4+8+16)/4 🡲 30/4)
+```
 
 ### 𝐅. Variable Scope
 
