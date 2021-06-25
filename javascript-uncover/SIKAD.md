@@ -333,7 +333,7 @@ var numK = NaN;                       // Keadaan dimana data bukan "angka yang s
 var numL = Infinity;                  // Keadaan dimana data "angka tak hingga"
 var numM = -Infinity;                 // Keadaan dimana data "angka negatif tak hingga)
 ```
-#### Kasus yang menghasilkan NaN & Infinity:
+#### ⤷ Kasus yang menghasilkan NaN & Infinity:
 
 ```Javascript
 var numN = 9/"a";                     // Membagi angka dengan bukan angka menghasilkan NaN
@@ -392,7 +392,7 @@ var nudA = null;                      // Keadaan dimana data "kosong", biasanya 
 var nudB = undefined;                 // Keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 ```
 
-#### Kasus yang menghasilkan Undefined:
+#### ⤷ Kasus yang menghasilkan Undefined:
 
 ```Javascript
 var und1;                             // Var yang dibuat tanpa langsung diisi nilai menjadi Undefined
@@ -488,7 +488,7 @@ Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung op
 | ''          	| String kosong   	|   	| infinity     	| Nilai infinity                                             	|
 | ""          	| String kosong   	|   	| -infinity    	| Nilai -infinity                                            	|
 
-#### Kasus Falsy & Truthy Value:
+#### ⤷ Kasus Falsy & Truthy Value:
 
 ```Javascript
 console.log('' == '0');               // Output: false  (Hasil konversi: false == true)
@@ -504,7 +504,7 @@ console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian)
 
 ### 𝐂. Operator typeof
 
-#### Oprator typeof digunakan untuk memeriksa tipe data suatu Variable:
+#### ⤷ Oprator typeof digunakan untuk memeriksa tipe data suatu Variable:
 
 ```Javascript
 var numA = 100;
@@ -522,7 +522,7 @@ console.log(typeof nudB);                 // Output: undefined
 console.log(typeof arrSiswa);             // Output: object (Array termasuk Object)
 ```
 
-#### Tidak hanya typeof, terdapat beragam cara untuk memeriksa tipe data:
+#### ⤷ Tidak hanya typeof, terdapat beragam cara untuk memeriksa tipe data:
 
 ```Javascript
 var num = 10;                             // Tipe data: Number
@@ -585,7 +585,7 @@ var h = 10 + 5;     // Artinya jumlahkan 10 + 5 dulu (Operator "+" memiliki prec
 var i = g + h;      // Artinya jumlahkan g + h dulu (Operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable i
 ```
 
-#### Gabungan Assignment:
+#### ⤷ Gabungan Assignment:
 
 ```Javascript
 var gabA = gabB = gabC = gabD = gabE = 20;
@@ -629,7 +629,7 @@ console.log(9 != '9');                // Output: false
 console.log(9 !== '9');               // Output: true   ⇨ Strict inequality (tidak identik dengan)
 ```
 
-#### Kasus Perbadingan Unik:
+#### ⤷ Kasus Perbadingan Unik:
 
 ```Javascript
 console.log(1 == true);               // Output: true
@@ -641,7 +641,7 @@ console.log(0.3 === 3e-1);            // Output: true   (Karena memang nilainya 
 console.log(true > false)             // Output: true   (Ingat: true = 1, false = 0)
 ```
 
-#### Kasus Perbandingan String:
+#### ⤷ Kasus Perbandingan String:
 
 📚 Setiap karakter dalam String menggunakan nomor urut desimal di ASCII-Code: https://www.ascii-code.com/
 
@@ -663,7 +663,7 @@ console.log(!false);                  // Output: true   ⇨ not operator (negasi
 console.log(true || true && false);   // Output: true   ⇨ Operator && diproses lebih awal (precedence: 7)
 ```
 
-#### Short-Circuit-Evaluation:
+#### ⤷ Short-Circuit-Evaluation:
 
 Operasi logika menggunakan prinsip short-circuit-evaluation, maksudnya jika dengan memeriksa 1 nilai saja hasil operasi tersebut sudah diketahui, nilai-nilai lain tidak akan diperiksa, kecuali jika terdapat operator && dan || dalam 1 operasi, maka operator && akan dijalankan terlebih dahulu (karena nilai precedence && lebih tinggi daripada ||).
 
@@ -678,7 +678,7 @@ console.log(true || alert("HYA!"));   // Function alert() tidak berjalan, karena
 console.log(false || alert("HYA!"));  // Function alert() berjalan, karena false bertemu ||, lanjut ke alert()
 ```
 
-#### Operasi Logika Non-Boolean:
+#### ⤷ Operasi Logika Non-Boolean:
 
 Nilai yang dibandingkan menggunakan operator logika harus bertipe Boolean, jika tidak, akan di konversi secara otomatis berdasarkan ketentuan Falsy & Truthy Value. Lalu, hasil akhir dari operasi logika non-Boolean ini berupa nilai dari posisi terakhir yang diperiksa.
 
@@ -710,7 +710,7 @@ var result = `${number} ditambah 6 = ${number+6}`;              // Template Stri
 console.log(result);                                            // Output: 24 ditambah 6 = 30
 ```
 
-#### Kasus Konversi Number ke String:
+#### ⤷ Kasus Konversi Number ke String:
 
 ```Javascript
 console.log(10 + 10 + 9);             // Output: 29     (Number)
@@ -863,7 +863,7 @@ for (var k=1; k<3; k++){              // Output: outer 1 inner 1 s/d outer 2 inn
 }
 ```
 
-#### Keyword break:
+#### ⤷ Keyword break:
 
 ```Javascript
 // E1. 
@@ -876,7 +876,7 @@ for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3
 }
 ```
 
-### Keyword continue:
+### ⤷ Keyword continue:
 
 ```Javascript
 for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
@@ -887,7 +887,7 @@ for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
 }
 ```
 
-### Menampilkan element Array:
+### ⤷ Menampilkan element Array:
 
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
