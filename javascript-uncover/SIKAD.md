@@ -941,9 +941,14 @@ Perulangan For of digunakan khusus untuk menampilkan element Erray. Hasil dari p
 
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
+
 for (var i of arrSiswa){
   console.log(i);
 }                                     // Output: Andri, Joko, Sukma, Rina, Sari
+
+for (var [index, i] of arrSiswa.entries()){
+  console.log(index, i);              // Output: 0 "Andri", 1 "Joko", 2 "Sukma", 3 "Rina", 4 "Sari"
+}
 ```
 
 ### 𝐄. For in Loop
