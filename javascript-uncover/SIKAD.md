@@ -464,8 +464,8 @@ console.log(arr2D[1][1]);             // Output: 5
 > > - [X] 𝐇. Operator Perbandingan
 > > - [X] 𝐈. Operator Logika
 > > - [X] 𝐉. Operator String
-> > - [X] 𝐊. Operator Spread
-> > - [ ] 𝐋. Operator Bitwise
+> > - [ ] 𝐊. Operator Bitwise
+> > - [X] 𝐋. Operator Spread
 
 ### 𝐀. Operator Precedence
 
@@ -719,7 +719,11 @@ console.log(10 + "10" + 9);           // Output: 10109  (String)  dari hasil kon
 console.log(10 + 10 + "9");           // Output: 209    (String)  dari hasil konversi: console.log(20 + "9");
 ```
 
-### 𝐊. Operator Spread
+### 𝐊. Operator Bitwise
+
+> 🚧 Tidak dibahas
+
+### 𝐋. Operator Spread
 
 Spread merupakan operator baru di ES6. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama Variable.<br>
 
@@ -738,10 +742,6 @@ console.log(nilai4);                  // Output: [0, 1, 2, 3, 4, 5, 6]
 var nilai5 = [...nilai3, ...nilai4];
 console.log(nilai5);                  // Output: ["a", "b", "c", "d", "e", "f", 0, 1, 2, 3, 4, 5, 6]
 ```
-
-### 𝐋. Operator Bitwise
-
-> 🚧 Tidak dibahas
 
 <hr>
 <div id="bab2_3"></div>
@@ -839,11 +839,70 @@ console.log(data2);                                     // Output: Ada isinya   
 
 ## 2-4. Perulangan <a href="#daftar_isi_bab2">🡅</a>
   
-> - [X] 𝐀. For
-> - [X] 𝐁. While
-> - [X] 𝐂. Do While
-> - [X] 𝐃. For of
-> - [X] 𝐄. For in
+> - [X] 𝐀. For Loop
+> - [X] 𝐁. While Loop
+> - [X] 𝐂. Do While Loop
+> - [X] 𝐃. For of Loop
+> - [X] 𝐄. For in Loop
+
+### 𝐀. For Loop
+
+```Javascript
+for (var i=1; i<=10; i++){            // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  console.log(i);
+}
+
+for (var j=20; j>0; j=j-2){           // Output: 20, 18, 16, 14, 12, 10, 8, 6, 4, 2
+  console.log(j);
+}
+
+for (var k=1; k<3; k++){              // Output: outer 1 inner 1 s/d outer 2 inner 3
+  for (var l=1; l<=3; l++){           
+    console.log(`outer ${k} inner ${l}`);
+  }
+}
+```
+
+#### Keyword break:
+
+```Javascript
+// E1. 
+
+for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3
+  if (m === 2){
+    break;                            // Break: Berhenti memproses perulangan (keluar dari perulangan)
+  }
+  console.log(m);
+}
+```
+
+### Keyword continue:
+
+```Javascript
+for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
+  if (m === 2){
+    continue;                         // Continue: Berhenti memproses perulangan saat ini & lanjut ke perulangan berikutnya
+  }
+  console.log(m);
+}
+```
+
+### Menampilkan element Array:
+
+```Javascript
+var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
+for (var n=0; n<arrSiswa.length; n++){
+  console.log(arrSiswa[n]);
+}                                     // Output: Andri, Joko, Sukma, Rina, Sari
+```
+
+### 𝐁. While Loop
+
+### 𝐂. Do While Loop
+
+### 𝐃. For of Loop
+
+### 𝐄. For in Loop
   
 <hr>
 <div id="bab2_5"></div>
