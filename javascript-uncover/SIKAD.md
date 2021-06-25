@@ -847,6 +847,8 @@ console.log(data2);                                     // Output: Ada isinya   
 
 ### 𝐀. For Loop
 
+Perulangan For cocok digunakan untuk situasi dimana kita sudah tahu berapa banyak perulangan yang mesti dijalankan.
+
 ```Javascript
 for (var i=1; i<=10; i++){            // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   console.log(i);
@@ -896,11 +898,82 @@ for (var n=0; n<arrSiswa.length; n++){
 
 ### 𝐁. While Loop
 
+Perulangan While cocok digunakan untuk situasi dimana kita tidak tahu berapa banyak perulangan yang mesti dijalankan. Berbeda dengan perulangan For yang kita tahu berapa banyak perulangannya.
+
+```Javascript
+var i = 1;
+while (i <= 10){                      // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  console.log(i);
+  i++;
+}
+
+var j = 10;
+while (j > 1){                        // Output: 20, 18, 16, 14, 12
+  if (j === 5){
+    break;
+  }
+  console.log(j*2);
+  j--;
+}
+```
+
 ### 𝐂. Do While Loop
+
+Dalam perulangan Do While, kondisi akan di check di akhir, hal ini menyebabkan setidaknya perulangan akan diproses 1 kali, walaupun kondisi tersebut sudah tidak terpenuhi sejak awal.
+
+```Javascript
+var i = 1;
+do {                                  // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  console.log(i);
+  i++;
+} while (i <= 10);
+
+var j = 1;
+do {                                  // Output: 1
+  console.log(j);
+  j--;
+} while (j > 999);
+```
 
 ### 𝐃. For of Loop
 
+Perulangan For of merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan element Erray. Hasil dari perulangan For of di bawah ini sama dengan hasil perulangan For di point A di atas.
+
+```Javascript
+var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
+for (var i of arrSiswa){
+  console.log(i);
+}                                     // Output: Andri, Joko, Sukma, Rina, Sari
+```
+
 ### 𝐄. For in Loop
+
+Perulangan For in merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan seluruh isi Object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi Array (karena Array pun termasuk ke dalam tipe data Object), namun tidak disarankan.<br>
+
+🔔 Object dibahas di bab 2-6 & bab 3.
+
+```Javascript
+var objMobil = {
+  merk: "Toyota Avanza",
+  tipe: "MPV",
+  harga: 200000000,
+  warna: "biru",
+  hidupkan: function(){return "Mesin dihidupkan!";}
+};
+
+for (var i in objMobil){
+  console.log(`Isi ${i} = ${objMobil[i]}`);
+}
+
+/* 
+Output:
+Isi merk = Toyota Avanza
+Isi tipe = MPV
+Isi harga = 200000000
+Isi warna = biru
+Isi hidupkan = function(){return "Mesin dihidupkan!";}
+*/
+```
   
 <hr>
 <div id="bab2_5"></div>
