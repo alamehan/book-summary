@@ -1383,7 +1383,7 @@ console.log(cetakURL(user));          //   var twtURL = undefined;        🡲 �
                                       //   twtURL = "http://twitter.com/";
                                       //   return twtURL+user;
                                       // }
-                                      // console.log(cetakURL(user));     🡲 http://twitter.com/@budilorem
+                                      // console.log(cetakURL(user));     🡲 Output: http://twitter.com/@budilorem
 
 // Contoh 4-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 function luar(){                      // luar = function luar(){..}       🡲 𝙂𝙡𝙤𝙗𝙖𝙡 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜
