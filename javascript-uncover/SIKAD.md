@@ -559,7 +559,7 @@ console.log(dat.constructor === Date);    // Output: true   (Check apakah datany
 
 ### 𝐃. Operator instanceof
 
-> 🚧 Tidak dibahas
+>  🔔 Oprator instanceof dibahas di bab 3-1 B
 
 ### 𝐄. Operator Aritmatika
 
