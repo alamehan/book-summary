@@ -898,7 +898,7 @@ for (var n=0; n<arrSiswa.length; n++){
 
 ### 𝐁. While Loop
 
-Perulangan While cocok digunakan untuk situasi dimana kita tidak tahu berapa banyak perulangan yang mesti dijalankan. Berbeda dengan perulangan For yang kita tahu berapa banyak perulangannya.
+Perulangan While cocok digunakan untuk situasi dimana kita tidak tahu berapa banyak perulangan yang mesti dijalankan.
 
 ```Javascript
 var i = 1;
@@ -919,7 +919,7 @@ while (j > 1){                        // Output: 20, 18, 16, 14, 12
 
 ### 𝐂. Do While Loop
 
-Dalam perulangan Do While, kondisi akan di check di akhir, hal ini menyebabkan setidaknya perulangan akan diproses 1 kali, walaupun kondisi tersebut sudah tidak terpenuhi sejak awal.
+Berbeda dengan perulangan While, dalam perulangan Do While kondisi akan di check di akhir. Hal ini menyebabkan setidaknya perulangan akan diproses 1 kali, walaupun kondisi tersebut sudah tidak terpenuhi sejak awal.
 
 ```Javascript
 var i = 1;
@@ -937,7 +937,7 @@ do {                                  // Output: 1
 
 ### 𝐃. For of Loop
 
-Perulangan For of merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan element Erray. Hasil dari perulangan For of di bawah ini sama dengan hasil perulangan For di point A di atas.
+Perulangan For digunakan khusus untuk menampilkan element Erray. Hasil dari perulangan For of di bawah ini sama dengan hasil perulangan For untuk menampilkan element Array di point A di atas.
 
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
