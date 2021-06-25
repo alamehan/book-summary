@@ -937,7 +937,7 @@ do {                                  // Output: 1
 
 ### 𝐃. For of Loop
 
-Perulangan For digunakan khusus untuk menampilkan element Erray. Hasil dari perulangan For of di bawah ini sama dengan hasil perulangan For untuk menampilkan element Array di point A di atas.
+Perulangan For of digunakan khusus untuk menampilkan element Erray. Hasil dari perulangan For of di bawah ini sama saja dengan hasil perulangan For untuk menampilkan element Array pada point A di atas.
 
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
@@ -948,7 +948,7 @@ for (var i of arrSiswa){
 
 ### 𝐄. For in Loop
 
-Perulangan For in merupakan fitur baru dari ES6, digunakan khusus untuk menampilkan seluruh isi Object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi Array (karena Array pun termasuk ke dalam tipe data Object), namun tidak disarankan.<br>
+Perulangan For in digunakan khusus untuk menampilkan seluruh isi Object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi Array (karena Array pun termasuk ke dalam tipe data Object), namun tidak disarankan.<br>
 
 🔔 Object dibahas di bab 2-6 & bab 3.
 
