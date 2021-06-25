@@ -407,7 +407,7 @@ console.log(und3["alamat"]);          // Output: undefined
 
 ### 𝐅. Symbol
 
-> 🚧 Tidak dibahas
+> 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
 
 ### 𝐆. Array
 
@@ -440,11 +440,11 @@ console.log(arr2D[1][1]);             // Output: 5
 
 ### 𝐈. Map & WeakMap
 
-> 🚧 Tidak dibahas
+> 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
 
 ### 𝐉. Set & WeakSet
 
-> 🚧 Tidak dibahas
+> 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
   
 <hr>
 <div id="bab2_2"></div>
@@ -721,7 +721,7 @@ console.log(10 + 10 + "9");           // Output: 209    (String)  dari hasil kon
 
 ### 𝐊. Operator Bitwise
 
-> 🚧 Tidak dibahas
+> 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
 
 ### 𝐋. Operator Spread
 
@@ -1001,7 +1001,39 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 > > - [X] 𝐍. Factory Function
 > > - [X] 𝐎. IImmediately-invoked Function Expression (IIFE)
 > > - [X] 𝐏. Arrow Function
-  
+
+### 𝐀. Function Declaration
+
+### 𝐁. Parameter, Argument & Return
+
+### 𝐂. Default Parameter
+
+### 𝐃. Arguments Object
+
+### 𝐄. Rest Parameter
+
+### 𝐅. Variable Scope
+
+### 𝐆. Var, Let & Const
+
+### 𝐇. JavaScript Hoisting
+
+### 𝐈. Function Expressions & Anonymous Function
+
+### 𝐉. Callback & Higher Order Function
+
+### 𝐊. Function as Return Value
+
+### 𝐋. Inner & Outer Function
+
+### 𝐌. Closures (Function)
+
+### 𝐍. Factory Function
+
+### 𝐎. IImmediately-invoked Function Expression (IIFE)
+
+### 𝐏. Arrow Function
+
 <hr>
 <div id="bab2_6"></div>
   
