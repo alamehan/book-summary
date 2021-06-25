@@ -850,41 +850,41 @@ console.log(data2);                                     // Output: Ada isinya   
 Perulangan For cocok digunakan untuk situasi dimana kita sudah tahu berapa banyak perulangan yang mesti dijalankan.
 
 ```Javascript
-for (var i=1; i<=10; i++){            // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+for (var i=1; i<=10; i++){
   console.log(i);
-}
+}                                     // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
-for (var j=20; j>0; j=j-2){           // Output: 20, 18, 16, 14, 12, 10, 8, 6, 4, 2
+for (var j=20; j>0; j=j-2){
   console.log(j);
-}
+}                                     // Output: 20, 18, 16, 14, 12, 10, 8, 6, 4, 2
 
-for (var k=1; k<3; k++){              // Output: outer 1 inner 1 s/d outer 2 inner 3
+for (var k=1; k<3; k++){
   for (var l=1; l<=3; l++){           
     console.log(`outer ${k} inner ${l}`);
   }
-}
+}                                     // Output: outer 1 inner 1 s/d outer 2 inner 3
 ```
 
 #### ⤷ Keyword break:
 
 ```Javascript
-for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3
+for (var m=10; m>=1; m--){
   if (m === 2){
     break;                            // Break: Berhenti memproses perulangan (keluar dari perulangan)
   }
   console.log(m);
-}
+}                                     // Output: 10, 9, 8, 7, 6, 5, 4, 3
 ```
 
 #### ⤷ Keyword continue:
 
 ```Javascript
-for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
+for (var m=10; m>=1; m--){
   if (m === 2){
     continue;                         // Continue: Berhenti memproses perulangan saat ini & lanjut ke perulangan berikutnya
   }
   console.log(m);
-}
+}                                     // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
 ```
 
 #### ⤷ Menampilkan element Array:
@@ -902,19 +902,19 @@ Perulangan While cocok digunakan untuk situasi dimana kita tidak tahu berapa ban
 
 ```Javascript
 var i = 1;
-while (i <= 10){                      // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+while (i <= 10){
   console.log(i);
   i++;
-}
+}                                     // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 var j = 10;
-while (j > 1){                        // Output: 20, 18, 16, 14, 12
+while (j > 1){
   if (j === 5){
     break;
   }
   console.log(j*2);
   j--;
-}
+}                                     // Output: 20, 18, 16, 14, 12
 ```
 
 ### 𝐂. Do While Loop
@@ -923,16 +923,16 @@ Berbeda dengan perulangan While, dalam perulangan Do While kondisi akan di check
 
 ```Javascript
 var i = 1;
-do {                                  // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+do {
   console.log(i);
   i++;
-} while (i <= 10);
+} while (i <= 10);                    // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 var j = 1;
-do {                                  // Output: 1
+do {
   console.log(j);
   j--;
-} while (j > 999);
+} while (j > 999);                    // Output: 1
 ```
 
 ### 𝐃. For of Loop
@@ -947,8 +947,8 @@ for (var i of arrSiswa){
 }                                     // Output: Andri, Joko, Sukma, Rina, Sari
 
 for (var [index, i] of arrSiswa.entries()){
-  console.log(index, i);              // Output: 0 "Andri", 1 "Joko", 2 "Sukma", 3 "Rina", 4 "Sari"
-}
+  console.log(index, i);
+}                                     // Output: 0 "Andri", 1 "Joko", 2 "Sukma", 3 "Rina", 4 "Sari"
 ```
 
 ### 𝐄. For in Loop
@@ -1008,6 +1008,21 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 > > - [X] 𝐏. Arrow Function
 
 ### 𝐀. Function Declaration
+
+```Javascript
+function pagiMalam(){
+  console.log("Selamat Pagi!");
+  console.log("Selamat Malam!");
+}
+
+pagiMalam();                          // Output: Selamat Pagi!      ⇨ Cara menjalankan Function yaitu dengan memanggil nama
+                                      //         Selamat Malam!        Function-nya yang dinginkan, lalu ditambah tanda ().
+
+console.log(pagiMalam);               // Output: pagiMalam(){
+                                      //           console.log("Selamat Pagi!");      ⇨ Tanpa tanda (), maka Function tidak
+                                      //           console.log("Selamat Malam!");        dijalankan, hanya ditampilkan isinya.
+                                      //         }
+```
 
 ### 𝐁. Parameter, Argument & Return
 
