@@ -1274,6 +1274,10 @@ PI = 4;                               // Output: TypeError Assignment to constan
 
 ### 𝐇. JavaScript Hoisting
 
+Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai Undefined, sedangkan Function akan diisi Functionnya itu sendiri. Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja. Let, Const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas) tidak terkena efek hoisting.
+
+📚 Gunakan tools visualusasi berikut: http://pythontutor.com/javascript.html
+
 ### 𝐈. Function Expressions & Anonymous Function
 
 ### 𝐉. Callback & Higher Order Function
