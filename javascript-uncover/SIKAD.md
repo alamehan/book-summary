@@ -1381,7 +1381,7 @@ function sapaDua(){                   // nama = "Budi";
                                       // }
 ```
 
-#### ⤷ Local Hoisting
+#### ⤷ Global & Local Hoisting
 
 ```Javascript
 // Contoh 4-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -1414,10 +1414,10 @@ function luar(){                      // luar = function luar(){..}       🡲 �
 luar();                               //   }
                                       //   tengah();
                                       // }
-                                      // luar();                          🡲 urutan Output: A, B, C
+                                      // luar();                          🡲 Urutan Output: A, B, C
 ```
 
-#### ⤷ Contoh Kasus Unik
+#### ⤷ Latihan JavaScript Hoisting
 
 ```Javascript
 // Contoh 5                           ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -1440,6 +1440,10 @@ console.log(nama);                    // console.log(nama);               🡲 O
                                       //                                             Tono (dari Array Argument)
                                       // console.log(nama);               🡲 Output: Jaka
 ```
+
+#### ⤷ Kesimpulan JavaScript Hoisting
+
+Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan Let & Const sebagai alternatif dari Var. Prilaku Let & Const lebih "masuk akal" dibandinkan dengan Var, seperti misalnya Let & Const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan Var malah menghasilkan undefined (karena efek hoisting). Selain itu Let & Const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope.
 
 ### 𝐈. Function Expressions & Anonymous Function
 
