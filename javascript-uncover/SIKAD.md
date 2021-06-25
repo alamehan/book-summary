@@ -537,7 +537,6 @@ var obj = {nama: "Budi", umur: 13};       // Tipe data: Object      // 🔔 Obje
 var reg = /^\d\w\s$/;                     // Tipe data: RegExp      // 🔔 RegExp dibahas di bab 3-2 D
 var dat = new Date(2016,11,2,9,30,15);    // Tipe data: Date        // 🔔 Date dibahas di bab 3-2 F
 
-
 console.log(typeof num === "number");     // Output: true   (Check apakah datanya Number)
 console.log(Number.isNaN(nan));           // Output: true   (Check apakah datanya NaN)
 console.log(inf === Infinity);            // Output: true   (Check apakah datanya Infinity)
@@ -644,6 +643,8 @@ console.log(true > false)             // Output: true   (Ingat: true = 1, false 
 
 #### Kasus Perbandingan String:
 
+📚 Setiap karakter dalam String menggunakan nomor urut desimal di ASCII-Code: https://www.ascii-code.com/
+
 ```Javascript
 console.log("a" < "b");               // Output: true   (a = 97, b = 98)
 console.log("a" < "A");               // Output: false  (a = 97, A = 65)
@@ -653,13 +654,88 @@ console.log("ali" < "alika");         // Output: true   (String yang lebih pende
 console.log("ali" < 9999999);         // Output: false  (Perbandingan String & Number selalu menghasilkan false)
 ```
 
-📚 Setiap karakter dalam String menggunakan nomor urut desimal di ASCII-Code: https://www.ascii-code.com/
-
 ### 𝐈. Operator Logika
+
+```Javascript
+console.log(true && false);           // Output: false  ⇨ and operator (true hanya jika kedua nilai true)
+console.log(true || false);           // Output: true   ⇨ or operator (true jika salah satu nilai true)
+console.log(!false);                  // Output: true   ⇨ not operator (negasi/kebalikannya)
+console.log(true || true && false);   // Output: true   ⇨ Operator && diproses lebih awal (precedence: 7)
+```
+
+#### Short-Circuit-Evaluation:
+
+Operasi logika menggunakan prinsip short-circuit-evaluation, maksudnya jika dengan memeriksa 1 nilai saja hasil operasi tersebut sudah diketahui, nilai-nilai lain tidak akan diperiksa, kecuali jika terdapat operator && dan || dalam 1 operasi, maka operator && akan dijalankan terlebih dahulu (karena nilai precedence && lebih tinggi daripada ||).
+
+```Javascript
+console.log(true || false || true);   // Kiri ke kanan: true bertemu operator ||, stop, sudah pasti hasilnya true
+console.log(false && true && true);   // Kiri ke kanan: false bertemu operator &&, stop, sudah pasti hasilnya false
+console.log(true || true && false);   // Operator && duluan, menjadi: true || false, hasilnya true
+
+console.log(true && alert("HYA!"));   // Function alert() berjalan, karena true bertemu &&, lanjut ke alert()
+console.log(false && alert("HYA!"));  // Function alert() tidak berjalan, karena false bertemu &&, stop
+console.log(true || alert("HYA!"));   // Function alert() tidak berjalan, karena true bertemu ||, stop
+console.log(false || alert("HYA!"));  // Function alert() berjalan, karena false bertemu ||, lanjut ke alert()
+```
+
+#### Operasi Logika Non-Boolean:
+
+Nilai yang dibandingkan menggunakan operator logika harus bertipe Boolean, jika tidak, akan di konversi secara otomatis berdasarkan ketentuan Falsy & Truthy Value. Lalu, hasil akhir dari operasi logika non-Boolean ini berupa nilai dari posisi terakhir yang diperiksa.
+
+```Javascript
+console.log("Hello" || "World");      // Output: Hello  ("Hello" ≈ true, lalu bertemu ||, stop, hasilnya String Hello)
+console.log("Hello" && "World");      // Output: World  ("Hello" ≈ true, lalu bertemu &&, lanjut, hasilnya String World)
+console.log(true || "World");         // Output: true   (true bertemu ||, stop, hasilnya true)
+console.log(false || "World");        // Output: World  (false bertemu ||, lanjut, "World" ≈ true, hasilnya String World)
+console.log("Hello" && false);        // Output: false  ("Hello" ≈ true, lalu bertemu &&, lanjut, hasilnya false)
+console.log(false && "World");        // Output: false  (false bertemu &&, stop, hasilnya false)
+
+console.log(false || false && true || "World");   // Output: World  (&& duluan, menjadi: false || false || "World", ...)
+console.log(true || false && true || "World");    // Output: true   (&& duluan, menjadi: true || false || "World", ...)
+```
 
 ### 𝐉. Operator String
 
+```Javascript
+var arr  = ["Andri", "Joko", "Sukma"];
+var strA = arr[0] + " dan " + arr[1] + " adalah teman akrab.";  // String Concatenation (sebelum ES6), "+" sebagai penyambung
+var strB = `${arr[0]} dan ${arr[1]} adalah teman akrab.`;       // Template String (setelah ES6), memakai backtick (``)
+
+console.log(strA);                                              // Output: Andri dan Joko adalah teman akrab.
+console.log(strB);                                              // Output: Andri dan Joko adalah teman akrab.
+
+var number = 24;
+var result = `${number} ditambah 6 = ${number+6}`;              // Template String bisa dipakai juga untuk expressions
+
+console.log(result);                                            // Output: 24 ditambah 6 = 30
+```
+
+#### Kasus Konversi Number ke String:
+
+```Javascript
+console.log(10 + 10 + 9);             // Output: 29     (Number)
+console.log("10" + 10 + 9);           // Output: 10109  (String)  dari hasil konversi: console.log("10" + "10" + "9");
+console.log(10 + "10" + 9);           // Output: 10109  (String)  dari hasil konversi: console.log(10 + "10" + "9");
+console.log(10 + 10 + "9");           // Output: 209    (String)  dari hasil konversi: console.log(20 + "9");
+```
+
 ### 𝐊. Operator Spread
+
+Spread merupakan operator baru di ES6. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama Variable. 🔔 Kegunaan lain dari operator Spread yaitu dapat digunakan sebagai Rest Parameter, dibahas di bab 2-5 E.
+
+```Javascript
+var nilai1 = ["a", "b", "c", "d"];
+var nilai2 = [1, 2, 3, 4];
+
+var nilai3 = [...nilai1, "e", "f"];   // ...nilai1 berarti mengakses seluruh element dari array nilai1
+console.log(nilai3);                  // Output: ["a", "b", "c", "d", "e", "f"]
+
+var nilai4 = [0, ...nilai2, 5, 6];    // ...nilai2 berarti mengakses seluruh element dari array nilai2
+console.log(nilai4);                  // Output: [0, 1, 2, 3, 4, 5, 6]
+
+var nilai5 = [...nilai3, ...nilai4];
+console.log(nilai5);                  // Output: ["a", "b", "c", "d", "e", "f", 0, 1, 2, 3, 4, 5, 6]
+```
 
 ### 𝐋. Operator Bitwise
 
