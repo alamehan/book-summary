@@ -874,7 +874,7 @@ for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3
 }
 ```
 
-### ⤷ Keyword continue:
+#### ⤷ Keyword continue:
 
 ```Javascript
 for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
@@ -885,7 +885,7 @@ for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
 }
 ```
 
-### ⤷ Menampilkan element Array:
+#### ⤷ Menampilkan element Array:
 
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
