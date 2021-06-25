@@ -866,8 +866,6 @@ for (var k=1; k<3; k++){              // Output: outer 1 inner 1 s/d outer 2 inn
 #### ⤷ Keyword break:
 
 ```Javascript
-// E1. 
-
 for (var m=10; m>=1; m--){            // Output: 10, 9, 8, 7, 6, 5, 4, 3
   if (m === 2){
     break;                            // Break: Berhenti memproses perulangan (keluar dari perulangan)
