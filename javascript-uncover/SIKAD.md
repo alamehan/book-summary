@@ -357,7 +357,7 @@ var strE = "Dia berkata: \"Hey\"";    // Kutip dua di dalam kutip dua, pakai esc
 var strF = 'Hari Jum\'at';            // Kutip satu di dalam kutip satu, pakai escape character (\)
 var strG = "\u2764 You!"              // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
 
-var strH = `Hello World!`;            // String dengan backtick (Template String ES6)
+var strH = `Hello World!`;            // String dengan backtick `` (Template String ES6)
 var strI = `"Hei!", Jum'at today.`;   // Kutip satu & dua di dalam backtick
 var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
 ```
@@ -457,7 +457,7 @@ console.log(arr2D[1][1]);             // Output: 5
   
 > 𝐎𝐩𝐞𝐫𝐚𝐭𝐨𝐫 𝐝𝐢 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭
 > > - [X] 𝐂. Operator typeof
-> > - [X] 𝐃. Operator instanceof (Bab ...)
+> > - [X] 𝐃. Operator instanceof
 > > - [X] 𝐄. Operator Aritmatika
 > > - [X] 𝐅. Operator Assignment
 > > - [X] 𝐆. Operator Increment & Decrement
@@ -476,7 +476,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Oper
 
 ### 𝐁. Falsy & Truthy Value
 
-Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung operator yang digunakan. Untuk operator perbandingan, tipe data ini akan dikonversi menjadi Boolean (true/false). Nilai yang dikonversi menjadi false disebut Falsy Value, dan nilai yang dikonversi menjadi true disebut Truthy Value. Simak tabel Falsy & Truthy Value berikut:
+Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung operator yang digunakan. Untuk operator perbandingan (==, !=, <, <=, >, >=, dst), tipe data ini akan dikonversi menjadi Boolean (true/false). Nilai yang dikonversi menjadi false disebut Falsy Value, dan nilai yang dikonversi menjadi true disebut Truthy Value. Simak tabel Falsy & Truthy Value berikut:
 
 | Falsy Value 	| Keterangan      	|   	| Truthy Value 	| Keterangan                                                 	|
 |-------------	|-----------------	|---	|--------------	|------------------------------------------------------------	|
@@ -496,12 +496,175 @@ console.log(0 == '');                 // Output: true   (Hasil konversi: false =
 console.log(0 == '0');                // Output: true   (Bukan operator indentik, jadinya true) 
 console.log(false == 'false');        // Output: false  (Hasil konversi: false == true) 
 console.log(false == '0');            // Output: true   (Bukan operator indentik & false kan bernilai 0, jadinya true) 
-console.log(false == undefined);      // Output: false  (Pengecualian) 
-console.log(false == null);           // Output: false  (Pengecualian) 
+console.log(false == undefined);      // Output: false  (*Pengecualian) 
+console.log(false == null);           // Output: false  (*Pengecualian) 
 console.log(null == undefined);       // Output: true   (Hasil konversi: false == false) 
-console.log('\t\r\n' == 0);           // Output: true   (Pengecualian) 
+console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian) 
 ```
-  
+
+### 𝐂. Operator typeof
+
+#### Oprator typeof digunakan untuk memeriksa tipe data suatu Variable:
+
+```Javascript
+var numA = 100;
+var strA = "Hello World!";
+var bolA = true;
+var nudA = null;
+var nudB = undefined;
+var arrSiswa = ["Andri", "Joko", "Sukma"];
+
+console.log(typeof numA);                 // Output: number
+console.log(typeof strA);                 // Output: string
+console.log(typeof bolA);                 // Output: boolean
+console.log(typeof nudA);                 // Output: object (bukan Null)
+console.log(typeof nudB);                 // Output: undefined
+console.log(typeof arrSiswa);             // Output: object (Array termasuk Object)
+```
+
+#### Tidak hanya typeof, terdapat beragam cara untuk memeriksa tipe data:
+
+```Javascript
+var num = 10;                             // Tipe data: Number
+var nan = 9/"a";                          // Tipe data: NaN
+var inf = 9/0;                            // Tipe data: Infinity
+var str = "JavaScript";                   // Tipe data: String
+var bol = true;                           // Tipe data: Boolean
+var nul = null;                           // Tipe data: Null
+var und = undefined;                      // Tipe data: Undefined
+var arr = [1, 2, "tiga"];                 // Tipe data: Array
+var obj = {nama: "Budi", umur: 13};       // Tipe data: Object      // 🔔 Object dibahas di bab 2-6 & bab 3
+var reg = /^\d\w\s$/;                     // Tipe data: RegExp      // 🔔 RegExp dibahas di bab 3-2 D
+var dat = new Date(2016,11,2,9,30,15);    // Tipe data: Date        // 🔔 Date dibahas di bab 3-2 F
+
+
+console.log(typeof num === "number");     // Output: true   (Check apakah datanya Number)
+console.log(Number.isNaN(nan));           // Output: true   (Check apakah datanya NaN)
+console.log(inf === Infinity);            // Output: true   (Check apakah datanya Infinity)
+console.log(typeof str === "string");     // Output: true   (Check apakah datanya String)
+console.log(typeof bol === "boolean");    // Output: true   (Check apakah datanya Boolean)
+console.log(nul === null);                // Output: true   (Check apakah datanya Null)
+console.log(und === undefined);           // Output: true   (Check apakah datanya Undefined)
+console.log(Array.isArray(arr));          // Output: true   (Check apakah datanya Array - cara 1)
+console.log(arr instanceof Array);        // Output: true   (Check apakah datanya Array - cara 2)
+console.log(arr.constructor === Array);   // Output: true   (Check apakah datanya Array - cara 3)
+console.log(typeof obj === "object");     // Output: true   (Check apakah datanya Object - cara 1)
+console.log(obj instanceof Object);       // Output: true   (Check apakah datanya Object - cara 2)
+console.log(obj.constructor === Object);  // Output: true   (Check apakah datanya Object - cara 3)
+console.log(reg instanceof RegExp);       // Output: true   (Check apakah datanya RegExp - cara 1)
+console.log(reg.constructor === RegExp);  // Output: true   (Check apakah datanya RegExp - cara 2)
+console.log(dat instanceof Date);         // Output: true   (Check apakah datanya Date - cara 1)
+console.log(dat.constructor === Date);    // Output: true   (Check apakah datanya Date - cara 2)
+```
+
+### 𝐃. Operator instanceof
+
+> 🚧 Tidak dibahas
+
+### 𝐄. Operator Aritmatika
+
+```Javascript
+var a = 10;
+var b = 2;
+
+console.log(a + b);                   // Output: 12     ⇨ Addition (tambah)
+console.log(a - b);                   // Output: 8      ⇨ Substraction (kurang)
+console.log(a * b);                   // Output: 20     ⇨ Multiplication (kali)
+console.log(a / b);                   // Output: 5      ⇨ Division (bagi)
+console.log(a % b);                   // Output: 0      ⇨ Modulo (sisa bagi)
+console.log(a ** b);                  // Output: 100    ⇨ Exponentiation (pangkat)
+
+console.log(4+6/5-3*2+3);             // Output: 2.2    ⇨ Operator * dan / diproses lebih awal (Precedence: 15)
+console.log((4+6)/(5-3)*2+3);         // Output: 13     ⇨ Operator () diproses lebih awal (Precedence: 21)
+```
+
+### 𝐅. Operator Assignment
+
+```Javascript
+var g = 10;         // Artinya 10 dimasukkan sebagai nilai ke Variable g (Operator assignment memiliki precedence: 3)
+var h = 10 + 5;     // Artinya jumlahkan 10 + 5 dulu (Operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable h
+var i = g + h;      // Artinya jumlahkan g + h dulu (Operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable i
+```
+
+#### Gabungan Assignment:
+
+```Javascript
+var gabA = gabB = gabC = gabD = gabE = 20;
+
+gabA += 10;                           // gabA = gabA + 10 🡲 gabA = 20 + 10      (Output: 30) 
+gabB -= 10;                           // gabB = gabB - 10 🡲 gabB = 20 - 10      (Output: 10)
+gabC /= 10;                           // gabC = gabC / 10 🡲 gabC = 20 / 10      (Output: 2)
+gabD *= 10;                           // gabD = gabD * 10 🡲 gabD = 20 * 10      (Output: 200) 
+gabE %= 10;                           // gabE = gabE % 10 🡲 gabE = 20 % 10      (Output: 0)
+```
+
+### 𝐆. Operator Increment & Decrement
+
+```Javascript
+var c = 10, d = 10, e = 10, f = 10;
+
+console.log(++c);                     // Output: 11     ⇨ Pre-increment: langsung tambahkan
+console.log(c);                       // Output: 11
+console.log(--d);                     // Output: 9      ⇨ Pre-decrement: langsung kurangi
+console.log(d);                       // Output: 9
+
+console.log(e++);                     // Output: 10     ⇨ Post-increment: tampilkan dulu, baru tambahkan
+console.log(e);                       // Output: 11
+console.log(f--);                     // Output: 10     ⇨ Post-decrement: tampilkan dulu, baru kurangi
+console.log(f);                       // Output: 9
+```
+
+### 𝐇. Operator Perbandingan
+
+```Javascript
+console.log(8 == 12);                 // Output: false  ⇨ Equality (sama dengan)
+console.log(8 != 12);                 // Output: true   ⇨ Inquality (tidak sama dengan)
+console.log(10 < 11);                 // Output: true   ⇨ Less than (kurang dari)
+console.log(11 <= 11);                // Output: true   ⇨ Less than or equal (kurang dari atau sama dengan)
+console.log(21 > 20);                 // Output: true   ⇨ Greater than (lebih dari)
+console.log(21 >= 21);                // Output: true   ⇨ Greater than or equal (lebih dari atau sama dengan)
+
+console.log(9 == "9");                // Output: true
+console.log(9 === "9");               // Output: false  ⇨ Strict equality (identik dengan)
+console.log(9 != '9');                // Output: false
+console.log(9 !== '9');               // Output: true   ⇨ Strict inequality (tidak identik dengan)
+```
+
+#### Kasus Perbadingan Unik:
+
+```Javascript
+console.log(1 == true);               // Output: true
+console.log(1 === true);              // Output: false
+console.log(0 == false);              // Output: true
+console.log(0 === false);             // Output: false
+console.log(0.3 == 3e-1);             // Output: true
+console.log(0.3 === 3e-1);            // Output: true   (Karena memang nilainya sama)
+console.log(true > false)             // Output: true   (Ingat: true = 1, false = 0)
+```
+
+#### Kasus Perbandingan String:
+
+```Javascript
+console.log("a" < "b");               // Output: true   (a = 97, b = 98)
+console.log("a" < "A");               // Output: false  (a = 97, A = 65)
+console.log("ali" < "ala");           // Output: false  (ali = 97→108→105, ala = 97→108→97)
+console.log("ali" < "alo");           // Output: true   (ali = 97→108→105, alo = 97→108→111)
+console.log("ali" < "alika");         // Output: true   (String yang lebih pendek akan dianggap lebih kecil) 
+console.log("ali" < 9999999);         // Output: false  (Perbandingan String & Number selalu menghasilkan false)
+```
+
+📚 Setiap karakter dalam String menggunakan nomor urut desimal di ASCII-Code: https://www.ascii-code.com/
+
+### 𝐈. Operator Logika
+
+### 𝐉. Operator String
+
+### 𝐊. Operator Spread
+
+### 𝐋. Operator Bitwise
+
+> 🚧 Tidak dibahas
+
 <hr>
 <div id="bab2_3"></div>
   
