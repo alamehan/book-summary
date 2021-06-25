@@ -1278,6 +1278,153 @@ Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fa
 
 📚 Gunakan tools visualusasi berikut: http://pythontutor.com/javascript.html
 
+#### ⤷ Variable Hoisting
+
+```Javascript
+// Contoh 1-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teksA);                   // console.log(teksA);              🡲 Output: ReferenceError teksA is not defined
+
+// Contoh 1-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teksB);                   // 𝘃𝗮𝗿 𝘁𝗲𝗸𝘀𝗕 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+console.log(teksC);                   // console.log(teksB);              🡲 Output: undefined
+var teksB = "Belajar JS";             // console.log(teksC);              🡲 Output: ReferenceError teksC is not defined
+                                      // var teksB = "Belajar JS";        🡲 Baris ini tidak akan dieksekusi, karena error di atas
+                                      
+// Contoh 1-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(teksD);                   // 𝘃𝗮𝗿 𝘁𝗲𝗸𝘀𝗗 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+var teksD = "Belajar JS";             // console.log(teksD);              🡲 Output: undefined
+console.log(teksD);                   // var teksD = "Belajar JS";
+                                      // console.log(teksD);              🡲 Output: Belajar JS
+
+// Contoh 1-4                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(satu);                    // 𝘃𝗮𝗿 𝘀𝗮𝘁𝘂 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+console.log(dua);                     // 𝘃𝗮𝗿 𝗱𝘂𝗮 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+var satu = "Belajar HTML";            // 𝘃𝗮𝗿 𝘁𝗶𝗴𝗮 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+var dua = "Belajar CSS";              // console.log(satu);               🡲 Output: undefined
+console.log(tiga);                    // console.log(dua);                🡲 Output: undefined
+var tiga = "Belajar JS";              // var satu = "Belajar HTML";
+console.log(satu);                    // var dua = "Belajar CSS";
+                                      // console.log(tiga);               🡲 Output: undefined
+                                      // var tiga = "Belajar JS";
+                                      // console.log(satu);               🡲 Output: Belajar HTML
+```
+
+#### ⤷ Function Hoisting 
+
+```Javascript
+// Contoh 2-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(sapaPagi);                // 𝘀𝗮𝗽𝗮𝗣𝗮𝗴𝗶 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘀𝗮𝗽𝗮𝗣𝗮𝗴𝗶(){...}
+console.log(sapaPagi());              // console.log(sapaPagi)            🡲 Output: function sapaPagi(){...}
+function sapaPagi(){                  // console.log(sapaPagi());         🡲 Output: Selamat Pagi! (Function bisa berjalan! padahal
+  console.log("Selamat Pagi!");       // function sapaPagi(){                                       pendefinisiannya dibawah, ini
+}                                     //   console.log("Selamat Pagi!");                            terjadi akibat efek hoisting)
+                                      // }                                🡲 Output: undefined (terjadi karena tidak ada return)
+
+// Contoh 2-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(sapaSiang);               // 𝘀𝗮𝗽𝗮𝗦𝗶𝗮𝗻𝗴 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘀𝗮𝗽𝗮𝗦𝗶𝗮𝗻𝗴(){...}
+console.log(sapaSiang());             // console.log(sapaSiang)           🡲 Output: function sapaSiang(){...}
+function sapaSiang(){                 // console.log(sapaSiang());        🡲 Output: Selamat Siang!
+  return "Selamat Siang!";            // function sapaSiang(){
+}                                     //   return "Selamat Siang!";
+                                      // }                                🡲 Karena ada return, maka tidak ada Output: undefined
+
+// Contoh 2-3                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(sapaSore());              // 𝘀𝗮𝗽𝗮𝗦𝗼𝗿𝗲 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘀𝗮𝗽𝗮𝗦𝗼𝗿𝗲(){...}
+function sapaSore(){                  // 𝘀𝗮𝗽𝗮𝗠𝗮𝗹𝗮𝗺 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘀𝗮𝗽𝗮𝗠𝗮𝗹𝗮𝗺(){...}
+  return "Selamat Sore!";             // console.log(sapaSore());         🡲 Output: Selamat Sore!
+}                                     // function sapaSore(){
+console.log(sapaMalam());             //   return "Selamat Sore!";
+function sapaMalam(){                 // }
+  return "Selamat Malam!";            // console.log(sapaMalam());        🡲 Output: Selamat Malam!
+}                                     // function sapaMalam(){
+                                      //   return "Selamat Malam!";
+                                      // }
+```
+
+#### ⤷ Variable & Function Hoisting 
+
+```Javascript
+// Contoh 3-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+console.log(sapaSatu());              // 𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+var nama = "Budi";                    // 𝘃𝗮𝗿 𝘂𝗺𝘂𝗿 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+var umur = 25;                        // 𝘀𝗮𝗽𝗮𝗦𝗮𝘁𝘂 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘀𝗮𝗽𝗮𝗦𝗮𝘁𝘂(){...}
+function sapaSatu(){                  // console.log(sapaSatu());         🡲 Output: undefined, undefined tahun!
+  return `${nama}, ${umur} tahun!`;   // var nama = "Budi";
+}                                     // var umur = 25;
+                                      // function sapaSatu(){
+                                      //   return `${nama}, ${umur} tahun!`;
+                                      // }
+
+// Contoh 3-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+var nama = "Budi";                    // 𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+var umur = 25;                        // 𝘃𝗮𝗿 𝘂𝗺𝘂𝗿 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+console.log(sapaDua());               // 𝘀𝗮𝗽𝗮𝗗𝘂𝗮 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘀𝗮𝗽𝗮𝗗𝘂𝗮(){...}
+function sapaDua(){                   // var nama = "Budi";
+  return `${nama}, ${umur} tahun!`;   // var umur = 25;
+}                                     // console.log(sapaDua());          🡲 Output: Budi, 25 tahun!
+                                      // function sapaDua(){
+                                      //   return `${nama}, ${umur} tahun!`;
+                                      // }
+```
+
+#### ⤷ Local Hoisting
+
+```Javascript
+// Contoh 4-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+var nama = "Budi Lorem";              // 𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;             🡲 Global Hoisting
+var user = "@budilorem";              // 𝘃𝗮𝗿 𝘂𝘀𝗲𝗿 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;              🡲 Global Hoisting
+function cetakURL(user){              // 𝗰𝗲𝘁𝗮𝗸𝗨𝗥𝗟 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗰𝗲𝘁𝗮𝗸𝗨𝗥𝗟(){...}🡲 Global Hoisting
+  var twtURL = "http://twitter.com/"; // var nama = "Budi Lorem";
+  return twtURL+user;                 // var user = "@budilorem";
+}                                     // function cetakURL(user){
+console.log(cetakURL(user));          //   𝘃𝗮𝗿 𝘁𝘄𝘁𝗨𝗥𝗟 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;         🡲 Local Hoisting di dalam Function
+                                      //   var twtURL = "http://twitter.com/";
+                                      //   return twtURL+user;
+                                      // }
+                                      // console.log(cetakURL(user));     🡲 http://twitter.com/@budilorem
+
+// Contoh 4-2                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+function luar(){                      // 𝗹𝘂𝗮𝗿 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗹𝘂𝗮𝗿(){...}        🡲 Global Hoisting
+  console.log("A");                   // function luar(){
+  function tengah(){                  //   𝘁𝗲𝗻𝗴𝗮𝗵 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝘁𝗲𝗻𝗴𝗮𝗵(){...} 🡲 Local Hoisting di dalam Function
+    console.log("B");                 //   console.log("A");
+    function dalam(){                 //   function tengah(){
+      console.log("C");               //     𝗱𝗮𝗹𝗮𝗺 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗱𝗮𝗹𝗮𝗺(){...} 🡲 Local Hoisting di dalam Function (nested)
+    }                                 //     console.log("B");
+    dalam();                          //     function dalam(){
+  }                                   //       console.log("C");
+  tengah();                           //     }
+}                                     //     dalam();
+luar();                               //   }
+                                      //   tengah();
+                                      // }
+                                      // luar();                          🡲 urutan Output: A, B, C
+```
+
+#### ⤷ Contoh Kasus Unik
+
+```Javascript
+// Contoh 5                           ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+function funA(){                      // 𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+  var nama = "Budi";                  // 𝗳𝘂𝗻𝗔 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗳𝘂𝗻𝗔(){...}
+  console.log(nama);                  // 𝗳𝘂𝗻𝗕 = 𝗳𝘂𝗻𝗰𝘁𝗶𝗼𝗻 𝗳𝘂𝗻𝗕(){...}
+}                                     // function funA(){
+function funB(){                      //   𝘃𝗮𝗿 𝗻𝗮𝗺𝗮 = 𝘂𝗻𝗱𝗲𝗳𝗶𝗻𝗲𝗱;
+  console.log(nama);                  //   var nama = "Budi";
+  console.log(arguments[0]);          //   console.log(nama);
+}                                     // } 
+console.log(nama);                    // function funB(){                 🡲 Tidak ada parameter yang menangkap argument
+var nama = "Jaka";                    //   console.log(nama);             🡲 Baris ini akan mencari variable "nama" di Global
+funA();                               //   console.log(arguments[0]);     🡲 Argument yang dikirim akan masuk ke Array Argument
+funB("Tono");                         // }                                   ⤷ Lihat lagi point D1 & D4 di atas
+console.log(nama);                    // console.log(nama);               🡲 Output: undefined
+                                      // var nama = "Jaka";
+                                      // funA();                          🡲 Output: Budi
+                                      // funB("Tono");                    🡲 Output: Jaka  (dari var "nama" di luar Function)
+                                      //                                             Tono  (dari Array Argument)
+                                      // console.log(nama);               🡲 Output: Jaka
+```
+
 ### 𝐈. Function Expressions & Anonymous Function
 
 ### 𝐉. Callback & Higher Order Function
