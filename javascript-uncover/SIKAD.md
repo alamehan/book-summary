@@ -1018,9 +1018,9 @@ function pagiMalam(){
 pagiMalam();                          // Output: Selamat Pagi!      ⇨ Cara menjalankan sebuah Function yaitu dengan memanggil
                                       //         Selamat Malam!        nama Function yang dipilih, lalu ditambah tanda ().
 
-console.log(pagiMalam);               // Output: pagiMalam(){
-                                      //           console.log("Selamat Pagi!");      ⇨ Tanpa tanda (), maka Function tidak
-                                      //           console.log("Selamat Malam!");        dijalankan, hanya ditampilkan isinya.
+console.log(pagiMalam);               // Output: pagiMalam(){                         ⇨ Tanpa tanda (), maka Function tidak
+                                      //           console.log("Selamat Pagi!");         dijalankan, hanya ditampilkan isinya.
+                                      //           console.log("Selamat Malam!");
                                       //         }
 ```
 
