@@ -721,7 +721,9 @@ console.log(10 + 10 + "9");           // Output: 209    (String)  dari hasil kon
 
 ### 𝐊. Operator Spread
 
-Spread merupakan operator baru di ES6. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama Variable. 🔔 Kegunaan lain dari operator Spread yaitu dapat digunakan sebagai Rest Parameter, dibahas di bab 2-5 E.
+Spread merupakan operator baru di ES6. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama Variable.<br>
+
+🔔 Kegunaan lain dari operator Spread yaitu dapat digunakan sebagai Rest Parameter, dibahas di bab 2-5 E.
 
 ```Javascript
 var nilai1 = ["a", "b", "c", "d"];
@@ -750,6 +752,87 @@ console.log(nilai5);                  // Output: ["a", "b", "c", "d", "e", "f", 
 > - [X] 𝐁. Switch
 > - [X] 𝐂. Operator Conditional Ternary
 > - [X] 𝐃. Operator Nullish Coalescing
+
+### 𝐀. If & Else
+
+```Javascript
+var nilai = 90;                     
+
+if (nilai >= 0 && nilai <= 100){      // Jika nilai >= 0 dan <= 100, masuk ke kondisi berikutnya, selain itu tidak valid!
+  if (nilai >= 80){
+    console.log("A");
+  } else if (nilai >= 70){
+    console.log("B");
+  } else if (nilai >= 60){
+    console.log("C");
+  } else if (nilai >= 50){
+    console.log("D");
+  } else{
+    console.log("E");
+  }
+} else {
+  console.log("Tidak Valid!");
+}
+```
+
+### 𝐁. Switch
+
+```Javascript
+var nilaiTK = 6;   
+
+switch(nilaiTK){                      // Case 1-5: kurang, case 6-7: cukup, case 8-10: baik, selain itu tidak valid!
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+    console.log("kurang");
+    break;
+  case 6:
+  case 7:
+    console.log("cukup");
+    break;
+  case 8:
+  case 9:
+  case 10:
+    console.log("baik");
+    break;
+  default:
+    console.log("Tidak Valid!");
+}
+```
+
+### 𝐂. Operator Conditional Ternary
+
+```Javascript
+var jumlah = 501;
+var pesan = jumlah > 500 ? "Cukup!" : "Produksi lagi!"; // Cara baca: Apakah jumlah > 500? jika iya (true), kirim String "Cukup!"
+                                                        // ke Var pesan. Jika tidak (false) kirim String "Produksi lagi!".
+
+var user = "admin";                                             
+var akses = user === "admin" ? true : false;            // Cara baca: Apakah user === "admin"? jika iya, kirim Boolean true ke
+if (akses){ // jika akses bernilai true                 // Var akses, lalu kondisi "if (akses)" akan dijalankan. Jika tidak,
+  console.log("Welcome, admin!");                       // kirim false ke Var akses, dan kondisi "if (akses)" tidak jalan.
+}
+```
+
+### 𝐃. Operator Nullish Coalescing
+
+```Javascript
+var dataDariLuar1;
+data1 = dataDariLuar1 ?? "Nilai Default";               // Cara baca: Apakah dataDariLuar1 bernilai Null atau Undefined? jika iya
+                                                        // (true), isi dataDariLuar1 dengan String "Nilai Default". Jika tidak
+                                                        // (bukan null/undefined), tidak perlu dilakukan apapun.
+
+console.log(data1);                                     // Output: Nilai Default  (sebelumnya dataDariLuar1 bernilai undefined)
+
+var dataDariLuar2 = "Ada isinya";
+data2 = dataDariLuar2 ?? "Nilai Defailt";               // Cara baca: Apakah dataDariLuar2 bernilai Null atau Undefined? jika iya
+                                                        // (true), isi dataDariLuar2 dengan String "Nilai Default". Jika tidak
+                                                        // (bukan null/undefined), tidak perlu dilakukan apapun.
+
+console.log(data2);                                     // Output: Ada isinya     (sebelumnya dataDariLuar2 memang sudah berisi)
+```
   
 <hr>
 <div id="bab2_4"></div>
