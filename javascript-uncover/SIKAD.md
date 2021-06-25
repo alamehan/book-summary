@@ -1047,15 +1047,15 @@ console.log(ratarata(1, 2, 3));       // Output: NaN (Argument ke-4 tidak ada, m
 ### 𝐂. Default Parameter
 
 ```Javascript
-function tambah(a=10, b=10, c=10, d=10){  // Seluruh paramter memiliki nilai default
+function tambah(a=10, b=10, c=10, d=10){  // Seluruh parameter (a, b, c & d) memiliki nilai default
   return a+b+c+d;
 }
 
-function kurang(a, b, c=10, d=10){    // 2 parameter terakhir memiliki nilai default
+function kurang(a, b, c=10, d=10){    // 2 parameter terakhir (c & d) memiliki nilai default
   return a-b-c-d;
 }
 
-function kali(a=10, b=10, c, d){      // 2 parameter pertama memiliki nilai default
+function kali(a=10, b=10, c, d){      // 2 parameter pertama (a & b) memiliki nilai default
   return a*b*c*d;
 }
 
