@@ -319,7 +319,7 @@ var numB = -100;                      // Angka bulat negatif
 var numC = 0.66634;                   // Angka pecahan
 var numD = -0.66634;                  // Angka pecahan negatif
 var numE = 3e3;                       // ≈ 3 x 10^3
-var numF = 0.4e-3;                    // ≈0.4 x 10^-3
+var numF = 0.4e-3;                    // ≈ 0.4 x 10^-3
 var numG = 999;                       // Desimal (basis 10)
 var numH = 0b1111100111;              // Biner (basis 2), diawali 0b
 var numI = 0o1747;                    // Oktal (basis 8), diawali 0o
@@ -1166,7 +1166,101 @@ console.log(rataratav2(2, 4, 8, 16)); // Output: 7.5  (hasil dari (2+4+8+16)/4 �
 
 ### 𝐅. Variable Scope
 
+Variable Scope adalah istilah tentang sejauh mana sebuah Variable masih dapat diakses. Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup yang terbatas, milsanya di dalam sebuah Function.
+
+#### ⤷ Global Variable
+
+```Javascript
+var a = "Belajar JS";                 // Var a disini merupakan global Variable dan dapat diakses darimana saja
+function boo(){
+  console.log(a);                     // a yang diakses disini yaitu a di global Varibale, ini terjadi karena di dalam Function
+}                                     // boo() tidak ada local Variable a, maka JS akan mencari "keluar" hingga menemukan a.
+
+boo();                                // Output: Belajar JS   (Hasil dari dalam Function 🡲 global Variable a)
+console.log(a);                       // Output: Belajar JS   (Hasil dari global Variable a)
+```
+
+#### ⤷ Local Variable
+
+```Javascript
+var b = "Belajar JS";                 // Var b disini merupakan global Variable dan dapat diakses darimana saja
+function coo(){
+  var b = "Belajar CSS";              // b disini merupakan local Variable dan hanya bisa diakses di dalam Function coo() saja
+  console.log(b);                     // b yang diakses disini yaitu b local Variable (karena memang terdapat local Variable b)
+}
+
+coo();                                // Output: Belajar CSS  (Hasil dari dalam Function 🡲 local Variable b)
+console.log(b);                       // Output: Belajar JS   (Hasil dari global Variable b)
+```
+
+#### ⤷ Studi Kasus 1
+
+```Javascript
+function doo(c, d){
+  var c = 20;                         // c disini merupakan local Variable
+  var d = 40;                         // d disini merupakan local Variable
+  return c+d;                         // Function mengembalikan nilai 60
+}
+
+var c = 5;                            // c disini merupakan global Variable
+var d = 10;                           // d disini merupakan global Variable
+var e = doo(c, d);                    // Argument yang dikirim yaitu doo(5, 10)
+
+console.log(c);                       // Output: 5  (c berasal dari global Variable c)
+console.log(d);                       // Output: 10 (d berasal dari global Variable d)
+console.log(e);                       // Output: 60 (nilai global Var c & d tertimpa oleh local Var saat di dalam Function doo())
+```
+
+#### ⤷ Studi Kasus 2
+
+```Javascript
+function foo(){
+  c = 20;                             // c disini menimpa global Variable c (Jika didefinisikan tanpa var, maka berefek ke global)
+  d = 40;                             // d disini menimpa global Variable d (Jika didefinisikan tanpa var, maka berefek ke global)
+  return c+d;                         // Function mengembalikan nilai 60
+}
+
+var c = 5;                            // c disini merupakan global Variable
+var d = 10;                           // d disini merupakan global Variable
+var e = foo();                        // Tidak ada argument yang dikirim
+
+console.log(c);                       // Output: 20 (Bukan 5, karena nilai c tertimpa saat di dalam Function foo())
+console.log(d);                       // Output: 40 (Bukan 10, karena nilai d tertimpa saat di dalam Function foo())
+console.log(e);                       // Output: 60 (Bukan 15, karena nilai var c & d tertimpa saat di dalam Function foo())
+```
+
 ### 𝐆. Var, Let & Const
+
+Penggunaan Var dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan Let tidak mempengaruhi nilai diluar scope (aman!). Var bersifat Function Scope, artinya cakupan scopenya itu Function, seolah tidak Private (jika memang mendefinisikan Var tidak berada dalam sebuah Function). Sedangkat Let bersifat Block Scope, artinya cakupan scopenya itu tanda block yaitu {}, seolah menjadi Private (meskipun Let didefinisikan tidak berada dalam sebuah Function). Let sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan Var. Namun selain Let ada juga Const, yang mana jika didefinisikan dan langsung diberi nilai awal, isi Const tersebut tidak bisa diubah sepanjang kode program (isinya tetap).
+
+```Javascript
+for (var i=1; i<3; i++){
+  console.log(i);
+}
+console.log(i);                       // Output: 3
+                                      // Var malah bisa diakses dari luar For (ini tidak aman!), seolah tidak Private.
+
+for (let j=1; j<3; j++){
+  console.log(j);
+}
+console.log(j);                       // Output: ReferenceError j is not defined
+                                      // Let tidak bisa diakses dari luar For (ini aman!), seolah Private.
+
+var k = 1000;
+for (var k=1; k<3; k++){
+  console.log(k);
+}
+console.log(`Harganya Rp.${k}`);      // Output: Harganya Rp.3      (Nilai k global tertimpa saat di dalam perulangan)
+
+let l = 1000;
+for (let l=1; l<3; l++){
+  console.log(l);
+}
+console.log(`Harganya Rp.${l}`);      // Output: Harganya Rp.1000   (Nilai l global tidak tertimpa & memang ini yang diinginkan)
+
+const PI = 3.14;
+PI = 4;                               // Output: TypeError Assignment to constant variable  (Const tidak bisa ditimpa nilai baru)
+```
 
 ### 𝐇. JavaScript Hoisting
 
