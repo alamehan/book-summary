@@ -1512,7 +1512,18 @@ function salam(bar){                  // Step 2 🡲 Parameter bar akan menangka
 salam(foo);                           // Step 1 🡲 Kirim Function bernama foo (bukan menjalankannya) sebagai sebuah argument
 ```
 
-#### ⤷ Callback & Higher Order Function
+#### ⤷ Istilah Callback & Higher Order Function
+
+```Javascript
+function ulangi(n, aksi){             // aksi merupakan Callback, sehingga Function ulangi disebut sebagai Higher Order Function
+  for (let i=0; i<n; i++){
+    aksi(i);
+  }
+}
+
+ulangi(10, console.log);              // Output: 0 s.d. 9
+ulangi(5, alert);                     // Output: Muncul alert 0 s.d. 4
+```
 
 ```Javascript
 // ...
