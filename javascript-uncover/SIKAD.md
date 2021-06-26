@@ -1519,8 +1519,8 @@ function ulangi(n, aksi){             // aksi merupakan Callback, sehingga Funct
   }
 }
 
-ulangi(10, console.log);              // Output: 0 s.d. 9
-ulangi(5, alert);                     // Output: Muncul alert 0 s.d. 4
+ulangi(10, console.log);              // Output: 0 s.d. 9                 ⇨ Mengirim function console.log sebagai argument
+ulangi(5, alert);                     // Output: Muncul alert 0 s.d. 4    ⇨ Mengirim function alert sebagai argument
 ```
 
 ```Javascript
@@ -1535,9 +1535,23 @@ function coba(aksi1, aksi2){          // aksi1 & aksi2 merupakan Callback, sehin
   aksi2();                            // aksi2() akan menjadi funB()
   aksi2("JavaScript");                // aksi2("JavaScript") akan menjadi funB("JavaScript")
 }
-coba(funA, funB);                     // Output: Hello World!
+coba(funA, funB);                     // Output: Hello World!             ⇨ Mengirim function funA & funB sebagai argument
                                       //         Hello Programmer!
                                       //         Hello JavaScript!
+```
+
+```Javascript
+function funA(){
+  console.log(`Hello World!`);
+}
+function coba(aksi1, aksi2, n){       // aksi1 & aksi2 merupakan Callback, sehingga Function coba disebut Higher Order Function
+  aksi1();                            // aksi1() akan menjadi funA()
+  aksi2();                            // aksi2() akan menjadi function(){ console.log("Ciluk")}
+  console.log(`Baa ${n} kali`);
+}
+coba(funA, function(){ console.log("Ciluk")}, 100); // Output: Hello World!   ⇨ Mengirim funA, function(){ console.log("Ciluk")}
+                                                    //         Ciluk             dan nilai 100 sebagai argument. Perhatikan bahwa
+                                                    //         Baa 100 kali      function bisa langsung didefinisikan di argument.
 ```
 
 ### 𝐊. Function as Return Value
