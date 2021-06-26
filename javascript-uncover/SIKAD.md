@@ -1515,7 +1515,7 @@ salam(foo);                           // Step 1 🡲 Kirim Function bernama foo 
 ```Javascript
 function ulangi(n, aksi){             // aksi merupakan Callback, sehingga Function ulangi disebut sebagai Higher Order Function
   for (let i=0; i<n; i++){
-    aksi(i);                          // aksi(i) akan menjadi console.log(i)/alert(i)
+    aksi(i);                          // aksi(i) akan menjadi console.log(i)/alert(i), sesuai dengan nama Function dari argument
   }
 }
 
