@@ -1530,7 +1530,7 @@ function funA(){
 function funB(param){
   console.log(`Hello ${param}!`);
 }
-function coba(aksi1, aksi2){          // aksi1 & aksi2 merupakan Callbach, sehingga Function coba disebut Higher Order Function
+function coba(aksi1, aksi2){          // aksi1 & aksi2 merupakan Callback, sehingga Function coba disebut Higher Order Function
   aksi1();                            // aksi() akan menjadi funA()
   aksi2("JavaScript");                // aksi2("JavaScript") akan menjadi funB("JavaScript")
 }
