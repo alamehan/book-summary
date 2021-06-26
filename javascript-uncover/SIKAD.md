@@ -1527,14 +1527,16 @@ ulangi(5, alert);                     // Output: Muncul alert 0 s.d. 4
 function funA(){
   console.log(`Hello World!`);
 }
-function funB(param){
+function funB(param="Programmer"){    // param mempunyai nilai default yaitu String "Programmer"
   console.log(`Hello ${param}!`);
 }
 function coba(aksi1, aksi2){          // aksi1 & aksi2 merupakan Callback, sehingga Function coba disebut Higher Order Function
-  aksi1();                            // aksi() akan menjadi funA()
+  aksi1();                            // aksi1() akan menjadi funA()
+  aksi2();                            // aksi2() akan menjadi funB()
   aksi2("JavaScript");                // aksi2("JavaScript") akan menjadi funB("JavaScript")
 }
 coba(funA, funB);                     // Output: Hello World!
+                                      //         Hello Programmer!
                                       //         Hello JavaScript!
 ```
 
