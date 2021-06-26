@@ -1554,7 +1554,7 @@ coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   �
                                                     //         Baa 100 kali      function bisa langsung didefinisikan di argument.
 ```
 
-🔔 Implementasi Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, reduce, dll).
+🔔 Implementasi Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
 
 ### 𝐊. Function as Return Value
 
