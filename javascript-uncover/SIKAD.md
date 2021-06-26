@@ -1447,9 +1447,7 @@ Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan seb
 
 ### 𝐈. Function Expressions & Anonymous Function
 
-Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data, ini berarti Function dapat disimpan ke dalam Variable (Var/Let), disebut sebagai Function Expressions. Kemudian jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
-
-#### ⤷ Function Expressions
+Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data, ini berarti Function dapat disimpan ke dalam Variable (Var/Let), disebut sebagai Function Expressions. Lalu jika sebuah Function Expressions ditulis tanpa nama Function, disebut sebagai Anonymous Function.
 
 ```Javascript
 let hitung = function ratarata(a, b){ // Function Expressions (dimana Function ratarata disimpan ke dalam Let hitung)
@@ -1457,11 +1455,7 @@ let hitung = function ratarata(a, b){ // Function Expressions (dimana Function r
 }
 console.log(hitung(4, 8));            // Output: 6  ⇨ Yang dipanggil yaitu nama Let nya, bukan nama Functionnya.
 console.log(ratarata(4, 8));          // Output: ReferenceError ratarata is not defined
-```
 
-#### ⤷ Anonymous Function
-
-```Javascript
 let hitung = function(a, b){          // Function Expressions tanpa nama Function disebut sebagai Anonymous Function
   return (a+b)/2;                     // Kedepannya penggunaan Anonymous Function inlah yang lebih banyak dijumpai
 }
