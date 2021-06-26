@@ -1484,7 +1484,6 @@ function tambah(c, d){
 let hasil = tambah(6, rerata(7, 3));  // Jalankan Function rerata(7, 3) lalu hasil return-nya yang bernilai 5 gunakan sebagai
                                       // argument. Dengan demikian tambah(6, rerata(7, 3)) akan diolah menjadi tambah(6, 5).
                                       // Lalu hasil dari Function tambah(6, 5) yang bernilai 11 disimpan ke dalam Let hasil.
-
 console.log(hasil);                   // Output: 11
 ```
 
@@ -1498,7 +1497,6 @@ function tambah(c, d){                // Step 2 🡲 Parameter d akan menangkap 
   return c+d(7, 3);                   // Step 3 🡲 Dengan demikian d(7, 3) akan menjadi rerata(7, 3)
 }
 let hasil = tambah(6, rerata);        // Step 1 🡲 Kirim Function bernama rerata (bukan menjalankannya) sebagai sebuah argument
-
 console.log(hasil);                   // Output: 11
 ```
 
@@ -1517,7 +1515,7 @@ salam(foo);                           // Step 1 🡲 Kirim Function bernama foo 
 ```Javascript
 function ulangi(n, aksi){             // aksi merupakan Callback, sehingga Function ulangi disebut sebagai Higher Order Function
   for (let i=0; i<n; i++){
-    aksi(i);
+    aksi(i);                          // aksi(i) akan menjadi console.log(i)/alert(i)
   }
 }
 
@@ -1526,7 +1524,18 @@ ulangi(5, alert);                     // Output: Muncul alert 0 s.d. 4
 ```
 
 ```Javascript
-// ...
+function funA(){
+  console.log(`Hello World!`);
+}
+function funB(param){
+  console.log(`Hello ${param}!`);
+}
+function coba(aksi1, aksi2){          // aksi1 & aksi2 merupakan Callbach, sehingga Function coba disebut Higher Order Function
+  aksi1();                            // aksi() akan menjadi funA()
+  aksi2("JavaScript");                // aksi2("JavaScript") akan menjadi funB("JavaScript")
+}
+coba(funA, funB);                     // Output: Hello World!
+                                      //         Hello JavaScript!
 ```
 
 ### 𝐊. Function as Return Value
