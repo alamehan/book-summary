@@ -1447,7 +1447,7 @@ Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan seb
 
 ### 𝐈. Function Expressions & Anonymous Function
 
-Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (Var/Let), disebut sebagai Function Expressions. Lalu jika sebuah Function Expressions ditulis tanpa nama Function, disebut sebagai Anonymous Function.
+Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (Var/Let), disebut sebagai Function Expressions. Lalu jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
 
 #### ⤷ Function Expressions
 
@@ -1470,9 +1470,9 @@ console.log(hitung(4, 8));            // Output: 6
 
 ### 𝐉. Callback & Higher Order Function
 
-Selanjutnya karena dianggap sebagai tipa data, artinya Function juga dapat digunakan sebagai argument maupun parameter, disebut Callback. Lalu Function yang memiliki Callback sebagai parameter disebut sebagai Higher Order Function.
+Selanjutnya karena dianggap sebagai tipa data, artinya Function juga dapat digunakan sebagai argument, disebut Callback. Lalu Function yang memiliki Callback sebagai argument disebut sebagai Higher Order Function.
 
-#### ⤷ Function Sebagai Argument
+#### ⤷ Menjalankan Function di Argument
 
 ```Javascript
 function rerata(a, b){
@@ -1481,23 +1481,23 @@ function rerata(a, b){
 function tambah(c, d){
   return c+d;
 }
-let hasil = tambah(6, rerata(7, 3));  // Jalankan rerata(7, 3) lalu hasil return-nya yang bernilai 5 gunakan sebagai argument
-                                      // Dengan demikian tambah(6, rerata(7, 3)) akan diolah menjadi tambah(6, 5)
-                                      // Lalu hasil dari Function tambah(6, 5) yang bernilai 11 disimpan ke dalam Let hasil
+let hasil = tambah(6, rerata(7, 3));  // Jalankan Function rerata(7, 3) lalu hasil return-nya yang bernilai 5 gunakan sebagai
+                                      // argument. Dengan demikian tambah(6, rerata(7, 3)) akan diolah menjadi tambah(6, 5).
+                                      // Lalu hasil dari Function tambah(6, 5) yang bernilai 11 disimpan ke dalam Let hasil.
 
 console.log(hasil);                   // Output: 11
 ```
+
+#### ⤷ Mengirim Function sebagai Argument
 
 ```Javascript
 function rerata(a, b){
   return (a+b)/2;
 }
 function tambah(c, d){                // Step 2 🡲 Parameter d akan menangkap Function bernama rerata dari argument
-  return c+d(7, 3);                   // Step 3 🡲 Dengan demikian d(7, 3) akan menjadi rerata(7, 3), hasil return-nya yaitu 5
+  return c+d(7, 3);                   // Step 3 🡲 Dengan demikian d(7, 3) akan menjadi rerata(7, 3)
 }
 let hasil = tambah(6, rerata);        // Step 1 🡲 Kirim Function bernama rerata (bukan menjalankannya) sebagai sebuah argument
-                                      // Step 4 🡲 Dengan demikian tambah(6, rerata) akan diolah menjadi tambah(6, 5)
-                                      // Step 5 🡲 Hasil dari tambah(6, 5) yang bernilai 11 disimpan ke dalam Let hasil
 
 console.log(hasil);                   // Output: 11
 ```
@@ -1512,9 +1512,11 @@ function salam(bar){                  // Step 2 🡲 Parameter bar akan menangka
 salam(foo);                           // Step 1 🡲 Kirim Function bernama foo (bukan menjalankannya) sebagai sebuah argument
 ```
 
-#### ⤷ Function Sebagai Parameter
+#### ⤷ Callback & Higher Order Function
 
-
+```Javascript
+// ...
+```
 
 ### 𝐊. Function as Return Value
 
