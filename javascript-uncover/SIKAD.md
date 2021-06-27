@@ -1676,7 +1676,26 @@ cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengir
                                       //         Hello 2!
 ```
 
+🔔 Pada Implementasinya, Function as Return Value ini akan sering dijumpai di Factory Function, lihat point N di bawah.
+
 ### 𝐋. Inner & Outer Function
+
+Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya". Pemakaian keduanya sudah sering kita jumpai pada contoh-contoh di atas.
+
+```Javascript
+function luar(){                      // luar() merupakan Outer Function bagi tengah()
+  console.log("A");
+  function tengah(){                  // tengah() merupakan Inner Function bagi luar() & Outer Function bagi dalam()
+    console.log("B");
+    function dalam(){                 // dalam() merupakan Inner Function bagi tengah()
+      console.log("C");
+    }
+    dalam();
+  }
+  tengah();
+}
+luar();                               // Output: A B C
+```
 
 ### 𝐌. Closures (Function)
 
