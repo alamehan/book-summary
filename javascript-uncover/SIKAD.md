@@ -1281,7 +1281,7 @@ temC = "Teks diganti!";               // Output: TypeError Assignment to constan
 
 ### 𝐇. Inner & Outer Function
 
-Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya". Pemakaian keduanya sudah sering kita jumpai pada contoh-contoh di atas.
+Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya".
 
 ```Javascript
 function luar(){                      // luar() merupakan Outer Function bagi tengah()
