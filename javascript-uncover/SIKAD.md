@@ -999,11 +999,11 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 > > - [X] 𝐈. Function Expressions & Anonymous Function
 > > - [X] 𝐉. Callback & Higher Order Function
 > > - [X] 𝐊. Function as Return Value
+> > - [X] 𝐋. Factory Function
   
 > 𝐊𝐨𝐧𝐬𝐞𝐩 𝐋𝐚𝐧𝐣𝐮𝐭𝐚𝐧
-> > - [X] 𝐋. Inner & Outer Function
-> > - [X] 𝐌. Closures (Function)
-> > - [X] 𝐍. Factory Function
+> > - [X] 𝐌. Inner & Outer Function
+> > - [X] 𝐍. Closures (Function)
 > > - [X] 𝐎. IImmediately-invoked Function Expression (IIFE)
 > > - [X] 𝐏. Arrow Function
 
@@ -1678,9 +1678,15 @@ cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengir
                                       //         Hello 2!
 ```
 
-🔔 Pada Implementasinya, Function as Return Value ini akan sering dijumpai di Factory Function, lihat point N di bawah.
+### 𝐋. Factory Function
 
-### 𝐋. Inner & Outer Function
+Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya (atau bisa juga dianggap sudah jalan ½ nya). Simak contoh di bawah ini.
+
+```Javascript
+// ...
+```
+
+### 𝐌. Inner & Outer Function
 
 Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya". Pemakaian keduanya sudah sering kita jumpai pada contoh-contoh di atas.
 
@@ -1699,9 +1705,7 @@ function luar(){                      // luar() merupakan Outer Function bagi te
 luar();                               // Output: A B C
 ```
 
-### 𝐌. Closures (Function)
-
-### 𝐍. Factory Function
+### 𝐍. Closures (Function)
 
 ### 𝐎. IImmediately-invoked Function Expression (IIFE)
 
