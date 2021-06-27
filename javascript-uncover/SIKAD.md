@@ -1002,7 +1002,7 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 > > - [X] 𝐋. Callback & Higher Order Function
 > > - [X] 𝐌. Function as Return Value
 > > - [X] 𝐍. Factory Function
-> > - [X] 𝐎. IImmediately-invoked Function Expression (IIFE)
+> > - [X] 𝐎. Immediately Invoked Function Expression (IIFE)
 > > - [X] 𝐏. Arrow Function
 
 ### 𝐀. Function Declaration
@@ -1765,7 +1765,7 @@ sapaJaka("Pintar");                   // Output: Pagi, Jaka Pintar!   ⇨ Menjal
 sapaJaka("Cerdas");                   // Output: Pagi, Jaka Cerdas!   ⇨ Menjalankan Factory Function sapaJaka("Cerdas");
 ```
 
-### 𝐎. IImmediately-invoked Function Expression (IIFE)
+### 𝐎. Immediately Invoked Function Expression (IIFE)
 
 Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut sebagai IIFE. Jika dalam Function biasa kita menjalankan Function dengan cara memanggil nama Function yang dipilih lalu ditambahkan tanda (), maka dalam IIFE kita dapat menjalankan Function langsung saat Function tersebut dibuat dengan cara menulis perintah berpola ```(___)()```, dimana ___ diisi dengan Function yang hendak dibuat, misalnya ```(function(){ console.log("A") })()```. Atau bisa juga polanya ```(___())```, misalnya ```(function(){ console.log("A") }())```.
 
