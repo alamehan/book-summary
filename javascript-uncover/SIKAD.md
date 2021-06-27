@@ -1840,8 +1840,86 @@ console.log(add());                   // Output: 3              ⇨ Menjalankan 
 
 Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. Namun tidak hanya itu, di bab (...) nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
 
+#### ⤷ Contoh Tanpa Argument
+
 ```Javascript
-// ...
+let pagiA = function(){ return "Selamat Pagi!"; };    // Penulisan Function Expressions biasa
+let pagiB = () => { return "Selamat Pagi!"; };        // Penulisan Function Expressions dengan Arrow Function
+let pagiC = () => "Selamat Pagi!";                    // Note: Bahkan jika isi Function hanya berupa return saja, maka keyword
+                                                      //       return serta tanda {} tidak perlu ditulis, keren bukan?
+
+console.log(pagiA());                                 // Output: Selamat Pagi!
+console.log(pagiB());                                 // Output: Selamat Pagi!
+console.log(pagiC());                                 // Output: Selamat Pagi!
+```
+
+#### ⤷ Contoh Dengan 1 Argument
+
+```Javascript
+let sapaA = function(nama){ return `Hi ${nama}!`; };  // Penulisan Function Expressions biasa
+let sapaB = (nama) => `Hi ${nama}!`;                  // Penulisan Function Expressions dengan Arrow Function
+let sapaC = nama => `Hi ${nama}!`;                    // Note: Bahkan jika jumlah parameter hanya 1 saja, maka tanda ()
+                                                      //       tidak perlu ditulis, lebih keren lagi bukan?
+
+console.log(sapaA("Budi"));                           // Output: Hi Budi!
+console.log(sapaB("Budi"));                           // Output: Hi Budi!
+console.log(sapaC("Budi"));                           // Output: Hi Budi!
+```
+
+#### ⤷ Contoh Dengan Banyak Argument
+
+```Javascript
+let totalA = function(a, b, c){ return a+b+c; };      // Penulisan Function Expressions biasa
+let totalB = (a, b, c) => { return a+b+c; };          // Penulisan Function Expressions dengan Arrow Function (1)
+let totalC = (a, b, c) => a+b+c;                      // Penulisan Function Expressions dengan Arrow Function (2)
+
+console.log(totalA(1, 2, 3));                         // Output: 6
+console.log(totalB(1, 2, 3));                         // Output: 6
+console.log(totalC(1, 2, 3));                         // Output: 6
+```
+
+#### ⤷ Studi Kasus: Return Array
+
+```Javascript
+let arrSiswa = ["Budi", "Joko", "Sukma"];
+
+let jumlahHurufA = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
+  return nama.length;                                 // Note: Object instance method "map" dibahas di bab 3-2 E
+});
+
+let jumlahHurufB = arrSiswa.map(nama => nama.length); // Penulisan dengan Arrow Function (jauh lebih singkat!)
+
+console.log(jumlahHurufA);                            // Output: [4, 4, 5]
+console.log(jumlahHurufB);                            // Output: [4, 4, 5]
+```
+
+#### ⤷ Studi Kasus: Return Object
+
+```Javascript
+let arrSiswa = ["Budi", "Joko", "Sukma"];
+
+let jumlahHurufC = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
+  return {nama: nama, jumlah: nama.length}; 
+});
+
+let jumlahHurufD = arrSiswa.map(nama => ({            // Penulisan dengan Arrow Function (1)
+  nama: nama, jumlah: nama.length
+}));
+
+console.log(jumlahHurufC);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
+console.log(jumlahHurufD);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
+```
+
+Saat ingin return Object di Arrow Function, tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka function. Solusinya, bungkus terlebih dahulu menggunakan tanda (), menjadi ``` arrSiswa.map(nama => ({nama: nama}));```. Hal ini serupa dengan point O di atas, terkait IIFE yang perlu dibungkus terlebih dahulu menggunakan tanda (). Namun jika pusing dengan cara penulisan tersebut, gunakan cara pada umumnya saja (tanpa penyingkatan), yaitu membuka block Function dengan tanda {} dan menyertakan keyword return. Simak contoh di bawah.
+
+```Javascript
+let arrSiswa = ["Budi", "Joko", "Sukma"];
+
+let jumlahHurufE = arrSiswa.map(nama => {             // Penulisan dengan Arrow Function (2)
+  return {nama: nama, jumlah: nama.length}
+})
+
+console.log(jumlahHurufE);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 ```
 
 <hr>
