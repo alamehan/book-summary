@@ -1308,7 +1308,7 @@ function init(){
   function tampilNama(){              // Di dalam Function tampilNama() tidak terdapat pendefinisian Var/Let nama, sehingga
     console.log(nama);                // perintah console.log(nama) akan "mencari keluar" scope, dan ditemukanlah Let nama di
   }                                   // parent-nya, lalu digunakan. Dengan demikian Function tampilNama() disebut Closures.
-  tampilNama();
+  tampilNama();                       // Menjalankan Function tampilNama() yang berada di dalam Function init().
 }
 init();                               // Output: Budi
 ```
@@ -1767,7 +1767,61 @@ sapaJaka("Cerdas");                   // Output: Pagi, Jaka Cerdas!   ⇨ Menjal
 
 ### 𝐎. IImmediately-invoked Function Expression (IIFE)
 
+IIFE ditulis dengan pola (function(){..})(); atau (function(){..}());, digunakan untuk membuat Var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga Var menjadi Private. Ini berarti Var tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, penggunaan Var sudah "digantikan" oleh Let yang secara default sudah bersifat Block Scope.
+
+```Javascript
+cetak = function(){                   // Cara penulisan Function Expressions (Annonymous Function) biasa
+  for (let i = 1; i <= 10; i++){
+    console.log(i);
+  }
+}
+cetak();                              // Function dipanggil terlebih dahulu untuk dijalankan
+
+(function(){                          // Cara penulisan IImmediately-invoked Function Expression (IIFE)
+  for (let i = 1; i <= 10; i++){ 
+    console.log(i);
+  }
+})();                                 // Function secara otomatis akan berjalan tanpa perlu dipanggil
+```
+
+#### ⤷ Studi Kasus 1
+
+```Javascript
+let sapa = (function(waktu){          // Secara bersamaan Outer & Inner Function akan otomatis berjalan, berbeda dengan
+  waktu = "Pagi";                     // kasus di Function Factory, dimana hanya Outer Function-nya saja yang berjalan.
+  function tampilkan(nama){
+    console.log(`${waktu}, ${nama}!`);
+  }
+  return tampilkan;
+})();
+
+sapa("Budi");                         // Output: Pagi, Budi!    ⇨ Menjalankan IIFE sapa("Budi");
+sapa("Joko");                         // Output: Pagi, Joko!    ⇨ Menjalankan IIFE sapa("Joko");
+```
+
+#### ⤷ Studi Kasus 2
+
+```Javascript
+let add = (function(){
+  let counter = 0;                    // Baik didefinisikan sebagai Var maupun Let, dengan IIFE, counter seolah
+  function tambah(){                  // akan menjadi Private, nilainya tidak bisa diubah dari luar scope.
+    return ++counter;
+  }
+  return tambah;
+})();
+
+console.log(add());                   // Output: 1              ⇨ Menjalankan IIFE add();
+console.log(add());                   // Output: 2              ⇨ Menjalankan IIFE add();
+console.log(add());                   // Output: 3              ⇨ Menjalankan IIFE add();
+```
+
 ### 𝐏. Arrow Function
+
+Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. Namun tidak hanya itu, di bab (...) nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
+
+```Javascript
+// ...
+```
 
 <hr>
 <div id="bab2_6"></div>
