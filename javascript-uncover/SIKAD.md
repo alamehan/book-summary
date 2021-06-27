@@ -1680,10 +1680,57 @@ cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengir
 
 ### 𝐋. Factory Function
 
-Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya (atau bisa dianggap baru berjalan ½ nya, lalu dijalankan secara penuh melalui Factory Function).
+Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya. Bisa dianggap Function yang baru berjalan separuhnya, lalu dijalankan secara penuh melalui Factory Function.
 
 ```Javascript
-// ...
+function luar(waktu){
+  function dalam(nama){
+    console.log(`${waktu}, ${nama}!`);
+  }
+  return dalam;
+}
+
+let pagi = luar("Pagi");              // luar() baru berjalan ½ nya, dimana waktu sudah berisi dengan nilai String "Pagi",
+                                      // lalu disimpan ke Let pagi yang nantinya akan digunakan sebagai Factory Function.
+
+pagi("Budi");                         // Output: Pagi, Budi!          ⇨ Menjalankan Factory Function pagi("Budi");
+pagi("Joko");                         // Output: Pagi, Joko!          ⇨ Menjalankan Factory Function pagi("Joko");
+
+let sore = luar("Sore");              // luar() baru berjalan ½ nya, dimana waktu sudah berisi dengan nilai String "Sore",
+                                      // lalu disimpan ke Let sore yang nantinya akan digunakan sebagai Factory Function.
+
+sore("Budi");                         // Output: Sore, Budi!          ⇨ Menjalankan Factory Function sore("Budi");
+sore("Joko");                         // Output: Sore, Joko!          ⇨ Menjalankan Factory Function sore("Budi");
+```
+
+```Javascript
+function luar(waktu){
+  function tengah(nama){
+    function dalam(tambahan){
+      console.log(`${waktu}, ${nama} ${tambahan}!`);
+    }
+    return dalam;
+  }
+  return tengah;
+}
+
+let pagi = luar("Pagi");              // luar() baru berjalan ⅓ nya, dimana waktu sudah berisi dengan nilai String "Pagi".
+let sapaBudi = pagi("Budi");          // luar() baru berjalan ⅔ nya, dimana waktu berisi "Pagi" & nama berisi "Budi".
+let sapaJoko = pagi("Joko");          // luar() baru berjalan ⅔ nya, dimana waktu berisi "Pagi" & nama berisi "Joko".
+
+sapaBudi("Pintar");                   // Output: Pagi, Budi Pintar!   ⇨ Menjalankan Factory Function sapaBudi("Pintar");
+sapaBudi("Cerdas");                   // Output: Pagi, Budi Cerdas!   ⇨ Menjalankan Factory Function sapaBudi("Cerdas");
+sapaJoko("Pintar");                   // Output: Pagi, Joko Pintar!   ⇨ Menjalankan Factory Function sapaJoko("Pintar");
+sapaJoko("Cerdas");                   // Output: Pagi, Joko Cerdas!   ⇨ Menjalankan Factory Function sapaJoko("Cerdas");
+
+let sore = luar("Sore");              // luar() baru berjalan ⅓ nya, dimana waktu sudah berisi dengan nilai String "Sore".
+let sapaTono = sore("Tono");          // luar() baru berjalan ⅔ nya, dimana waktu berisi "Sore" & nama berisi "Tono".
+let sapaJaka = sore("Jaka");          // luar() baru berjalan ⅔ nya, dimana waktu berisi "Sore" & nama berisi "Jaka".
+
+sapaTono("Pintar");                   // Output: Pagi, Tono Pintar!   ⇨ Menjalankan Factory Function sapaTono("Pintar");
+sapaTono("Cerdas");                   // Output: Pagi, Tono Cerdas!   ⇨ Menjalankan Factory Function sapaTono("Cerdas");
+sapaJaka("Pintar");                   // Output: Pagi, Jaka Pintar!   ⇨ Menjalankan Factory Function sapaJaka("Pintar");
+sapaJaka("Cerdas");                   // Output: Pagi, Jaka Cerdas!   ⇨ Menjalankan Factory Function sapaJaka("Cerdas");
 ```
 
 ### 𝐌. Inner & Outer Function
