@@ -1558,7 +1558,7 @@ coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   �
 
 ### 𝐊. Function as Return Value
 
-Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digunakan return value dari Function lainnya.
+Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digunakan sebagai return value dari Function lainnya.
 
 #### ⤷ Tipe 1: Function Langsung Didefinisikan di Return
 
