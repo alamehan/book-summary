@@ -1771,7 +1771,7 @@ Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut 
 
 Sebenarnya ide awalnya yaitu perintah berpola ```___()```, namun kita tidak bisa langsung membuat Function lalu ditamahkan tanda () begitu saja. Melainkan Function tersebut harus dibungkus terlebih dahulu menggunakan tanda () lalu ditambah lagi tanda () yang kedua sebagai perintah untuk menjalankan Function. Sehingga pola perintahnya ```(___)()``` bukan ```___()```.
 
-Selain itu, IIFE digunakan juga untuk membuat Var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga Var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, penggunaan Var sudah "digantikan" oleh Let yang secara default sudah bersifat Block Scope.
+Selain itu, IIFE digunakan juga untuk membuat Var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga Var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, pemakaian Var sudah "digantikan" oleh Let yang secara default sudah bersifat Block Scope.
 
 #### ⤷ Function Biasa & IIFE
 
