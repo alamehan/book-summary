@@ -987,7 +987,7 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
   
 > 𝐊𝐨𝐧𝐬𝐞𝐩 𝐔𝐭𝐚𝐦𝐚
 > > - [X] 𝐀. Function Declaration
-> > - [X] 𝐁. Parameter, Argument & Return
+> > - [X] 𝐁. Parameter, Argument & Return Value
 > > - [X] 𝐂. Default Parameter
 > > - [X] 𝐃. Arguments Object
 > > - [X] 𝐄. Rest Parameter
@@ -1024,7 +1024,7 @@ console.log(pagiMalam);               // Output: pagiMalam(){                   
                                       //         }
 ```
 
-### 𝐁. Parameter, Argument & Return
+### 𝐁. Parameter, Argument & Return Value
 
 ```Javascript
 function salam(kapan, nama){          // Kapan & nama adalah sebuah parameter yang akan menampung nilai dari argument
