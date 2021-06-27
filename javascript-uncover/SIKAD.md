@@ -1519,8 +1519,8 @@ function ulangi(n, aksi){             // aksi merupakan Callback, sehingga Funct
   }
 }
 
-ulangi(10, console.log);              // Output: 0 s.d. 9                 ⇨ Mengirim function console.log sebagai argument
-ulangi(5, alert);                     // Output: Muncul alert 0 s.d. 4    ⇨ Mengirim function alert sebagai argument
+ulangi(10, console.log);              // Output: 0 s.d. 9                 ⇨ Mengirim Function console.log sebagai argument
+ulangi(5, alert);                     // Output: Muncul alert 0 s.d. 4    ⇨ Mengirim Function alert sebagai argument
 ```
 
 ```Javascript
@@ -1558,16 +1558,9 @@ coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   �
 
 ### 𝐊. Function as Return Value
 
-Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digunakan sebagai return value dari Function lainnya.
+Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digunakan sebagai return value dari Function lainnya. Dan ketika sebuah Function memiliki return value berupa Function, ini disebut sebagai Higher Order Function juga.
 
-#### ⤷ Tipe 1: Function Langsung Didefinisikan di Return
-
-```Javascript
-function cetak(){
-  console.log("Hello 1!");
-}
-cetak();                              // Output: Hello 1!
-```
+#### ⤷ Tipe 1: Function Langsung Didefinisikan di Return Value
 
 ```Javascript
 function cetak(){
@@ -1595,14 +1588,7 @@ cetak()()();                          // Output: Hello 1!
                                       //         Hello 3!
 ```
 
-#### ⤷ Tipe 2: Function Dipanggil (Bukan Dijalankan) di Return
-
-```Javascript
-function luar(){
-  console.log("Hello 1!");
-}
-luar();                               // Output: Hello 1!
-```
+#### ⤷ Tipe 2: Function Dipanggil (Bukan Dijalankan) di Return Value
 
 ```Javascript
 function luar(){
@@ -1633,17 +1619,48 @@ luar()()();                           // Output: Hello 1!
                                       //         Hello 3!
 ```
 
-#### ⤷ Contoh Dengan Argument
+#### ⤷ Tipe 3: Function Dijalankan di Return Value
+
+```Javascript
+function luar(){
+  console.log("Hello 1!");
+  function dalam(){
+    console.log("Hello 2!");
+  }
+  return dalam();
+}
+luar();                               // Output: Hello 1!
+                                      //         Hello 2!
+```
+
+```Javascript
+function luar(){
+  console.log("Hello 1!");
+    function tengah(){
+        console.log("Hello 2!");
+        function dalam(){
+          console.log("Hello 3!");
+        }
+        return dalam();
+    }
+    return tengah();
+}
+luar();                               // Output: Hello 1!
+                                      //         Hello 2!
+                                      //         Hello 3!
+```
+
+#### ⤷ Kasus Function Dipanggil Dari Luar
 
 ```Javascript
 function external(){
   console.log("Hello 2!");
 }
-function cetak(temp){
+function cetak(temp){                 // STEP 2 🡲 Parameter temp menangkap Function external
   console.log("Hello 1!");
-  return temp;
+  return temp;                        // STEP 3 🡲 Dengan demikian temp akan menjadi external
 }
-cetak(external)();                    // Output: Hello 1!       ⇨ Cara 1: Dijalankan di luar Function
+cetak(external)();                    // Output: Hello 1!     STEP 1 🡲 Mengirim Fuction external sebagai argumnet
                                       //         Hello 2!
 ```
 
@@ -1651,11 +1668,11 @@ cetak(external)();                    // Output: Hello 1!       ⇨ Cara 1: Dija
 function external(){
   console.log("Hello 2!");
 }
-function cetak(temp){
+function cetak(temp){                 // STEP 2 🡲 Parameter temp menangkap Function external
   console.log("Hello 1!");
-  return temp();                      //                        ⇨ Cara 2: Dijalankan di dalam Function
+  return temp();                      // STEP 3 🡲 Dengan demikian temp() akan menjadi external()
 }
-cetak(external);                      // Output: Hello 1!
+cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengirim Fuction external sebagai argumnet
                                       //         Hello 2!
 ```
 
