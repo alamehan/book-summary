@@ -1470,7 +1470,7 @@ console.log(hitung(4, 8));            // Output: 6
 
 ### 𝐉. Callback & Higher Order Function
 
-Selanjutnya karena dianggap sebagai tipa data, artinya Function juga dapat digunakan sebagai argument, disebut Callback. Lalu Function yang memiliki Callback sebagai argument disebut sebagai Higher Order Function.
+Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai argument, disebut Callback. Lalu Function yang memiliki Callback sebagai argument disebut sebagai Higher Order Function.
 
 #### ⤷ Menjalankan Function di Argument
 
@@ -1557,6 +1557,107 @@ coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   �
 🔔 Implementasi Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
 
 ### 𝐊. Function as Return Value
+
+Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digunakan return value dari Function lainnya.
+
+#### ⤷ Tipe 1: Function Langsung Didefinisikan di Return
+
+```Javascript
+function cetak(){
+  console.log("Hello 1!");
+}
+cetak();                              // Output: Hello 1!
+```
+
+```Javascript
+function cetak(){
+  console.log("Hello 1!");
+  return function(){
+    console.log("Hello 2!");
+  }
+}
+cetak()();                            // Output: Hello 1!
+                                      //         Hello 2!
+```
+
+```Javascript
+function cetak(){
+  console.log("Hello 1!");
+  return function(){
+    console.log("Hello 2!");
+    return function(){
+      console.log("Hello 3!");
+    }
+  }
+}
+cetak()()();                          // Output: Hello 1!
+                                      //         Hello 2!
+                                      //         Hello 3!
+```
+
+#### ⤷ Tipe 2: Function Dipanggil (Bukan Dijalankan) di Return
+
+```Javascript
+function luar(){
+  console.log("Hello 1!");
+}
+luar();                               // Output: Hello 1!
+```
+
+```Javascript
+function luar(){
+  console.log("Hello 1!");
+  function dalam(){
+    console.log("Hello 2!");
+  }
+  return dalam;
+}
+luar()();                             // Output: Hello 1!
+                                      //         Hello 2!
+```
+
+```Javascript
+function luar(){
+  console.log("Hello 1!");
+    function tengah(){
+        console.log("Hello 2!");
+        function dalam(){
+          console.log("Hello 3!");
+        }
+        return dalam;
+    }
+    return tengah;
+}
+luar()()();                           // Output: Hello 1!
+                                      //         Hello 2!
+                                      //         Hello 3!
+```
+
+#### ⤷ Contoh Dengan Argument
+
+```Javascript
+function external(){
+  console.log("Hello 2!");
+}
+function cetak(temp){
+  console.log("Hello 1!");
+  return temp;
+}
+cetak(external)();                    // Output: Hello 1!       ⇨ Cara 1: Dijalankan di luar Function
+                                      //         Hello 2!
+```
+
+```Javascript
+function external(){
+  console.log("Hello 2!");
+}
+function cetak(temp){
+  console.log("Hello 1!");
+  return temp();                      //                        ⇨ Cara 2: Dijalankan di dalam Function
+}
+cetak(external);                      // Output: Hello 1!
+                                      //         Hello 2!
+```
 
 ### 𝐋. Inner & Outer Function
 
