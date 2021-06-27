@@ -1910,9 +1910,9 @@ console.log(jumlahHurufC);                            // Output: [{0: {nama: "Bu
 console.log(jumlahHurufD);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 ```
 
-Saat ingin return Object di Arrow Function, tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function. Solusinya, bungkus terlebih dahulu menggunakan tanda (), menjadi ``` arrSiswa.map(nama => ({nama: nama}));```. Hal ini serupa dengan point O di atas, terkait IIFE yang perlu dibungkus terlebih dahulu menggunakan tanda ().
+Saat ingin return Object di Arrow Function, tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ``` arrSiswa.map(nama => ({nama: nama}));```. Hal ini serupa dengan point O di atas, terkait IIFE yang perlu dibungkus terlebih dahulu menggunakan tanda ().
 
-Namun jika pusing dengan cara penulisan tersebut, gunakan cara pada umumnya saja (tanpa penyingkatan), yaitu membuka block Function dengan tanda {} dan menyertakan keyword return. Simak contoh di bawah.
+Namun jika pusing dengan cara penulisan tersebut, gunakan cara pada umumnya saja (tanpa penyingkatan), yaitu membuka block Function dengan tanda {} dan menyertakan keyword return yang diikuti Object yang ingin dikembalikan. Simak contoh di bawah.
 
 ```Javascript
 let arrSiswa = ["Budi", "Joko", "Sukma"];
