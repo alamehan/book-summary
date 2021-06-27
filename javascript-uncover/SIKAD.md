@@ -1920,7 +1920,7 @@ console.log(jumlahHurufE);                            // Output: [{0: {nama: "Bu
 console.log(jumlahHurufF);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 ```
 
-Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ``` arrSiswa.map(nama => ({nama: nama}));```. 
+Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama, jumlah: nama.length});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ``` arrSiswa.map(nama => ({nama: nama, jumlah: nama.length}));```. 
 
 🔔 Hal ini serupa dengan point O di atas, terkait IIFE yang perlu dibungkus terlebih dahulu menggunakan tanda ().
 
