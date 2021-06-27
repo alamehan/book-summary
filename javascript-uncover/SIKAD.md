@@ -1650,7 +1650,7 @@ luar();                               // Output: Hello 1!
                                       //         Hello 3!
 ```
 
-#### ⤷ Kasus Function Dipanggil Dari Luar
+#### ⤷ Kasus Function Sebagai Argument (Dipanggil Dari Luar)
 
 ```Javascript
 function external(){
