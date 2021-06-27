@@ -1887,10 +1887,15 @@ let jumlahHurufA = arrSiswa.map(function(nama) {      // Penulisan Function Expr
   return nama.length;                                 // Note: Object instance method "map" dibahas di bab 3-2 E
 });
 
-let jumlahHurufB = arrSiswa.map(nama => nama.length); // Penulisan dengan Arrow Function (jauh lebih singkat!)
+let jumlahHurufB = arrSiswa.map((nama) => {           // Penulisan dengan Arrow Function (1)
+  return nama.length;
+});
+
+let jumlahHurufC = arrSiswa.map(nama => nama.length); // Penulisan dengan Arrow Function (2)
 
 console.log(jumlahHurufA);                            // Output: [4, 4, 5]
 console.log(jumlahHurufB);                            // Output: [4, 4, 5]
+console.log(jumlahHurufC);                            // Output: [4, 4, 5]
 ```
 
 #### ⤷ Studi Kasus: Return Object
@@ -1898,31 +1903,26 @@ console.log(jumlahHurufB);                            // Output: [4, 4, 5]
 ```Javascript
 let arrSiswa = ["Budi", "Joko", "Sukma"];
 
-let jumlahHurufC = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
+let jumlahHurufD = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
   return {nama: nama, jumlah: nama.length}; 
 });
 
-let jumlahHurufD = arrSiswa.map(nama => ({            // Penulisan dengan Arrow Function (1)
-  nama: nama, jumlah: nama.length
-}));
-
-console.log(jumlahHurufC);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
-console.log(jumlahHurufD);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
-```
-
-Saat ingin return Object di Arrow Function, tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ``` arrSiswa.map(nama => ({nama: nama}));```. Hal ini serupa dengan point O di atas, terkait IIFE yang perlu dibungkus terlebih dahulu menggunakan tanda ().
-
-Namun jika pusing dengan cara penulisan tersebut, gunakan cara pada umumnya saja (tanpa penyingkatan), yaitu membuka block Function dengan tanda {} dan menyertakan keyword return yang diikuti Object yang ingin dikembalikan. Simak contoh di bawah.
-
-```Javascript
-let arrSiswa = ["Budi", "Joko", "Sukma"];
-
-let jumlahHurufE = arrSiswa.map(nama => {             // Penulisan dengan Arrow Function (2)
+let jumlahHurufE = arrSiswa.map((nama) => {           // Penulisan dengan Arrow Function (1)
   return {nama: nama, jumlah: nama.length}
 })
 
+let jumlahHurufF = arrSiswa.map(nama => ({            // Penulisan dengan Arrow Function (2)
+  nama: nama, jumlah: nama.length
+}));
+
+console.log(jumlahHurufD);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 console.log(jumlahHurufE);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
+console.log(jumlahHurufF);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 ```
+
+Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ``` arrSiswa.map(nama => ({nama: nama}));```. 
+
+🔔 Hal ini serupa dengan point O di atas, terkait IIFE yang perlu dibungkus terlebih dahulu menggunakan tanda ().
 
 <hr>
 <div id="bab2_6"></div>
