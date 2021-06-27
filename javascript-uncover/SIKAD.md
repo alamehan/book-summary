@@ -955,7 +955,7 @@ for (var [index, i] of arrSiswa.entries()){
 
 Perulangan For in digunakan khusus untuk menampilkan seluruh isi Object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi Array (karena Array pun termasuk ke dalam tipe data Object), namun tidak disarankan.<br>
 
-🔔 Object dibahas di bab 2-6 & bab 3.
+🔔 Object dibahas di bab 2-6 & bab 3
 
 ```Javascript
 var objMobil = {
@@ -1878,7 +1878,7 @@ console.log(totalB(1, 2, 3));                         // Output: 6
 console.log(totalC(1, 2, 3));                         // Output: 6
 ```
 
-#### ⤷ Studi Kasus: Return Array
+#### ⤷ Studi Kasus 1: Return Array
 
 ```Javascript
 let arrSiswa = ["Budi", "Joko", "Sukma"];
@@ -1898,7 +1898,9 @@ console.log(jumlahHurufB);                            // Output: [4, 4, 5]
 console.log(jumlahHurufC);                            // Output: [4, 4, 5]
 ```
 
-#### ⤷ Studi Kasus: Return Object
+#### ⤷ Studi Kasus 2: Return Object
+
+🔔 Object dibahas di bab 2-6 & bab 3
 
 ```Javascript
 let arrSiswa = ["Budi", "Joko", "Sukma"];
@@ -1920,9 +1922,9 @@ console.log(jumlahHurufE);                            // Output: [{0: {nama: "Bu
 console.log(jumlahHurufF);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 ```
 
-Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama, jumlah: nama.length});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ``` arrSiswa.map(nama => ({nama: nama, jumlah: nama.length}));```. 
+Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama, jumlah: nama.length});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ```arrSiswa.map(nama => ({nama: nama, jumlah: nama.length}));```. Bahkan lagi jika Property Object namanya sama dengan nilainya maka tidak perlu ditulis keduanya, menjadi ```arrSiswa.map(nama => ({nama, jumlah: nama.length}));```.
 
-🔔 Hal ini serupa dengan point O di atas, terkait IIFE yang perlu dibungkus terlebih dahulu menggunakan tanda ().
+🔔 Pembungkusan menggunakan tanda () serupa dengan pembungkusan pada point O di atas terkait IIFE
 
 <hr>
 <div id="bab2_6"></div>
