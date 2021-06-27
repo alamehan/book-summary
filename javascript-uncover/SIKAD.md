@@ -1680,7 +1680,7 @@ cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengir
 
 ### 𝐋. Factory Function
 
-Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya (atau bisa juga dianggap sudah jalan ½ nya). Simak contoh di bawah ini.
+Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya (atau bisa dianggap baru berjalan ½ nya, lalu dijalankan secara penuh melalui Factory Function).
 
 ```Javascript
 // ...
