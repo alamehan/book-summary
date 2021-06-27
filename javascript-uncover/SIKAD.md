@@ -1767,7 +1767,11 @@ sapaJaka("Cerdas");                   // Output: Pagi, Jaka Cerdas!   ⇨ Menjal
 
 ### 𝐎. IImmediately-invoked Function Expression (IIFE)
 
-IIFE ditulis dengan pola (function(){..})(); atau (function(){..}());, ini membuatnya akan berjalan secara otomatis tanpa perlu dipanggil layaknya Function biasa. Selain itu, IIFE digunakan juga untuk membuat Var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga Var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, penggunaan Var sudah "digantikan" oleh Let yang secara default sudah bersifat Block Scope.
+Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut sebagai IIFE. Jika dalam Function biasa kita menjalankan Function dengan cara memanggil nama Function yang dipilih lalu ditambahkan tanda (), maka dalam IIFE kita dapat menjalankan Function langsung saat Function tersebut dibuat dengan cara menulis perintah berpola ```(___)()```, dimana ___ diisi dengan Function yang hendak dibuat, misalnya ```(function(){ console.log("A") })()```. 
+
+Sebenarnya ide awalnya yaitu perintah berpola ```___()```, namun kita tidak bisa langsung membuat Function lalu ditamahkan tanda () begitu saja. Melainkan Function tersebut harus dibungkus terlebih dahulu menggunakan tanda () lalu ditambah lagi tanda () yang kedua sebagai perintah untuk menjalankan Function. Sehingga pola perintahnya ```(___)()``` bukan ```___()```.
+
+Selain itu, IIFE digunakan juga untuk membuat Var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga Var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, penggunaan Var sudah "digantikan" oleh Let yang secara default sudah bersifat Block Scope.
 
 #### ⤷ Function Biasa & IIFE
 
