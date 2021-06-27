@@ -1767,7 +1767,7 @@ sapaJaka("Cerdas");                   // Output: Pagi, Jaka Cerdas!   ⇨ Menjal
 
 ### 𝐎. IImmediately-invoked Function Expression (IIFE)
 
-IIFE ditulis dengan pola (function(){..})(); atau (function(){..}());. Ini membuatnya akan berjalan secara otomatis tanpa perlu dipanggil layaknya Function biasa. IIFE digunakan untuk membuat Var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga Var menjadi Private yang membuatnya tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, penggunaan Var sudah "digantikan" oleh Let yang secara default sudah bersifat Block Scope.
+IIFE ditulis dengan pola (function(){..})(); atau (function(){..}());, ini membuatnya akan berjalan secara otomatis tanpa perlu dipanggil layaknya Function biasa. Selain itu, IIFE digunakan juga untuk membuat Var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga Var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, penggunaan Var sudah "digantikan" oleh Let yang secara default sudah bersifat Block Scope.
 
 ```Javascript
 cetak = function(){                   // Cara penulisan Function Expressions (Annonymous Function) biasa
