@@ -993,17 +993,15 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 > > - [X] 𝐄. Rest Parameter
 > > - [X] 𝐅. Variable Scope
 > > - [X] 𝐆. Var, Let & Const
-> > - [X] 𝐇. JavaScript Hoisting
+> > - [X] 𝐇. Inner & Outer Function
+> > - [X] 𝐈. Closures (Function)
+> > - [X] 𝐉. JavaScript Hoisting
 
 > 𝐅𝐢𝐫𝐬𝐭-𝐂𝐥𝐚𝐬𝐬 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧
-> > - [X] 𝐈. Function Expressions & Anonymous Function
-> > - [X] 𝐉. Callback & Higher Order Function
-> > - [X] 𝐊. Function as Return Value
-> > - [X] 𝐋. Factory Function
-  
-> 𝐊𝐨𝐧𝐬𝐞𝐩 𝐋𝐚𝐧𝐣𝐮𝐭𝐚𝐧
-> > - [X] 𝐌. Inner & Outer Function
-> > - [X] 𝐍. Closures (Function)
+> > - [X] 𝐊. Function Expressions & Anonymous Function
+> > - [X] 𝐋. Callback & Higher Order Function
+> > - [X] 𝐌. Function as Return Value
+> > - [X] 𝐍. Factory Function
 > > - [X] 𝐎. IImmediately-invoked Function Expression (IIFE)
 > > - [X] 𝐏. Arrow Function
 
@@ -1281,7 +1279,32 @@ const tempC = "Hello Wolrd!";
 temC = "Teks diganti!";               // Output: TypeError Assignment to constant variable (Const tidak bisa ditimpa nilai baru)
 ```
 
-### 𝐇. JavaScript Hoisting
+### 𝐇. Inner & Outer Function
+
+Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya". Pemakaian keduanya sudah sering kita jumpai pada contoh-contoh di atas.
+
+```Javascript
+function luar(){                      // luar() merupakan Outer Function bagi tengah()
+  console.log("A");
+  function tengah(){                  // tengah() merupakan Inner Function bagi luar() & Outer Function bagi dalam()
+    console.log("B");
+    function dalam(){                 // dalam() merupakan Inner Function bagi tengah()
+      console.log("C");
+    }
+    dalam();
+  }
+  tengah();
+}
+luar();                               // Output: A B C
+```
+
+### 𝐈. Closures (Function)
+
+```Javascript
+// ...
+```
+
+### 𝐉. JavaScript Hoisting
 
 Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai Undefined, sedangkan Function akan diisi Functionnya itu sendiri. Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja. Let, Const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
 
@@ -1447,7 +1470,7 @@ console.log(nama);                    // console.log(nama);               🡲 O
 
 Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan Let & Const sebagai alternatif dari Var. Prilaku Let & Const lebih "masuk akal" dibandingkan dengan Var. Let & Const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan Var malah menghasilkan undefined (karena efek hoisting). Selain itu Let & Const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope.
 
-### 𝐈. Function Expressions & Anonymous Function
+### 𝐊. Function Expressions & Anonymous Function
 
 Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (Var/Let), disebut sebagai Function Expressions. Lalu jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
 
@@ -1470,7 +1493,7 @@ let hitung = function(a, b){          // Function Expressions tanpa nama Functio
 console.log(hitung(4, 8));            // Output: 6
 ```
 
-### 𝐉. Callback & Higher Order Function
+### 𝐋. Callback & Higher Order Function
 
 Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai argument, disebut Callback. Lalu Function yang memiliki Callback sebagai argument disebut sebagai Higher Order Function.
 
@@ -1558,7 +1581,7 @@ coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   �
 
 🔔 Implementasi Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
 
-### 𝐊. Function as Return Value
+### 𝐌. Function as Return Value
 
 Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digunakan sebagai return value dari Function lainnya. Dan ketika sebuah Function memiliki return value berupa Function, ini disebut sebagai Higher Order Function juga.
 
@@ -1678,7 +1701,7 @@ cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengir
                                       //         Hello 2!
 ```
 
-### 𝐋. Factory Function
+### 𝐍. Factory Function
 
 Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya. Bisa dianggap Function yang baru berjalan separuhnya, lalu dijalankan secara penuh melalui Factory Function.
 
@@ -1732,27 +1755,6 @@ sapaTono("Cerdas");                   // Output: Pagi, Tono Cerdas!   ⇨ Menjal
 sapaJaka("Pintar");                   // Output: Pagi, Jaka Pintar!   ⇨ Menjalankan Factory Function sapaJaka("Pintar");
 sapaJaka("Cerdas");                   // Output: Pagi, Jaka Cerdas!   ⇨ Menjalankan Factory Function sapaJaka("Cerdas");
 ```
-
-### 𝐌. Inner & Outer Function
-
-Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya". Pemakaian keduanya sudah sering kita jumpai pada contoh-contoh di atas.
-
-```Javascript
-function luar(){                      // luar() merupakan Outer Function bagi tengah()
-  console.log("A");
-  function tengah(){                  // tengah() merupakan Inner Function bagi luar() & Outer Function bagi dalam()
-    console.log("B");
-    function dalam(){                 // dalam() merupakan Inner Function bagi tengah()
-      console.log("C");
-    }
-    dalam();
-  }
-  tengah();
-}
-luar();                               // Output: A B C
-```
-
-### 𝐍. Closures (Function)
 
 ### 𝐎. IImmediately-invoked Function Expression (IIFE)
 
