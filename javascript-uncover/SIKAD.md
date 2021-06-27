@@ -1300,8 +1300,17 @@ luar();                               // Output: A B C
 
 ### 𝐈. Closures (Function)
 
+Inner Function yang memiliki akses/menggunakan data yang ada di parent scope-nya (Outer Function), disebut sebagai Closures.
+
 ```Javascript
-// ...
+function init(){
+  let nama = "Budi";
+  function tampilNama(){              // Di dalam Function tampilNama() tidak terdapat pendefinisian Var/Let nama, sehingga
+    console.log(nama);                // perintah console.log(nama) akan "mencari keluar" scope, dan ditemukanlah Let nama di
+  }                                   // parent-nya, lalu digunakan. Dengan demikian Function tampilNama() disebut Closures.
+  tampilNama();
+}
+init();                               // Output: Budi
 ```
 
 ### 𝐉. JavaScript Hoisting
