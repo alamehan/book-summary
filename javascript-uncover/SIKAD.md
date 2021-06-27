@@ -1126,11 +1126,13 @@ console.log(ratarata(2, 4, 8, 16));   // Output: 7.5  (Hasil dari (2+4+8+16)/4 ğ
 
 ### ğ„. Rest Parameter
 
+Selain untuk menggabungkan Array seperti yang sudah dibahas di bab 2-2 L, Spread (...) juga dapat digunakan untuk menggantikan peran Arguments Object, dan inilah yang disebut dentan Rest Parameter. Hasil pemanggilan Function sama saja dengan point D di atas.
+
 ```Javascript
-function numC(...arg){                // Selain untuk menggabungkan Array seperti yang sudah dibahas di bab 2-2 L, Spread (...)
-  console.log(arg[0]);                // juga dapat digunakan untuk menggantikan peran Arguments Object, dan inilah yang disebut
-  console.log(arg[1]);                // dentan Rest Parameter. Hasil pemanggilan Function sama saja dengan point D di atas.
-  console.log(arg[2]);                // Note: Penulisannya tidak harus ...arg, bisa dengan kata lain, misalnya ...angka, dll.
+function numC(...arg){                // Rest Parameter. Penulisannya tidak harus ...arg, bisa dengan kata lain, ...bebas.
+  console.log(arg[0]);
+  console.log(arg[1]);
+  console.log(arg[2]);
   console.log(arg[3]);
 }
 
