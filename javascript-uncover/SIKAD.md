@@ -2,8 +2,8 @@
 
 # JavaScript Uncover
 
-**Markdown ini ditulis oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a> | Jalur Belajar Web Developer: <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a> | Semoga bermanfaat 😊<br>
-Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, yaitu:
+**Markdown ini ditulis oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a> | Jalur Belajar Web Developer: <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a> | Semoga bermanfaat 😊. Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari website:
+
 1. <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS (ID)</a>
 2. <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now (ID)</a>
 3. <a href="https://bukureact.id/">Be Fullstack Javascript Developer | BukuReact.id (ID)</a>
