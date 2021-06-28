@@ -13,7 +13,7 @@ Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/j
 8. <a href="https://www.w3schools.com/">W3Schools (EN)</a>
 9. <a href="https://www.w3docs.com/">W3Docs (EN)</a>
 
-**Markdown ini ditulis oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a>. Semoga bermanfaat 😊<br>
+**Markdown ini ditulis oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a> | Jalur Belajar Web Developer: <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a> | Semoga bermanfaat 😊<br>
 **Note**: Semua keterangan terkait mengacu ke bab sekian, segera perbaiki, karena strukturnya udah berubah (⚠️)
 
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">⟲</a>
