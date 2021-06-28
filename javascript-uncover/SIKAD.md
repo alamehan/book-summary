@@ -16,8 +16,6 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 <!--⚠️⚠️⚠️ Note: Semua keterangan terkait mengacu ke bab sekian, segera perbaiki, karena strukturnya udah berubah ⚠️⚠️⚠️-->
 
-Semoga bermanfaat 😊
-
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">⟲</a>
 
 <details>
