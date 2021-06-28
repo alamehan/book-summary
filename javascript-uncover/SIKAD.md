@@ -599,11 +599,11 @@ var i = g + h;      // Artinya jumlahkan g + h dulu (Operator "+" memiliki prece
 ```Javascript
 var gabA = gabB = gabC = gabD = gabE = 20;
 
-gabA += 10;                           // gabA = gabA + 10 🡲 gabA = 20 + 10      (Output: 30) 
-gabB -= 10;                           // gabB = gabB - 10 🡲 gabB = 20 - 10      (Output: 10)
-gabC /= 10;                           // gabC = gabC / 10 🡲 gabC = 20 / 10      (Output: 2)
-gabD *= 10;                           // gabD = gabD * 10 🡲 gabD = 20 * 10      (Output: 200) 
-gabE %= 10;                           // gabE = gabE % 10 🡲 gabE = 20 % 10      (Output: 0)
+gabA += 10;                           // gabA = gabA + 10 🡲 gabA = 20 + 10      (Hasilnya: 30) 
+gabB -= 10;                           // gabB = gabB - 10 🡲 gabB = 20 - 10      (Hasilnya: 10)
+gabC /= 10;                           // gabC = gabC / 10 🡲 gabC = 20 / 10      (Hasilnya: 2)
+gabD *= 10;                           // gabD = gabD * 10 🡲 gabD = 20 * 10      (Hasilnya: 200) 
+gabE %= 10;                           // gabE = gabE % 10 🡲 gabE = 20 % 10      (Hasilnya: 0)
 ```
 
 ### 𝐆. Operator Increment & Decrement
@@ -1970,7 +1970,7 @@ let objB = {                          // Let objB berisi Object dengan Property 
 };
 ```
 
-#### ⤷ Contoh Pendefinisian Object
+#### ⤷ Contoh Object
 
 ```Javascript
 let mobil = {                         // Let mobil berisi Object tentang mobil (sebagai contoh saja)
@@ -2030,7 +2030,83 @@ console.log(mobil.hidupkan());        // Output: Mesin Dinyalakan!  (Hasil retur
 
 ### 𝐁. Nested Object
 
+```Javascript
+let mahasiswa = {
+  nama: "Budi",
+  jurusan: "Informatika",
+  ipk: {                              // Nested Object (Object ipk di dalam Object mahasiswa)
+    semester1: 3.1,
+    semester2: 3.6,
+  },
+  smt: 3
+};
+
+console.log(mahasiswa.ipk)            // Output: {semester1: 3.1, semester2: 3.6}
+console.log(mahasiswa.ipk.semester1)  // Output: 3.1                ⇨ Mengakses Nested Object dengan Dot Notation
+console.log(mahasiswa.ipk.semester2)  // Output: 3.6                ⇨ Mengakses Nested Object dengan Dot Notation
+```
+
 ### 𝐂. Object Reference
+
+#### ⤷ Tipe Data Primitif: Assignment by Value
+
+```Javascript
+let motor = "NMax";
+let motorBaru = motor;                // Assignment by Value        ⇨ Value (nilai) dari Let motor di-copy ke Let motorBaru
+console.log(motor);                   // Output: NMax
+console.log(motorBaru);               // Output: NMax
+
+motorBaru = "Ninja";                  // Update nilai motorBaru
+console.log(motor);                   // Output: NMax               ⇨ Nilai dari motor tidak terpengaruh
+console.log(motorBaru);               // Output: Ninja              ⇨ Nilai dari motorBaru sudah berubah
+
+motor = "PCX";                        // Update nilai motor
+console.log(motor);                   // Output: PCX
+console.log(motorBaru);               // Output: Ninja
+```
+
+#### ⤷ Tipe Data Object: Assignment by Reference
+
+```Javascript
+let mobil = {
+  merk: "Toyota Avanza",
+  tipe: "MPV"
+};
+let mobilBaru = mobil;                // Assignment by Reference    ⇨ Reference (alamat memory) mobil di-copy ke mobilBaru
+console.log(mobil.merk);              // Output: Toyota Avanza
+console.log(mobilBaru.merk);          // Output: Toyota Avanza
+
+mobilBaru.merk = "Honda Civic";       // Update nilai mobilBaru.merk
+console.log(mobil.merk);              // Output: Honda Civic        ⇨ Nilai dari mobil.merk ikut terpengaruh
+console.log(mobilBaru.merk);          // Output: Honda Civic        ⇨ Nilai dari mobilBaru.merk sudah berubah
+
+mobil.tipe = "Sedan";                 // Update nilai mobil.tipe
+console.log(mobil.tipe);              // Output: Sedan
+console.log(mobilBaru.tipe);          // Output: Sedan
+```
+
+#### ⤷ Efek Assignment by Reference di Operasi Perbandingan
+
+```Javascript
+let mhs1 = {
+  nama: "Budi",
+  jurusan: "Informatika"
+};
+let mhs1Baru = mhs1;                  // Assignment by Reference
+console.log(mhs1 == mhs1Baru);        // Output: true
+console.log(mhs1 === mhs1Baru);       // Output: true
+
+let mhs2 = {
+  nama: "Joko",
+  jurusan: "Arsitektur"
+};
+let mhs2Baru = {
+  nama: "Joko",
+  jurusan: "Arsitektur"
+};
+console.log(mhs2 == mhs2Baru);        // Output: false  (Why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
+console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
+```
   
 </details>
 
