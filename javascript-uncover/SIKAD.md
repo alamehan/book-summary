@@ -9,8 +9,8 @@ Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/j
 4. <a href="https://flaviocopes.com/page/ebooks/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes (EN)</a>
 5. <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheatsheet (EN)</a>
 6. <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List (EN)</a>
-7. <a href="https://www.w3schools.com/">W3Schools (EN)</a>
-8. <a href="https://www.w3schools.com/jsref/default.asp">W3Schools Cheat Sheet (EN)</a>
+7. <a href="https://www.w3schools.com/jsref/default.asp">W3Schools Cheat Sheet (EN)</a>
+8. <a href="https://www.w3schools.com/">W3Schools (EN)</a>
 9. <a href="https://www.w3docs.com/">W3Docs (EN)</a>
 
 **Markdown ini ditulis oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a><br><br>. Semoga bermanfaat 😊
