@@ -1953,31 +1953,79 @@ Property merupakan Variable (Var/Let/Const) yang berada di dalam Object, sedangk
 #### ⤷ Pendefinisian Object
 
 ```Javascript
-// ...
+let objA = {};                        // Let objA berisi Object kosong
+console.log(typeof objA);             // Output: object
+
+let objB = {                          // Let objB berisi Object dengan Property & Method
+  property1: "isi_property1",
+  property2: "isi_property1",
+  property3: "isi_property1",
+
+  method1: function(){
+    "isi method 1";
+  },
+  method2: function(){
+    "isi method 2";
+  }
+};
 ```
 
 #### ⤷ Contoh Pendefinisian Object
 
 ```Javascript
-// ...
+let mobil = {                         // Let mobil berisi Object tentang mobil (sebagai contoh saja)
+  merk: "Toyota Avanza",
+  tipe: "MPV",
+  harga: 200000000,
+
+  hidupkan: function(){
+    return "Mesin Dihidupkan!";
+  },
+  pergi: function(tempat){
+    return `Pergi ke ${tempat}`;
+  }
+};
 ```
 
 #### ⤷ Mengakses Property & Method
 
 ```Javascript
-// ...
+console.log(mobil.merk);              // Output: Toyota Avanza      ⇨ Mengakses Property menggunakan Dot Notation (✔️ Recommended)
+console.log(mobil["merk"]);           // Output: Toyota Avanza      ⇨ Mengakses Property menggunakan Bracket (❌ Not Recommended)
+console.log(mobil.hidupkan());        // Output: Mesin Dihidupkan!  ⇨ Mengakses Method tanpa Argument
+console.log(mobil.pergi("Bali"));     // Output: Pergi ke Bali      ⇨ Mengakses Method dengan Argument
 ```
 
 #### ⤷ Menambah Property & Method
 
 ```Javascript
-// ...
+mobil.warna = "Biru";                 // Menambah Property warna ke Object mobil (ditambahkan di luar pendefinisian Object mobil)
+mobil.modif = true;                   // Menambah Property modif ke Object mobil (ditambahkan di luar pendefinisian Object mobil)
+mobil.matikan = function(){           // Menambah Method matikan ke Object mobil (ditambahkan di luar pendefinisian Object mobil)
+  return "Mesin Dimatikan!";
+};
+
+console.log(mobil.warna);             // Output: Biru
+console.log(mobil.modif);             // Output: true
+console.log(mobil.matikan());         // Output: Mesin Dimatikan!
 ```
 
-#### ⤷ Mengubah Nilai Property & Method
+#### ⤷ Mengubah nilai Property & Method
 
 ```Javascript
-// ...
+console.log(mobil.merk);              // Output: Toyota Avanza      (Nilai property merk sebelum diubah)
+console.log(mobil.tipe);              // Output: MPV                (Nilai property tipe sebelum diubah)
+console.log(mobil.hidupkan());        // Output: Mesin Dihidupkan!  (Hasil return method hidupkan sebelum diubah)
+
+mobil.merk = "Honda Civic";           // Menimpa nilai property merk dari object mobil
+mobil.tipe = "Sedan";                 // Menimpa nilai property tipe dari object mobil
+mobil.hidupkan = function(){          // Menimpa nilai method hidupkan dari object mobil
+  return "Mesin Dinyalakan!";
+};
+
+console.log(mobil.merk);              // Output: Honda Civic        (Nilai property merk sesudah diubah)
+console.log(mobil.tipe);              // Output: Sedan              (Nilai property tipe sesudah diubah)
+console.log(mobil.hidupkan());        // Output: Mesin Dinyalakan!  (Hasil return method hidupkan sesudah diubah)
 ```
 
 ### 𝐁. Nested Object
