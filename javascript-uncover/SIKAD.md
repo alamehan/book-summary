@@ -2,9 +2,18 @@
 
 # JavaScript Uncover
 
-Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari website <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a>, <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>, <a href="https://bukureact.id/">BukuReact.id</a>, <a href="https://flaviocopes.com/page/ebooks/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a>, <a href="https://www.w3schools.com/">W3Schools</a> dan <a href="https://www.w3docs.com/">W3Docs</a>. Cheat Sheet dapat diakses di <a href="https://www.w3schools.com/jsref/default.asp">W3Schools: JavaScript Reference</a>. Semoga bermanfaat 😊
+Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari website: 
+1. <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS (ID)</a>
+2. <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now (ID)</a>
+3. <a href="https://bukureact.id/">BukuReact.id (ID)</a>
+4. <a href="https://flaviocopes.com/page/ebooks/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes (EN)</a>
+5. <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheatsheet (EN)</a>
+6. <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List (EN)</a>
+7. <a href="https://www.w3schools.com/">W3Schools (EN)</a>
+8. <a href="https://www.w3schools.com/jsref/default.asp">W3Schools Cheat Sheet (EN)</a>
+9. <a href="https://www.w3docs.com/">W3Docs (EN)</a>
 
-**Markdown ini ditulis oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a><br><br>
+**Markdown ini ditulis oleh**: <a href="https://alamehan.github.io/">alamehan.github.io</a><br><br>. Semoga bermanfaat 😊
 **Note**: Semua keterangan terkait mengacu ke bab sekian, segera perbaiki, karena strukturnya udah berubah (⚠️)
 
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">⟲</a>
