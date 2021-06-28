@@ -1948,7 +1948,7 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 
 JavaScript menggunakan konsep Prototypical Inheritance untuk menerapkan konsep pemrograman berbasis Object. Secara singkatnya, untuk membuat Object di JavaScript, caranya dengan langsung menulis Object tersebut (tidak perlu membuat Class, seperti yang dilakukan di bahasa pemrograman lain). Di dalam Object, terdapat istilah Property & Method.
 
-Property merupakan Variable (Var/Let/Const) yang berada di dalam object, sedangkan Method merupakan Function yang berada di dalam object. Untuk Method, ditulis menggunakan Function Expressions (Anonymous Function). Baik Property maupun Method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian Variable biasa. Serta, diantara Property maupun Method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
+Property merupakan Variable (Var/Let/Const) yang berada di dalam Object, sedangkan Method merupakan Function yang berada di dalam Object. Untuk Method, ditulis menggunakan Function Expressions (Anonymous Function). Baik Property maupun Method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian Variable biasa. Serta, diantara Property maupun Method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
 
 #### ⤷ Pendefinisian Object
 
