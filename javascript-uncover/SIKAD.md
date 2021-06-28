@@ -1943,6 +1943,7 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 > - [X] 𝐀. Object Sebagai Tipe Data
 > - [X] 𝐁. Nested Object
 > - [X] 𝐂. Object Reference
+> - [X] 𝐃. Keyword this
 
 ### 𝐀. Object Sebagai Tipe Data
 
@@ -2106,6 +2107,12 @@ let mhs2Baru = {
 };
 console.log(mhs2 == mhs2Baru);        // Output: false  (Why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
 console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
+```
+
+### 𝐃. Keyword this
+
+```Javascript
+// ...
 ```
   
 </details>
