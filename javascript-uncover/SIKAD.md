@@ -2238,10 +2238,10 @@ const sapaJaka1 = sapa1.bind(userB);  // Buat Function sapa1() baru dgn this men
 const sapaBudi2 = sapa2.bind(userA, "Bandung", "ID"); // bind() juga dapat disisipkan Argument, dan bahkan bisa lebih dari 1.
 const sapaJaka2 = sapa2.bind(userB, "Jakarta", "ID");
 
-sapaBudi1();                          // Output: Saya Budi, 17 tahun.                     ⇨ Menjalankan FUnction sapa1() "baru"
-sapaJaka1();                          // Output: Saya Joko, 21 tahun.                     ⇨ Menjalankan FUnction sapa1() "baru"
-sapaBudi2();                          // Output: Saya Budi, 17 tahun, asal Bandung ID.    ⇨ Menjalankan FUnction sapa2() "baru"
-sapaJaka2();                          // Output: Saya Joko, 21 tahun, asal Jakarta ID.    ⇨ Menjalankan FUnction sapa2() "baru"
+sapaBudi1();                          // Output: Saya Budi, 17 tahun.                     ⇨ Menjalankan Function sapa1() "baru"
+sapaJaka1();                          // Output: Saya Joko, 21 tahun.                     ⇨ Menjalankan Function sapa1() "baru"
+sapaBudi2();                          // Output: Saya Budi, 17 tahun, asal Bandung ID.    ⇨ Menjalankan Function sapa2() "baru"
+sapaJaka2();                          // Output: Saya Joko, 21 tahun, asal Jakarta ID.    ⇨ Menjalankan Function sapa2() "baru"
 
 sapa1.call(userA);                    // Langsung panggil (tidak membuat) Function sapa1() dengan this mengacu pada Object userA.
 sapa1.call(userB);                    // Langsung panggil (tidak membuat) Function sapa1() dengan this mengacu pada Object userB.
