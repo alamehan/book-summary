@@ -1965,7 +1965,7 @@ let objB = {                          // Let objB berisi Object dengan Property 
   method1(){                          // Penulisan Method cara 1: Function Declaration
     "isi method 1";
   },
-  method2: function(){                // Penulisan Method cara 2: Function Expressions
+  method2: function(){                // Penulisan Method cara 2: Function Expressions (Anonymous Function)
     "isi method 2";
   },
   method3: () => {                    // Penulisan Method cara 3: Arrow Function
@@ -2113,6 +2113,8 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 ```
 
 ### 𝐃. Keyword this
+
+Di JavaScript, keyword this mengacu/merujuk ke suatu Object tertentu tergantung dari konteks dimana keyword this dipanggil.
 
 #### ⤷ Keyword this merujuk ke Global Object (Windows).
   
