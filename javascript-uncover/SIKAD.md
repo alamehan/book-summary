@@ -2186,9 +2186,9 @@ let mhs = {
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
   halo3: () => {                      // halo3: () => {                     🡲 Penulisan Method cara 3: Arrow Function
-    console.log(this);                //   console.log(mhs);                🡲 Output: Window {window: Window, self: Window, ...}
-    console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: undefined
-    console.log(this.umur);           //   console.log(mhs.umur);           🡲 Output: undefined
+    console.log(this);                //   console.log(window);             🡲 Output: Window {window: Window, self: Window, ...}
+    console.log(this.nama);           //   console.log(window.nama);        🡲 Output: undefined
+    console.log(this.umur);           //   console.log(window.umur);        🡲 Output: undefined
   },                                  // },
 }
 
