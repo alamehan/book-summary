@@ -2118,7 +2118,7 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 
 Di JavaScript, keyword this mengacu/merujuk ke suatu Object tertentu tergantung dari konteks dimana keyword this dipanggil. Apakah dipanggil langsung di baris kode, atau di dalam sebuah Function, atau di dalam Method, atau di sebuah Event, dll. Simak contoh di bawah.
 
-#### ⤷ ⓵ Keyword this merujuk ke Global Object (Windows).
+#### ⤷ 1. Keyword this merujuk ke Global Object (Windows).
   
 ```Javascript
 console.log(this);                    // Output: Window {window: Window, self: Window, ...}
@@ -2129,7 +2129,7 @@ let conA = this;
 console.log(conA);                    // Output: Window {window: Window, self: Window, ...}
 ```
 
-#### ⤷ ⓶ Di dalam Function, keyword this merujuk ke Global Object (Windows).
+#### ⤷ 2. Di dalam Function, keyword this merujuk ke Global Object (Windows).
 
 ```Javascript
 function funA(){                      // Penulisan Function Declaration
@@ -2145,7 +2145,7 @@ funC = () => {                        // Penulisan Arrow Function
 }; funC();
 ```
 
-#### ⤷ ⓷ Di dalam Function yang memakai Strict Mode, keyword this menjadi undefined, terkecuali Arrow Function.
+#### ⤷ 3. Di dalam Function yang memakai Strict Mode, keyword this menjadi undefined, terkecuali Arrow Function.
 
 ```Javascript
 function funA(){                      // Penulisan Function Declaration
@@ -2164,7 +2164,7 @@ funC = () => {                        // Penulisan Arrow Function
 }; funC();
 ```
 
-#### ⤷ ⓸ Di dalam Method di Object, keyword this merujuk ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
+#### ⤷ 4. Di dalam Method di Object, keyword this merujuk ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
    
 ```Javascript
 let mhs = {
@@ -2197,7 +2197,7 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-#### ⤷ ⓹ Di dalam Method di Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat).
+#### ⤷ 5. Di dalam Method di Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat).
 
 🔔 Constructor Function dibahas di bab 3-1 B
 
@@ -2205,7 +2205,7 @@ mhs.halo3();
 // ...
 ```
 
-#### ⤷ ⓺ Di dalam Method di Class, , keyword this merujuk ke Owner Object (Object yang dibuat).
+#### ⤷ 6. Di dalam Method di Class, , keyword this merujuk ke Owner Object (Object yang dibuat).
 
 🔔 Class dibahas di bab 3-1 B
 
@@ -2213,7 +2213,7 @@ mhs.halo3();
 // ...
 ```
 
-#### ⤷ ⓻ Di dalam Event, keyword this merujuk ke Element yang menerima Event tersebut.
+#### ⤷ 7. Di dalam Event, keyword this merujuk ke Element yang menerima Event tersebut.
 
 🔔 Event dibahas di bab 4-7
 
@@ -2228,7 +2228,7 @@ mhs.halo3();
 </html>
 ```
 
-#### ⤷ ⓼ Method bind(), call() & apply() membuat keyword this merujuk pada Object yang dituju.
+#### ⤷ 8. Method bind(), call() & apply() membuat keyword this merujuk pada Object yang dituju.
 
 🔔 Method bawaan JavaScript dibahas di bab 3-2
 
