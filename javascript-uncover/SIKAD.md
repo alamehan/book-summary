@@ -2114,13 +2114,13 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 
 ### 𝐃. Keyword this
 
-#### ⤷ 1. Keyword this merujuk ke Global Object (Windows).
+#### ⤷ Keyword this merujuk ke Global Object (Windows).
   
 ```Javascript
 console.log(this);                    // Output: Window {window: Window, self: Window, ...}
 ```
 
-#### ⤷ 2. Di dalam function, keyword this merujuk ke Global Object (Windows).
+#### ⤷ Di dalam function, keyword this merujuk ke Global Object (Windows).
 
 ```Javascript
 function funA(){                      // Penulisan Function Declaration
@@ -2136,7 +2136,7 @@ funC = () => {                        // Penulisan Arrow Function
 }; funC();
 ```
 
-#### ⤷ 3. Di dalam function yang memakai Strict Mode, keyword this menjadi undefined, terkecuali Arrow Function.
+#### ⤷ Di dalam function yang memakai Strict Mode, keyword this menjadi undefined, terkecuali Arrow Function.
 
 ```Javascript
 function funA(){                      // Penulisan Function Declaration
@@ -2155,7 +2155,7 @@ funC = () => {                        // Penulisan Arrow Function
 }; funC();
 ```
 
-#### ⤷ 4. Di dalam method, keyword this merujuk ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
+#### ⤷ Di dalam method, keyword this merujuk ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
    
 ```Javascript
 let mhs = {
@@ -2188,13 +2188,13 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-#### ⤷ 5. Di dalam event, keyword this merujuk ke Element yang menerima event tersebut
+#### ⤷ Di dalam event, keyword this merujuk ke Element yang menerima event tersebut
 
 ```Javascript
 // ...
 ```
 
-#### ⤷ 6. Method seperti call() & apply() membuat keyword this merujuk ke Object apa pun
+#### ⤷ Method seperti call() & apply() membuat keyword this merujuk ke Object apa pun
 
 ```Javascript
 // ...
