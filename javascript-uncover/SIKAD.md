@@ -2193,13 +2193,14 @@ let mhs = {
     console.log(this.umur);           //   console.log(window.umur);        🡲 Output: undefined
   },                                  // },
 }
-
+                                      // Catatan: Karena tidak ditemukan this di dalam Object, maka this yang dirujuk Arrow
+                                      //          Function yaitu Global Object (Windows), sebagai this terluar yang ada.
 mhs.halo1();
 mhs.halo2();
 mhs.halo3();
 ```
 
-Kasus Nested, dimana jika dalam sebuah Method di Object tertentu, memiliki Inner Function lagi di dalamnya (Object → Method → Inner Function), maka Inner Function tersebut memiliki konteks this yang berbeda pula. Simak contoh di bawah.
+Jika dalam sebuah Method di Object tertentu memiliki Inner Function lagi di dalamnya (Ilustrasi: Object → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Simak contoh di bawah.
 
 ```Javascript
 let mhs = {
@@ -2209,25 +2210,26 @@ let mhs = {
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
                                       //
-    function sikadA(){                //   function sikadA(){
+    function innerA(){                //   function innerA(){
       console.log(this);              //     console.log(window);           🡲 Output: Window {window: Window, self: Window, ...}
       console.log(this.nama);         //     console.log(window.nama);      🡲 Output: undefined
     };                                //   };
-    sikadB = function(){              //   sikadB = function(){
+    innerB = function(){              //   innerB = function(){
       console.log(this);              //     console.log(window);           🡲 Output: Window {window: Window, self: Window, ...}
       console.log(this.nama);         //     console.log(window.nama);      🡲 Output: undefined
     };                                //   };
-    sikadC = () => {                  //   sikadC = () => {
+    innerC = () => {                  //   innerC = () => {
       console.log(this);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
       console.log(this.nama);         //     console.log(mhs.nama);         🡲 Output: Budi
     };                                //   };
                                       //
-    sikadA();                         //   sikadA();
-    sikadB();                         //   sikadB();
-    sikadC();                         //   sikadC();
+    innerA();                         //   innerA();
+    innerB();                         //   innerB();
+    innerC();                         //   innerC();
   }                                   // }
 }
-
+                                      // Catatan: Karena di luar Arrow Function innerC() ditemukan this milik Function halo(),
+                                      //          maka itulah this yang akan dirujuk oleh Arrow Function.
 mhs.halo();
 ```
 
