@@ -1958,15 +1958,18 @@ let objA = {};                        // Let objA berisi Object kosong
 console.log(typeof objA);             // Output: object
 
 let objB = {                          // Let objB berisi Object dengan Property & Method
-  property1: "isi_property1",
+  property1: "isi_property1",         // Penulisan Property
   property2: "isi_property1",
   property3: "isi_property1",
 
-  method1: function(){
+  method1(){                          // Penulisan Method cara 1: Function Declaration
     "isi method 1";
   },
-  method2: function(){
+  method2: function(){                // Penulisan Method cara 2: Function Expressions
     "isi method 2";
+  },
+  method3: () => {                    // Penulisan Method cara 3: Arrow Function
+    "isi method 3";
   }
 };
 ```
@@ -1974,15 +1977,15 @@ let objB = {                          // Let objB berisi Object dengan Property 
 #### ⤷ Contoh Object
 
 ```Javascript
-let mobil = {                         // Let mobil berisi Object tentang mobil (sebagai contoh saja)
+let mobil = {                         // Let mobil berisi Object tentang mobil (Contoh saja)
   merk: "Toyota Avanza",
   tipe: "MPV",
   harga: 200000000,
 
-  hidupkan: function(){
+  hidupkan(){                         // Penulisan menggunakan Function Declaration
     return "Mesin Dihidupkan!";
   },
-  pergi: function(tempat){
+  pergi(tempat){                      // Penulisan menggunakan Function Declaration
     return `Pergi ke ${tempat}`;
   }
 };
@@ -2110,6 +2113,88 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 ```
 
 ### 𝐃. Keyword this
+
+#### ⤷ 1. Keyword this merujuk ke Global Object (Windows).
+  
+```Javascript
+console.log(this);                    // Output: Window {window: Window, self: Window, ...}
+```
+
+#### ⤷ 2. Di dalam function, keyword this merujuk ke Global Object (Windows).
+
+```Javascript
+function funA(){                      // Penulisan Function Declaration
+  console.log(this);                  // Output: Window {window: Window, self: Window, ...}
+}; funA();
+
+funB = function(){                    // Penulisan Function Expressions (Anonymous Function)
+  console.log(this);                  // Output: Window {window: Window, self: Window, ...}
+}; funB();
+
+funC = () => {                        // Penulisan Arrow Function
+  console.log(this);                  // Output: Window {window: Window, self: Window, ...}
+}; funC();
+```
+
+#### ⤷ 3. Di dalam function yang memakai Strict Mode, keyword this menjadi undefined, terkecuali Arrow Function.
+
+```Javascript
+function funA(){                      // Penulisan Function Declaration
+  "use strict";
+  console.log(this);                  // Output: undefined
+}; funA();
+
+funB = function(){                    // Penulisan Function Expressions (Anonymous Function)
+  "use strict";
+  console.log(this);                  // Output: undefined
+}; funB();
+
+funC = () => {                        // Penulisan Arrow Function
+  "use strict";
+  console.log(this);                  // Output: Window {window: Window, self: Window, ...}
+}; funC();
+```
+
+#### ⤷ 4. Di dalam method, keyword this merujuk ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
+   
+```Javascript
+let mhs = {
+  nama: "Budi",
+  umur: 16,
+                                      // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+  halo1(){                            // halo1(){                           🡲 Penulisan Method cara 1: Function Declaration
+    console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", umur: 16, halo: ƒ}
+    console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
+    console.log(this.umur);           //   console.log(mhs.umur);           🡲 Output: 16
+  },                                  // },
+
+                                      // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+  halo2: function(){                  // halo2: function(){                 🡲 Penulisan Method cara 2: Function Expressions
+    console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", umur: 16, halo: ƒ}
+    console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
+    console.log(this.umur);           //   console.log(mhs.umur);           🡲 Output: 16
+  },                                  // },
+
+                                      // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+  halo3: () => {                      // halo3: () => {                     🡲 Penulisan Method cara 3: Arrow Function
+    console.log(this);                //   console.log(mhs);                🡲 Output: Window {window: Window, self: Window, ...}
+    console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: undefined
+    console.log(this.umur);           //   console.log(mhs.umur);           🡲 Output: undefined
+  },                                  // },
+}
+
+mhs.halo1();
+mhs.halo2();
+mhs.halo3();
+```
+
+#### ⤷ 5. Di dalam event, keyword this merujuk ke Element yang menerima event tersebut
+
+```Javascript
+// ...
+```
+
+#### ⤷ 6. Method seperti call() & apply() membuat keyword this merujuk ke Object apa pun
 
 ```Javascript
 // ...
