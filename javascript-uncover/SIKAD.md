@@ -2129,7 +2129,7 @@ let conA = this;
 console.log(conA);                    // Output: Window {window: Window, self: Window, ...}
 ```
 
-#### ⤷ Di dalam function, keyword this merujuk ke Global Object (Windows).
+#### ⤷ Di dalam Function, keyword this merujuk ke Global Object (Windows).
 
 ```Javascript
 function funA(){                      // Penulisan Function Declaration
@@ -2145,7 +2145,7 @@ funC = () => {                        // Penulisan Arrow Function
 }; funC();
 ```
 
-#### ⤷ Di dalam function yang memakai Strict Mode, keyword this menjadi undefined, terkecuali Arrow Function.
+#### ⤷ Di dalam Function yang memakai Strict Mode, keyword this menjadi undefined, terkecuali Arrow Function.
 
 ```Javascript
 function funA(){                      // Penulisan Function Declaration
@@ -2164,7 +2164,20 @@ funC = () => {                        // Penulisan Arrow Function
 }; funC();
 ```
 
-#### ⤷ Di dalam method, keyword this merujuk ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
+#### ⤷ Di dalam Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat)/
+
+🔔 Constructor Function dibahas di bab 3-1 B
+
+```Javascript
+function funD(){                      // Penulisan Constructor Function. Sebenarnya serupa dengan penulisan Function Declaration,
+  "use strict";                       // hanya saja berbeda pada saat pemanggilan Function-nya, yaitu diawali dengan keyword "new".
+  console.log(this);                  
+};
+new funD();                           // Output: fundD {}     ⇨ Menjalankan Constructor Function dengan diawali keyword "new".
+let foo = new funD();                 // Output: fundD {}     ⇨ Constructor Function yang disimpan ke dalam Let terlebih dahulu.
+```
+
+#### ⤷ Di dalam Method, keyword this merujuk ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
    
 ```Javascript
 let mhs = {
