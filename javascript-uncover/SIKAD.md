@@ -2205,7 +2205,7 @@ mhs.halo3();
 // ...
 ```
 
-#### ⤷ 6. Di dalam Method di Class, , keyword this merujuk ke Owner Object (Object yang dibuat).
+#### ⤷ 6. Di dalam Method di Class, keyword this merujuk ke Owner Object (Object yang dibuat).
 
 🔔 Class dibahas di bab 3-1 B
 
