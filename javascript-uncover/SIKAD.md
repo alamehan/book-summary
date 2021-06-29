@@ -2116,9 +2116,9 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 
 ### 𝐃. Keyword this
 
-Di JavaScript, keyword this mengacu/merujuk ke suatu Object tertentu tergantung dari konteks dimana keyword this dipanggil. Apakah dipanggil langsung di baris kode, atau di dalam sebuah Function, atau di dalam Method, atau di sebuah Event, dll. Simak contoh di bawah.
+Di JavaScript, keyword this mengacu/merujuk ke suatu Object tertentu tergantung dari konteks dimana keyword this dipanggil. Apakah dipanggil langsung di baris kode, atau di dalam sebuah Function, atau di dalam Method, atau di sebuah Event, dll.
 
-Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan merujuk pada this yang berada di parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga menemukan this, dimana this terluar yaitu Global Object (Windows).
+Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan merujuk pada this yang berada di parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga Global Object (Windows).
 
 #### ⤷ 1. Keyword this merujuk ke Global Object (Windows).
   
