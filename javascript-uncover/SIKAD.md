@@ -2231,8 +2231,8 @@ function sapa2(a, b) {
   console.log(`Saya ${this.name}, ${this.age} tahun, asal ${a} ${b}.`);
 };
 
-const sapaBudi1 = sapa1.bind(userA);  // Buat Function sapa1() baru dengan this mengacu pada Object userA, simpan ke Const sapaBudi.
-const sapaJaka1 = sapa1.bind(userB);  // Buat Function sapa1() baru dengan this mengacu pada Object userB, simpan ke Const sapaJaka.
+const sapaBudi1 = sapa1.bind(userA);  // Buat Function sapa1() baru dgn this mengacu pada Object userA, simpan ke Const sapaBudi.
+const sapaJaka1 = sapa1.bind(userB);  // Buat Function sapa1() baru dgn this mengacu pada Object userB, simpan ke Const sapaJaka.
 const sapaBudi2 = sapa2.bind(userA, "Bandung", "ID"); // bind() juga dapat disisipkan Argument, dan bahkan bisa lebih dari 1.
 const sapaJaka2 = sapa2.bind(userB, "Jakarta", "ID");
 
