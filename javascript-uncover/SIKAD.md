@@ -2052,6 +2052,8 @@ console.log(mahasiswa.ipk.semester2)  // Output: 3.6                ⇨ Mengakse
 
 ### 𝐂. Object Reference
 
+Prilaku sebuah Object ketika dipindahkan/disalin ke Variable lain bersifat Assignment by Reference, yang disalin bukan nilainya melainkan alamat memorynya. Simak contoh di bawah ini.
+
 #### ⤷ Tipe Data Primitif: Assignment by Value
 
 ```Javascript
