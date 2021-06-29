@@ -2052,7 +2052,7 @@ console.log(mahasiswa.ipk.semester2)  // Output: 3.6                ⇨ Mengakse
 
 ### 𝐂. Object Reference
 
-Prilaku sebuah Object ketika dipindahkan/disalin ke Variable lain bersifat Assignment by Reference, yang disalin bukan nilainya melainkan alamat memorynya. Simak contoh di bawah ini.
+Tipe data primitif bersifat Assignment by Value, artinya saat dipindahkan/disalin ke Variable lain, yang disalin yaitu nilainya. Sedangkan, Tipe data Object bersifat Assignment by Reference, artinya saat dipindahkan/disalin ke Variable lain, yang disalin yaitu alamat memory-nya.
 
 #### ⤷ Tipe Data Primitif: Assignment by Value
 
