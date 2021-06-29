@@ -2164,19 +2164,6 @@ funC = () => {                        // Penulisan Arrow Function
 }; funC();
 ```
 
-#### ⤷ Di dalam Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat)/
-
-🔔 Constructor Function dibahas di bab 3-1 B
-
-```Javascript
-function funD(){                      // Penulisan Constructor Function. Sebenarnya serupa dengan penulisan Function Declaration,
-  "use strict";                       // hanya saja berbeda pada saat pemanggilan Function-nya, yaitu diawali dengan keyword "new".
-  console.log(this);                  
-};
-new funD();                           // Output: fundD {}     ⇨ Menjalankan Constructor Function dengan diawali keyword "new"
-let foo = new funD();                 // Output: fundD {}     ⇨ Constructor Function yang disimpan ke dalam Let terlebih dahulu
-```
-
 #### ⤷ Di dalam Method, keyword this merujuk ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
    
 ```Javascript
@@ -2208,6 +2195,19 @@ let mhs = {
 mhs.halo1();
 mhs.halo2();
 mhs.halo3();
+```
+
+#### ⤷ Di dalam Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat).
+
+🔔 Constructor Function dibahas di bab 3-1 B
+
+```Javascript
+function funD(){                      // Penulisan Constructor Function. Sebenarnya serupa dengan penulisan Function Declaration,
+  "use strict";                       // hanya saja berbeda pada saat pemanggilan Function-nya, yaitu diawali dengan keyword "new".
+  console.log(this);                  
+};
+new funD();                           // Output: fundD {}     ⇨ Menjalankan Constructor Function dengan diawali keyword "new"
+let foo = new funD();                 // Output: fundD {}     ⇨ Constructor Function yang disimpan ke dalam Let terlebih dahulu
 ```
 
 #### ⤷ Di dalam Event, keyword this merujuk ke Element yang menerima Event tersebut.
