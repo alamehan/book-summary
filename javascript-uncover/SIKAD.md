@@ -2118,6 +2118,8 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 
 Di JavaScript, keyword this mengacu/merujuk ke suatu Object tertentu tergantung dari konteks dimana keyword this dipanggil. Apakah dipanggil langsung di baris kode, atau di dalam sebuah Function, atau di dalam Method, atau di sebuah Event, dll. Simak contoh di bawah.
 
+Yang perlu menjadi catatan yaitu ...
+
 #### ⤷ 1. Keyword this merujuk ke Global Object (Windows).
   
 ```Javascript
@@ -2197,6 +2199,38 @@ mhs.halo2();
 mhs.halo3();
 ```
 
+Kasus Nested, dimana jika dalam sebuah Method di Object tertentu, memiliki Inner Function lagi di dalamnya (Object → Method → Inner Function), maka Inner Function tersebut memiliki konteks this yang berbeda pula. Simak contoh di bawah.
+
+```Javascript
+let mhs = {
+  nama: "Budi",
+                                      // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+  halo: function(){                   // halo: function(){
+    console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
+    console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
+                                      //
+    function sikadA(){                //   function sikadA(){
+      console.log(this);              //     console.log(window);           🡲 Output: Window {window: Window, self: Window, ...}
+      console.log(this.nama);         //     console.log(window.nama);      🡲 Output: undefined
+    };                                //   };
+    sikadB = function(){              //   sikadB = function(){
+      console.log(this);              //     console.log(window);           🡲 Output: Window {window: Window, self: Window, ...}
+      console.log(this.nama);         //     console.log(window.nama);      🡲 Output: undefined
+    };                                //   };
+    sikadC = () => {                  //   sikadC = () => {
+      console.log(this);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
+      console.log(this.nama);         //     console.log(mhs.nama);         🡲 Output: Budi
+    };                                //   };
+                                      //
+    sikadA();                         //   sikadA();
+    sikadB();                         //   sikadB();
+    sikadC();                         //   sikadC();
+  }                                   // }
+}
+
+mhs.halo();
+```
+
 #### ⤷ 5. Di dalam Method di Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat).
 
 🔔 Constructor Function dibahas di bab 3-1 B
@@ -2226,6 +2260,14 @@ mhs.halo3();
     <button onclick="this.style.display='none'">Click to Remove Me!</button>
   </body> 
 </html>
+```
+
+```Javascript
+// ...
+```
+
+```Javascript
+// ...
 ```
 
 #### ⤷ 8. Method bind(), call() & apply() membuat keyword this merujuk pada Object yang dituju.
