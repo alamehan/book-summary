@@ -2197,7 +2197,7 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-#### ⤷ Di dalam Event, keyword this merujuk ke Element yang menerima Event tersebut
+#### ⤷ Di dalam Event, keyword this merujuk ke Element yang menerima Event tersebut.
 
 🔔 Event dibahas di bab 4-7
 
@@ -2212,7 +2212,7 @@ mhs.halo3();
 </html>
 ```
 
-#### ⤷ Method bind(), call() & apply() membuat keyword this merujuk pada Object yang dituju
+#### ⤷ Method bind(), call() & apply() membuat keyword this merujuk pada Object yang dituju.
 
 🔔 Method bawaan JavaScript dibahas di bab 3-2
 
