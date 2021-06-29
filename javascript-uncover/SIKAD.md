@@ -2120,6 +2120,11 @@ Di JavaScript, keyword this mengacu/merujuk ke suatu Object tertentu tergantung 
   
 ```Javascript
 console.log(this);                    // Output: Window {window: Window, self: Window, ...}
+console.log(window);                  // Output: Window {window: Window, self: Window, ...}
+console.log(window === this);         // Output: true
+
+let conA = this;
+console.log(conA);                    // Output: Window {window: Window, self: Window, ...}
 ```
 
 #### ⤷ Di dalam function, keyword this merujuk ke Global Object (Windows).
@@ -2190,16 +2195,61 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-#### ⤷ Di dalam Event, keyword this merujuk ke Element yang menerima event tersebut
+#### ⤷ Di dalam Event, keyword this merujuk ke Element yang menerima Event tersebut
 
-```Javascript
-// ...
+🔔 Event dibahas di bab 4-7
+
+```HTML
+<html>
+  <head>
+    <title>Belajar this</title>
+  </head>
+  <body>
+    <button onclick="this.style.display='none'">Click to Remove Me!</button>
+  </body> 
+</html>
 ```
 
-#### ⤷ Method seperti call() & apply() membuat keyword this merujuk ke Object apa pun
+#### ⤷ Method bind(), call() & apply() membuat keyword this merujuk pada Object yang dituju
+
+🔔 Method bawaan JavaScript dibahas di bab 3-2
 
 ```Javascript
-// ...
+const userA = {
+  name: 'Budi',
+  age: 17,
+};
+const userB = {
+  name: 'Joko',
+  age: 21,
+};
+
+function sapa1() {
+  console.log(`Saya ${this.name}, ${this.age} tahun.`);
+};
+function sapa2(a, b) {
+  console.log(`Saya ${this.name}, ${this.age} tahun, asal ${a} ${b}.`);
+};
+
+const sapaBudi1 = sapa1.bind(userA);  // Buat Function sapa1() baru dengan this mengacu pada Object userA, simpan ke Const sapaBudi.
+const sapaJaka1 = sapa1.bind(userB);  // Buat Function sapa1() baru dengan this mengacu pada Object userB, simpan ke Const sapaJaka.
+const sapaBudi2 = sapa2.bind(userA, "Bandung", "ID"); // bind() juga dapat disisipkan Argument, dan bahkan bisa lebih dari 1.
+const sapaJaka2 = sapa2.bind(userB, "Jakarta", "ID");
+
+sapaBudi1();                          // Output: Saya Budi, 17 tahun.                     ⇨ Menjalankan FUnction sapa1() "baru"
+sapaJaka1();                          // Output: Saya Joko, 21 tahun.                     ⇨ Menjalankan FUnction sapa1() "baru"
+sapaBudi2();                          // Output: Saya Budi, 17 tahun, asal Bandung ID.    ⇨ Menjalankan FUnction sapa2() "baru"
+sapaJaka2();                          // Output: Saya Joko, 21 tahun, asal Jakarta ID.    ⇨ Menjalankan FUnction sapa2() "baru"
+
+sapa1.call(userA);                    // Langsung panggil (tidak membuat) Function sapa1() dengan this mengacu pada Object userA.
+sapa1.call(userB);                    // Langsung panggil (tidak membuat) Function sapa1() dengan this mengacu pada Object userB.
+sapa2.call(userA, "Bandung", "ID");   // call() juga dapat disisipkan Argument, dan bahkan bisa lebih dari 1.
+sapa2.call(userB, "Jakarta", "ID");   // Outputnya sama saja dengan Output pada contoh bind() di atas.
+
+sapa1.apply(userA);                   // Sama saja dengan call(), bedanya pada apply(), Argument yang disisipkan berupa Array.
+sapa1.apply(userB);                   // Outputnya sama saja dengan Output pada contoh bind() & call() di atas.
+sapa2.apply(userA, ["Bandung", "ID"]);
+sapa2.apply(userB, ["Bandung", "ID"]);
 ```
   
 </details>
@@ -3217,6 +3267,9 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 | <a href="#bab4_4">4-4. Node Object (Part 1)</a>     	| X Menit       	|
 | <a href="#bab4_5">4-5. Document Object (Part 2)</a> 	| X Menit       	|
 | <a href="#bab4_6">4-6. Node Object (Part 2)</a>     	| X Menit       	|
+| <a href="#bab4_7">4-7. DOM Event</a>     	            | X Menit       	|
+| <a href="#bab4_8">4-8. Event Object</a>     	        | X Menit       	|
+| <a href="#bab4_9">4-9. Event Prevent Default</a>      | X Menit       	|
 
 <hr>
 <div id="bab4_1"></div>
@@ -3247,6 +3300,21 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 <div id="bab4_6"></div>
   
 ## 4-6. Node Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
+  
+<hr>
+<div id="bab4_7"></div>
+  
+## 4-7. DOM Event <a href="#daftar_isi_bab4">🡅</a>
+  
+<hr>
+<div id="bab4_8"></div>
+  
+## 4-8. Event Object <a href="#daftar_isi_bab4">🡅</a>
+  
+<hr>
+<div id="bab4_9"></div>
+  
+## 4-9. Event Prevent Default <a href="#daftar_isi_bab4">🡅</a>
   
 </details>
 
