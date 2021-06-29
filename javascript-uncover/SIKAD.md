@@ -2265,11 +2265,7 @@ mhs.halo();
 ```
 
 ```Javascript
-// ...
-```
-
-```Javascript
-// ...
+// Lihat di video Web Programming Unpas (!)
 ```
 
 #### ⤷ 8. Method bind(), call() & apply() membuat keyword this merujuk pada Object yang dituju.
