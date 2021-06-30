@@ -2206,19 +2206,19 @@ Jika dalam sebuah Method di Object tertentu memiliki Inner Function lagi di dala
 let mhs = {
   nama: "Budi",
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo: function(){                   // halo: function(){
+  halo: function(){                   // halo: function(){                  🡲 Method (Sebagai Outer Function)
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
                                       //
-    function innerA(){                //   function innerA(){
+    function innerA(){                //   function innerA(){               🡲 Function Declaration (Sebagai Inner Function)
       console.log(this);              //     console.log(window);           🡲 Output: Window {window: Window, self: Window, ...}
       console.log(this.nama);         //     console.log(window.nama);      🡲 Output: undefined
     };                                //   };
-    innerB = function(){              //   innerB = function(){
+    innerB = function(){              //   innerB = function(){             🡲 Function Expressions (Sebagai Inner Function)
       console.log(this);              //     console.log(window);           🡲 Output: Window {window: Window, self: Window, ...}
       console.log(this.nama);         //     console.log(window.nama);      🡲 Output: undefined
     };                                //   };
-    innerC = () => {                  //   innerC = () => {
+    innerC = () => {                  //   innerC = () => {                 🡲 Arrow Function (Sebagai Inner Function)
       console.log(this);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
       console.log(this.nama);         //     console.log(mhs.nama);         🡲 Output: Budi
     };                                //   };
