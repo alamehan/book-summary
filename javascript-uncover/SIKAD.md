@@ -2235,7 +2235,7 @@ let mhs = {
 mhs.halo();
 ```
 
-Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration & Function Expressions memiliki this yang merujuk ke Owner Object, maka this milik Method (Outer Function) perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian digunakan di Inner Function. Simak contoh di bawah.
+Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration & Function Expressions memiliki this yang merujuk ke Owner Object, maka this milik Method (Outer Function) perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut digunakan di Inner Function. Agar lebih jelas, simak contoh di bawah.
 
 #### ⤷ 5. Di dalam Method di Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat).
 
