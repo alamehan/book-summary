@@ -2200,7 +2200,9 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-Jika dalam sebuah Method di Object tertentu memiliki Inner Function lagi di dalamnya (Ilustrasi: Object → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Simak contoh di bawah.
+Dalam kasus Method di Object, cara penulisan yang paling sering dijumpai yaitu Function Declaration & Function Expressions.
+
+Kemudian, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Simak contoh di bawah.
 
 ```Javascript
 let mhs = {
