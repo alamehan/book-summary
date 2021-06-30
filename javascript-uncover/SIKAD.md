@@ -2237,6 +2237,38 @@ mhs.halo();
 
 Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration & Function Expressions memiliki this yang merujuk ke Owner Object, maka this milik Method (Outer Function) perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut digunakan di Inner Function. Agar lebih jelas, simak contoh di bawah.
 
+```Javascript
+let mhs = {
+  nama: "Budi",
+                                      // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+  halo: function(){                   // halo: function(){                  🡲 Method (Sebagai Outer Function)
+    console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
+    console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
+                                      //
+    let that = this;                  //   let that = mhs;                  🡲 that mengacu ke Owner Object layaknya this
+                                      //
+    function innerA(){                //   function innerA(){               🡲 Function Declaration (Sebagai Inner Function) (✔️)
+      console.log(that);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
+      console.log(that.nama);         //     console.log(mhs.nama);         🡲 Output: Budi
+    };                                //   };
+    innerB = function(){              //   innerB = function(){             🡲 Function Expressions (Sebagai Inner Function) (✔️)
+      console.log(that);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
+      console.log(that.nama);         //     console.log(mhs.nama);         🡲 Output: Budi
+    };                                //   };
+    innerC = () => {                  //   innerC = () => {                 🡲 Arrow Function (Sebagai Inner Function) (✔️)
+      console.log(this);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
+      console.log(this.nama);         //     console.log(mhs.nama);         🡲 Output: Budi
+    };                                //   };
+                                      //
+    innerA();                         //   innerA();
+    innerB();                         //   innerB();
+    innerC();                         //   innerC();
+  }                                   // }
+}
+
+mhs.halo();
+```
+
 #### ⤷ 5. Di dalam Method di Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat).
 
 🔔 Constructor Function dibahas di bab 3-1 B
