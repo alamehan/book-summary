@@ -701,6 +701,11 @@ console.log(false && "World");        // Output: false  (false bertemu &&, stop,
 
 console.log(false || false && true || "World");   // Output: World  (&& duluan, menjadi: false || false || "World", ...)
 console.log(true || false && true || "World");    // Output: true   (&& duluan, menjadi: true || false || "World", ...)
+
+console.log(null || "World");         // Output: World      (null ≈ false, lalu bertemu ||, lanjut, hasilnya String World)
+console.log(null && "World");         // Output: null       (null ≈ false, lalu bertemu &&, stop, hasilnya null)
+console.log(undefined || "World");    // Output: World      (undefined ≈ false, lalu bertemu ||, lanjut, hasilnya String World)
+console.log(undefined && "World");    // Output: undefined  (undefined ≈ false, lalu bertemu &&, stop, hasilnya undefined)
 ```
 
 ### 𝐉. Operator String
