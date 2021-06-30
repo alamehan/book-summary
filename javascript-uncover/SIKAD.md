@@ -2228,7 +2228,7 @@ let mhs = {
     innerC();                         //   innerC();
   }                                   // }
 }
-                                      // Catatan: Karena di luar Arrow Function innerC() ditemukan this milik Function halo(),
+                                      // Catatan: Karena di luar Arrow Function innerC() ditemukan this milik Method halo(),
                                       //          maka itulah this yang akan dirujuk oleh Arrow Function.
 mhs.halo();
 ```
