@@ -2116,11 +2116,11 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 
 ### 𝐃. Keyword this
 
-Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu this. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parents-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam Method di Object, di dalam Method di Class, atau di sebuah Event, dst.
+Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu this. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parent-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam Method di Object, di dalam Method di Class, atau di sebuah Event, dst.
 
-Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan merujuk pada this yang berada di parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga Global Object (Windows).
+Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan mengacu pada this miliki parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga Global Object (Windows).
 
-#### ⤷ 1. Di konteks Global, keyword this merujuk ke Global Object (Windows).
+#### ⤷ 1. Di konteks Global, keyword this mengacu ke Global Object (Windows).
   
 ```Javascript
 console.log(this);                    // Output: Window {window: Window, self: Window, ...}
@@ -2131,7 +2131,7 @@ let conA = this;
 console.log(conA);                    // Output: Window {window: Window, self: Window, ...}
 ```
 
-#### ⤷ 2. Di dalam Function, keyword this merujuk ke Global Object (Windows).
+#### ⤷ 2. Di dalam Function, keyword this mengacu ke Global Object (Windows).
 
 ```Javascript
 function funA(){                      // Penulisan Function Declaration
@@ -2166,12 +2166,15 @@ funC = () => {                        // Penulisan Arrow Function
 }; funC();
 ```
 
-#### ⤷ 4. Di dalam Method di Object, keyword this merujuk ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
+#### ⤷ 4. Di dalam Method di Object, keyword this mengacu ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
    
 ```Javascript
 let mhs = {
   nama: "Budi",
   umur: 16,
+  coba: this,                         // Jika di luar Object menjalankan perintah console.log(mhs.coba); maka akan menghasilkan
+                                      // Window {window: ...}, artinya this dalam Object mhs mengacu ke Global Object (Windows).
+
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
   halo1(){                            // halo1(){                           🡲 Penulisan Method cara 1: Function Declaration (✔️)
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", umur: 16, halo: ƒ}
@@ -2193,8 +2196,10 @@ let mhs = {
     console.log(this.umur);           //   console.log(window.umur);        🡲 Output: undefined
   },                                  // },
 }
-                                      // Catatan: Karena tidak ditemukan this di dalam Object, maka this yang dirujuk Arrow
-                                      //          Function yaitu Global Object (Windows), sebagai this terluar yang ada.
+                                      // Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni
+                                      //          this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs
+                                      //          mengacu ke Global Object (Windows). Oleh karena itulah this pada contoh Arrow
+                                      //          Function di atas mengacu ke Global Object (Windows).
 mhs.halo1();
 mhs.halo2();
 mhs.halo3();
@@ -2230,12 +2235,13 @@ let mhs = {
     innerC();                         //   innerC();
   }                                   // }
 }
-                                      // Catatan: Karena di luar Arrow Function innerC() ditemukan this milik Method halo(), yang
-                                      //          merujuk ke Owner Object, maka itulah this yang akan dirujuk oleh Arrow Function.
+                                      // Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni
+                                      //          this milik parent scope-nya, yaitu Method halo() yang mengacu ke Object mhs.
+                                      //          Karena itulah this pada contoh Arrow Function di atas mengacu ke Object mhs.
 mhs.halo();
 ```
 
-Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration & Function Expressions memiliki this yang merujuk ke Owner Object, maka this milik Method (Outer Function) perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut digunakan di Inner Function. Agar lebih jelas, simak contoh di bawah.
+Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration (innerA) & Function Expressions (innerB) memiliki this yang mengacu ke Owner Object (dalam kasus ini Object mhs), maka this milik Method halo() perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut dapat digunakan di Inner Function. Sehingga this di Inner Function mengacu ke Object mhs sama halnya seperti this milik Method halo(). Simak contoh di bawah ini.
 
 ```Javascript
 let mhs = {
@@ -2245,7 +2251,7 @@ let mhs = {
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
                                       //
-    let that = this;                  //   let that = mhs;                  🡲 that mengacu ke Owner Object layaknya this
+    let that = this;                  //   let that = mhs;                  🡲 that dibuat mengacu ke Object mhs layaknya this
                                       //
     function innerA(){                //   function innerA(){               🡲 Function Declaration (Sebagai Inner Function) (✔️)
       console.log(that);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
@@ -2269,7 +2275,7 @@ let mhs = {
 mhs.halo();
 ```
 
-#### ⤷ 5. Di dalam Method di Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat).
+#### ⤷ 5. Di dalam Method di Constructor Function, keyword this mengacu ke Owner Object (Object yang dibuat).
 
 🔔 Constructor Function dibahas di bab 3-1 B
 
@@ -2277,7 +2283,7 @@ mhs.halo();
 // ...
 ```
 
-#### ⤷ 6. Di dalam Method di Class, keyword this merujuk ke Owner Object (Object yang dibuat).
+#### ⤷ 6. Di dalam Method di Class, keyword this mengacu ke Owner Object (Object yang dibuat).
 
 🔔 Class dibahas di bab 3-1 B
 
@@ -2285,7 +2291,7 @@ mhs.halo();
 // ...
 ```
 
-#### ⤷ 7. Di dalam Event, keyword this merujuk ke Element yang menerima Event tersebut.
+#### ⤷ 7. Di dalam Event, keyword this mengacu ke Element yang menerima Event tersebut.
 
 🔔 Event dibahas di bab 4-7
 
@@ -2304,7 +2310,7 @@ mhs.halo();
 // Lihat di video Web Programming Unpas (!)
 ```
 
-#### ⤷ 8. Method bind(), call() & apply() membuat keyword this merujuk pada Object yang dituju.
+#### ⤷ 8. Method bind(), call() & apply() membuat keyword this mengacu pada Object yang dituju.
 
 🔔 Method bawaan JavaScript dibahas di bab 3-2
 
