@@ -1513,7 +1513,7 @@ console.log(hitung(4, 8));            // Output: 6
 
 ### 𝐋. Callback & Higher Order Function
 
-Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai argument, disebut Callback. Lalu Function yang memiliki Callback sebagai argument disebut sebagai Higher Order Function.
+Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument, disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function.
 
 #### ⤷ Menjalankan Function di Argument
 
@@ -2173,21 +2173,21 @@ let mhs = {
   nama: "Budi",
   umur: 16,
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo1(){                            // halo1(){                           🡲 Penulisan Method cara 1: Function Declaration
+  halo1(){                            // halo1(){                           🡲 Penulisan Method cara 1: Function Declaration (✔️)
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", umur: 16, halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
     console.log(this.umur);           //   console.log(mhs.umur);           🡲 Output: 16
   },                                  // },
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo2: function(){                  // halo2: function(){                 🡲 Penulisan Method cara 2: Function Expressions
+  halo2: function(){                  // halo2: function(){                 🡲 Penulisan Method cara 2: Function Expressions (✔️)
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", umur: 16, halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
     console.log(this.umur);           //   console.log(mhs.umur);           🡲 Output: 16
   },                                  // },
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo3: () => {                      // halo3: () => {                     🡲 Penulisan Method cara 3: Arrow Function
+  halo3: () => {                      // halo3: () => {                     🡲 Penulisan Method cara 3: Arrow Function (❌)
     console.log(this);                //   console.log(window);             🡲 Output: Window {window: Window, self: Window, ...}
     console.log(this.nama);           //   console.log(window.nama);        🡲 Output: undefined
     console.log(this.umur);           //   console.log(window.umur);        🡲 Output: undefined
@@ -2200,9 +2200,9 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-Dalam kasus Method di Object, cara penulisan yang paling sering dijumpai yaitu Function Declaration & Function Expressions.
+Dalam kasus Method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function, biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument).
 
-Kemudian, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Simak contoh di bawah.
+Selain itu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → Method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Simak contoh di bawah.
 
 ```Javascript
 let mhs = {
@@ -2230,8 +2230,8 @@ let mhs = {
     innerC();                         //   innerC();
   }                                   // }
 }
-                                      // Catatan: Karena di luar Arrow Function innerC() ditemukan this milik Method halo(),
-                                      //          maka itulah this yang akan dirujuk oleh Arrow Function.
+                                      // Catatan: Karena di luar Arrow Function innerC() ditemukan this milik Method halo(), yang
+                                      //          merujuk ke Owner Object, maka itulah this yang akan dirujuk oleh Arrow Function.
 mhs.halo();
 ```
 
