@@ -2200,7 +2200,7 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-Dalam kasus Method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function, biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument).
+Dalam kasus Method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function, biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). Lihat point ...
 
 Selain itu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → Method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Simak contoh di bawah.
 
@@ -2212,15 +2212,15 @@ let mhs = {
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
                                       //
-    function innerA(){                //   function innerA(){               🡲 Function Declaration (Sebagai Inner Function)
+    function innerA(){                //   function innerA(){               🡲 Function Declaration (Sebagai Inner Function) (❌)
       console.log(this);              //     console.log(window);           🡲 Output: Window {window: Window, self: Window, ...}
       console.log(this.nama);         //     console.log(window.nama);      🡲 Output: undefined
     };                                //   };
-    innerB = function(){              //   innerB = function(){             🡲 Function Expressions (Sebagai Inner Function)
+    innerB = function(){              //   innerB = function(){             🡲 Function Expressions (Sebagai Inner Function) (❌)
       console.log(this);              //     console.log(window);           🡲 Output: Window {window: Window, self: Window, ...}
       console.log(this.nama);         //     console.log(window.nama);      🡲 Output: undefined
     };                                //   };
-    innerC = () => {                  //   innerC = () => {                 🡲 Arrow Function (Sebagai Inner Function)
+    innerC = () => {                  //   innerC = () => {                 🡲 Arrow Function (Sebagai Inner Function) (✔️)
       console.log(this);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
       console.log(this.nama);         //     console.log(mhs.nama);         🡲 Output: Budi
     };                                //   };
@@ -2234,6 +2234,8 @@ let mhs = {
                                       //          merujuk ke Owner Object, maka itulah this yang akan dirujuk oleh Arrow Function.
 mhs.halo();
 ```
+
+Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration & Function Expressions memiliki this yang merujuk ke Owner Object, maka this milik Method (Outer Function) perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian digunakan di Inner Function. Simak contoh di bawah.
 
 #### ⤷ 5. Di dalam Method di Constructor Function, keyword this merujuk ke Owner Object (Object yang dibuat).
 
