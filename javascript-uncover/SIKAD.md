@@ -84,7 +84,7 @@ Perkembangan JavaScript Saat Ini: Website yang tidak berbentuk “website”, te
 
 Namun perlu juga dipahami bahwa walaupun materi di eBook JavaScript Uncover sudah lumayan rumit, ini barulah dasar dari JavaScript. Jika anda serius ingin mempelajari JavaScript lebih jauh lagi, bisa lanjut ke library seperti **jQuery**, framework seperti **AngularJS**, **ReactJS** maupun **VueJS**, atau ke server menggunakan **Node.js**.
 
-Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat diakses <a href="https://www.jetbrains.com/lp/javascript-25/">disini</a> dan <a href="https://en.wikipedia.org/wiki/ECMAScript">disini</a>.
+Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat diakses <a href="https://www.jetbrains.com/lp/javascript-25/">Jetbrains</a>, <a href="https://en.wikipedia.org/wiki/ECMAScript">Wikipedia</a> dan <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Turriate</a>.
   
 <hr>
 <div id="bab1_3"></div>
