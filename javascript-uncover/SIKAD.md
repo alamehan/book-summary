@@ -1614,7 +1614,7 @@ funA("Budi", function(arg){ console.log(arg) });    // Output: Pagi, Budi!    �
                                                     //                           yang memiliki Parameter pun, bisa langsung
                                                     //                           didefinisikan di Argument.
 
-function funB(nama, aksi){            // Function ini sama seperti funA() di atas
+function funB(nama, aksi){            // Function ini sama seperti funA di atas
   aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); menjadi ((arg) => console.log(arg))(`Pagi, ${nama}!`);
                                       //                                  ⤷ IIFE dengan Argument, lihat point O di bawah.
                                       //                                  ⤷ Arrow Function, lihat point P di bawah.
