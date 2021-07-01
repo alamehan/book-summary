@@ -1594,7 +1594,7 @@ function funA(){
 }
 function coba(aksi1, aksi2, n){       // aksi1 & aksi2 merupakan Callback, sehingga Function coba disebut Higher Order Function
   aksi1();                            // aksi1() akan menjadi funA()
-  aksi2();                            // aksi2() akan menjadi function(){console.log("Ciluk")}
+  aksi2();                            // aksi2() akan menjadi (function(){console.log("Ciluk")})() ⇨ IIFE, lihat point O di bawah.
   console.log(`Baa ${n} kali`);
 }
 coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   ⇨ Mengirim funA, function(){console.log("Ciluk")}
