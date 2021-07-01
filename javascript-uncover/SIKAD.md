@@ -1604,8 +1604,8 @@ coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   �
 
 ```Javascript
 function sapa(nama, aksi){            // aksi merupakan Callback, sehingga Function sapa disebut Higher Order Function
-  aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); 🡲 (function(arg){ console.log(arg) }))(`Pagi, ${nama}!`);
-}                                     //                            ⤷ IIFE denga Argument, lihat point O di bawah.
+  aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); menjadi (function(arg){ console.log(arg) }))(`Pagi, ${nama}!`);
+}                                     //                                  ⤷ IIFE denga Argument, lihat point O di bawah.
 
 sapa("Budi", function(arg){ console.log(arg) });    // Output: Pagi, Budi!    ⇨ Mengirim String "Budi" & function(arg){ ... }
                                                     //                           sebagai Argument. Perhatikan bahwa Function
