@@ -1598,8 +1598,19 @@ function coba(aksi1, aksi2, n){       // aksi1 & aksi2 merupakan Callback, sehin
   console.log(`Baa ${n} kali`);
 }
 coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   ⇨ Mengirim funA, function(){console.log("Ciluk")}
-                                                    //         Ciluk             dan nilai 100 sebagai argument. Perhatikan bahwa
-                                                    //         Baa 100 kali      function bisa langsung didefinisikan di argument.
+                                                    //         Ciluk             dan nilai 100 sebagai Argument. Perhatikan bahwa
+                                                    //         Baa 100 kali      Function bisa langsung didefinisikan di Argument.
+```
+
+```Javascript
+function sapa(nama, aksi){            // aksi merupakan Callback, sehingga Function sapa disebut Higher Order Function
+  aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); 🡲 (function(arg){ console.log(arg) }))(`Pagi, ${nama}!`);
+}                                     //                            ⤷ IIFE denga Argument, lihat point O di bawah.
+
+sapa("Budi", function(arg){ console.log(arg) });    // Output: Pagi, Budi!    ⇨ Mengirim String "Budi" & function(arg){ ... }
+                                                    //                           sebagai Argument. Perhatikan bahwa Function
+                                                    //                           yang memiliki Parameter pun, bisa langsung
+                                                    //                           didefinisikan di Argument.
 ```
 
 🔔 Implementasi Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
@@ -1817,6 +1828,19 @@ cetak = (function(){                  // Cara penulisan IImmediately-invoked Fun
     console.log(i);
   }
 })();                                 // Function secara otomatis akan berjalan tanpa perlu dipanggil
+```
+
+#### ⤷ IIFE dengan Argument
+
+```Javascript
+function cetak(nama, umur){           // Cara penulisan Function Declaration biasa
+  console.log(`${nama}, ${umur} tahun.`);
+}
+cetak("Budi", 17);                    // Function dipanggil terlebih dahulu untuk dijalankan
+
+(function(nama, umur){                // Cara penulisan IImmediately-invoked Function Expression (IIFE)
+  console.log(`${nama}, ${umur} tahun.`); 
+})("Budi", 17);                       // Function secara otomatis akan berjalan tanpa perlu dipanggil
 ```
 
 #### ⤷ Studi Kasus 1
