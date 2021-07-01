@@ -1603,14 +1603,22 @@ coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   �
 ```
 
 ```Javascript
-function sapa(nama, aksi){            // aksi merupakan Callback, sehingga Function sapa disebut Higher Order Function
+function funA(nama, aksi){            // aksi merupakan Callback, sehingga Function funA disebut Higher Order Function
   aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); menjadi (function(arg){ console.log(arg) }))(`Pagi, ${nama}!`);
-}                                     //                                  ⤷ IIFE denga Argument, lihat point O di bawah.
+}                                     //                                  ⤷ IIFE dengan Argument, lihat point O di bawah.
 
-sapa("Budi", function(arg){ console.log(arg) });    // Output: Pagi, Budi!    ⇨ Mengirim String "Budi" & function(arg){ ... }
+funA("Budi", function(arg){ console.log(arg) });    // Output: Pagi, Budi!    ⇨ Mengirim String "Budi" & function(arg){ ... }
                                                     //                           sebagai Argument. Perhatikan bahwa Function
                                                     //                           yang memiliki Parameter pun, bisa langsung
                                                     //                           didefinisikan di Argument.
+
+function funB(nama, aksi){            // Function ini sama seperti funA() di atas
+  aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); menjadi ((arg) => console.log(arg))(`Pagi, ${nama}!`);
+                                      //                                  ⤷ IIFE dengan Argument, lihat point O di bawah.
+                                      //                                  ⤷ Arrow Function, lihat point P di bawah.
+}
+funB("Joko", (arg) => console.log(arg));            // Output: Pagi, Joko!    ⇨ Sama seperti di atas, bedanya Function
+                                                    //                           ditulis dengan cara Arrow Function.                   
 ```
 
 🔔 Implementasi Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
