@@ -1618,7 +1618,7 @@ function funB(nama, aksi){            // Function ini sama seperti funA() di ata
                                       //                                  ⤷ Arrow Function, lihat point P di bawah.
 }
 funB("Joko", (arg) => console.log(arg));            // Output: Pagi, Joko!    ⇨ Sama seperti di atas, bedanya Function
-                                                    //                           ditulis dengan cara Arrow Function.                   
+                                                    //                           ditulis dengan cara Arrow Function.
 ```
 
 🔔 Implementasi Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
