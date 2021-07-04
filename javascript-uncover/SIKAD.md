@@ -1978,7 +1978,7 @@ let jumlahHurufD = arrSiswa.map(function(nama) {      // Penulisan Function Expr
 
 let jumlahHurufE = arrSiswa.map((nama) => {           // Penulisan dengan Arrow Function (1)
   return {nama: nama, jumlah: nama.length}
-})
+});
 
 let jumlahHurufF = arrSiswa.map(nama => ({            // Penulisan dengan Arrow Function (2)
   nama: nama, jumlah: nama.length
