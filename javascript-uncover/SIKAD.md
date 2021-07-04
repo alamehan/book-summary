@@ -338,9 +338,9 @@ var numJ = 0x3E7;                     // Heksadesimal (basis 16), diawali 0x
 ### 𝐁. NaN & Infinity
 
 ```Javascript
-var numK = NaN;                       // Keadaan dimana data bukan "angka yang sah/legal"
+var numK = NaN;                       // Keadaan dimana data "bukan angka yang sah/legal"
 var numL = Infinity;                  // Keadaan dimana data "angka tak hingga"
-var numM = -Infinity;                 // Keadaan dimana data "angka negatif tak hingga)
+var numM = -Infinity;                 // Keadaan dimana data "angka negatif tak hingga"
 ```
 #### ⤷ Kasus yang menghasilkan NaN & Infinity:
 
