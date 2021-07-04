@@ -1521,7 +1521,7 @@ Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini ber
 let hitung = function ratarata(a, b){ // Function Expressions (dimana Function ratarata disimpan ke dalam Let hitung)
   return (a+b)/2;
 }
-console.log(hitung(4, 8));            // Output: 6  ⇨ Yang dipanggil yaitu nama Let nya (bukan nama Functionnya)
+console.log(hitung(4, 8));            // Output: 6  ⇨ Yang dipanggil yaitu nama Let-nya (bukan nama Function-nya)
 console.log(ratarata(4, 8));          // Output: ReferenceError ratarata is not defined
 ```
 
@@ -1537,6 +1537,8 @@ console.log(hitung(4, 8));            // Output: 6
 ### 𝐋. Callback & Higher Order Function
 
 Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument, disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function.
+
+🔔 Nantinya Callback akan banyak dijumpai di Asynchronous JavaScript.
 
 #### ⤷ Menjalankan Function di Argument
 
