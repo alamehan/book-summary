@@ -47,9 +47,9 @@ HTML, CSS dan JavaScript sama-sama termasuk ke dalam kelompok “client side pro
 
 Perkembangan JavaScript yang sangat pesat akhir-akhir ini melahirkan banyak penerapan lain dari JavaScript. Sebagai contoh, **Node.js** adalah penggunaan JavaScript di sisi server. Dalam buku ini kita hanya fokus membahas penggunaan JavaScript di sisi client (di dalam web browser).
 
-Apa yang akan kita pelajari dalam buku ini terdiri dari 2 kelompok besar: JavaScript dan **DOM (Document Object Model)**. JavaScript adalah bahasa pemrograman, sedangkan DOM merupakan objek HTML yang akan kita manipulasi, seperti teks, gambar, form, tombol, title bar web browser, event, dll. Bahasa pemrograman JavaScript dikembangkan oleh ECMA, sedangkan DOM dikembangkan oleh W3C (organisasi yang juga membuat standar HTML dan CSS). Bisa dibilang, JavaScript sepenuhnya terpisah dari HTML.
+Apa yang akan kita pelajari dalam buku ini terdiri dari 2 kelompok besar: JavaScript dan **DOM (Document Object Model)**. JavaScript adalah bahasa pemrograman, sedangkan DOM merupakan Object HTML yang akan kita manipulasi, seperti teks, gambar, form, tombol, title bar web browser, event, dll. Bahasa pemrograman JavaScript dikembangkan oleh ECMA, sedangkan DOM dikembangkan oleh W3C (organisasi yang juga membuat standar HTML dan CSS). Bisa dibilang, JavaScript sepenuhnya terpisah dari HTML.
 
-Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika anda merasa jenuh dengan pembahasan dari bab 1 hingga 3, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi objek HTML yang nantinya diakses lewat DOM di bab 4.
+Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika anda merasa jenuh dengan pembahasan dari bab 1 hingga 3, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi Object HTML yang nantinya diakses lewat DOM di bab 4.
 
 <hr>
 <div id="bab1_2"></div>
@@ -2338,11 +2338,13 @@ mhs.halo();
 🔔 Constructor Function dibahas di bab 3-1 B
 
 ```Javascript
-                                         // STEP 2 🡲 Saat instansiasi object mobilBudi
+                                         // STEP 2 🡲 Saat instansiasi Object mobilBudi
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, hargaArg){
-  this.merk   = merkArg;                 //   mobilBudi.merk   = merkArg;
-  this.tipe   = tipeArg;                 //   mobilBudi.tipe   = tipeArg;
+  this.merk   = merkArg;                 //   mobilBudi.merk   = merkArg;    🡲 Di dalam Constructor Function-nya langsung
+  this.tipe   = tipeArg;                 //   mobilBudi.tipe   = tipeArg;       (bukan di dalam Method-nya), this mengacu ke
+                                         //                                     Object instansiasi-nya (Owner Object).
+                                         //
   console.log(this);                     //   console.log(mobilBudi);        🡲 Output: Mobil {merk: "ABC", tipe: "MPV"}
   console.log(this.merk);                //   console.log(mobilBudi.merk);   🡲 Output: ABC
   console.log(this.tipe);                //   console.log(mobilBudi.tipe);   🡲 Output: MPV
@@ -2360,9 +2362,9 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
   }                                      //   }
 }                                        // }
 
-let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi object Mobil baru bernama mobilBudi
-mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Function pergi1 milik object mobilBudi
-mobilBudi.pergi2();                      //           Menjalankan Function pergi2 milik object mobilBudi
+let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi Object Mobil baru bernama mobilBudi
+mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Function pergi1 milik Object mobilBudi
+mobilBudi.pergi2();                      //           Menjalankan Function pergi2 milik Object mobilBudi
 ```
 
 #### ⤷ 6. Di dalam Method di Class, keyword this mengacu ke Owner Object (Object yang dibuat).
