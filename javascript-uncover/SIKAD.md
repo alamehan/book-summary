@@ -2020,7 +2020,7 @@ let objB = {                          // Let objB berisi Object dengan Property 
   property2: "isi_property1",
   property3: "isi_property1",
 
-  method1(){                          // Penulisan Method cara 1: Function Declaration
+  method1(){                          // Penulisan Method cara 1: Function Declaration (Tanpa perlu keyword function di depannya)
     "isi method 1";
   },
   method2: function(){                // Penulisan Method cara 2: Function Expressions (Anonymous Function)
