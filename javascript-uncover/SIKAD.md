@@ -846,6 +846,8 @@ if (akses){ // jika akses bernilai true                 // Var akses, lalu kondi
 }
 ```
 
+Catatan: ```if (akses) { ... }``` merupakan **Shorthand** untuk ```if (akses === true) { ... }```. Selain itu ada juga ```if (!akses) { ... }``` yang berarti ```if (akses !== true) { ... }``` atau sama juga dengan ```if (akses === false) { ... }```.
+
 ### 𝐃. Operator Nullish Coalescing
 
 ```Javascript
