@@ -1057,7 +1057,7 @@ console.log(pagiMalam);               // Output: pagiMalam(){                   
 ### 𝐁. Parameter, Argument & Return Value
 
 ```Javascript
-function salam(kapan, nama){          // Kapan & nama merupakan Parameter yang akan menampung nilai yang dikirim dari Argument
+function salam(kapan, nama){          // kapan & nama merupakan Parameter yang akan menampung nilai yang dikirim dari Argument
   return `Selamat ${kapan} ${nama}!`; // keyword return berfungsi untuk mengembalikan nilai & memberhentikan Function
 }
 
