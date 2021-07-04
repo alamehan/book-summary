@@ -2265,7 +2265,7 @@ mhs.halo3();
 
 Dalam kasus Method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔔 Lihat point ...
 
-Selain itu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → Method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Pada contoh di bawah ini Method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function-nya ditulis dengan 3 cara berbeda.
+Selain itu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → Method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Pada contoh di bawah ini Method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
 let mhs = {
@@ -2365,6 +2365,46 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
 let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi Object Mobil baru bernama mobilBudi
 mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Function pergi1 milik Object mobilBudi
 mobilBudi.pergi2();                      //           Menjalankan Function pergi2 milik Object mobilBudi
+```
+
+Dalam kasus Method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Selain itu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → Method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
+
+Jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Windows). Untuk "mengakalinya", gunakan "that" seperti pada contoh Object (point nomor 4) di atas. Pada contoh di bawah ini Method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+
+```Javascript
+                                         // STEP 2 🡲 Saat instansiasi Object mobilBudi
+                                         // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, hargaArg){
+  this.merk   = merkArg;                 //   mobilBudi.merk   = merkArg;
+  this.tipe   = tipeArg;                 //   mobilBudi.tipe   = tipeArg;
+                                         //
+  this.pergi1 = function(){              //   mobilBudi.pergi1 = function(){    🡲 Method (Sebagai Outer Function)
+    console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+    console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
+                                         //
+    let that = this;                     //     let that = mobilBudi;           🡲 that dibuat mengacu ke Object mhs layaknya this
+                                         // 
+    function innerA(){                   //     function innerA(){              🡲 Function Declaration (Inner Function) (✔️)
+      console.log(that);                 //       console.log(mobilBudi);       🡲 Output: Window {window: Window, ...}
+      console.log(that.merk);            //       console.log(mobilBudi.merk);  🡲 Output: undefined
+    };                                   //     };
+    innerB = function(){                 //     innerB = function(){            🡲 Function Expressions (Inner Function) (✔️)
+      console.log(that);                 //       console.log(mobilBudi);       🡲 Output: Window {window: Window, ...}
+      console.log(that.merk);            //       console.log(mobilBudi.merk);  🡲 Output: undefined
+    };                                   //     };
+    innerC = () => {                     //     innerC = () => {                🡲 Arrow Function (Inner Function) (✔️)
+      console.log(this);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+      console.log(this.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
+    };                                   //     };
+                                         // 
+    innerA();                            //     innerA();
+    innerB();                            //     innerB();
+    innerC();                            //     innerC();
+  }                                      //   }
+}                                        // }
+
+let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi Object Mobil baru bernama mobilBudi
+mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Function pergi1 milik Object mobilBudi
 ```
 
 #### ⤷ 6. Di dalam Method di Class, keyword this mengacu ke Owner Object (Object yang dibuat).
