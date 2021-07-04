@@ -219,7 +219,7 @@ Salah satu kelemahan (sekaligus keunggulan) dari JavaScript adalah, pengunjung w
 
 ### 𝐁. Case Sensitive
 
-**Case Sensitivity**: JavaScript termasuk bahasa pemrograman yang bersifat case sensitif, artinya huruf besar dan huruf kecil dianggap berbeda. Salah menulis huruf sangat sering terjadi, misalnya pada saat pendefinisian Variable.
+**Case Sensitivity**: JavaScript termasuk bahasa pemrograman yang bersifat case sensitif, artinya huruf besar dan huruf kecil dianggap berbeda. Salah menulis huruf sangat sering terjadi, misalnya pada saat pendefinisian Variable (```var nama``` berbeda dengan ```var Nama```).
 
 ### 𝐂. Whitespace
 
