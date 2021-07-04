@@ -1536,7 +1536,7 @@ console.log(hitung(4, 8));            // Output: 6
 
 ### 𝐋. Callback & Higher Order Function
 
-Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument, disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function. 🔔 Nantinya Callback akan banyak dijumpai di Asynchronous JavaScript.
+Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument, disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function. 🔔 Nantinya Callback banyak dijumpai di **Asynchronous JS**.
 
 #### ⤷ Menjalankan Function di Argument
 
