@@ -522,6 +522,7 @@ var bolA = true;
 var nudA = null;
 var nudB = undefined;
 var arrSiswa = ["Andri", "Joko", "Sukma"];
+var funA = function(){ return "Hello World!" };
 
 console.log(typeof numA);                 // Output: number
 console.log(typeof strA);                 // Output: string
@@ -529,6 +530,7 @@ console.log(typeof bolA);                 // Output: boolean
 console.log(typeof nudA);                 // Output: object (bukan Null)
 console.log(typeof nudB);                 // Output: undefined
 console.log(typeof arrSiswa);             // Output: object (Array termasuk Object)
+console.log(typeof funA);                 // Output: function
 ```
 
 #### ⤷ Tidak hanya typeof, terdapat beragam cara untuk memeriksa tipe data:
@@ -545,6 +547,7 @@ var arr = [1, 2, "tiga"];                 // Tipe data: Array
 var obj = {nama: "Budi", umur: 13};       // Tipe data: Object      // 🔔 Object dibahas di bab 2-6 & bab 3
 var reg = /^\d\w\s$/;                     // Tipe data: RegExp      // 🔔 RegExp dibahas di bab 3-2 D
 var dat = new Date(2016,11,2,9,30,15);    // Tipe data: Date        // 🔔 Date dibahas di bab 3-2 F
+var fun = function(){ return "Hello!" };  // Function Expressions   // 🔔 Function dibahas di bab 2-5
 
 console.log(typeof num === "number");     // Output: true   (Check apakah datanya Number)
 console.log(Number.isNaN(nan));           // Output: true   (Check apakah datanya NaN)
