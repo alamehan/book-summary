@@ -1650,7 +1650,7 @@ Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digun
 #### ⤷ Tipe 1: Function Langsung Didefinisikan di Return Value
 
 ```Javascript
-function cetak(){
+function cetak(){                     // Function cetak merupakan Higher Order Function karena memiliki return value Function
   console.log("Hello 1!");
   return function(){
     console.log("Hello 2!");
@@ -1661,7 +1661,7 @@ cetak()();                            // Output: Hello 1!   ⇨ Tanda () pertama
 ```
 
 ```Javascript
-function cetak(){
+function cetak(){                     // Function cetak merupakan Higher Order Function karena memiliki return value Function
   console.log("Hello 1!");
   return function(){
     console.log("Hello 2!");
