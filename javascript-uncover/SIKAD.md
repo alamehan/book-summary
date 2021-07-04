@@ -1672,7 +1672,7 @@ function cetak(){
 }
 cetak()()();                          // Output: Hello 1!   ⇨ Tanda () pertama untuk menjalankan Function cetak, dan tanda ()
                                       //         Hello 2!      kedua untuk menjalankan Inner Function (Lvl.1) di dalamnya, serta
-                                      //         Hello 3!      tanda () untuk menjalankan Inner Function (Lvl.2) di dalamnya.
+                                      //         Hello 3!      tanda () untuk menjalankan Inner Function (Lvl.2) di dalamnya lagi.
 ```
 
 #### ⤷ Tipe 2: Function Dipanggil (Bukan Dijalankan) di Return Value
