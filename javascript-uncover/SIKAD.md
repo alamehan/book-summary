@@ -573,7 +573,7 @@ console.log(fun.constructor === Function);// Output: true   (Check apakah datany
 
 ### 𝐃. Operator instanceof
 
->  🔔 Oprator instanceof dibahas di bab 3-1 B
+>  🔔 Operator instanceof dibahas di bab 3-1 B
 
 ### 𝐄. Operator Aritmatika
 
