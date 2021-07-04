@@ -1641,7 +1641,7 @@ funB("Joko", (arg) => console.log(arg));            // Output: Pagi, Joko!    �
                                                     //                           ditulis dengan cara Arrow Function.
 ```
 
-🔔 Implementasi Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
+🔔 Contoh Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
 
 ### 𝐌. Function as Return Value
 
@@ -1656,8 +1656,8 @@ function cetak(){
     console.log("Hello 2!");
   }
 }
-cetak()();                            // Output: Hello 1!
-                                      //         Hello 2!
+cetak()();                            // Output: Hello 1!   ⇨ Tanda () pertama untuk menjalankan Function cetak, dan tanda ()
+                                      //         Hello 2!      kedua untuk menjalankan Inner Function di dalamnya.
 ```
 
 ```Javascript
@@ -1670,9 +1670,9 @@ function cetak(){
     }
   }
 }
-cetak()()();                          // Output: Hello 1!
-                                      //         Hello 2!
-                                      //         Hello 3!
+cetak()()();                          // Output: Hello 1!   ⇨ Tanda () pertama untuk menjalankan Function cetak, dan tanda ()
+                                      //         Hello 2!      kedua untuk menjalankan Inner Function (Lvl.1) di dalamnya, serta
+                                      //         Hello 3!      tanda () untuk menjalankan Inner Function (Lvl.2) di dalamnya.
 ```
 
 #### ⤷ Tipe 2: Function Dipanggil (Bukan Dijalankan) di Return Value
