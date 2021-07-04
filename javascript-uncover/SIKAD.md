@@ -1671,8 +1671,8 @@ function cetak(){                     // Function cetak merupakan Higher Order F
   }
 }
 cetak()()();                          // Output: Hello 1!   ⇨ Tanda () pertama untuk menjalankan Function cetak, dan tanda ()
-                                      //         Hello 2!      kedua untuk menjalankan return Function (Lvl.1) di dalamnya, serta
-                                      //         Hello 3!      () ketiga untuk menjalankan return Function (Lvl.2) di dalamnya lagi.
+                                      //         Hello 2!      kedua untuk menjalankan return value Function (Lvl.1), serta
+                                      //         Hello 3!      tanda () ketiga untuk menjalankan return value Function (Lvl.2).
 ```
 
 #### ⤷ Tipe 2: Function Dipanggil (Bukan Dijalankan) di Return Value
