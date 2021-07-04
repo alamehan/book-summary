@@ -1747,8 +1747,9 @@ function cetak(temp){                 // STEP 2 🡲 Parameter temp menangkap Fu
   console.log("Hello 1!");
   return temp;                        // STEP 3 🡲 Dengan demikian temp akan menjadi external
 }
-cetak(external)();                    // Output: Hello 1!     STEP 1 🡲 Mengirim Fuction external sebagai argumnet
-                                      //         Hello 2!
+cetak(external);                      // Output: Hello 1!
+cetak(external)();                    // Output: Hello 1!     STEP 1 🡲 Mengirim Fuction external sebagai Argument dan return
+                                      //         Hello 2!               value Function di dalamnya langsung dijalankan. 
 ```
 
 ```Javascript
@@ -1759,7 +1760,7 @@ function cetak(temp){                 // STEP 2 🡲 Parameter temp menangkap Fu
   console.log("Hello 1!");
   return temp();                      // STEP 3 🡲 Dengan demikian temp() akan menjadi external()
 }
-cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengirim Fuction external sebagai argumnet
+cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengirim Fuction external sebagai Argumnet
                                       //         Hello 2!
 ```
 
