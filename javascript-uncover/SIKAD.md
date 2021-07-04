@@ -2347,15 +2347,22 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
   console.log(this.merk);                //   console.log(mobilBudi.merk);   🡲 Output: ABC
   console.log(this.tipe);                //   console.log(mobilBudi.tipe);   🡲 Output: MPV
                                          //
-  this.pergi = function(){               //   mobilBudi.pergi = function(){  🡲 Penulisan Method cara 2: Function Expressions (✔️)
-    console.log(this);                   //     console.log(mobilBudi);      🡲 Output: Mobil {merk: "ABC", tipe: "MPV", pergi: ƒ}
+  this.pergi1 = function(){              //   mobilBudi.pergi1 = function(){ 🡲 Penulisan Method cara 2: Function Expressions (✔️)
+    console.log(this);                   //     console.log(mobilBudi);      🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk); 🡲 Output: ABC
     console.log(this.tipe);              //     console.log(mobilBudi.tipe); 🡲 Output: MPV
+  }                                      //   }
+                                         //
+  this.pergi2 = () => {                  //   this.pergi2 = () => {          🡲 Penulisan Method cara 3: Arrow Function (✔️)
+    console.log(this);                   //     console.log(this);           🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+    console.log(this.merk);              //     console.log(this.merk);      🡲 Output: ABC
+    console.log(this.tipe);              //     console.log(this.tipe);      🡲 Output: MPV
   }                                      //   }
 }                                        // }
 
 let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi object Mobil baru bernama mobilBudi
-mobilBudi.pergi();                       // STEP 3 🡲 Menjalankan Function pergi milik object mobilBudi
+mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Function pergi1 milik object mobilBudi
+mobilBudi.pergi2();                      //           Menjalankan Function pergi2 milik object mobilBudi
 ```
 
 #### ⤷ 6. Di dalam Method di Class, keyword this mengacu ke Owner Object (Object yang dibuat).
