@@ -373,19 +373,19 @@ var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: 
 
 | Escape Characters 	| Kegunaan                                                       	|
 |-------------------	|----------------------------------------------------------------	|
-| \0                	| Karakter NUL                                                   	|
-| \b                	| Backspace                                                      	|
-| \t                	| Horizontal tab                                                 	|
-| \n                	| Newline                                                        	|
-| \v                	| Vertical tab                                                   	|
-| \f                	| Form feed                                                      	|
-| \r                	| Carriage return                                                	|
-| \"                	| Tanda kutip dua (double quote)                                 	|
-| \'                	| Tanda kutip satu (apostrophe atau single quote)                	|
-| \\                	| Garis miring (backslash)                                       	|
-| \xXX              	| Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX 	|
-| \uXXXX            	| Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
-| 📚 Bonus           	| Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/   	|
+| ```\0```            | Karakter NUL                                                   	|
+| ```\b```            | Backspace                                                      	|
+| ```\t```            | Horizontal tab                                                 	|
+| ```\n```            | Newline                                                        	|
+| ```\v```            | Vertical tab                                                   	|
+| ```\f```            | Form feed                                                      	|
+| ```\r```            | Carriage return                                                	|
+| ```\"```            | Tanda kutip dua (double quote)                                 	|
+| ```\'```            | Tanda kutip satu (apostrophe atau single quote)                	|
+| ```\\```            | Garis miring (backslash)                                       	|
+| ```\```             | Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX 	|
+| ```\uXXXX```        | Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
+| 📚 Bonus            | Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/   	|
 
 ### 𝐃. Boolean
 
