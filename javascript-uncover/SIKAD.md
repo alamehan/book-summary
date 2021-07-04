@@ -2211,8 +2211,8 @@ funC = () => {                        // Penulisan Arrow Function
 let mhs = {
   nama: "Budi",
   umur: 16,
-  coba: this,                         // Jika di luar Object menjalankan perintah console.log(mhs.coba); maka akan menghasilkan
-                                      // Window {window: ...}, artinya this dalam Object mhs mengacu ke Global Object (Windows).
+  coba: this,                         // Di dalam Objet-nya langsung (bukan di dalam Method-nya), this mengacu ke Global Object
+                                      // (Windows). Untuk membuktikannya jalankan perintah console.log(mhs.coba); di luar Object.
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
   halo1(){                            // halo1(){                           🡲 Penulisan Method cara 1: Function Declaration (✔️)
