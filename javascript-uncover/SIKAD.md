@@ -2230,7 +2230,7 @@ funC = () => {                        // Penulisan Arrow Function
 let mhs = {
   nama: "Budi",
   umur: 16,
-  coba: this,                         // Di dalam Objet-nya langsung (bukan di dalam Method-nya), this mengacu ke Global Object
+  coba: this,                         // Di dalam Object-nya langsung (bukan di dalam Method-nya), this mengacu ke Global Object
                                       // (Windows). Untuk membuktikannya jalankan perintah console.log(mhs.coba); di luar Object.
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
