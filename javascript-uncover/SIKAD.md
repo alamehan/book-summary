@@ -566,6 +566,9 @@ console.log(reg instanceof RegExp);       // Output: true   (Check apakah datany
 console.log(reg.constructor === RegExp);  // Output: true   (Check apakah datanya RegExp - cara 2)
 console.log(dat instanceof Date);         // Output: true   (Check apakah datanya Date - cara 1)
 console.log(dat.constructor === Date);    // Output: true   (Check apakah datanya Date - cara 2)
+console.log(typeof fun === "function");   // Output: true   (Check apakah datanya Function Expressions - cara 1)
+console.log(fun instanceof Function);     // Output: true   (Check apakah datanya Function Expressions - cara 2)
+console.log(fun.constructor === Function);// Output: true   (Check apakah datanya Function Expressions - cara 3)
 ```
 
 ### 𝐃. Operator instanceof
