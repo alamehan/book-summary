@@ -1716,8 +1716,8 @@ function luar(){
   }
   return dalam();
 }
-luar();                               // Output: Hello 1!
-                                      //         Hello 2!
+luar();                               // Output: Hello 1!   ⇨ Perhatikan bahwa pemanggilannya tidak lagi luar()(), ini karena
+                                      //         Hello 2!      return value-nya sudah langsung menjalankan Function.
 ```
 
 ```Javascript
@@ -1732,8 +1732,8 @@ function luar(){
     }
     return tengah();
 }
-luar();                               // Output: Hello 1!
-                                      //         Hello 2!
+luar();                               // Output: Hello 1!   ⇨ Perhatikan bahwa pemanggilannya tidak lagi luar()()(), ini karena
+                                      //         Hello 2!      return value-nya (Lvl.1 & Lvl.2) langsung menjalankan Function.
                                       //         Hello 3!
 ```
 
