@@ -1095,8 +1095,8 @@ console.log(tambah(20, 25));          // Output: 65   (Hasil dari 20+25+10+10)
 console.log(tambah(20, 25, 30));      // Output: 85   (Hasil dari 20+25+30+10)
 console.log(tambah(20, 25, 30, 15));  // Output: 90   (Hasil dari 20+25+30+15)
 
-console.log(kurang());                // Output: NaN  (Function kurang() butuh minimal 2 Argument! untuk Parameter a & b)
-console.log(kurang(20));              // Output: NaN  (Function kurang() butuh minimal 2 Argument! kurang Argument ke-2)
+console.log(kurang());                // Output: NaN  (Function kurang butuh minimal 2 Argument! untuk Parameter a & b)
+console.log(kurang(20));              // Output: NaN  (Function kurang butuh minimal 2 Argument! kurang Argument ke-2)
 console.log(kurang(20, 25));          // Output: -25  (Argument c & d jika tidak diisi, maka akan diisi nilai defaultnya)
 console.log(kurang(20, 25, 30));      // Output: -45  (Hasil dari 20-25-30-10)
 console.log(kurang(20, 25, 30, 15));  // Output: -50  (Hasil dari 20-25-30-15)
@@ -1112,7 +1112,7 @@ console.log(kali(undefined, undefined, 30, 15));  // Output: 45000 (Hasil dari 1
 #### ⤷ Array Argument
 
 ```Javascript
-function numA(){                      // Function numA() dibuat tanpa Parameter (tanpa wadah untuk Argument), namun sebenarnya
+function numA(){                      // Function numA dibuat tanpa Parameter (tanpa wadah untuk Argument), namun sebenarnya
   console.log(arguments[0]);          // setiap Argument akan ditangkap oleh Array Argument (Arguments Object) bawaan JavaScript.
   console.log(arguments[1]);
   console.log(arguments[2]);
@@ -1217,7 +1217,7 @@ console.log(a);                       // Output: Belajar JS   (Hasil dari global
 ```Javascript
 var b = "Belajar JS";                 // Var b disini merupakan global Variable dan dapat diakses darimana saja
 function coo(){
-  var b = "Belajar CSS";              // b disini merupakan local Variable dan hanya bisa diakses di dalam Function coo() saja
+  var b = "Belajar CSS";              // b disini merupakan local Variable dan hanya bisa diakses di dalam Function coo saja
   console.log(b);                     // b yang diakses disini yaitu b local Variable (karena memang terdapat local Variable b)
 }
 
@@ -1236,11 +1236,11 @@ function doo(c, d){
 
 var c = 5;                            // c disini merupakan global Variable
 var d = 10;                           // d disini merupakan global Variable
-var e = doo(c, d);                    // Argument yang dikirim yaitu doo(5, 10)
+var e = doo(c, d);                    // Menjalankan Function doo dengan Argument, lalu hasil return-nya simpan ke dalam Var e
 
 console.log(c);                       // Output: 5  (c berasal dari global Variable c)
 console.log(d);                       // Output: 10 (d berasal dari global Variable d)
-console.log(e);                       // Output: 60 (nilai global Var c & d tertimpa oleh local Var saat di dalam Function doo())
+console.log(e);                       // Output: 60 (nilai global Var c & d tertimpa oleh local Var saat di dalam Function doo)
 ```
 
 #### ⤷ Studi Kasus 2
@@ -1254,11 +1254,11 @@ function foo(){
 
 var c = 5;                            // c disini merupakan global Variable
 var d = 10;                           // d disini merupakan global Variable
-var e = foo();                        // Tidak ada Argument yang dikirim
+var e = foo();                        // Menjalankan Function foo (disini global Var c & d akan tertimpa), lalu simpan ke Var e
 
-console.log(c);                       // Output: 20 (Bukan 5, karena nilai c tertimpa saat di dalam Function foo())
-console.log(d);                       // Output: 40 (Bukan 10, karena nilai d tertimpa saat di dalam Function foo())
-console.log(e);                       // Output: 60 (Bukan 15, karena nilai var c & d tertimpa saat di dalam Function foo())
+console.log(c);                       // Output: 20 (Bukan 5, karena nilai c tertimpa saat di dalam Function foo)
+console.log(d);                       // Output: 40 (Bukan 10, karena nilai d tertimpa saat di dalam Function foo)
+console.log(e);                       // Output: 60 (Bukan 15, karena nilai var c & d tertimpa saat di dalam Function foo)
 ```
 
 ### 𝐆. Var, Let & Const
