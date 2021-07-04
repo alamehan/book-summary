@@ -936,7 +936,7 @@ Perulangan While cocok digunakan untuk situasi dimana kita tidak tahu berapa ban
 var i = 1;
 while (i <= 10){
   console.log(i);
-  i++;
+  i++;                                // Jangan lupa tambahan baris untuk Increment/Decrement
 }                                     // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 var j = 10;
@@ -945,7 +945,7 @@ while (j > 1){
     break;
   }
   console.log(j*2);
-  j--;
+  j--;                                // Jangan lupa tambahan baris untuk Increment/Decrement
 }                                     // Output: 20, 18, 16, 14, 12
 ```
 
@@ -957,13 +957,13 @@ Berbeda dengan perulangan While, dalam perulangan Do While kondisi akan di check
 var i = 1;
 do {
   console.log(i);
-  i++;
+  i++;                                // Jangan lupa tambahan baris untuk Increment/Decrement
 } while (i <= 10);                    // Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 var j = 1;
 do {
   console.log(j);
-  j--;
+  j--;                                // Jangan lupa tambahan baris untuk Increment/Decrement
 } while (j > 999);                    // Output: 1
 ```
 
