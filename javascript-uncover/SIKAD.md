@@ -1300,7 +1300,7 @@ console.log(`Harganya Rp.${l}`);      // Output: Harganya Rp.1000   (Nilai l glo
 #### ⤷ Var, Let & Const
 
 ```Javascript
-console.log(tempA);                   // Output: Undefined (Terjadi karena efek hoisting, dibahas pada point H di bawah)
+console.log(tempA);                   // Output: Undefined (Terjadi karena efek hoisting, dibahas pada point J di bawah)
 console.log(tempB);                   // Output: ReferenceError Cannot access 'tempB' before init (benar, memang seharusnya error)
 console.log(tempC);                   // Output: ReferenceError Cannot access 'tempC' before init (benar, memang seharusnya error)
 
@@ -1316,11 +1316,11 @@ temC = "Teks diganti!";               // Output: TypeError Assignment to constan
 Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya".
 
 ```Javascript
-function luar(){                      // luar() merupakan Outer Function bagi tengah()
+function luar(){                      // "luar" merupakan Outer Function bagi "tengah"
   console.log("A");
-  function tengah(){                  // tengah() merupakan Inner Function bagi luar() & Outer Function bagi dalam()
+  function tengah(){                  // "tengah" merupakan Inner Function bagi "luar" & Outer Function bagi "dalam"
     console.log("B");
-    function dalam(){                 // dalam() merupakan Inner Function bagi tengah()
+    function dalam(){                 // "dalam" merupakan Inner Function bagi "tengah"
       console.log("C");
     }
     dalam();
