@@ -383,7 +383,7 @@ var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: 
 | ```\"```            | Tanda kutip dua (double quote)                                 	|
 | ```\'```            | Tanda kutip satu (apostrophe atau single quote)                	|
 | ```\\```            | Garis miring (backslash)                                       	|
-| ```\```             | Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX 	|
+| ```\xXX```          | Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX 	|
 | ```\uXXXX```        | Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
 | 📚 Bonus            | Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/   	|
 
