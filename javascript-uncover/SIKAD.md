@@ -2299,7 +2299,7 @@ let mhs = {
 mhs.halo();
 ```
 
-Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration (innerA) & Function Expressions (innerB) memiliki this yang mengacu ke Owner Object (dalam kasus ini Object mhs), maka this milik Method halo() perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut dapat digunakan di Inner Function. Sehingga this di Inner Function mengacu ke Object mhs sama halnya seperti this milik Method halo(). Simak contoh di bawah ini.
+Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration (innerA) & Function Expressions (innerB) memiliki this yang mengacu ke Owner Object (dalam kasus ini Object mhs), maka this milik Method halo perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut dapat digunakan di Inner Function. Sehingga this di Inner Function mengacu ke Object mhs sama halnya seperti this milik Method halo. Simak contoh di bawah ini.
 
 ```Javascript
 let mhs = {
@@ -2389,23 +2389,23 @@ function sapa2(a, b) {
   console.log(`Saya ${this.name}, ${this.age} tahun, asal ${a} ${b}.`);
 };
 
-const sapaBudi1 = sapa1.bind(userA);  // Buat Function sapa1() baru dgn this mengacu pada Object userA, simpan ke Const sapaBudi.
-const sapaJaka1 = sapa1.bind(userB);  // Buat Function sapa1() baru dgn this mengacu pada Object userB, simpan ke Const sapaJaka.
-const sapaBudi2 = sapa2.bind(userA, "Bandung", "ID"); // bind() juga dapat disisipkan Argument, dan bahkan bisa lebih dari 1.
+const sapaBudi1 = sapa1.bind(userA);  // Buat Function sapa1 baru dgn this mengacu pada Object userA, simpan ke Const sapaBudi.
+const sapaJaka1 = sapa1.bind(userB);  // Buat Function sapa1 baru dgn this mengacu pada Object userB, simpan ke Const sapaJaka.
+const sapaBudi2 = sapa2.bind(userA, "Bandung", "ID"); // bind juga dapat disisipkan Argument, dan bahkan bisa lebih dari 1.
 const sapaJaka2 = sapa2.bind(userB, "Jakarta", "ID");
 
-sapaBudi1();                          // Output: Saya Budi, 17 tahun.                     ⇨ Menjalankan Function sapa1() "baru"
-sapaJaka1();                          // Output: Saya Joko, 21 tahun.                     ⇨ Menjalankan Function sapa1() "baru"
-sapaBudi2();                          // Output: Saya Budi, 17 tahun, asal Bandung ID.    ⇨ Menjalankan Function sapa2() "baru"
-sapaJaka2();                          // Output: Saya Joko, 21 tahun, asal Jakarta ID.    ⇨ Menjalankan Function sapa2() "baru"
+sapaBudi1();                          // Output: Saya Budi, 17 tahun.                     ⇨ Menjalankan Function sapa1 "baru"
+sapaJaka1();                          // Output: Saya Joko, 21 tahun.                     ⇨ Menjalankan Function sapa1 "baru"
+sapaBudi2();                          // Output: Saya Budi, 17 tahun, asal Bandung ID.    ⇨ Menjalankan Function sapa2 "baru"
+sapaJaka2();                          // Output: Saya Joko, 21 tahun, asal Jakarta ID.    ⇨ Menjalankan Function sapa2 "baru"
 
-sapa1.call(userA);                    // Langsung panggil (tidak membuat) Function sapa1() dengan this mengacu pada Object userA.
-sapa1.call(userB);                    // Langsung panggil (tidak membuat) Function sapa1() dengan this mengacu pada Object userB.
-sapa2.call(userA, "Bandung", "ID");   // call() juga dapat disisipkan Argument, dan bahkan bisa lebih dari 1.
-sapa2.call(userB, "Jakarta", "ID");   // Outputnya sama saja dengan Output pada contoh bind() di atas.
+sapa1.call(userA);                    // Langsung panggil (tidak membuat) Function sapa1 dengan this mengacu pada Object userA.
+sapa1.call(userB);                    // Langsung panggil (tidak membuat) Function sapa1 dengan this mengacu pada Object userB.
+sapa2.call(userA, "Bandung", "ID");   // call juga dapat disisipkan Argument, dan bahkan bisa lebih dari 1.
+sapa2.call(userB, "Jakarta", "ID");   // Outputnya sama saja dengan Output pada contoh bind di atas.
 
-sapa1.apply(userA);                   // Sama saja dengan call(), bedanya pada apply(), Argument yang disisipkan berupa Array.
-sapa1.apply(userB);                   // Outputnya sama saja dengan Output pada contoh bind() & call() di atas.
+sapa1.apply(userA);                   // Sama saja dengan call, bedanya pada apply, Argument yang disisipkan berupa Array.
+sapa1.apply(userB);                   // Outputnya sama saja dengan Output pada contoh bind & call di atas.
 sapa2.apply(userA, ["Bandung", "ID"]);
 sapa2.apply(userB, ["Bandung", "ID"]);
 ```
