@@ -1254,7 +1254,7 @@ function foo(){
 
 var c = 5;                            // c disini merupakan global Variable
 var d = 10;                           // d disini merupakan global Variable
-var e = foo();                        // Menjalankan Function foo (disini global Var c & d akan tertimpa), lalu simpan ke Var e
+var e = foo();                        // Menjalankan Function foo (disini global Variable c & d akan tertimpa)
 
 console.log(c);                       // Output: 20 (Bukan 5, karena nilai c tertimpa saat di dalam Function foo)
 console.log(d);                       // Output: 40 (Bukan 10, karena nilai d tertimpa saat di dalam Function foo)
