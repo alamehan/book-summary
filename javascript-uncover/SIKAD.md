@@ -1057,17 +1057,17 @@ console.log(pagiMalam);               // Output: pagiMalam(){                   
 ### 𝐁. Parameter, Argument & Return Value
 
 ```Javascript
-function salam(kapan, nama){          // Kapan & nama adalah sebuah parameter yang akan menampung nilai dari argument
-  return `Selamat ${kapan} ${nama}!`; // return berfungsi untuk mengembalikan nilai & memberhentikan Function
+function salam(kapan, nama){          // Kapan & nama merupakan Parameter yang akan menampung nilai yang dikirim dari Argument
+  return `Selamat ${kapan} ${nama}!`; // keyword return berfungsi untuk mengembalikan nilai & memberhentikan Function
 }
 
-function ratarata(a, b, c, d){
+console.log(salam("Pagi", "Budi"));   // Output: Selamat Pagi Budi!     ⇨ "Pagi" & "Budi" merupakan sebuah Argument
+console.log(salam("Malam", "Putri")); // Output: Selamat Malam Putri!   ⇨ "Malam" & "Putri" merupakan sebuah Argument
+
+function ratarata(a, b, c, d){        // Function ratarata memiliki 4 Argument, yaitu a, b, c dan d
   var hasil = (a+b+c+d)/4;
   return hasil;
 }
-
-console.log(salam("Pagi", "Budi"));   // Output: Selamat Pagi Budi!     ⇨ "Pagi" & "Budi" merupakan sebuah argument
-console.log(salam("Malam", "Putri")); // Output: Selamat Malam Putri!   ⇨ "Malam" & "Putri" merupakan sebuah argument
 
 console.log(ratarata(1, 2, 3, 4));    // Output: 2.5  (Hasil dari (1+2+3+4)/4 🡲 10/4)
 console.log(ratarata(1, 2, 3, 4, 5)); // Output: 2.5  (Argument ke-5 akan diabaikan, karena tidak ada "slot"-nya di Function)
@@ -1077,15 +1077,15 @@ console.log(ratarata(1, 2, 3));       // Output: NaN  (Argument ke-4 tidak ada, 
 ### 𝐂. Default Parameter
 
 ```Javascript
-function tambah(a=10, b=10, c=10, d=10){  // Seluruh parameter (a, b, c & d) memiliki nilai default
+function tambah(a=10, b=10, c=10, d=10){  // Seluruh Parameter (a, b, c & d) memiliki nilai default
   return a+b+c+d;
 }
 
-function kurang(a, b, c=10, d=10){    // 2 parameter terakhir (c & d) memiliki nilai default
+function kurang(a, b, c=10, d=10){    // 2 Parameter terakhir (c & d) memiliki nilai default
   return a-b-c-d;
 }
 
-function kali(a=10, b=10, c, d){      // 2 parameter pertama (a & b) memiliki nilai default
+function kali(a=10, b=10, c, d){      // 2 Parameter pertama (a & b) memiliki nilai default
   return a*b*c*d;
 }
 
@@ -1095,14 +1095,14 @@ console.log(tambah(20, 25));          // Output: 65   (Hasil dari 20+25+10+10)
 console.log(tambah(20, 25, 30));      // Output: 85   (Hasil dari 20+25+30+10)
 console.log(tambah(20, 25, 30, 15));  // Output: 90   (Hasil dari 20+25+30+15)
 
-console.log(kurang());                // Output: NaN  (Function kurang() butuh minimal 2 argument! untuk parameter a & b)
-console.log(kurang(20));              // Output: NaN  (Function kurang() butuh minimal 2 argument! kurang argument ke-2)
+console.log(kurang());                // Output: NaN  (Function kurang() butuh minimal 2 Argument! untuk Parameter a & b)
+console.log(kurang(20));              // Output: NaN  (Function kurang() butuh minimal 2 Argument! kurang Argument ke-2)
 console.log(kurang(20, 25));          // Output: -25  (Argument c & d jika tidak diisi, maka akan diisi nilai defaultnya)
 console.log(kurang(20, 25, 30));      // Output: -45  (Hasil dari 20-25-30-10)
 console.log(kurang(20, 25, 30, 15));  // Output: -50  (Hasil dari 20-25-30-15)
 
-console.log(kali());                  // Output: NaN  (Function kali butuh minimal 4 argument! untuk parameter a, b, c & d)
-console.log(kali(20, 25));            // Output: NaN  (Function kali butuh minimal 4 argument! kurang argument ke-3 & ke-4)
+console.log(kali());                  // Output: NaN  (Function kali butuh minimal 4 Argument! untuk Parameter a, b, c & d)
+console.log(kali(20, 25));            // Output: NaN  (Function kali butuh minimal 4 Argument! kurang Argument ke-3 & ke-4)
 console.log(kali(20, 25, 30, 15));    // Output: 225000 (Hasil dari 20*25*30*15)
 console.log(kali(undefined, undefined, 30, 15));  // Output: 45000 (Hasil dari 10*10*30*15), Undefined akan diisi nilai default
 ```
@@ -1112,8 +1112,8 @@ console.log(kali(undefined, undefined, 30, 15));  // Output: 45000 (Hasil dari 1
 #### ⤷ Array Argument
 
 ```Javascript
-function numA(){                      // Function numA() dibuat tanpa parameter (tanpa wadah untuk argument), namun sebenarnya
-  console.log(arguments[0]);          // setiap argument akan ditangkap oleh Array argument (Arguments Object) bawaan JavaScript.
+function numA(){                      // Function numA() dibuat tanpa Parameter (tanpa wadah untuk Argument), namun sebenarnya
+  console.log(arguments[0]);          // setiap Argument akan ditangkap oleh Array Argument (Arguments Object) bawaan JavaScript.
   console.log(arguments[1]);
   console.log(arguments[2]);
   console.log(arguments[3]);
@@ -1126,23 +1126,23 @@ numA(20, 25);                         // Output: 20, 25, undefined, undefined
 #### ⤷ arguments.length
 
 ```Javascript
-function numB(){                      // Karena Array argument merupakan sebuah Array, maka kita dapat menghitung jumlah argument
+function numB(){                      // Karena Array Argument merupakan sebuah Array, maka kita dapat menghitung jumlah Argument
   total = arguments.length;           // yang dikirimkan pada saat pemanggilan Function dengan menggunakan property length.
   return total;
 }
 
-console.log(numB());                  // Output: 0  (Terdapat 0 argument saat pemanggilan Function)
-console.log(numB(20));                // Output: 1  (Terdapat 1 argument saat pemanggilan Function)
-console.log(numB(20, 25));            // Output: 2  (Terdapat 2 argument saat pemanggilan Function)
-console.log(numB(20, 25, 30));        // Output: 3  (Terdapat 3 argument saat pemanggilan Function)
-console.log(numB(20, 25, 30, 15));    // Output: 4  (Terdapat 4 argument saat pemanggilan Function)
+console.log(numB());                  // Output: 0  (Terdapat 0 Argument saat pemanggilan Function)
+console.log(numB(20));                // Output: 1  (Terdapat 1 Argument saat pemanggilan Function)
+console.log(numB(20, 25));            // Output: 2  (Terdapat 2 Argument saat pemanggilan Function)
+console.log(numB(20, 25, 30));        // Output: 3  (Terdapat 3 Argument saat pemanggilan Function)
+console.log(numB(20, 25, 30, 15));    // Output: 4  (Terdapat 4 Argument saat pemanggilan Function)
 ```
 
 #### ⤷ Studi Kasus: Rata-Rata (V1)
 
 ```Javascript
-function ratarata(){                  // Berbekal Array argument dan arguments.length, kita bisa membuat sebuah Function
-  var totalArg = arguments.length;    // rata-rata yang bisa menerima berarapun jumlah argumentnya (fleksibel).
+function ratarata(){                  // Berbekal Array Argument dan arguments.length, kita bisa membuat sebuah Function
+  var totalArg = arguments.length;    // rata-rata yang bisa menerima berarapun jumlah Argumentnya (fleksibel).
   var hasil = 0;
   for (var i=0; i<totalArg; i++){
     hasil += arguments[i];
@@ -1169,7 +1169,7 @@ function numC(...arg){                // Rest Parameter. Penulisannya tidak haru
 numC(20, 25, 30, 15);                 // Output: 20, 25, 30, 15
 numC(20, 25);                         // Output: 20, 25, undefined, undefined
 
-function numD(a, b, ...sisa){         // Cara baca: jika Function numD dipanggil dengan lebih dari 3 argument, maka argument
+function numD(a, b, ...sisa){         // Cara baca: jika Function numD dipanggil dengan lebih dari 3 Argument, maka Argument
   console.log(a);                     // pertama dan kedua masuk ke Variable a dan b, sisanya disimpan ke dalam Rest Parameter.
   console.log(b);
   console.log(sisa);
@@ -1254,7 +1254,7 @@ function foo(){
 
 var c = 5;                            // c disini merupakan global Variable
 var d = 10;                           // d disini merupakan global Variable
-var e = foo();                        // Tidak ada argument yang dikirim
+var e = foo();                        // Tidak ada Argument yang dikirim
 
 console.log(c);                       // Output: 20 (Bukan 5, karena nilai c tertimpa saat di dalam Function foo())
 console.log(d);                       // Output: 40 (Bukan 10, karena nilai d tertimpa saat di dalam Function foo())
@@ -1495,7 +1495,7 @@ function funB(){                      //   var nama = undefined;          🡲 �
   console.log(nama);                  //   nama = "Budi";
   console.log(arguments[0]);          //   console.log(nama);
 }                                     // } 
-console.log(nama);                    // function funB(){                 🡲 Tidak ada parameter yang menangkap argument
+console.log(nama);                    // function funB(){                 🡲 Tidak ada Parameter yang menangkap Argument
 var nama = "Jaka";                    //   console.log(nama);             🡲 Baris ini akan mencari variable "nama" di Global
 funA();                               //   console.log(arguments[0]);     🡲 Argument yang dikirim akan masuk ke Array Argument
 funB("Tono");                         // }                                   ⤷ Lihat lagi point D di atas
@@ -1548,7 +1548,7 @@ function tambah(c, d){
   return c+d;
 }
 let hasil = tambah(6, rerata(7, 3));  // Jalankan Function rerata(7, 3) lalu hasil return-nya yang bernilai 5 gunakan sebagai
-                                      // argument. Dengan demikian tambah(6, rerata(7, 3)) akan diolah menjadi tambah(6, 5).
+                                      // Argument. Dengan demikian tambah(6, rerata(7, 3)) akan diolah menjadi tambah(6, 5).
                                       // Lalu hasil dari Function tambah(6, 5) yang bernilai 11 disimpan ke dalam Let hasil.
 console.log(hasil);                   // Output: 11
 ```
@@ -1559,10 +1559,10 @@ console.log(hasil);                   // Output: 11
 function rerata(a, b){
   return (a+b)/2;
 }
-function tambah(c, d){                // Step 2 🡲 Parameter d akan menangkap Function bernama rerata dari argument
+function tambah(c, d){                // Step 2 🡲 Parameter d akan menangkap Function bernama rerata dari Argument
   return c+d(7, 3);                   // Step 3 🡲 Dengan demikian d(7, 3) akan menjadi rerata(7, 3)
 }
-let hasil = tambah(6, rerata);        // Step 1 🡲 Kirim Function bernama rerata (bukan menjalankannya) sebagai sebuah argument
+let hasil = tambah(6, rerata);        // Step 1 🡲 Kirim Function bernama rerata (bukan menjalankannya) sebagai sebuah Argument
 console.log(hasil);                   // Output: 11
 ```
 
@@ -1570,10 +1570,10 @@ console.log(hasil);                   // Output: 11
 function foo(apa){
   alert(apa);                         // Step 4 🡲 foo("Belajar JS") akan dieksekusi sebagai alert("Belajar JS")
 }
-function salam(bar){                  // Step 2 🡲 Parameter bar akan menangkap Function bernama foo dari argument
+function salam(bar){                  // Step 2 🡲 Parameter bar akan menangkap Function bernama foo dari Argument
   bar("Belajar JS");                  // Step 3 🡲 Dengan demikian bar("Belajar JS") akan menjadi foo("Belajar JS")
 }
-salam(foo);                           // Step 1 🡲 Kirim Function bernama foo (bukan menjalankannya) sebagai sebuah argument
+salam(foo);                           // Step 1 🡲 Kirim Function bernama foo (bukan menjalankannya) sebagai sebuah Argument
 ```
 
 #### ⤷ Istilah Callback & Higher Order Function (1)
@@ -1581,12 +1581,12 @@ salam(foo);                           // Step 1 🡲 Kirim Function bernama foo 
 ```Javascript
 function ulangi(n, aksi){             // aksi merupakan Callback, sehingga Function ulangi disebut sebagai Higher Order Function
   for (let i=0; i<n; i++){
-    aksi(i);                          // aksi(i) akan menjadi console.log(i)/alert(i), sesuai dengan nama Function dari argument
+    aksi(i);                          // aksi(i) akan menjadi console.log(i)/alert(i), sesuai dengan nama Function dari Argument
   }
 }
 
-ulangi(10, console.log);              // Output: 0 s.d. 9                 ⇨ Mengirim Function console.log sebagai argument
-ulangi(5, alert);                     // Output: Muncul alert 0 s.d. 4    ⇨ Mengirim Function alert sebagai argument
+ulangi(10, console.log);              // Output: 0 s.d. 9                 ⇨ Mengirim Function console.log sebagai Argument
+ulangi(5, alert);                     // Output: Muncul alert 0 s.d. 4    ⇨ Mengirim Function alert sebagai Argument
 ```
 
 ```Javascript
@@ -1601,7 +1601,7 @@ function coba(aksi1, aksi2){          // aksi1 & aksi2 merupakan Callback, sehin
   aksi2();                            // aksi2() akan menjadi funB()
   aksi2("JavaScript");                // aksi2("JavaScript") akan menjadi funB("JavaScript")
 }
-coba(funA, funB);                     // Output: Hello World!             ⇨ Mengirim function funA & funB sebagai argument
+coba(funA, funB);                     // Output: Hello World!             ⇨ Mengirim function funA & funB sebagai Argument
                                       //         Hello Programmer!
                                       //         Hello JavaScript!
 ```
@@ -1924,7 +1924,7 @@ console.log(pagiC());                                 // Output: Selamat Pagi!
 ```Javascript
 let sapaA = function(nama){ return `Hi ${nama}!`; };  // Penulisan Function Expressions biasa
 let sapaB = (nama) => `Hi ${nama}!`;                  // Penulisan Function Expressions dengan Arrow Function
-let sapaC = nama => `Hi ${nama}!`;                    // Note: Bahkan jika jumlah parameter hanya 1 saja, maka tanda ()
+let sapaC = nama => `Hi ${nama}!`;                    // Note: Bahkan jika jumlah Parameter hanya 1 saja, maka tanda ()
                                                       //       tidak perlu ditulis, lebih keren lagi bukan?
 
 console.log(sapaA("Budi"));                           // Output: Hi Budi!
@@ -2533,17 +2533,17 @@ console.log(Math.floor(12.54));       // Output: 12             ⇨ Pembulatan k
 console.log(Math.ceil(12.54));        // Output: 13             ⇨ Pembulatan ke atas
 console.log(Math.round(12.54));       // Output: 13             ⇨ Pembulatan ke bawah jika < 0.5 & pembulatan ke atas jika >= 0.5
 console.log(Math.random());           // Output: 0.734554...    ⇨ Generate angka acak rentang 0-1 (0, 0.9, dst), 1 tidak termasuk
-console.log(Math.max(45,90,12,55));   // Output: 90             ⇨ Mencari nilai paling besar dari angka yang di input di argument
-console.log(Math.min(45,90,12,55));   // Output: 12             ⇨ Mencari nilai paling kecil dari angka yang di input di argument
+console.log(Math.max(45,90,12,55));   // Output: 90             ⇨ Mencari nilai paling besar dari angka yang di input di Argument
+console.log(Math.min(45,90,12,55));   // Output: 12             ⇨ Mencari nilai paling kecil dari angka yang di input di Argument
 console.log(Math.abs(-5));            // Output: 5              ⇨ Menghasilkan nilai absolut, jika angka negatif maka jadi positif
 console.log(Math.pow(5, 2));          // Output: 25 ≈ 5²        ⇨ Pemangkatan angka (Update: sudah diganti dengan operator **)
 console.log(Math.sqrt(81));           // Output: 9              ⇨ Akar kuadrat dari suatu angka (81 ya 9, karena 81 dari 9x9) 
 console.log(Math.log(10));            // Output: 2.302585...    ⇨ Mencari nilai logaritma natural (e)
 console.log(Math.log10(1000));        // Output: 3              ⇨ Mencari nilai logaritma basis 10 (desimal) (Biasa digunakan)
 console.log(Math.log2(256));          // Output: 8              ⇨ Mencari nilai logaritma basis 2 (biner)
-console.log(Math.sin(60));            // Output: -0.30481...    ⇨ Mencari nilai sinus   (Nilai argument: radian, bukan derajat)
-console.log(Math.cos(60));            // Output: -0.95241...    ⇨ Mencari nilai cosinus (Nilai argument: radian, bukan derajat)
-console.log(Math.tan(60));            // Output: 0.320040...    ⇨ Mencari nilai tangen  (Nilai argument: radian, bukan derajat)
+console.log(Math.sin(60));            // Output: -0.30481...    ⇨ Mencari nilai sinus   (Nilai Argument: radian, bukan derajat)
+console.log(Math.cos(60));            // Output: -0.95241...    ⇨ Mencari nilai cosinus (Nilai Argument: radian, bukan derajat)
+console.log(Math.tan(60));            // Output: 0.320040...    ⇨ Mencari nilai tangen  (Nilai Argument: radian, bukan derajat)
 
 let mthA = Math.floor(Math.random()*(10))   // Studi kasus: tips untuk generate angka bulat acak rentang 0-9 (tidak lagi pecahan!)
 console.log(mthA);                          // Output: 7 (contoh)
@@ -2605,14 +2605,14 @@ console.log(strC.slice(2, 4));          // Output: nd       ⤷ Ambil String dar
 console.log(strC.slice(-4, 6));         // Output: dun      ⤷ Ambil String dari indeks ke 4 (belakang) s.d. indeks ke 6 (depan)
 console.log(strC.slice(-4));            // Output: dung     ⤷ Ambil String dari indeks ke 4 (belakang) s.d. akhir
                                         // Note: Object instance method substr(), substring() & slice() sangat mirip satu 
-                                        // sama lain, perbedaannya hanya pada prilaku argument kedua masing-masing method
+                                        // sama lain, perbedaannya hanya pada prilaku Argument kedua masing-masing method
 
 console.log(strD.split());              // Output: ["Bandung kota kembang"]         ⇨ split() dipakai untuk memecah sebuah String
-console.log(strD.split(""));            // Output: ["B", "a", "n", "d" ...]            menjadi sebuah Array, argument pertama diisi
+console.log(strD.split(""));            // Output: ["B", "a", "n", "d" ...]            menjadi sebuah Array, Argument pertama diisi
 console.log(strD.split("", 1));         // Output: ["B"]                               karakter "pembatas" yang digunakan untuk
 console.log(strD.split(" "));           // Output: ["Bandung", "kota", "kembang"]      memecah String (atau bisa juga diisi dengan 
 console.log(strD.split(" ", 2));        // Output: ["Bandung", "kota"]                 RegExp, dibahas di point D), sedangkan 
-console.log(strE.split(", "));          // Output: ["Satu", "dua", "tiga", "empat"]    argument kedua (optional), diisi dengan 
+console.log(strE.split(", "));          // Output: ["Satu", "dua", "tiga", "empat"]    Argument kedua (optional), diisi dengan 
 console.log(strE.split(", ", 3));       // Output: ["Satu", "dua", "tiga"]             jumlah element Array yang ingin diambil.
 console.log(strF.split(/\W/));          // Output: ["Satu", "dua", "tiga", "empat"]  ⤷ /\W/ merupakan contoh pemakaian RegExp
 console.log(strF.split(/\W/, 3));       // Output: ["Satu", "dua", "tiga"]            
@@ -2624,17 +2624,17 @@ console.log(strE.startsWith("Satu"));   // Output: true           ⇨ Check apak
 console.log(strE.startsWith("dua", 6)); // Output: true           ⤷ Argument ke 2: 6 menjadi indeks awal String
 console.log(strE.endsWith("empat"));    // Output: true           ⇨ Check apakah String strE diakhiri dengan String "empat"
 console.log(strE.endsWith("dua", 9));   // Output: true           ⤷ Argument ke 2: 9 menjadi indeks akhir String
-console.log(strC.repeat(2));            // Output: BandungBandung ⇨ Mengulang String sebanyak jumlah yang diinput di argument
+console.log(strC.repeat(2));            // Output: BandungBandung ⇨ Mengulang String sebanyak jumlah yang diinput di Argument
 console.log(numB.toString());           // Output: 50 (String)    ⇨ Konversi menjadi tipe data String (primitif)
 console.log(strD.indexOf("kota"));      // Output: 8              ⇨ Serupa dengan includes(), namun outputnya berupa posisi indeks
 console.log(strD.indexOf("city"));      // Output: -1             ⤷ Jika Output = -1, artinya String yang dicari tidak ditemukan
 console.log(strD.indexOf("kota", 9));   // Output: -1             ⤷ Argument ke 2: 9 menjadi indeks dimana pencarian dimulai
 console.log(strD.lastIndexOf("kota"));  // Output: 8              ⇨ Serupa dengan indexOf(), namun pencarian dimulai dari akhir
 console.log(strD.lastIndexOf("ota", 9));// Output: 9              ⤷ 9 menjadi indeks dimana pencarian dimulai (gerak dari 9 ke 0)
-console.log(strD.search(/KOTA/i));      // Output: 8              ⇨ Serupa dengan indexOf(), namun argument diisi dengan RegExp
+console.log(strD.search(/KOTA/i));      // Output: 8              ⇨ Serupa dengan indexOf(), namun Argument diisi dengan RegExp
 console.log(strD.match(/\w*o\w*/g));    // Output: ["kota"]       ⇨ Serupa dengan search(), namun Output berupa Array
 console.log(strD.match(/\w*z\w*/g));    // Output: null           ⤷ Jika Output = null, artinya tidak ada pola tersebut di String
-console.log(strD.replace("kota", "X")); // Output: Bandung X kembang      ⇨ Mengganti String dengan String lain (di argument)
+console.log(strD.replace("kota", "X")); // Output: Bandung X kembang      ⇨ Mengganti String dengan String lain (di Argument)
 console.log(strD.replace(/a/g, "o"));   // Output: Bondung koto kembong   ⤷ Argument ke 1: bisa diisi juga dengan RegExp
 
 let strH = "Nama saya Budi Setiawan";   // Studi kasus: menghitung berapa kali String "a" muncul di dalam String strH
@@ -2976,7 +2976,7 @@ console.log(arrI);                      // Output: [1,2,3,6]              ⤷ Ar
 console.log(arrJ.splice(3,2,"new"));    // Output: [4,5]                  ⤷ Diisi 0 (nol), artinya tidak ada element yang dihapus
 console.log(arrJ);                      // Output: [1,2,3,"new",6]        ⤷ Argument ke 3 dan seterusnya: element Array baru yang
 console.log(arrK.splice(3,0,97,98,99)); // Output: []                     ⤷ Ingin ditambahkan (ditambahkannya dimulai dari index
-console.log(arrK);                      // Output: [1,2,3,97,98,99,4,5,6] ⤷ yang diinputkan di argument ke 1)
+console.log(arrK);                      // Output: [1,2,3,97,98,99,4,5,6] ⤷ yang diinputkan di Argument ke 1)
 
 let arrL = ["a","b","c"];
 let tempA, tempB;
@@ -2984,12 +2984,12 @@ let tempA, tempB;
 console.log(arrL.join());               // Output: a,b,c                  ⇨ Menggabungkan element Array menjadi String
 console.log(arrL.join("-"));            // Output: a-b-c                  ⤷ Argument diisi dengan karakter yang diinginkan sebagai
 console.log(arrL.join(" "));            // Output: a b c                  ⤷ Pemisah antar element (Defaul pemisahnya ialah koma)
-arrL.push("d","e","f");                 // push() untuk menambah element Array ke posisi terakhir (bisa lebih dari 1 argument)
+arrL.push("d","e","f");                 // push() untuk menambah element Array ke posisi terakhir (bisa lebih dari 1 Argument)
 console.log(arrL);                      // ⤷ Output: ["a","b","c","d","e","f"]
 tempA = arrL.pop();                     // pop() untuk mengurangi element Array dari posisi terakhir (hanya 1 element saja)
 console.log(tempA);                     // ⤷ Output: f
 console.log(arrL);                      // ⤷ Output: ["a","b","c","d","e"]
-arrL.unshift("x","y","z");              // unshift() untuk menambah element Array ke posisi awal (bisa lebih dari 1 argument)
+arrL.unshift("x","y","z");              // unshift() untuk menambah element Array ke posisi awal (bisa lebih dari 1 Argument)
 console.log(arrL);                      // ⤷ Output: ["x","y","z","a","b","c","d","e"]
 tempB = arrL.shift();                   // shift() untuk mengurangi element Array dari posisi awal (hanya 1 elemnt saja)
 console.log(tempB);                     // ⤷ Output: x
@@ -3011,7 +3011,7 @@ console.log(arrM.indexOf("e"));         // Output: -1
 // E4. Object instance method (𝗱𝗲𝗻𝗴𝗮𝗻 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
 
 /* 
-Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh argument dari method tersebut berupa tipe
+Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe
 data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 */
 
@@ -3023,8 +3023,8 @@ arrN.forEach(                                         // forEach() berfungsi men
     console.log(`Index ke-${index} = ${element}`);    // ⤷ Argument ke 1: nilai element/value Array 
   }                                                   // ⤷ Argument ke 2: index element/key Array   (optional)
 );                                                    // ⤷ Argument ke 3: isi seluruh Array         (optional)
-                                                      // ⤷ Penulisan argument tidak harus element/index/arrray (bebas saja)
-                                                      // ⤷ Peranan argument ke 3 tidak sepenting argument ke 1 & ke 2, oleh
+                                                      // ⤷ Penulisan Argument tidak harus element/index/arrray (bebas saja)
+                                                      // ⤷ Peranan Argument ke 3 tidak sepenting Argument ke 1 & ke 2, oleh
                                                       // ⤷ karena itu contoh di samping tidak menyertakan console.log(array);
 
 /*
@@ -3036,7 +3036,7 @@ Index ke-3 = d
 */
 
 function tampil(elm, idx, arr){                       // Dalam contoh di atas, Function Callback secara langsung disimpan dalam
-  console.log(`Index ke-${idx} = ${elm}`);            // argument, namun sebenarnya bisa pula dipisah menjadi Function tersendiri
+  console.log(`Index ke-${idx} = ${elm}`);            // Argument, namun sebenarnya bisa pula dipisah menjadi Function tersendiri
 }                                                     // (dipisahkan keluar), dengan demikian dapat dipakai oleh Array lainnya.
 arrN.forEach(tampil);                                 // Simak cara penulisan & pemanggilan Callback-nya pada contoh di samping.
 arrO.forEach(tampil);                                 // ⤷ Lihat, Function tampil() bisa dipakai oleh arrN & arrO
@@ -3119,10 +3119,10 @@ function pangkat2(total, elm, idx, arr){
                                                       // reduce() & reduceRight() digunakan untuk memproses total seluruh element
                                                       // Array dan menghasilkan 1 nilai akhir. reduce() memproses dari awal Array,
                                                       // sedangkan reduceRight() memproses dari akhir element Array.
-                                                      // ⤷ argument ke 1: Var/Let penampung nilai total
-                                                      // ⤷ argument ke 2: nilai element/value Array
-                                                      // ⤷ argument ke 3: index element/key Array       (optional)
-                                                      // ⤷ argument ke 4: isi seluruh Array             (optional)
+                                                      // ⤷ Argument ke 1: Var/Let penampung nilai total
+                                                      // ⤷ Argument ke 2: nilai element/value Array
+                                                      // ⤷ Argument ke 3: index element/key Array       (optional)
+                                                      // ⤷ Argument ke 4: isi seluruh Array             (optional)
 console.log(arrP.reduce(tambah));                     // Output: 15   (hasil dari 1+2+3+4+5)
 console.log(arrP.reduce(tambah,10));                  // Output: 25   (hasil dari 10+1+2+3+4+5)
 console.log(arrQ.reduce(pangkat2));                   // Output: 235  (hasil dari 5+6²+7²+8²+9²)
@@ -3136,8 +3136,8 @@ console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dar
 Note: Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di
 Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5
 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat
-mengatur nilai awal untuk Var/Let total dengan cara menyisipkan argument tambahan setelah Callback. Perhatikan proses perhitungan
-pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan argument tambahan yang
+mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan
+pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang
 disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
 */
 
@@ -3167,18 +3167,18 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 ```Javascript
 // F1. Membuat Date Object
 
-// ➊ Tanpa argument
+// ➊ Tanpa Argument
 
-let datA = new Date();                                // Cara penulisan 1: Tanpa argument
+let datA = new Date();                                // Cara penulisan 1: Tanpa Argument
 console.log(datA);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu saat kode console.log(datA) dieksekusi
                                                       // ⤷ Kode dieksekusi di Jawa Barat Indonesia (WIB), oleh karena itu muncul 
                                                       // ⤷ GMT+0700 yang artinya waktu di WIB lebih cepat 7 jam dari waktu GMT/UTC
                                                       // ⤷ (standard waktu internasional), berarti waktu di GMT yaitu 17:35:22.
 
-// ➋ Dengan 7 argument
+// ➋ Dengan 7 Argument
 
-let datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Dengan 7 argument
+let datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Dengan 7 Argument
                                                       // ⤷ Argument ke 1: tahun
                                                       // ⤷ Argument ke 2: bulan     (Indeks dimulai dari 0 = Januari, dst)
                                                       // ⤷ Argument ke 3: hari
@@ -3186,31 +3186,31 @@ let datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Denga
                                                       // ⤷ Argument ke 5: menit
                                                       // ⤷ Argument ke 6: detik
                                                       // ⤷ Argument ke 7: milidetik
-                                                      // ⤷ Kita tidak harus menginput ke 7 argument ini sekaligus (optional),
-                                                      // ⤷ namun jika menginput hanya argument ke 1 saja, secara otomatis JS
+                                                      // ⤷ Kita tidak harus menginput ke 7 Argument ini sekaligus (optional),
+                                                      // ⤷ namun jika menginput hanya Argument ke 1 saja, secara otomatis JS
                                                       // ⤷ membacanya sebagai milidetik, bukan tahun, catat baik-baik ya.
 console.log(datB);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
-                                                      // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di argument
+                                                      // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
 
-// ➌ Dengan 1 argument dateString
+// ➌ Dengan 1 Argument dateString
 
-let datC = new Date("04 Jun 2021 17:42:22");          // Cara penulisan 3: Dengan 1 argument dateString
+let datC = new Date("04 Jun 2021 17:42:22");          // Cara penulisan 3: Dengan 1 Argument dateString
                                                       // ⤷ dateString yaitu String yang berformat tanggal, nantinya String ini
                                                       // ⤷ akan dikonversi menjadi Date oleh JS. Contoh di samping merupakan salah
                                                       // ⤷ satu format penulisan saja, karena terdapat banyak format dateString
                                                       // ⤷ misalnya "06/04/2021 17:42:22" atau "June 04, 2021 17:42:22", dll.
 console.log(datC);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
-                                                      // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di argument
+                                                      // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
 
-// ➍ Dengan 1 argument milidetik
+// ➍ Dengan 1 Argument milidetik
 
-let datD = new Date(1622803342000);                   // Cara penulisan 4: Dengan 1 argument milidetik
+let datD = new Date(1622803342000);                   // Cara penulisan 4: Dengan 1 Argument milidetik
                                                       // ⤷ Argument merupakan total milidetik sejak tanggal 1 Januari 1970 atau
                                                       // ⤷ yang disebut UNIX Epoch Time. Dalam contoh di samping 1622803342000
                                                       // ⤷ milidetik berarti ± 51 tahun 167 hari 10 jam 42 menit 22 detik
                                                       // ⤷ semenjak 1 Januari 1970, maka itu berarti ± 4 Juni 2021.
 console.log(datD);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
-                                                      // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di argument
+                                                      // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
 
 // F2. Object instance method
 
@@ -3340,7 +3340,7 @@ console.log(hasil);                         // Output: Sabtu, 5 Juni 2021 13:25:
 
 // ➋ Menghitung Selisih Tanggal
 
-                                            // Membuat Date Object dengan 1 argument dateString
+                                            // Membuat Date Object dengan 1 Argument dateString
 let tglAwal   = new Date("06/05/2021");     // Let tglAwal diisi dengan 5 Juni 2021          Note: Perhatikan, urutan tanggal
 let tglAkhir  = new Date("12/20/2021");     // Let tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik 🔔
 
