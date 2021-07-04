@@ -2367,7 +2367,7 @@ mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Function per
 mobilBudi.pergi2();                      //           Menjalankan Function pergi2 milik Object mobilBudi
 ```
 
-Dalam kasus Method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Selain itu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → Method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
+Dalam kasus Method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
 
 Jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Windows). Untuk "mengakalinya", gunakan "that" seperti pada contoh Object (point nomor 4) di atas. Pada contoh di bawah ini Method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
