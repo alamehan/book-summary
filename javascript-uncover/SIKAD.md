@@ -1845,7 +1845,7 @@ cetak();                              // Function dipanggil terlebih dahulu untu
 ```
 
 ```Javascript
-cetak = function(){                   // Cara penulisan Function Expressions (Annonymous Function) biasa
+cetak = function(){                   // Cara penulisan Function Expressions (Anonymous Function) biasa
   for (let i = 1; i <= 10; i++){
     console.log(i);
   }
@@ -1876,7 +1876,7 @@ cetak("Budi", 17);                    // Function dipanggil terlebih dahulu untu
 
 ```Javascript
 let sapa = (function(waktu){          // Secara bersamaan Outer & Inner Function akan otomatis berjalan, berbeda dengan
-  waktu = "Pagi";                     // kasus di Function Factory, dimana hanya Outer Function-nya saja yang berjalan.
+  waktu = "Pagi";                     // kasus di Factory Function, dimana hanya Outer Function-nya saja yang berjalan.
   function tampilkan(nama){
     console.log(`${waktu}, ${nama}!`);
   }
@@ -1905,7 +1905,7 @@ console.log(add());                   // Output: 3              ⇨ Menjalankan 
 
 ### 𝐏. Arrow Function
 
-Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. Namun tidak hanya itu, di bab (...) nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
+Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. Namun tidak hanya itu, di bab 2-6 D nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
 
 #### ⤷ Contoh Tanpa Argument
 
