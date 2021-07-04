@@ -2263,7 +2263,7 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-Dalam kasus Method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function, biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). Lihat point ...
+Dalam kasus Method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function, biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔔 Lihat point ...
 
 Selain itu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → Method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Simak contoh di bawah.
 
@@ -2294,7 +2294,7 @@ let mhs = {
   }                                   // }
 }
                                       // Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni
-                                      //          this milik parent scope-nya, yaitu Method halo() yang mengacu ke Object mhs.
+                                      //          this milik parent scope-nya, yaitu Method halo yang mengacu ke Object mhs.
                                       //          Karena itulah this pada contoh Arrow Function di atas mengacu ke Object mhs.
 mhs.halo();
 ```
