@@ -390,8 +390,8 @@ var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: 
 ### 𝐃. Boolean
 
 ```Javascript
-var bolA = true;                      // Bernilai true, biasanya di pakai di if, else, while, dan do while
-var bolB = false;                     // Bernilai false, biasanya di pakai di if, else, while, dan do while
+var bolA = true;                      // Bernilai true, biasanya di pakai di Struktur Logika, Perulangan, dll
+var bolB = false;                     // Bernilai false, biasanya di pakai di Struktur Logika, Perulangan, dll
 ```
 
 ### 𝐄. Null & Undefined
