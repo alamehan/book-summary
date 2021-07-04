@@ -598,6 +598,10 @@ console.log((4+6)/(5-3)*2+3);         // Output: 13     ⇨ Operator () diproses
 var g = 10;         // Artinya 10 dimasukkan sebagai nilai ke Variable g (Operator assignment memiliki precedence: 3)
 var h = 10 + 5;     // Artinya jumlahkan 10 + 5 dulu (Operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable h
 var i = g + h;      // Artinya jumlahkan g + h dulu (Operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable i
+
+console.log(g);     // Output: 10
+console.log(h);     // Output: 15
+console.log(i);     // Output: 25
 ```
 
 #### ⤷ Gabungan Assignment:
@@ -605,11 +609,17 @@ var i = g + h;      // Artinya jumlahkan g + h dulu (Operator "+" memiliki prece
 ```Javascript
 var gabA = gabB = gabC = gabD = gabE = 20;
 
-gabA += 10;                           // gabA = gabA + 10 🡲 gabA = 20 + 10      (Hasilnya: 30) 
-gabB -= 10;                           // gabB = gabB - 10 🡲 gabB = 20 - 10      (Hasilnya: 10)
-gabC /= 10;                           // gabC = gabC / 10 🡲 gabC = 20 / 10      (Hasilnya: 2)
-gabD *= 10;                           // gabD = gabD * 10 🡲 gabD = 20 * 10      (Hasilnya: 200) 
-gabE %= 10;                           // gabE = gabE % 10 🡲 gabE = 20 % 10      (Hasilnya: 0)
+gabA += 10;                           // gabA = gabA + 10 🡲 gabA = 20 + 10
+gabB -= 10;                           // gabB = gabB - 10 🡲 gabB = 20 - 10
+gabC /= 10;                           // gabC = gabC / 10 🡲 gabC = 20 / 10
+gabD *= 10;                           // gabD = gabD * 10 🡲 gabD = 20 * 10
+gabE %= 10;                           // gabE = gabE % 10 🡲 gabE = 20 % 10
+
+console.log(gabA);                    // Output: 30
+console.log(gabB);                    // Output: 10
+console.log(gabC);                    // Output: 2
+console.log(gabD);                    // Output: 200
+console.log(gabE);                    // Output: 0
 ```
 
 ### 𝐆. Operator Increment & Decrement
