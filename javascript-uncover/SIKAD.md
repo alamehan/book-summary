@@ -1513,7 +1513,7 @@ Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan seb
 
 ### 𝐊. Function Expressions & Anonymous Function
 
-Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (Var/Let), disebut sebagai Function Expressions. Lalu jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
+Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (Var/Let/Const), disebut sebagai Function Expressions. Jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
 
 #### ⤷ Function Expressions
 
