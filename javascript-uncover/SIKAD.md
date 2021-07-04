@@ -258,7 +258,7 @@ EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah 
 
 Format penulisan: Var/Let diawali huruf kecil (```total```, ```totalBiaya```, dst), Const huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). **Class dibahas di bab 11**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variable/Let, Konstanta maupun Class.
 
-Pada contoh di bawah: Var ```harga```, Let ```namaLengkap```, dan Const ```NILAI_PI``` adalah **Identifier**. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah **Literal**.
+Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: Var ```harga```, Let ```namaLengkap```, dan Const ```NILAI_PI``` adalah Identifier. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah Literal.
 
 ```HTML
 <html>
