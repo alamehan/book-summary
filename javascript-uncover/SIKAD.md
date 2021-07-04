@@ -1323,9 +1323,9 @@ function luar(){                      // "luar" merupakan Outer Function bagi "t
     function dalam(){                 // "dalam" merupakan Inner Function bagi "tengah"
       console.log("C");
     }
-    dalam();
+    dalam();                          // Menjalankan Function dalam yang berada di dalam Function tengah
   }
-  tengah();
+  tengah();                           // Menjalankan Function tengah yang beradai di dalam Function luar
 }
 luar();                               // Output: A B C
 ```
@@ -1337,10 +1337,10 @@ Inner Function yang memiliki akses/menggunakan data yang ada di parent scope-nya
 ```Javascript
 function init(){
   let nama = "Budi";
-  function tampilNama(){              // Di dalam Function tampilNama() tidak terdapat pendefinisian Var/Let nama, sehingga
+  function tampilNama(){              // Di dalam Function tampilNama tidak terdapat pendefinisian Var/Let nama, sehingga
     console.log(nama);                // perintah console.log(nama) akan "mencari keluar" scope, dan ditemukanlah Let nama di
-  }                                   // parent-nya, lalu digunakan. Dengan demikian Function tampilNama() disebut Closures.
-  tampilNama();                       // Menjalankan Function tampilNama() yang berada di dalam Function init().
+  }                                   // parent-nya, lalu digunakan. Dengan demikian Function tampilNama disebut Closures.
+  tampilNama();                       // Menjalankan Function tampilNama yang berada di dalam Function init
 }
 init();                               // Output: Budi
 ```
