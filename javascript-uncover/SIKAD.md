@@ -2372,7 +2372,7 @@ mobilBudi.pergi2();                      //           Menjalankan Method pergi2 
 
 Dalam kasus Method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
 
-Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" seperti pada contoh sebelumnya, atau gunakan Method apply(). Pada contoh di bawah ini Method (Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" seperti pada contoh sebelumnya, atau gunakan Method apply(). Pada contoh di bawah ini Method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -2383,24 +2383,22 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
   this.pergi1 = function(){              //   mobilBudi.pergi1 = function(){    🡲 Method (Sebagai Outer Function)
     console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
-                                         //
-    let that = this;                     //     let that = mobilBudi;           🡲 that dibuat mengacu ke Object mhs layaknya this
                                          // 
     function innerA(){                   //     function innerA(){              🡲 Function Declaration (Inner Function) (✔️)
-      console.log(that);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
-      console.log(that.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
+      console.log(this);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+      console.log(this.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
     };                                   //     };
     innerB = function(){                 //     innerB = function(){            🡲 Function Expressions (Inner Function) (✔️)
-      console.log(that);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
-      console.log(that.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
+      console.log(this);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+      console.log(this.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
     };                                   //     };
     innerC = () => {                     //     innerC = () => {                🡲 Arrow Function (Inner Function) (✔️)
       console.log(this);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
       console.log(this.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
     };                                   //     };
                                          // 
-    innerA();                            //     innerA();
-    innerB();                            //     innerB();
+    innerA.apply(this);                  //     innerA.apply(mobilBudi);        🡲 Mengakali dengan Method apply()
+    innerB.apply(this);                  //     innerB.apply(mobilBudi);        🡲 Mengakali dengan Method apply()
     innerC();                            //     innerC();
   };                                     //   };
 }                                        // }
@@ -2453,7 +2451,7 @@ mobilBudi.pergi3();                      //           Menjalankan Method pergi3 
 
 Dalam kasus Method di Class, cara penulisan yang paling banyak dijumpai yaitu Function Declaration (Tanpa keyword Function). Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Class → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula, tergantung jenis Function yang digunakan.
 
-Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan menjadi Undefined. Untuk "mengakalinya", seperti biasa, gunakan "that". Pada contoh di bawah ini Method (sebagai Outer Function) ditulis dengan cara Function Declaration (Tanpa keyword Function), sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" atau Method apply(). Pada contoh di bawah ini Method (sebagai Outer Function) ditulis dengan cara Function Declaration (Tanpa keyword Function), sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
