@@ -2480,7 +2480,7 @@ sapa2.apply(userB, ["Bandung", "ID"]);
 
 #### ⤷ Kasus Umum
 
-Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan cara Arrow Function. Hal ini karena Arrow Function tidak memiliki konsep this. Penggunaan Arrow Function lebih sering dijumpai pada kasus Nested, dimana perannya yaitu sebagai Inner Function, yang memiliki konteks this sama seperti konteks this di parent scope-nya.
+Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan cara Arrow Function. Hal ini karena Arrow Function tidak memiliki konsep this. Penggunaan Arrow Function lebih sering dijumpai pada kasus Nested, dimana perannya yaitu sebagai Inner Function, yang memiliki konteks this sama seperti konteks this di parent scope-nya, yaitu mengacu pada Owner Object-nya (Object yang dibuatnya).
 
 <!-- TABLE 1 -->
 
