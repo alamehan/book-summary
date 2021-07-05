@@ -2449,7 +2449,7 @@ mobilBudi.pergi2();                      //           Menjalankan Method pergi2 
 mobilBudi.pergi3();                      //           Menjalankan Method pergi3 milik Object mobilBudi
 ```
 
-Dalam kasus Method di Class, cara penulisan yang paling banyak dijumpai yaitu Function Declaration (Tanpa keyword Function). Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Class → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this yang berbeda pula.
+Dalam kasus Method di Class, cara penulisan yang paling banyak dijumpai yaitu Function Declaration (Tanpa keyword Function). Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Class → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula, tergantung jenis Function yang digunakan.
 
 Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan menjadi Undefined. Untuk "mengakalinya", seperti biasa, gunakan "that". Pada contoh di bawah ini Method (sebagai Outer Function) ditulis dengan cara Function Declaration (Tanpa keyword Function), sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
