@@ -2334,7 +2334,7 @@ let mhs = {
 mhs.halo();
 ```
 
-Atau sebagai alternatif selain menggunakan "that" seperti contoh di atas, bisa gunakan Method bind, call maupun apply pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(mhs);```, ```innerB();``` menjadi ```innerB.apply(mhs);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya mengacu ke Object mhs. Lebih jelasnya lihat contoh pada point nomor 8 di bawah.
+Atau sebagai alternatif selain menggunakan "that" seperti contoh di atas, bisa gunakan Method bind/call/apply pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(mhs);```, ```innerB();``` menjadi ```innerB.apply(mhs);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya mengacu ke Object mhs. Lebih jelasnya lihat contoh pada point nomor 8 di bawah.
 
 #### ⤷ 5. Di dalam Method di Constructor Function, keyword this mengacu ke Owner Object (Object yang dibuat).
 
