@@ -2663,7 +2663,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan ca
 
 #### ⤷ Kasus Nested
 
-Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Declaration (Tanpa keyword Function) & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" untuk mengacu ke Owner Object (Object yang dibuat).
+Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Declaration (Tanpa keyword Function) & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" atau Method apply() untuk mengacu ke Owner Object (Object yang dibuat).
 
 <!-- TABLE 3 (KASUS NESTED) -->
 
