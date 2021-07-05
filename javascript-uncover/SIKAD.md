@@ -2683,7 +2683,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
     <td rowspan="3">Di dalam Method di Object (Kasus Nested)</td>
     <td rowspan="3">Function Expressions</td>
     <td>Function Declaration</td>
-    <td rowspan="2">Global Object (Window), 𝐛𝐮𝐭𝐮𝐡 "𝐭𝐡𝐚𝐭"</td>
+    <td rowspan="2">Global Object (Window). 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
   </tr>
   <tr>
     <td>Function Expressions</td>
@@ -2697,7 +2697,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
     <td rowspan="3">Di dalam Method di Constructor Function (Kasus Nested)</td>
     <td rowspan="3">Function Expressions</td>
     <td>Function Declaration</td>
-    <td rowspan="2">Global Object (Window), 𝐛𝐮𝐭𝐮𝐡 "𝐭𝐡𝐚𝐭"</td>
+    <td rowspan="2">Global Object (Window). 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
   </tr>
   <tr>
     <td>Function Expressions</td>
@@ -2711,7 +2711,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
     <td rowspan="3">Di dalam Method di Class (Kasus Nested)</td>
     <td rowspan="3">Function Declaration (Tanpa keyword Function)</td>
     <td>Function Declaration</td>
-    <td rowspan="2">undefined, 𝐛𝐮𝐭𝐮𝐡 "𝐭𝐡𝐚𝐭"</td>
+    <td rowspan="2">undefined. 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
   </tr>
   <tr>
     <td>Function Expressions</td>
