@@ -2552,7 +2552,7 @@ sapa2.apply(userB, ["Bandung", "ID"]);
 
 ### 𝐄. Kesimpulan keyword this
 
-Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nantinya akan digantikan oleh Owner Object (Object yang dibuat). Namun pada pembahasan di atas terkesan rumit, ini karena konteks this tidak selalu langsung mengacu ke Owner Object-nya, sehingga perlu "diakali" terlebih dahulu, baik menggunakan "that" maupun Method apply().
+Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nantinya akan digantikan oleh Owner Object (Object yang dibuat). Namun pada pembahasan di atas terkesan rumit, ini karena **konteks this tidak selalu langsung mengacu ke Owner Object-nya, sehingga perlu "diakali" terlebih dahulu, baik menggunakan "that" maupun Method apply()**.
 
 #### ⤷ Kasus Umum
 
