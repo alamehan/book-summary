@@ -2364,8 +2364,8 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
 }                                        // }
 
 let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi Object Mobil baru bernama mobilBudi
-mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Function pergi1 milik Object mobilBudi
-mobilBudi.pergi2();                      //           Menjalankan Function pergi2 milik Object mobilBudi
+mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Method pergi1 milik Object mobilBudi
+mobilBudi.pergi2();                      //           Menjalankan Method pergi2 milik Object mobilBudi
 ```
 
 Dalam kasus Method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
@@ -2412,7 +2412,81 @@ mobilBudi.pergi1();
 🔔 Class dibahas di bab 3-1 B
 
 ```Javascript
+                                         // STEP 2 🡲 Saat instansiasi Object mobilBudi
+                                         // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+class Mobil{                             // class Mobil{
+  constructor(merkArg, tipeArg){         //   constructor(merkArg, tipeArg){
+    this.merk   = merkArg;               //     mobilBudi.merk   = merkArg;     🡲 Di dalam Method Constructor, this mengacu
+    this.tipe   = tipeArg;               //     mobilBudi.tipe   = tipeArg;        ke Object instansiasi-nya (Owner Object).
+                                         // 
+    console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+    console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
+    console.log(this.tipe);              //     console.log(mobilBudi.tipe);    🡲 Output: MPV
+  };                                     //   };
+                                         // 
+  pergi1(){                              //   pergi1(){                         🡲 Penulisan cara 1: Function Declaration (✔️)
+    console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+    console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
+    console.log(this.tipe);              //     console.log(mobilBudi.tipe);    🡲 Output: MPV
+  };                                     //   };
+                                         //
+  pergi2 = function(){                   //   pergi2 = function(){              🡲 Penulisan cara 2: Function Expressions (✔️)
+    console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+    console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
+    console.log(this.tipe);              //     console.log(mobilBudi.tipe);    🡲 Output: MPV
+  };                                     //   };
+                                         //
+  pergi3 = () => {                       //   pergi3 = () => {                  🡲 Penulisan cara 3: Arrow Function (✔️)
+    console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+    console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
+    console.log(this.tipe);              //     console.log(mobilBudi.tipe);    🡲 Output: MPV
+  };                                     //   };
+}                                        // }
 
+let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi Object Mobil baru bernama mobilBudi
+mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Method pergi1 milik Object mobilBudi
+mobilBudi.pergi2();                      //           Menjalankan Method pergi2 milik Object mobilBudi
+mobilBudi.pergi3();                      //           Menjalankan Method pergi3 milik Object mobilBudi
+```
+
+Dalam kasus Method di Class, cara penulisan yang paling banyak dijumpai yaitu Function Declaration (Tanpa keyword Function). Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Class → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this yang berbeda pula.
+
+Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan menjadi Undefined. Untuk "mengakalinya", seperti biasa, gunakan "that". Pada contoh di bawah ini Method (sebagai Outer Function) ditulis dengan cara Function Declaration (Tanpa keyword Function), sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+
+```Javascript
+                                         // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
+class Mobil{                             // class Mobil{
+  constructor(merkArg, tipeArg){         //   constructor(merkArg, tipeArg){
+    this.merk   = merkArg;               //     mobilBudi.merk   = merkArg;
+  };                                     //   };
+                                         // 
+  pergi1(){                              //   pergi1(){                       🡲 Method (Sebagai Outer Function)
+    console.log(this);                   //     console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC"}
+    console.log(this.merk);              //     console.log(mobilBudi.merk);  🡲 Output: ABC
+                                         //
+    let that = this;                     //     let that = mobilBudi;         🡲 that dibuat mengacu ke Object mhs layaknya this
+                                         // 
+    function innerA(){                   //     function innerA(){            🡲 Function Declaration (Inner Function) (✔️)
+      console.log(that);                 //       console.log(this);          🡲 Output: Mobil {merk: "ABC"}
+      console.log(that.merk);            //       console.log(this.merk);     🡲 Output: ABC
+    };                                   //     };
+    let innerB = function(){             //     innerB = function(){          🡲 Function Expressions (Inner Function) (✔️)
+      console.log(that);                 //       console.log(this);          🡲 Output: Mobil {merk: "ABC"}
+      console.log(that.merk);            //       console.log(this.merk);     🡲 Output: ABC
+    };                                   //     };
+    let innerC = () => {                 //     innerC = () => {              🡲 Arrow Function (Inner Function) (✔️)
+      console.log(this);                 //       console.log(this);          🡲 Output: Mobil {merk: "ABC"}
+      console.log(this.merk);            //       console.log(this.merk);     🡲 Output: ABC
+    };                                   //     };
+                                         // 
+    innerA();                            //     innerA();
+    innerB();                            //     innerB();
+    innerC();                            //     innerC();
+  };                                     //   };
+}                                        // }
+
+let mobilBudi = new Mobil("ABC", "MPV");
+mobilBudi.pergi1();
 ```
 
 #### ⤷ 7. Di dalam Event, keyword this mengacu ke Element yang menerima Event tersebut.
@@ -2431,7 +2505,7 @@ mobilBudi.pergi1();
 ```
 
 ```Javascript
-// Lihat di video Web Programming Unpas (!)
+// ⚠️ Selebihnya lihat di video Web Programming Unpas (!) ⚠️
 ```
 
 #### ⤷ 8. Method bind(), call() & apply() membuat keyword this mengacu pada Object yang dituju.
