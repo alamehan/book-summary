@@ -2464,7 +2464,7 @@ class Mobil{                             // class Mobil{
     console.log(this);                   //     console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC"}
     console.log(this.merk);              //     console.log(mobilBudi.merk);  🡲 Output: ABC
                                          //
-    let that = this;                     //     let that = mobilBudi;         🡲 that dibuat mengacu ke Object mhs layaknya this
+    let that = this;                     //     let that = mobilBudi;         🡲 Mengakali dengan "that"
                                          // 
     function innerA(){                   //     function innerA(){            🡲 Function Declaration (Inner Function) (✔️)
       console.log(that);                 //       console.log(this);          🡲 Output: Mobil {merk: "ABC"}
@@ -2551,6 +2551,8 @@ sapa2.apply(userB, ["Bandung", "ID"]);
 ```
 
 ### 𝐄. Kesimpulan keyword this
+
+Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nantinya akan digantikan oleh Owner Object (Object yang dibuat). Namun pada pembahasan di atas terkesan rumit, ini karena konteks this tidak selalu langsung mengacu ke Owner Object-nya, sehingga perlu "diakali" terlebih dahulu, baik menggunakan "that" maupun Method apply().
 
 #### ⤷ Kasus Umum
 
