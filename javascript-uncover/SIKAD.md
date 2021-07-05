@@ -2002,6 +2002,7 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 > - [X] 𝐁. Nested Object
 > - [X] 𝐂. Object Reference
 > - [X] 𝐃. Keyword this
+> - [X] 𝐄. Kesimpulan keyword this
 
 ### 𝐀. Object Sebagai Tipe Data
 
@@ -2176,9 +2177,9 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 
 Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu this. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parent-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam Method di Object, di dalam Method di Class, atau di sebuah Event, dst.
 
-Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan mengacu pada this milik parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga Global Object (Windows).
+Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan mengacu pada this milik parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga Global Object (Window).
 
-#### ⤷ 1. Di konteks Global, keyword this mengacu ke Global Object (Windows).
+#### ⤷ 1. Di konteks Global, keyword this mengacu ke Global Object (Window).
   
 ```Javascript
 console.log(this);                    // Output: Window {window: Window, self: Window, ...}
@@ -2189,7 +2190,7 @@ let conA = this;
 console.log(conA);                    // Output: Window {window: Window, self: Window, ...}
 ```
 
-#### ⤷ 2. Di dalam Function, keyword this mengacu ke Global Object (Windows).
+#### ⤷ 2. Di dalam Function, keyword this mengacu ke Global Object (Window).
 
 ```Javascript
 function funA(){                      // Penulisan Function Declaration
@@ -2231,7 +2232,7 @@ let mhs = {
   nama: "Budi",
   umur: 16,
   coba: this,                         // Di dalam Object-nya langsung (bukan di dalam Method-nya), this mengacu ke Global Object
-                                      // (Windows). Untuk membuktikannya jalankan perintah console.log(mhs.coba); di luar Object.
+                                      // (Window). Untuk membuktikannya jalankan perintah console.log(mhs.coba); di luar Object.
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
   halo1(){                            // halo1(){                           🡲 Penulisan Method cara 1: Function Declaration (✔️)
@@ -2256,8 +2257,8 @@ let mhs = {
 }
                                       // Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni
                                       //          this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs
-                                      //          mengacu ke Global Object (Windows). Oleh karena itulah this pada contoh Arrow
-                                      //          Function di atas mengacu ke Global Object (Windows).
+                                      //          mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow
+                                      //          Function di atas mengacu ke Global Object (Window).
 mhs.halo1();
 mhs.halo2();
 mhs.halo3();
@@ -2353,13 +2354,13 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
     console.log(this);                   //     console.log(mobilBudi);      🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk); 🡲 Output: ABC
     console.log(this.tipe);              //     console.log(mobilBudi.tipe); 🡲 Output: MPV
-  }                                      //   }
+  };                                     //   };
                                          //
   this.pergi2 = () => {                  //   this.pergi2 = () => {          🡲 Penulisan Method cara 3: Arrow Function (✔️)
     console.log(this);                   //     console.log(this);           🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(this.merk);      🡲 Output: ABC
     console.log(this.tipe);              //     console.log(this.tipe);      🡲 Output: MPV
-  }                                      //   }
+  };                                     //   };
 }                                        // }
 
 let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi Object Mobil baru bernama mobilBudi
@@ -2369,10 +2370,9 @@ mobilBudi.pergi2();                      //           Menjalankan Function pergi
 
 Dalam kasus Method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
 
-Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Windows). Untuk "mengakalinya", gunakan "that" seperti pada contoh Object (point nomor 4) di atas. Pada contoh di bawah ini Method (sebagai Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" seperti pada contoh Object (point nomor 4) di atas. Pada contoh di bawah ini Method (sebagai Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
-                                         // STEP 2 🡲 Saat instansiasi Object mobilBudi
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, hargaArg){
   this.merk   = merkArg;                 //   mobilBudi.merk   = merkArg;
@@ -2385,12 +2385,12 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
     let that = this;                     //     let that = mobilBudi;           🡲 that dibuat mengacu ke Object mhs layaknya this
                                          // 
     function innerA(){                   //     function innerA(){              🡲 Function Declaration (Inner Function) (✔️)
-      console.log(that);                 //       console.log(mobilBudi);       🡲 Output: Window {window: Window, ...}
-      console.log(that.merk);            //       console.log(mobilBudi.merk);  🡲 Output: undefined
+      console.log(that);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+      console.log(that.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
     };                                   //     };
     innerB = function(){                 //     innerB = function(){            🡲 Function Expressions (Inner Function) (✔️)
-      console.log(that);                 //       console.log(mobilBudi);       🡲 Output: Window {window: Window, ...}
-      console.log(that.merk);            //       console.log(mobilBudi.merk);  🡲 Output: undefined
+      console.log(that);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
+      console.log(that.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
     };                                   //     };
     innerC = () => {                     //     innerC = () => {                🡲 Arrow Function (Inner Function) (✔️)
       console.log(this);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
@@ -2400,11 +2400,11 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
     innerA();                            //     innerA();
     innerB();                            //     innerB();
     innerC();                            //     innerC();
-  }                                      //   }
+  };                                     //   };
 }                                        // }
 
-let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi Object Mobil baru bernama mobilBudi
-mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Function pergi1 milik Object mobilBudi
+let mobilBudi = new Mobil("ABC", "MPV");
+mobilBudi.pergi1();
 ```
 
 #### ⤷ 6. Di dalam Method di Class, keyword this mengacu ke Owner Object (Object yang dibuat).
@@ -2412,7 +2412,7 @@ mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Function per
 🔔 Class dibahas di bab 3-1 B
 
 ```Javascript
-// ...
+
 ```
 
 #### ⤷ 7. Di dalam Event, keyword this mengacu ke Element yang menerima Event tersebut.
@@ -2475,6 +2475,175 @@ sapa1.apply(userB);                   // Outputnya sama saja dengan Output pada 
 sapa2.apply(userA, ["Bandung", "ID"]);
 sapa2.apply(userB, ["Bandung", "ID"]);
 ```
+
+### 𝐄. Kesimpulan keyword this
+
+#### ⤷ Kasus Umum
+
+<!-- TABLE 1 -->
+
+<table>
+<thead>
+  <tr>
+    <th>No</th>
+    <th>Posisi</th>
+    <th>Konteks this</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>Di Global</td>
+    <td>Global Object (Window)</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Di dalam Event</td>
+    <td>Element HTML yang menerima Event tersebut</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Method bind(), call() dan apply()</td>
+    <td>Mengacu pada Object yang dituju Method</td>
+  </tr>
+</tbody>
+</table>
+
+<!-- TABLE 2 -->
+
+<table>
+<thead>
+  <tr>
+    <th>No</th>
+    <th>Posisi</th>
+    <th>Jenis Function/Method</th>
+    <th>Konteks this</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="3">4</td>
+    <td rowspan="3">Di dalam Function</td>
+    <td>Function Declaration</td>
+    <td rowspan="3">Global Object (Window)</td>
+  </tr>
+  <tr>
+    <td>Function Expressions</td>
+  </tr>
+  <tr>
+    <td>Arrow Function</td>
+  </tr>
+  <tr>
+    <td rowspan="3">5</td>
+    <td rowspan="3">Di dalam Function (Strict Mode)</td>
+    <td>Function Declaration</td>
+    <td rowspan="2">Undefined</td>
+  </tr>
+  <tr>
+    <td>Function Expressions</td>
+  </tr>
+  <tr>
+    <td>Arrow Function</td>
+    <td>Global Object (Window)</td>
+  </tr>
+  <tr>
+    <td rowspan="3">6</td>
+    <td rowspan="3">Di dalam Method di Object</td>
+    <td>Function Declaration (Tanpa keyword Function)</td>
+    <td rowspan="2">Owner Object</td>
+  </tr>
+  <tr>
+    <td>Function Expressions</td>
+  </tr>
+  <tr>
+    <td>Arrow Function</td>
+    <td>Global Object (Window)</td>
+  </tr>
+  <tr>
+    <td rowspan="2">7</td>
+    <td rowspan="2">Di dalam Method di Constructor Function</td>
+    <td>Function Expressions</td>
+    <td rowspan="2">Owner Object</td>
+  </tr>
+  <tr>
+    <td>Arrow Function</td>
+  </tr>
+  <tr>
+    <td rowspan="3">8</td>
+    <td rowspan="3">Di dalam Method di Class</td>
+    <td>Function Declaration (Tanpa keyword Function)</td>
+    <td rowspan="3">Owner Object</td>
+  </tr>
+  <tr>
+    <td>Function Expressions</td>
+  </tr>
+  <tr>
+    <td>Arrow Function</td>
+  </tr>
+</tbody>
+</table>
+
+#### ⤷ Kasus Nested
+
+Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Declaration (Tanpa keyword Function) & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" untuk mengacu ke Owner Object (Object yang dibuat).
+
+<!-- TABLE 3 (KASUS NESTED) -->
+
+<table>
+<thead>
+  <tr>
+    <th>No</th>
+    <th>Posisi</th>
+    <th>Jenis Function/Method (Outer)</th>
+    <th>Jenis Inner Function</th>
+    <th>Konteks this</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="3">9</td>
+    <td rowspan="3">Di dalam Method di Object (Kasus Nested)</td>
+    <td rowspan="3">Function Expressions</td>
+    <td>Function Declaration</td>
+    <td rowspan="2">Global Object (Window), 𝐛𝐮𝐭𝐮𝐡 "𝐭𝐡𝐚𝐭"</td>
+  </tr>
+  <tr>
+    <td>Function Expressions</td>
+  </tr>
+  <tr>
+    <td>Arrow Function</td>
+    <td>Owner Object</td>
+  </tr>
+  <tr>
+    <td rowspan="3">10</td>
+    <td rowspan="3">Di dalam Method di Constructor Function (Kasus Nested)</td>
+    <td rowspan="3">Function Expressions</td>
+    <td>Function Declaration</td>
+    <td rowspan="2">Global Object (Window), 𝐛𝐮𝐭𝐮𝐡 "𝐭𝐡𝐚𝐭"</td>
+  </tr>
+  <tr>
+    <td>Function Expressions</td>
+  </tr>
+  <tr>
+    <td>Arrow Function</td>
+    <td>Owner Object</td>
+  </tr>
+  <tr>
+    <td rowspan="3">11</td>
+    <td rowspan="3">Di dalam Method di Class (Kasus Nested)</td>
+    <td rowspan="3">Function Declaration (Tanpa keyword Function)</td>
+    <td>Function Declaration</td>
+    <td rowspan="2">undefined, 𝐛𝐮𝐭𝐮𝐡 "𝐭𝐡𝐚𝐭"</td>
+  </tr>
+  <tr>
+    <td>Function Expressions</td>
+  </tr>
+  <tr>
+    <td>Arrow Function</td>
+    <td>Owner Object</td>
+  </tr>
+</tbody>
+</table>
   
 </details>
 
