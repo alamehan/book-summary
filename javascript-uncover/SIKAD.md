@@ -2628,7 +2628,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan ca
     <td rowspan="3">6</td>
     <td rowspan="3">Di dalam Method di Object</td>
     <td>Function Declaration (Tanpa keyword Function)</td>
-    <td rowspan="2">Owner Object</td>
+    <td rowspan="2">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
     <td>Function Expressions</td>
@@ -2641,7 +2641,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan ca
     <td rowspan="2">7</td>
     <td rowspan="2">Di dalam Method di Constructor Function</td>
     <td>Function Expressions</td>
-    <td rowspan="2">Owner Object</td>
+    <td rowspan="2">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
     <td>Arrow Function</td>
@@ -2650,7 +2650,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan ca
     <td rowspan="3">8</td>
     <td rowspan="3">Di dalam Method di Class</td>
     <td>Function Declaration (Tanpa keyword Function)</td>
-    <td rowspan="3">Owner Object</td>
+    <td rowspan="3">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
     <td>Function Expressions</td>
@@ -2690,7 +2690,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
   </tr>
   <tr>
     <td>Arrow Function</td>
-    <td>Owner Object</td>
+    <td>𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
     <td rowspan="3">10</td>
@@ -2704,7 +2704,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
   </tr>
   <tr>
     <td>Arrow Function</td>
-    <td>Owner Object</td>
+    <td>𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
     <td rowspan="3">11</td>
@@ -2718,7 +2718,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
   </tr>
   <tr>
     <td>Arrow Function</td>
-    <td>Owner Object</td>
+    <td>𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
 </tbody>
 </table>
