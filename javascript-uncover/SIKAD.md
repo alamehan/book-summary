@@ -1,3 +1,7 @@
+<!-- Variable -->
+
+[✔]: assets/check-mark.png
+
 <div id="top"></div>
 
 # JavaScript in One Page
@@ -20,10 +24,10 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 <details>
 <summary>Klik untuk membuka!</summary>
-  
+
 <div id="daftar_isi_bab1"></div>
 <br>
-  
+
 | Bab 1                                            	    | Estimasi Baca 	|
 |------------------------------------------------------	|---------------	|
 | <a href="#bab1_1">1-1. Kenalan dengan JavaScript</a> 	| X Menit       	|
@@ -31,11 +35,11 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 | <a href="#bab1_3">1-3. Menjalankan Kode</a>          	| X Menit       	|
 | <a href="#bab1_4">1-4. Aturan Dasar</a>              	| X Menit       	|
 | <a href="#bab1_5">1-5. Variable</a>                  	| X Menit       	|
-  
+
 <hr>
 <div id="bab1_1"></div>
-  
-## 1-1. Kenalan dengan JavaScript <a href="#daftar_isi_bab1">🡅</a>
+
+## `1-1. Kenalan dengan JavaScript` <a href="#daftar_isi_bab1">🡅</a>
 
 JavaScript (JS) merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CSS, PHP, MySQL dan JavaScript. Bersama-sama dengan HTML dan CSS, ketiganya berbagi peran masing-masing. HTML digunakan untuk membuat struktur dan isi dari halaman web (content). CSS untuk mempercantik tampilan website (design). Sedangkan JavaScript berfungsi menangani interaksi (behavior).**“HTML for content, CSS for presentation and JavaScript for behavior”**.
 
@@ -54,7 +58,7 @@ Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript 
 <hr>
 <div id="bab1_2"></div>
 
-## 1-2. Sejarah & Perkembangan <a href="#daftar_isi_bab1">🡅</a>
+## `1-2. Sejarah & Perkembangan` <a href="#daftar_isi_bab1">🡅</a>
 
 <img src="assets/brendan-eich.png"><br>
 
@@ -85,11 +89,11 @@ Perkembangan JavaScript Saat Ini: Website yang tidak berbentuk “website”, te
 Namun perlu juga dipahami bahwa walaupun materi di eBook JavaScript Uncover sudah lumayan rumit, ini barulah dasar dari JavaScript. Jika anda serius ingin mempelajari JavaScript lebih jauh lagi, bisa lanjut ke library seperti **jQuery**, framework seperti **AngularJS**, **ReactJS** maupun **VueJS**, atau ke server menggunakan **Node.js**.
 
 Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat diakses <a href="https://www.jetbrains.com/lp/javascript-25/">Jetbrains</a>, <a href="https://en.wikipedia.org/wiki/ECMAScript">Wikipedia</a>, <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">FreeCodeCamp</a>, dan <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Turriate</a>.
-  
+
 <hr>
 <div id="bab1_3"></div>
-  
-## 1-3. Menjalankan Kode <a href="#daftar_isi_bab1">🡅</a>
+
+## `1-3. Menjalankan Kode` <a href="#daftar_isi_bab1">🡅</a>
 
 > - [X] 𝐀. Inline JavaScript
 > - [X] 𝐁. Internal JavaScript
@@ -97,7 +101,7 @@ Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat
 > - [X] 𝐃. Posisi Terbaik JavaScript
 > - [X] 𝐄. Tag No-Script
 
-### 𝐀. Inline JavaScript
+### ![✔] 𝐀. Inline JavaScript
 
 ```HTML
 <html>
@@ -108,11 +112,11 @@ Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat
     ...
     <button onclick="alert('Sedang Belajar JavaScript');"></button>
     ...
-  </body> 
+  </body>
 </html>
 ```
 
-### 𝐁. Internal JavaScript
+### ![✔] 𝐁. Internal JavaScript
 
 ```HTML
 <html>
@@ -124,11 +128,11 @@ Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat
     <script>
       // Kode JavaScript Disini
     </script>
-  </body> 
+  </body>
 </html>
 ```
 
-### 𝐂. External JavaScript
+### ![✔] 𝐂. External JavaScript
 
 ```HTML
 <html>
@@ -138,17 +142,17 @@ Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat
   <body>
     ...
     <script src="script.js"></script>
-  </body> 
+  </body>
 </html>
 ```
 
-Menempatkan kode JavaScript di bagian atas banyak ditemukan. Namun berkaitan dengan masalah performa, beberapa developer web menyarankan meletakkan JavaScript dibagian bawah tag ```<body>```, yakni sebelum tag penutup ```</body>```, sebagaimana yang dijelaskan dari sebuah artikel di <a href="https://developer.yahoo.com/performance/rules.html">Yahoo Developer Network: Best Practices for Speeding Up Your Web Site</a>. 
+Menempatkan kode JavaScript di bagian atas banyak ditemukan. Namun berkaitan dengan masalah performa, beberapa developer web menyarankan meletakkan JavaScript dibagian bawah tag ```<body>```, yakni sebelum tag penutup ```</body>```, sebagaimana yang dijelaskan dari sebuah artikel di <a href="https://developer.yahoo.com/performance/rules.html">Yahoo Developer Network: Best Practices for Speeding Up Your Web Site</a>.
 
 Cara web browser dalam menampilkan sebuah halaman web, yakni secara berurutan dari atas ke bawah, mulai dari baris pertama hingga baris terakhir. Fitur **cache** dari web browser bisa mempercepat pengaksesan website dengan cara menyimpan file JavaScript di dalam cache.
 
-Dengan memanggil file external JavaScript dari bagian bawah tag ```<body>```, memberi kesempatan web browser untuk memproses kode HTML terlebih dahulu, baru kemudian mendownload file JavaScript. Efeknya, pengujung web bisa langsung melihat tampilan web selama proses ini, tidak hanya halaman kosong. 
+Dengan memanggil file external JavaScript dari bagian bawah tag ```<body>```, memberi kesempatan web browser untuk memproses kode HTML terlebih dahulu, baru kemudian mendownload file JavaScript. Efeknya, pengujung web bisa langsung melihat tampilan web selama proses ini, tidak hanya halaman kosong.
 
-### 𝐃. Posisi Terbaik JavaScript
+### ![✔] 𝐃. Posisi Terbaik JavaScript
 
 ```HTML
 <html>
@@ -163,11 +167,11 @@ Dengan memanggil file external JavaScript dari bagian bawah tag ```<body>```, me
     <script>
       // Internal JavaScript
     </script>
-  </body> 
+  </body>
 </html>
 ```
 
-Atribut **async** dan **defer**: kita bisa mengatur kapan dan bagaimana file external JavaScript diproses. Kedua atribut ini memungkinkan penulisan tag ```<script>``` tidak harus di bawah tag ```<body>```. Jika atribut **async** ditambahkan ke dalam tag ```<script>```, file JavaScript akan diproses pada saat yang bersamaan dengan kode HTML (secara simultan). Dengan kata lain, web browser tidak “terkunci” untuk menjalankan kode JavaScript. Metode ini juga dikenal dengan istilah **Asynchronous JavaScript** (Di proses secara bersamaan = Asynchronous). 
+Atribut **async** dan **defer**: kita bisa mengatur kapan dan bagaimana file external JavaScript diproses. Kedua atribut ini memungkinkan penulisan tag ```<script>``` tidak harus di bawah tag ```<body>```. Jika atribut **async** ditambahkan ke dalam tag ```<script>```, file JavaScript akan diproses pada saat yang bersamaan dengan kode HTML (secara simultan). Dengan kata lain, web browser tidak “terkunci” untuk menjalankan kode JavaScript. Metode ini juga dikenal dengan istilah **Asynchronous JavaScript** (Di proses secara bersamaan = Asynchronous).
 
 Dengan tambahan atribut **async**, kode HTML tetap diproses sembari mendownload file JavaScript. Dengan kata lain, web browser tidak masuk ke dalam Render-Blocking JavaScript. Atribut **defer** digunakan untuk mengatur kapan file JavaScript dijalankan. Dengan atribut ini, file JavaScript baru di download dan dieksekusi setelah seluruh kode HTML selesai diproses. Efek dari atribut **async** dan **defer** mungkin terdengar sama. Perbedaaan mendasar adalah, **async** digunakan untuk mengatur cara eksekusi kode JavaScript, sedangkan **defer** untuk mengatur kapan file JavaScript tersebut di download dan diproses.
 
@@ -181,7 +185,7 @@ Tab Inspector (1) bisa digunakan untuk menelusuri seluruh kode HTML yang terdapa
 
 Tab yang sering kita akses selama membuat kode program JavaScript adalah **Tab Console**, yang berada di sebelah kanan tab Inspector. Apabila kode yang anda buat tidak berjalan sebagaimana mestinya, hal pertama yang harus dilakukan adalah memeriksa tab Console ini. Selain menampilkan pesan error, di dalam tab Console kita juga bisa menjalankan kode program JavaScript secara langsung, tanpa harus menulisnya di dalam file HTML. Fungsi ```console.log()``` berguna untuk menampilkan hasil kode program ke tab Console.
 
-### 𝐄. Tag No-Script
+### ![✔] 𝐄. Tag No-Script
 
 ```HTML
 <html>
@@ -196,16 +200,16 @@ Tab yang sering kita akses selama membuat kode program JavaScript adalah **Tab C
     <noscript>
       JavaScript anda tidak aktif, mohon diaktifkan untuk bisa mengakses web ini.
     </noscript>
-  </body> 
+  </body>
 </html>
 ```
 
 Salah satu kelemahan (sekaligus keunggulan) dari JavaScript adalah, pengunjung web bisa mematikan JavaScript yang ada di web browser mereka. Tag ```<noscript>``` bisa digunakan untuk menampilkan teks keterangan yang hanya bisa terlihat pada web browser yang tidak memiliki JavaScript (atau JavaScriptnya dimatikan).
-  
+
 <hr>
 <div id="bab1_4"></div>
-  
-## 1-4. Aturan Dasar <a href="#daftar_isi_bab1">🡅</a>
+
+## `1-4. Aturan Dasar` <a href="#daftar_isi_bab1">🡅</a>
 
 > - [X] 𝐀. Statement
 > - [X] 𝐁. Case Sensitive
@@ -213,30 +217,30 @@ Salah satu kelemahan (sekaligus keunggulan) dari JavaScript adalah, pengunjung w
 > - [X] 𝐃. Indenting
 > - [X] 𝐄. Comment
 
-### 𝐀. Statement
+### ![✔] 𝐀. Statement
 
 **Statement** adalah sebutan untuk sebuah baris perintah JavaScript. Walaupun saya menggunakan kata “baris”, bisa saja sebuah Statement butuh beberapa baris (seperti Function). Atau dalam 1 baris bisa terdiri dari beberapa Statement. Setiap Statement diakhiri dengan tanda titik koma (semi colon): ‘ ; ‘. Sebenarnya, tanda titik koma untuk mengakhiri Statement JavaScript ini adalah opsional. Artinya, boleh tidak ditulis sepanjang Statement tersebut harus berada dalam baris baru (1 Statement, 1 baris). Untuk meminimalisir error, sebaiknya kita tetap menambahkan tanda titik koma saat mengakhiri setiap Statement di dalam JavaScript.
 
-### 𝐁. Case Sensitive
+### ![✔] 𝐁. Case Sensitive
 
 **Case Sensitivity**: JavaScript termasuk bahasa pemrograman yang bersifat case sensitif, artinya huruf besar dan huruf kecil dianggap berbeda. Salah menulis huruf sangat sering terjadi, misalnya pada saat pendefinisian Variable (```var nama``` berbeda dengan ```var Nama```).
 
-### 𝐂. Whitespace
+### ![✔] 𝐂. Whitespace
 
 **Whitespace** mengacu pada karakter yang digunakan untuk memberikan ruang horizontal atau vertikal antara karakter lain, atau dengan kata lain karakter “kosong” seperti spasi, tab, atau baris baru (new line). Secara umum di dalam JavaScript whitespace akan diabaikan.
 
-### 𝐃. Indenting
+### ![✔] 𝐃. Indenting
 
-**Indenting** adalah istilah yang digunakan untuk menambahkan spasi atau tab diawal baris kode program. Tujuannya agar kode program lebih mudah dibaca terutama jika kode program tersebut sudah mencapai puluhan atau ratusan baris kode program. 
+**Indenting** adalah istilah yang digunakan untuk menambahkan spasi atau tab diawal baris kode program. Tujuannya agar kode program lebih mudah dibaca terutama jika kode program tersebut sudah mencapai puluhan atau ratusan baris kode program.
 
-### 𝐄. Comment
+### ![✔] 𝐄. Comment
 
 **Comment** atau baris komentar adalah sebutan untuk kode program yang tidak akan di eksekusi oleh JavaScript. Selain sebagai dokumentasi, komentar juga sering digunakan untuk menghentikan sementara baris kode program. Di JavaScript, Comment ditulis menggunakan karakter ```// komentar``` (untuk single line) & ```/* komentar */``` (untuk multi line). Di sepanjang contoh kode yang disertakan di bab-bab selanjutnya, penggunaan Comment akan banyak sekali ditemukan sebagai keterangan/penjelasan dari baris sebuah kode.
 
 <hr>
 <div id="bab1_5"></div>
-  
-## 1-5. Variable <a href="#daftar_isi_bab1">🡅</a>
+
+## `1-5. Variable` <a href="#daftar_isi_bab1">🡅</a>
 
 Secara sederhana, Variable adalah “wadah/penampung” dari sebuah data. Disebut Variable karena data yang kita simpan bisa berubah-ubah sepanjang kode program (isinya tidak tetap). ```var angka = 192;``` **Operasi Assignment** atau memberikan nilai ke sebuah Variable dibaca dari kanan ke kiri (right-to-left, baca selengkapnya <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">disini</a>). Artinya, 192 “dimasukkan” sebagai nilai ke Variable ```angka```.
 
@@ -276,7 +280,7 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: Var `
 
       ...
     </script>
-  </body> 
+  </body>
 </html>
 ```
 
@@ -286,10 +290,10 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: Var `
 
 <details>
 <summary>Klik untuk membuka!</summary>
-  
+
 <div id="daftar_isi_bab2"></div>
 <br>
-  
+
 | Bab 2                                 	    | Estimasi Baca 	|
 |--------------------------------------------	|---------------	|
 | <a href="#bab2_1">2-1. Tipe Data</a><br>   	| X Menit       	|
@@ -298,12 +302,12 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: Var `
 | <a href="#bab2_4">2-4. Perulangan</a>      	| X Menit       	|
 | <a href="#bab2_5">2-5. Function</a>        	| X Menit       	|
 | <a href="#bab2_6">2-6. Object</a>          	| X Menit       	|
-  
+
 <hr>
 <div id="bab2_1"></div>
-  
-## 2-1. Tipe Data <a href="#daftar_isi_bab2">🡅</a>
-  
+
+## `2-1. Tipe Data` <a href="#daftar_isi_bab2">🡅</a>
+
 > 𝐓𝐢𝐩𝐞 𝐃𝐚𝐭𝐚 𝐏𝐫𝐢𝐦𝐢𝐭𝐢𝐟
 > > - [X] 𝐀. Number
 > > - [X] 𝐁. NaN & Infinity
@@ -320,7 +324,7 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: Var `
 
 Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif, dan tipe data object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Yang termasuk ke dalam **tipe data primitif**, yaitu: **Number, NaN, Infinity, String, Boolean, Null, Undefined, dan Symbol**. Sedangkan tipe data object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya beragam. Adapun yang termasuk ke dalam **tipe data object**, yaitu: **Array, Object, RegExp, Date, Map, WeakMap, Set, dan WeakSet.**
 
-### 𝐀. Number
+### ![✔] 𝐀. Number
 
 ```Javascript
 var numA = 100;                       // Angka bulat
@@ -335,7 +339,7 @@ var numI = 0o1747;                    // Oktal (basis 8), diawali 0o
 var numJ = 0x3E7;                     // Heksadesimal (basis 16), diawali 0x
 ```
 
-### 𝐁. NaN & Infinity
+### ![✔] 𝐁. NaN & Infinity
 
 ```Javascript
 var numK = NaN;                       // Keadaan dimana data "bukan angka yang sah/legal"
@@ -355,7 +359,7 @@ var numP = -9/0;                      // Membagi angka negatif dengan nol mengha
 console.log(numP);                    // Output: -Infinity (Negatif Tak Hingga)
 ```
 
-### 𝐂. String
+### ![✔] 𝐂. String
 
 ```Javascript
 var strA = "Hello World!";            // String dengan kutip dua
@@ -387,14 +391,14 @@ var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: 
 | ```\uXXXX```        | Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
 | 📚 Bonus            | Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/   	|
 
-### 𝐃. Boolean
+### ![✔] 𝐃. Boolean
 
 ```Javascript
 var bolA = true;                      // Bernilai true, biasanya di pakai di Struktur Logika, Perulangan, dll
 var bolB = false;                     // Bernilai false, biasanya di pakai di Struktur Logika, Perulangan, dll
 ```
 
-### 𝐄. Null & Undefined
+### ![✔] 𝐄. Null & Undefined
 
 ```Javascript
 var nudA = null;                      // Keadaan dimana data "kosong", biasanya sengaja diinput oleh programmer
@@ -414,11 +418,11 @@ var und3 = {nama: "iyan", umur: 24};  // Mengakses Object diluar key yang dibuat
 console.log(und3["alamat"]);          // Output: undefined
 ```
 
-### 𝐅. Symbol
+### ![✔] 𝐅. Symbol
 
 > 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
 
-### 𝐆. Array
+### ![✔] 𝐆. Array
 
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma"];      // Array 1D berisi hanya data String
@@ -439,31 +443,31 @@ console.log(arr2D[1][0]);             // Output: 9
 console.log(arr2D[1][1]);             // Output: 5
 ```
 
-### 𝐇. Object, RegExp & Date
+### ![✔] 𝐇. Object, RegExp & Date
 
 > 🔔 Object dibahas di bab 2-6 & bab 3
-> 
+>
 > 🔔 RegExp dibahas di bab 3-2 D
-> 
+>
 > 🔔 Date dibahas di bab 3-2 F
 
-### 𝐈. Map & WeakMap
+### ![✔] 𝐈. Map & WeakMap
 
 > 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
 
-### 𝐉. Set & WeakSet
+### ![✔] 𝐉. Set & WeakSet
 
 > 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
-  
+
 <hr>
 <div id="bab2_2"></div>
-  
-## 2-2. Operator <a href="#daftar_isi_bab2">🡅</a>
-  
+
+## `2-2. Operator` <a href="#daftar_isi_bab2">🡅</a>
+
 > 𝐏𝐞𝐧𝐭𝐢𝐧𝐠 𝐔𝐧𝐭𝐮𝐤 𝐃𝐢𝐤𝐞𝐭𝐚𝐡𝐮𝐢
 > > - [X] 𝐀. Operator Precedence
 > > - [X] 𝐁. Falsy & Truthy Value
-  
+
 > 𝐎𝐩𝐞𝐫𝐚𝐭𝐨𝐫 𝐝𝐢 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭
 > > - [X] 𝐂. Operator typeof
 > > - [X] 𝐃. Operator instanceof
@@ -476,14 +480,14 @@ console.log(arr2D[1][1]);             // Output: 5
 > > - [ ] 𝐊. Operator Bitwise
 > > - [X] 𝐋. Operator Spread
 
-### 𝐀. Operator Precedence
+### ![✔] 𝐀. Operator Precedence
 
 Operator Precedence atau Prioritas Operator menentukan bagaimana suatu operator dieksekusi. Operator dengan prioritas lebih tinggi akan dioperasikan terlebih dahulu. Ada operator yang dioperasikan dari kiri ke kanan (left-to-right), ada pula yang dari kanan ke kiri (right-to-left).
 
 📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses di link MDN berikut:<br>
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
-### 𝐁. Falsy & Truthy Value
+### ![✔] 𝐁. Falsy & Truthy Value
 
 Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung operator yang digunakan. Untuk operator perbandingan (==, !=, <, <=, >, >=, dst), tipe data ini akan dikonversi menjadi Boolean (true/false). Nilai yang dikonversi menjadi false disebut Falsy Value, dan nilai yang dikonversi menjadi true disebut Truthy Value. Simak tabel Falsy & Truthy Value berikut:
 
@@ -501,17 +505,17 @@ Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung op
 
 ```Javascript
 console.log('' == '0');               // Output: false  (Hasil konversi: false == true)
-console.log(0 == '');                 // Output: true   (Hasil konversi: false == false) 
-console.log(0 == '0');                // Output: true   (Bukan operator indentik, jadinya true) 
-console.log(false == 'false');        // Output: false  (Hasil konversi: false == true) 
-console.log(false == '0');            // Output: true   (Bukan operator indentik & false kan bernilai 0, jadinya true) 
-console.log(false == undefined);      // Output: false  (*Pengecualian) 
-console.log(false == null);           // Output: false  (*Pengecualian) 
-console.log(null == undefined);       // Output: true   (Hasil konversi: false == false) 
-console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian) 
+console.log(0 == '');                 // Output: true   (Hasil konversi: false == false)
+console.log(0 == '0');                // Output: true   (Bukan operator indentik, jadinya true)
+console.log(false == 'false');        // Output: false  (Hasil konversi: false == true)
+console.log(false == '0');            // Output: true   (Bukan operator indentik & false kan bernilai 0, jadinya true)
+console.log(false == undefined);      // Output: false  (*Pengecualian)
+console.log(false == null);           // Output: false  (*Pengecualian)
+console.log(null == undefined);       // Output: true   (Hasil konversi: false == false)
+console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian)
 ```
 
-### 𝐂. Operator typeof
+### ![✔] 𝐂. Operator typeof
 
 #### ⤷ Oprator typeof digunakan untuk memeriksa tipe data suatu Variable:
 
@@ -571,11 +575,11 @@ console.log(fun instanceof Function);     // Output: true   (Check apakah datany
 console.log(fun.constructor === Function);// Output: true   (Check apakah datanya Function Expressions - cara 3)
 ```
 
-### 𝐃. Operator instanceof
+### ![✔] 𝐃. Operator instanceof
 
 >  🔔 Operator instanceof dibahas di bab 3-1 B
 
-### 𝐄. Operator Aritmatika
+### ![✔] 𝐄. Operator Aritmatika
 
 ```Javascript
 var a = 10;
@@ -592,7 +596,7 @@ console.log(4+6/5-3*2+3);             // Output: 2.2    ⇨ Operator * dan / dip
 console.log((4+6)/(5-3)*2+3);         // Output: 13     ⇨ Operator () diproses lebih awal (Precedence: 21)
 ```
 
-### 𝐅. Operator Assignment
+### ![✔] 𝐅. Operator Assignment
 
 ```Javascript
 var g = 10;         // Artinya 10 dimasukkan sebagai nilai ke Variable g (Operator assignment memiliki precedence: 3)
@@ -622,7 +626,7 @@ console.log(gabD);                    // Output: 200
 console.log(gabE);                    // Output: 0
 ```
 
-### 𝐆. Operator Increment & Decrement
+### ![✔] 𝐆. Operator Increment & Decrement
 
 ```Javascript
 var c = 10, d = 10, e = 10, f = 10;
@@ -638,7 +642,7 @@ console.log(f--);                     // Output: 10     ⇨ Post-decrement: tamp
 console.log(f);                       // Output: 9
 ```
 
-### 𝐇. Operator Perbandingan
+### ![✔] 𝐇. Operator Perbandingan
 
 ```Javascript
 console.log(8 == 12);                 // Output: false  ⇨ Equality (sama dengan)
@@ -675,11 +679,11 @@ console.log("a" < "b");               // Output: true   (a = 97, b = 98)
 console.log("a" < "A");               // Output: false  (a = 97, A = 65)
 console.log("ali" < "ala");           // Output: false  (ali = 97→108→105, ala = 97→108→97)
 console.log("ali" < "alo");           // Output: true   (ali = 97→108→105, alo = 97→108→111)
-console.log("ali" < "alika");         // Output: true   (String yang lebih pendek akan dianggap lebih kecil) 
+console.log("ali" < "alika");         // Output: true   (String yang lebih pendek akan dianggap lebih kecil)
 console.log("ali" < 9999999);         // Output: false  (Perbandingan String & Number selalu menghasilkan false)
 ```
 
-### 𝐈. Operator Logika
+### ![✔] 𝐈. Operator Logika
 
 ```Javascript
 console.log(true && false);           // Output: false  ⇨ and operator (true hanya jika kedua nilai true)
@@ -724,7 +728,7 @@ console.log(undefined || "World");    // Output: World      (undefined ≈ false
 console.log(undefined && "World");    // Output: undefined  (undefined ≈ false, lalu bertemu &&, stop, hasilnya undefined)
 ```
 
-### 𝐉. Operator String
+### ![✔] 𝐉. Operator String
 
 ```Javascript
 var arr  = ["Andri", "Joko", "Sukma"];
@@ -749,11 +753,11 @@ console.log(10 + "10" + 9);           // Output: 10109  (String)  dari hasil kon
 console.log(10 + 10 + "9");           // Output: 209    (String)  dari hasil konversi: console.log(20 + "9");
 ```
 
-### 𝐊. Operator Bitwise
+### ![✔] 𝐊. Operator Bitwise
 
 > 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
 
-### 𝐋. Operator Spread
+### ![✔] 𝐋. Operator Spread
 
 Spread merupakan operator baru di ES6. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama Variable.<br>
 
@@ -775,18 +779,18 @@ console.log(nilai5);                  // Output: ["a", "b", "c", "d", "e", "f", 
 
 <hr>
 <div id="bab2_3"></div>
-  
-## 2-3. Struktur Logika <a href="#daftar_isi_bab2">🡅</a>
-  
+
+## `2-3. Struktur Logika` <a href="#daftar_isi_bab2">🡅</a>
+
 > - [X] 𝐀. If & Else
 > - [X] 𝐁. Switch
 > - [X] 𝐂. Operator Conditional Ternary
 > - [X] 𝐃. Operator Nullish Coalescing
 
-### 𝐀. If & Else
+### ![✔] 𝐀. If & Else
 
 ```Javascript
-var nilai = 90;                     
+var nilai = 90;
 
 if (nilai >= 0 && nilai <= 100){      // Jika nilai >= 0 dan <= 100, masuk ke kondisi berikutnya, selain itu tidak valid!
   if (nilai >= 80){
@@ -805,10 +809,10 @@ if (nilai >= 0 && nilai <= 100){      // Jika nilai >= 0 dan <= 100, masuk ke ko
 }
 ```
 
-### 𝐁. Switch
+### ![✔] 𝐁. Switch
 
 ```Javascript
-var nilaiTK = 6;   
+var nilaiTK = 6;
 
 switch(nilaiTK){                      // Case 1-5: kurang, case 6-7: cukup, case 8-10: baik, selain itu tidak valid!
   case 1:
@@ -832,14 +836,14 @@ switch(nilaiTK){                      // Case 1-5: kurang, case 6-7: cukup, case
 }
 ```
 
-### 𝐂. Operator Conditional Ternary
+### ![✔] 𝐂. Operator Conditional Ternary
 
 ```Javascript
 var jumlah = 501;
 var pesan = jumlah > 500 ? "Cukup!" : "Produksi lagi!"; // Cara baca: Apakah jumlah > 500? jika iya (true), kirim String "Cukup!"
                                                         // ke Var pesan. Jika tidak (false) kirim String "Produksi lagi!".
 
-var user = "admin";                                             
+var user = "admin";
 var akses = user === "admin" ? true : false;            // Cara baca: Apakah user === "admin"? jika iya, kirim Boolean true ke
 if (akses){ // jika akses bernilai true                 // Var akses, lalu kondisi "if (akses)" akan dijalankan. Jika tidak,
   console.log("Welcome, admin!");                       // kirim false ke Var akses, dan kondisi "if (akses)" tidak jalan.
@@ -848,7 +852,7 @@ if (akses){ // jika akses bernilai true                 // Var akses, lalu kondi
 
 Catatan: ```if (akses) { ... }``` merupakan **Shorthand** untuk ```if (akses === true) { ... }```. Selain itu ada juga ```if (!akses) { ... }``` yang berarti ```if (akses !== true) { ... }``` atau sama juga dengan ```if (akses === false) { ... }```.
 
-### 𝐃. Operator Nullish Coalescing
+### ![✔] 𝐃. Operator Nullish Coalescing
 
 ```Javascript
 var dataDariLuar1;
@@ -865,19 +869,19 @@ data2 = dataDariLuar2 ?? "Nilai Defailt";               // Cara baca: Apakah dat
 
 console.log(data2);                                     // Output: Ada isinya     (sebelumnya dataDariLuar2 memang sudah berisi)
 ```
-  
+
 <hr>
 <div id="bab2_4"></div>
 
-## 2-4. Perulangan <a href="#daftar_isi_bab2">🡅</a>
-  
+## `2-4. Perulangan` <a href="#daftar_isi_bab2">🡅</a>
+
 > - [X] 𝐀. For Loop
 > - [X] 𝐁. While Loop
 > - [X] 𝐂. Do While Loop
 > - [X] 𝐃. For of Loop
 > - [X] 𝐄. For in Loop
 
-### 𝐀. For Loop
+### ![✔] 𝐀. For Loop
 
 Perulangan For cocok digunakan untuk situasi dimana kita sudah tahu berapa banyak perulangan yang mesti dijalankan.
 
@@ -891,7 +895,7 @@ for (var j=20; j>0; j=j-2){
 }                                     // Output: 20, 18, 16, 14, 12, 10, 8, 6, 4, 2
 
 for (var k=1; k<3; k++){
-  for (var l=1; l<=3; l++){           
+  for (var l=1; l<=3; l++){
     console.log(`outer ${k} inner ${l}`);
   }
 }                                     // Output: outer 1 inner 1 s/d outer 2 inner 3
@@ -928,7 +932,7 @@ for (var n=0; n<arrSiswa.length; n++){
 }                                     // Output: Andri, Joko, Sukma, Rina, Sari
 ```
 
-### 𝐁. While Loop
+### ![✔] 𝐁. While Loop
 
 Perulangan While cocok digunakan untuk situasi dimana kita tidak tahu berapa banyak perulangan yang mesti dijalankan.
 
@@ -949,7 +953,7 @@ while (j > 1){
 }                                     // Output: 20, 18, 16, 14, 12
 ```
 
-### 𝐂. Do While Loop
+### ![✔] 𝐂. Do While Loop
 
 Berbeda dengan perulangan While, dalam perulangan Do While kondisi akan di check di akhir. Hal ini menyebabkan setidaknya perulangan akan diproses 1 kali, walaupun kondisi tersebut sudah tidak terpenuhi sejak awal.
 
@@ -967,7 +971,7 @@ do {
 } while (j > 999);                    // Output: 1
 ```
 
-### 𝐃. For of Loop
+### ![✔] 𝐃. For of Loop
 
 Perulangan For of digunakan khusus untuk menampilkan element Erray. Hasil dari perulangan For of di bawah ini sama saja dengan hasil perulangan For untuk menampilkan element Array pada point A di atas.
 
@@ -983,7 +987,7 @@ for (var [index, i] of arrSiswa.entries()){
 }                                     // Output: 0 "Andri", 1 "Joko", 2 "Sukma", 3 "Rina", 4 "Sari"
 ```
 
-### 𝐄. For in Loop
+### ![✔] 𝐄. For in Loop
 
 Perulangan For in digunakan khusus untuk menampilkan seluruh isi Object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi Array (karena Array pun termasuk ke dalam tipe data Object), namun tidak disarankan.<br>
 
@@ -1002,7 +1006,7 @@ for (var i in objMobil){
   console.log(`Isi ${i} = ${objMobil[i]}`);
 }
 
-/* 
+/*
 Output:
 Isi merk = Toyota Avanza
 Isi tipe = MPV
@@ -1011,12 +1015,12 @@ Isi warna = biru
 Isi hidupkan = function(){return "Mesin dihidupkan!";}
 */
 ```
-  
+
 <hr>
 <div id="bab2_5"></div>
-  
-## 2-5. Function <a href="#daftar_isi_bab2">🡅</a>
-  
+
+## `2-5. Function` <a href="#daftar_isi_bab2">🡅</a>
+
 > 𝐊𝐨𝐧𝐬𝐞𝐩 𝐔𝐭𝐚𝐦𝐚
 > > - [X] 𝐀. Function Declaration
 > > - [X] 𝐁. Parameter, Argument & Return Value
@@ -1037,7 +1041,7 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 > > - [X] 𝐎. Immediately Invoked Function Expression (IIFE)
 > > - [X] 𝐏. Arrow Function
 
-### 𝐀. Function Declaration
+### ![✔] 𝐀. Function Declaration
 
 ```Javascript
 function pagiMalam(){
@@ -1054,7 +1058,7 @@ console.log(pagiMalam);               // Output: pagiMalam(){                   
                                       //         }
 ```
 
-### 𝐁. Parameter, Argument & Return Value
+### ![✔] 𝐁. Parameter, Argument & Return Value
 
 ```Javascript
 function salam(kapan, nama){          // kapan & nama merupakan Parameter yang akan menampung nilai yang dikirim dari Argument
@@ -1074,7 +1078,7 @@ console.log(ratarata(1, 2, 3, 4, 5)); // Output: 2.5  (Argument ke-5 akan diabai
 console.log(ratarata(1, 2, 3));       // Output: NaN  (Argument ke-4 tidak ada, maka secara defaultnya nilainya Undefined)
 ```
 
-### 𝐂. Default Parameter
+### ![✔] 𝐂. Default Parameter
 
 ```Javascript
 function tambah(a=10, b=10, c=10, d=10){  // Seluruh Parameter (a, b, c & d) memiliki nilai default
@@ -1107,7 +1111,7 @@ console.log(kali(20, 25, 30, 15));    // Output: 225000 (Hasil dari 20*25*30*15)
 console.log(kali(undefined, undefined, 30, 15));  // Output: 45000 (Hasil dari 10*10*30*15), Undefined akan diisi nilai default
 ```
 
-### 𝐃. Arguments Object
+### ![✔] 𝐃. Arguments Object
 
 #### ⤷ Array Argument
 
@@ -1154,7 +1158,7 @@ console.log(ratarata(2, 4));          // Output: 3    (Hasil dari (2+4)/2 🡲 6
 console.log(ratarata(2, 4, 8, 16));   // Output: 7.5  (Hasil dari (2+4+8+16)/4 🡲 30/4)
 ```
 
-### 𝐄. Rest Parameter
+### ![✔] 𝐄. Rest Parameter
 
 Selain untuk menggabungkan Array seperti yang sudah dibahas di bab 2-2 L, Spread (...) juga dapat digunakan untuk menggantikan peran Arguments Object, dan inilah yang disebut dentan Rest Parameter. Hasil pemanggilan Function sama saja dengan point D di atas.
 
@@ -1196,7 +1200,7 @@ console.log(rataratav2(2, 4));        // Output: 3    (hasil dari (2+4)/2 🡲 6
 console.log(rataratav2(2, 4, 8, 16)); // Output: 7.5  (hasil dari (2+4+8+16)/4 🡲 30/4)
 ```
 
-### 𝐅. Variable Scope
+### ![✔] 𝐅. Variable Scope
 
 Variable Scope adalah istilah tentang sejauh mana sebuah Variable masih dapat diakses. Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup yang terbatas, milsanya di dalam sebuah Function.
 
@@ -1261,7 +1265,7 @@ console.log(d);                       // Output: 40 (Bukan 10, karena nilai d te
 console.log(e);                       // Output: 60 (Bukan 15, karena nilai var c & d tertimpa saat di dalam Function foo)
 ```
 
-### 𝐆. Var, Let & Const
+### ![✔] 𝐆. Var, Let & Const
 
 Penggunaan Var dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan Let tidak mempengaruhi nilai diluar scope (aman!). Var bersifat **Function Scope**, artinya cakupan scopenya itu Function, seolah tidak Private (jika memang mendefinisikan Var tidak berada dalam sebuah Function). Sedangkat Let bersifat **Block Scope**, artinya cakupan scopenya itu tanda block yaitu {}, seolah menjadi Private. Let sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan Var. Namun selain Let ada juga Const, yang mana jika didefinisikan dan langsung diberi nilai awal, isi Const tersebut tidak bisa diubah sepanjang kode program (isinya tetap).
 
@@ -1311,7 +1315,7 @@ const tempC = "Hello Wolrd!";
 temC = "Teks diganti!";               // Output: TypeError Assignment to constant variable (Const tidak bisa ditimpa nilai baru)
 ```
 
-### 𝐇. Inner & Outer Function
+### ![✔] 𝐇. Inner & Outer Function
 
 Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya".
 
@@ -1330,7 +1334,7 @@ function luar(){                      // "luar" merupakan Outer Function bagi "t
 luar();                               // Output: A B C
 ```
 
-### 𝐈. Closures (Function)
+### ![✔] 𝐈. Closures (Function)
 
 Inner Function yang memiliki akses/menggunakan data yang ada di parent scope-nya (Outer Function), disebut sebagai Closures.
 
@@ -1345,7 +1349,7 @@ function init(){
 init();                               // Output: Budi
 ```
 
-### 𝐉. JavaScript Hoisting
+### ![✔] 𝐉. JavaScript Hoisting
 
 Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai Undefined, sedangkan Function akan diisi Functionnya itu sendiri. Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja. Let, Const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
 
@@ -1383,7 +1387,7 @@ console.log(satu);                    // dua = "Belajar CSS";
                                       // console.log(satu);               🡲 Output: Belajar HTML
 ```
 
-#### ⤷ Function Hoisting 
+#### ⤷ Function Hoisting
 
 ```Javascript
 // Contoh 2-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -1419,7 +1423,7 @@ function sapaMalam(){                 // }
                                       // }
 ```
 
-#### ⤷ Variable & Function Hoisting 
+#### ⤷ Variable & Function Hoisting
 
 ```Javascript
 // Contoh 3-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -1494,7 +1498,7 @@ function funA(){                      // var nama = undefined;            🡲 �
 function funB(){                      //   var nama = undefined;          🡲 𝙇𝙤𝙘𝙖𝙡 𝙃𝙤𝙞𝙨𝙩𝙞𝙣𝙜 𝙇𝙫𝙡.1
   console.log(nama);                  //   nama = "Budi";
   console.log(arguments[0]);          //   console.log(nama);
-}                                     // } 
+}                                     // }
 console.log(nama);                    // function funB(){                 🡲 Tidak ada Parameter yang menangkap Argument
 var nama = "Jaka";                    //   console.log(nama);             🡲 Baris ini akan mencari variable "nama" di Global
 funA();                               //   console.log(arguments[0]);     🡲 Argument yang dikirim akan masuk ke Array Argument
@@ -1511,7 +1515,7 @@ console.log(nama);                    // console.log(nama);               🡲 O
 
 Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan Let & Const sebagai alternatif dari Var. Prilaku Let & Const lebih "masuk akal" dibandingkan dengan Var. Let & Const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan Var malah menghasilkan undefined (karena efek hoisting). Selain itu Let & Const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope.
 
-### 𝐊. Function Expressions & Anonymous Function
+### ![✔] 𝐊. Function Expressions & Anonymous Function
 
 Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (Var/Let/Const), disebut sebagai Function Expressions. Jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
 
@@ -1534,7 +1538,7 @@ let hitung = function(a, b){          // Function Expressions tanpa nama Functio
 console.log(hitung(4, 8));            // Output: 6
 ```
 
-### 𝐋. Callback & Higher Order Function
+### ![✔] 𝐋. Callback & Higher Order Function
 
 Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument, disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function. 🔔 Nantinya Callback banyak dijumpai di **Asynchronous JS**.
 
@@ -1643,7 +1647,7 @@ funB("Joko", (arg) => console.log(arg));            // Output: Pagi, Joko!    �
 
 🔔 Contoh Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
 
-### 𝐌. Function as Return Value
+### ![✔] 𝐌. Function as Return Value
 
 Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digunakan sebagai return value dari Function lainnya. Dan ketika sebuah Function memiliki return value berupa Function, ini disebut sebagai Higher Order Function juga.
 
@@ -1749,7 +1753,7 @@ function cetak(temp){                 // STEP 2 🡲 Parameter temp menangkap Fu
 }
 cetak(external);                      // Output: Hello 1!
 cetak(external)();                    // Output: Hello 1!     STEP 1 🡲 Mengirim Fuction external sebagai Argument dan return
-                                      //         Hello 2!               value Function di dalamnya langsung dijalankan. 
+                                      //         Hello 2!               value Function di dalamnya langsung dijalankan.
 ```
 
 ```Javascript
@@ -1764,7 +1768,7 @@ cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengir
                                       //         Hello 2!
 ```
 
-### 𝐍. Factory Function
+### ![✔] 𝐍. Factory Function
 
 Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya. Bisa dianggap Function yang baru berjalan separuhnya, lalu dijalankan secara penuh melalui Factory Function.
 
@@ -1819,7 +1823,7 @@ sapaJaka("Pintar");                   // Output: Pagi, Jaka Pintar!   ⇨ Menjal
 sapaJaka("Cerdas");                   // Output: Pagi, Jaka Cerdas!   ⇨ Menjalankan Factory Function sapaJaka("Cerdas");
 ```
 
-### 𝐎. Immediately Invoked Function Expression (IIFE)
+### ![✔] 𝐎. Immediately Invoked Function Expression (IIFE)
 
 Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut sebagai IIFE. Jika dalam Function biasa kita menjalankan Function dengan cara memanggil nama Function yang dipilih lalu ditambahkan tanda (), maka dalam IIFE kita dapat menjalankan Function langsung saat Function tersebut dibuat dengan cara menulis perintah berpola ```(___)()```, dimana ___ diisi dengan Function yang hendak dibuat, misalnya ```(function(){ console.log("A") })()```. Atau bisa juga polanya ```(___())```, misalnya ```(function(){ console.log("A") }())```.
 
@@ -1853,7 +1857,7 @@ cetak = function(){                   // Cara penulisan Function Expressions (An
 cetak();                              // Function dipanggil terlebih dahulu untuk dijalankan
 
 cetak = (function(){                  // Cara penulisan IImmediately-invoked Function Expression (IIFE)
-  for (let i = 1; i <= 10; i++){ 
+  for (let i = 1; i <= 10; i++){
     console.log(i);
   }
 })();                                 // Function secara otomatis akan berjalan tanpa perlu dipanggil
@@ -1868,7 +1872,7 @@ function cetak(nama, umur){           // Cara penulisan Function Declaration bia
 cetak("Budi", 17);                    // Function dipanggil terlebih dahulu untuk dijalankan
 
 (function(nama, umur){                // Cara penulisan IImmediately-invoked Function Expression (IIFE)
-  console.log(`${nama}, ${umur} tahun.`); 
+  console.log(`${nama}, ${umur} tahun.`);
 })("Budi", 17);                       // Function secara otomatis akan berjalan tanpa perlu dipanggil
 ```
 
@@ -1903,7 +1907,7 @@ console.log(add());                   // Output: 2              ⇨ Menjalankan 
 console.log(add());                   // Output: 3              ⇨ Menjalankan IIFE add();
 ```
 
-### 𝐏. Arrow Function
+### ![✔] 𝐏. Arrow Function
 
 Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. Namun tidak hanya itu, di bab 2-6 D nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
 
@@ -1973,7 +1977,7 @@ console.log(jumlahHurufC);                            // Output: [4, 4, 5]
 let arrSiswa = ["Budi", "Joko", "Sukma"];
 
 let jumlahHurufD = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
-  return {nama: nama, jumlah: nama.length}; 
+  return {nama: nama, jumlah: nama.length};
 });
 
 let jumlahHurufE = arrSiswa.map((nama) => {           // Penulisan dengan Arrow Function (1)
@@ -1995,16 +1999,16 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 
 <hr>
 <div id="bab2_6"></div>
-  
-## 2-6. Object <a href="#daftar_isi_bab2">🡅</a>
-  
+
+## `2-6. Object` <a href="#daftar_isi_bab2">🡅</a>
+
 > - [X] 𝐀. Object Sebagai Tipe Data
 > - [X] 𝐁. Nested Object
 > - [X] 𝐂. Object Reference
 > - [X] 𝐃. Keyword this
 > - [X] 𝐄. Kesimpulan keyword this
 
-### 𝐀. Object Sebagai Tipe Data
+### ![✔] 𝐀. Object Sebagai Tipe Data
 
 JavaScript menggunakan konsep Prototypical Inheritance untuk menerapkan konsep pemrograman berbasis Object. Secara singkatnya, untuk membuat Object di JavaScript, caranya dengan langsung menulis Object tersebut (tidak perlu membuat Class, seperti yang dilakukan di bahasa pemrograman lain). Di dalam Object, terdapat istilah Property & Method.
 
@@ -2091,7 +2095,7 @@ console.log(mobil.tipe);              // Output: Sedan              (Nilai prope
 console.log(mobil.hidupkan());        // Output: Mesin Dinyalakan!  (Hasil return method hidupkan sesudah diubah)
 ```
 
-### 𝐁. Nested Object
+### ![✔] 𝐁. Nested Object
 
 ```Javascript
 let mahasiswa = {
@@ -2109,7 +2113,7 @@ console.log(mahasiswa.ipk.semester1)  // Output: 3.1                ⇨ Mengakse
 console.log(mahasiswa.ipk.semester2)  // Output: 3.6                ⇨ Mengakses Nested Object dengan Dot Notation
 ```
 
-### 𝐂. Object Reference
+### ![✔] 𝐂. Object Reference
 
 Tipe data primitif bersifat Assignment by Value, artinya saat dipindahkan/disalin ke Variable lain, yang disalin yaitu nilainya. Sedangkan, Tipe data Object bersifat Assignment by Reference, artinya saat dipindahkan/disalin ke Variable lain, yang disalin yaitu alamat memory-nya.
 
@@ -2173,14 +2177,14 @@ console.log(mhs2 == mhs2Baru);        // Output: false  (Why? meskipun mhs2 & mh
 console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
 ```
 
-### 𝐃. Keyword this
+### ![✔] 𝐃. Keyword this
 
 Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu this. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parent-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam Method di Object, di dalam Method di Class, atau di sebuah Event, dst.
 
 Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan mengacu pada this milik parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga Global Object (Window).
 
 #### ⤷ 1. Di konteks Global, keyword this mengacu ke Global Object (Window).
-  
+
 ```Javascript
 console.log(this);                    // Output: Window {window: Window, self: Window, ...}
 console.log(window);                  // Output: Window {window: Window, self: Window, ...}
@@ -2226,7 +2230,7 @@ funC = () => {                        // Penulisan Arrow Function
 ```
 
 #### ⤷ 4. Di dalam Method di Object, keyword this mengacu ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
-   
+
 ```Javascript
 let mhs = {
   nama: "Budi",
@@ -2383,7 +2387,7 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
   this.pergi1 = function(){              //   mobilBudi.pergi1 = function(){    🡲 Method (Sebagai Outer Function)
     console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
-                                         // 
+                                         //
     function innerA(){                   //     function innerA(){              🡲 Function Declaration (Inner Function) (✔️)
       console.log(this);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
       console.log(this.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
@@ -2396,7 +2400,7 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
       console.log(this);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
       console.log(this.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
     };                                   //     };
-                                         // 
+                                         //
     innerA.apply(this);                  //     innerA.apply(mobilBudi);        🡲 Mengakali dengan Method apply()
     innerB.apply(this);                  //     innerB.apply(mobilBudi);        🡲 Mengakali dengan Method apply()
     innerC();                            //     innerC();
@@ -2418,12 +2422,12 @@ class Mobil{                             // class Mobil{
   constructor(merkArg, tipeArg){         //   constructor(merkArg, tipeArg){
     this.merk   = merkArg;               //     mobilBudi.merk   = merkArg;     🡲 Di dalam Method Constructor, this mengacu
     this.tipe   = tipeArg;               //     mobilBudi.tipe   = tipeArg;        ke Object instansiasi-nya (Owner Object).
-                                         // 
+                                         //
     console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
     console.log(this.tipe);              //     console.log(mobilBudi.tipe);    🡲 Output: MPV
   };                                     //   };
-                                         // 
+                                         //
   pergi1(){                              //   pergi1(){                         🡲 Penulisan cara 1: Function Declaration (✔️)
     console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
@@ -2459,13 +2463,13 @@ class Mobil{                             // class Mobil{
   constructor(merkArg, tipeArg){         //   constructor(merkArg, tipeArg){
     this.merk   = merkArg;               //     mobilBudi.merk   = merkArg;
   };                                     //   };
-                                         // 
+                                         //
   pergi1(){                              //   pergi1(){                       🡲 Method (Sebagai Outer Function)
     console.log(this);                   //     console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC"}
     console.log(this.merk);              //     console.log(mobilBudi.merk);  🡲 Output: ABC
                                          //
     let that = this;                     //     let that = mobilBudi;         🡲 Mengakali dengan "that"
-                                         // 
+                                         //
     function innerA(){                   //     function innerA(){            🡲 Function Declaration (Inner Function) (✔️)
       console.log(that);                 //       console.log(this);          🡲 Output: Mobil {merk: "ABC"}
       console.log(that.merk);            //       console.log(this.merk);     🡲 Output: ABC
@@ -2478,7 +2482,7 @@ class Mobil{                             // class Mobil{
       console.log(this);                 //       console.log(this);          🡲 Output: Mobil {merk: "ABC"}
       console.log(this.merk);            //       console.log(this.merk);     🡲 Output: ABC
     };                                   //     };
-                                         // 
+                                         //
     innerA();                            //     innerA();
     innerB();                            //     innerB();
     innerC();                            //     innerC();
@@ -2500,7 +2504,7 @@ mobilBudi.pergi1();
   </head>
   <body>
     <button onclick="this.style.display='none'">Click to Remove Me!</button>
-  </body> 
+  </body>
 </html>
 ```
 
@@ -2550,7 +2554,7 @@ sapa2.apply(userA, ["Bandung", "ID"]);
 sapa2.apply(userB, ["Bandung", "ID"]);
 ```
 
-### 𝐄. Kesimpulan keyword this
+### ![✔] 𝐄. Kesimpulan keyword this
 
 Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nantinya akan digantikan oleh Owner Object (Object yang dibuat). Namun pada pembahasan di atas terkesan rumit, ini karena **konteks this tidak selalu langsung mengacu ke Owner Object-nya, sehingga perlu "diakali" terlebih dahulu, baik menggunakan "that" maupun Method apply()**.
 
@@ -2722,14 +2726,14 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
   </tr>
 </tbody>
 </table>
-  
+
 </details>
 
 ## ③ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒪𝒪𝒫 🚀 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
-  
+
 <div id="daftar_isi_bab3"></div>
 <br>
 
@@ -2738,21 +2742,21 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
 | <a href="#bab3_1">3-1. Object Oriented Programming</a><br> 	| X Menit       	|
 | <a href="#bab3_2">3-2. JavaScript Native Object</a>        	| X Menit       	|
 | <a href="#bab3_3">3-3. Global Property & Function</a>      	| X Menit       	|
-  
+
 <hr>
 <div id="bab3_1"></div>
-  
+
 ## 3-1. Object Oriented Programming <a href="#daftar_isi_bab3">🡅</a>
-  
+
 > - [X] 𝐀. Prosedural VS OOP
 > - [X] 𝐁. Object Sebagai OOP
 > - [X] 𝐂. Pengantar Native Object
-  
+
 <hr>
 <div id="bab3_2"></div>
-  
+
 ## 3-2. JavaScript Native Object <a href="#daftar_isi_bab3">🡅</a>
-  
+
 > - [X] 𝐀. Number Object
 > - [X] 𝐁. Math Object
 > - [X] 𝐂. String Object
@@ -2800,7 +2804,7 @@ numC = 1234500.346;
 
 console.log(numA.toExponential());    // Output: 5.00123e+2       ≈ 5.00123x10² ⇨ Format angka menjadi scientific notation
 console.log(numA.toExponential(1));   // Output: 5.0e+2           ≈ 5.0x10²
-console.log(numA.toExponential(5));   // Output: 5.00123e+2       ≈ 5.00123x10² 
+console.log(numA.toExponential(5));   // Output: 5.00123e+2       ≈ 5.00123x10²
 console.log(numA.toExponential(10));  // Output: 5.0012300000e+2  ≈ 5.0012300000x10²
 console.log(numA.toFixed());          // Output: 500              ⇨ Format angka dengan jumlah digit desimal (angka belakang koma)
 console.log(numA.toFixed(1));         // Output: 500.1              yang tetap, toFixed(5) artinya 5 digit angka di belakang koma.
@@ -2812,7 +2816,7 @@ console.log(numA.toPrecision(5));     // Output: 500.12
 console.log(numA.toPrecision(10));    // Output: 500.1230000
 console.log(numB.toString());         // Output: 50     (string)  ⇨ Mengkonversi Number menjadi String
 console.log(numB.toString(2));        // Output: 110010 (string)  ⤷ Konversi ke biner (Basis 2)
-console.log(numB.toString(8));        // Output: 62     (string)  ⤷ Konversi ke oktal (Basis 8) 
+console.log(numB.toString(8));        // Output: 62     (string)  ⤷ Konversi ke oktal (Basis 8)
 console.log(numB.toString(16));       // Output: 32     (string)  ⤷ Konversi ke heksa (Basis 16)
 console.log(numC.toLocaleString('id-ID'));  // Output: 1.234.500,346  ⇨ Konversi Number ke String + memakai format angka lokal
 console.log(numC.toLocaleString('en-US'));  // Output: 1,234,500.346  ⤷ en-US: Format angka Amerika Serikat (US)
@@ -2851,7 +2855,7 @@ console.log(Math.max(45,90,12,55));   // Output: 90             ⇨ Mencari nila
 console.log(Math.min(45,90,12,55));   // Output: 12             ⇨ Mencari nilai paling kecil dari angka yang di input di Argument
 console.log(Math.abs(-5));            // Output: 5              ⇨ Menghasilkan nilai absolut, jika angka negatif maka jadi positif
 console.log(Math.pow(5, 2));          // Output: 25 ≈ 5²        ⇨ Pemangkatan angka (Update: sudah diganti dengan operator **)
-console.log(Math.sqrt(81));           // Output: 9              ⇨ Akar kuadrat dari suatu angka (81 ya 9, karena 81 dari 9x9) 
+console.log(Math.sqrt(81));           // Output: 9              ⇨ Akar kuadrat dari suatu angka (81 ya 9, karena 81 dari 9x9)
 console.log(Math.log(10));            // Output: 2.302585...    ⇨ Mencari nilai logaritma natural (e)
 console.log(Math.log10(1000));        // Output: 3              ⇨ Mencari nilai logaritma basis 10 (desimal) (Biasa digunakan)
 console.log(Math.log2(256));          // Output: 8              ⇨ Mencari nilai logaritma basis 2 (biner)
@@ -2880,7 +2884,7 @@ console.log(String.fromCodePoint(65, 66, 67));              // Output: ABC      
 console.log(String.fromCodePoint(9749, 10052, 12096));      // Output: ☕❄⽀     fromCodePoint "Versi Update" dari fromCharCode
 console.log(String.fromCodePoint(0x2615, 0x2744, 0x2F40));  // Output: ☕❄⽀
 console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗🚲  ⤷ Berhasil menampilkan karakter terbaru unicode
-                                                            // 📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/ 
+                                                            // 📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 
 // C2. Object instance property
 
@@ -2918,20 +2922,20 @@ console.log(strC.slice(2));             // Output: ndung    ⇨ Ambil String dar
 console.log(strC.slice(2, 4));          // Output: nd       ⤷ Ambil String dari indeks ke 2 (depan) s.d indeks ke 4 (depan)
 console.log(strC.slice(-4, 6));         // Output: dun      ⤷ Ambil String dari indeks ke 4 (belakang) s.d. indeks ke 6 (depan)
 console.log(strC.slice(-4));            // Output: dung     ⤷ Ambil String dari indeks ke 4 (belakang) s.d. akhir
-                                        // Note: Object instance method substr(), substring() & slice() sangat mirip satu 
+                                        // Note: Object instance method substr(), substring() & slice() sangat mirip satu
                                         // sama lain, perbedaannya hanya pada prilaku Argument kedua masing-masing method
 
 console.log(strD.split());              // Output: ["Bandung kota kembang"]         ⇨ split() dipakai untuk memecah sebuah String
 console.log(strD.split(""));            // Output: ["B", "a", "n", "d" ...]            menjadi sebuah Array, Argument pertama diisi
 console.log(strD.split("", 1));         // Output: ["B"]                               karakter "pembatas" yang digunakan untuk
-console.log(strD.split(" "));           // Output: ["Bandung", "kota", "kembang"]      memecah String (atau bisa juga diisi dengan 
-console.log(strD.split(" ", 2));        // Output: ["Bandung", "kota"]                 RegExp, dibahas di point D), sedangkan 
-console.log(strE.split(", "));          // Output: ["Satu", "dua", "tiga", "empat"]    Argument kedua (optional), diisi dengan 
+console.log(strD.split(" "));           // Output: ["Bandung", "kota", "kembang"]      memecah String (atau bisa juga diisi dengan
+console.log(strD.split(" ", 2));        // Output: ["Bandung", "kota"]                 RegExp, dibahas di point D), sedangkan
+console.log(strE.split(", "));          // Output: ["Satu", "dua", "tiga", "empat"]    Argument kedua (optional), diisi dengan
 console.log(strE.split(", ", 3));       // Output: ["Satu", "dua", "tiga"]             jumlah element Array yang ingin diambil.
 console.log(strF.split(/\W/));          // Output: ["Satu", "dua", "tiga", "empat"]  ⤷ /\W/ merupakan contoh pemakaian RegExp
-console.log(strF.split(/\W/, 3));       // Output: ["Satu", "dua", "tiga"]            
+console.log(strF.split(/\W/, 3));       // Output: ["Satu", "dua", "tiga"]
 console.log(strG.trim());               // Output: username       ⇨ Hapus karakter whitespace (tab, dll) di awal & akhir String
-console.log(strC.concat(" Juara"));     // Output: Bandung Juara  ⇨ Menyambung String (Update: diganti menjadi operator concat +) 
+console.log(strC.concat(" Juara"));     // Output: Bandung Juara  ⇨ Menyambung String (Update: diganti menjadi operator concat +)
 console.log(strD.includes("kota"));     // Output: true           ⇨ Check apakah String "kota" ada di dalam String strD
 console.log(strD.includes("kota", 9));  // Output: false          ⤷ Argument ke 2: 9 menjadi indeks dimana pencarian dimulai
 console.log(strE.startsWith("Satu"));   // Output: true           ⇨ Check apakah String strE diawali dengan String "Satu"
@@ -3001,8 +3005,8 @@ console.log(regC.match(/\w*o\w*/g));    // Output: null                    akan 
 
 // ➌ Pola Awal & Akhir
 
-console.log(/^Belajar/.test(regB));     // Output: true                     ⇨ ^ sebagai karakter penanda awal pola          
-console.log(/^Bel/.test(regB));         // Output: true       
+console.log(/^Belajar/.test(regB));     // Output: true                     ⇨ ^ sebagai karakter penanda awal pola
+console.log(/^Bel/.test(regB));         // Output: true
 console.log(regB.replace(/^/, "GO! ")); // Output: GO! Belojar JavaScript
 console.log(/Script$/.test(regB));      // Output: true                     ⇨ $ sebagai karakter penanda akhir pola
 console.log(/ipt$/.test(regB));         // Output: true
@@ -3190,7 +3194,7 @@ console.log(polaX.test(" @ . "));                     // Output: true
 console.log(polaX.test("duniailkom@gmail.com"));      // Output: true
 console.log(polaX.test("raihanralam@gmail.com"));     // Output: true
 
-/* 
+/*
 polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat " @ . " dianggap true (ya karena memang lolos dari polaX),
 oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut:
 📚 http://emailregex.com/ (pola RegExp yang disusun sangat kompleks, itu tidak lain untuk ketepatan pola email yang akurat)
@@ -3261,7 +3265,7 @@ let arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini merupa
 let panjangArr = arrSiswa.length;                           // ⤷ di atas, karena nilai arrSiswa.length tidak disimpan langsung di
 for (let n=0; n<panjangArr; n++){                           // ⤷ kondisi, melainkan ditampung terlebih dahulu ke dalam sebuah Let.
   console.log(arrSiswa[n]);                                 // Output: Andri, Joko, Sukma, Rina, Sari
-}                                                           
+}
 
 // E3. Object instance method
 
@@ -3324,7 +3328,7 @@ console.log(arrM.indexOf("e"));         // Output: -1
 
 // E4. Object instance method (𝗱𝗲𝗻𝗴𝗮𝗻 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
 
-/* 
+/*
 Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe
 data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 */
@@ -3334,7 +3338,7 @@ let arrO = ["Budi","Joko","Putri"];
 
 arrN.forEach(                                         // forEach() berfungsi menjalankan Function untuk setiap element Array
   function(element, index, array){                    // (mirip seperti perulangan for of, jalan sebanyak jumlah element di Array)
-    console.log(`Index ke-${index} = ${element}`);    // ⤷ Argument ke 1: nilai element/value Array 
+    console.log(`Index ke-${index} = ${element}`);    // ⤷ Argument ke 1: nilai element/value Array
   }                                                   // ⤷ Argument ke 2: index element/key Array   (optional)
 );                                                    // ⤷ Argument ke 3: isi seluruh Array         (optional)
                                                       // ⤷ Penulisan Argument tidak harus element/index/arrray (bebas saja)
@@ -3355,7 +3359,7 @@ function tampil(elm, idx, arr){                       // Dalam contoh di atas, F
 arrN.forEach(tampil);                                 // Simak cara penulisan & pemanggilan Callback-nya pada contoh di samping.
 arrO.forEach(tampil);                                 // ⤷ Lihat, Function tampil() bisa dipakai oleh arrN & arrO
 
-/* 
+/*
 Output:
 Index ke-0 = a
 Index ke-1 = b
@@ -3364,14 +3368,14 @@ Index ke-3 = d
 Index ke-0 = Budi
 Index ke-1 = Joko
 Index ke-2 = Putri
-*/                                          
+*/
 
 let arrP = [1,2,3,4,5];
 let arrQ = [5,6,7,8,9];
 let arrR = [4,9,16,25];
 let arrS = [36,49,64,81];
 
-function kaliDua(elm){ return elm*2; }                                 
+function kaliDua(elm){ return elm*2; }
 function pangkatTiga(elm){ return elm**3; }
 function akarKuadrat(elm){ return Math.sqrt(elm); }
 function ganjilGenap(elm){ return elm%2 === 0 ? "genap" : "ganjil"; }
@@ -3403,7 +3407,7 @@ console.log(arrS.filter(genapOnly));                  // Output: [36,64]
                                                       // every() berfungsi memeriksa apakah seluruh element Array memenuhi syarat
                                                       // tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya
                                                       // (seluruh element menghasilkan true), maka method every() akan me-return
-                                                      // true. Namun jika tidak (ada salah satu saja element yang menghasilkan 
+                                                      // true. Namun jika tidak (ada salah satu saja element yang menghasilkan
                                                       // false), maka method every () akan me-return false.
 console.log(arrR.every(besarDari10));                 // Output: false  (karena terdapat nilai 4 & 9 yang memang kurang dari 10)
 console.log(arrS.every(besarDari10));                 // Output: true   (karena semua element di arrS bernilai lebih besar dari 10)
@@ -3486,7 +3490,7 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 let datA = new Date();                                // Cara penulisan 1: Tanpa Argument
 console.log(datA);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu saat kode console.log(datA) dieksekusi
-                                                      // ⤷ Kode dieksekusi di Jawa Barat Indonesia (WIB), oleh karena itu muncul 
+                                                      // ⤷ Kode dieksekusi di Jawa Barat Indonesia (WIB), oleh karena itu muncul
                                                       // ⤷ GMT+0700 yang artinya waktu di WIB lebih cepat 7 jam dari waktu GMT/UTC
                                                       // ⤷ (standard waktu internasional), berarti waktu di GMT yaitu 17:35:22.
 
@@ -3539,7 +3543,7 @@ Method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di 
 ⤷ Dari mana JavaScript tahu sistem lokal memakai waktu WIB? Dari web browser, dimana web browser mengambilnya dari sistem operasi,
   yakni settingan tanggal dari Windows. Umumnya, tampilan seperti inilah yang akan dipakai di website nanti.
 
-𝗡𝗼𝘁𝗲: 
+𝗡𝗼𝘁𝗲:
 - Method Getter UTC & Getter Locale pada contoh di bawah dieksekusi pada    : Sabtu, 5 Juni 2021, pukul 07:55:30 (di Jawa Barat)
 - Method Setter UTC & Setter Locale pada contoh di bawah dibuat ke tanggal  : Sabtu, 5 Juni 2021, pukul 10:55:30
 */
@@ -3548,7 +3552,7 @@ Method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di 
 
 let datE = new Date();
 
-console.log(datE.toISOString());        // Output: 2021-06-05T00:55:30.215Z       ⇨ Tanggal dalam format ISO 
+console.log(datE.toISOString());        // Output: 2021-06-05T00:55:30.215Z       ⇨ Tanggal dalam format ISO
 console.log(datE.toJSON());             // Output: 2021-06-05T00:55:30.215Z       ⇨ Sama seperti toISOString()
 console.log(datE.toUTCString());        // Output: Sat, 05 Jun 2021 00:55:30 GMT  ⇨ Tanggal dalam format UTC
 console.log(datE.valueOf());            // Output: 1622854530215                  ⇨ Milidetik sejak 1 Januari 1970 hingga saat ini
@@ -3711,25 +3715,25 @@ program berupa: 2 lembar uang 100.000, 1 lembar uang 50.000, 1 lembar uang 5000,
 mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nilai rupiah" ini menggunakan JavaScript. Good Luck!
 */
 ```
-  
+
 <hr>
 <div id="bab3_3"></div>
-  
+
 ## 3-3. Global Property & Function <a href="#daftar_isi_bab3">🡅</a>
-  
+
 > - [X] 𝐀. Global Property
 > - [X] 𝐁. Global Function
-  
+
 </details>
 
 ## ④ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒪𝑀 🧩 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
-  
+
 <div id="daftar_isi_bab4"></div>
 <br>
-  
+
 | Bab 4                                               	| Estimasi Baca 	|
 |-----------------------------------------------------	|---------------	|
 | <a href="#bab4_1">4-1. Pengantar DOM</a><br>        	| X Menit       	|
@@ -3744,61 +3748,61 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 
 <hr>
 <div id="bab4_1"></div>
-  
+
 ## 4-1. Pengantar DOM <a href="#daftar_isi_bab4">🡅</a>
-  
+
 <hr>
 <div id="bab4_2"></div>
-  
+
 ## 4-2. Window Object <a href="#daftar_isi_bab4">🡅</a>
-  
+
 <hr>
 <div id="bab4_3"></div>
-  
+
 ## 4-3. Document Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
-  
+
 <hr>
 <div id="bab4_4"></div>
-  
+
 ## 4-4. Node Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
-  
+
 <hr>
 <div id="bab4_5"></div>
-  
+
 ## 4-5. Document Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
-  
+
 <hr>
 <div id="bab4_6"></div>
-  
+
 ## 4-6. Node Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
-  
+
 <hr>
 <div id="bab4_7"></div>
-  
+
 ## 4-7. DOM Event <a href="#daftar_isi_bab4">🡅</a>
-  
+
 <hr>
 <div id="bab4_8"></div>
-  
+
 ## 4-8. Event Object <a href="#daftar_isi_bab4">🡅</a>
-  
+
 <hr>
 <div id="bab4_9"></div>
-  
+
 ## 4-9. Event Prevent Default <a href="#daftar_isi_bab4">🡅</a>
-  
+
 </details>
 
 ## ⑤ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 🦸‍♂️ <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
-  
+
 </details>
 
 ## ⑥ 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
-  
+
 </details>
