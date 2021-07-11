@@ -1,6 +1,6 @@
 <!-- Variable -->
-
-[✔]: assets/check-mark.png
+[✔]: assets/check-mark-2.png
+<!-- End -->
 
 <div id="top"></div>
 
@@ -2746,7 +2746,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
 <hr>
 <div id="bab3_1"></div>
 
-## 3-1. Object Oriented Programming <a href="#daftar_isi_bab3">🡅</a>
+## `3-1. Object Oriented Programming` <a href="#daftar_isi_bab3">🡅</a>
 
 > - [X] 𝐀. Prosedural VS OOP
 > - [X] 𝐁. Object Sebagai OOP
@@ -2755,7 +2755,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
 <hr>
 <div id="bab3_2"></div>
 
-## 3-2. JavaScript Native Object <a href="#daftar_isi_bab3">🡅</a>
+## `3-2. JavaScript Native Object` <a href="#daftar_isi_bab3">🡅</a>
 
 > - [X] 𝐀. Number Object
 > - [X] 𝐁. Math Object
@@ -2764,7 +2764,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
 > - [X] 𝐄. Array Object
 > - [X] 𝐅. Date Object
 
-### 𝐀. Number Object
+### ![✔] 𝐀. Number Object
 
 ```Javascript
 // A1. Object property
@@ -2826,7 +2826,7 @@ console.log(numC.toLocaleString('id-ID', {style: 'percent'}));                  
 console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));  // Output: Rp 1.234.500,35  (Mata uang)
 ```
 
-### 𝐁. Math Object
+### ![✔] 𝐁. Math Object
 
 ```Javascript
 // B1. Object property
@@ -2871,7 +2871,7 @@ console.log(Math.max(...mthB));             // Output: 90
 console.log(Math.min(...mthB));             // Output: 12
 ```
 
-### 𝐂. String Object
+### ![✔] 𝐂. String Object
 
 ```Javascript
 // C1. Object method
@@ -2965,7 +2965,7 @@ while (posisi !== -1){                  // Perulangan berhenti saat posisi = -1 
 console.log(count);                     // Output: 6
 ```
 
-### 𝐃. RegExp Object
+### ![✔] 𝐃. RegExp Object
 
 ```Javascript
 // D1. Object instance method
@@ -3228,7 +3228,7 @@ console.log(polaZ.test("zz 9YES"));                   // Output: true
 console.log(polaZ.test("_zz9YES"));                   // Output: false
 ```
 
-### 𝐄. Array Object
+### ![✔] 𝐄. Array Object
 
 ```Javascript
 // E1. Object method
@@ -3480,7 +3480,7 @@ arrV.sort(bandingkan);                                // sort() yang menggunakan
 console.log(arrV);                                    // Output: [1,2,3,5,8,11,22,31,33,44]
 ```
 
-### 𝐅. Date Object
+### ![✔] 𝐅. Date Object
 
 ```Javascript
 // F1. Membuat Date Object
@@ -3719,7 +3719,7 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 <hr>
 <div id="bab3_3"></div>
 
-## 3-3. Global Property & Function <a href="#daftar_isi_bab3">🡅</a>
+## `3-3. Global Property & Function` <a href="#daftar_isi_bab3">🡅</a>
 
 > - [X] 𝐀. Global Property
 > - [X] 𝐁. Global Function
@@ -3749,47 +3749,47 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 <hr>
 <div id="bab4_1"></div>
 
-## 4-1. Pengantar DOM <a href="#daftar_isi_bab4">🡅</a>
+## `4-1. Pengantar DOM` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_2"></div>
 
-## 4-2. Window Object <a href="#daftar_isi_bab4">🡅</a>
+## `4-2. Window Object` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_3"></div>
 
-## 4-3. Document Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
+## `4-3. Document Object (Part 1)` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_4"></div>
 
-## 4-4. Node Object (Part 1) <a href="#daftar_isi_bab4">🡅</a>
+## `4-4. Node Object (Part 1)` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_5"></div>
 
-## 4-5. Document Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
+## `4-5. Document Object (Part 2)` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_6"></div>
 
-## 4-6. Node Object (Part 2) <a href="#daftar_isi_bab4">🡅</a>
+## `4-6. Node Object (Part 2)` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_7"></div>
 
-## 4-7. DOM Event <a href="#daftar_isi_bab4">🡅</a>
+## `4-7. DOM Event` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_8"></div>
 
-## 4-8. Event Object <a href="#daftar_isi_bab4">🡅</a>
+## `4-8. Event Object` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_9"></div>
 
-## 4-9. Event Prevent Default <a href="#daftar_isi_bab4">🡅</a>
+## `4-9. Event Prevent Default` <a href="#daftar_isi_bab4">🡅</a>
 
 </details>
 
