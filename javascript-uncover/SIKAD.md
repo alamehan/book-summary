@@ -2768,7 +2768,6 @@ let hasil = potongTeks(teks, 6, 10);  // Output: World  ⇨ Berbasiskan Function
 // ...                                // Asumsi sudah terdapat sebuah method potongTeks di dalam String Object
 let teks = new String("Hello World"); // Sebenarnya sama aja dengan let teks = "Hello World";
 let hasil = teks.potongTeks(6, 10);   // Output: World  ⇨ berbasiskan Object
-                                      // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝗻𝗲𝘄 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟯)
 ```
 
 #### ⤷ Penulisan Literals VS Object Constructor
@@ -2855,7 +2854,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang b
 
 const khususMethod = {
   hidupkan: function(){
-    return `Mesin ${this.merk} dihidupkan!`;      // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
+    return `Mesin ${this.merk} dihidupkan!`;
   },
   pergi: function(tempat){
     return `${this.merk} pergi ke ${tempat}`;
@@ -2878,7 +2877,7 @@ let mobilBudi = Mobil("Toyota Avanza", "MPV", 200000000);   // Proses instansias
 let mobilJoko = Mobil("Honda Civic", "Sedan", 200000000);
 
 console.log(mobilBudi instanceof Mobil);          // Output: false  ⇨ Karena memang kita tidak instansiasi Object
-console.log(mobilJoko instanceof Mobil);          // Output: false     dengan keyword new (Lihat point B3-3 di bawah)
+console.log(mobilJoko instanceof Mobil);          // Output: false     dengan menggunakan keyword new
 
 console.log(mobilBudi.merk);                      // Output: Toyota Avanza
 console.log(mobilBudi.hidupkan());                // Output: Mesin Toyota Avanza dihidupkan!
@@ -2895,7 +2894,7 @@ console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi k
 // ➊ OOP dengan Constructor Functions (Sebelum ES6)
 
 function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil"
-  this.merk   = merkArg;                          // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
+  this.merk   = merkArg;  
   this.tipe   = tipeArg;                          // Note: Tidak perlu ada deklarasi Object kosong dan keyword return
   this.harga  = hargaArg;                         //       di baris akhir Function, karena dengan menggunakan Constructor
   this.hidupkan = function(){                     //       Functions, di belakang layar JavaScript secara otomatis membuat:
@@ -2943,9 +2942,9 @@ console.log(mobilJoko.hidupkan());                // Output: Mesin Honda Civic d
 console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi ke Solo
 ```
 
-Sebenarnya penulisan instansiasi Object sama seperti menjalankan Function pada umumnya, dalam kasus di atas berarti dijalankan dengan menuliskan Mobil(). Hanya saja perbedaanya, ada tambahan keyword new di depannya, menjadi new Mobil(). Lalu disimpan ke dalam Variable, mobilBudi = new Mobil().
+Sebenarnya instansiasi Object sama seperti menjalankan Function pada umumnya, dalam kasus di atas berarti ```Mobil()```. Hanya saja perbedaanya, ada tambahan keyword ```new``` di depannya, menjadi ```new Mobil()```. Lalu disimpan ke dalam Variable, ```mobilBudi = new Mobil()```.
 
-Bisa dilihat bahwa dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak usah repot-repot menulis Object mobil secara manual satu per satu secara berulang (seperti yang dilakukan di point B1), cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi, mudah dan cepat, bahkan jika kita butuh 100 Object sekalipun. Ini akan terasa manfaatnya saat aplikasi sudah besar.
+Bisa dilihat bahwa dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak usah repot-repot menulis Object mobil secara manual satu per satu secara berulang, cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi. Ini akan sangat terasa manfaatnya saat aplikasi sudah besar.
 
 ### ![✔] 𝐂. Pengantar Native Object
 
