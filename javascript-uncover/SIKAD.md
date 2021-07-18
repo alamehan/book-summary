@@ -2863,9 +2863,9 @@ const khususMethod = {
 
 function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang berfungsi sebagai "blue print mobil"
   let mobil   = Object.create(khususMethod);      // Note: Sebenarnya sama dengan "let mobil = {}", hanya saja dengan
-  mobil.merk  = merkArg;                          //       menggunakan Object.create() kita dapat menyimpan parameter
+  mobil.merk  = merkArg;                          //       menggunakan Object.create() kita dapat menyimpan Parameter
   mobil.tipe  = tipeArg;                          //       yang mengacu ke Object lainnya, tujuannya untuk membawa
-  mobil.harga = hargaArg;                         //       propery & method dari Object lainnya tersebut.
+  mobil.harga = hargaArg;                         //       Propery & Method dari Object lainnya tersebut.
   return mobil;                                   // Note: Di baris akhir Function Declaration harus ada return
 }
 ```
@@ -2894,12 +2894,12 @@ console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi k
 // ➊ OOP dengan Constructor Functions (Sebelum ES6)
 
 function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil"
-  this.merk   = merkArg;  
-  this.tipe   = tipeArg;                          // Note: Tidak perlu ada deklarasi Object kosong dan keyword return
-  this.harga  = hargaArg;                         //       di baris akhir Function, karena dengan menggunakan Constructor
-  this.hidupkan = function(){                     //       Functions, di belakang layar JavaScript secara otomatis membuat:
-    return `Mesin ${this.merk} dihidupkan!`;      //       ⤷ 𝗹𝗲𝘁 𝘁𝗵𝗶𝘀 = 𝗢𝗯𝗷𝗲𝗰𝘁.𝗰𝗿𝗲𝗮𝘁𝗲(𝗠𝗼𝗯𝗶𝗹.𝗽𝗿𝗼𝘁𝗼𝘁𝘆𝗽𝗲);
-  }                                               //       ⤷ 𝗿𝗲𝘁𝘂𝗿𝗻 𝘁𝗵𝗶𝘀;
+  this.merk   = merkArg;                          // Note: Tidak perlu ada deklarasi Object kosong dan keyword return
+  this.tipe   = tipeArg;                          //       di baris akhir Function, karena dengan menggunakan Constructor
+  this.harga  = hargaArg;                         //       Functions, di belakang layar JavaScript secara otomatis membuat:
+  this.hidupkan = function(){                     //       ⤷ 𝗹𝗲𝘁 𝘁𝗵𝗶𝘀 = 𝗢𝗯𝗷𝗲𝗰𝘁.𝗰𝗿𝗲𝗮𝘁𝗲(𝗠𝗼𝗯𝗶𝗹.𝗽𝗿𝗼𝘁𝗼𝘁𝘆𝗽𝗲);
+    return `Mesin ${this.merk} dihidupkan!`;      //       ⤷ 𝗿𝗲𝘁𝘂𝗿𝗻 𝘁𝗵𝗶𝘀;
+  }                                               
   this.pergi = function(tempat){
     return `${this.merk} pergi ke ${tempat}`;
   }
@@ -2910,12 +2910,12 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
 // ➋ OOP dengan Class (Setelah ES6)
 
 class Mobil{                                      // Class sebagai "blue print mobil" (Kedepannya Class inilah yang akan digunakan)
-  constructor(merkArg, tipeArg, hargaArg){        // Note: Setiap property wajib berada di dalam method constructor(), 
-    this.merk   = merkArg;                        //       yaitu sebuah method yang otomatis dijalankan pada saat proses
+  constructor(merkArg, tipeArg, hargaArg){        // Note: Setiap Property wajib berada di dalam method constructor(), 
+    this.merk   = merkArg;                        //       yaitu sebuah Method yang otomatis dijalankan pada saat proses
     this.tipe   = tipeArg;                        //       instansiasi/pembuatan Object.
     this.harga  = hargaArg; 
   }
-  hidupkan(){                                     // Cara penulisan method: Langsung ditulis nama Functionnya (simple!)
+  hidupkan(){
     return `Mesin ${this.merk} dihidupkan!`;
   }
   pergi(tempat){
@@ -2927,8 +2927,8 @@ class Mobil{                                      // Class sebagai "blue print m
 ```Javascript
 // ➌ Membuat Object dari point 1 & 2 di atas
 
-let mobilBudi = new Mobil("Toyota Avanza", "MPV", 200000000);   // Proses instansiasi Object Mobil baru menggunakan keyword new
-let mobilJoko = new Mobil("Honda Civic", "Sedan", 200000000);   // (Instansiasi: membuat sesuatu yang berwujud dari yang abstrak)
+let mobilBudi = new Mobil("Toyota Avanza", "MPV", 200000000);   // Proses instansiasi Object Mobil baru menggunakan keyword new.
+let mobilJoko = new Mobil("Honda Civic", "Sedan", 200000000);   // Instansiasi: membuat sesuatu yang berwujud dari yang abstrak.
 
 console.log(mobilBudi instanceof Mobil);          // Output: true   ⇨ Operator instanceof digunakan memeriksa apakah suatu Object
 console.log(mobilJoko instanceof Mobil);          // Output: true      merupakan instance dari sebuah Constructor Functions/Class
@@ -2944,7 +2944,7 @@ console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi k
 
 Sebenarnya instansiasi Object sama seperti menjalankan Function pada umumnya, dalam kasus di atas berarti ```Mobil()```. Hanya saja perbedaanya, ada tambahan keyword ```new``` di depannya, menjadi ```new Mobil()```. Lalu disimpan ke dalam Variable, ```mobilBudi = new Mobil()```.
 
-Dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak perlu repot-repot menulis Object Mobil secara manual satu per satu secara berulang, cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi. Ini akan terasa manfaatnya saat aplikasi sudah besar.
+Dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak perlu repot-repot menulis Object Mobil secara manual satu per satu secara berulang, cukup dengan membuat "blue print" berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi. Ini akan terasa manfaatnya saat aplikasi sudah besar.
 
 #### ⤷ Menambah Property & Method sebuah Class dengan Prototype
 
@@ -2967,14 +2967,13 @@ Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Ob
 
 Di buku ini akan dibahas beberapa diantaranya yang sering dijumpai, yaitu ```Number```, ```Math```, ```String```, ```RegExp```, ```Array```, dan ```Date```. Di dalam JavaScript Native Object, terdapat 4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya), yaitu:
 
-```Javascript
-/*
-• Object Property             Contoh: console.log(Number.MAX_VALUE);                            🡲 Output: 1.7976931348623157e+308
-• Object Method               Contoh: console.log(Number.parseInt("12.045"));                   🡲 Output: 12 (Number, not String)
-• Object instance Property    Contoh: let foo = "Belajar JavaScript"; console.log(foo.length);  🡲 Output: 18 
-• Object instance Method      Contoh: let foo = 50.12345; console.log(foo.toPrecision(5));      🡲 Output: 50.123
-*/
-```
+| Istilah                  	| Contoh                                                   	| Output                  	|
+|--------------------------	|----------------------------------------------------------	|-------------------------	|
+| Object Property          	| console.log(Number.MAX_VALUE);                           	| 1.7976931348623157e+308 	|
+| Object Method            	| console.log(Number.parseInt("12.045"));                  	| 12 (Number, not String) 	|
+| Object instance Property 	| let foo = "Belajar JavaScript"; console.log(foo.length); 	| 18                      	|
+| Object instance Method   	| let foo = 50.12345; console.log(foo.toPrecision(5));     	| 50.123                  	|
+
 
 Object Property & Object Method melekat langsung ke Object-nya (Class-nya), ```Number.MAX_VALUE``` & ```Number.parseInt("12.045")```, dimana ```Number``` merupakan Object-nya, sedangkan ```MAX_VALUE``` sebagai Object Property & ```parsetInt()``` sebagai Object Method-nya.
 
