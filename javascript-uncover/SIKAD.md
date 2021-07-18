@@ -1993,7 +1993,7 @@ console.log(jumlahHurufE);                            // Output: [{0: {nama: "Bu
 console.log(jumlahHurufF);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 ```
 
-Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ```arrSiswa.map(nama => ({nama: nama}));```. Kemudian, yang membuat menarik yaitu jika nama Property Object sama dengan nama nilainya maka tidak perlu ditulis keduanya, menjadi ```arrSiswa.map(nama => ({nama}));```.
+Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ```arrSiswa.map(nama => ({nama: nama}));```. Kemudian, yang membuat menarik yaitu jika nama property Object sama dengan nama nilainya maka tidak perlu ditulis keduanya, menjadi ```arrSiswa.map(nama => ({nama}));```.
 
 🔔 Pembungkusan menggunakan tanda () serupa dengan pembungkusan pada point O di atas terkait IIFE
 
@@ -2010,9 +2010,9 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 
 ### ![✔] 𝐀. Object Sebagai Tipe Data
 
-JavaScript menggunakan konsep Prototypical Inheritance untuk menerapkan konsep pemrograman berbasis Object. Secara singkatnya, untuk membuat Object di JavaScript, caranya dengan langsung menulis Object tersebut (tidak perlu membuat Class, seperti yang dilakukan di bahasa pemrograman lain). Di dalam Object, terdapat istilah Property & Method.
+JavaScript menggunakan konsep Prototypical Inheritance untuk menerapkan konsep pemrograman berbasis Object. Secara singkatnya, untuk membuat Object di JavaScript, caranya dengan langsung menulis Object tersebut (tidak perlu membuat Class, seperti yang dilakukan di bahasa pemrograman lain). Di dalam Object, terdapat istilah property & method.
 
-Property merupakan Variable (Var/Let/Const) yang berada di dalam Object, sedangkan Method merupakan Function yang berada di dalam Object. Baik Property maupun Method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian Variable biasa. Serta, diantara Property maupun Method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
+property merupakan Variable (Var/Let/Const) yang berada di dalam Object, sedangkan method merupakan Function yang berada di dalam Object. Baik property maupun method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian Variable biasa. Serta, diantara property maupun method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
 
 #### ⤷ Pendefinisian Object
 
@@ -2020,18 +2020,18 @@ Property merupakan Variable (Var/Let/Const) yang berada di dalam Object, sedangk
 let objA = {};                        // Let objA berisi Object kosong
 console.log(typeof objA);             // Output: object
 
-let objB = {                          // Let objB berisi Object dengan Property & Method
-  property1: "isi_property1",         // Penulisan Property
+let objB = {                          // Let objB berisi Object dengan property & method
+  property1: "isi_property1",         // Penulisan property
   property2: "isi_property1",
   property3: "isi_property1",
 
-  method1(){                          // Penulisan Method cara 1: Function Declaration (Tanpa perlu keyword function di depannya)
+  method1(){                          // Penulisan method cara 1: Function Declaration (Tanpa perlu keyword function di depannya)
     "isi method 1";
   },
-  method2: function(){                // Penulisan Method cara 2: Function Expressions (Anonymous Function)
+  method2: function(){                // Penulisan method cara 2: Function Expressions (Anonymous Function)
     "isi method 2";
   },
-  method3: () => {                    // Penulisan Method cara 3: Arrow Function
+  method3: () => {                    // Penulisan method cara 3: Arrow Function
     "isi method 3";
   }
 };
@@ -2054,21 +2054,21 @@ let mobil = {                         // Let mobil berisi Object tentang mobil (
 };
 ```
 
-#### ⤷ Mengakses Property & Method
+#### ⤷ Mengakses property & method
 
 ```Javascript
-console.log(mobil.merk);              // Output: Toyota Avanza      ⇨ Mengakses Property menggunakan Dot Notation (✔️ Recommended)
-console.log(mobil["merk"]);           // Output: Toyota Avanza      ⇨ Mengakses Property menggunakan Bracket (❌ Not Recommended)
-console.log(mobil.hidupkan());        // Output: Mesin Dihidupkan!  ⇨ Mengakses Method tanpa Argument
-console.log(mobil.pergi("Bali"));     // Output: Pergi ke Bali      ⇨ Mengakses Method dengan Argument
+console.log(mobil.merk);              // Output: Toyota Avanza      ⇨ Mengakses property menggunakan Dot Notation (✔️ Recommended)
+console.log(mobil["merk"]);           // Output: Toyota Avanza      ⇨ Mengakses property menggunakan Bracket (❌ Not Recommended)
+console.log(mobil.hidupkan());        // Output: Mesin Dihidupkan!  ⇨ Mengakses method tanpa Argument
+console.log(mobil.pergi("Bali"));     // Output: Pergi ke Bali      ⇨ Mengakses method dengan Argument
 ```
 
-#### ⤷ Menambah Property & Method
+#### ⤷ Menambah property & method
 
 ```Javascript
-mobil.warna = "Biru";                 // Menambah Property warna ke Object mobil (ditambahkan di luar pendefinisian Object mobil)
-mobil.modif = true;                   // Menambah Property modif ke Object mobil (ditambahkan di luar pendefinisian Object mobil)
-mobil.matikan = function(){           // Menambah Method matikan ke Object mobil (ditambahkan di luar pendefinisian Object mobil)
+mobil.warna = "Biru";                 // Menambah property warna ke Object mobil (ditambahkan di luar pendefinisian Object mobil)
+mobil.modif = true;                   // Menambah property modif ke Object mobil (ditambahkan di luar pendefinisian Object mobil)
+mobil.matikan = function(){           // Menambah method matikan ke Object mobil (ditambahkan di luar pendefinisian Object mobil)
   return "Mesin Dimatikan!";
 };
 
@@ -2077,7 +2077,7 @@ console.log(mobil.modif);             // Output: true
 console.log(mobil.matikan());         // Output: Mesin Dimatikan!
 ```
 
-#### ⤷ Mengubah nilai Property & Method
+#### ⤷ Mengubah nilai property & method
 
 ```Javascript
 console.log(mobil.merk);              // Output: Toyota Avanza      (Nilai property merk sebelum diubah)
@@ -2179,7 +2179,7 @@ console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mh
 
 ### ![✔] 𝐃. Keyword this
 
-Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu this. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parent-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam Method di Object, di dalam Method di Class, atau di sebuah Event, dst.
+Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu this. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parent-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam method di Object, di dalam method di Class, atau di sebuah Event, dst.
 
 Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan mengacu pada this milik parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga Global Object (Window).
 
@@ -2229,31 +2229,31 @@ funC = () => {                        // Penulisan Arrow Function
 }; funC();
 ```
 
-#### ⤷ 4. Di dalam Method di Object, keyword this mengacu ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
+#### ⤷ 4. Di dalam method di Object, keyword this mengacu ke Owner Object (Object yang dibuat), terkecuali Arrow Function.
 
 ```Javascript
 let mhs = {
   nama: "Budi",
   umur: 16,
-  coba: this,                         // Di dalam Object-nya langsung (bukan di dalam Method-nya), this mengacu ke Global Object
+  coba: this,                         // Di dalam Object-nya langsung (bukan di dalam method-nya), this mengacu ke Global Object
                                       // (Window). Untuk membuktikannya jalankan perintah console.log(mhs.coba); di luar Object.
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo1(){                            // halo1(){                           🡲 Penulisan Method cara 1: Function Declaration (✔️)
+  halo1(){                            // halo1(){                           🡲 Penulisan method cara 1: Function Declaration (✔️)
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", umur: 16, halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
     console.log(this.umur);           //   console.log(mhs.umur);           🡲 Output: 16
   },                                  // },
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo2: function(){                  // halo2: function(){                 🡲 Penulisan Method cara 2: Function Expressions (✔️)
+  halo2: function(){                  // halo2: function(){                 🡲 Penulisan method cara 2: Function Expressions (✔️)
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", umur: 16, halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
     console.log(this.umur);           //   console.log(mhs.umur);           🡲 Output: 16
   },                                  // },
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo3: () => {                      // halo3: () => {                     🡲 Penulisan Method cara 3: Arrow Function (❌)
+  halo3: () => {                      // halo3: () => {                     🡲 Penulisan method cara 3: Arrow Function (❌)
     console.log(this);                //   console.log(window);             🡲 Output: Window {window: Window, self: Window, ...}
     console.log(this.nama);           //   console.log(window.nama);        🡲 Output: undefined
     console.log(this.umur);           //   console.log(window.umur);        🡲 Output: undefined
@@ -2268,15 +2268,15 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-Dalam kasus Method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔔 Lihat point ...
+Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔔 Lihat point ...
 
-Selain itu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → Method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Pada contoh di bawah ini Method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Selain itu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Pada contoh di bawah ini method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
 let mhs = {
   nama: "Budi",
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo: function(){                   // halo: function(){                  🡲 Method (Sebagai Outer Function)
+  halo: function(){                   // halo: function(){                  🡲 method (Sebagai Outer Function)
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
                                       //
@@ -2299,18 +2299,18 @@ let mhs = {
   }                                   // }
 }
                                       // Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni
-                                      //          this milik parent scope-nya, yaitu Method halo yang mengacu ke Object mhs.
+                                      //          this milik parent scope-nya, yaitu method halo yang mengacu ke Object mhs.
                                       //          Karena itulah this pada contoh Arrow Function di atas mengacu ke Object mhs.
 mhs.halo();
 ```
 
-Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration (innerA) & Function Expressions (innerB) memiliki this yang mengacu ke Owner Object (dalam kasus ini Object mhs), maka this milik Method halo perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut dapat digunakan di Inner Function. Sehingga this di Inner Function mengacu ke Object mhs sama halnya seperti this milik Method halo. Simak contoh di bawah ini.
+Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration (innerA) & Function Expressions (innerB) memiliki this yang mengacu ke Owner Object (dalam kasus ini Object mhs), maka this milik method halo perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut dapat digunakan di Inner Function. Sehingga this di Inner Function mengacu ke Object mhs sama halnya seperti this milik method halo. Simak contoh di bawah ini.
 
 ```Javascript
 let mhs = {
   nama: "Budi",
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo: function(){                   // halo: function(){                  🡲 Method (Sebagai Outer Function)
+  halo: function(){                   // halo: function(){                  🡲 method (Sebagai Outer Function)
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
                                       //
@@ -2338,9 +2338,9 @@ let mhs = {
 mhs.halo();
 ```
 
-Atau sebagai alternatif selain menggunakan "that" seperti contoh di atas, bisa gunakan Method apply() pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(this);```, ```innerB();``` menjadi ```innerB.apply(this);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya dibuat sama dengan konteks this milik Method-nya (Outer Function-nya), yaitu mengacu ke Owner Object (Dalam kasus ini yaitu Object mhs). Lebih jelasnya terkait Method apply() lihat contoh pada point nomor 8 di bawah.
+Atau sebagai alternatif selain menggunakan "that" seperti contoh di atas, bisa gunakan method apply() pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(this);```, ```innerB();``` menjadi ```innerB.apply(this);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya dibuat sama dengan konteks this milik method-nya (Outer Function-nya), yaitu mengacu ke Owner Object (Dalam kasus ini yaitu Object mhs). Lebih jelasnya terkait method apply() lihat contoh pada point nomor 8 di bawah.
 
-#### ⤷ 5. Di dalam Method di Constructor Function, keyword this mengacu ke Owner Object (Object yang dibuat).
+#### ⤷ 5. Di dalam method di Constructor Function, keyword this mengacu ke Owner Object (Object yang dibuat).
 
 🔔 Constructor Function dibahas di bab 3-1 B
 
@@ -2349,20 +2349,20 @@ Atau sebagai alternatif selain menggunakan "that" seperti contoh di atas, bisa g
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, hargaArg){
   this.merk   = merkArg;                 //   mobilBudi.merk   = merkArg;    🡲 Di dalam Constructor Function-nya langsung
-  this.tipe   = tipeArg;                 //   mobilBudi.tipe   = tipeArg;       (bukan di dalam Method-nya), this mengacu ke
+  this.tipe   = tipeArg;                 //   mobilBudi.tipe   = tipeArg;       (bukan di dalam method-nya), this mengacu ke
                                          //                                     Object instansiasi-nya (Owner Object).
                                          //
   console.log(this);                     //   console.log(mobilBudi);        🡲 Output: Mobil {merk: "ABC", tipe: "MPV"}
   console.log(this.merk);                //   console.log(mobilBudi.merk);   🡲 Output: ABC
   console.log(this.tipe);                //   console.log(mobilBudi.tipe);   🡲 Output: MPV
                                          //
-  this.pergi1 = function(){              //   mobilBudi.pergi1 = function(){ 🡲 Penulisan Method cara 2: Function Expressions (✔️)
+  this.pergi1 = function(){              //   mobilBudi.pergi1 = function(){ 🡲 Penulisan method cara 2: Function Expressions (✔️)
     console.log(this);                   //     console.log(mobilBudi);      🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk); 🡲 Output: ABC
     console.log(this.tipe);              //     console.log(mobilBudi.tipe); 🡲 Output: MPV
   };                                     //   };
                                          //
-  this.pergi2 = () => {                  //   this.pergi2 = () => {          🡲 Penulisan Method cara 3: Arrow Function (✔️)
+  this.pergi2 = () => {                  //   this.pergi2 = () => {          🡲 Penulisan method cara 3: Arrow Function (✔️)
     console.log(this);                   //     console.log(this);           🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(this.merk);      🡲 Output: ABC
     console.log(this.tipe);              //     console.log(this.tipe);      🡲 Output: MPV
@@ -2370,13 +2370,13 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
 }                                        // }
 
 let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi Object Mobil baru bernama mobilBudi
-mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Method pergi1 milik Object mobilBudi
-mobilBudi.pergi2();                      //           Menjalankan Method pergi2 milik Object mobilBudi
+mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan method pergi1 milik Object mobilBudi
+mobilBudi.pergi2();                      //           Menjalankan method pergi2 milik Object mobilBudi
 ```
 
-Dalam kasus Method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
+Dalam kasus method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
 
-Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" seperti pada contoh sebelumnya, atau gunakan Method apply(). Pada contoh di bawah ini Method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" seperti pada contoh sebelumnya, atau gunakan method apply(). Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -2384,7 +2384,7 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
   this.merk   = merkArg;                 //   mobilBudi.merk   = merkArg;
   this.tipe   = tipeArg;                 //   mobilBudi.tipe   = tipeArg;
                                          //
-  this.pergi1 = function(){              //   mobilBudi.pergi1 = function(){    🡲 Method (Sebagai Outer Function)
+  this.pergi1 = function(){              //   mobilBudi.pergi1 = function(){    🡲 method (Sebagai Outer Function)
     console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
                                          //
@@ -2401,8 +2401,8 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
       console.log(this.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
     };                                   //     };
                                          //
-    innerA.apply(this);                  //     innerA.apply(mobilBudi);        🡲 Mengakali dengan Method apply()
-    innerB.apply(this);                  //     innerB.apply(mobilBudi);        🡲 Mengakali dengan Method apply()
+    innerA.apply(this);                  //     innerA.apply(mobilBudi);        🡲 Mengakali dengan method apply()
+    innerB.apply(this);                  //     innerB.apply(mobilBudi);        🡲 Mengakali dengan method apply()
     innerC();                            //     innerC();
   };                                     //   };
 }                                        // }
@@ -2411,7 +2411,7 @@ let mobilBudi = new Mobil("ABC", "MPV");
 mobilBudi.pergi1();
 ```
 
-#### ⤷ 6. Di dalam Method di Class, keyword this mengacu ke Owner Object (Object yang dibuat).
+#### ⤷ 6. Di dalam method di Class, keyword this mengacu ke Owner Object (Object yang dibuat).
 
 🔔 Class dibahas di bab 3-1 B
 
@@ -2420,7 +2420,7 @@ mobilBudi.pergi1();
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
 class Mobil{                             // class Mobil{
   constructor(merkArg, tipeArg){         //   constructor(merkArg, tipeArg){
-    this.merk   = merkArg;               //     mobilBudi.merk   = merkArg;     🡲 Di dalam Method Constructor, this mengacu
+    this.merk   = merkArg;               //     mobilBudi.merk   = merkArg;     🡲 Di dalam method Constructor, this mengacu
     this.tipe   = tipeArg;               //     mobilBudi.tipe   = tipeArg;        ke Object instansiasi-nya (Owner Object).
                                          //
     console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
@@ -2448,14 +2448,14 @@ class Mobil{                             // class Mobil{
 }                                        // }
 
 let mobilBudi = new Mobil("ABC", "MPV"); // STEP 1 🡲 Proses instansiasi Object Mobil baru bernama mobilBudi
-mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan Method pergi1 milik Object mobilBudi
-mobilBudi.pergi2();                      //           Menjalankan Method pergi2 milik Object mobilBudi
-mobilBudi.pergi3();                      //           Menjalankan Method pergi3 milik Object mobilBudi
+mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan method pergi1 milik Object mobilBudi
+mobilBudi.pergi2();                      //           Menjalankan method pergi2 milik Object mobilBudi
+mobilBudi.pergi3();                      //           Menjalankan method pergi3 milik Object mobilBudi
 ```
 
-Dalam kasus Method di Class, cara penulisan yang paling banyak dijumpai yaitu Function Declaration (Tanpa keyword Function). Lalu, jika dalam Method terdapat Inner Function lagi di dalamnya (Ilustrasi: Class → Method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula, tergantung jenis Function yang digunakan.
+Dalam kasus method di Class, cara penulisan yang paling banyak dijumpai yaitu Function Declaration (Tanpa keyword Function). Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Class → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula, tergantung jenis Function yang digunakan.
 
-Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" atau Method apply(). Pada contoh di bawah ini Method (sebagai Outer Function) ditulis dengan cara Function Declaration (Tanpa keyword Function), sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" atau method apply(). Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Declaration (Tanpa keyword Function), sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -2464,7 +2464,7 @@ class Mobil{                             // class Mobil{
     this.merk   = merkArg;               //     mobilBudi.merk   = merkArg;
   };                                     //   };
                                          //
-  pergi1(){                              //   pergi1(){                       🡲 Method (Sebagai Outer Function)
+  pergi1(){                              //   pergi1(){                       🡲 method (Sebagai Outer Function)
     console.log(this);                   //     console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC"}
     console.log(this.merk);              //     console.log(mobilBudi.merk);  🡲 Output: ABC
                                          //
@@ -2512,9 +2512,9 @@ mobilBudi.pergi1();
 // ⚠️ Selebihnya lihat di video Web Programming Unpas (!) ⚠️
 ```
 
-#### ⤷ 8. Method bind(), call() & apply() membuat keyword this mengacu pada Object yang dituju.
+#### ⤷ 8. method bind(), call() & apply() membuat keyword this mengacu pada Object yang dituju.
 
-🔔 Method bawaan JavaScript dibahas di bab 3-2
+🔔 method bawaan JavaScript dibahas di bab 3-2
 
 ```Javascript
 const userA = {
@@ -2556,7 +2556,7 @@ sapa2.apply(userB, ["Bandung", "ID"]);
 
 ### ![✔] 𝐄. Kesimpulan keyword this
 
-Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nantinya akan digantikan oleh Owner Object (Object yang dibuat). Namun pada pembahasan di atas terkesan rumit, ini karena **konteks this tidak selalu langsung mengacu ke Owner Object-nya, sehingga perlu "diakali" terlebih dahulu, baik menggunakan "that" maupun Method apply()**.
+Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nantinya akan digantikan oleh Owner Object (Object yang dibuat). Namun pada pembahasan di atas terkesan rumit, ini karena **konteks this tidak selalu langsung mengacu ke Owner Object-nya, sehingga perlu "diakali" terlebih dahulu, baik menggunakan "that" maupun method apply()**.
 
 #### ⤷ Kasus Umum
 
@@ -2583,13 +2583,13 @@ Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nanti
   </tr>
   <tr>
     <td>3</td>
-    <td>Method bind(), call() dan apply()</td>
-    <td>Mengacu pada Object yang dituju Method</td>
+    <td>method bind(), call() dan apply()</td>
+    <td>Mengacu pada Object yang dituju method</td>
   </tr>
 </tbody>
 </table>
 
-Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan cara Arrow Function. Hal ini karena Arrow Function tidak memiliki konsep this. Penggunaan Arrow Function lebih sering dijumpai pada kasus Nested, dimana perannya yaitu sebagai Inner Function, yang memiliki konteks this sama seperti konteks this di parent scope-nya, yaitu mengacu pada Owner Object (Object yang dibuat).
+Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan cara Arrow Function. Hal ini karena Arrow Function tidak memiliki konsep this. Penggunaan Arrow Function lebih sering dijumpai pada kasus Nested, dimana perannya yaitu sebagai Inner Function, yang memiliki konteks this sama seperti konteks this di parent scope-nya, yaitu mengacu pada Owner Object (Object yang dibuat).
 
 <!-- TABLE 2 -->
 
@@ -2598,7 +2598,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan ca
   <tr>
     <th>No</th>
     <th>Posisi</th>
-    <th>Jenis Function/Method</th>
+    <th>Jenis Function/method</th>
     <th>Konteks this</th>
   </tr>
 </thead>
@@ -2630,7 +2630,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan ca
   </tr>
   <tr>
     <td rowspan="3">6</td>
-    <td rowspan="3">Di dalam Method di Object</td>
+    <td rowspan="3">Di dalam method di Object</td>
     <td>Function Declaration (Tanpa keyword Function)</td>
     <td rowspan="2">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
@@ -2643,7 +2643,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan ca
   </tr>
   <tr>
     <td rowspan="2">7</td>
-    <td rowspan="2">Di dalam Method di Constructor Function</td>
+    <td rowspan="2">Di dalam method di Constructor Function</td>
     <td>Function Expressions</td>
     <td rowspan="2">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
@@ -2652,7 +2652,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan ca
   </tr>
   <tr>
     <td rowspan="3">8</td>
-    <td rowspan="3">Di dalam Method di Class</td>
+    <td rowspan="3">Di dalam method di Class</td>
     <td>Function Declaration (Tanpa keyword Function)</td>
     <td rowspan="3">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
@@ -2667,7 +2667,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah Method ditulis dengan ca
 
 #### ⤷ Kasus Nested
 
-Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Declaration (Tanpa keyword Function) & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" atau Method apply() untuk mengacu ke Owner Object (Object yang dibuat).
+Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Declaration (Tanpa keyword Function) & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" atau method apply() untuk mengacu ke Owner Object (Object yang dibuat).
 
 <!-- TABLE 3 (KASUS NESTED) -->
 
@@ -2676,7 +2676,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
   <tr>
     <th>No</th>
     <th>Posisi</th>
-    <th>Jenis Function/Method (Outer)</th>
+    <th>Jenis Function/method (Outer)</th>
     <th>Jenis Inner Function</th>
     <th>Konteks this</th>
   </tr>
@@ -2684,7 +2684,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
 <tbody>
   <tr>
     <td rowspan="3">9</td>
-    <td rowspan="3">Di dalam Method di Object (Kasus Nested)</td>
+    <td rowspan="3">Di dalam method di Object (Kasus Nested)</td>
     <td rowspan="3">Function Expressions</td>
     <td>Function Declaration</td>
     <td rowspan="2">Global Object (Window). 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
@@ -2698,7 +2698,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
   </tr>
   <tr>
     <td rowspan="3">10</td>
-    <td rowspan="3">Di dalam Method di Constructor Function (Kasus Nested)</td>
+    <td rowspan="3">Di dalam method di Constructor Function (Kasus Nested)</td>
     <td rowspan="3">Function Expressions</td>
     <td>Function Declaration</td>
     <td rowspan="2">Global Object (Window). 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
@@ -2712,7 +2712,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
   </tr>
   <tr>
     <td rowspan="3">11</td>
-    <td rowspan="3">Di dalam Method di Class (Kasus Nested)</td>
+    <td rowspan="3">Di dalam method di Class (Kasus Nested)</td>
     <td rowspan="3">Function Declaration (Tanpa keyword Function)</td>
     <td>Function Declaration</td>
     <td rowspan="2">undefined. 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
@@ -2741,7 +2741,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
 |------------------------------------------------------------	|---------------	|
 | <a href="#bab3_1">3-1. Object Oriented Programming</a><br> 	| X Menit       	|
 | <a href="#bab3_2">3-2. JavaScript Native Object</a>        	| X Menit       	|
-| <a href="#bab3_3">3-3. Global Property & Function</a>      	| X Menit       	|
+| <a href="#bab3_3">3-3. Global property & Function</a>      	| X Menit       	|
 
 <hr>
 <div id="bab3_1"></div>
@@ -2852,7 +2852,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang b
 ```Javascript
 // ➋ OOP dengan Function Declaration + Object.create()
 
-const khususMethod = {
+const khususmethod = {
   hidupkan: function(){
     return `Mesin ${this.merk} dihidupkan!`;
   },
@@ -2862,10 +2862,10 @@ const khususMethod = {
 }
 
 function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang berfungsi sebagai "blue print mobil"
-  let mobil   = Object.create(khususMethod);      // Note: Sebenarnya sama dengan "let mobil = {}", hanya saja dengan
+  let mobil   = Object.create(khususmethod);      // Note: Sebenarnya sama dengan "let mobil = {}", hanya saja dengan
   mobil.merk  = merkArg;                          //       menggunakan Object.create() kita dapat menyimpan Parameter
   mobil.tipe  = tipeArg;                          //       yang mengacu ke Object lainnya, tujuannya untuk membawa
-  mobil.harga = hargaArg;                         //       Propery & Method dari Object lainnya tersebut.
+  mobil.harga = hargaArg;                         //       Propery & method dari Object lainnya tersebut.
   return mobil;                                   // Note: Di baris akhir Function Declaration harus ada return
 }
 ```
@@ -2910,8 +2910,8 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
 // ➋ OOP dengan Class (Setelah ES6)
 
 class Mobil{                                      // Class sebagai "blue print mobil" (Kedepannya Class inilah yang akan digunakan)
-  constructor(merkArg, tipeArg, hargaArg){        // Note: Setiap Property wajib berada di dalam method constructor(), 
-    this.merk   = merkArg;                        //       yaitu sebuah Method yang otomatis dijalankan pada saat proses
+  constructor(merkArg, tipeArg, hargaArg){        // Note: Setiap property wajib berada di dalam method constructor(), 
+    this.merk   = merkArg;                        //       yaitu sebuah method yang otomatis dijalankan pada saat proses
     this.tipe   = tipeArg;                        //       instansiasi/pembuatan Object.
     this.harga  = hargaArg; 
   }
@@ -2946,7 +2946,7 @@ Sebenarnya instansiasi Object sama seperti menjalankan Function pada umumnya, da
 
 Dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak perlu repot-repot menulis Object Mobil secara manual satu per satu secara berulang, cukup dengan membuat "blue print" berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi. Ini akan terasa manfaatnya saat aplikasi sudah besar.
 
-#### ⤷ Menambah Property & Method sebuah Class dengan Prototype
+#### ⤷ Menambah property & method sebuah Class dengan Prototype
 
 ```Javascript
 Mobil.prototype.jumlahRoda = 4;                   // Menambahkan property jumlahRoda ke Class Mobil (di luar pendefinisian Class)
@@ -2963,23 +2963,23 @@ console.log(mobilJoko.pulang("Jakarta"));         // Output: Honda Civic pulang 
 
 ### ![✔] 𝐂. Pengantar Native Object
 
-Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak Property & Method. 📚 Daftar lengkap Object bawaan JavaScript dapat dilihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
+Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak property & method. 📚 Daftar lengkap Object bawaan JavaScript dapat dilihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
 
 Di buku ini akan dibahas beberapa diantaranya yang sering dijumpai, yaitu ```Number```, ```Math```, ```String```, ```RegExp```, ```Array```, dan ```Date```. Di dalam JavaScript Native Object, terdapat 4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya), yaitu:
 
-| Istilah                  	| Contoh                                                   	| Output                  	|
-|--------------------------	|----------------------------------------------------------	|-------------------------	|
-| Object Property          	| console.log(Number.MAX_VALUE);                           	| 1.7976931348623157e+308 	|
-| Object Method            	| console.log(Number.parseInt("12.045"));                  	| 12 (Number, not String) 	|
-| Object instance Property 	| let foo = "Belajar JavaScript"; console.log(foo.length); 	| 18                      	|
-| Object instance Method   	| let foo = 50.12345; console.log(foo.toPrecision(5));     	| 50.123                  	|
+| Istilah                  	| Contoh                                                         	| Output                  	|
+|--------------------------	|----------------------------------------------------------------	|-------------------------	|
+| Object property          	| ```console.log(Number.MAX_VALUE);```                           	| 1.7976931348623157e+308 	|
+| Object method            	| ```console.log(Number.parseInt("12.045"));```                  	| 12 (Number, not String) 	|
+| Object instance property 	| ```let foo = "Belajar JavaScript"; console.log(foo.length);``` 	| 18                      	|
+| Object instance method   	| ```let foo = 50.12345; console.log(foo.toPrecision(5));```     	| 50.123                  	|
 
 
-Object Property & Object Method melekat langsung ke Object-nya (Class-nya), ```Number.MAX_VALUE``` & ```Number.parseInt("12.045")```, dimana ```Number``` merupakan Object-nya, sedangkan ```MAX_VALUE``` sebagai Object Property & ```parsetInt()``` sebagai Object Method-nya.
+Object property & Object method melekat langsung ke Object-nya (Class-nya), ```Number.MAX_VALUE``` & ```Number.parseInt("12.045")```, dimana ```Number``` merupakan Object-nya, sedangkan ```MAX_VALUE``` sebagai Object property & ```parsetInt()``` sebagai Object method-nya.
 
-Object instance Property & Object instance Method melekat ke Instance Object, ```foo.length``` & ```foo.toPrecision()```, dimana ```foo``` merupakan hasil instance dari Object (Class) ```String``` (untuk foo.length) & hasil instance dari Object ```Number``` (untuk foo. toPrecision(5)), sedangkan ```length``` sebagai Object instance Property & ```toPrecision()``` sebagai Object instance Method-nya. 
+Object instance property & Object instance method melekat ke Instance Object, ```foo.length``` & ```foo.toPrecision()```, dimana ```foo``` merupakan hasil instance dari Object (Class) ```String``` (untuk foo.length) & hasil instance dari Object ```Number``` (untuk foo. toPrecision(5)), sedangkan ```length``` sebagai Object instance property & ```toPrecision()``` sebagai Object instance method-nya. 
 
-Penulisan formal Object instance Property & Object instance Method yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object Property & Object Method, tepatnya saat membuka dokumentasi MDN.
+Penulisan formal Object instance property & Object instance method yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object property & Object method, tepatnya saat membuka dokumentasi MDN.
 
 Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja. Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja. 📚 Referensi lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
 
@@ -3505,11 +3505,11 @@ console.log(arrA.length);               // Output: 5        ⇨ Mengambil info j
 console.log(arrB.length);               // Output: 3
 console.log(arrB[0].length);            // Output: 2
 
-arrC.length = 3;                        // Property length sebuah Array bisa dikurangi
+arrC.length = 3;                        // property length sebuah Array bisa dikurangi
 console.log(arrC);                      // Output: [1,2,3]
 console.log(arrC.length);               // Output: 3
 
-arrD.length = 7;                        // Property length sebuah Array bisa ditambah
+arrD.length = 7;                        // property length sebuah Array bisa ditambah
 console.log(arrD);                      // Output: [1,2,3,4,5,<2 empty slots>]
 console.log(arrD.length);               // Output: 7
 
@@ -3531,7 +3531,7 @@ let arrF = [1,2,3];
 let arrG = ["a","b","c","d","e","f","g"];
 
 console.log(arrE.reverse());            // Output: ["c","b","a"]          ⇨ Membalik urutan element Array
-console.log(arrE);                      // Output: ["c","b","a"]          ⤷ Method reverse() bersifat Mutating ⚠️
+console.log(arrE);                      // Output: ["c","b","a"]          ⤷ method reverse() bersifat Mutating ⚠️
 console.log(arrE.concat(arrF));         // Output: ["c","b","a",1,2,3]    ⇨ Menggabungkan/menyambung Array
 console.log(arrE.concat(arrF,4,5));     // Output: ["c","b","a",1,2,3,4,5]⤷ Argument bisa lebih dari satu
 console.log(arrG.slice(3));             // Output: ["d","e","f","g"]      ⇨ Mengambil sebagian element Array
@@ -3545,7 +3545,7 @@ let arrJ = [1,2,3,4,5,6];
 let arrK = [1,2,3,4,5,6];
 
 console.log(arrH.splice(3));            // Output: [4,5,6]                ⇨ Menambah atau mengurangi element Array
-console.log(arrH);                      // Output: [1,2,3]                ⤷ Method splice() bersifat Mutating ⚠️
+console.log(arrH);                      // Output: [1,2,3]                ⤷ method splice() bersifat Mutating ⚠️
 console.log(arrI.splice(3,2));          // Output: [4,5]                  ⤷ Argument ke 1: index awal penambahan/pengurangan
 console.log(arrI);                      // Output: [1,2,3,6]              ⤷ Argument ke 2: jumlah element yang akan dihapus, jika
 console.log(arrJ.splice(3,2,"new"));    // Output: [4,5]                  ⤷ Diisi 0 (nol), artinya tidak ada element yang dihapus
@@ -3795,14 +3795,14 @@ ditulis). GMT/UTC dengan WIB memiliki selisih waktu, dimana WIB lebih cepat 7 ja
 Sabtu, 5 Juni 2021 pukul 07:55:30 WIB   ⇨ Sabtu, 5 Juni 2021 pukul 00:55:30 GMT   (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
 Sabtu, 5 Juni 2021 pukul 03:30:00 WIB   ⇨ Sabtu, 4 Juni 2021 pukul 20:30:00 GMT   (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
 
-Method Getter & Setter UTC yang akan dijelaskan di bawah menampilkan tanggal dan waktu dalam UTC (standard waktu internasional),
-Method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di sistem lokal, dalam kasus ini WIB (Jawa Barat).
+method Getter & Setter UTC yang akan dijelaskan di bawah menampilkan tanggal dan waktu dalam UTC (standard waktu internasional),
+method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di sistem lokal, dalam kasus ini WIB (Jawa Barat).
 ⤷ Dari mana JavaScript tahu sistem lokal memakai waktu WIB? Dari web browser, dimana web browser mengambilnya dari sistem operasi,
   yakni settingan tanggal dari Windows. Umumnya, tampilan seperti inilah yang akan dipakai di website nanti.
 
 𝗡𝗼𝘁𝗲:
-- Method Getter UTC & Getter Locale pada contoh di bawah dieksekusi pada    : Sabtu, 5 Juni 2021, pukul 07:55:30 (di Jawa Barat)
-- Method Setter UTC & Setter Locale pada contoh di bawah dibuat ke tanggal  : Sabtu, 5 Juni 2021, pukul 10:55:30
+- method Getter UTC & Getter Locale pada contoh di bawah dieksekusi pada    : Sabtu, 5 Juni 2021, pukul 07:55:30 (di Jawa Barat)
+- method Setter UTC & Setter Locale pada contoh di bawah dibuat ke tanggal  : Sabtu, 5 Juni 2021, pukul 10:55:30
 */
 
 // ➊ Getter UTC (Waktu UTC)
@@ -3976,9 +3976,9 @@ mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nil
 <hr>
 <div id="bab3_3"></div>
 
-## `3-3. Global Property & Function` <a href="#daftar_isi_bab3">🡅</a>
+## `3-3. Global property & Function` <a href="#daftar_isi_bab3">🡅</a>
 
-> - [X] 𝐀. Global Property
+> - [X] 𝐀. Global property
 > - [X] 𝐁. Global Function
 
 </details>
