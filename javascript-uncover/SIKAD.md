@@ -2752,6 +2752,92 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
 > - [X] 𝐁. Object Sebagai OOP
 > - [X] 𝐂. Pengantar Native Object
 
+### ![✔] 𝐀. Prosedural VS OOP
+
+#### ⤷ Paradigma Prosedural (Berbasiskan Function)
+
+```Javascript
+// ...                                // Asumsi terdapat sebuah Function potongTeks yang gunanya ya tentu memotong sebuah teks
+let teks = "Hello World";
+let hasil = potongTeks(teks, 6, 10);  // Output: World  ⇨ Berbasiskan Function
+```
+
+#### ⤷ Paradigma OOP (Object Oriented Programming)
+
+```Javascript
+// ...                                // Asumsi sudah terdapat sebuah method potongTeks di dalam String Object
+let teks = new String("Hello World"); // Sebenarnya sama aja dengan let teks = "Hello World";
+let hasil = teks.potongTeks(6, 10);   // Output: World  ⇨ berbasiskan Object
+                                      // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝗻𝗲𝘄 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟯)
+```
+
+#### ⤷ Penulisan Literals vs Object Constructor
+
+```Javascript
+let num1 = 52;                        // Cara penulisan: Number literals  (✔️ Recommended)
+let num2 = new Number(52);            // Cara penulisan: Number object    (❌ Not Recommended)
+let str1 = "Belajar JS";              // Cara penulisan: String literals  (✔️ Recommended)
+let str2 = new String("Belajar JS");  // Cara penulisan: String Object    (❌ Not Recommended)
+let bol1 = true;                      // Cara penulisan: Boolean literals (✔️ Recommended)
+let bol2 = new Boolean(true);         // Cara penulisan: Boolean object   (❌ Not Recommended)
+let arr1 = [1, 2, 3];                 // Cara penulisan: Array literals   (✔️ Recommended)
+let arr2 = new Array(1, 2, 3);        // Cara penulisan: Array object     (❌ Not Recommended)
+let obj1 = {nama: "Budi", umur: 24};  // Cara penulisan: Object literals  (✔️ Recommended)
+let obj2 = new Object();              // Cara penulisan: Object object    (❌ Not Recommended)
+obj2.nama = "Budi";                   // ⤷ property & method didefinisikan
+obj2.umur = 24;                       // ⤷ setelah Object object dibuat
+
+let reg1 = /ab+c/;                    // Cara penulisan: RegExp literals  (✔️ Recommended)      🔔 RegExp dibahas di bab 3-2 D
+let reg2 = new RegExp("ab+c");        // Cara penulisan: RegExp object    (❌ Not Recommended)
+let date = new Date(2016,11,2,9,30);  // Cara penulisan: Date object      (✔️ Recommended)      🔔 Date dibahas di bab 3-2 F
+                                      // ⤷ Date tidak ada literals-nya
+
+let fun1 = function (a, b){ return a+b; };        // Cara penulisan: Function Expressions/Anonymous Function  (✔️ Recommended)
+let fun2 = new Function('a', 'b', 'return a+b');  // Cara penulisan: Function Object                          (❌ Not Recommended)
+```
+
+### ![✔] 𝐁. Object Sebagai OOP
+
+#### ⤷ Tanpa OOP (Pendefinisian Object biasa)
+
+```Javascript
+let mobilBudi = {
+  merk: "Toyota Avanza",
+  tipe: "MPV",
+  harga: 200000000,
+    hidupkan: function(){
+    return "Mesin Dihidupkan!";
+  },
+  pergi: function(tempat){
+    return `Pergi ke ${tempat}`;
+  }
+};
+
+let mobilJoko = {
+  merk: "Honda Civic",
+  tipe: "Sedan",
+  harga: 200000000,
+    hidupkan: function(){
+    return "Mesin Dihidupkan!";
+  },
+  pergi: function(tempat){
+    return `Pergi ke ${tempat}`;
+  }
+};
+```
+
+Object mobilBudi & mobilJoko sebenarnya memiliki property dan method yang sama. Bagaimana jika nanti ada Object mobilPutri, mobilAndi, dst, misalya kita butuh hingga 100 Object mobil (dengan property dan method yang sama), maka akan sangat tidak efisien jika Object tersebut ditulis secara manual satu per satu secara berulang. Oleh karena itulah, konsep OOP hadir sebagai solusi, dimana kita dapat menggunakan Class sebagai wadah yang menyediakan semua hal yang dibutuhkan oleh Object.
+
+Class berperan sebagai "blue print"/cetakan/sesuatu yang masih abstrak yang menjadi kelompok umum dari Object. Misalnya, jika Mobil adalah Class, maka mobilBudi, mobilJoko, mobilPutri, dst merupakan Object dari Class Mobil. Jika Binatang adalah Class, maka sapi, kambing, kuda, dst merupakan Object dari Class Binatang. Simak penjelasan di point B2 & B3 di bawah ini.
+
+#### ⤷ Dengan OOP: Cara Lama (❌)
+
+#### ⤷ Dengan OOP: Cara Baru (✔️)
+
+### ![✔] 𝐂. Pengantar Native Object
+
+
+
 <hr>
 <div id="bab3_2"></div>
 
