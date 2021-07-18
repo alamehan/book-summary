@@ -1,5 +1,5 @@
 <!-- Variable -->
-[✔]: assets/check-mark-2.png
+[✔]: assets/check-mark-1.png
 <!-- End -->
 
 <div id="top"></div>
