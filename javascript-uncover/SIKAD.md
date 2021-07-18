@@ -2963,9 +2963,9 @@ console.log(mobilJoko.pulang("Jakarta"));         // Output: Honda Civic pulang 
 
 ### ![✔] 𝐂. Pengantar Native Object
 
-Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak Property & Method. 📚 Daftar lengkap Object bawaan JavaScript dapat dilihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini.</a>.
+Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak Property & Method. 📚 Daftar lengkap Object bawaan JavaScript dapat dilihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
 
-Di buku ini akan dibahas beberapa diantaranya yaitu ```Number```, ```Math```, ```String```, ```RegExp```, ```Array```, dan ```Date```. Dai dalam JavaScript Native Object, terdapat 4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya):
+Di buku ini akan dibahas beberapa diantaranya yang sering dijumpai, yaitu ```Number```, ```Math```, ```String```, ```RegExp```, ```Array```, dan ```Date```. Di dalam JavaScript Native Object, terdapat 4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya), yaitu:
 
 ```Javascript
 /*
@@ -2978,9 +2978,11 @@ Di buku ini akan dibahas beberapa diantaranya yaitu ```Number```, ```Math```, ``
 
 Object Property & Object Method melekat langsung ke Object-nya (Class-nya), ```Number.MAX_VALUE``` & ```Number.parseInt("12.045")```, dimana ```Number``` merupakan Object-nya, sedangkan ```MAX_VALUE``` sebagai Object Property & ```parsetInt()``` sebagai Object Method-nya.
 
-Object instance Property & Object instance Method melekat ke Instance Object, ```foo.length``` & ```foo.toPrecision()```, dimana ```foo``` merupakan hasil instance dari Object (Class) ```String``` (untuk foo.length) & hasil instance dari Object ```Number``` (untuk foo. toPrecision(5)), sedangkan ```length``` sebagai Object instance Property & ```toPrecision()``` sebagai Object instance Method-nya. Penulisan formalnya yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object Property & Object Method, tepatnya saat membuka dokumentasi MDN.
+Object instance Property & Object instance Method melekat ke Instance Object, ```foo.length``` & ```foo.toPrecision()```, dimana ```foo``` merupakan hasil instance dari Object (Class) ```String``` (untuk foo.length) & hasil instance dari Object ```Number``` (untuk foo. toPrecision(5)), sedangkan ```length``` sebagai Object instance Property & ```toPrecision()``` sebagai Object instance Method-nya. 
 
-Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja. Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja. 📚 Referensi lengkap lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini.</a>.
+Penulisan formal Object instance Property & Object instance Method yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object Property & Object Method, tepatnya saat membuka dokumentasi MDN.
+
+Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja. Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja. 📚 Referensi lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
 
 ⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 
