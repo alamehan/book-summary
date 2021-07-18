@@ -4015,7 +4015,7 @@ Tantangan selanjutnya, bagaimana mengkonversi 198 hari ini menjadi sekian tahun,
 
 500 hari itu berapa tahun, berapa bulan dan berapa hari?
 - Pertama, bagi 500 dengan 365, 500/365 = 1.37. Artinya 500 hari sama dengan 1.37 tahun. Simpan angka 1 tahun, dan kita akan konversi kelebihan 0.37 tahun menjadi bulan dan hari.
-- Kedua, karena 500 hari terdiri dari 1 tahun lebih, sisa hari bisa didapat dengan rumus 500-(1*365) = 135. Dengan mengasumsikan 1 bulan = 30 hari, maka 135 hari sama dengan 135/30 = 4.5 bulan. Simpan 4 bulan, kita akan konversi kelebihan 0.5 bulan ini menjadi hari.
+- Kedua, karena 500 hari terdiri dari 1 tahun lebih, sisa hari bisa didapat dengan rumus 500-(1*365) = 135. Dengan mengasumsikan 1 bulan = 30 hari, maka 135 hari sama dengan 135/30 = 4.5 bulan. Simpan 4 bulan, dan kita akan konversi kelebihan 0.5 bulan ini menjadi hari.
 - Ketiga, sisa hari didapat dari pengurangan jumlah tahun dan jumlah bulan. Ini bisa dicari dengan rumus 500-(1*365)-(4*30) = 15 hari.
 - Akhirnya didapat bahwa 500 hari = 1 tahun 4 bulan 15 hari.
 
