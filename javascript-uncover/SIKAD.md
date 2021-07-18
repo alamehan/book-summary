@@ -2963,21 +2963,26 @@ console.log(mobilJoko.pulang("Jakarta"));         // Output: Honda Civic pulang 
 
 ### ![✔] 𝐂. Pengantar Native Object
 
-Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak Property & Method.
+Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak Property & Method. 📚 Daftar lengkap Object bawaan JavaScript dapat dilihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini.</a>.
 
-📚 Daftar lengkap Object bawaan JavaScript dapat dilihat di: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+Di buku ini akan dibahas beberapa diantaranya yaitu ```Number```, ```Math```, ```String```, ```RegExp```, ```Array```, dan ```Date```. Dai dalam JavaScript Native Object, terdapat 4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya):
 
-Di buku ini akan dibahas beberapa diantaranya yang paling populer (dibahas di BAB 12), yaitu:
-• Number      • Math
-• String      • Array
-• Boolean     • RegExp
-• Function    • Date
+```Javascript
+/*
+• Object Property             Contoh: console.log(Number.MAX_VALUE);                            🡲 Output: 1.7976931348623157e+308
+• Object Method               Contoh: console.log(Number.parseInt("12.045"));                   🡲 Output: 12 (Number, not String)
+• Object instance Property    Contoh: let foo = "Belajar JavaScript"; console.log(foo.length);  🡲 Output: 18 
+• Object instance Method      Contoh: let foo = 50.12345; console.log(foo.toPrecision(5));      🡲 Output: 50.123
+*/
+```
 
-4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya):
-• Object property             Contoh: console.log(Number.MAX_VALUE);                            🡲 Output: 1.7976931348623157e+308
-• Object method               Contoh: console.log(Number.parseInt("12.045"));                   🡲 Output: 12 (Number, not String)
-• Object instance property    Contoh: let foo = "Belajar JavaScript"; console.log(foo.length);  🡲 Output: 18 
-• Object instance method      Contoh: let foo = 50.12345; console.log(foo.toPrecision(5));      🡲 Output: 50.123
+Object Property & Object Method melekat langsung ke Object-nya (Class-nya), ```Number.MAX_VALUE``` & ```Number.parseInt("12.045")```, dimana ```Number``` merupakan Object-nya, sedangkan ```MAX_VALUE``` sebagai Object Property & ```parsetInt()``` sebagai Object Method-nya.
+
+Object instance Property & Object instance Method melekat ke Instance Object, ```foo.length``` & ```foo.toPrecision()```, dimana ```foo``` merupakan hasil instance dari Object (Class) ```String``` (untuk foo.length) & hasil instance dari Object ```Number``` (untuk foo. toPrecision(5)), sedangkan ```length``` sebagai Object instance Property & ```toPrecision()``` sebagai Object instance Method-nya. Penulisan formalnya yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object Property & Object Method, tepatnya saat membuka dokumentasi MDN.
+
+Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja. Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja. 📚 Referensi lengkap lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini.</a>.
+
+⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 
 <hr>
 <div id="bab3_2"></div>
