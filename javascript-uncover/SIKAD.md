@@ -3006,7 +3006,7 @@ console.log(foo.length)               // Output: 11. length merupakan salah satu
 let bar = "Hello World";              // Cara penulisan: String literals (lebih "hemat" dibandingkan Object Constructor di atas)
 console.log(bar.toUpperCase());       // Output: HELLO WORLD. Ternyata meskipun Var/Let bar didefinisikan secara String literals,
                                       // bukan secara String Object, kita masih tetap bisa memakai "Instance method" bawaan String
-                                      // Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A3).
+                                      // Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A).
 console.log(bar.length);              // Output: 11. Kita pun masih tetap bisa memakai "Instance property" bawaan String Object.
 ```
 
