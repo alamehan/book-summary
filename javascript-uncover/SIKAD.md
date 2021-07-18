@@ -2944,11 +2944,40 @@ console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi k
 
 Sebenarnya instansiasi Object sama seperti menjalankan Function pada umumnya, dalam kasus di atas berarti ```Mobil()```. Hanya saja perbedaanya, ada tambahan keyword ```new``` di depannya, menjadi ```new Mobil()```. Lalu disimpan ke dalam Variable, ```mobilBudi = new Mobil()```.
 
-Bisa dilihat bahwa dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak usah repot-repot menulis Object mobil secara manual satu per satu secara berulang, cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi. Ini akan sangat terasa manfaatnya saat aplikasi sudah besar.
+Dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak perlu repot-repot menulis Object Mobil secara manual satu per satu secara berulang, cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi. Ini akan terasa manfaatnya saat aplikasi sudah besar.
+
+#### ⤷ Menambah Property & Method sebuah Class dengan Prototype
+
+```Javascript
+Mobil.prototype.jumlahRoda = 4;                   // Menambahkan property jumlahRoda ke Class Mobil (di luar pendefinisian Class)
+Mobil.prototype.pulang = function(tempat){        // Menambahkan method pulang ke Class Mobil (di luar pendefinisian Class)
+  return `${this.merk} pulang ke ${tempat}`;      // Cara penulisan method: Function Expressions (Anonymous Function)
+}
+
+console.log(mobilBudi.jumlahRoda);                // Output: 4
+console.log(mobilBudi.pulang("Bandung"));         // Output: Toyota Avanza pulang ke Bandung
+
+console.log(mobilJoko.jumlahRoda);                // Output: 4
+console.log(mobilJoko.pulang("Jakarta"));         // Output: Honda Civic pulang ke Jakarta
+```
 
 ### ![✔] 𝐂. Pengantar Native Object
 
+Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak Property & Method.
 
+📚 Daftar lengkap Object bawaan JavaScript dapat dilihat di: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+
+Di buku ini akan dibahas beberapa diantaranya yang paling populer (dibahas di BAB 12), yaitu:
+• Number      • Math
+• String      • Array
+• Boolean     • RegExp
+• Function    • Date
+
+4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya):
+• Object property             Contoh: console.log(Number.MAX_VALUE);                            🡲 Output: 1.7976931348623157e+308
+• Object method               Contoh: console.log(Number.parseInt("12.045"));                   🡲 Output: 12 (Number, not String)
+• Object instance property    Contoh: let foo = "Belajar JavaScript"; console.log(foo.length);  🡲 Output: 18 
+• Object instance method      Contoh: let foo = 50.12345; console.log(foo.toPrecision(5));      🡲 Output: 50.123
 
 <hr>
 <div id="bab3_2"></div>
