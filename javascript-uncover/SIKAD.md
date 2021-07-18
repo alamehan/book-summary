@@ -2828,11 +2828,124 @@ let mobilJoko = {
 
 Object mobilBudi & mobilJoko sebenarnya memiliki property dan method yang sama. Bagaimana jika nanti ada Object mobilPutri, mobilAndi, dst, misalya kita butuh hingga 100 Object mobil (dengan property dan method yang sama), maka akan sangat tidak efisien jika Object tersebut ditulis secara manual satu per satu secara berulang. Oleh karena itulah, konsep OOP hadir sebagai solusi, dimana kita dapat menggunakan Class sebagai wadah yang menyediakan semua hal yang dibutuhkan oleh Object.
 
-Class berperan sebagai "blue print"/cetakan/sesuatu yang masih abstrak yang menjadi kelompok umum dari Object. Misalnya, jika Mobil adalah Class, maka mobilBudi, mobilJoko, mobilPutri, dst merupakan Object dari Class Mobil. Jika Binatang adalah Class, maka sapi, kambing, kuda, dst merupakan Object dari Class Binatang. Simak penjelasan di point B2 & B3 di bawah ini.
+Class berperan sebagai "blue print"/cetakan/sesuatu yang masih abstrak yang menjadi kelompok umum dari Object. Misalnya, jika Mobil adalah Class, maka mobilBudi, mobilJoko, mobilPutri, dst merupakan Object dari Class Mobil. Jika Binatang adalah Class, maka sapi, kambing, kuda, dst merupakan Object dari Class Binatang. Jika Buah adalah Class, maka jeruk, apel, nanas, dst merupakan Object dari Class Buah.
 
 #### ⤷ Dengan OOP: Cara Lama (❌)
 
+```Javascript
+// ➊ OOP dengan Function Declaration
+
+function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang berfungsi sebagai "blue print mobil"
+  let mobil   = {};                               // Note: Harus ada deklarasi Object kosong, sebagai "penampung"
+  mobil.merk  = merkArg;
+  mobil.tipe  = tipeArg;
+  mobil.harga = hargaArg;
+  mobil.hidupkan = function(){
+    return `Mesin ${mobil.merk} dihidupkan!`; 
+  }
+  mobil.pergi = function(tempat){
+    return `${mobil.merk} pergi ke ${tempat}`;
+  }
+  return mobil;                                   // Note: Di baris akhir Function Declaration harus ada return
+}
+```
+
+```Javascript
+// ➋ OOP dengan Function Declaration + Object.create()
+
+const khususMethod = {
+  hidupkan: function(){
+    return `Mesin ${this.merk} dihidupkan!`;      // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
+  },
+  pergi: function(tempat){
+    return `${this.merk} pergi ke ${tempat}`;
+  }
+}
+
+function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang berfungsi sebagai "blue print mobil"
+  let mobil   = Object.create(khususMethod);      // Note: Sebenarnya sama dengan "let mobil = {}", hanya saja dengan
+  mobil.merk  = merkArg;                          //       menggunakan Object.create() kita dapat menyimpan parameter
+  mobil.tipe  = tipeArg;                          //       yang mengacu ke Object lainnya, tujuannya untuk membawa
+  mobil.harga = hargaArg;                         //       propery & method dari Object lainnya tersebut.
+  return mobil;                                   // Note: Di baris akhir Function Declaration harus ada return
+}
+```
+
+```Javascript
+// ➌ Membuat Object dari point 1 & 2 di atas
+
+let mobilBudi = Mobil("Toyota Avanza", "MPV", 200000000);   // Proses instansiasi Object Mobil baru (tanpa keyword new)
+let mobilJoko = Mobil("Honda Civic", "Sedan", 200000000);
+
+console.log(mobilBudi instanceof Mobil);          // Output: false  ⇨ Karena memang kita tidak instansiasi Object
+console.log(mobilJoko instanceof Mobil);          // Output: false     dengan keyword new (Lihat point B3-3 di bawah)
+
+console.log(mobilBudi.merk);                      // Output: Toyota Avanza
+console.log(mobilBudi.hidupkan());                // Output: Mesin Toyota Avanza dihidupkan!
+console.log(mobilBudi.pergi("Bali"));             // Output: Toyota Avanza pergi ke Bali
+
+console.log(mobilJoko.merk);                      // Output: Honda Civic
+console.log(mobilJoko.hidupkan());                // Output: Mesin Honda Civic dihidupkan!
+console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi ke Solo
+```
+
 #### ⤷ Dengan OOP: Cara Baru (✔️)
+
+```Javascript
+// ➊ OOP dengan Constructor Functions (Sebelum ES6)
+
+function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebagai "blue print mobil"
+  this.merk   = merkArg;                          // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝘁𝗵𝗶𝘀 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟱)
+  this.tipe   = tipeArg;                          // Note: Tidak perlu ada deklarasi Object kosong dan keyword return
+  this.harga  = hargaArg;                         //       di baris akhir Function, karena dengan menggunakan Constructor
+  this.hidupkan = function(){                     //       Functions, di belakang layar JavaScript secara otomatis membuat:
+    return `Mesin ${this.merk} dihidupkan!`;      //       ⤷ 𝗹𝗲𝘁 𝘁𝗵𝗶𝘀 = 𝗢𝗯𝗷𝗲𝗰𝘁.𝗰𝗿𝗲𝗮𝘁𝗲(𝗠𝗼𝗯𝗶𝗹.𝗽𝗿𝗼𝘁𝗼𝘁𝘆𝗽𝗲);
+  }                                               //       ⤷ 𝗿𝗲𝘁𝘂𝗿𝗻 𝘁𝗵𝗶𝘀;
+  this.pergi = function(tempat){
+    return `${this.merk} pergi ke ${tempat}`;
+  }
+}
+```
+
+```Javascript
+// ➋ OOP dengan Class (Setelah ES6)
+
+class Mobil{                                      // Class sebagai "blue print mobil" (Kedepannya Class inilah yang akan digunakan)
+  constructor(merkArg, tipeArg, hargaArg){        // Note: Setiap property wajib berada di dalam method constructor(), 
+    this.merk   = merkArg;                        //       yaitu sebuah method yang otomatis dijalankan pada saat proses
+    this.tipe   = tipeArg;                        //       instansiasi/pembuatan Object.
+    this.harga  = hargaArg; 
+  }
+  hidupkan(){                                     // Cara penulisan method: Langsung ditulis nama Functionnya (simple!)
+    return `Mesin ${this.merk} dihidupkan!`;
+  }
+  pergi(tempat){
+    return `${this.merk} pergi ke ${tempat}`;
+  }
+}
+```
+
+```Javascript
+// ➌ Membuat Object dari point 1 & 2 di atas
+
+let mobilBudi = new Mobil("Toyota Avanza", "MPV", 200000000);   // Proses instansiasi Object Mobil baru menggunakan keyword new
+let mobilJoko = new Mobil("Honda Civic", "Sedan", 200000000);   // (Instansiasi: membuat sesuatu yang berwujud dari yang abstrak)
+
+console.log(mobilBudi instanceof Mobil);          // Output: true   ⇨ Operator instanceof digunakan memeriksa apakah suatu Object
+console.log(mobilJoko instanceof Mobil);          // Output: true      merupakan instance dari sebuah Constructor Functions/Class
+
+console.log(mobilBudi.merk);                      // Output: Toyota Avanza
+console.log(mobilBudi.hidupkan());                // Output: Mesin Toyota Avanza dihidupkan!
+console.log(mobilBudi.pergi("Bali"));             // Output: Toyota Avanza pergi ke Bali
+
+console.log(mobilJoko.merk);                      // Output: Honda Civic
+console.log(mobilJoko.hidupkan());                // Output: Mesin Honda Civic dihidupkan!
+console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi ke Solo
+```
+
+Sebenarnya penulisan instansiasi Object sama seperti menjalankan Function pada umumnya, dalam kasus di atas berarti dijalankan dengan menuliskan Mobil(). Hanya saja perbedaanya, ada tambahan keyword new di depannya, menjadi new Mobil(). Lalu disimpan ke dalam Variable, mobilBudi = new Mobil().
+
+Bisa dilihat bahwa dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak usah repot-repot menulis Object mobil secara manual satu per satu secara berulang (seperti yang dilakukan di point B1), cukup dengan membuat "blue print"/"wadah"/cetakan berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi, mudah dan cepat, bahkan jika kita butuh 100 Object sekalipun. Ini akan terasa manfaatnya saat aplikasi sudah besar.
 
 ### ![✔] 𝐂. Pengantar Native Object
 
