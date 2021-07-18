@@ -3036,7 +3036,9 @@ console.log(Number.MIN_SAFE_INTEGER); // Output: -9007199254740991        ⇨ Ni
 console.log(Number.NaN);              // Output: NaN                      ⇨ Cara untuk membuat nilai NaN (Not a Number)
 console.log(Number.POSITIVE_INFINITY) // Output: Infinity                 ⇨ Cara untuk membuat nilai infinity
 console.log(Number.NEGATIVE_INFINITY) // Output: -Infinity                ⇨ Cara untuk membuat nilai -infinity
+```
 
+```Javascript
 // A2. Object method
 
 console.log(Number.isNaN(5/'a'));                     // Output: true     ⇨ Check apakah hasil operasi/suatu Var/Let berisi NaN
@@ -3054,7 +3056,9 @@ console.log(Number.parseInt("10.3% keuntungan"));     // Output: 10   (number)  
 console.log(Number.parseInt("10101101", 2));          // Output: 173  (number)  ⤷ 2 artinya: proses sebagai biner (Basis 2)
 console.log(Number.parseInt("255", 8));               // Output: 173  (number)  ⤷ 8 artinya: proses sebagai oktal (Basis 8)
 console.log(Number.parseInt("AD", 16));               // Output: 173  (number)  ⤷ 8 artinya: proses sebagai heksa (Basis 16)
+```
 
+```Javascript
 // A3. Object instance method
 
 numA = 500.123;
@@ -3103,7 +3107,9 @@ let jariJari = 7;                                     // Studi kasus: contoh pen
 let luasLingkaran = Math.PI * jariJari * jariJari;    // lingkaran kemudian memformat angkanya dengan jumlah digit desimal = 2
 console.log(luasLingkaran);                           // Output: 153.93804002589985
 console.log(luasLingkaran.toFixed(2));                // Output: 153.94
+```
 
+```Javascript
 // B2. Object method
 
 console.log(Math.floor(12.54));       // Output: 12             ⇨ Pembulatan ke bawah
@@ -3144,7 +3150,9 @@ console.log(String.fromCodePoint(9749, 10052, 12096));      // Output: ☕❄⽀
 console.log(String.fromCodePoint(0x2615, 0x2744, 0x2F40));  // Output: ☕❄⽀
 console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗🚲  ⤷ Berhasil menampilkan karakter terbaru unicode
                                                             // 📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
+```
 
+```Javascript
 // C2. Object instance property
 
 let strA = "Hello World!";
@@ -3152,7 +3160,9 @@ let strB = "Belajar JavaScript";
 
 console.log(strA.length);               // Output: 12       ⇨ Mengambil info panjang karakter dari sebuah String
 console.log(strB.length);               // Output: 18       ⤷ Banyak digunakan di validasi form, misal syarat minimal 8 karakter
+```
 
+```Javascript
 // C3. Object instance method
 
 let strC = "Bandung";
@@ -3236,9 +3246,13 @@ console.log(polaA.test(regA));          // Output: true           ⇨ Check apak
 console.log(/buku/.test(regA));         // Output: true           ⤷ Penulisan bisa langsung, tanpa disimpan ke dalam Let, hal ini
 console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku juga untuk semua Object instance property & method 🔔
 console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
+```
 
+```Javascript
 // D2. Pola Regular Expression (RegExp)
+```
 
+```Javascript
 // ➊ Pola RegExp sebagai String
 
 let regB = "Belajar JavaScript";
@@ -3248,7 +3262,9 @@ console.log(/JavaScript/.test(regB));   // Output: true
 console.log(/Javascript/.test(regB));   // Output: false
 console.log(/Belajar/.test(regB));      // Output: true
 console.log(/ajar/.test(regB));         // Output: true
+```
 
+```Javascript
 // ➋ RegExp Flag (Penanda)
 
 console.log(/jAvASCriPt/.test(regB));   // Output: false                ⇨ Flag i (ignore case) untuk mengabaikan Case Sensitive
@@ -3261,7 +3277,9 @@ console.log(regC.match(/\w*o\w*/g));    // Output: null                    akan 
 
                                         // Note: terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) &
                                         // d (has indices), namun tidak banyak digunakan. Selebihnya lihat dokumentasi di MDN.
+```
 
+```Javascript
 // ➌ Pola Awal & Akhir
 
 console.log(/^Belajar/.test(regB));     // Output: true                     ⇨ ^ sebagai karakter penanda awal pola
@@ -3270,7 +3288,9 @@ console.log(regB.replace(/^/, "GO! ")); // Output: GO! Belojar JavaScript
 console.log(/Script$/.test(regB));      // Output: true                     ⇨ $ sebagai karakter penanda akhir pola
 console.log(/ipt$/.test(regB));         // Output: true
 console.log(regB.replace(/$/, " GO!")); // Output: Belajar JavaScript GO!
+```
 
+```Javascript
 // ➍ Pola Wildcard
 
                                         // Wildcard, pola yang bisa diganti dengan karakter apa saja (bebas), ditulis dengan titik:
@@ -3291,7 +3311,9 @@ console.log(polaC.test(" b  "));        // Output: true
 console.log(polaC.test("aaabaaaa"));    // Output: false
 console.log(polaC.test("aba"));         // Output: false
 console.log(polaC.test("acaa"));        // Output: false
+```
 
+```Javascript
 // ➎ Pola Character Set
 
                                         // Character Set, membuat syarat bahwa hanya karakter tertentu saja yang boleh ditulis:
@@ -3336,7 +3358,9 @@ console.log(polaI.test("a12bc"));       // Output: false
 console.log(polaI.test("a1bcd"));       // Output: false
 console.log(polaI.test("a1  "));        // Output: true
 console.log(polaI.test("a1   "));       // Output: false
+```
 
+```Javascript
 // ➏ Pola Negasi Character Set
 
                                         // Negasi Character Set, artinya pola "selain" di character set, simak contoh berikut:
@@ -3354,7 +3378,9 @@ console.log(polaL.test("f$xb--"));      // Output: true     ⇨ Test pola /^[^a-
 console.log(polaL.test("xyzb00"));      // Output: true
 console.log(polaL.test("zzzb  "));      // Output: true
 console.log(polaL.test("zz1b  "));      // Output: false
+```
 
+```Javascript
 // ➐ Membatasi Jumlah Karakter
 
                                         // Karakter yang digunakan untuk membuat pola batas jumlah karakter yaitu kurung kurawal:
@@ -3388,7 +3414,9 @@ console.log(polaQ.test("AAzz_"));       // Output: true     ⇨ Test pola /^[A-Z
 console.log(polaQ.test("11zz_"));       // Output: true
 console.log(polaQ.test("A1zz_"));       // Output: true
 console.log(polaQ.test("1A2B3C4Dzz_")); // Output: true
+```
 
+```Javascript
 // ➑ Karakter Pembatas Pola
 
                                         // RegExp menyediakan beberapa karakter khusus untuk membatasi pola, yaitu:
@@ -3410,7 +3438,9 @@ console.log(polaT.test("abc"));         // Output: true     ⇨ Test pola /ab?c/
 console.log(polaT.test("abbbbbc"));     // Output: false
 console.log(polaT.test("ac"));          // Output: true
 console.log(polaT.test("aaaab"));       // Output: false
+```
 
+```Javascript
 // ➒ Pola Karakter Khusus
 
                                         // RegExp menyediakan beberapa karakter khusus untuk mewakiki pola tertentu, yaitu:
@@ -3452,13 +3482,11 @@ console.log(polaX.test("123@123.12"));                // Output: true
 console.log(polaX.test(" @ . "));                     // Output: true
 console.log(polaX.test("duniailkom@gmail.com"));      // Output: true
 console.log(polaX.test("raihanralam@gmail.com"));     // Output: true
+```
 
-/*
-polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat " @ . " dianggap true (ya karena memang lolos dari polaX),
-oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut:
-📚 http://emailregex.com/ (pola RegExp yang disusun sangat kompleks, itu tidak lain untuk ketepatan pola email yang akurat)
-*/
+polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat " @ . " dianggap true (ya karena memang lolos dari polaX), oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut: 📚 http://emailregex.com/ (pola RegExp yang disusun sangat kompleks, itu tidak lain untuk ketepatan pola email yang akurat).
 
+```Javascript
 // ➓ Pola Logika OR
 
                                         // RegExp menyediakan karakter khusus untuk membuat kondisi OR yaitu karakter pipe "|":
@@ -3469,7 +3497,9 @@ console.log(polaY.test("dia disana"));                // Output: true
 console.log(polaY.test("akuu dan diaa di Bali"));     // Output: true
 console.log(polaY.test("kami belajar JavaScript"));   // Output: true
 console.log(polaY.test("Budi belajar JavaScript"));   // Output: false
+```
 
+```Javascript
 // Bonus: Latihan RegExp
 
 let polaZ = /^[A-Za-z]{1,2}\s*\d{1,4}\s*[A-Za-z]{1,3}$/;    // Artinya: [1/2 karakter A-Za-z] + [0/lebih whitespace] +
@@ -3495,7 +3525,9 @@ console.log(polaZ.test("_zz9YES"));                   // Output: false
 console.log(Array.isArray([1, 2, 3]));                // Output: true     ⇨ Check apakah sebuah nilai/var bertipe data Array
 console.log(Array.isArray(["satu", 2, null]));        // Output: true
 console.log(Array.isArray([]));                       // Output: true
+```
 
+```Javascript
 // E2. Object instance property
 
 let arrA = ["a","b","c","d","e"];
@@ -3525,7 +3557,9 @@ let panjangArr = arrSiswa.length;                           // ⤷ di atas, kare
 for (let n=0; n<panjangArr; n++){                           // ⤷ kondisi, melainkan ditampung terlebih dahulu ke dalam sebuah Let.
   console.log(arrSiswa[n]);                                 // Output: Andri, Joko, Sukma, Rina, Sari
 }
+```
 
+```Javascript
 // E3. Object instance method
 
 let arrE = ["a","b","c"];
@@ -3583,15 +3617,15 @@ console.log(arrM.includes("e"));        // Output: false
 console.log(arrM.indexOf("a"));         // Output: 0        ⇨ Serupa dengan includes(), namun outputnya berupa posisi indeks
 console.log(arrM.indexOf("a",1));       // Output: -1       ⤷ jika Output = -1, artinya nilai yang dicari tidak ditemukan
 console.log(arrM.indexOf("e"));         // Output: -1
+```
 
-
+```Javascript
 // E4. Object instance method (𝗱𝗲𝗻𝗴𝗮𝗻 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
+```
 
-/*
-Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe
-data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
-*/
+Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 
+```Javascript
 let arrN = ["a","b","c","d"];
 let arrO = ["Budi","Joko","Putri"];
 
@@ -3708,16 +3742,11 @@ console.log(arrP.reduceRight(tambah));                // Output: 15   (hasil dar
 console.log(arrP.reduceRight(tambah,10));             // Output: 25   (hasil dari 10+5+4+3+2+1)
 console.log(arrQ.reduceRight(pangkat2));              // Output: 183  (hasil dari 9+8²+7²+6²+5²)
 console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
+```
 
-/*
-Note: Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di
-Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5
-tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat
-mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan
-pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang
-disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
-*/
+Note: Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
 
+```Javascript
 let arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
 let arrU = [3,5,2,8,1,31,22,44,33,11];
 
@@ -3743,7 +3772,9 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 
 ```Javascript
 // F1. Membuat Date Object
+```
 
+```Javascript
 // ➊ Tanpa Argument
 
 let datA = new Date();                                // Cara penulisan 1: Tanpa Argument
@@ -3752,7 +3783,9 @@ console.log(datA);                                    // Output: Fri Jun 04 2021
                                                       // ⤷ Kode dieksekusi di Jawa Barat Indonesia (WIB), oleh karena itu muncul
                                                       // ⤷ GMT+0700 yang artinya waktu di WIB lebih cepat 7 jam dari waktu GMT/UTC
                                                       // ⤷ (standard waktu internasional), berarti waktu di GMT yaitu 17:35:22.
+```
 
+```Javascript
 // ➋ Dengan 7 Argument
 
 let datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Dengan 7 Argument
@@ -3768,7 +3801,9 @@ let datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Denga
                                                       // ⤷ membacanya sebagai milidetik, bukan tahun, catat baik-baik ya.
 console.log(datB);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
+```
 
+```Javascript
 // ➌ Dengan 1 Argument dateString
 
 let datC = new Date("04 Jun 2021 17:42:22");          // Cara penulisan 3: Dengan 1 Argument dateString
@@ -3778,7 +3813,9 @@ let datC = new Date("04 Jun 2021 17:42:22");          // Cara penulisan 3: Denga
                                                       // ⤷ misalnya "06/04/2021 17:42:22" atau "June 04, 2021 17:42:22", dll.
 console.log(datC);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
+```
 
+```Javascript
 // ➍ Dengan 1 Argument milidetik
 
 let datD = new Date(1622803342000);                   // Cara penulisan 4: Dengan 1 Argument milidetik
@@ -3788,25 +3825,25 @@ let datD = new Date(1622803342000);                   // Cara penulisan 4: Denga
                                                       // ⤷ semenjak 1 Januari 1970, maka itu berarti ± 4 Juni 2021.
 console.log(datD);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
+```
 
+```Javascript
 // F2. Object instance method
+```
 
-/*
-GMT atau UTC merupakan standard waktu internasional. WIB merupakan waktu untuk daerah Jawa Barat, Indonesia (dimana konten ini
-ditulis). GMT/UTC dengan WIB memiliki selisih waktu, dimana WIB lebih cepat 7 jam dibandingkan GMT/UTC. Misalnya:
-Sabtu, 5 Juni 2021 pukul 07:55:30 WIB   ⇨ Sabtu, 5 Juni 2021 pukul 00:55:30 GMT   (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
-Sabtu, 5 Juni 2021 pukul 03:30:00 WIB   ⇨ Sabtu, 4 Juni 2021 pukul 20:30:00 GMT   (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
+GMT atau UTC merupakan standard waktu internasional. WIB merupakan waktu untuk daerah Jawa Barat, Indonesia (dimana konten ini ditulis). GMT/UTC dengan WIB memiliki selisih waktu, dimana WIB lebih cepat 7 jam dibandingkan GMT/UTC. Misalnya:
+- Sabtu, 5 Juni 2021 pukul 07:55:30 WIB ⇨ Sabtu, 5 Juni 2021 pukul 00:55:30 GMT (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
+- Sabtu, 5 Juni 2021 pukul 03:30:00 WIB ⇨ Sabtu, 4 Juni 2021 pukul 20:30:00 GMT (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
 
-method Getter & Setter UTC yang akan dijelaskan di bawah menampilkan tanggal dan waktu dalam UTC (standard waktu internasional),
-method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di sistem lokal, dalam kasus ini WIB (Jawa Barat).
-⤷ Dari mana JavaScript tahu sistem lokal memakai waktu WIB? Dari web browser, dimana web browser mengambilnya dari sistem operasi,
-  yakni settingan tanggal dari Windows. Umumnya, tampilan seperti inilah yang akan dipakai di website nanti.
+Method Getter & Setter UTC yang akan dijelaskan di bawah menampilkan tanggal dan waktu dalam UTC (standard waktu internasional), method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di sistem lokal, dalam kasus ini WIB (Jawa Barat).
+
+Dari mana JavaScript tahu sistem lokal memakai waktu WIB? Dari web browser, dimana web browser mengambilnya dari sistem operasi, yakni settingan tanggal dari Windows. Umumnya, tampilan seperti inilah yang akan dipakai di website nanti.
 
 𝗡𝗼𝘁𝗲:
-- method Getter UTC & Getter Locale pada contoh di bawah dieksekusi pada    : Sabtu, 5 Juni 2021, pukul 07:55:30 (di Jawa Barat)
-- method Setter UTC & Setter Locale pada contoh di bawah dibuat ke tanggal  : Sabtu, 5 Juni 2021, pukul 10:55:30
-*/
+- method Getter UTC & Getter Locale pada contoh di bawah dieksekusi pada : Sabtu, 5 Juni 2021, pukul 07:55:30 (di Jawa Barat)
+- method Setter UTC & Setter Locale pada contoh di bawah dibuat ke tanggal : Sabtu, 5 Juni 2021, pukul 10:55:30
 
+```Javascript
 // ➊ Getter UTC (Waktu UTC)
 
 let datE = new Date();
@@ -3825,7 +3862,9 @@ console.log(datE.getUTCHours());        // Output: 0                            
 console.log(datE.getUTCMinutes());      // Output: 55                             ⇨ Menit UTC
 console.log(datE.getUTCSeconds());      // Output: 30                             ⇨ Detik UTC
 console.log(datE.getUTCMilliseconds()); // Output: 215                            ⇨ Milidetik UTC
+```
 
+```Javascript
 // ➋ Getter Locale (Waktu Sistem Lokal)
 
 console.log(datE.toDateString());       // Output: Sat Jun 05 2021                ⇨ Hari Bulan Tanggal Tahun
@@ -3846,7 +3885,9 @@ console.log(datE.getSeconds());         // Output: 30                           
 console.log(datE.getMilliseconds());    // Output: 215                            ⇨ Milidetik S.Lokal
 console.log(datE.getTimezoneOffset());  // Output: -420                           ⇨ Selisih waktu antara UTC dengan waktu S.lokal
                                         //                                        ⤷ -420 milidetik = -7 jam = 7 jam selisih waktu
+```
 
+```Javascript
 // ➌ Setter UTC (Waktu UTC)
 
 let datF = new Date(0);       console.log(datF.toUTCString());    // Output: Thu, 01 Jan 1970 00:00:00 GMT  ⇨ UNIX Epoch
@@ -3857,7 +3898,9 @@ datF.setUTCHours(10);         console.log(datF.toUTCString());    // Output: Sat
 datF.setUTCMinutes(55);       console.log(datF.toUTCString());    // Output: Sat, 05 Jun 2021 10:55:00 GMT  ⇨ Ubah menit
 datF.setUTCSeconds(30);       console.log(datF.toUTCString());    // Output: Sat, 05 Jun 2021 10:55:30 GMT  ⇨ Ubah detik
 datF.setUTCMilliseconds(215); console.log(datF.toISOString());    // Output: 2021-06-05T10:55:30.215Z       ⇨ Ubah milidetik
+```
 
+```Javascript
 // ➍ Setter Locale (Waktu Sistem Lokal)
 
 let datG = new Date(0);       console.log(datG.toLocaleString()); // Output: 1/1/1970, 7:00:00 AM           ⇨ UNIX Epoch (+7 jam)
@@ -3868,9 +3911,13 @@ datG.setHours(10);            console.log(datG.toLocaleString()); // Output: 6/5
 datG.setMinutes(55);          console.log(datG.toLocaleString()); // Output: 6/5/2021, 10:55:00 AM          ⇨ Ubah menit
 datG.setSeconds(30);          console.log(datG.toLocaleString()); // Output: 6/5/2021, 10:55:30 AM          ⇨ Ubah detik
 datG.setMilliseconds(125);    console.log(datG.toISOString());    // Output: 2021-06-05T03:55:30.125Z       ⇨ Ubah milidetik
+```
 
+```Javascript
 // F3. Latihan Program
+```
 
+```Javascript
 // ➊ Menampilkan Tanggal dengan Format Tertentu
 
 let datH    = new Date();
@@ -3914,7 +3961,9 @@ switch (bulan){                             // Memanfaatkan index bulan untuk me
 let hasil = `${namaHari}, ${tanggal} ${namaBulan} ${tahun} ${jam}:${menit}:${detik}`;
 console.log(hasil);                         // Output: Sabtu, 5 Juni 2021 13:25:30 (Waktu dimana kode dieksekusi)
                                             // ⤷ Format seperti ini umum digunakan di Indonesia
+```
 
+```Javascript
 // ➋ Menghitung Selisih Tanggal
 
                                             // Membuat Date Object dengan 1 Argument dateString
@@ -3931,7 +3980,9 @@ console.log(Math.abs(selisihTgl));          // Output: 17107200000 (Dalam milide
 let ms1Hari_coba     = 1000*60*60*24;               // Menghitung banyak milidetik dalam 1 hari
 let selisihHari_coba = selisihTgl/ms1Hari_coba;     // Dapatkan selisih hari
 console.log(`Selisih = ${selisihHari_coba} hari`);  // Output: Selisih = 198 hari
+```
 
+```Javascript
 /*
 Tantangan selanjutnya, bagaimana mengkonversi 198 hari ini menjadi sekian tahun, sekian bulan dan sekian hari?
 Di bawah ini merupakan contoh algoritma (lebih ke ilustrasi menjawab persoalan) yang dapat diaplikasikan.
