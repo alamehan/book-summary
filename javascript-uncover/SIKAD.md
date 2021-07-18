@@ -3280,7 +3280,7 @@ console.log(regC.match(/\w*u\w*/g));    // Output: ["Satu", "Dua"]         match
 console.log(regC.match(/\w*o\w*/g));    // Output: null                    akan langsung berhenti di pola pertama.
 ```
 
-Note: terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) & d (has indices), namun tidak banyak digunakan. Selebihnya lihat dokumentasi di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags">MDN</a>.
+Terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) & d (has indices), namun tidak banyak digunakan. lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags">MDN</a>.
 
 
 ```Javascript
@@ -3463,7 +3463,7 @@ let polaU12 = /\./;                     // \. sama dengan satu karakter titik (.
 let polaU13 = /\//;                     // \/ sama dengan satu karakter garis miring (/)
 ```
 
-Backslash "\" digunakan sebagai karakter escape, fungsinya untuk mencegah sebuah karakter dianggap sebagai karakter khusus, misalnya membuat karakter titik & garis miring, kita tidak bisa langsung menulis titik begitu saja (karena akan dianggap wildcard) atau menulis langsung garis miring begitu saja (karena akan dianggap comment), oleh karena itu untuk menulis titik atau garis miring di dalam RegExp perlu diawali "\".
+Backslash ```\``` digunakan sebagai karakter escape, fungsinya untuk mencegah sebuah karakter dianggap sebagai karakter khusus, misalnya membuat karakter titik & garis miring, kita tidak bisa langsung menulis titik begitu saja (karena akan dianggap wildcard) atau menulis langsung garis miring begitu saja (karena akan dianggap comment), oleh karena itu untuk menulis titik & garis miring di dalam RegExp perlu diawali ```\```.
 
 ```Javascript
 let polaV = /^\d\w\s$/;                 // Pola di samping sama dengan /^[0-9][A-Za-z0-9_][whitespace]$/
@@ -3632,7 +3632,7 @@ E4. Object instance method (𝗱𝗲𝗻𝗴𝗮𝗻 𝗖𝗮𝗹𝗹𝗯𝗮�
 
 Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 
-E4-1. forEach() berfungsi menjalankan Function untuk setiap element Array (mirip seperti perulangan for of, jalan sebanyak jumlah element di Array).
+E4-1. forEach() berfungsi menjalankan Function untuk setiap element Array (mirip seperti for of, jalan sebanyak jumlah element di Array).
 
 ```Javascript
 let arrN = ["a","b","c","d"];
@@ -3672,7 +3672,7 @@ Index ke-2 = Putri
 */
 ```
 
-E4-2. map() serupa dengan forEach(), bedanya method map() mengembalikan sebuah Array baru (memakai keyword return). map() tidak mengubah Array asal.
+E4-2. map() serupa dengan forEach(), bedanya mengembalikan sebuah Array baru (memakai keyword return). Non-Mutating.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3695,7 +3695,7 @@ console.log(arrR.map(ganjilGenap));                   // Output: ["genap","ganji
 console.log(arrS.map(ganjilGenap));                   // Output: ["genap","ganjil","genap","ganjil"]
 ```
 
-E4-3. filter() serupa dengan map(), bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element tersebut.
+E4-3. filter() serupa dengan map(), bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3797,7 +3797,7 @@ console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dar
 
 Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
 
-E4-8. sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. ⚠️ method sort() bersifat Mutating.
+E4-8. sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. method sort() bersifat Mutating ⚠️
 
 ```Javascript
 let arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
@@ -3876,9 +3876,7 @@ console.log(datD);                                    // Output: Fri Jun 04 2021
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
 ```
 
-```Javascript
-// F2. Object instance method
-```
+F2. Object instance method
 
 GMT atau UTC merupakan standard waktu internasional. WIB merupakan waktu untuk daerah Jawa Barat, Indonesia (dimana konten ini ditulis). GMT/UTC dengan WIB memiliki selisih waktu, dimana WIB lebih cepat 7 jam dibandingkan GMT/UTC. Misalnya:
 - Sabtu, 5 Juni 2021 pukul 07:55:30 WIB ⇨ Sabtu, 5 Juni 2021 pukul 00:55:30 GMT (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
@@ -3886,9 +3884,7 @@ GMT atau UTC merupakan standard waktu internasional. WIB merupakan waktu untuk d
 
 Method Getter & Setter UTC yang akan dijelaskan di bawah menampilkan tanggal dan waktu dalam UTC (standard waktu internasional), method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di sistem lokal, dalam kasus ini WIB (Jawa Barat).
 
-Dari mana JavaScript tahu sistem lokal memakai waktu WIB? Dari web browser, dimana web browser mengambilnya dari sistem operasi, yakni settingan tanggal dari Windows. Umumnya, tampilan seperti inilah yang akan dipakai di website nanti.
-
-𝗡𝗼𝘁𝗲:
+Dari mana JavaScript tahu sistem lokal memakai waktu WIB? Dari web browser, dimana web browser mengambilnya dari sistem operasi, yakni settingan tanggal dari Windows. Umumnya, tampilan seperti inilah yang akan dipakai di website nanti. Catatan tambahan:
 - method Getter UTC & Getter Locale pada contoh di bawah dieksekusi pada : Sabtu, 5 Juni 2021, pukul 07:55:30 (di Jawa Barat)
 - method Setter UTC & Setter Locale pada contoh di bawah dibuat ke tanggal : Sabtu, 5 Juni 2021, pukul 10:55:30
 
@@ -3916,6 +3912,8 @@ console.log(datE.getUTCMilliseconds()); // Output: 215                          
 ```Javascript
 // ➋ Getter Locale (Waktu Sistem Lokal)
 
+let datE = new Date();
+
 console.log(datE.toDateString());       // Output: Sat Jun 05 2021                ⇨ Hari Bulan Tanggal Tahun
 console.log(datE.toTimeString());       // Output: 07:55:30 GMT+0700 (GMT+07:00)  ⇨ Jam Menit Detik
 console.log(datE.toLocaleDateString()); // Output: 6/5/2021                       ⇨ Serupa toDateString(), format = sistem lokal
@@ -3940,6 +3938,7 @@ console.log(datE.getTimezoneOffset());  // Output: -420                         
 // ➌ Setter UTC (Waktu UTC)
 
 let datF = new Date(0);       console.log(datF.toUTCString());    // Output: Thu, 01 Jan 1970 00:00:00 GMT  ⇨ UNIX Epoch
+
 datF.setUTCFullYear(2021);    console.log(datF.toUTCString());    // Output: Fri, 01 Jan 2021 00:00:00 GMT  ⇨ Ubah tahun
 datF.setUTCMonth(5);          console.log(datF.toUTCString());    // Output: Tue, 01 Jun 2021 00:00:00 GMT  ⇨ Ubah bulan
 datF.setUTCDate(5);           console.log(datF.toUTCString());    // Output: Sat, 05 Jun 2021 00:00:00 GMT  ⇨ Ubah tanggal
@@ -3953,6 +3952,7 @@ datF.setUTCMilliseconds(215); console.log(datF.toISOString());    // Output: 202
 // ➍ Setter Locale (Waktu Sistem Lokal)
 
 let datG = new Date(0);       console.log(datG.toLocaleString()); // Output: 1/1/1970, 7:00:00 AM           ⇨ UNIX Epoch (+7 jam)
+
 datG.setFullYear(2021);       console.log(datG.toLocaleString()); // Output: 1/1/2021, 7:00:00 AM           ⇨ Ubah tahun
 datG.setMonth(5);             console.log(datG.toLocaleString()); // Output: 6/1/2021, 7:00:00 AM           ⇨ Ubah bulan
 datG.setDate(5);              console.log(datG.toLocaleString()); // Output: 6/5/2021, 7:00:00 AM           ⇨ Ubah tanggal
@@ -3962,9 +3962,7 @@ datG.setSeconds(30);          console.log(datG.toLocaleString()); // Output: 6/5
 datG.setMilliseconds(125);    console.log(datG.toISOString());    // Output: 2021-06-05T03:55:30.125Z       ⇨ Ubah milidetik
 ```
 
-```Javascript
-// F3. Latihan Program
-```
+F3. Latihan Program
 
 ```Javascript
 // ➊ Menampilkan Tanggal dengan Format Tertentu
@@ -4031,28 +4029,34 @@ let selisihHari_coba = selisihTgl/ms1Hari_coba;     // Dapatkan selisih hari
 console.log(`Selisih = ${selisihHari_coba} hari`);  // Output: Selisih = 198 hari
 ```
 
-```Javascript
-/*
-Tantangan selanjutnya, bagaimana mengkonversi 198 hari ini menjadi sekian tahun, sekian bulan dan sekian hari?
-Di bawah ini merupakan contoh algoritma (lebih ke ilustrasi menjawab persoalan) yang dapat diaplikasikan.
+Tantangan selanjutnya, bagaimana mengkonversi 198 hari ini menjadi sekian tahun, sekian bulan dan sekian hari? Di bawah ini merupakan contoh algoritma (lebih ke ilustrasi menjawab persoalan) yang dapat diaplikasikan.
 
 500 hari itu berapa tahun, berapa bulan dan berapa hari?
-⤷ Pertama, bagi 500 dengan 365, 500/365 = 1.37. Artinya 500 hari sama dengan 1.37 tahun.
-  Simpan angka 1 tahun, dan kita akan konversi kelebihan 0.37 tahun menjadi bulan dan hari.
-⤷ Kedua, karena 500 hari terdiri dari 1 tahun lebih, sisa hari bisa didapat dengan rumus 500-(1*365) = 135.
-  Dengan mengasumsikan 1 bulan = 30 hari, maka 135 hari sama dengan 135/30 = 4.5 bulan.
-  Simpan angka 4 bulan, dan kita akan konversi kelebihan 0.5 bulan ini menjadi hari.
-⤷ Ketiga, sisa hari didapat dari pengurangan jumlah tahun dan jumlah bulan.
-  Ini bisa dicari dengan rumus 500-(1*365)-(4*30) = 15 hari.
-⤷ Akhirnya didapat bahwa 500 hari = 1 tahun 4 bulan 15 hari.
+- Pertama, bagi 500 dengan 365, 500/365 = 1.37. Artinya 500 hari sama dengan 1.37 tahun. Simpan angka 1 tahun, dan kita akan konversi kelebihan 0.37 tahun menjadi bulan dan hari.
+- Kedua, karena 500 hari terdiri dari 1 tahun lebih, sisa hari bisa didapat dengan rumus 500-(1*365) = 135. Dengan mengasumsikan 1 bulan = 30 hari, maka 135 hari sama dengan 135/30 = 4.5 bulan. Simpan angka 4 bulan, dan kita akan konversi kelebihan 0.5 bulan ini menjadi hari.
+- Ketiga, sisa hari didapat dari pengurangan jumlah tahun dan jumlah bulan. Ini bisa dicari dengan rumus 500-(1*365)-(4*30) = 15 hari.
+- Akhirnya didapat bahwa 500 hari = 1 tahun 4 bulan 15 hari.
 
-Sekarang, bagaimana dengan 198 hari? Mari kita hitung.
-⤷ Jumlah tahun  = 198/365 = 0.54            Artinya tidak cukup 1 tahun. Simpan 0.
-⤷ Jumlah bulan  = 198-(0*365)/30 = 6.6      Artinya terdapat 6 bulan lebih. Simpan 6, dan kita akan cari berapa hari lebihnya.
-⤷ Jumlah hari   = 198-(0*365)-(6*30) = 18   Akhirnya didapat bahwa 198 hari = 0 tahun 6 bulan 18 hari.
+Sekarang, bagaimana dengan 198 hari? Mari kita hitung:
+- Jumlah tahun = 198/365 = 0.54. Artinya tidak cukup 1 tahun. Simpan 0.
+- Jumlah bulan = 198-(0*365)/30 = 6.6. Artinya terdapat 6 bulan lebih. Simpan 6, dan kita akan cari berapa hari lebihnya.
+- Jumlah hari = 198-(0*365)-(6*30) = 18. Akhirnya didapat bahwa 198 hari = 0 tahun 6 bulan 18 hari.
 
-Di bawah ini merupakan implementasi algoritma untuk mencari selisih tanggal (berdasarkan ilustrasi di atas):
-*/
+```Javascript
+let tglAwal   = new Date("06/05/2021");
+let tglAkhir  = new Date("12/20/2021");
+
+let timeAwal  = tglAwal.getTime();
+let timeAkhir = tglAkhir.getTime();
+
+let selisihTgl = timeAkhir-timeAwal;
+console.log(Math.abs(selisihTgl));
+
+let ms1Hari_coba     = 1000*60*60*24;
+let selisihHari_coba = selisihTgl/ms1Hari_coba;
+console.log(`Selisih = ${selisihHari_coba} hari`);
+
+// Di bawah ini merupakan implementasi algoritma untuk mencari selisih tanggal (berdasarkan penjelasan di atas):
 
 let ms1Hari   = 1000*60*60*24;              // Menghitung banyak milidetik dalam 1 hari
 let ms1Bulan  = 1000*60*60*24*30;           // Menghitung banyak milidetik dalam 1 bulan
@@ -4064,16 +4068,11 @@ let selisihHari   = Math.floor((selisihTgl-(selisihTahun*ms1Tahun)-(selisihBulan
 
 let hasil = `${selisihTahun} Tahun ${selisihBulan} Bulan ${selisihHari} Hari`;
 console.log(hasil);                         // Output: 0 Tahun 6 Bulan 18 Hari
-
-/*
-Note: Program menghitung selisih tanggal ini belum sempurna, karena tidak memperhitungkan aspek lainnya seperti tahun kabisat dan
-perbedaan hari dalam tiap bulan. Untuk pemrosesan Date yang lebih advanced, pelajari library JavaScript seperti 𝗠𝗼𝗺𝗲𝗻𝘁𝗝𝗦.
-
-Info: Algoritma di atas, serupa juga dengan algoritma "Membagi nilai rupiah". Misalnya jika inputan awal 257,500. Hasil kode
-program berupa: 2 lembar uang 100.000, 1 lembar uang 50.000, 1 lembar uang 5000, 1 lembar uang 2000, 1 lembar uang 500. Untuk
-mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nilai rupiah" ini menggunakan JavaScript. Good Luck!
-*/
 ```
+
+Note: Program menghitung selisih tanggal ini belum sempurna, karena tidak memperhitungkan aspek lainnya seperti tahun kabisat dan perbedaan hari dalam tiap bulan. Untuk pemrosesan Date yang lebih advanced, pelajari library JavaScript seperti 𝗠𝗼𝗺𝗲𝗻𝘁𝗝𝗦.
+
+Info: Algoritma di atas, serupa juga dengan algoritma "Membagi nilai rupiah". Misalnya jika inputan awal 257,500. Hasil kode program berupa: 2 lembar uang 100.000, 1 lembar uang 50.000, 1 lembar uang 5000, 1 lembar uang 2000, 1 lembar uang 500. Untuk mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nilai rupiah" ini menggunakan JavaScript. Good Luck!
 
 <hr>
 <div id="bab3_3"></div>
