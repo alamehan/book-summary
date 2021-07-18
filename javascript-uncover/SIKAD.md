@@ -2979,7 +2979,7 @@ Object property & Object method melekat langsung ke Object-nya (Class-nya), ```N
 
 Object instance property & Object instance method melekat ke Instance Object, ```foo.length``` & ```foo.toPrecision()```, dimana ```foo``` merupakan hasil instance dari Object (Class) ```String``` (untuk foo.length) & hasil instance dari Object ```Number``` (untuk foo. toPrecision(5)), sedangkan ```length``` sebagai Object instance property & ```toPrecision()``` sebagai Object instance method-nya. 
 
-Penulisan formal Object instance property & Object instance method yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object property & Object method, tepatnya saat membuka dokumentasi MDN.
+Penulisan formal Object instance property & Object instance method yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object property & Object method, tepatnya saat membuka dokumentasi <a href="https://developer.mozilla.org/en-US/">MDN</a>.
 
 Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja. Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja. 📚 Referensi lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
 
@@ -3020,6 +3020,8 @@ console.log(bar.length);              // Output: 11. Kita pun masih tetap bisa m
 > - [X] 𝐃. RegExp Object
 > - [X] 𝐄. Array Object
 > - [X] 𝐅. Date Object
+
+<img src="assets/native-object.png">
 
 ### ![✔] 𝐀. Number Object
 
