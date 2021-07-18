@@ -2986,6 +2986,30 @@ Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property,
 
 ⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 
+#### ⤷ Contoh: String (Object)
+
+```Javascript
+let foo = new String("Hello World");  // Kita tidak pernah mendefinisikan Class String bukan? tetapi kenapa langsung bisa dipakai?
+                                      // itu karena, String merupakan salah satu Object bawaan JavaScript. Ingat saat kita instan-
+                                      // siasi Object Mobil baru dengan perintah "let mobilBudi = new Mobil(...)", itu bisa kita
+                                      // lakukan karena sebelumnya kita sudah membuat Class Mobil. Nah, String itu "Class bawaan".
+
+console.log(foo.toUpperCase());       // Output: HELLO WORLD. Kita tidak pernah mendefinisikan method toUpperCase() bukan? tetapi
+                                      // kenapa langsung bisa dipakai (melalui dot notation)? itu karena, toUpperCase() merupakan 
+                                      // salah satu "Instance method" bawaan milik String Object, jadi kita bisa langsung pakai.
+console.log(foo.length)               // Output: 11. length merupakan salah satu "Instance property" bawaan milik String Object.
+```
+
+#### ⤷ Contoh: String (Literals)
+
+```Javascript
+let bar = "Hello World";              // Cara penulisan: String literals (lebih "hemat" dibandingkan Object Constructor di atas)
+console.log(bar.toUpperCase());       // Output: HELLO WORLD. Ternyata meskipun Var/Let bar didefinisikan secara String literals,
+                                      // bukan secara String Object, kita masih tetap bisa memakai "Instance method" bawaan String
+                                      // Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A3).
+console.log(bar.length);              // Output: 11. Kita pun masih tetap bisa memakai "Instance property" bawaan String Object.
+```
+
 <hr>
 <div id="bab3_2"></div>
 
