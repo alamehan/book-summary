@@ -2771,7 +2771,7 @@ let hasil = teks.potongTeks(6, 10);   // Output: World  ⇨ berbasiskan Object
                                       // 𝗡𝗼𝘁𝗲: 𝘁𝗲𝗿𝗸𝗮𝗶𝘁 𝗸𝗲𝘆𝘄𝗼𝗿𝗱 𝗻𝗲𝘄 (𝗹𝗶𝗵𝗮𝘁 𝗽𝗼𝗶𝗻𝘁 𝗕𝟯)
 ```
 
-#### ⤷ Penulisan Literals vs Object Constructor
+#### ⤷ Penulisan Literals VS Object Constructor
 
 ```Javascript
 let num1 = 52;                        // Cara penulisan: Number literals  (✔️ Recommended)
