@@ -3025,9 +3025,9 @@ console.log(bar.length);              // Output: 11. Kita pun masih tetap bisa m
 
 ### ![✔] 𝐀. Number Object
 
-```Javascript
-// A1. Object property
+A1. Object property
 
+```Javascript
 console.log(Number.EPSILON);          // Output: 2.220446049250313e-16    ⇨ Interval terkecil dari dua angka di dalam JS
 console.log(Number.MAX_VALUE);        // Output: 1.7976931348623157e+308  ⇨ Angka tertinggi yang bisa ditampung di dalam JS
 console.log(Number.MIN_VALUE);        // Output: 5e-324                   ⇨ Angka positif terkecil yang bisa ditampung JS
@@ -3038,9 +3038,9 @@ console.log(Number.POSITIVE_INFINITY) // Output: Infinity                 ⇨ Ca
 console.log(Number.NEGATIVE_INFINITY) // Output: -Infinity                ⇨ Cara untuk membuat nilai -infinity
 ```
 
-```Javascript
-// A2. Object method
+A2. Object method
 
+```Javascript
 console.log(Number.isNaN(5/'a'));                     // Output: true     ⇨ Check apakah hasil operasi/suatu Var/Let berisi NaN
 console.log(Number.isNaN(Number.NaN));                // Output: true
 console.log(Number.isFinite(3.21456));                // Output: true     ⇨ Check apakah sebuah nilai/Var/Let berisi angka standar
@@ -3058,9 +3058,9 @@ console.log(Number.parseInt("255", 8));               // Output: 173  (number)  
 console.log(Number.parseInt("AD", 16));               // Output: 173  (number)  ⤷ 8 artinya: proses sebagai heksa (Basis 16)
 ```
 
-```Javascript
-// A3. Object instance method
+A3. Object instance method
 
+```Javascript
 numA = 500.123;
 numB = 50;
 numC = 1234500.346;
@@ -3091,9 +3091,9 @@ console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));
 
 ### ![✔] 𝐁. Math Object
 
-```Javascript
-// B1. Object property
+B1. Object property
 
+```Javascript 
 console.log(Math.E);                  // Output: 2.718281828459045        ⇨ Angka logaritma natural e
 console.log(Math.LN10);               // Output: 2.302585092994046        ⇨ Angka logaritma natural 10
 console.log(Math.LN2);                // Output: 0.6931471805599453       ⇨ Angka logaritma natural 2
@@ -3102,16 +3102,18 @@ console.log(Math.LOG2E);              // Output: 1.4426950408889634       ⇨ An
 console.log(Math.PI);                 // Output: 3.141592653589793        ⇨ Angka pi (π)
 console.log(Math.SQRT1_2);            // Output: 0.7071067811865476       ⇨ Angka 1 dibagi dengan akar kuadrat 2
 console.log(Math.SQRT2);              // Output: 1.4142135623730951       ⇨ Angka akar kuadrat dari 2
+```
 
+```Javascript
 let jariJari = 7;                                     // Studi kasus: contoh penggunaan Math.PI & toFixed() untuk mencari luas
 let luasLingkaran = Math.PI * jariJari * jariJari;    // lingkaran kemudian memformat angkanya dengan jumlah digit desimal = 2
 console.log(luasLingkaran);                           // Output: 153.93804002589985
 console.log(luasLingkaran.toFixed(2));                // Output: 153.94
 ```
 
-```Javascript
-// B2. Object method
+B2. Object method
 
+```Javascript
 console.log(Math.floor(12.54));       // Output: 12             ⇨ Pembulatan ke bawah
 console.log(Math.ceil(12.54));        // Output: 13             ⇨ Pembulatan ke atas
 console.log(Math.round(12.54));       // Output: 13             ⇨ Pembulatan ke bawah jika < 0.5 & pembulatan ke atas jika >= 0.5
@@ -3127,7 +3129,9 @@ console.log(Math.log2(256));          // Output: 8              ⇨ Mencari nila
 console.log(Math.sin(60));            // Output: -0.30481...    ⇨ Mencari nilai sinus   (Nilai Argument: radian, bukan derajat)
 console.log(Math.cos(60));            // Output: -0.95241...    ⇨ Mencari nilai cosinus (Nilai Argument: radian, bukan derajat)
 console.log(Math.tan(60));            // Output: 0.320040...    ⇨ Mencari nilai tangen  (Nilai Argument: radian, bukan derajat)
+```
 
+```Javascript
 let mthA = Math.floor(Math.random()*(10))   // Studi kasus: tips untuk generate angka bulat acak rentang 0-9 (tidak lagi pecahan!)
 console.log(mthA);                          // Output: 7 (contoh)
 
@@ -3138,9 +3142,9 @@ console.log(Math.min(...mthB));             // Output: 12
 
 ### ![✔] 𝐂. String Object
 
-```Javascript
-// C1. Object method
+C1. Object method
 
+```Javascript
 console.log(String.fromCharCode(65, 66, 67));               // Output: ABC      ⇨ Membuat String berdasarkan kode unicode
 console.log(String.fromCharCode(9749, 10052, 12096));       // Output: ☕❄⽀   ⤷ Penulisan dengan nomor urut desimal
 console.log(String.fromCharCode(0x2615, 0x2744, 0x2F40));   // Output: ☕❄⽀   ⤷ Penulisan dengan nomor urut heksadesimal (0x...)
@@ -3152,9 +3156,9 @@ console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗�
                                                             // 📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 ```
 
-```Javascript
-// C2. Object instance property
+C2. Object instance property
 
+```Javascript
 let strA = "Hello World!";
 let strB = "Belajar JavaScript";
 
@@ -3162,9 +3166,9 @@ console.log(strA.length);               // Output: 12       ⇨ Mengambil info p
 console.log(strB.length);               // Output: 18       ⤷ Banyak digunakan di validasi form, misal syarat minimal 8 karakter
 ```
 
-```Javascript
-// C3. Object instance method
+C3. Object instance method
 
+```Javascript
 let strC = "Bandung";
 let strD = "Bandung kota kembang";
 let strE = "Satu, dua, tiga, empat";
@@ -3223,7 +3227,9 @@ console.log(strD.match(/\w*o\w*/g));    // Output: ["kota"]       ⇨ Serupa den
 console.log(strD.match(/\w*z\w*/g));    // Output: null           ⤷ Jika Output = null, artinya tidak ada pola tersebut di String
 console.log(strD.replace("kota", "X")); // Output: Bandung X kembang      ⇨ Mengganti String dengan String lain (di Argument)
 console.log(strD.replace(/a/g, "o"));   // Output: Bondung koto kembong   ⤷ Argument ke 1: bisa diisi juga dengan RegExp
+```
 
+```Javascript
 let strH = "Nama saya Budi Setiawan";   // Studi kasus: menghitung berapa kali String "a" muncul di dalam String strH
 let count = 0;                          // Dengan memanfaatkan Object instance method indexOf() dan perulangan while
 let posisi = strH.indexOf("a");
@@ -3236,9 +3242,9 @@ console.log(count);                     // Output: 6
 
 ### ![✔] 𝐃. RegExp Object
 
-```Javascript
-// D1. Object instance method
+D1. Object instance method
 
+```Javascript
 let regA = "Belajar JavaScript dari buku JavaScript Uncover";
 let polaA = /JavaScript/;
 
@@ -3248,9 +3254,7 @@ console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku ju
 console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
 ```
 
-```Javascript
-// D2. Pola Regular Expression (RegExp)
-```
+D2. Pola Regular Expression (RegExp)
 
 ```Javascript
 // ➊ Pola RegExp sebagai String
@@ -3274,10 +3278,10 @@ console.log(regB.replace(/a/g, "o"));   // Output: Belojor JovoScript      cocok
 console.log(regB.replace(/a/g, "u"));   // Output: Belujur JuvuScript      mendukung banyak pencarian sekaligus, seperti replace(),
 console.log(regC.match(/\w*u\w*/g));    // Output: ["Satu", "Dua"]         match() & exec(). Jika flag g tidak ditambahkan, RegExp
 console.log(regC.match(/\w*o\w*/g));    // Output: null                    akan langsung berhenti di pola pertama.
-
-                                        // Note: terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) &
-                                        // d (has indices), namun tidak banyak digunakan. Selebihnya lihat dokumentasi di MDN.
 ```
+
+Note: terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) & d (has indices), namun tidak banyak digunakan. Selebihnya lihat dokumentasi di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags">MDN</a>.
+
 
 ```Javascript
 // ➌ Pola Awal & Akhir
@@ -3455,12 +3459,13 @@ let polaU08 = /\r/;                     // \r sama dengan satu karakter enter   
 let polaU09 = /\n/;                     // \n sama dengan satu karakter new line          (Linefeed)
 let polaU10 = /\v/;                     // \v sama dengan satu karakter tab vertikal      (Vertical tab)
 let polaU11 = /\f/;                     // \f sama dengan satu karakter form-feed
-let polaU12 = /\./;                     // Backslash "\" digunakan sebagai karakter escape, fungsinya untuk mencegah sebuah karak-
-let polaU13 = /\//;                     // ⤷ ter dianggap sebagai karakter khusus, misalnya membuat karakter titik & garis miring,
-                                        // ⤷ kita tidak bisa langsung menulis titik begitu saja (karena akan dianggap wildcard)
-                                        // ⤷ atau menulis langsung garis miring begitu saja (karena akan dianggap comment), oleh
-                                        // ⤷ karena itu untuk menulis titik atau garis miring di dalam RegExp perlu diawali "\"
+let polaU12 = /\./;                     // \. sama dengan satu karakter titik (.)
+let polaU13 = /\//;                     // \/ sama dengan satu karakter garis miring (/)
+```
 
+Backslash "\" digunakan sebagai karakter escape, fungsinya untuk mencegah sebuah karakter dianggap sebagai karakter khusus, misalnya membuat karakter titik & garis miring, kita tidak bisa langsung menulis titik begitu saja (karena akan dianggap wildcard) atau menulis langsung garis miring begitu saja (karena akan dianggap comment), oleh karena itu untuk menulis titik atau garis miring di dalam RegExp perlu diawali "\".
+
+```Javascript
 let polaV = /^\d\w\s$/;                 // Pola di samping sama dengan /^[0-9][A-Za-z0-9_][whitespace]$/
 let polaW = /^www\.....\.com$/;         // Artinya: [wwww.] + [4 karakter bebas] + [.com] (\. bukan wildcard ya!)
 let polaX = /^.+@.+\..+$/;              // Pola di samping sama dengan /^.{1,}@.{1,}\..{1,}$/ artinya [1/lebih karakter bebas] +
@@ -3484,7 +3489,9 @@ console.log(polaX.test("duniailkom@gmail.com"));      // Output: true
 console.log(polaX.test("raihanralam@gmail.com"));     // Output: true
 ```
 
-polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat " @ . " dianggap true (ya karena memang lolos dari polaX), oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut: 📚 http://emailregex.com/ (pola RegExp yang disusun sangat kompleks, itu tidak lain untuk ketepatan pola email yang akurat).
+polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat " @ . " dianggap true (ya karena memang lolos dari polaX), oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut: 
+
+📚 http://emailregex.com/ (pola RegExp email yang akurat disusun dengan sangat kompleks).
 
 ```Javascript
 // ➓ Pola Logika OR
@@ -3499,9 +3506,9 @@ console.log(polaY.test("kami belajar JavaScript"));   // Output: true
 console.log(polaY.test("Budi belajar JavaScript"));   // Output: false
 ```
 
-```Javascript
-// Bonus: Latihan RegExp
+Bonus: Latihan RegExp
 
+```Javascript
 let polaZ = /^[A-Za-z]{1,2}\s*\d{1,4}\s*[A-Za-z]{1,3}$/;    // Artinya: [1/2 karakter A-Za-z] + [0/lebih whitespace] +
                                                             // ⤷ [min 1 & max 4 karakter 0-9] + [0/lebih whitespace] +
                                                             // ⤷ [min 1 & max 3 karakter A-Za-z], juga karena diawali ^ dan
@@ -3519,17 +3526,17 @@ console.log(polaZ.test("_zz9YES"));                   // Output: false
 
 ### ![✔] 𝐄. Array Object
 
-```Javascript
-// E1. Object method
+E1. Object method
 
+```Javascript
 console.log(Array.isArray([1, 2, 3]));                // Output: true     ⇨ Check apakah sebuah nilai/var bertipe data Array
 console.log(Array.isArray(["satu", 2, null]));        // Output: true
 console.log(Array.isArray([]));                       // Output: true
 ```
 
-```Javascript
-// E2. Object instance property
+E2. Object instance property
 
+```Javascript 
 let arrA = ["a","b","c","d","e"];
 let arrB = [[1,2],[3,4],[5,6]];
 let arrC = [1,2,3,4,5];
@@ -3546,8 +3553,10 @@ console.log(arrC.length);               // Output: 3
 arrD.length = 7;                        // property length sebuah Array bisa ditambah
 console.log(arrD);                      // Output: [1,2,3,4,5,<2 empty slots>]
 console.log(arrD.length);               // Output: 7
+```
 
-let arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini sama seperti di bab 8 (D3). Kondisi (n<arrSiswa.length)
+```Javascript
+let arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini sama seperti di bab 2-4 A. Kondisi (n<arrSiswa.length)
 for (let n=0; n<arrSiswa.length; n++){                      // ⤷ akan selalu di check nilainya dalam setiap perulangan, padahal
   console.log(arrSiswa[n]);                                 // ⤷ nilai arrSiswa.length tidak pernah berubah (tidak efisien).
 }                                                           // Output: Andri, Joko, Sukma, Rina, Sari
@@ -3559,9 +3568,9 @@ for (let n=0; n<panjangArr; n++){                           // ⤷ kondisi, mela
 }
 ```
 
-```Javascript
-// E3. Object instance method
+E3. Object instance method
 
+```Javascript
 let arrE = ["a","b","c"];
 let arrF = [1,2,3];
 let arrG = ["a","b","c","d","e","f","g"];
@@ -3619,25 +3628,24 @@ console.log(arrM.indexOf("a",1));       // Output: -1       ⤷ jika Output = -1
 console.log(arrM.indexOf("e"));         // Output: -1
 ```
 
-```Javascript
-// E4. Object instance method (𝗱𝗲𝗻𝗴𝗮𝗻 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
-```
+E4. Object instance method (𝗱𝗲𝗻𝗴𝗮𝗻 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
 
 Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
+
+E4-1. forEach() berfungsi menjalankan Function untuk setiap element Array (mirip seperti perulangan for of, jalan sebanyak jumlah element di Array).
 
 ```Javascript
 let arrN = ["a","b","c","d"];
 let arrO = ["Budi","Joko","Putri"];
 
-arrN.forEach(                                         // forEach() berfungsi menjalankan Function untuk setiap element Array
-  function(element, index, array){                    // (mirip seperti perulangan for of, jalan sebanyak jumlah element di Array)
-    console.log(`Index ke-${index} = ${element}`);    // ⤷ Argument ke 1: nilai element/value Array
-  }                                                   // ⤷ Argument ke 2: index element/key Array   (optional)
-);                                                    // ⤷ Argument ke 3: isi seluruh Array         (optional)
-                                                      // ⤷ Penulisan Argument tidak harus element/index/arrray (bebas saja)
+arrN.forEach(
+  function(element, index, array){                    // Argument ke 1: nilai element/value Array
+    console.log(`Index ke-${index} = ${element}`);    // Argument ke 2: index element/key Array   (optional)
+  }                                                   // Argument ke 3: isi seluruh Array         (optional)
+);                                                    // ⤷ Penulisan Argument tidak harus element/index/arrray (bebas saja)
                                                       // ⤷ Peranan Argument ke 3 tidak sepenting Argument ke 1 & ke 2, oleh
                                                       // ⤷ karena itu contoh di samping tidak menyertakan console.log(array);
-
+                                                      
 /*
 Output:
 Index ke-0 = a
@@ -3662,7 +3670,11 @@ Index ke-0 = Budi
 Index ke-1 = Joko
 Index ke-2 = Putri
 */
+```
 
+E4-2. map() serupa dengan forEach(), bedanya method map() mengembalikan sebuah Array baru (memakai keyword return). map() tidak mengubah Array asal.
+
+```Javascript
 let arrP = [1,2,3,4,5];
 let arrQ = [5,6,7,8,9];
 let arrR = [4,9,16,25];
@@ -3673,8 +3685,6 @@ function pangkatTiga(elm){ return elm**3; }
 function akarKuadrat(elm){ return Math.sqrt(elm); }
 function ganjilGenap(elm){ return elm%2 === 0 ? "genap" : "ganjil"; }
 
-                                                      // map() serupa dengan forEach(), bedanya method map() mengembalikan sebuah
-                                                      // Array baru (memakai keyword return). map() tidak mengubah Array asal.
 console.log(arrP.map(kaliDua));                       // Output: [2,4,6,8,10]
 console.log(arrQ.map(kaliDua));                       // Output: [10,12,14,16,18]
 console.log(arrP.map(pangkatTiga));                   // Output: [1,8,27,64,125]
@@ -3683,57 +3693,93 @@ console.log(arrR.map(akarKuadrat));                   // Output: [2,3,4,5]
 console.log(arrS.map(akarKuadrat));                   // Output: [6,7,8,9]
 console.log(arrR.map(ganjilGenap));                   // Output: ["genap","ganjil","genap","ganjil"]
 console.log(arrS.map(ganjilGenap));                   // Output: ["genap","ganjil","genap","ganjil"]
+```
+
+E4-3. filter() serupa dengan map(), bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element tersebut.
+
+```Javascript
+let arrP = [1,2,3,4,5];
+let arrQ = [5,6,7,8,9];
+let arrR = [4,9,16,25];
+let arrS = [36,49,64,81];
 
 function genapOnly(elm){                              // Jika genap return true, jika ganjil return false. Sebenarnya bisa juga
   return (elm%2 === 0);                               // ditulis dengan IF-ELSE, namun tidak efisien (baris kode-nya panjang).
 }
-function besarDari10(elm){                            // Jika lebih dari 10 return true, jika tidak, return false. Sama seperti
-  return (elm>10);                                    // genapOnly(), sebenarnya bisa ditulis dengan IF-ELSE, tapi tidak efisien.
-}
-                                                      // filter() serupa dengan map(), bedanya hasil return berupa true/false.
-                                                      // Jika true pertahankan element Array, jika false hapus element tersebut.
+
 console.log(arrP.filter(genapOnly));                  // Output: [2,4]
 console.log(arrQ.filter(genapOnly));                  // Output: [6,8]
 console.log(arrR.filter(genapOnly));                  // Output: [4,16]
 console.log(arrS.filter(genapOnly));                  // Output: [36,64]
+```
 
-                                                      // every() berfungsi memeriksa apakah seluruh element Array memenuhi syarat
-                                                      // tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya
-                                                      // (seluruh element menghasilkan true), maka method every() akan me-return
-                                                      // true. Namun jika tidak (ada salah satu saja element yang menghasilkan
-                                                      // false), maka method every () akan me-return false.
+E4-4. every() berfungsi memeriksa apakah seluruh element Array memenuhi syarat tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya (seluruh element menghasilkan true), maka method every() akan me-return true. Namun jika tidak (ada salah satu saja element yang menghasilkan false), maka method every () akan me-return false.
+
+```Javascript
+let arrP = [1,2,3,4,5];
+let arrQ = [5,6,7,8,9];
+let arrR = [4,9,16,25];
+let arrS = [36,49,64,81];
+
+function besarDari10(elm){                            // Jika lebih dari 10 return true, jika tidak, return false. Sama seperti
+  return (elm>10);                                    // genapOnly(), sebenarnya bisa ditulis dengan IF-ELSE, tapi tidak efisien.
+}
+
 console.log(arrR.every(besarDari10));                 // Output: false  (karena terdapat nilai 4 & 9 yang memang kurang dari 10)
 console.log(arrS.every(besarDari10));                 // Output: true   (karena semua element di arrS bernilai lebih besar dari 10)
+```
 
-                                                      // some() serupa dengan every(), bedanya syaratnya terbalik, yaitu method
-                                                      // some() akan me-return true jika ada salah satu element saja yang meng-
-                                                      // hasilkan true (memenuhi syarat yang telah didefinisikan).
+E4-5. some() serupa dengan every(), bedanya syaratnya terbalik, yaitu method some() akan me-return true jika ada salah satu element saja yang menghasilkan true (memenuhi syarat yang telah didefinisikan).
+
+```Javascript
+let arrP = [1,2,3,4,5];
+let arrQ = [5,6,7,8,9];
+let arrR = [4,9,16,25];
+let arrS = [36,49,64,81];
+
+function besarDari10(elm){                            // Jika lebih dari 10 return true, jika tidak, return false. Sama seperti
+  return (elm>10);                                    // genapOnly(), sebenarnya bisa ditulis dengan IF-ELSE, tapi tidak efisien.
+}
+
 console.log(arrQ.some(besarDari10));                  // Output: false  (karena semua element di arrQ bernilai lebih kecil dari 10)
 console.log(arrR.some(besarDari10));                  // Output: true   (karena terdapat nilai 16 & 25 yang memang memenuhi syarat)
+```
 
-                                                      // find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array
-                                                      // berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan
-                                                      // me-return nilai yang ditemukan pertama kali. find() akan me-return nilai
-                                                      // element Arrray tersebut, sedangkan findIndex() me-return index Array-nya.
+E4-6. find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return nilai yang ditemukan pertama kali. find() akan me-return nilai element Arrray tersebut, sedangkan findIndex() me-return index Array-nya.
+
+```Javascript
+let arrP = [1,2,3,4,5];
+let arrQ = [5,6,7,8,9];
+let arrR = [4,9,16,25];
+let arrS = [36,49,64,81];
+
+function besarDari10(elm){                            // Jika lebih dari 10 return true, jika tidak, return false. Sama seperti
+  return (elm>10);                                    // genapOnly(), sebenarnya bisa ditulis dengan IF-ELSE, tapi tidak efisien.
+}
+
 console.log(arrR.find(besarDari10));                  // Output: 16
 console.log(arrS.find(besarDari10));                  // Output: 36
 console.log(arrQ.find(besarDari10));                  // Output: undefined
 console.log(arrR.findIndex(besarDari10));             // Output: 2
 console.log(arrQ.findIndex(besarDari10));             // Output: -1
+```
+
+E4-7. reduce() & reduceRight() digunakan untuk memproses total seluruh element Array dan menghasilkan 1 nilai akhir. reduce() memproses dari awal Array, sedangkan reduceRight() memproses dari akhir element Array.
+
+```Javascript
+let arrP = [1,2,3,4,5];
+let arrQ = [5,6,7,8,9];
+let arrR = [4,9,16,25];
+let arrS = [36,49,64,81];
 
 function tambah(total, elm, idx, arr){
   return total + elm;
 }
+
 function pangkat2(total, elm, idx, arr){
   return total + Math.pow(elm, 2);
 }
-                                                      // reduce() & reduceRight() digunakan untuk memproses total seluruh element
-                                                      // Array dan menghasilkan 1 nilai akhir. reduce() memproses dari awal Array,
-                                                      // sedangkan reduceRight() memproses dari akhir element Array.
-                                                      // ⤷ Argument ke 1: Var/Let penampung nilai total
-                                                      // ⤷ Argument ke 2: nilai element/value Array
-                                                      // ⤷ Argument ke 3: index element/key Array       (optional)
-                                                      // ⤷ Argument ke 4: isi seluruh Array             (optional)
+
 console.log(arrP.reduce(tambah));                     // Output: 15   (hasil dari 1+2+3+4+5)
 console.log(arrP.reduce(tambah,10));                  // Output: 25   (hasil dari 10+1+2+3+4+5)
 console.log(arrQ.reduce(pangkat2));                   // Output: 235  (hasil dari 5+6²+7²+8²+9²)
@@ -3742,16 +3788,21 @@ console.log(arrP.reduceRight(tambah));                // Output: 15   (hasil dar
 console.log(arrP.reduceRight(tambah,10));             // Output: 25   (hasil dari 10+5+4+3+2+1)
 console.log(arrQ.reduceRight(pangkat2));              // Output: 183  (hasil dari 9+8²+7²+6²+5²)
 console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
+
+                                                      // Argument ke 1: Var/Let penampung nilai total
+                                                      // Argument ke 2: nilai element/value Array
+                                                      // Argument ke 3: index element/key Array       (optional)
+                                                      // Argument ke 4: isi seluruh Array             (optional)
 ```
 
-Note: Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
+Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
+
+E4-8. sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. ⚠️ method sort() bersifat Mutating.
 
 ```Javascript
 let arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
 let arrU = [3,5,2,8,1,31,22,44,33,11];
 
-                                                      // sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode
-                                                      // ⤷ method sort() bersifat Mutating ⚠️
 arrT.sort(); console.log(arrT);                       // Output: ["Aldo","Budi","Erpan","Joko","Zaki"]
 arrU.sort(); console.log(arrU);                       // Output: [1,11,2,22,3,31,33,44,5,8]
                                                       // ⤷ Terjadi karena Number mula-mula akan dikonversi menjadi String, lalu
@@ -3770,9 +3821,7 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 
 ### ![✔] 𝐅. Date Object
 
-```Javascript
-// F1. Membuat Date Object
-```
+F1. Membuat Date Object
 
 ```Javascript
 // ➊ Tanpa Argument
