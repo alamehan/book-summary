@@ -4283,7 +4283,7 @@ console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  
 ```
 
 Note: Karakter Carriage Return adalah karakter enter/baris baru. Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
-masalah yang sering membuat pusing jika menelusuri struktur DOM tree satu per satu secara manual. Solusinya lihat di point D1.
+masalah yang sering membuat pusing jika menelusuri struktur DOM tree satu per satu secara manual. Solusinya lihat di point D1 di bawah.
 
 **C2. Node property**
 
