@@ -4130,8 +4130,6 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 | <a href="#bab4_4">4-4. Event Object</a>     	        | X Menit       	|
 | <a href="#bab4_5">4-5. Event Prevent Default</a>      | X Menit       	|
 
-<img src="assets/dom-object.png">
-
 <hr>
 <div id="bab4_1"></div>
 
@@ -4171,6 +4169,8 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 > - [X] 𝐂. Node Object (Part 1)
 > - [X] 𝐃. Document Object (Part 2)
 > - [X] 𝐄. Node Object (Part 2)
+
+<img src="assets/dom-object.png">
 
 ### ![✔] 𝐀. Window Object
 
