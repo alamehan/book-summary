@@ -4283,7 +4283,7 @@ console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  
 ```
 
 Note: Karakter Carriage Return adalah karakter enter/baris baru. Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
-masalah yang **sering membuat pusing** jika menelusuri struktur DOM tree satu per satu secara manual.
+masalah yang sering membuat pusing jika menelusuri struktur DOM tree satu per satu secara manual.
 
 **C2. Node property**
 
@@ -4313,6 +4313,107 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
 ```
 
 **NodeList** yaitu Kumpulan Node (Element Node & Text Node). **HTMLCollection** yaitu Kumpulan Node, tetapi khusus Element Node saja.
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1>Belajar JavaScript</h1>
+    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+    <script>
+      let nodeBody  = document.childNodes[1].childNodes[2];     // Berisi <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+      let nodeH1    = nodeBody.childNodes[1];                   // Berisi <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
+      let nodeP     = nodeBody.childNodes[3];                   // Berisi <𝗽> ... </𝗽>
+      let nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
+      let nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
+
+      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+    </script>
+  </body>
+</html>
+```
+
+**C3. Node method**
+
+```Javascript
+let nodeP_new1    = document.createElement("p");              // createElement() untuk Membuat Element Node baru
+let nodeP_new2    = document.createElement("h2");             // createTextNode() untuk Membuat Text Node baru
+let nodeP_new3    = document.createElement("span");           // Note: Method createElement() & createTextNode() bukan
+let nodeText_new1 = document.createTextNode("Text Baru 1");   //       milik Node Object, melainkan milik Document Object
+let nodeText_new2 = document.createTextNode("Text Baru 2");   //       (lihat bagian B di atas). Selain itu, terdapat juga
+let nodeText_new3 = document.createTextNode("Text Baru 3");   //       method createAttribute(), namun tidak dibahas disini.
+
+nodeP_new1.appendChild(nodeText_new1);              // Hasilnya menjadi: <𝗽>Text Baru 1</𝗽>
+nodeP_new2.appendChild(nodeText_new2);              // Hasilnya menjadi: <𝗵𝟮>Text Baru 2</𝗵𝟮>
+nodeP_new3.appendChild(nodeText_new3);              // Hasilnya menjadi: <𝘀𝗽𝗮𝗻>Text Baru 3</𝘀𝗽𝗮𝗻>
+
+nodeBody.appendChild(nodeP_new1);                   // Memasukkan <𝗽>Text Baru 1</𝗽> ke dalam <𝗯𝗼𝗱𝘆> (sebagai Node terakhir)
+nodeBody.insertBefore(nodeP_new2, nodeH1);          // Memasukkan <𝗵𝟮>Text Baru 2</𝗵𝟮> sebelum <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
+nodeBody.replaceChild(nodeP_new3, nodeH1);          // Mengganti <𝗵𝟭>Belajar JavaScript</𝗵𝟭> menjadi <𝘀𝗽𝗮𝗻>Text Baru 3</𝘀𝗽𝗮𝗻>
+let ambil = nodeP.removeChild(nodeB);               // Menghapus <𝗯>dari Duniailkom</𝗯> dari <𝗽> ... </𝗽> (disimpan di Let)
+let klon1 = nodeP.cloneNode(true);                  // Copy nodeP dengan Childnya : <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺></𝗽>
+let klon2 = nodeP.cloneNode(false);                 // Copy nodeP tanpa Childnya  : <𝗽></𝗽>
+console.log(nodeP.contains(nodeEm));                // Output: true   ⇨ Check apakah nodeP memiliki Child nodeEm di dalamnya
+console.log(klon1.hasChildNodes());                 // Output: true   ⇨ Check apakah klon1 memiliki Child (meskipun hanya 1)
+console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya berisi <𝗽></𝗽> (artinya tidak punya Child)
+```
+
+**C4. Studi Kasus: Menambahkan Table ke Dalam DOM**
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Belajar JavaScript</title>
+    <style>
+      table,
+      tr,
+      td {
+        border-collapse: collapse;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Belajar JavaScript</h1>
+    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+    <script>
+      // 1. Siapkan Let shorcut untuk Node
+      let nodeBody  = document.childNodes[1].childNodes[2];
+      let nodeP     = nodeBody.childNodes[3];
+  
+      // 2. Buat tag <table> & siapkan beberapa Let untuk looping
+      let nodeTable = document.createElement("table");
+      let nodeTr, nodeTd1, nodeTd2, nomorUrut, nomorAcak, nomorAcakText;
+  
+      for (let i = 1; i <= 10; i++) {
+        // 3. Buat 1 tag <tr>, 2 tag <td>, text node (nomor urut & acak)
+        nodeTr        = document.createElement("tr");
+        nodeTd1       = document.createElement("td");
+        nodeTd2       = document.createElement("td");
+        nomorUrut     = document.createTextNode(i);
+        nomorAcak     = Math.floor(Math.random() * 90) + 10; // Rentang 10-99
+        nomorAcakText = document.createTextNode(nomorAcak);
+  
+        // 4. Rangkai text node ➜ <td> ➜ <tr> ➜ <table>
+        nodeTd1.appendChild(nomorUrut);
+        nodeTd2.appendChild(nomorAcakText);
+        nodeTr.appendChild(nodeTd1);
+        nodeTr.appendChild(nodeTd2);
+        nodeTable.appendChild(nodeTr);
+      }
+  
+      // 5. Masukkan tag <table> kedalam DOM, posisi sebelum tag <p>
+      nodeBody.insertBefore(nodeTable, nodeP);
+    </script>
+  </body>
+</html>
+```
 
 ### ![✔] 𝐃. Document Object (Part 2)
 
