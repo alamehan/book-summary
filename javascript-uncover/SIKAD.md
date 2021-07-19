@@ -4260,7 +4260,7 @@ wirete() dan writeln() biasanya banyak dipakai di tutorial-tutorial di Internet.
 </html>
 ```
 
-**C1. Menelusuri struktur DOM (Cara 1: manual/sulit)**
+**C1. Menelusuri struktur DOM (Cara 1: manual/sulit ❌)**
 
 ```Javascript
 console.log(document.childNodes[0]);                                            // Output: <!𝗗𝗢𝗖𝗧𝗬𝗣𝗘 𝗵𝘁𝗺𝗹>
@@ -4283,7 +4283,7 @@ console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  
 ```
 
 Note: Karakter Carriage Return adalah karakter enter/baris baru. Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
-masalah yang sering membuat pusing jika menelusuri struktur DOM tree satu per satu secara manual.
+masalah yang sering membuat pusing jika menelusuri struktur DOM tree satu per satu secara manual. Solusinya lihat di point D1.
 
 **C2. Node property**
 
@@ -4438,7 +4438,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
 </html>
 ```
 
-**D1. Menelusuri struktur DOM (Cara 2: mudah/cepat)**
+**D1. Menelusuri struktur DOM (Cara 2: mudah/cepat ✔️)**
 
 ```Javascript
 let nodeEm    = document.getElementById("miring");            // Mencari Element Node berdasarkan nilai atribut id
