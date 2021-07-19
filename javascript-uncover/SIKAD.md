@@ -4260,7 +4260,7 @@ wirete() dan writeln() biasanya banyak dipakai di tutorial-tutorial di Internet.
 </html>
 ```
 
-**C1. Menelusuri struktur DOM (Cara 1: manual/sulit 🔔)**
+**C1. Menelusuri struktur DOM (Cara 1: manual/sulit)**
 
 ```Javascript
 console.log(document.childNodes[0]);                                            // Output: <!𝗗𝗢𝗖𝗧𝗬𝗣𝗘 𝗵𝘁𝗺𝗹>
@@ -4417,7 +4417,201 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
 
 ### ![✔] 𝐃. Document Object (Part 2)
 
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1 id="judul">Belajar JavaScript</h1>
+    <h2 class="kelas-a">JavaScript itu <b>menyenangkan</b></h2>
+    <p class="kelas-a">Sedang belajar <em id="miring">JavaScript</em> <b>dari Duniailkom</b></p>
+    <p><b>Duniailkom</b> menyajikan banyak materi Web Programming</p>
+    <input type="text" name="isian" value="Isian 1">
+    <input type="text" name="isian" value="Isian 2">
+    <script>
+      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+    </script>
+  </body>
+</html>
+```
+
+**D1. Menelusuri struktur DOM (Cara 2: mudah/cepat)**
+
+```Javascript
+let nodeEm    = document.getElementById("miring");            // Mencari Element Node berdasarkan nilai atribut id
+let nodeClass = document.getElementsByClassName("kelas-a");   // Mencari Element Node berdasarkan class tertentu
+let nodeTag   = document.getElementsByTagName("p");           // Mencari Element Node berdasarkan nama tag
+let nodeName  = document.getElementsByName("isian");          // Mencari Element Node berdasarkan nilai atribut name
+let nodeQS    = document.querySelector("p b");                // Mencari Element Node menggunakan 𝗦𝗲𝗹𝗲𝗰𝘁𝗼𝗿 𝗖𝗦𝗦
+let nodeQSA   = document.querySelectorAll("p b");             // ⤷ querySelector() mengambil element yang ditemukan pertama saja
+                                                              // ⤷ querySelectorAll() mengambil seluruh element yang ditemukan
+
+console.log(nodeEm);                    // Output: <𝗲𝗺 id="miring">JavaScript</𝗲𝗺>
+console.log(nodeClass);                 // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [h2.kelas-a, p.kelas-a]
+console.log(nodeClass[0]);              // Output: <𝗵𝟮 class="kelas-a"> ... </𝗵𝟮>
+console.log(nodeClass[1]);              // Output: <𝗽 class="kelas-a"> ... </𝗽>
+console.log(nodeTag);                   // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [p.kelas-a, p]
+console.log(nodeTag[0]);                // Output: <𝗽 class="kelas-a"> ... </𝗽>
+console.log(nodeTag[1]);                // Output: <𝗽> ... </𝗽>
+console.log(nodeName);                  // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟮) [input, input]
+console.log(nodeName[0]);               // Output: <𝗶𝗻𝗽𝘂𝘁 type="text" name="isian" value="Isian 1">
+console.log(nodeName[1]);               // Output: <𝗶𝗻𝗽𝘂𝘁 type="text" name="isian" value="Isian 2">
+console.log(nodeQS);                    // Output: <𝗯>dari Duniailkom</𝗯>
+console.log(nodeQSA);                   // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟮) [b, b]
+console.log(nodeQSA[0]);                // Output: <𝗯>dari Duniailkom</𝗯>
+console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
+```
+
+📚 Referensi document property & method lainnya lihat <a href="https://www.w3schools.com/jsref/dom_obj_document.asp">disini</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">disini</a>.
+
 ### ![✔] 𝐄. Node Object (Part 2)
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+    <style>
+      p:nth-child(3){
+        text-decoration: underline;
+      }
+      .merah {
+        color: red;
+      }
+      .hijau {
+        color: green;
+      }
+      .tebal {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="judul">Belajar JavaScript</h1>
+    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+    <p style="color: blue;">Mohon tidak mengganggu, terimakasih!</p>
+    <div class="merah tebal">Materi pertama tentang Variable</div>
+    <div class="merah">Materi kedua tentang Function</div>
+    <script>
+      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+    </script>
+  </body>
+</html>
+```
+
+**E1. Memanipulasi tag HTML + konten isinya**
+
+```Javascript
+let boo = document.querySelector("p");              // Let boo berisi <𝗽> ... </𝗽>
+let coo = document.querySelector("title");          // Let coo berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
+
+console.log(boo.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
+console.log(boo.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
+console.log(boo.outerHTML);                         // Output: <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯></𝗽>
+console.log(boo.innerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
+console.log(boo.outerText);                         // Output: Sedang belajar JavaScript dari Duniailkom
+                                                    // ⤷ innerHTML berisi konten yang ada di dalam tag yang dipilih
+                                                    // ⤷ outerHTML berisi tag yang dipilih lengkap beserta konten isinya
+                                                    // ⤷ innerText & outerText (dalam banyak kasus) jarang sekali digunakan
+
+boo.textContent = "<b>Teks baru 1!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> terbaca sebagai teks biasa)
+boo.innerHTML   = "<b>Teks baru 2!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> membuat teks menjadi tebal)
+boo.outerHTML   = "<h1>Teks baru 3!</h1>"           // Mengubah <𝗽> ... </𝗽> + konten isinya   (diganti menjadi <𝗵𝟭> ... </𝗵𝟭>)
+coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹𝗲> ... </𝘁𝗶𝘁𝗹𝗲> yang ada di <head> pun konten isinya bisa diubah
+                                                    // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
+```
+
+**E2. Mematribut di tag HTML**
+
+```Javascript
+let doo = document.querySelector("h1");             // Let doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
+
+console.log(doo.hasAttribute("id"));                // Output: true             ⇨ Memeriksa apakah doo memiliki atribut id
+console.log(doo.hasAttribute("class"));             // Output: false            ⇨ Memeriksa apakah doo memiliki atribut class
+console.log(doo.getAttribute("id"));                // Output: judul            ⇨ Mengambil nilai dari suatu atribut
+
+doo.setAttribute("title", "Sedang belajar");        // Menambah/menimpa sebuah atribut + nilainya
+console.log(doo.hasAttribute("title"));             // Output: true             ⤷ Argument ke 1: Nama atributenya
+console.log(doo.getAttribute("title"));             // Output: Sedang belajar   ⤷ Argument ke 2: Nilai atributnya
+console.log(doo);                                   // Output: <𝗵𝟭 id="judul" title="Sedang belajar">Belajar JavaScript</𝗵𝟭>
+
+                                                    // Menampilkan seluruh atribut beserta nilainya, dari sebuah tag HTML:
+console.log(doo.attributes);                        // Output: ▶𝗡𝗮𝗺𝗲𝗱𝗡𝗼𝗱𝗲𝗠𝗮𝗽 [id="judul", title="Sedang belajar"] (length: 2)
+console.log(doo.attributes[0]);                     // Output: id="judul"
+console.log(doo.attributes[1]);                     // Output: title="Sedang belajar"
+console.log(doo.attributes.length);                 // Output: 2
+
+doo.removeAttribute("title");                       // Menghapus sebuah atribut + nilainya (Mempengaruhi baris kode diatasnya ⚠️)
+                                                    // ⤷ Note: Meskipun atribut "title" di hapus di baris ini, namun saat check
+                                                    //         di tag HTML-nya melalui console.log(doo) (lihat di baris atas),
+                                                    //         maka atribut "title" sudah dianggap tidak ada.
+console.log(doo);                                   // Output: <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
+```
+
+**E3. Memanipulasi Style CSS di tag HTML**
+
+```Javascript
+let foo = document.querySelector("p:nth-child(3)"); // Let foo berisi <𝗽 style="color: blue;"> ... </𝗽>
+                                                    // ⤷ Cara baca: Cari tag <p> yang berada pada urutan ke 3 dalam
+                                                    //              sebuah parent element (dalam kasus ini: <body>)
+
+console.log(foo.style);                             // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "color"]  ⇨ Menampilkan seluruh 𝗜𝗻𝗹𝗶𝗻𝗲
+console.log(foo.style[0]);                          // Output: color                               𝗖𝗦𝗦 dari sebuah tag HTML
+console.log(foo.style[1]);                          // Output: undefined
+console.log(foo.style.color);                       // Output: blue                             ⇨ Menampilkan secara spesifik
+console.log(foo.style.backgroundColor);             // Output: (kosong)                            𝗜𝗻𝗹𝗶𝗻𝗲 𝗖𝗦𝗦 tertentu
+console.log(foo.style.textDecoration);              // Output: (kosong)
+
+foo.style.backgroundColor = "salmon";               // Menambah/menimpa sebuah 𝗜𝗻𝗹𝗶𝗻𝗲 𝗖𝗦𝗦 di tag HTML
+foo.style.fontSize = "1.4em";                       // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
+
+let goo = getComputedStyle(foo);                    // Manampilkan seluruh Style CSS (bukan hanya dari inline CSS saja)
+                                                    // ⤷ Method getComputedStyle() milik Window Object (lihat bagian A di atas)
+
+console.log(goo);                                   // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "align-content", ...]
+console.log(goo.length);                            // Output: 325 (Total 325 Style CSS sebagai nilai awal bawaan browser)
+console.log(goo[0]);                                // Output: align-content
+console.log(goo[324]);                              // Output: -webkit-writing-mode
+console.log(goo.color);                             // Output: rgb(0, 0, 255)                   (Format yang dipakai: RGB)
+console.log(goo.backgroundColor);                   // Output: rgba(0, 0, 0, 0)                 (Format yang dipakai: RGB)
+console.log(goo.textDecoration);                    // Output: underline solid rgb(0, 0, 255)   (Format yang dipakai: RGB)
+```
+
+**E4. Memanipulasi Class CSS di tag HTML**
+
+```Javascript
+let hoo = document.querySelector("div:nth-child(4)");   // Let hoo berisi <𝗱𝗶𝘃 class="merah tebal"> ... </𝗱𝗶𝘃>
+let joo = document.querySelector("div:nth-child(5)");   // Let hoo berisi <𝗱𝗶𝘃 class="merah"> ... </𝗱𝗶𝘃>
+
+                                                    // Menampilkan seluruh Class CSS yang digunakan sebuah tag HTML:
+console.log(hoo.className);                         // Output: merah tebal
+console.log(hoo.classList);                         // Output: ▶𝗗𝗢𝗠𝗧𝗼𝗸𝗲𝗻𝗟𝗶𝘀𝘁(𝟮) ["merah", "tebal"]
+console.log(hoo.classList[0]);                      // Output: merah
+console.log(hoo.classList[1]);                      // Output: tebal
+console.log(hoo.classList.length);                  // Output: 2                ⇨ Memeriksa jumlah Class yang digunakan
+console.log(hoo.classList.contains("tebal"));       // Output: true             ⇨ Memeriksa apakah memakai Class tertentu
+
+hoo.className = "hijau";                            // Menimpa Class terdahulu  (dalam kasus ini: merah tebal 🡲 hijau)
+console.log(hoo.className);                         // Output: hijau
+
+console.log(joo.className);                         // Output: merah
+console.log(joo.classList);                         // Output: ▶𝗗𝗢𝗠𝗧𝗼𝗸𝗲𝗻𝗟𝗶𝘀𝘁 ["merah"]
+console.log(joo.classList[0]);                      // Output: merah
+console.log(joo.classList[1]);                      // Output: undefined
+console.log(joo.classList.length);                  // Output: 1
+console.log(joo.classList.contains("tebal"));       // Output: false
+
+joo.classList.add("tebal");                         // Menambah Class tertentu
+console.log(joo.className);                         // Output: merah tebal
+joo.classList.remove("merah");                      // Menghapus Class tertentu
+console.log(joo.className);                         // Output: tebal
+```
+
+📚 Referensi node property & method lainnya lihat <a href="https://www.w3schools.com/jsref/dom_obj_all.asp">disini</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">disini</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">disini</a>.
 
 <hr>
 <div id="bab4_3"></div>
