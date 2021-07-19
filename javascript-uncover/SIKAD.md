@@ -4254,7 +4254,7 @@ wirete() dan writeln() biasanya banyak dipakai di tutorial-tutorial di Internet.
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
     <script>
-      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟭 & 𝗖𝟮 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+      // 🔔 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟭 & 𝗖𝟮 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
   </body>
 </html>
@@ -4331,7 +4331,7 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
       let nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
       let nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
 
-      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+      // 🔔 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
   </body>
 </html>
@@ -4432,7 +4432,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
     <input type="text" name="isian" value="Isian 1">
     <input type="text" name="isian" value="Isian 2">
     <script>
-      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+      // 🔔 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
   </body>
 </html>
@@ -4497,7 +4497,7 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
     <div class="merah tebal">Materi pertama tentang Variable</div>
     <div class="merah">Materi kedua tentang Function</div>
     <script>
-      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+      // 🔔 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
   </body>
 </html>
@@ -4618,6 +4618,186 @@ console.log(joo.className);                         // Output: tebal
 
 ## `4-3. DOM Event` <a href="#daftar_isi_bab4">🡅</a>
 
+> - [X] 𝐀. Event Handler dari atribut HTML
+> - [X] 𝐁. Event Handler dari property Element
+> - [X] 𝐂. Event Handler dari method Element (✔️)
+
+Di dalam DOM, event adalah segala sesuatu yang bisa kita lakukan dengan halaman web, seperti men-klik sebuah tombol, klik kanan paragraf, menggeser cursor mouse ke atas sebuah menu, menginput sesuatu ke dalam form, menekan tombol tab atau enter, dll.
+
+Ketika event terjadi, kita bisa menyiapkan kode JavaScript untuk melakukan sesuatu, yakni sebagai respon dari event tersebut. Misalnya saat sebuah tombol di klik, tampilkan pesan ```alert()```, atau ketika cursor mouse berada di atas menu, ubah warna background menu tersebut. Secara teknis, kode program yang dibuat untuk “menangkap” event ini dikenal dengan istilah **Event Handler** atau **Event Listener**.
+
+Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah. Secara garis besar di kelompokkan dalam beberapa tipe (mouse, keyboard, form, drag and drop, wheel, touch, gestures, gamepad, virtual reality, speech, mutation, svg, dll), yang paling banyak digunakan adalah event mouse, keyboard, dan form. Ke tiga event inilah yang akan dibahas di buku ini.
+
+### ![✔] 𝐀. Event Handler dari atribut HTML
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <span onclick="alert('Saya di klik');">Click</span><br>
+    <span ondblclick="alert('Saya di double klik');">Double Click</span><br>
+    <span oncontextmenu="alert('Saya di klik kanan');">Right Click</span><br>
+    <span onmouseenter="alert('Pointer masuk ke element');">Mouse Enter</span><br>
+    <span onmouseover="alert('Pointer berada di atas element');">Mouse Over</span><br>
+    <span onmouseleave="alert('Pointer keluar dari element');">Mouse Leave</span><br>
+
+    <h1 onclick="document.querySelector('p').innerHTML='Paragraf 1 muncul!';">Klik saya</h1>
+    <p></p> <!-- tag p sebagai placeholder/penampung hasil ketika event terjadi-->
+
+    <h1 onclick="tampilkan();">Klik saya juga</h1>
+    <p></p> <!-- tag p sebagai placeholder/penampung hasil ketika event terjadi-->
+    
+    <script>
+      function tampilkan(){
+        document.querySelector("p:nth-child(16)").innerHTML="Paragraf 2 muncul!";
+      }
+    </script>
+  </body>
+</html>
+```
+
+### ![✔] 𝐁. Event Handler dari property Element
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1 id="judul1">Klik saya</h1>
+    <p></p>
+
+    <h1 id="judul2">Klik saya juga</h1>
+    <p></p>
+
+    <h1 id="judul3">Klik saya juga dong</h1>
+    </p></p>
+
+    <script>
+      // ➊ Cara penulisan 1: Dengan input Function ke property
+      function tampilkan1(){
+        document.querySelector("p").innerHTML="Paragraf 1 muncul!";
+      }
+      let nodeH1A = document.getElementById("judul1");
+      nodeH1A.onclick = tampilkan1;
+
+      // ➋ Cara penulisan 2: Dengan Anonymous Function
+      let nodeH1B = document.getElementById("judul2");
+      nodeH1B.onclick = function(){
+        document.querySelector("p:nth-child(4)").innerHTML="Paragraf 2 muncul!";
+      }
+
+      // ➌ Menambahkan beberapa event berbeda sekaligus (Contoh disini memakai cara penulisan 1)
+      function tampilkanClick(){
+        nodeP3.innerHTML="Saya di klik";
+      }
+      function tampilkanDoubleClick(){
+        nodeP3.innerHTML="Saya di double klik";
+      }
+      function tampilkanContextMenu(){
+        nodeP3.innerHTML="Saya di klik kanan";
+      }
+
+      let nodeH1C = document.getElementById("judul3");     
+      let nodeP3  = document.querySelector("p:nth-child(6)");
+      nodeH1C.onclick       = tampilkanClick;
+      nodeH1C.ondblclick    = tampilkanDoubleClick;
+      nodeH1C.oncontextmenu = tampilkanContextMenu;
+
+      // ➍ Menghapus event tertentu yang dipilih
+      // nodeH1C.onclick       = null;   // Berikan nilai null ke property untuk menghapus event
+      // nodeH1C.ondblclick    = null;   // Saat ini dilakukan maka event tidak akan berjalan
+      // nodeH1C.oncontextmenu = null;   // Coba jalankan Script di tab console 🔔
+    </script>
+  </body>
+</html>
+```
+
+### ![✔] 𝐂. Event Handler dari method Element (✔️ Recommended)
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1 id="judul1">Klik saya</h1>
+    <p></p>
+
+    <h1 id="judul2">Klik saya juga</h1>
+    <p></p>
+
+    <h1 id="judul3">Klik saya juga dong</h1>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <script>
+      // ➊ Cara penulisan 1: Dengan input Function sebagai argument
+      function tampilkanClick(){
+        nodeP1.innerHTML="Saya di klik";
+      }
+      function tampilkanDoubleClick(){
+        nodeP1.innerHTML="Saya di double klik";
+      }
+      function tampilkanContextMenu(){
+        nodeP1.innerHTML="Saya di klik kanan";
+      }
+
+      let nodeH1A = document.getElementById("judul1");
+      let nodeP1  = document.querySelector("p");
+      nodeH1A.addEventListener("click", tampilkanClick);
+      nodeH1A.addEventListener("dblclick", tampilkanDoubleClick);
+      nodeH1A.addEventListener("contextmenu", tampilkanContextMenu);
+
+      // ➋ Cara penulisan 2: Dengan Anonymous Function
+      let nodeH1B = document.getElementById("judul2");
+      let nodeP2  = document.querySelector("p:nth-child(4)");
+      
+      nodeH1B.addEventListener("click", function() {
+        nodeP2.innerHTML="Saya di klik";
+      });
+      nodeH1B.addEventListener("dblclick", function() {
+        nodeP2.innerHTML="Saya di double klik";
+      });
+      nodeH1B.addEventListener("contextmenu", function() {
+        nodeP2.innerHTML="Saya di klik kanan";
+      });
+
+      // ➌ Menggabungkan multiple event yang sama (Contoh disini memakai cara penulisan 1)
+      function tampilkanPAtas(){
+        nodeP3.innerHTML="P atas muncul!";
+      }
+      function tampilkanPTengah(){
+        nodeP4.innerHTML="P tengah muncul!";
+      }
+      function tampilkanPBawah(){
+        nodeP5.innerHTML="P bawah muncul!";
+      }
+      let nodeH1C = document.getElementById("judul3");
+      let nodeP3  = document.querySelector("p:nth-child(6)");
+      let nodeP4  = document.querySelector("p:nth-child(7)");
+      let nodeP5  = document.querySelector("p:nth-child(8)");
+      nodeH1C.addEventListener("click", tampilkanPAtas);
+      nodeH1C.addEventListener("click", tampilkanPTengah);
+      nodeH1C.addEventListener("click", tampilkanPBawah);
+
+      // ➍ Menghapus event tertentu yang dipilih
+      // nodeH1C.removeEventListener("click", tampilkanPTengah); // Menghapus event tertentu yang dipilih
+      // nodeH1C.removeEventListener("click", tampilkanPBawah);  // Coba jalankan Script di tab console 🔔
+    </script>
+  </body>
+</html>
+```
+
 <hr>
 <div id="bab4_4"></div>
 
@@ -4635,11 +4815,51 @@ console.log(joo.className);                         // Output: tebal
 <details>
 <summary>Klik untuk membuka!</summary>
 
+<!-- 🔴 Di bawah merupakan contoh materi saja, segera selesaikan. -->
+
+Modern JavaScript yaitu JavaScript versi ES6 keatas. Beberapa fitur ES6+ sebenarnya sudah dibahas di bab-bab sebelumya secara singkat saja. Di bab ini, akan kembali membahas fitur ES6+ lebih banyak lagi dan secara mendetail.
+
+**A. Template String**
+
+```Javascript
+let number  = 24;                                         // Template String bisa dipakai untuk expressions kompleks
+console.log(`${(number%2==0) ? "genap":"ganjil" }`);      // Output: genap
+console.log(`${alert("Hello!")}`);                        // Output: Muncul Popup "Hello!"
+
+let multiln = `String baris 1
+String baris 2
+String baris 3`;                      // Template String bisa digunakan untuk membuat multi-line String
+console.log(multiln);                 // Output: String baris 1
+                                      //         String baris 2
+                                      //         String baris 3
+
+let fragmen = `<div>
+  <h1>${number*10}</h1>
+  <h2>WOW!</h2>
+</div>`;                              // Bahkan juga bisa digunakan untuk membuat HTML Fragments
+console.log(fragmen);                 // Output: <div>
+                                      //           <h1>240</h1>
+                                      //           <h2>WOW!</h2>
+                                      //         </div>
+```
+
+Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan sebagai <a href="https://www.youtube.com/watch?v=sbjkjjCcz8M">Tagged Templates Literals</a>.
+
+**B. OOP: Inheritance, Encapsulation, dll**
+
+**C. Asynchronous: Promise, Fetch, Async Await, dll**
+
 </details>
 
 ## ⑥ 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
+
+**A. Urusan Date: moment.js**
+
+**B. Urusan Grafik: chart.js**
+
+**C. Urusan Visualisasi Data: D3.js**
 
 </details>
