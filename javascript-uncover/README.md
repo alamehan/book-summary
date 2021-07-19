@@ -4873,6 +4873,8 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 </details>
 
+<hr>
+
 <!-- Daftar Referensi -->
 
 Referensi Indonesia:
