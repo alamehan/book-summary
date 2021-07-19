@@ -4125,14 +4125,10 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 | Bab 4                                               	| Estimasi Baca 	|
 |-----------------------------------------------------	|---------------	|
 | <a href="#bab4_1">4-1. Pengantar DOM</a><br>        	| X Menit       	|
-| <a href="#bab4_2">4-2. Window Object</a>            	| X Menit       	|
-| <a href="#bab4_3">4-3. Document Object (Part 1)</a> 	| X Menit       	|
-| <a href="#bab4_4">4-4. Node Object (Part 1)</a>     	| X Menit       	|
-| <a href="#bab4_5">4-5. Document Object (Part 2)</a> 	| X Menit       	|
-| <a href="#bab4_6">4-6. Node Object (Part 2)</a>     	| X Menit       	|
-| <a href="#bab4_7">4-7. DOM Event</a>     	            | X Menit       	|
-| <a href="#bab4_8">4-8. Event Object</a>     	        | X Menit       	|
-| <a href="#bab4_9">4-9. Event Prevent Default</a>      | X Menit       	|
+| <a href="#bab4_2">4-2. DOM Object</a>            	    | X Menit       	|
+| <a href="#bab4_3">4-3. DOM Event</a>     	            | X Menit       	|
+| <a href="#bab4_4">4-4. Event Object</a>     	        | X Menit       	|
+| <a href="#bab4_5">4-5. Event Prevent Default</a>      | X Menit       	|
 
 <img src="assets/dom-object.png">
 
@@ -4168,42 +4164,38 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 <hr>
 <div id="bab4_2"></div>
 
-## `4-2. Window Object` <a href="#daftar_isi_bab4">🡅</a>
+## `4-2. DOM Object` <a href="#daftar_isi_bab4">🡅</a>
+
+> - [X] 𝐀. Window Object
+> - [X] 𝐁. Document Object (Part 1)
+> - [X] 𝐂. Node Object (Part 1)
+> - [X] 𝐃. Document Object (Part 2)
+> - [X] 𝐄. Node Object (Part 2)
+
+### ![✔] 𝐀. Window Object
+
+### ![✔] 𝐁. Document Object (Part 1)
+
+### ![✔] 𝐂. Node Object (Part 1)
+
+### ![✔] 𝐃. Document Object (Part 2)
+
+### ![✔] 𝐄. Node Object (Part 2)
 
 <hr>
 <div id="bab4_3"></div>
 
-## `4-3. Document Object (Part 1)` <a href="#daftar_isi_bab4">🡅</a>
+## `4-3. DOM Event` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_4"></div>
 
-## `4-4. Node Object (Part 1)` <a href="#daftar_isi_bab4">🡅</a>
+## `4-4. Event Object` <a href="#daftar_isi_bab4">🡅</a>
 
 <hr>
 <div id="bab4_5"></div>
 
-## `4-5. Document Object (Part 2)` <a href="#daftar_isi_bab4">🡅</a>
-
-<hr>
-<div id="bab4_6"></div>
-
-## `4-6. Node Object (Part 2)` <a href="#daftar_isi_bab4">🡅</a>
-
-<hr>
-<div id="bab4_7"></div>
-
-## `4-7. DOM Event` <a href="#daftar_isi_bab4">🡅</a>
-
-<hr>
-<div id="bab4_8"></div>
-
-## `4-8. Event Object` <a href="#daftar_isi_bab4">🡅</a>
-
-<hr>
-<div id="bab4_9"></div>
-
-## `4-9. Event Prevent Default` <a href="#daftar_isi_bab4">🡅</a>
+## `4-5. Event Prevent Default` <a href="#daftar_isi_bab4">🡅</a>
 
 </details>
 
