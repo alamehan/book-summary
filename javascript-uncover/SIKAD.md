@@ -4239,7 +4239,7 @@ document.write("Hello World");          // Menulis ekspresi/teks HTML atau kode 
 document.writeln("Hello World");        // Sama seperti write() namun menambah baris baru untuk setiap statement
 ```
 
-wirete/writeln biasanya banyak dipakai di tutorial-tutorial di Internet. Namun untuk proses debugging, console.log() lebih banyak (dan lebih disarankan) digunakan, karena menampilkan informasi yang lebih lengkap.
+wirete() dan writeln() biasanya banyak dipakai di tutorial-tutorial di Internet. Namun untuk proses debugging, console.log() lebih banyak (dan lebih disarankan) digunakan, karena menampilkan informasi yang lebih lengkap.
 
 ### ![✔] 𝐂. Node Object (Part 1)
 
