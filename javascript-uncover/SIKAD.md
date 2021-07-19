@@ -4220,7 +4220,99 @@ window.getComputedStyle();                // Output: (Menampilkan seluruh Style 
 
 ### ![✔] 𝐁. Document Object (Part 1)
 
+**B1. Document property**
+
+```Javascript
+console.log(window.document.URL);       // Output: http://127.0.0.1:5500/contoh.html  ⇨ URL lengkap dari dokumen HTML
+console.log(window.document.baseURI);   // Output: http://127.0.0.1:5500/contoh.html  ⇨ Absolute base URI dari dokumen
+
+                                        // Note: Dari sini hingga seterusnya penulisan window tidak akan disertakan 🔔
+console.log(document.domain);           // Output: 127.0.0.1                          ⇨ Nama domain server yang memuat dokumen
+console.log(document.lastModified);     // Output: 06/10/2021 00:22:21                ⇨ Tanggal & waktu dokumen terakhir diubah
+console.log(document.title);            // Output: Belajar JS                         ⇨ Judul dari dokumen
+```
+
+**B2. Document method**
+
+```Javascript
+document.write("Hello World");          // Menulis ekspresi/teks HTML atau kode JavaScript ke dokumen
+document.writeln("Hello World");        // Sama seperti write() namun menambah baris baru untuk setiap statement
+```
+
+wirete/writeln biasanya banyak dipakai di tutorial-tutorial di Internet. Namun untuk proses debugging, console.log() lebih banyak (dan lebih disarankan) digunakan, karena menampilkan informasi yang lebih lengkap.
+
 ### ![✔] 𝐂. Node Object (Part 1)
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1>Belajar JavaScript</h1>
+    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+    <script>
+      // 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟭 & 𝗖𝟮 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+    </script>
+  </body>
+</html>
+```
+
+**C1. Menelusuri struktur DOM (Cara 1: manual/sulit 🔔)**
+
+```Javascript
+console.log(document.childNodes[0]);                                            // Output: <!𝗗𝗢𝗖𝗧𝗬𝗣𝗘 𝗵𝘁𝗺𝗹>
+console.log(document.childNodes[1]);                                            // Output: <𝗵𝘁𝗺𝗹> ... </𝗵𝘁𝗺𝗹>
+console.log(document.childNodes[1].childNodes[0]);                              // Output: <𝗵𝗲𝗮𝗱> ... </𝗵𝗲𝗮𝗱>
+console.log(document.childNodes[1].childNodes[0].childNodes[0]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[0].childNodes[1]);                // Output: <𝗺𝗲𝘁𝗮 𝗰𝗵𝗮𝗿𝘀𝗲𝘁="𝘂𝘁𝗳-𝟴">
+console.log(document.childNodes[1].childNodes[0].childNodes[2]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[0].childNodes[3]);                // Output: <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
+console.log(document.childNodes[1].childNodes[1]);                              // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[2]);                              // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+console.log(document.childNodes[1].childNodes[2].childNodes[0]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[2].childNodes[1]);                // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
+console.log(document.childNodes[1].childNodes[2].childNodes[2]);                // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[2].childNodes[3]);                // Output: <𝗽> ... </𝗽>
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[0]);  // Output: "Sedang Belajar"
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[1]);  // Output: <𝗲𝗺>JavaScript</𝗲𝗺>
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[2]);  // Output: #𝘁𝗲𝘅𝘁  (Karakter Carriage Return)
+console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  // Output: <𝗯>dari Duniailkom</𝗯>
+```
+
+Note: Karakter Carriage Return adalah karakter enter/baris baru. Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
+masalah yang **sering membuat pusing** jika menelusuri struktur DOM tree satu per satu secara manual.
+
+**C2. Node property**
+
+```Javascript
+let bar = document.childNodes[1].childNodes[2].childNodes[3]; // Let bar berisi <𝗽> ... </𝗽>
+
+console.log(bar.tagName);                           // Output: 𝗣
+console.log(bar.nodeName);                          // Output: 𝗣
+console.log(bar.nodeType);                          // Output: 𝟭 (📚 https://www.w3schools.com/jsref/prop_node_nodetype.asp)
+console.log(bar.nodeValue);                         // Output: 𝗻𝘂𝗹𝗹 (Element Node selalu menghasilkan null, beda dengan Text Node)
+console.log(bar.ownerDocument);                     // Output: ▶#𝗱𝗼𝗰𝘂𝗺𝗲𝗻𝘁 (Object)
+console.log(bar.parentNode);                        // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆>
+console.log(bar.parentElement);                     // Output: <𝗯𝗼𝗱𝘆> ... </𝗯𝗼𝗱𝘆> (Akan null jika parent bukan Element Node)
+console.log(bar.childNodes);                        // Output: ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(𝟰) [text, em, text, b]   ❌ Text Node ikut dihitung
+console.log(bar.children);                          // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [em, b]         ✔️ Text Node tidak dihitung
+console.log(bar.childElementCount);                 // Output: 𝟮
+console.log(bar.firstChild);                        // Output: "Sedang Belajar"             ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.lastChild);                         // Output: <𝗯>dari Duniailkom</𝗯>       ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.previousSibling);                   // Output: #𝘁𝗲𝘅𝘁                         ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.previousSibling.previousSibling);   // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>  ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.nextSibling);                       // Output: #𝘁𝗲𝘅𝘁                         ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.nextSibling.nextSibling);           // Output: <𝘀𝗰𝗿𝗶𝗽𝘁> ... </𝘀𝗰𝗿𝗶𝗽𝘁>          ❌ Bikin Pusing (dengan Text Node)
+console.log(bar.firstElementChild);                 // Output: <𝗲𝗺>JavaScript</𝗲𝗺>         ✔️ Lebih Mudah (tanpa Text Node)
+console.log(bar.lastElementChild);                  // Output: <𝗯>dari Duniailkom</𝗯>       ✔️ Lebih Mudah (tanpa Text Node)
+console.log(bar.previousElementSibling);            // Output: <𝗵𝟭>Belajar JavaScript</𝗵𝟭>  ✔️ Lebih Mudah (tanpa Text Node)
+console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶𝗽𝘁> ... </𝘀𝗰𝗿𝗶𝗽𝘁>          ✔️ Lebih Mudah (tanpa Text Node)
+```
+
+**NodeList** yaitu Kumpulan Node (Element Node & Text Node). **HTMLCollection** yaitu Kumpulan Node, tetapi khusus Element Node saja.
 
 ### ![✔] 𝐃. Document Object (Part 2)
 
