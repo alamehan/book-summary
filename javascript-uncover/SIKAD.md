@@ -4817,6 +4817,8 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 <!-- 🔴 Di bawah merupakan contoh materi saja, segera selesaikan. -->
 
+<br>
+
 Modern JavaScript yaitu JavaScript versi ES6 keatas. Beberapa fitur ES6+ sebenarnya sudah dibahas di bab-bab sebelumya secara singkat saja. Di bab ini, akan kembali membahas fitur ES6+ lebih banyak lagi dan secara mendetail.
 
 **A. Template String**
@@ -4855,6 +4857,8 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 <details>
 <summary>Klik untuk membuka!</summary>
+
+<br>
 
 **A. Urusan Date: moment.js**
 
