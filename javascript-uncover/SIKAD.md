@@ -4203,7 +4203,7 @@ console.log(window.screen);               // Output: ▶Screen    (Object)      
 console.log(window.document);             // Output: ▶#document (Object)         ≈ console.log(document);
 ```
 
-console merupakan salah satu property Window, memiliki beberapa method diantaranya log(), info(), table(), dir(). 📚 Selebihnya <a href="https://www.w3schools.com/jsref/obj_console.asp">disini</a>. 
+console merupakan salah satu property Window, memiliki beberapa method diantaranya log(), info(), table(), dir(). 📚 Selebihnya lihat <a href="https://www.w3schools.com/jsref/obj_console.asp">disini</a>. 
 
 **A3. Window method**
 
