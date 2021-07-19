@@ -3764,7 +3764,7 @@ console.log(arrQ.reduce(pangkat2,0));                 // Output: 255  (hasil dar
 console.log(arrP.reduceRight(tambah));                // Output: 15   (hasil dari 5+4+3+2+1)
 console.log(arrP.reduceRight(tambah,10));             // Output: 25   (hasil dari 10+5+4+3+2+1)
 console.log(arrQ.reduceRight(pangkat2));              // Output: 183  (hasil dari 9+8²+7²+6²+5²)
-console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)                                           
+console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
 ```
 
 Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
@@ -4047,6 +4047,66 @@ Info: Algoritma di atas, serupa juga dengan algoritma "Membagi nilai rupiah". Mi
 
 > - [X] 𝐀. Global property
 > - [X] 𝐁. Global Function
+
+Selain Object property, Object method, Object instance property & Object instance method yang telah dibahas sebelumnya, JavaScript pun memiliki Global property & Global function yang tidak "melekat" ke Object apapun, dan bisa diakses dari mana saja. Namun jumlahnya tidak banyak, bahkan sebagian besar sudah kita pelajari.
+
+### ![✔] 𝐀. Global property
+
+```Javascript
+let boo = NaN;                          // Membuat tipe data NaN secara manual        ⇨ Sama dengan Number.NaN
+let coo = Infinity;                     // Membuat tipe data Infinity secara manual   ⇨ Sama dengan Number.POSITIVE_INFINITY
+let doo = -Infinity;                    // Membuat tipe data -Infinity secara manual  ⇨ Sama dengan Number.NEGATIVE_INFINITY
+let foo = undefined;                    // Membuat tipe data undefined secara manual
+let goo = null;                         // Membuat tipe data null secara manual
+
+console.log(boo);                       // Output: NaN
+console.log(coo);                       // Output: Infinity
+console.log(doo);                       // Output: -Infinity
+console.log(foo);                       // Output: undefined
+console.log(goo);                       // Output: null
+```
+
+### ![✔] 𝐁. Global Function
+
+B1. Dibawah ini sudah kita dipelajari
+
+```Javascript
+console.log(isNaN(5/'a'));              // Output: true   ⇨ Sama dengan Number.isNaN(5/'a')
+console.log(isFinite(1/0));             // Output: false  ⇨ Sama dengan Number.isFinite(1/0)
+console.log(parseFloat("1.23"));        // Output: 1.23   ⇨ Sama dengan Number.parseFloat("1.23")
+console.log(parseInt("1.23"));          // Output: 1      ⇨ Sama dengan Number.parseInt("1.23")
+```
+
+B2. Function eval()
+
+```Javascript
+let hoo = "100+30";
+let joo = "let bar = 500*3";
+let koo = "alert('Hello World')";
+
+console.log(hoo);                       // Output: 100+30                 (String)
+console.log(joo);                       // Output: let bar = 500*3        (String)
+console.log(koo);                       // Output: alert('Hello World')   (String)
+
+console.log(eval(hoo));                 // Output: 130                            ⇨ eval() digunakan untuk memproses String men-
+eval(joo); console.log(bar);            // Output: 1500                              jadi perintah JavaScript. Biasanya dipakai
+eval(koo);                              // Output: Muncul Popup "Hello World"        pada saat penggunaan API & script dari luar.
+```
+
+B3. Function encodeURI(), encodeURIComponent(), decodeURI() & decodeURIComponent()
+
+```Javascript
+let loo = "http://www.duniailkom.com/Belajar #JavaScript";
+let moo = encodeURI(loo);               // encodeURI() untuk Encode beberapa karakter khusus yang biasanya ada di URI (URL).
+let noo = encodeURIComponent(loo);      // encodeURIComponent() sama saja, namun dengan Encode lebih banyak karakter.
+
+console.log(moo);                       // Output: http://www.duniailkom.com/Belajar%20#JavaScript
+console.log(noo);                       // Output: http%3A%2F%2Fwww.duniailkom.com%2FBelajar%20%23JavaScript
+
+                                        // decodeURI() & decodeURIComponent() merupakan kebalikan dari Encode, yaitu Decode.
+console.log(decodeURI(moo));            // Output: http://www.duniailkom.com/Belajar #JavaScript
+console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Belajar #JavaScript
+```
 
 </details>
 
