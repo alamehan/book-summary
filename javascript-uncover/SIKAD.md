@@ -4174,6 +4174,54 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 ### ![✔] 𝐀. Window Object
 
+**A1. Penulisan window (optional)**
+
+```Javascript
+let foo = "Hello World";
+function salam(a){
+  console.log(`Hello ${a}`);
+}
+
+console.log(window.foo);                  // Output: Hello World                 ⇨ Sama dengan console.log(foo);
+window.salam("Bandung");                  // Output: Hello Bandung               ⇨ Sama dengan salam("Bandung");
+console.log(window.Math.PI);              // Output: 3.141592653589793           ⇨ Sama dengan console.log(Math.PI);
+console.log(window.Number.isNaN(5/'a'));  // Output: true                        ⇨ Sama dengan console.log(Number.isNaN(5/'a'));
+```
+
+**A2. Window property**
+
+```Javascript
+window.console.log(1+1);                  // Output: 2                            ≈ console.log(1+1);
+window.console.info({nama:"A", umur:7});  // Output: {nama: "A", umur: 7}         ≈ console.info({nama:"A", umur:7});
+window.console.table({nama:"A", umur:7}); // Output: Tabel (check sendiri)        ≈ console.table({nama:"A", umur:7});
+window.console.dir({nama:"A", umur:7});   // Output: ▶Object                      ≈ console.dir({nama:"A", umur:7});
+
+console.log(window.location);             // Output: ▶Location  (Object)         ≈ console.log(location);
+console.log(window.history);              // Output: ▶History   (Object)         ≈ console.log(history);
+console.log(window.navigator);            // Output: ▶Navigator (Object)         ≈ console.log(navigator);
+console.log(window.screen);               // Output: ▶Screen    (Object)         ≈ console.log(screen);
+console.log(window.document);             // Output: ▶#document (Object)         ≈ console.log(document);
+```
+
+Note: console merupakan salah satu property Window, memiliki beberapa method diantaranya log(), info(), table(), dir(). 📚 Selebihnya lihat <a href="https://www.w3schools.com/jsref/obj_console.asp">disini</a>. 
+
+**A3. Window method**
+
+```Javascript
+window.alert("Hello World!");             // Output: Muncul Popup "Hello World!"            ≈ alert("Hello World!");
+window.prompt("Masukkan Nama!");          // Output: Muncul Popup Input "Masukkan Nama!"    ≈ prompt("Masukkan Nama!");
+window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "Anda Setuju?" ≈ confirm("Anda Setuju?");
+window.open();                            // Output: Muncul New Tab di Browser              ≈ open();
+window.print();                           // Output: Muncul Menu Print di Browser           ≈ print();
+window.getComputedStyle();                // Output: (Menampilkan seluruh Style CSS)
+
+                                          // 
+                                          // 
+                                          // 
+```
+
+📚 Referensi window property & method lainnya lihat <a href="https://www.w3schools.com/jsref/obj_window.asp">disini</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">disini</a>.
+
 ### ![✔] 𝐁. Document Object (Part 1)
 
 ### ![✔] 𝐂. Node Object (Part 1)
