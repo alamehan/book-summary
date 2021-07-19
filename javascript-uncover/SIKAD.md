@@ -2,6 +2,8 @@
 [✔]: assets/check-mark-1.png
 <!-- End -->
 
+<!-- ⚠️⚠️⚠️ Keyword yang harus diperbarui (disesuaikan lagi jika memang struktur tulisan diubah): lihat.., lihat di.., point.. ⚠️⚠️⚠️ -->
+
 <div id="top"></div>
 
 # JavaScript in One Page
@@ -17,8 +19,6 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 7. <a href="https://www.w3schools.com/jsref/default.asp">W3Schools Cheat Sheet (EN)</a>
 8. <a href="https://www.w3schools.com/">W3Schools (EN)</a>
 9. <a href="https://www.w3docs.com/">W3Docs (EN)</a>
-
-<!--⚠️⚠️⚠️ Note: Semua keterangan terkait mengacu ke bab sekian, segera perbaiki, karena strukturnya udah berubah ⚠️⚠️⚠️-->
 
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">⟲</a>
 
@@ -2512,7 +2512,7 @@ mobilBudi.pergi1();
 // ⚠️ Selebihnya lihat di video Web Programming Unpas (!) ⚠️
 ```
 
-#### ⤷ 8. method bind(), call() & apply() membuat keyword this mengacu pada Object yang dituju.
+#### ⤷ 8. Method bind(), call() & apply() membuat keyword this mengacu pada Object yang dituju.
 
 🔔 method bawaan JavaScript dibahas di bab 3-2
 
@@ -2981,7 +2981,7 @@ Object instance property & Object instance method melekat ke Instance Object, ``
 
 Penulisan formal Object instance property & Object instance method yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object property & Object method, tepatnya saat membuka dokumentasi <a href="https://developer.mozilla.org/en-US/">MDN</a>.
 
-Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object (lihat di BAB 12), hanya memiliki Object property & Object method saja. Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja. 📚 Referensi lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
+Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object, hanya memiliki Object property & Object method saja. Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja. 📚 Referensi bisa lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
 
 ⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 
@@ -3754,10 +3754,10 @@ let arrQ = [5,6,7,8,9];
 let arrR = [4,9,16,25];
 let arrS = [36,49,64,81];
 
-function tambah(total, elm, idx, arr){
-  return total + elm;
-}
-
+function tambah(total, elm, idx, arr){                // Argument ke 1: Var/Let penampung nilai total
+  return total + elm;                                 // Argument ke 2: nilai element/value Array
+}                                                     // Argument ke 3: index element/key Array       (optional)
+                                                      // Argument ke 4: isi seluruh Array             (optional)
 function pangkat2(total, elm, idx, arr){
   return total + Math.pow(elm, 2);
 }
@@ -3769,17 +3769,12 @@ console.log(arrQ.reduce(pangkat2,0));                 // Output: 255  (hasil dar
 console.log(arrP.reduceRight(tambah));                // Output: 15   (hasil dari 5+4+3+2+1)
 console.log(arrP.reduceRight(tambah,10));             // Output: 25   (hasil dari 10+5+4+3+2+1)
 console.log(arrQ.reduceRight(pangkat2));              // Output: 183  (hasil dari 9+8²+7²+6²+5²)
-console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
-
-                                                      // Argument ke 1: Var/Let penampung nilai total
-                                                      // Argument ke 2: nilai element/value Array
-                                                      // Argument ke 3: index element/key Array       (optional)
-                                                      // Argument ke 4: isi seluruh Array             (optional)
+console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)                                           
 ```
 
 Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
 
-E4-8. sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. method sort() bersifat Mutating ⚠️
+E4-8. sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. Method sort() bersifat Mutating ⚠️
 
 ```Javascript
 let arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
@@ -3811,10 +3806,9 @@ F1. Membuat Date Object
 let datA = new Date();                                // Cara penulisan 1: Tanpa Argument
 console.log(datA);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu saat kode console.log(datA) dieksekusi
-                                                      // ⤷ Kode dieksekusi di Jawa Barat Indonesia (WIB), oleh karena itu muncul
-                                                      // ⤷ GMT+0700 yang artinya waktu di WIB lebih cepat 7 jam dari waktu GMT/UTC
-                                                      // ⤷ (standard waktu internasional), berarti waktu di GMT yaitu 17:35:22.
 ```
+
+Dalam contoh disini, kode dieksekusi di Jawa Barat Indonesia (WIB), oleh karena itu muncul GMT+0700 yang artinya waktu di WIB lebih cepat 7 jam dari waktu GMT/UTC (standard waktu internasional), berarti waktu di GMT yaitu 17:35:22.
 
 ```Javascript
 // ➋ Dengan 7 Argument
@@ -3827,36 +3821,31 @@ let datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Denga
                                                       // ⤷ Argument ke 5: menit
                                                       // ⤷ Argument ke 6: detik
                                                       // ⤷ Argument ke 7: milidetik
-                                                      // ⤷ Kita tidak harus menginput ke 7 Argument ini sekaligus (optional),
-                                                      // ⤷ namun jika menginput hanya Argument ke 1 saja, secara otomatis JS
-                                                      // ⤷ membacanya sebagai milidetik, bukan tahun, catat baik-baik ya.
 console.log(datB);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
 ```
+
+Kita tidak harus menginput ke 7 Argument ini sekaligus (optional), namun jika menginput hanya Argument ke 1 saja, perhatikan bahwa, secara otomatis JS membacanya sebagai milidetik, bukan tahun.
 
 ```Javascript
 // ➌ Dengan 1 Argument dateString
 
 let datC = new Date("04 Jun 2021 17:42:22");          // Cara penulisan 3: Dengan 1 Argument dateString
-                                                      // ⤷ dateString yaitu String yang berformat tanggal, nantinya String ini
-                                                      // ⤷ akan dikonversi menjadi Date oleh JS. Contoh di samping merupakan salah
-                                                      // ⤷ satu format penulisan saja, karena terdapat banyak format dateString
-                                                      // ⤷ misalnya "06/04/2021 17:42:22" atau "June 04, 2021 17:42:22", dll.
 console.log(datC);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
 ```
+
+dateString yaitu String yang berformat tanggal, nantinya String ini akan dikonversi menjadi Date oleh JavaScript. Contoh di atas merupakan salah satu format penulisan saja, karena terdapat banyak format dateString misalnya "06/04/2021 17:42:22" atau "June 04, 2021 17:42:22", dll.
 
 ```Javascript
 // ➍ Dengan 1 Argument milidetik
 
 let datD = new Date(1622803342000);                   // Cara penulisan 4: Dengan 1 Argument milidetik
-                                                      // ⤷ Argument merupakan total milidetik sejak tanggal 1 Januari 1970 atau
-                                                      // ⤷ yang disebut UNIX Epoch Time. Dalam contoh di samping 1622803342000
-                                                      // ⤷ milidetik berarti ± 51 tahun 167 hari 10 jam 42 menit 22 detik
-                                                      // ⤷ semenjak 1 Januari 1970, maka itu berarti ± 4 Juni 2021.
 console.log(datD);                                    // Output: Fri Jun 04 2021 17:42:22 GMT+0700 (GMT+07:00)
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
 ```
+
+Satu Argument di atas merupakan total milidetik sejak tanggal 1 Januari 1970 atau yang disebut UNIX Epoch Time. Dalam contoh di samping 1622803342000 milidetik berarti ± 51 tahun 167 hari 10 jam 42 menit 22 detik semenjak 1 Januari 1970, maka itu berarti ± 4 Juni 2021.
 
 F2. Object instance method
 
