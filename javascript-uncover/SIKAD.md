@@ -2,7 +2,11 @@
 [✔]: assets/check-mark-1.png
 <!-- End -->
 
-<!-- ⚠️⚠️⚠️ Keyword yang harus diperbarui (disesuaikan lagi jika memang struktur tulisan diubah): lihat.., lihat di.., point.. ⚠️⚠️⚠️ -->
+<!-- 
+⚠️Catatan Penting⚠️:
+1. Tanda 🔴 artinya catatan tersebut belum dilengkapi, menyusul.
+2. Keyword lihat../lihat di../point.. dinamis, harus diperbarui jika memang struktur tulisan berubah.
+-->
 
 <div id="top"></div>
 
@@ -2267,7 +2271,7 @@ mhs.halo3();
 
 Note (kode di atas): Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow Function di atas mengacu ke Global Object (Window).
 
-Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔔 Lihat point ...
+Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔴🔔 Lihat point ... 
 
 Selain itu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Pada contoh di bawah ini method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
@@ -2508,7 +2512,7 @@ mobilBudi.pergi1();
 ```
 
 ```Javascript
-// ⚠️ Selebihnya lihat di video Web Programming Unpas (!) ⚠️
+// 🔴 Selebihnya lihat di video Web Programming Unpas (!)
 ```
 
 #### ⤷ 8. Method bind(), call() & apply() membuat keyword this mengacu pada Object yang dituju.
@@ -4130,10 +4134,36 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 | <a href="#bab4_8">4-8. Event Object</a>     	        | X Menit       	|
 | <a href="#bab4_9">4-9. Event Prevent Default</a>      | X Menit       	|
 
+<img src="assets/dom-object.png">
+
 <hr>
 <div id="bab4_1"></div>
 
 ## `4-1. Pengantar DOM` <a href="#daftar_isi_bab4">🡅</a>
+
+**Materi tentang JavaScript sudah selesai!** Mulai dari sini JavaScript akan digunakan untuk merakit komponen DOM (pemrosesan DOM tidak harus selalu menggunakan JavaScript, hanya saja JavaScript memang sangat dominan dan nyaris tidak tersaingi). DOM Merupakan pemodelan dokumen HTML ke dalam bentuk Object. Artinya, setiap tag-tag HTML seperti ```<h1>```, ```<p>``` atau ```<form>``` dimodelkan menjadi sebuah Object. Sebagaimana layaknya Object, tag-tag HTML ini nantinya memiliki property dan method yang bisa digunakan untuk mengatur tampilan. “Model” yang dipakai di dalam DOM adalah dengan “memetakan” seluruh Object HTML layaknya sebuah **pohon (tree)**.
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1>Belajar JavaScript</h1>
+    <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
+  </body>
+</html>
+```
+
+<img src="assets/dom-tree.png">
+
+**BOM (Browser Object Model)** adalah model dari seluruh Object yang ada di dalam web browser. Artinya BOM merupakan ruang lingkup yang lebih luas daripada DOM. BOM terdiri dari banyak Object di dalamnya, seperti Location Object, History Object, Navigator Object, Screen Object, dan tentu saja Document Object (DOM). Semua Object BOM ini berada langsung di bawah Window Object.
+
+<img src="assets/dom-diagram.png">
+
+**Window Object** berperan sebagai Global Object. Semua Var/Let, Function hingga Object di JavaScript "melekat" langsung ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```. Namun, karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
 
 <hr>
 <div id="bab4_2"></div>
