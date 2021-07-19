@@ -3020,7 +3020,7 @@ Ternyata meskipun Var/Let bar didefinisikan secara String literals, bukan secara
 
 ### ![✔] 𝐀. Number Object
 
-A1. Object property
+**A1. Object property**
 
 ```Javascript
 console.log(Number.EPSILON);          // Output: 2.220446049250313e-16    ⇨ Interval terkecil dari dua angka di dalam JS
@@ -3033,7 +3033,7 @@ console.log(Number.POSITIVE_INFINITY) // Output: Infinity                 ⇨ Ca
 console.log(Number.NEGATIVE_INFINITY) // Output: -Infinity                ⇨ Cara untuk membuat nilai -infinity
 ```
 
-A2. Object method
+**A2. Object method**
 
 ```Javascript
 console.log(Number.isNaN(5/'a'));                     // Output: true     ⇨ Check apakah hasil operasi/suatu Var/Let berisi NaN
@@ -3053,7 +3053,7 @@ console.log(Number.parseInt("255", 8));               // Output: 173  (number)  
 console.log(Number.parseInt("AD", 16));               // Output: 173  (number)  ⤷ 8 artinya: proses sebagai heksa (Basis 16)
 ```
 
-A3. Object instance method
+**A3. Object instance method**
 
 ```Javascript
 numA = 500.123;
@@ -3086,7 +3086,7 @@ console.log(numC.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'}));
 
 ### ![✔] 𝐁. Math Object
 
-B1. Object property
+**B1. Object property**
 
 ```Javascript 
 console.log(Math.E);                  // Output: 2.718281828459045        ⇨ Angka logaritma natural e
@@ -3106,7 +3106,7 @@ console.log(luasLingkaran);                           // Output: 153.93804002589
 console.log(luasLingkaran.toFixed(2));                // Output: 153.94
 ```
 
-B2. Object method
+**B2. Object method**
 
 ```Javascript
 console.log(Math.floor(12.54));       // Output: 12             ⇨ Pembulatan ke bawah
@@ -3137,7 +3137,7 @@ console.log(Math.min(...mthB));             // Output: 12
 
 ### ![✔] 𝐂. String Object
 
-C1. Object method
+**C1. Object method**
 
 ```Javascript
 console.log(String.fromCharCode(65, 66, 67));               // Output: ABC      ⇨ Membuat String berdasarkan kode unicode
@@ -3152,7 +3152,7 @@ console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗�
 
 📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
 
-C2. Object instance property
+**C2. Object instance property**
 
 ```Javascript
 let strA = "Hello World!";
@@ -3162,7 +3162,7 @@ console.log(strA.length);               // Output: 12       ⇨ Mengambil info p
 console.log(strB.length);               // Output: 18       ⤷ Banyak digunakan di validasi form, misal syarat minimal 8 karakter
 ```
 
-C3. Object instance method
+**C3. Object instance method**
 
 ```Javascript
 let strC = "Bandung";
@@ -3237,7 +3237,7 @@ console.log(count);                     // Output: 6
 
 ### ![✔] 𝐃. RegExp Object
 
-D1. Object instance method
+**D1. Object instance method**
 
 ```Javascript
 let regA = "Belajar JavaScript dari buku JavaScript Uncover";
@@ -3249,7 +3249,7 @@ console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku ju
 console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
 ```
 
-D2. Pola Regular Expression (RegExp)
+**D2. Pola Regular Expression (RegExp)**
 
 ```Javascript
 // ➊ Pola RegExp sebagai String
@@ -3501,7 +3501,7 @@ console.log(polaY.test("kami belajar JavaScript"));   // Output: true
 console.log(polaY.test("Budi belajar JavaScript"));   // Output: false
 ```
 
-Bonus: Latihan RegExp
+**Bonus: Latihan RegExp**
 
 ```Javascript
 let polaZ = /^[A-Za-z]{1,2}\s*\d{1,4}\s*[A-Za-z]{1,3}$/;    // Artinya: [1/2 karakter A-Za-z] + [0/lebih whitespace] +
@@ -3521,7 +3521,7 @@ console.log(polaZ.test("_zz9YES"));                   // Output: false
 
 ### ![✔] 𝐄. Array Object
 
-E1. Object method
+**E1. Object method**
 
 ```Javascript
 console.log(Array.isArray([1, 2, 3]));                // Output: true     ⇨ Check apakah sebuah nilai/var bertipe data Array
@@ -3529,7 +3529,7 @@ console.log(Array.isArray(["satu", 2, null]));        // Output: true
 console.log(Array.isArray([]));                       // Output: true
 ```
 
-E2. Object instance property
+**E2. Object instance property**
 
 ```Javascript 
 let arrA = ["a","b","c","d","e"];
@@ -3563,7 +3563,7 @@ for (let n=0; n<panjangArr; n++){                           // ⤷ kondisi, mela
 }
 ```
 
-E3. Object instance method
+**E3. Object instance method**
 
 ```Javascript
 let arrE = ["a","b","c"];
@@ -3623,11 +3623,11 @@ console.log(arrM.indexOf("a",1));       // Output: -1       ⤷ jika Output = -1
 console.log(arrM.indexOf("e"));         // Output: -1
 ```
 
-E4. Object instance method (𝗱𝗲𝗻𝗴𝗮𝗻 𝗖𝗮𝗹𝗹𝗯𝗮𝗰𝗸)
+**E4. Object instance method (dengan Callback)**
 
 Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 
-E4-1. forEach() berfungsi menjalankan Function untuk setiap element Array (mirip seperti for of, jalan sebanyak jumlah element di Array).
+**E4-1.** forEach() berfungsi menjalankan Function untuk setiap element Array (mirip seperti for of, jalan sebanyak jumlah element di Array).
 
 ```Javascript
 let arrN = ["a","b","c","d"];
@@ -3649,7 +3649,7 @@ arrN.forEach(tampil);                                 // Simak cara penulisan & 
 arrO.forEach(tampil);                                 // ⤷ Lihat, Function tampil() bisa dipakai oleh arrN & arrO
 ```
 
-E4-2. map() serupa dengan forEach(), bedanya mengembalikan sebuah Array baru (memakai keyword return). Non-Mutating.
+**E4-2.** map() serupa dengan forEach(), bedanya mengembalikan sebuah Array baru (memakai keyword return). Non-Mutating.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3672,7 +3672,7 @@ console.log(arrR.map(ganjilGenap));                   // Output: ["genap","ganji
 console.log(arrS.map(ganjilGenap));                   // Output: ["genap","ganjil","genap","ganjil"]
 ```
 
-E4-3. filter() serupa dengan map(), bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element.
+**E4-3.** filter() serupa dengan map(), bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3690,7 +3690,7 @@ console.log(arrR.filter(genapOnly));                  // Output: [4,16]
 console.log(arrS.filter(genapOnly));                  // Output: [36,64]
 ```
 
-E4-4. every() berfungsi memeriksa apakah seluruh element Array memenuhi syarat tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya (seluruh element menghasilkan true), maka method every() akan me-return true. Namun jika tidak (ada salah satu saja element yang menghasilkan false), maka method every () akan me-return false.
+**E4-4.** every() berfungsi memeriksa apakah seluruh element Array memenuhi syarat tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya (seluruh element menghasilkan true), maka method every() akan me-return true. Namun jika tidak (ada salah satu saja element yang menghasilkan false), maka method every () akan me-return false.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3706,7 +3706,7 @@ console.log(arrR.every(besarDari10));                 // Output: false  (karena 
 console.log(arrS.every(besarDari10));                 // Output: true   (karena semua element di arrS bernilai lebih besar dari 10)
 ```
 
-E4-5. some() serupa dengan every(), bedanya syaratnya terbalik, yaitu method some() akan me-return true jika ada salah satu element saja yang menghasilkan true (memenuhi syarat yang telah didefinisikan).
+**E4-5.** some() serupa dengan every(), bedanya syaratnya terbalik, yaitu method some() akan me-return true jika ada salah satu element saja yang menghasilkan true (memenuhi syarat yang telah didefinisikan).
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3722,7 +3722,7 @@ console.log(arrQ.some(besarDari10));                  // Output: false  (karena 
 console.log(arrR.some(besarDari10));                  // Output: true   (karena terdapat nilai 16 & 25 yang memang memenuhi syarat)
 ```
 
-E4-6. find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return nilai yang ditemukan pertama kali. find() akan me-return nilai element Arrray tersebut, sedangkan findIndex() me-return index Array-nya.
+**E4-6.** find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return nilai yang ditemukan pertama kali. find() akan me-return nilai element Arrray tersebut, sedangkan findIndex() me-return index Array-nya.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3741,7 +3741,7 @@ console.log(arrR.findIndex(besarDari10));             // Output: 2
 console.log(arrQ.findIndex(besarDari10));             // Output: -1
 ```
 
-E4-7. reduce() & reduceRight() digunakan untuk memproses total seluruh element Array dan menghasilkan 1 nilai akhir. reduce() memproses dari awal Array, sedangkan reduceRight() memproses dari akhir element Array.
+**E4-7.** reduce() & reduceRight() digunakan untuk memproses total seluruh element Array dan menghasilkan 1 nilai akhir. reduce() memproses dari awal Array, sedangkan reduceRight() memproses dari akhir element Array.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3769,7 +3769,7 @@ console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dar
 
 Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
 
-E4-8. sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. Method sort() bersifat Mutating ⚠️
+**E4-8.** sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. Method sort() bersifat Mutating ⚠️
 
 ```Javascript
 let arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
@@ -3793,7 +3793,7 @@ console.log(arrV);                                    // Output: [1,2,3,5,8,11,2
 
 ### ![✔] 𝐅. Date Object
 
-F1. Membuat Date Object
+**F1. Membuat Date Object**
 
 ```Javascript
 // ➊ Tanpa Argument
@@ -3842,7 +3842,7 @@ console.log(datD);                                    // Output: Fri Jun 04 2021
 
 Satu Argument di atas merupakan total milidetik sejak tanggal 1 Januari 1970 atau yang disebut UNIX Epoch Time. Dalam contoh di samping 1622803342000 milidetik berarti ± 51 tahun 167 hari 10 jam 42 menit 22 detik semenjak 1 Januari 1970, maka itu berarti ± 4 Juni 2021.
 
-F2. Object instance method
+**F2. Object instance method**
 
 GMT atau UTC merupakan standard waktu internasional. WIB merupakan waktu untuk daerah Jawa Barat, Indonesia (dimana konten ini ditulis). GMT/UTC dengan WIB memiliki selisih waktu, dimana WIB lebih cepat 7 jam dibandingkan GMT/UTC. Misalnya:
 - Sabtu, 5 Juni 2021 pukul 07:55:30 WIB ⇨ Sabtu, 5 Juni 2021 pukul 00:55:30 GMT (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
@@ -3928,7 +3928,7 @@ datG.setSeconds(30);          console.log(datG.toLocaleString()); // Output: 6/5
 datG.setMilliseconds(125);    console.log(datG.toISOString());    // Output: 2021-06-05T03:55:30.125Z       ⇨ Ubah milidetik
 ```
 
-F3. Latihan Program
+**F3. Contoh Studi Kasus**
 
 ```Javascript
 // ➊ Menampilkan Tanggal dengan Format Tertentu
@@ -4068,7 +4068,7 @@ console.log(goo);                       // Output: null
 
 ### ![✔] 𝐁. Global Function
 
-B1. Dibawah ini sudah kita dipelajari
+**B1. Dibawah ini sudah kita dipelajari**
 
 ```Javascript
 console.log(isNaN(5/'a'));              // Output: true   ⇨ Sama dengan Number.isNaN(5/'a')
@@ -4077,7 +4077,7 @@ console.log(parseFloat("1.23"));        // Output: 1.23   ⇨ Sama dengan Number
 console.log(parseInt("1.23"));          // Output: 1      ⇨ Sama dengan Number.parseInt("1.23")
 ```
 
-B2. Function eval()
+**B2. Function eval()**
 
 ```Javascript
 let hoo = "100+30";
@@ -4093,7 +4093,7 @@ eval(joo); console.log(bar);            // Output: 1500                         
 eval(koo);                              // Output: Muncul Popup "Hello World"        pada saat penggunaan API & script dari luar.
 ```
 
-B3. Function encodeURI(), encodeURIComponent(), decodeURI() & decodeURIComponent()
+**B3. Function encodeURI(), encodeURIComponent(), decodeURI() & decodeURIComponent(**)
 
 ```Javascript
 let loo = "http://www.duniailkom.com/Belajar #JavaScript";
