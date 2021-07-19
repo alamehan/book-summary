@@ -488,8 +488,8 @@ console.log(arr2D[1][1]);             // Output: 5
 
 Operator Precedence atau Prioritas Operator menentukan bagaimana suatu operator dieksekusi. Operator dengan prioritas lebih tinggi akan dioperasikan terlebih dahulu. Ada operator yang dioperasikan dari kiri ke kanan (left-to-right), ada pula yang dari kanan ke kiri (right-to-left).
 
-📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses di link MDN berikut:<br>
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN</a>.
+
 
 ### ![✔] 𝐁. Falsy & Truthy Value
 
@@ -676,7 +676,7 @@ console.log(true > false)             // Output: true   (Ingat: true = 1, false 
 
 #### ⤷ Kasus Perbandingan String:
 
-📚 Setiap karakter dalam String menggunakan nomor urut desimal di ASCII-Code: https://www.ascii-code.com/
+📚 Setiap karakter dalam String menggunakan nomor urut desimal di <a href="https://www.ascii-code.com/">ASCII-Code</a>.
 
 ```Javascript
 console.log("a" < "b");               // Output: true   (a = 97, b = 98)
@@ -1357,7 +1357,7 @@ init();                               // Output: Budi
 
 Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai Undefined, sedangkan Function akan diisi Functionnya itu sendiri. Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja. Let, Const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
 
-📚 Gunakan tools visualusasi berikut: http://pythontutor.com/javascript.html
+📚 Gunakan tools <a href="http://pythontutor.com/javascript.html">visualusasi hoisting</a>.
 
 #### ⤷ Variable Hoisting
 
@@ -3154,7 +3154,7 @@ console.log(String.fromCodePoint(0x2615, 0x2744, 0x2F40));  // Output: ☕❄⽀
 console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗🚲  ⤷ Berhasil menampilkan karakter terbaru unicode
 ```
 
-📚 Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/
+📚 Daftar Karakter <a href="http://unicode-table.com/">Latin-1 & Unicode</a>.
 
 **C2. Object instance property**
 
@@ -3279,7 +3279,7 @@ console.log(regC.match(/\w*u\w*/g));    // Output: ["Satu", "Dua"]         match
 console.log(regC.match(/\w*o\w*/g));    // Output: null                    akan langsung berhenti di pola pertama.
 ```
 
-Terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) & d (has indices), namun tidak banyak digunakan. lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags">MDN</a>.
+Terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) & d (has indices), namun tidak banyak digunakan. 📚 Lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags">MDN</a>.
 
 
 ```Javascript
@@ -3490,7 +3490,7 @@ console.log(polaX.test("raihanralam@gmail.com"));     // Output: true
 
 polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat " @ . " dianggap true (ya karena memang lolos dari polaX), oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut: 
 
-📚 http://emailregex.com/ (pola RegExp email yang akurat disusun dengan sangat kompleks).
+📚 <a href="http://emailregex.com/">EmailRegEx</a> (pola RegExp email yang akurat disusun dengan sangat kompleks).
 
 ```Javascript
 // ➓ Pola Logika OR
@@ -4203,7 +4203,7 @@ console.log(window.screen);               // Output: ▶Screen    (Object)      
 console.log(window.document);             // Output: ▶#document (Object)         ≈ console.log(document);
 ```
 
-Note: console merupakan salah satu property Window, memiliki beberapa method diantaranya log(), info(), table(), dir(). 📚 Selebihnya lihat <a href="https://www.w3schools.com/jsref/obj_console.asp">disini</a>. 
+console merupakan salah satu property Window, memiliki beberapa method diantaranya log(), info(), table(), dir(). 📚 Selebihnya <a href="https://www.w3schools.com/jsref/obj_console.asp">disini</a>. 
 
 **A3. Window method**
 
@@ -4214,10 +4214,6 @@ window.confirm("Anda Setuju?");           // Output: Muncul Popup Konfirmasi "An
 window.open();                            // Output: Muncul New Tab di Browser              ≈ open();
 window.print();                           // Output: Muncul Menu Print di Browser           ≈ print();
 window.getComputedStyle();                // Output: (Menampilkan seluruh Style CSS)
-
-                                          // 
-                                          // 
-                                          // 
 ```
 
 📚 Referensi window property & method lainnya lihat <a href="https://www.w3schools.com/jsref/obj_window.asp">disini</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">disini</a>.
