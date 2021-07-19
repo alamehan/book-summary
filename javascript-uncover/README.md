@@ -4881,7 +4881,7 @@ Referensi Indonesia:
 1. <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a>
 2. <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>
 3. <a href="https://devsaurus.com/">Devsaurus: Learn Fullstack</a>
-4. <a href="https://bukureact.id/">buku-laravel-vue.com</a>
+4. <a href="https://buku-laravel-vue.com/">buku-laravel-vue.com</a>
 5. <a href="https://bukureact.id/">bukureact.id</a>
   
 Referensi Inggris:
