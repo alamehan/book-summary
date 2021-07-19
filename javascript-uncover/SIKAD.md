@@ -2259,14 +2259,13 @@ let mhs = {
     console.log(this.umur);           //   console.log(window.umur);        🡲 Output: undefined
   },                                  // },
 }
-                                      // Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni
-                                      //          this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs
-                                      //          mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow
-                                      //          Function di atas mengacu ke Global Object (Window).
+     
 mhs.halo1();
 mhs.halo2();
 mhs.halo3();
 ```
+
+Catatan kode di atas: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow Function di atas mengacu ke Global Object (Window).
 
 Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔔 Lihat point ...
 
@@ -2298,11 +2297,11 @@ let mhs = {
     innerC();                         //   innerC();
   }                                   // }
 }
-                                      // Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni
-                                      //          this milik parent scope-nya, yaitu method halo yang mengacu ke Object mhs.
-                                      //          Karena itulah this pada contoh Arrow Function di atas mengacu ke Object mhs.
+      
 mhs.halo();
 ```
+
+Catatan kode di atas: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu method halo yang mengacu ke Object mhs. Karena itulah this pada contoh Arrow Function di atas mengacu ke Object mhs.
 
 Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration (innerA) & Function Expressions (innerB) memiliki this yang mengacu ke Owner Object (dalam kasus ini Object mhs), maka this milik method halo perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut dapat digunakan di Inner Function. Sehingga this di Inner Function mengacu ke Object mhs sama halnya seperti this milik method halo. Simak contoh di bawah ini.
 
@@ -2985,29 +2984,25 @@ Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property,
 
 ⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 
-#### ⤷ Contoh: String (Object)
+#### ⤷ Contoh JavaScript Native Object
 
 ```Javascript
-let foo = new String("Hello World");  // Kita tidak pernah mendefinisikan Class String bukan? tetapi kenapa langsung bisa dipakai?
-                                      // itu karena, String merupakan salah satu Object bawaan JavaScript. Ingat saat kita instan-
-                                      // siasi Object Mobil baru dengan perintah "let mobilBudi = new Mobil(...)", itu bisa kita
-                                      // lakukan karena sebelumnya kita sudah membuat Class Mobil. Nah, String itu "Class bawaan".
-
-console.log(foo.toUpperCase());       // Output: HELLO WORLD. Kita tidak pernah mendefinisikan method toUpperCase() bukan? tetapi
-                                      // kenapa langsung bisa dipakai (melalui dot notation)? itu karena, toUpperCase() merupakan 
-                                      // salah satu "Instance method" bawaan milik String Object, jadi kita bisa langsung pakai.
-console.log(foo.length)               // Output: 11. length merupakan salah satu "Instance property" bawaan milik String Object.
+let foo = new String("Hello World");  // Cara penulisan: String object (❌ Not Recommended)
+console.log(foo.toUpperCase());       // Output: HELLO WORLD
+console.log(foo.length)               // Output: 11
 ```
 
-#### ⤷ Contoh: String (Literals)
+Kita tidak pernah mendefinisikan Class String bukan? tetapi kenapa langsung bisa dipakai? itu karena, String merupakan salah satu Object bawaan JavaScript. Ingat saat kita instansiasi Object Mobil baru dengan perintah ```let mobilBudi = new Mobil(...)```, itu bisa kita lakukan karena sebelumnya kita sudah membuat Class Mobil. Nah, String itu "Class bawaan".
+
+Kita tidak pernah mendefinisikan method ```toUpperCase()``` bukan? tetapi kenapa langsung bisa dipakai (melalui dot notation)? itu karena, toUpperCase() merupakan salah satu Instance method bawaan milik String Object, jadi kita bisa langsung pakai. ```length``` merupakan salah satu Instance property bawaan milik String Object.
 
 ```Javascript
-let bar = "Hello World";              // Cara penulisan: String literals (lebih "hemat" dibandingkan Object Constructor di atas)
-console.log(bar.toUpperCase());       // Output: HELLO WORLD. Ternyata meskipun Var/Let bar didefinisikan secara String literals,
-                                      // bukan secara String Object, kita masih tetap bisa memakai "Instance method" bawaan String
-                                      // Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A).
-console.log(bar.length);              // Output: 11. Kita pun masih tetap bisa memakai "Instance property" bawaan String Object.
+let bar = "Hello World";              // Cara penulisan: String literals (✔️ Recommended)
+console.log(bar.toUpperCase());       // Output: HELLO WORLD
+console.log(bar.length);              // Output: 11
 ```
+
+Ternyata meskipun Var/Let bar didefinisikan secara String literals, bukan secara String Object, kita masih tetap bisa memakai Instance method & Instance property bawaan String Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A di atas).
 
 <hr>
 <div id="bab3_2"></div>
