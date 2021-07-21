@@ -4885,9 +4885,10 @@ Referensi Indonesia:
 5. <a href="https://bukureact.id/">bukureact.id</a>
   
 Referensi Inggris:
-1. <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a>
-2. <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a>
-3. <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a>
-4. <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a>
-5. <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a>
-6. <a href="https://www.w3docs.com/">W3Docs</a>
+1. <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a>
+2. <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a>
+3. <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a>
+4. <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a>
+5. <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a>
+6. <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a>
+7. <a href="https://www.w3docs.com/">W3Docs</a>
