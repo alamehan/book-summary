@@ -513,19 +513,9 @@ console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian)
 var text = "Hello World!";
 
 if (text) {
- console.log("text berupa Truthy");  // Output: "text berupa Truthy
+ console.log("text berupa Truthy");   // Output: "text berupa Truthy
 } else {
  console.log("text berupa Falsy");
-}
-```
-
-```Javascript
-var text2 = "";
-
-if (text2) {
- console.log("text2 berupa Truthy");
-} else {
- console.log("text2 berupa Falsy");  // Output: text2 berupa Falsy
 }
 ```
 
