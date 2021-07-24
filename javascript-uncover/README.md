@@ -1275,6 +1275,8 @@ console.log(e);                       // Output: 60 (Bukan 15, karena nilai var 
 
 Penggunaan Var dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan Let tidak mempengaruhi nilai diluar scope (aman!). Var bersifat **Function Scope**, artinya cakupan scopenya itu Function, seolah tidak Private (jika memang mendefinisikan Var tidak berada dalam sebuah Function). Sedangkat Let bersifat **Block Scope**, artinya cakupan scopenya itu tanda block yaitu {}, seolah menjadi Private. Let sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan Var. Namun selain Let ada juga Const, yang mana jika didefinisikan dan langsung diberi nilai awal, isi Const tersebut tidak bisa diubah sepanjang kode program (isinya tetap).
 
+🔔 Mulai dari sini, istilah Variable itu bisa berarti Var/Let/Const.
+
 #### ⤷ Var & Let (1)
 
 ```Javascript
@@ -1347,7 +1349,7 @@ Inner Function yang memiliki akses/menggunakan data yang ada di parent scope-nya
 ```Javascript
 function init(){
   let nama = "Budi";
-  function tampilNama(){              // Di dalam Function tampilNama tidak terdapat pendefinisian Var/Let nama, sehingga
+  function tampilNama(){              // Di dalam Function tampilNama tidak terdapat pendefinisian Variable nama, sehingga
     console.log(nama);                // perintah console.log(nama) akan "mencari keluar" scope, dan ditemukanlah Let nama di
   }                                   // parent-nya, lalu digunakan. Dengan demikian Function tampilNama disebut Closures.
   tampilNama();                       // Menjalankan Function tampilNama yang berada di dalam Function init
@@ -3008,7 +3010,7 @@ console.log(bar.toUpperCase());       // Output: HELLO WORLD
 console.log(bar.length);              // Output: 11
 ```
 
-Ternyata meskipun Var/Let bar didefinisikan secara String literals, bukan secara String Object, kita masih tetap bisa memakai Instance method & Instance property bawaan String Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A di atas).
+Ternyata meskipun Variable bar didefinisikan secara String literals, bukan secara String Object, kita masih tetap bisa memakai Instance method & Instance property bawaan String Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A di atas).
 
 <hr>
 <div id="bab3_2"></div>
@@ -3042,11 +3044,11 @@ console.log(Number.NEGATIVE_INFINITY) // Output: -Infinity                ⇨ Ca
 **A2. Object method**
 
 ```Javascript
-console.log(Number.isNaN(5/'a'));                     // Output: true     ⇨ Check apakah hasil operasi/suatu Var/Let berisi NaN
+console.log(Number.isNaN(5/'a'));                     // Output: true     ⇨ Check apakah hasil operasi/suatu Variable berisi NaN
 console.log(Number.isNaN(Number.NaN));                // Output: true
-console.log(Number.isFinite(3.21456));                // Output: true     ⇨ Check apakah sebuah nilai/Var/Let berisi angka standar
+console.log(Number.isFinite(3.21456));                // Output: true     ⇨ Check apakah sebuah nilai/Variable berisi angka standar
 console.log(Number.isFinite(1/0));                    // Output: false
-console.log(Number.isInteger(9007199254740992));      // Output: true     ⇨ Check apakah suatu nilai/Var/Let berisi angka integer
+console.log(Number.isInteger(9007199254740992));      // Output: true     ⇨ Check apakah suatu nilai/Variable berisi angka integer
 console.log(Number.isInteger(3.21456));               // Output: false
 console.log(Number.isSafeInteger(9007199254740992));  // Output: false    ⇨ Sama seperti isInteger, tapi dibatasi standar IEEE-754
 console.log(Number.isSafeInteger(3.21456));           // Output: false
@@ -3770,7 +3772,7 @@ let arrQ = [5,6,7,8,9];
 let arrR = [4,9,16,25];
 let arrS = [36,49,64,81];
 
-function tambah(total, elm, idx, arr){                // Argument ke 1: Var/Let penampung nilai total
+function tambah(total, elm, idx, arr){                // Argument ke 1: Variable penampung nilai total
   return total + elm;                                 // Argument ke 2: nilai element/value Array
 }                                                     // Argument ke 3: index element/key Array       (optional)
                                                       // Argument ke 4: isi seluruh Array             (optional)
@@ -3788,7 +3790,7 @@ console.log(arrQ.reduceRight(pangkat2));              // Output: 183  (hasil dar
 console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
 ```
 
-Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Var/Let penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Var/Let total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Var/Let total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Var/Let total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
+Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Variable penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Variable total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Variable total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Variable total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
 
 **E4-8.** sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. Method sort() bersifat Mutating ⚠️
 
@@ -4174,7 +4176,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 <img src="assets/dom-diagram.png">
 
-**Window Object** berperan sebagai Global Object. Semua Var/Let, Function hingga Object di JavaScript "melekat" langsung ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```. Namun, karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
+**Window Object** berperan sebagai Global Object. Semua Variable, Function hingga Object di JavaScript "melekat" langsung ke Window Object. Ini berarti sebenarnya penulisan, misal ```console.log(Math.PI);``` itu sama saja dengan ```console.log(window.Math.PI);```. Namun, karena status Global Object-nya, penulisan ```window``` tidak diharuskan (web browser akan menambahkannya secara otomatis).
 
 <hr>
 <div id="bab4_2"></div>
@@ -4211,7 +4213,7 @@ console.log(window.Number.isNaN(5/'a'));  // Output: true                       
 window.console.log(1+1);                  // Output: 2                            ≈ console.log(1+1);
 window.console.info({nama:"A", umur:7});  // Output: {nama: "A", umur: 7}         ≈ console.info({nama:"A", umur:7});
 window.console.table({nama:"A", umur:7}); // Output: Tabel (check sendiri)        ≈ console.table({nama:"A", umur:7});
-window.console.dir({nama:"A", umur:7});   // Output: ▶Object                      ≈ console.dir({nama:"A", umur:7});
+window.console.dir({nama:"A", umur:7});   // Output: ▶Object                     ≈ console.dir({nama:"A", umur:7});
 
 console.log(window.location);             // Output: ▶Location  (Object)         ≈ console.log(location);
 console.log(window.history);              // Output: ▶History   (Object)         ≈ console.log(history);
@@ -4256,7 +4258,7 @@ document.write("Hello World");          // Menulis ekspresi/teks HTML atau kode 
 document.writeln("Hello World");        // Sama seperti write() namun menambah baris baru untuk setiap statement
 ```
 
-wirete() dan writeln() biasanya banyak dipakai di tutorial-tutorial di Internet. Namun untuk proses debugging, console.log() lebih banyak (dan lebih disarankan) digunakan, karena menampilkan informasi yang lebih lengkap.
+```wirete()``` dan ```writeln()``` biasanya banyak dipakai di tutorial-tutorial di Internet. Namun untuk proses debugging, ```console.log()``` lebih banyak (dan lebih disarankan) digunakan, karena menampilkan informasi yang lebih lengkap.
 
 ### ![✔] 𝐂. Node Object (Part 1)
 
@@ -4542,7 +4544,7 @@ coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹�
                                                     // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
 ```
 
-**E2. Mematribut di tag HTML**
+**E2. Memanipulasi atribut di tag HTML**
 
 ```Javascript
 let doo = document.querySelector("h1");             // Let doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
