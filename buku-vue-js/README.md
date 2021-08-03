@@ -328,13 +328,13 @@ var vm = new Vue({
 
 Directive merupakan atribut khusus yang disematkan pada elemen atau markup HTML sebagai penanda bahwa elemen DOM tersebut akan dikenai perlakuan tertentu oleh Vue.
 
-1. ```v-html:``` ➜ Untuk menampilkan data berupa kode HTML
-2. ```v-text:``` ➜ Untuk menampilkan string biasa, sama dengan mustache {{ }}
-3. ```v-once:``` ➜ Agar nilai variabel pada template tidak bisa diubah-ubah lagi (constant)
-4. ```v-show:``` ➜ Untuk menampilkan atau menyembunyikan suatu elemen DOM. Proses on/off pada directive ini menggunakan properti display pada CSS.
-5. ```v-if:```, ```v-else-if```:, ```v-else```: ➜ Untuk merender/tidak merender suatu elemen DOM
-6. ```v-on:``` ➜ Berperan sebagai sebuah event listener pada elemen HTML/komponen Vue
-7. ```v-bind:``` ➜ Untuk mem-binding atribut HTML atau komponen agar nilainya terupdate secara reactive sesuai dengan datanya, kebalikan dari v-on.
+1. ```v-html:``` ➜ Untuk menampilkan data berupa kode HTML.
+2. ```v-text:``` ➜ Untuk menampilkan string biasa, sama dengan mustache ```{{ }}```.
+3. ```v-once:``` ➜ Agar nilai variabel pada template tidak bisa diubah-ubah lagi (constant).
+4. ```v-show:``` ➜ Untuk show/hide suatu elemen DOM. Proses on/off pada directive ini menggunakan properti ```display``` pada CSS.
+5. ```v-if:```, ```v-else-if```:, ```v-else```: ➜ Untuk merender/tidak merender suatu elemen DOM.
+6. ```v-on:``` ➜ Berperan sebagai sebuah event listener pada elemen HTML/komponen Vue.
+7. ```v-bind:``` ➜ Untuk mem-binding atribut HTML atau komponen agar nilainya terupdate secara reactive sesuai dengan datanya.
 
 Catatan:
 1. Penulisan directive ```v-on:``` dapat disingkat menjadi ```@```
