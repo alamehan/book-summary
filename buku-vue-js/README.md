@@ -188,7 +188,87 @@ Method Render: Alternatif lain kita bisa juga menggunakan Method Render yang ber
 
 Catatan: Dalam contoh diatas Method Render mengembalikan fungsi ```createElement``` untuk menciptakan elemen HTML ```h1``` yang berisi nilai dari variabel ```message2```. Jika Properti Template & Method Render dua-duanya ada, maka Properti Template diabaikan.
 
-## **3. Penulisan Template**
+## **5. Properti Lainnya**
+
+```HTML
+<div id="app">
+  <!-- Implementasi properti methods -->
+  <h1>{{ counter }}</h1>
+  <button onclick="vm.decrement()">-</button>
+  <button onclick="vm.increment()">+</button><hr>
+
+  <!-- Implementasi properti computed -->
+  {{ fullName }}<hr>
+
+  <!-- Implementasi properti filters -->
+  <h1>Upper: {{ message | upper() }}</h1> <!-- Atau bisa juga hanya 'upper' saja -->
+  <h1>Reverse: {{ message | reverse }}</h1>
+  <h1>Upper & Reverse: {{ message | upper | reverse }}</h1><hr>
+  <h1>{{ price | formatCurrency('USD') }}</h1>
+  <h1>{{ price | formatCurrency('IDR') }}</h1>
+</div>
+```
+
+```Javascript
+vm = new Vue({
+  el: '#app',
+  data: {
+    counter: 0,
+    firstName: 'Raihan',
+    lastName: 'Allaam',
+    message: 'Hello World!',
+    price: 500000,
+  },
+  methods: { // Properti methods
+    increment() {
+      this.counter++;
+    },
+    decrement() {
+      this.counter--;
+    },
+  },
+  computed: { // Properti computed
+    fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    },
+  },
+  filters: { // Properti filters
+    upper(text) {
+      return text.toUpperCase();
+    },
+    reverse(text) {
+      return text.split('').reverse().join('');
+    },
+    formatCurrency(value, currency) {
+      var formatter = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: currency,
+        minimumFractionDigits: 2,
+      });
+      return formatter.format(value);
+    },
+  },
+});
+```
+
+Properti methods: Cocok untuk kasus jika ada Action/Event yang memanggil fungsi. Contohnya: fungsi untuk mengevaluasi suatu nilai, menampilkan pesan, mengubah variabel, dll.
+
+Properti computed: Cocok untuk kasus mengembalikan nilai (Return Value), memakai/bergantung pada property data yang didefinisikan. Meskipun bentuknya fungsi, namun fungsi pada Computed tidak memiliki parameter dan oleh Vue tidak dianggap sebagai fungsi. Artinya kita tidak bisa memanggilnya dengan ```this.fullName()``` melainkan ```this.fullName``` layaknya variabel. Jadi Computed ini tepat digunakan sebagai variabel yang nilainya berasal dari variabel lain.
+
+Properti filters: Cocok untuk kasus memanipulasi tampilan/format text pada suatu Template. Filter ditulis dengan menggunakan simbol ```|``` atau "pipe". Hal ini berbeda dengan Methods: ```vm.upper()``` & Computed: ```vm.fullName```, Filters tidak bisa dipanggil dari Object Vue.
+
+Catatan: Deklarasi Filters juga bisa dilakukan diluar Object Vue (terpisah), contoh:
+
+```Javascript
+Vue.filter('upper', function(value) {
+  return value.toUpperCase()
+}) 
+var vm = new Vue({
+  // ...
+})
+```
+
+## **6. Directive**
 
 ```HTML
 
@@ -198,7 +278,7 @@ Catatan: Dalam contoh diatas Method Render mengembalikan fungsi ```createElement
 
 ```
 
-## **3. Penulisan Template**
+## **7. Dynamic Argument**
 
 ```HTML
 
@@ -208,7 +288,7 @@ Catatan: Dalam contoh diatas Method Render mengembalikan fungsi ```createElement
 
 ```
 
-## **3. Penulisan Template**
+## **8. List**
 
 ```HTML
 
@@ -218,7 +298,17 @@ Catatan: Dalam contoh diatas Method Render mengembalikan fungsi ```createElement
 
 ```
 
-## **3. Penulisan Template**
+## **9. Form**
+
+```HTML
+
+```
+
+```Javascript
+
+```
+
+## **8. Components**
 
 ```HTML
 
