@@ -707,7 +707,7 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
 <details>
 <summary>Klik untuk membuka!</summary>
 
-### **10-1. Global Component**
+### **👉 10-1. Global Component**
 
 Bisa dipakai di mana saja, di ```<div id="app1">...</div>```, ```<div id="app2">...</div>```, dst.
 
@@ -746,7 +746,7 @@ Bisa dipakai di mana saja, di ```<div id="app1">...</div>```, ```<div id="app2">
 </html>
 ```
 
-### **10-2. Local Component**
+### **👉 10-2. Local Component**
 
 Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditargetkan.
 
@@ -789,7 +789,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **10-3. Kirim Data ke Component (Props)**
+### **👉 10-3. Kirim Data ke Component (Props)**
 
 ```HTML
 <html>
@@ -865,7 +865,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **10-4. Update Data Parent dari Component**
+### **👉 10-4. Update Data Parent dari Component**
 
 ```HTML
 <html>
@@ -931,7 +931,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **10-5. Two Way Data Binding di Component**
+### **👉 10-5. Two Way Data Binding di Component**
 
 ```HTML
 <html>
@@ -966,7 +966,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **10-6. Kirim Konten ke dalam Component (Slots)**
+### **👉 10-6. Kirim Konten ke dalam Component (Slots)**
 
 ```HTML
 <html>
@@ -1081,7 +1081,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **10-7. Single File Component**
+### **👉 10-7. Single File Component**
 
 ```HTML
 <html>
