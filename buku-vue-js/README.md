@@ -267,6 +267,7 @@ Catatan: Dalam contoh diatas Method Render mengembalikan fungsi ```createElement
           message: 'Hello World!',
           price: 500000,
         },
+
         methods: { // Properti methods
           increment() {
             this.counter++;
@@ -275,11 +276,13 @@ Catatan: Dalam contoh diatas Method Render mengembalikan fungsi ```createElement
             this.counter--;
           },
         },
+
         computed: { // Properti computed
           fullName() {
             return `${this.firstName} ${this.lastName}`;
           },
         },
+
         filters: { // Properti filters
           upper(text) {
             return text.toUpperCase();
@@ -389,6 +392,7 @@ Sejak versi 2.5.0+, Vue menambahkan modifier ```.exact``` untuk memastikan bahwa
       <p v-once>{{ message_text }}</p> <!-- 3. v-once -->
       <p v-show="displayMessage">Message Show {{ message_show }}</p> <!-- 4. v-show -->
       <hr>
+
       <!-- 5. v-if, v-else-if, v-else -->
       <div v-if="content">
         <h2>Judul</h2>
@@ -402,6 +406,7 @@ Sejak versi 2.5.0+, Vue menambahkan modifier ```.exact``` untuk memastikan bahwa
         </div>
       </div>
       <hr>
+
       <!-- 6. v-on -->
       <p>Jumlah Klik: {{ counter }}x</p>
       <button v-on:click="counter += 1">Counter</button><br>
@@ -421,6 +426,7 @@ Sejak versi 2.5.0+, Vue menambahkan modifier ```.exact``` untuk memastikan bahwa
       <button @click.right="info('BOOOM!')">Klik Kanan</button>
       <button @click.middle="info('BOOOM!')">Klik Tengah</button>
       <br>
+
       <!-- 7. v-bind -->
       <img v-bind:src="`assets/${imageSrc}`" />
       <div :class="classA">BINDING! STYLE CSS!</div>
@@ -550,10 +556,12 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
       <ul>
         <li v-for="buku in books_array">{{ buku }}</li><br>
       </ul>
+
       <!-- 1B. Menampilkan data Array + Index -->
       <ul>
         <li v-for="(buku, index) in books_array">{{ `${index+1}: ${buku}` }}</li><br>
       </ul>
+
       <!-- 1C. Menggunakan tag template (Array) -->
       <ul>
         <template v-for="buku in books_array">
@@ -561,14 +569,17 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
         </template>
       </ul>
       <hr>
+
       <!-- 2A. Menampilkan data Object -->
       <ul>
         <li v-for="buku of books_object">{{ buku }}</li><br>
       </ul>
+
       <!-- 2B. Menampilkan data Object + Key -->
       <ul>
         <li v-for="(buku, key) of books_object">{{ `${key}: ${buku}` }}</li><br>
       </ul>
+
       <!-- 2C. Menggunakan tag template (Object) -->
       <ul>
         <template v-for="buku of books_object">
@@ -576,6 +587,7 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
         </template>
       </ul>
       <hr>
+
       <!-- 3A. Menampilkan data Collection -->
       <table border=1>
         <tr v-for="buku of books_collection">
@@ -590,6 +602,7 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
         </tr>
       </table>
       <hr>
+
       <!-- 3B. Menampilkan data Collection + Kondisi -->
       <table border=1>
         <tr v-for="buku of books_collection" v-if="buku.harga>60000">
@@ -604,6 +617,7 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
         </tr>
       </table>
       <hr>
+      
       <!-- 3C. Menampilkan data Collection + Filter -->
       <table border=1>
         <tr v-for="buku of lebihDari70Ribu">
