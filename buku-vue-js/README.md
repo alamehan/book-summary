@@ -55,6 +55,7 @@ vm = new Vue({
 Mengakses Properti didalam Object Vue menggunakan ```this.$data.name``` atau bisa langsung ```this.name```. Mengakses Properti diluar Object Vue menggunakan ```vm.$data.name``` atau bisa langsung ```vm.name```.
 
 Selain mount ditulis dengan cara:
+
 ```Javascript
 vm = new Vue({ 
   el: '#app' ,
@@ -72,3 +73,68 @@ vm.$mount('#app')
 ```
 
 ## **2. Siklus Object Vue**
+
+```HTML
+<div id="app">
+  <h1>{{ message }}</h1>
+</div>
+```
+
+```Javascript
+vm = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello World!',
+  },
+  beforeCreate() {
+    console.log(`1. Before Create: message = ${this.message}`);
+  },
+  created() {
+    console.log(`2. Created: message = ${this.message}`);
+  },
+  beforeMount() {
+    console.log(`3. Before Mount: el = ${this.$el.textContent}`);
+  },
+  mounted() {
+    console.log(`4. Mounted: el = ${this.$el.textContent}`);
+  },
+  beforeUpdate() {
+    console.log(`5. Before Update: el = ${this.$el.textContent}`);
+  },
+  updated() {
+    console.log(`6. Updated: el = ${this.$el.textContent}`);
+  },
+  beforeDestroy() {
+    console.log(`7. Before Destroy`);
+  },
+  destroyed() {
+    console.log(`8. Destroyed`);
+  },
+});
+
+vm.message = 'Selamat Datang!';
+// SAAT PERINTAH DIBAWAH INI DIAKTIFKAN, HOOK 5 & 6 TIDAK AKAN MUNCUL DI CONSOLE
+// vm.$destroy()
+```
+
+Gunakan Google Chrome ➜ Developer Tools ➜ Console. Berikut siklus Object Vue:
+- HOOK 1: beforeCreate | Belum bisa mengakses variabel message
+- HOOK 2: created | Sudah bisa mengakses & memanipulasi variabel message
+- HOOK 3: beforeMount | Sudah bisa mengakses DOM, namun Data belum dirender dengan Template
+- HOOK 4: mounted | Sudah bisa mengakses DOM & Data sudah dirender dengan Template
+- HOOK 5: beforeUpdate | Disini variabel message masih bernilai 'Hello World!' Padahal sudah diupdate dengan perintah vm.message = "Selamat Datang!" (lihat dibawah Object Vue ini)
+- HOOK 6: updated | Disini variabel message sudah terupdate menjadi 'Selamat Datang!'
+- HOOK 7: beforeDestroy | Terjadi sebelum Component dihapus
+- HOOK 8: destroyed | Terjadi setelah Object Vue dihapus
+
+Secara umum siklusnya: CREATE-MOUNT-UPDATE-DESTROY. Nantinya masing-masing hook dapat dimanfaatkan untuk menjalankan suatu perintah tertentu.
+
+## **3. Penulisan Template**
+
+```HTML
+
+```
+
+```Javascript
+
+```
