@@ -1,11 +1,13 @@
+<div id="top"></div>
+
 # Vue.js in One Page
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>.
 
-## **1. Object Vue**
+## **1. Object Vue** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
@@ -65,10 +67,10 @@ vm.$mount('#app')
 
 </details>
 
-## **2. Siklus Object Vue**
+## **2. Siklus Object Vue** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
@@ -138,10 +140,10 @@ Nantinya masing-masing hook dapat dimanfaatkan untuk menjalankan suatu perintah 
 
 </details>
 
-## **3. Penulisan Template**
+## **3. Penulisan Template** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
@@ -182,10 +184,10 @@ Template Vue (mustache ```{{ ... }}```) mendukung JavaScript Expressions, sepert
 
 </details>
 
-## **4. Properti Template**
+## **4. Properti Template** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
@@ -222,10 +224,10 @@ Catatan: Dalam contoh diatas Method Render mengembalikan fungsi ```createElement
 
 </details>
 
-## **5. Properti Lainnya**
+## **5. Properti Lainnya** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
@@ -319,10 +321,10 @@ var vm = new Vue({
 
 </details>
 
-## **6. Directive**
+## **6. Directive** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 Directive merupakan atribut khusus yang disematkan pada elemen atau markup HTML sebagai penanda bahwa elemen DOM tersebut akan dikenai perlakuan tertentu oleh Vue.
 
@@ -468,10 +470,10 @@ Contoh ```v-bind``` lainnya:
 
 </details>
 
-## **7. Dynamic Argument**
+## **7. Dynamic Argument** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
@@ -495,10 +497,10 @@ Contoh ```v-bind``` lainnya:
 
 </details>
 
-## **8. List**
+## **8. List** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
@@ -522,10 +524,10 @@ Contoh ```v-bind``` lainnya:
 
 </details>
 
-## **9. Form**
+## **9. Form** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
@@ -549,10 +551,10 @@ Contoh ```v-bind``` lainnya:
 
 </details>
 
-## **10. Components**
+## **10. Components** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
