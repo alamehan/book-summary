@@ -617,7 +617,7 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
         </tr>
       </table>
       <hr>
-      
+
       <!-- 3C. Menampilkan data Collection + Filter -->
       <table border=1>
         <tr v-for="buku of lebihDari70Ribu">
@@ -706,6 +706,382 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+### **10-1. Global Component**
+
+Bisa dipakai di mana saja, di ```#app1```, ```#app2```, dst.
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app1">
+      <component-a></component-a>
+      <component-b></component-b>
+    </div>
+
+    <script>
+      Vue.component('component-a', {
+        template: `<h1>Component A</h1>`
+      })
+
+      Vue.component('component-b', {
+        data() {
+          return {
+            message: 'Component B'
+          }
+        },
+        template: `<h1>{{ message }}</h1>`
+      })
+
+      new Vue({
+        el: '#app1'
+      })
+    </script>
+  </body>
+</html>
+```
+
+### **10-2. Local Component**
+
+Hanya bisa dipakai di #app1, sesuai dengan yang ditargetkan.
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app2">
+      <component-c></component-c>
+      <component-d></component-d>
+    </div>
+
+    <script>
+      var ComponentC = {
+        template: `<h1>Component C</h1>`,
+      }
+
+      var ComponentD = {
+        data() {
+          return {
+            message: 'Component D'
+          }
+        },
+        template: `<h1>{{ message }}</h1>`
+      }
+
+      new Vue({
+        el: '#app2',
+        components: {
+          'component-c': ComponentC,
+          'component-d': ComponentD,
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+### **10-3. Kirim Data ke Component (Props)**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      .card {
+        background: #efefef;
+        border: 1px solid #ddd;
+        margin: 3px;
+        padding: 6px;
+        height: 280px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app3">
+      <book judul="Buku A" deskripsi="Koding Easy" img="cover-1.jpg"></book>
+      <book judul="Buku B" deskripsi="Design Easy" img="cover-2.jpg"></book>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div id="app4">
+      <book v-for="buku in books_collection" :key="buku.id" :judul="buku.judul" :deskripsi="buku.deskripsi" :img="buku.img"></book>
+    </div>
+
+    <script>
+      var BookComponent1 = {
+        data() {
+          return {
+            classCard: 'card'
+          }
+        },
+        props: ['judul', 'deskripsi', 'img'],
+        template: `
+          <div :class=" classCard">
+            <h3>{{ judul }}</h3>
+            <img :src="'assets/'+img" width=100>
+            <p v-html="deskripsi"></p>
+          </div>
+        `
+      }
+
+      // Props Hardcode
+      new Vue({
+        el: '#app3',
+        components: {
+          'book': BookComponent1,
+        }
+      })
+
+      // Props Dinamis
+      new Vue({
+        el: '#app4',
+        components: {
+          'book': BookComponent1,
+        },
+        data: {
+          books_collection: [
+            { id: 1, judul: 'Buku A', deskripsi: "Koding Easy", harga: 50000, img: 'cover-1.jpg' },
+            { id: 2, judul: 'Buku B', deskripsi: "Design Easy", harga: 60000, img: 'cover-2.jpg' },
+            { id: 3, judul: 'Buku C', deskripsi: "Gaming Easy", harga: 70000, img: 'cover-3.jpg' },
+            { id: 4, judul: 'Buku D', deskripsi: "Living Easy", harga: 80000, img: 'cover-4.jpg' },
+          ]
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+### **10-4. Update Data Parent dari Component**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      .card {
+        background: #efefef;
+        border: 1px solid #ddd;
+        margin: 3px;
+        padding: 6px;
+        height: 280px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app5">
+      <h1>Selected: {{ selected_book }}</h1>
+      <book v-for="buku in books_collection" :key="buku.id" :book="buku" @dipilih="selected_book = $event"></book>
+    </div>
+
+    <script>
+      var BookComponent2 = {
+        data() {
+          return {
+            classCard: 'card'
+          }
+        },
+        props: ['book'],
+        template: `
+          <div :class="classCard">
+            <h3>{{ book.judul }}</h3>
+            <img :src="'assets/'+book.img" width=100>
+            <p v-html="book.deskripsi"></p>
+            <button @click="$emit('dipilih', book.judul)">Select</button>
+          </div>
+        `
+        // @click="$emit('dipilih', book.judul)" ➜ Saat di klik, nilai "book.judul" akan di-emit/
+        // di-set ke event "dipilih", dengan demikian @dipilih="selected_book = $event" ➜ (di HTML)
+        // artinya selected_book diisi dengan nilai dari $event, yaitu "book.judul".
+      }
+
+      new Vue({
+        el: '#app5',
+        components: {
+          'book': BookComponent2,
+        },
+        data: {
+          books_collection: [
+            { id: 1, judul: 'Buku A', deskripsi: "Koding Easy", harga: 50000, img: 'cover-1.jpg' },
+            { id: 2, judul: 'Buku B', deskripsi: "Design Easy", harga: 60000, img: 'cover-2.jpg' },
+            { id: 3, judul: 'Buku C', deskripsi: "Gaming Easy", harga: 70000, img: 'cover-3.jpg' },
+            { id: 4, judul: 'Buku D', deskripsi: "Living Easy", harga: 80000, img: 'cover-4.jpg' },
+          ],
+          selected_book: '',
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+### **10-5. Two Way Data Binding di Component**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app6">
+      <h1>{{ searchText }}</h1>
+      <custom-input :value="searchText" @input="searchText = $event"></custom-input> <!-- CARA RIBET -->
+      <custom-input v-model="searchText"></custom-input> <!-- CARA MUDAH -->
+    </div>
+
+    <script>
+      Vue.component('custom-input', {
+        props: ['value'],
+        template: `
+          <input :value="value" @input="$emit('input', $event.target.value)">
+        `
+      })
+
+      new Vue({
+        el: '#app6',
+        data: {
+          searchText: "Contoh"
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+### **10-6. Kirim Konten ke dalam Component (Slots)**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      .card {
+        background: #efefef;
+        border: 1px solid #ddd;
+        margin: 3px;
+        padding: 6px;
+        height: 120px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app7">
+      <!-- Bagian A -->
+      <kartu-a>
+        <p>Tag p ini menimpa slots</p>
+      </kartu-a>
+      <kartu-a>
+        <h4>Tag h4 ini menimpa slots</h4>
+        <h5>Tag h5 ini juga menimpa slots</h5>
+      </kartu-a>
+
+      <!-- Bagian B -->
+      <kartu-b></kartu-b> <!-- Diisi konten default -->
+      <kartu-b>Hello Wolrd!</kartu-b> <!-- Konten default tertimpa -->
+
+      <!-- Bagian C -->
+      <!-- Jika multiple slots, bungkus dulu menggunakan template -->
+      <kartu-c>
+        <template v-slot:judul>
+          <h4>Ini Judul</h4>
+        </template>
+        <template #isi>
+          <!-- # merupakan shorthand untuk v-slot: -->
+          <h4>Ini Isi</h4>
+        </template>
+      </kartu-c>
+
+      <!-- Bagian D -->
+      <!-- Jika single slots, tidak perlu dibungkus template -->
+      <kartu-d #judul></kartu-d> <!-- Diisi konten default -->
+      <kartu-d #judul>Bandung</kartu-d> <!-- Konten default tertimpa -->
+    </div>
+
+    <script>
+      // A. Elemen <slot></slot> akan di-replace/di-timpa
+      // dengan konten di component (di HTML)
+      Vue.component('kartu-a', {
+        template: `
+          <div class="card">
+            <strong>Informasi A</strong>
+            <hr>
+            <slot></slot>
+          </div>
+        `
+      })
+
+      // B. Jika di component (di HTML) tidak membuat konten
+      // tertentu maka akan diisi oleh konten default slots
+      Vue.component('kartu-b', {
+        template: `
+          <div class="card">
+            <strong>Informasi B</strong>
+            <hr>
+            <slot>Ini menjadi konten default</slot>
+          </div>
+        `
+      })
+
+      // C. Multiple slots ditulis dengan menyertakan
+      // atribut "name" di dalam tag slot
+      Vue.component('kartu-c', {
+        template: `
+          <div class="card">
+            <strong>Informasi C</strong>
+            <hr>
+            <slot name="judul">Judul Default</slot>
+            <slot name="isi">Isi Default</slot>
+          </div>
+        `
+      })
+
+      // D. Mengakses property data dari component
+      // pada slots harus di-binding terlebih dahulu
+      Vue.component('kartu-d', {
+        data() {
+          return {
+            message: "Hello"
+          }
+        },
+        template: `
+          <div class="card">
+            <strong>Informasi D</strong>
+            <hr>
+            <slot name="judul" :defaultJudul="message">{{ message }}</slot>
+          </div>
+        `
+      })
+
+      new Vue({
+        el: '#app7'
+      })
+    </script>
+  </body>
+</html>
+```
+
+### **10-7. Single File Component**
 
 ```HTML
 <html>
