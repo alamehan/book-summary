@@ -52,9 +52,7 @@ vm = new Vue({
 });
 ```
 
-Mengakses Properti didalam Object Vue menggunakan ```this.$data.name``` atau bisa langsung ```this.name```. Mengakses Properti diluar Object Vue menggunakan ```vm.$data.name``` atau bisa langsung ```vm.name```.
-
-Selain mount ditulis dengan cara:
+Mengakses Properti didalam Object Vue menggunakan ```this.$data.name``` atau bisa langsung ```this.name```. Mengakses Properti diluar Object Vue menggunakan ```vm.$data.name``` atau bisa langsung ```vm.name```. Selain mount ditulis dengan cara:
 
 ```Javascript
 vm = new Vue({ 
