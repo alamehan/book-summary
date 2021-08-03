@@ -789,7 +789,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **👉 10-3. Kirim Data ke Component (Props)**
+### **👉 10-3. Kirim Data ke Component (Props) - Hardcode**
 
 ```HTML
 <html>
@@ -814,8 +814,54 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
       <book judul="Buku B" deskripsi="Design Easy" img="cover-2.jpg"></book>
     </div>
 
-    <div style="clear: both;"></div>
+    <script>
+      var BookComponent1 = {
+        data() {
+          return {
+            classCard: 'card'
+          }
+        },
+        props: ['judul', 'deskripsi', 'img'],
+        template: `
+          <div :class=" classCard">
+            <h3>{{ judul }}</h3>
+            <img :src="'assets/'+img" width=100>
+            <p v-html="deskripsi"></p>
+          </div>
+        `
+      }
 
+      new Vue({
+        el: '#app3',
+        components: {
+          'book': BookComponent1,
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+### **👉 10-4. Kirim Data ke Component (Props) - Dinamis**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      .card {
+        background: #efefef;
+        border: 1px solid #ddd;
+        margin: 3px;
+        padding: 6px;
+        height: 280px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
     <div id="app4">
       <book v-for="buku in books_collection" :key="buku.id" :judul="buku.judul" :deskripsi="buku.deskripsi" :img="buku.img"></book>
     </div>
@@ -837,15 +883,6 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
         `
       }
 
-      // Props Hardcode
-      new Vue({
-        el: '#app3',
-        components: {
-          'book': BookComponent1,
-        }
-      })
-
-      // Props Dinamis
       new Vue({
         el: '#app4',
         components: {
@@ -865,7 +902,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **👉 10-4. Update Data Parent dari Component**
+### **👉 10-5. Update Data Parent dari Component**
 
 ```HTML
 <html>
@@ -931,7 +968,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **👉 10-5. Two Way Data Binding di Component**
+### **👉 10-6. Two Way Data Binding di Component**
 
 ```HTML
 <html>
@@ -966,7 +1003,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **👉 10-6. Kirim Konten ke dalam Component (Slots)**
+### **👉 10-7. Kirim Konten ke dalam Component (Slots)**
 
 ```HTML
 <html>
@@ -1081,7 +1118,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **👉 10-7. Single File Component**
+### **👉 10-8. Single File Component**
 
 ```HTML
 <html>
