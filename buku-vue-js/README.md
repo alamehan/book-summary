@@ -6,20 +6,18 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 ```HTML
 <html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
 
-<head>
-  <title>Belajar Vue.js</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-</head>
+  <body>
+    <!-- ⚠️ Kode HTML disimpan disini -->
 
-<body>
-  <!-- ⚠️ Kode HTML disimpan disini -->
-
-  <script>
-    /* ⚠️ Script (Vue) disimpan disini */
-  </script>
-</body>
-
+    <script>
+      /* ⚠️ Script (Vue) disimpan disini */
+    </script>
+  </body>
 </html>
 ```
 
