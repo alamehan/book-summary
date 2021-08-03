@@ -680,6 +680,8 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
 <details>
 <summary>Klik untuk membuka!</summary><br>
 
+**⚠️ BELUM DIRANGKUM ⚠️**
+
 ```HTML
 <html>
   <head>
@@ -1121,7 +1123,165 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-### **👉 10-8. Single File Component**
+### **👉 10-8. Dynamic Components**
+
+Idenya: Kita memuat suatu component yang sudah diregister secara dinamis, atau hanya akan kita muat jika diperlukan saja.
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      .card {
+        background: #efefef;
+        border: 1px solid #ddd;
+        margin: 3px;
+        padding: 6px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <button @click="currentComponent='item-a'">Item A</button>
+      <button @click="currentComponent='item-b'">Item B</button>
+      <button @click="currentComponent='item-c'">Item C</button>
+      <button @click="currentComponent='item-d'">Item D</button>
+      <hr>
+      <!-- <component> memiliki directive v-bind:is untuk memantau pergantian component yang dimuat -->
+      <component :is="currentComponent"></component>
+    </div>
+
+    <script>
+      var itemA = {
+        template: `
+          <div class="card">
+            <strong>Isi Item A ...</strong>
+          </div>
+        `
+      }
+
+      var itemB = {
+        template: `
+          <div class="card">
+            <strong>Isi Item B ...</strong>
+          </div>
+        `
+      }
+
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          currentComponent: 'item-a' // Isi dengan nilai default, atau bisa juga dikosongkan.
+        },
+        components: {
+          'item-a': itemA,
+          'item-b': itemB,
+          'item-c': {
+            template: `
+              <div class="card">
+                <strong>Isi Item C ...</strong>
+              </div>
+            `
+          },
+          'item-d': {
+            template: `
+              <div class="card">
+                <strong>Isi Item D ...</strong>
+              </div>
+            `
+          },
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+## **11. Transition Effect** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+Efek animasi transisi bawaan Vue, pada contoh di bawah ini merupakan animasi pergantian component.
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      .card {
+        background: #efefef;
+        border: 1px solid #ddd;
+        margin: 3px;
+        padding: 6px;
+        float: left;
+      }
+
+      .component-fade-enter-active,
+      .component-fade-leave-active {
+        transition: opacity .3s ease;
+      }
+
+      .component-fade-enter,
+      .component-fade-leave-to {
+        opacity: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <button @click="currentComponent='item-a'">Item A</button>
+      <button @click="currentComponent='item-b'">Item B</button>
+      <hr>
+      <transition name="component-fade" mode="out-in">
+        <component :is="currentComponent"></component>
+      </transition>
+      <!-- Coba ganti "out-in" menjadi "in-out", lalu lihat efeknya -->
+    </div>
+
+    <script>
+      var itemA = {
+        template: `
+          <div class="card">
+            <strong>Isi Item A ...</strong>
+          </div>
+        `
+      }
+
+      var itemB = {
+        template: `
+          <div class="card">
+            <strong>Isi Item B ...</strong>
+          </div>
+        `
+      }
+
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          currentComponent: 'item-a',
+        },
+        components: {
+          'item-a': itemA,
+          'item-b': itemB,
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+</detail>
+
+## **12. ...** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
 
 ```HTML
 <html>
@@ -1143,4 +1303,4 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 </html>
 ```
 
-</details>
+</detail>
