@@ -331,10 +331,10 @@ Directive merupakan atribut khusus yang disematkan pada elemen atau markup HTML 
 1. ```v-html:``` ➜ Untuk menampilkan data berupa kode HTML.
 2. ```v-text:``` ➜ Untuk menampilkan string biasa, sama dengan mustache ```{{ }}```.
 3. ```v-once:``` ➜ Agar nilai variabel pada template tidak bisa diubah-ubah lagi (constant).
-4. ```v-show:``` ➜ Untuk show/hide suatu elemen DOM. Proses on/off pada directive ini menggunakan properti ```display``` pada CSS.
+4. ```v-show:``` ➜ Untuk show/hide suatu elemen DOM. Dibalik layar pakai properti ```display``` pada CSS.
 5. ```v-if:```, ```v-else-if```:, ```v-else```: ➜ Untuk merender/tidak merender suatu elemen DOM.
 6. ```v-on:``` ➜ Berperan sebagai sebuah event listener pada elemen HTML/komponen Vue.
-7. ```v-bind:``` ➜ Untuk mem-binding atribut HTML atau komponen agar nilainya terupdate secara reactive sesuai dengan datanya.
+7. ```v-bind:``` ➜ Untuk mem-binding atribut HTML/komponen agar nilainya terupdate secara reactive sesuai dengan datanya.
 
 Catatan:
 1. Penulisan directive ```v-on:``` dapat disingkat menjadi ```@```
@@ -345,7 +345,7 @@ Ragam directive event:
 2. ```@mouseover``` ➜ Ketika mouse berada di area elemen
 3. ```@mouseenter``` ➜ Ketika mouse masuk ke area elemen
 4. ```@mouseout``` ➜ Ketika mouse keluar dari area elemen
-5. ```@mousedown``` ➜ Sama dengan v-on:click
+5. ```@mousedown``` ➜ Sama dengan ```v-on:click```
 6. ```@keyup``` ➜ Ketika keyboard up pada elemen (biasanya digunakan pada elemen input)
 7. ```@keydown``` ➜ Ketika keyboard down pada elemen (biasanya digunakan pada elemen input)
 8. ```@submit``` ➜ Ketika form di submit
@@ -475,21 +475,50 @@ Contoh ```v-bind``` lainnya:
 <details>
 <summary>Klik untuk membuka!</summary><br>
 
+Sejak versi 2.6.0, kita bisa menggunakan argumen dinamis pada sebuah directive:
+
 ```HTML
 <html>
   <head>
     <title>Belajar Vue.js</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <style>
-      /* ⚠️ Style disimpan disini (jika ada) */
+      .title {
+        color: red;
+        font-weight: bold;
+      }
     </style>
   </head>
 
   <body>
-    <!-- ⚠️ Kode HTML disimpan disini -->
+    <div id="app">
+      <button v-on:click="info('Hello World!')">Button 1</button>
+      <button v-on:[nama_event]="info('Hello World!')">Button 2</button> <!-- Dinamis -->
+      <br>
+      <button @click="info('Hello World!')">Button 3</button>
+      <button @[nama_event]="info('Hello World!')">Button 4</button> <!-- Dinamis -->
+      <hr>
+      <div v-bind:class="classA">STANDARD 1</div>
+      <div v-bind:[nama_atribut]="classA">DYNAMIC 1</div> <!-- Dinamis -->
+      <br>
+      <div :class="classA">STANDARD 2</div>
+      <div :[nama_atribut]="classA">DYNAMIC 2</div> <!-- Dinamis -->
+    </div>
 
     <script>
-      /* ⚠️ Script (Vue) disimpan disini */
+      vm = new Vue({
+        el: '#app',
+        data: {
+          nama_event: 'click', // Coba ganti dengan "mouseover"
+          nama_atribut: 'class', // Coba ganti dengan "style"
+          classA: 'title',
+        },
+        methods: {
+          info(text) {
+            alert(text);
+          },
+        },
+      });
     </script>
   </body>
 </html>
