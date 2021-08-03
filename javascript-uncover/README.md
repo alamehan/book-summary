@@ -161,7 +161,7 @@ vm = new Vue({
 });
 ```
 
-Template Vue (mustache ```{{ ... }}```) mendukung JavaScript Expressions, seperti ```{{ `Diskon: ${total * 10%}` }}```, ```{{ ok ? 'YES' : 'NO' }}```, ```{{ message.split('').reverse().join('') }}```. Atau jika dalam bentuk atribut HTML maka penulisannya sebagai berikut ```<h1 :id="`product-${index}`"></h1>```.
+Template Vue (mustache ```{{ ... }}```) mendukung JavaScript Expressions, seperti ```{{ `Diskon: ${total * 10%}` }}```, ```{{ ok ? 'YES' : 'NO' }}```, ```{{ message.split('').reverse().join('') }}```. Atau jika dalam bentuk atribut HTML maka penulisannya bisa disisipkan sebagai berikut ```<h1 :id="`product-${index}`"></h1>```.
 
 ## **3. Penulisan Template**
 
