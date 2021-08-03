@@ -890,10 +890,10 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
         },
         data: {
           books_collection: [
-            { id: 1, judul: 'Buku A', deskripsi: "Koding Easy", harga: 50000, img: 'cover-1.jpg' },
-            { id: 2, judul: 'Buku B', deskripsi: "Design Easy", harga: 60000, img: 'cover-2.jpg' },
-            { id: 3, judul: 'Buku C', deskripsi: "Gaming Easy", harga: 70000, img: 'cover-3.jpg' },
-            { id: 4, judul: 'Buku D', deskripsi: "Living Easy", harga: 80000, img: 'cover-4.jpg' },
+            { id: 1, judul: 'Buku A', deskripsi: "Koding Easy", img: 'cover-1.jpg' },
+            { id: 2, judul: 'Buku B', deskripsi: "Design Easy", img: 'cover-2.jpg' },
+            { id: 3, judul: 'Buku C', deskripsi: "Gaming Easy", img: 'cover-3.jpg' },
+            { id: 4, judul: 'Buku D', deskripsi: "Living Easy", img: 'cover-4.jpg' },
           ]
         }
       })
@@ -938,8 +938,11 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
         template: `
           <div :class="classCard">
             <h3>{{ book.judul }}</h3>
+
             <img :src="'assets/'+book.img" width=100>
             <p v-html="book.deskripsi"></p>
+            <p>Rp.{{ book.harga }}</p><br>
+            
             <button @click="$emit('dipilih', book.judul)">Select</button>
           </div>
         `
