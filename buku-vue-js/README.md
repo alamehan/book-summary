@@ -367,6 +367,8 @@ Kita juga bisa menangani klik kiri/kanan/tengah pada mouse dengan modifier ```.l
   
 Sejak versi 2.5.0+, Vue menambahkan modifier ```.exact``` untuk memastikan bahwa event hanya akan dijalankan ketika key tersebut saja yang diklik. Dalam contoh (lihat di bawah) Button tanpa modifier ```.exact``` akan menjalankan ```info()``` ketika SHIFT ditekan meskipun saat yang bersamaan ALT/dll juga di tekan. Sedangkan Button dengan modifier ```.exact``` akan menjalankan ```info()``` HANYA ketika SHIFT ditekan, tidak menekan key lainnya.
 
+> Source code di bawah ini menggunakan assets gambar
+
 ```HTML
 <html>
   <head>
@@ -420,7 +422,7 @@ Sejak versi 2.5.0+, Vue menambahkan modifier ```.exact``` untuk memastikan bahwa
       <button @click.middle="info('BOOOM!')">Klik Tengah</button>
       <br>
       <!-- 7. v-bind -->
-      <img v-bind:src="imageSrc" />
+      <img v-bind:src="`assets/${imageSrc}`" />
       <div :class="classA">BINDING! STYLE CSS!</div>
     </div>
 
@@ -532,6 +534,8 @@ Sejak versi 2.6.0, kita bisa menggunakan argumen dinamis pada sebuah directive:
 <summary>Klik untuk membuka!</summary><br>
 
 Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (array dari objek) bisa kita tampilkan dengan mudah menggunakan Vue. Vue mempunyai directive v-for yang berfungsi untuk melakukan perulangan.
+
+> Source code di bawah ini menggunakan assets gambar
 
 ```HTML
 <html>
