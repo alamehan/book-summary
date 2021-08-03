@@ -705,7 +705,7 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
 ## **10. Components** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary><br>
+<summary>Klik untuk membuka!</summary>
 
 ### **10-1. Global Component**
 
