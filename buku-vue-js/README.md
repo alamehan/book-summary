@@ -9,6 +9,9 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
   <head>
     <title>Belajar Vue.js</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      /* ⚠️ Style disimpan disini (jika ada) */
+    </style>
   </head>
 
   <body>
@@ -24,7 +27,7 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 ## **1. Object Vue**
 
 ```HTML
-<!-- CONTAINER (MOUNT POINT), SEBAGAI HASIL KOMPILASI VUE -->
+<!-- Container (mount point), sebagai hasil kompilasi Vue -->
 <div id="app">
   <h1>{{ `Name: ${name}` }}</h1>
   <h1>{{ `Age: ${age}` }}</h1>
@@ -35,7 +38,7 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 ```
 
 ```Javascript
-// INISIASI OBJECT VUE (YANG DISIMPAN KEDALAM VARIABEL vm)
+// Inisiasi object Vue (yang disimpan ke dalam variable vm)
 vm = new Vue({
   el: '#app',   // el merupakan property
   data: {       // begitupula dengan data
@@ -110,8 +113,10 @@ vm = new Vue({
   },
 });
 
-vm.message = 'Selamat Datang!';
-// SAAT PERINTAH DIBAWAH INI DIAKTIFKAN, HOOK 5 & 6 TIDAK AKAN MUNCUL DI CONSOLE
+// Jika perintah di bawah ini diaktifkan, HOOK 5 & 6 akan ke-trigger
+// vm.message = 'Selamat Datang!';
+
+// Jika perintah di bawah ini diaktifkan, HOOK 7 & 8 akan ke-trigger
 // vm.$destroy()
 ```
 
@@ -126,6 +131,77 @@ Gunakan Console di Developer Tools-nya Google Chrome. Siklus Object Vue terdiri 
 - HOOK 8: destroyed ➜ Terjadi setelah Object Vue dihapus
 
 Nantinya masing-masing hook dapat dimanfaatkan untuk menjalankan suatu perintah tertentu.
+
+## **3. Penulisan Template**
+
+```CSS
+.title {
+  color: green;
+}
+```
+
+```HTML
+<div id="app">
+  <h1>{{ message }}</h1> <!-- Baca data text -->
+  <h1 v-once>{{ message }}</h1> <!-- Agar nilai tidak dapat diubah -->
+  <h1 v-html="message_html"></h1> <!-- Baca data RAW HTML -->
+  <h1 v-bind:class="class_h1">{{ message }}</h1> <!-- Baca data attribute -->
+  <h1 :class="class_h1">{{ message }}</h1> <!-- Shorthand untuk v-bind -->
+</div>
+```
+
+```Javascript
+vm = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello World!', // Data text
+    message_html: "<span style='color:red'>Hello World!</span>", // Data RAW HTML
+    class_h1: 'title', // Data attribute (class CSS)
+  },
+});
+```
+
+Template Vue (mustache ```{{ ... }}```) mendukung JavaScript Expressions, seperti ```{{ `Diskon: ${total * 10%}` }}```, ```{{ ok ? 'YES' : 'NO' }}```, ```{{ message.split('').reverse().join('') }}```. Atau jika dalam bentuk atribut HTML maka penulisannya dengan cara di-binding, contohnya sebagai berikut ```<h1 :id="`product-${index}`"></h1>```.
+
+## **3. Penulisan Template**
+
+```HTML
+
+```
+
+```Javascript
+
+```
+
+## **3. Penulisan Template**
+
+```HTML
+
+```
+
+```Javascript
+
+```
+
+## **3. Penulisan Template**
+
+```HTML
+
+```
+
+```Javascript
+
+```
+
+## **3. Penulisan Template**
+
+```HTML
+
+```
+
+```Javascript
+
+```
 
 ## **3. Penulisan Template**
 
