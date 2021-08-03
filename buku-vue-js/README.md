@@ -182,11 +182,11 @@ vm = new Vue({
   },
 });
 ```
-Properti Template: Sejauh ini kita menulis template langsung di kode HTML. Namun Vue juga menyediakan cara lain untuk mendefinisikan Template yang menyatu dengan Object Vue itu sendiri, melalui Properti 'template'.
+Properti Template: Sejauh ini kita menulis template langsung di kode HTML. Namun Vue juga menyediakan cara lain untuk mendefinisikan Template yang menyatu dengan Object Vue itu sendiri, melalui Properti ```template```.
 
 Method Render: Alternatif lain kita bisa juga menggunakan Method Render yang berfungsi menampilkan konten yang didefinisikan.
 
-Catatan: Dalam contoh diatas Method Render mengembalikan fungsi createElement untuk menciptakan elemen HTML h1 yang berisi nilai dari variabel message2. Jika Properti Template & Method Render dua-duanya ada, maka Properti Template diabaikan.
+Catatan: Dalam contoh diatas Method Render mengembalikan fungsi ```createElement``` untuk menciptakan elemen HTML ```h1``` yang berisi nilai dari variabel ```message2```. Jika Properti Template & Method Render dua-duanya ada, maka Properti Template diabaikan.
 
 ## **3. Penulisan Template**
 
