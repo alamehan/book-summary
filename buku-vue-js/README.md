@@ -117,14 +117,14 @@ vm.$mount('#app')
 ```
 
 Gunakan Console di Developer Tools-nya Google Chrome. Siklus Object Vue terdiri dari CREATE-MOUNT-UPDATE-DESTROY:
-- HOOK 1: beforeCreate ➜ Belum bisa mengakses variabel message
-- HOOK 2: created ➜ Sudah bisa mengakses & memanipulasi variabel message
-- HOOK 3: beforeMount ➜ Sudah bisa mengakses DOM, namun Data belum dirender dengan Template
-- HOOK 4: mounted ➜ Sudah bisa mengakses DOM & Data sudah dirender dengan Template
-- HOOK 5: beforeUpdate ➜ Disini variabel message masih bernilai 'Hello World!' Padahal sudah diupdate dengan perintah vm.message = "Selamat Datang!" (lihat dibawah Object Vue ini)
-- HOOK 6: updated ➜ Disini variabel message sudah terupdate menjadi 'Selamat Datang!'
-- HOOK 7: beforeDestroy ➜ Terjadi sebelum Component dihapus
-- HOOK 8: destroyed ➜ Terjadi setelah Object Vue dihapus
+1. HOOK 1: ```beforeCreate()``` ➜ Belum bisa mengakses variabel message
+2. HOOK 2: ```created()``` ➜ Sudah bisa mengakses & memanipulasi variabel message
+3. HOOK 3: ```beforeMount()``` ➜ Sudah bisa mengakses DOM, namun Data belum dirender dengan Template
+4. HOOK 4: ```mounted()``` ➜ Sudah bisa mengakses DOM & Data sudah dirender dengan Template
+5. HOOK 5: ```beforeUpdate()``` ➜ Disini variabel message masih bernilai 'Hello World!' Padahal sudah diupdate dengan perintah vm.message = "Selamat Datang!" (lihat dibawah Object Vue ini)
+6. HOOK 6: ```updated()``` ➜ Disini variabel message sudah terupdate menjadi 'Selamat Datang!'
+7. HOOK 7: ```beforeDestroy()``` ➜ Terjadi sebelum Component dihapus
+8. HOOK 8: ```destroyed()``` ➜ Terjadi setelah Object Vue dihapus
 
 Nantinya masing-masing hook dapat dimanfaatkan untuk menjalankan suatu perintah tertentu.
 
@@ -296,30 +296,232 @@ var vm = new Vue({
 
 ## **6. Directive**
 
-```HTML
+Directive merupakan atribut khusus yang disematkan pada elemen atau markup HTML sebagai penanda bahwa elemen DOM tersebut akan dikenai perlakuan tertentu oleh Vue.
 
+1. ```v-html:``` ➜ Untuk menampilkan data berupa kode HTML
+2. ```v-text:``` ➜ Untuk menampilkan string biasa, sama dengan mustache {{ }}
+3. ```v-once:``` ➜ Agar nilai variabel pada template tidak bisa diubah-ubah lagi (constant)
+4. ```v-show:``` ➜ Untuk menampilkan atau menyembunyikan suatu elemen DOM. Proses on/off pada directive ini menggunakan properti display pada CSS.
+5. ```v-if:```, ```v-else-if```:, ```v-else```: ➜ Untuk merender/tidak merender suatu elemen DOM
+6. ```v-on:``` ➜ Berperan sebagai sebuah event listener pada elemen HTML/komponen Vue
+7. ```v-bind:``` ➜ Untuk mem-binding atribut HTML atau komponen agar nilainya terupdate secara reactive sesuai dengan datanya, kebalikan dari v-on.
+
+Catatan:
+1. Penulisan directive ```v-on:``` dapat disingkat menjadi ```@```
+2. Penulisan directive ```v-bind:``` dapat disingkat menjadi ```:```
+
+Ragam directive event:
+1. ```@click``` ➜ Ketika mouse diklik
+2. ```@mouseover``` ➜ Ketika mouse berada di area elemen
+3. ```@mouseenter``` ➜ Ketika mouse masuk ke area elemen
+4. ```@mouseout``` ➜ Ketika mouse keluar dari area elemen
+5. ```@mousedown``` ➜ Sama dengan v-on:click
+6. ```@keyup``` ➜ Ketika keyboard up pada elemen (biasanya digunakan pada elemen input)
+7. ```@keydown``` ➜ Ketika keyboard down pada elemen (biasanya digunakan pada elemen input)
+8. ```@submit``` ➜ Ketika form di submit
+
+Ragam modifier:
+1. ```.once``` ➜ hanya boleh dilakukan sekali saja (misalnya klik, enter, dll)
+2. ```.prevent``` ➜ Modifier ini berfungsi agar halaman tidak di-redirect
+3. ```.enter``` ➜ Modifier ini akan bereaksi ketika keyboard Enter ditekan
+4. ```.tab``` ➜ Modifier ini akan bereaksi ketika keyboard Tab ditekan
+5. ```.delete``` ➜ mMdifier ini akan bereaksi ketika keyboard Delete atau Backspace ditekan
+6. ```.esc``` ➜ Modifier ini akan bereaksi ketika keyboard Escape ditekan
+7. ```.space``` ➜ Modifier ini akan bereaksi ketika keyboard Spasi ditekan
+8. ```.native``` ➜ Modifier ini akan listen native event pada elemen root dari komponen
+9. ```.ctrl``` ➜ Modifier ini akan bereaksi ketika keyboard Ctrl ditekan
+10. ```.alt``` ➜ Modifier ini akan bereaksi ketika keyboard Alt ditekan
+11. ```.shift``` ➜ Modifier ini akan bereaksi ketika keyboard Shift ditekan
+
+Kita juga bisa menangani klik kiri/kanan/tengah pada mouse dengan modifier ```.left```, ```.right```, dan ```.middle```.
+  
+Sejak versi 2.5.0+, Vue menambahkan modifier ```.exact``` untuk memastikan bahwa event hanya akan dijalankan ketika key tersebut saja yang diklik. Dalam contoh (lihat di bawah) Button tanpa modifier ```.exact``` akan menjalankan ```info()``` ketika SHIFT ditekan meskipun saat yang bersamaan ALT/dll juga di tekan. Sedangkan Button dengan modifier ```.exact``` akan menjalankan ```info()``` HANYA ketika SHIFT ditekan, tidak menekan key lainnya.
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      .title {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <p v-html="message_html"></p> <!-- 1. v-html -->
+      <p v-text="message_text "></p> <!-- 2. v-text -->
+      <p v-once>{{ message_text }}</p> <!-- 3. v-once -->
+      <p v-show="displayMessage">Message Show {{ message_show }}</p> <!-- 4. v-show -->
+      <hr>
+      <!-- 5. v-if, v-else-if, v-else -->
+      <div v-if="content">
+        <h2>Judul</h2>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <div>
+          <div v-if="nilai === 'A'">Sempurna</div>
+          <div v-else-if="nilai === 'B'">Bagus</div>
+          <div v-else-if="nilai === 'C'">Cukup</div>
+          <div v-else>Kurang</div>
+        </div>
+      </div>
+      <hr>
+      <!-- 6. v-on -->
+      <p>Jumlah Klik: {{ counter }}x</p>
+      <button v-on:click="counter += 1">Counter</button><br>
+      <button v-on:click="info('Selamat Datang!')">Alert</button>
+      <button @click.once="info('1X Klik Saja')">Alert + Modifier .once</button>
+      <hr>
+      <a href="http://google.com" @click="info('Go to link')">Tanpa Prevent</a><br>
+      <a href="http://google.com" @click.prevent="info('Hold!')">Dengan Prevent</a><br>
+      <hr>
+      <input @keyup.enter="info('BOOOM! ' + $event.target.value)" value="Tekan enter" /><br>
+      <button @click.ctrl="info('BOOOM!')">CTRL + CLICK</button>
+      <br>
+      <button @click.shift="info('BOOOM!')">SHIFT + CLICK</button>
+      <button @click.shift.exact="info('BOOOM!')">SHIFT + CLICK</button>
+      <br>
+      <button @click.left="info('BOOOM!')">Klik Kiri</button>
+      <button @click.right="info('BOOOM!')">Klik Kanan</button>
+      <button @click.middle="info('BOOOM!')">Klik Tengah</button>
+      <br>
+      <!-- 7. v-bind -->
+      <img v-bind:src="imageSrc" />
+      <div :class="classA">BINDING! STYLE CSS!</div>
+    </div>
+
+    <script>
+      vm = new Vue({
+        el: '#app',
+        data: {
+          message_html: "<span style='color:red'>Hello HTML!</span>",
+          message_text: 'Hello World!',
+          message_show: 'ON',
+          displayMessage: true, // Coba ganti dengan false
+          content: true, // Coba ganti dengan false
+          nilai: 'A',
+          counter: 0,
+          imageSrc: 'logo1.png',
+          classA: 'title',
+        },
+        methods: {
+          info(text) {
+            alert(text);
+          },
+        },
+      });
+
+      // Update data message (tidak berpengaruh pada v-once)
+      vm.message_text = 'Halo Dunia! (Updated)';
+
+      // Dalam 3 detik, 'logo1.png' akan berubah menjadi 'logo2.png'
+      setTimeout(() => {
+        vm.imageSrc = 'logo2.png';
+      }, 3000);
+    </script>
+  </body>
+</html>
+```
+
+Contoh ```v-bind``` lainnya:
+
+```HTML
+<a :href="url"></a>
+<img :src="'images/' + imageSrc">
+<div :class="[classA, classB]"></div>
+<div :class="{ red: isRed }"></div>
+<div :style="{ fontSize: size + 'px' }"></div>
+<img v-bind="{ id: imageID, src: imageSrc }" />
 ```
 
 ## **7. Dynamic Argument**
 
 ```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      /* ⚠️ Style disimpan disini (jika ada) */
+    </style>
+  </head>
 
+  <body>
+    <!-- ⚠️ Kode HTML disimpan disini -->
+
+    <script>
+      /* ⚠️ Script (Vue) disimpan disini */
+    </script>
+  </body>
+</html>
 ```
 
 ## **8. List**
 
 ```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      /* ⚠️ Style disimpan disini (jika ada) */
+    </style>
+  </head>
 
+  <body>
+    <!-- ⚠️ Kode HTML disimpan disini -->
+
+    <script>
+      /* ⚠️ Script (Vue) disimpan disini */
+    </script>
+  </body>
+</html>
 ```
 
 ## **9. Form**
 
 ```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      /* ⚠️ Style disimpan disini (jika ada) */
+    </style>
+  </head>
 
+  <body>
+    <!-- ⚠️ Kode HTML disimpan disini -->
+
+    <script>
+      /* ⚠️ Script (Vue) disimpan disini */
+    </script>
+  </body>
+</html>
 ```
 
 ## **8. Components**
 
 ```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      /* ⚠️ Style disimpan disini (jika ada) */
+    </style>
+  </head>
 
+  <body>
+    <!-- ⚠️ Kode HTML disimpan disini -->
+
+    <script>
+      /* ⚠️ Script (Vue) disimpan disini */
+    </script>
+  </body>
+</html>
 ```
