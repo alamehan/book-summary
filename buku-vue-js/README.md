@@ -709,7 +709,7 @@ Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (arr
 
 ### **10-1. Global Component**
 
-Bisa dipakai di mana saja, di ```#app1```, ```#app2```, dst.
+Bisa dipakai di mana saja, di ```<div id="app1">...</div>```, ```<div id="app2">...</div>```, dst.
 
 ```HTML
 <html>
@@ -748,7 +748,7 @@ Bisa dipakai di mana saja, di ```#app1```, ```#app2```, dst.
 
 ### **10-2. Local Component**
 
-Hanya bisa dipakai di ```#app1```, sesuai dengan yang ditargetkan.
+Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditargetkan.
 
 ```HTML
 <html>
