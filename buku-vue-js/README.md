@@ -117,17 +117,17 @@ vm.message = 'Selamat Datang!';
 // vm.$destroy()
 ```
 
-Gunakan Google Chrome ➜ Developer Tools ➜ Console. Berikut siklus Object Vue:
-- HOOK 1: beforeCreate | Belum bisa mengakses variabel message
-- HOOK 2: created | Sudah bisa mengakses & memanipulasi variabel message
-- HOOK 3: beforeMount | Sudah bisa mengakses DOM, namun Data belum dirender dengan Template
-- HOOK 4: mounted | Sudah bisa mengakses DOM & Data sudah dirender dengan Template
-- HOOK 5: beforeUpdate | Disini variabel message masih bernilai 'Hello World!' Padahal sudah diupdate dengan perintah vm.message = "Selamat Datang!" (lihat dibawah Object Vue ini)
-- HOOK 6: updated | Disini variabel message sudah terupdate menjadi 'Selamat Datang!'
-- HOOK 7: beforeDestroy | Terjadi sebelum Component dihapus
-- HOOK 8: destroyed | Terjadi setelah Object Vue dihapus
+Gunakan Console di Developer Tools-nya Google Chrome. Siklus Object Vue terdiri dari CREATE-MOUNT-UPDATE-DESTROY:
+- HOOK 1: beforeCreate ➜ Belum bisa mengakses variabel message
+- HOOK 2: created ➜ Sudah bisa mengakses & memanipulasi variabel message
+- HOOK 3: beforeMount ➜ Sudah bisa mengakses DOM, namun Data belum dirender dengan Template
+- HOOK 4: mounted ➜ Sudah bisa mengakses DOM & Data sudah dirender dengan Template
+- HOOK 5: beforeUpdate ➜ Disini variabel message masih bernilai 'Hello World!' Padahal sudah diupdate dengan perintah vm.message = "Selamat Datang!" (lihat dibawah Object Vue ini)
+- HOOK 6: updated ➜ Disini variabel message sudah terupdate menjadi 'Selamat Datang!'
+- HOOK 7: beforeDestroy ➜ Terjadi sebelum Component dihapus
+- HOOK 8: destroyed ➜ Terjadi setelah Object Vue dihapus
 
-Secara umum siklusnya: CREATE-MOUNT-UPDATE-DESTROY. Nantinya masing-masing hook dapat dimanfaatkan untuk menjalankan suatu perintah tertentu.
+Nantinya masing-masing hook dapat dimanfaatkan untuk menjalankan suatu perintah tertentu.
 
 ## **3. Penulisan Template**
 
