@@ -4,6 +4,9 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 ## **1. Object Vue**
 
+<details>
+<summary>Klik untuk membuka!</summary>
+
 ```HTML
 <html>
   <head>
@@ -60,7 +63,12 @@ vm = new Vue({
 vm.$mount('#app')
 ```
 
+</details>
+
 ## **2. Siklus Object Vue**
+
+<details>
+<summary>Klik untuk membuka!</summary>
 
 ```HTML
 <html>
@@ -128,7 +136,12 @@ Gunakan Console di Developer Tools-nya Google Chrome. Siklus Object Vue terdiri 
 
 Nantinya masing-masing hook dapat dimanfaatkan untuk menjalankan suatu perintah tertentu.
 
+</details>
+
 ## **3. Penulisan Template**
+
+<details>
+<summary>Klik untuk membuka!</summary>
 
 ```HTML
 <html>
@@ -167,7 +180,12 @@ Nantinya masing-masing hook dapat dimanfaatkan untuk menjalankan suatu perintah 
 
 Template Vue (mustache ```{{ ... }}```) mendukung JavaScript Expressions, seperti ```{{ `Diskon: ${total * 10%}` }}```, ```{{ ok ? 'YES' : 'NO' }}```, ```{{ message.split('').reverse().join('') }}```. Atau jika dalam bentuk atribut HTML maka penulisannya dengan cara di-binding, contohnya sebagai berikut ```<h1 :id="`product-${index}`"></h1>```.
 
+</details>
+
 ## **4. Properti Template**
+
+<details>
+<summary>Klik untuk membuka!</summary>
 
 ```HTML
 <html>
@@ -202,7 +220,12 @@ Method Render: Alternatif lain kita bisa juga menggunakan Method Render yang ber
 
 Catatan: Dalam contoh diatas Method Render mengembalikan fungsi ```createElement``` untuk menciptakan elemen HTML ```h1``` yang berisi nilai dari variabel ```message2```. Jika Properti Template & Method Render dua-duanya ada, maka Properti Template diabaikan.
 
+</details>
+
 ## **5. Properti Lainnya**
+
+<details>
+<summary>Klik untuk membuka!</summary>
 
 ```HTML
 <html>
@@ -294,7 +317,12 @@ var vm = new Vue({
 })
 ```
 
+</details>
+
 ## **6. Directive**
+
+<details>
+<summary>Klik untuk membuka!</summary>
 
 Directive merupakan atribut khusus yang disematkan pada elemen atau markup HTML sebagai penanda bahwa elemen DOM tersebut akan dikenai perlakuan tertentu oleh Vue.
 
@@ -438,7 +466,12 @@ Contoh ```v-bind``` lainnya:
 <img v-bind="{ id: imageID, src: imageSrc }" />
 ```
 
+</details>
+
 ## **7. Dynamic Argument**
+
+<details>
+<summary>Klik untuk membuka!</summary>
 
 ```HTML
 <html>
@@ -459,9 +492,14 @@ Contoh ```v-bind``` lainnya:
   </body>
 </html>
 ```
+
+</details>
 
 ## **8. List**
 
+<details>
+<summary>Klik untuk membuka!</summary>
+
 ```HTML
 <html>
   <head>
@@ -481,30 +519,13 @@ Contoh ```v-bind``` lainnya:
   </body>
 </html>
 ```
+
+</details>
 
 ## **9. Form**
 
-```HTML
-<html>
-  <head>
-    <title>Belajar Vue.js</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <style>
-      /* ⚠️ Style disimpan disini (jika ada) */
-    </style>
-  </head>
-
-  <body>
-    <!-- ⚠️ Kode HTML disimpan disini -->
-
-    <script>
-      /* ⚠️ Script (Vue) disimpan disini */
-    </script>
-  </body>
-</html>
-```
-
-## **8. Components**
+<details>
+<summary>Klik untuk membuka!</summary>
 
 ```HTML
 <html>
@@ -525,3 +546,32 @@ Contoh ```v-bind``` lainnya:
   </body>
 </html>
 ```
+
+</details>
+
+## **10. Components**
+
+<details>
+<summary>Klik untuk membuka!</summary>
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      /* ⚠️ Style disimpan disini (jika ada) */
+    </style>
+  </head>
+
+  <body>
+    <!-- ⚠️ Kode HTML disimpan disini -->
+
+    <script>
+      /* ⚠️ Script (Vue) disimpan disini */
+    </script>
+  </body>
+</html>
+```
+
+</details>
