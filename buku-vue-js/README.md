@@ -531,21 +531,125 @@ Sejak versi 2.6.0, kita bisa menggunakan argumen dinamis pada sebuah directive:
 <details>
 <summary>Klik untuk membuka!</summary><br>
 
+Data dalam bentuk list/daftar yang bisa berupa array, objek atau collection (array dari objek) bisa kita tampilkan dengan mudah menggunakan Vue. Vue mempunyai directive v-for yang berfungsi untuk melakukan perulangan.
+
 ```HTML
 <html>
   <head>
     <title>Belajar Vue.js</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <style>
-      /* ⚠️ Style disimpan disini (jika ada) */
-    </style>
   </head>
 
   <body>
-    <!-- ⚠️ Kode HTML disimpan disini -->
+    <div id="app">
+      <!-- 1A. Menampilkan data Array -->
+      <ul>
+        <li v-for="buku in books_array">{{ buku }}</li><br>
+      </ul>
+      <!-- 1B. Menampilkan data Array + Index -->
+      <ul>
+        <li v-for="(buku, index) in books_array">{{ `${index+1}: ${buku}` }}</li><br>
+      </ul>
+      <!-- 1C. Menggunakan tag template (Array) -->
+      <ul>
+        <template v-for="buku in books_array">
+          <li>{{ buku }}</li>
+        </template>
+      </ul>
+      <hr>
+      <!-- 2A. Menampilkan data Object -->
+      <ul>
+        <li v-for="buku of books_object">{{ buku }}</li><br>
+      </ul>
+      <!-- 2B. Menampilkan data Object + Key -->
+      <ul>
+        <li v-for="(buku, key) of books_object">{{ `${key}: ${buku}` }}</li><br>
+      </ul>
+      <!-- 2C. Menggunakan tag template (Object) -->
+      <ul>
+        <template v-for="buku of books_object">
+          <li>{{ buku }}</li>
+        </template>
+      </ul>
+      <hr>
+      <!-- 3A. Menampilkan data Collection -->
+      <table border=1>
+        <tr v-for="buku of books_collection">
+          <td>
+            <img :src="`assets/${buku.img}`" width="100">
+          </td>
+          <td>
+            {{ `ID: ${buku.id}` }}<br>
+            {{ `Judul: ${buku.judul}` }}<br>
+            {{ `Harga: ${buku.harga}` }}<br>
+          </td>
+        </tr>
+      </table>
+      <hr>
+      <!-- 3B. Menampilkan data Collection + Kondisi -->
+      <table border=1>
+        <tr v-for="buku of books_collection" v-if="buku.harga>60000">
+          <td>
+            <img :src="`assets/${buku.img}`" width="100">
+          </td>
+          <td>
+            {{ `ID: ${buku.id}` }}<br>
+            {{ `Judul: ${buku.judul}` }}<br>
+            {{ `Harga: ${buku.harga}` }}<br>
+          </td>
+        </tr>
+      </table>
+      <hr>
+      <!-- 3C. Menampilkan data Collection + Filter -->
+      <table border=1>
+        <tr v-for="buku of lebihDari70Ribu">
+          <td>
+            <img :src="`assets/${buku.img}`" width="100">
+          </td>
+          <td>
+            {{ `ID: ${buku.id}` }}<br>
+            {{ `Judul: ${buku.judul}` }}<br>
+            {{ `Harga: ${buku.harga}` }}<br>
+          </td>
+        </tr>
+      </table>
+      <hr>
+    </div>
 
     <script>
-      /* ⚠️ Script (Vue) disimpan disini */
+      vm = new Vue({
+        el: '#app',
+        data: {
+          books_array: ['Buku A', 'Buku B', 'Buku C', 'Buku D'],
+
+          books_object: {
+            id: 99,
+            judul: 'Buku Koding',
+            harga: 50000
+          },
+
+          books_collection: [
+            { id: 1, judul: 'Buku Koding A', harga: 50000, img: 'cover-1.jpg' },
+            { id: 2, judul: 'Buku Koding B', harga: 60000, img: 'cover-2.jpg' },
+            { id: 3, judul: 'Buku Koding C', harga: 70000, img: 'cover-3.jpg' },
+            { id: 4, judul: 'Buku Koding D', harga: 80000, img: 'cover-4.jpg' },
+          ]
+        },
+
+        computed: {
+          lebihDari70Ribu() {
+            return this.books_collection.filter((buku) => {
+              return buku.harga > 70000
+            })
+          }
+        }
+      });
+
+      // 4A. Mengubah data pada Array
+      vm.$set(vm.books_array, 1, 'Buku B (NEW)');
+
+      // 4B. Mengubah data pada Object
+      vm.$set(vm.books_object, 'judul', 'Buku Koding (NEW)')
     </script>
   </body>
 </html>
