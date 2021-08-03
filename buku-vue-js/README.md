@@ -163,15 +163,32 @@ vm = new Vue({
 
 Template Vue (mustache ```{{ ... }}```) mendukung JavaScript Expressions, seperti ```{{ `Diskon: ${total * 10%}` }}```, ```{{ ok ? 'YES' : 'NO' }}```, ```{{ message.split('').reverse().join('') }}```. Atau jika dalam bentuk atribut HTML maka penulisannya dengan cara di-binding, contohnya sebagai berikut ```<h1 :id="`product-${index}`"></h1>```.
 
-## **3. Penulisan Template**
+## **4. Properti Template**
 
 ```HTML
-
+<div id="app"></div>
 ```
 
 ```Javascript
-
+vm = new Vue({
+  el: '#app',
+  data: {
+    message1: 'Hello World!',
+    message2: 'Halo Dunia!',
+  },
+  template: '<h1>{{ message1 }}</h1>', // Properti Template
+  render(createElement) { // Method Render
+    return createElement('h1', this.message2);
+  },
+});
 ```
+Properti Template: Sejauh ini kita menulis template langsung di kode HTML. Namun Vue juga menyediakan cara lain untuk mendefinisikan Template yang menyatu dengan Object Vue itu sendiri, melalui Properti 'template'.
+
+Method Render: Alternatif lain kita bisa juga menggunakan Method Render yang berfungsi menampilkan konten yang didefinisikan.
+
+CATATAN:
+- Dalam contoh diatas Method Render mengembalikan fungsi createElement untuk menciptakan elemen HTML h1 yang berisi nilai dari variabel message2.
+- Jika Properti Template & Method Render dua-duanya ada, maka Properti Template diabaikan.
 
 ## **3. Penulisan Template**
 
