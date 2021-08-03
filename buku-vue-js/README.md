@@ -1200,7 +1200,7 @@ Idenya: Kita memuat suatu component yang sudah diregister secara dinamis, atau h
 </html>
 ```
 
-</detail>
+</details>
 
 ## **11. Transition Effect** <a href="#top">⟲</a>
 
@@ -1278,7 +1278,7 @@ Efek animasi transisi bawaan Vue, pada contoh di bawah ini merupakan animasi per
 </html>
 ```
 
-</detail>
+</details>
 
 ## **12. ...** <a href="#top">⟲</a>
 
@@ -1305,4 +1305,4 @@ Efek animasi transisi bawaan Vue, pada contoh di bawah ini merupakan animasi per
 </html>
 ```
 
-</detail>
+</details>
