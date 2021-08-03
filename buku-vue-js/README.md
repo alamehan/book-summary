@@ -748,7 +748,7 @@ Bisa dipakai di mana saja, di ```#app1```, ```#app2```, dst.
 
 ### **10-2. Local Component**
 
-Hanya bisa dipakai di #app1, sesuai dengan yang ditargetkan.
+Hanya bisa dipakai di ```#app1```, sesuai dengan yang ditargetkan.
 
 ```HTML
 <html>
