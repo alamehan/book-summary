@@ -1200,6 +1200,8 @@ Idenya: Kita memuat suatu component yang sudah diregister secara dinamis, atau h
 </html>
 ```
 
+</detail>
+
 ## **11. Transition Effect** <a href="#top">⟲</a>
 
 <details>
