@@ -19,9 +19,9 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
   <body>
     <!-- Container (mount point), sebagai hasil kompilasi Vue -->
     <div id="app">
-      <h1>{{ `Name: ${name}` }}</h1>
-      <h1>{{ `Age: ${age}` }}</h1>
-      <h1>{{ `Gender (Pria): ${gender}` }}</h1>
+      <h1>Name: {{ name }}</h1> <!-- Cara 1 -->
+      <h1>Age: {{ age }}</h1>
+      <h1>{{ `Gender (Pria): ${gender}` }}</h1> <!-- Cara 2 -->
       <h1>{{ `Hobby: ${hobby[0]} ${hobby[1]}` }}</h1>
       <h1>{{ `Children: ${children[1]} & ${children[2]}` }}</h1>
     </div>
@@ -1287,7 +1287,7 @@ Efek animasi transisi bawaan Vue, pada contoh di bawah ini merupakan animasi per
 
 Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component menggunakan mixins maka semua option (data, methods, template, dll) dari mixin tersebut akan digabungkan ke dalam Component yang menggunakannya tersebut.
 
-### **👉 12-1. Konsep Umum**
+### **👉 12-1. Konsep Dasar**
 
 ```HTML
 <html>
@@ -1596,6 +1596,65 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+### **👉 14-1. Konsep Dasar**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- 1. Tambahkan pustaka vue-router.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.2/dist/vue-router.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- 7B. Mengakses path di template -->
+      <h4>Current route: {{ $route.path }}</h4>
+      <hr>
+
+      <!-- 2. Deklarasi router di template -->
+      <p>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+      </p>
+      <router-view></router-view>
+    </div>
+
+    <script>
+      // 3. Definisikan konfigurasi component
+      const Home = {template: `<div>Ini halaman home</div>`}
+      const About = {template: `<div>Ini halaman about</div>`}
+
+      // 4. Mapping route path dengan componentnya
+      const routes = [
+        {path:'/', component: Home, alias: '/home'},
+        {path:'/about', component: About},
+        {path:'*', redirect: '/'} // Redirect ke home jika URL tidak valid
+      ]
+
+      // 5. Register routing app pada Object dari Class VueRouter
+      const router = new VueRouter({
+        routes // Shorthand dari 'routes: routes'
+      })
+
+      // 6. Register Object router pada Object Vue
+      var vm = new Vue({
+        el: '#app',
+        router,
+        methods: {
+          showCurrentRoute(){
+            console.log(this.$route.path) // 7A. Mengakses path di dalam Object Vue
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
+```
+
+### **👉 14-2. Dynamic Routing**
 
 ```HTML
 <html>
