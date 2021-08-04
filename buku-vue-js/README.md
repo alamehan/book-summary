@@ -1317,7 +1317,7 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
       }
 
       var vm1 = new Vue({
-        mixins: [MixinHello], // "Import" data & method dari MixinHello
+        mixins: [MixinHello], // "Import" option dari MixinHello
         data(){
           return{
             message: "hello from vm1",
@@ -1340,7 +1340,7 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
       vm1.siang()  // Output: Selamat siang!
 
       var vm2 = new Vue({
-        mixins: [MixinHello],
+        mixins: [MixinHello], // "Import" option dari MixinHello
         data(){
           return{
             bar: "def"
@@ -1481,8 +1481,8 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
 
   <body>
     <div id="app">
-      <component-a ></component-a>
-      <component-b data_props="Ini dari props"></component-b>
+      <component-c ></component-c>
+      <component-d data_props="Ini dari props"></component-d>
     </div>
 
     <script>
@@ -1512,7 +1512,7 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
         },
       }
 
-      Vue.component('component-a', {
+      var ComponentC = Vue.extend({
         mixins: [MixinHeader],
         data(){
           return{
@@ -1528,7 +1528,7 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
         // <super></super> dan isi kontennya menimpa <slot></slot> di MixinHeader
       })
 
-      Vue.component('component-b', {
+      var ComponentD = Vue.extend({
         mixins: [MixinHeader],
         data(){
           return{
@@ -1550,8 +1550,12 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
       })
 
       var vm = new Vue({
-        el: '#app'
-      });
+        el: '#app',
+        components: {
+          'component-c': ComponentC,
+          'component-d': ComponentD,
+        }
+      })
     </script>
   </body>
 </html>
