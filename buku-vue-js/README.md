@@ -1563,7 +1563,32 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
 
 </details>
 
-## **13. ...** <a href="#top">⟲</a>
+## **13. Plugins** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      /* ⚠️ Style disimpan disini (jika ada) */
+    </style>
+  </head>
+
+  <body>
+    <!-- ⚠️ Kode HTML disimpan disini -->
+
+    <script>
+      /* ⚠️ Script (Vue) disimpan disini */
+    </script>
+  </body>
+</html>
+```
+
+## **14. ...** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
