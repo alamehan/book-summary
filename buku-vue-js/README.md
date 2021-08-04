@@ -1568,6 +1568,8 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
 <details>
 <summary>Klik untuk membuka!</summary><br>
 
+**⚠️ BELUM DIRANGKUM ⚠️**
+
 ```HTML
 <html>
   <head>
@@ -1590,7 +1592,61 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
 
 </details>
 
-## **14. ...** <a href="#top">⟲</a>
+## **14. Routing** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      /* ⚠️ Style disimpan disini (jika ada) */
+    </style>
+  </head>
+
+  <body>
+    <!-- ⚠️ Kode HTML disimpan disini -->
+
+    <script>
+      /* ⚠️ Script (Vue) disimpan disini */
+    </script>
+  </body>
+</html>
+```
+
+</details>
+
+## **15. State Management** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      /* ⚠️ Style disimpan disini (jika ada) */
+    </style>
+  </head>
+
+  <body>
+    <!-- ⚠️ Kode HTML disimpan disini -->
+
+    <script>
+      /* ⚠️ Script (Vue) disimpan disini */
+    </script>
+  </body>
+</html>
+```
+
+</details>
+
+## **16. ...** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
