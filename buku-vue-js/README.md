@@ -1285,6 +1285,8 @@ Efek animasi transisi bawaan Vue, pada contoh di bawah ini merupakan animasi per
 <details>
 <summary>Klik untuk membuka!</summary><br>
 
+Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component menggunakan mixins maka semua option (data, methods, template, dll) dari mixin tersebut akan digabungkan ke dalam Component yang menggunakannya tersebut.
+
 ### **👉 12-1. Konsep Umum**
 
 ```HTML
@@ -1295,13 +1297,12 @@ Efek animasi transisi bawaan Vue, pada contoh di bawah ini merupakan animasi per
   </head>
 
   <body>
-    <div id="app"></div>
 
     <script>
       var MixinHello = {
         data(){
           return{
-            message: "hello",
+            message: "hello from mixin",
             foo: "abc"
           }
         },
@@ -1315,11 +1316,11 @@ Efek animasi transisi bawaan Vue, pada contoh di bawah ini merupakan animasi per
         }
       }
 
-      var vm = new Vue({
+      var vm1 = new Vue({
         mixins: [MixinHello], // "Import" data & method dari MixinHello
         data(){
           return{
-            message: "goodbye",
+            message: "hello from vm1",
             bar: "def"
           }
         },
@@ -1327,20 +1328,38 @@ Efek animasi transisi bawaan Vue, pada contoh di bawah ini merupakan animasi per
           siang(){
             console.log("Selamat siang!");
           },
+        }
+      })
+
+      console.log(vm1.message) // Output: hello from vm1  (karena conflict, akan diambil yang asli)
+      console.log(vm1.foo)     // Output: abc             (berasal dari mixins)
+      console.log(vm1.bar)     // Output: def
+
+      vm1.pagi()   // Output: Selamat pagi!  (berasal dari mixins)
+      vm1.sore()   // Output: Selamat sore!  (berasal dari mixins)
+      vm1.siang()  // Output: Selamat siang!
+
+      var vm2 = new Vue({
+        mixins: [MixinHello],
+        data(){
+          return{
+            bar: "def"
+          }
+        },
+        methods: {
           malam(){
             console.log("Selamat malam!");
           }
         }
       })
 
-      console.log(vm.message) // Output: goodbye  (karena conflict, akan diambil yang asli)
-      console.log(vm.foo)     // Output: abc      (berasal dari mixins)
-      console.log(vm.bar)     // Output: def
+      console.log(vm2.message) // Output: hello from mixin  (berasal dari mixins)
+      console.log(vm2.foo)     // Output: abc               (berasal dari mixins)
+      console.log(vm2.bar)     // Output: def
 
-      vm.pagi()   // Output: Selamat pagi!  (berasal dari mixins)
-      vm.sore()   // Output: Selamat sore!  (berasal dari mixins)
-      vm.siang()  // Output: Selamat siang!
-      vm.malam()  // Output: Selamat malam!
+      vm2.pagi()   // Output: Selamat pagi!  (berasal dari mixins)
+      vm2.sore()   // Output: Selamat sore!  (berasal dari mixins)
+      vm2.malam()  // Output: Selamat malam!
     </script>
   </body>
 </html>
