@@ -1595,7 +1595,7 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
 ## **14. Routing** <a href="#top">⟲</a>
 
 <details>
-<summary>Klik untuk membuka!</summary><br>
+<summary>Klik untuk membuka!</summary>
 
 ### **👉 14-1. Konsep Dasar**
 
