@@ -180,7 +180,7 @@ Nantinya masing-masing hook dapat dimanfaatkan untuk menjalankan suatu perintah 
 </html>
 ```
 
-Template Vue (mustache ```{{ ... }}```) mendukung JavaScript Expressions, seperti ```{{ `Diskon: ${total * 10%}` }}```, ```{{ ok ? 'YES' : 'NO' }}```, ```{{ message.split('').reverse().join('') }}```. Atau jika dalam bentuk atribut HTML maka penulisannya dengan cara di-binding, contohnya sebagai berikut ```<h1 :id="`product-${index}`"></h1>```.
+Template Vue (mustache ```{{ ... }}```) mendukung JavaScript Expressions, seperti ```{{ `Diskon: ${total * 10%}` }}```, ```{{ ok ? 'YES' : 'NO' }}```, ```{{ message.split('').reverse().join('') }}```. Atau jika dalam bentuk atribut HTML maka penulisannya dengan cara di-binding, contohnya sebagai berikut ```<h1 :id="'product-'+index"></h1>```.
 
 </details>
 
@@ -1673,11 +1673,132 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
 
 ### **👉 14-2. Dynamic Routing**
 
+𝑩𝒐𝒐𝒌𝒔𝑪𝒐𝒎𝒑𝒐𝒏𝒆𝒏𝒕.𝒋𝒔:
+
+```Javascript
+export const BooksComponent = {
+  data() {
+    return {
+      books: [
+        { id: 1, judul: "Buku A" },
+        { id: 2, judul: "Buku B" },
+        { id: 3, judul: "Buku C" },
+        { id: 4, judul: "Buku D" },
+        { id: 5, judul: "Buku E" },
+      ]
+    }
+  },
+  template: `
+    <div>
+      <h3>Daftar Buku</h3>
+      <ul>
+        <li v-for="buku of books">
+          <router-link :to="'/book/'+buku.id">
+            {{ buku.judul }}
+          </router-link>
+        </li>
+      </ul>
+    </div>
+  `
+}
+```
+
+𝑩𝒐𝒐𝒌𝑪𝒐𝒎𝒑𝒐𝒏𝒆𝒏𝒕.𝒋𝒔:
+
+```Javascript
+// Method untuk membuat huruf pertama dari sebuah kata menjadi huruf kapital
+String.prototype.capitalize = function () {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+export const BookComponent = {
+  data() {
+    return {
+      books: [
+        { id: 1, judul: 'Buku A', deskripsi: "Koding Easy", harga: 50000, img: 'cover-1.jpg' },
+        { id: 2, judul: 'Buku B', deskripsi: "Design Easy", harga: 60000, img: 'cover-2.jpg' },
+        { id: 3, judul: 'Buku C', deskripsi: "Gaming Easy", harga: 70000, img: 'cover-3.jpg' },
+        { id: 4, judul: 'Buku D', deskripsi: "Living Easy", harga: 80000, img: 'cover-4.jpg' },
+      ]
+    }
+  },
+  computed: {
+    book() {
+      return this.books.filter((buku) => {
+        return buku.id === parseInt(this.$route.params.id)
+      })[0]
+    }
+  },
+  template: `
+    <div v-if="book">
+      <h3>{{ book.judul }}</h3>
+      <ul>
+        <li v-for="(value, key) of book">
+          {{ key.capitalize() + ' : ' + value }}<br>
+        </li>
+      </ul>
+    </div>
+  `
+}
+```
+
+𝑰𝒏𝒅𝒆𝒙.𝒉𝒕𝒎𝒍:
+
 ```HTML
 <html>
   <head>
     <title>Belajar Vue.js</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.2/dist/vue-router.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <h4>Current route: {{ $route.path }}</h4>
+      <hr>
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link to="/books">Books</router-link>
+      <hr>
+      <router-view></router-view>
+    </div>
+
+    <script type="module">                                  // type="module" artinya memakai file dari luar
+      import { BooksComponent } from './BooksComponent.js'  // "Import" BooksComponent dari luar file
+      import { BookComponent } from './BookComponent.js'    // "Import" BookComponent dari luar file
+
+      const Home = { template: `<div>Ini halaman home</div>` }
+      const About = { template: `<div>Ini halaman about</div>` }
+
+      const routes = [
+        { path: '/', component: Home, alias: '/home' },
+        { path: '/about', component: About },
+        { path: '/books', component: BooksComponent },
+        { path: '/book/:id', component: BookComponent },    // :id merupakan path dinamis sesuai dengan
+        { path: '*', redirect: '/' },                       // link pada <router-link> nya.
+      ]
+
+      const router = new VueRouter({
+        routes
+      })
+
+      var vm = new Vue({
+        el: '#app',
+        router,
+      })
+    </script>
+  </body>
+</html>
+```
+
+### **👉 14-3. Programmatic Navigation**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.2/dist/vue-router.js"></script>
     <style>
       /* ⚠️ Style disimpan disini (jika ada) */
     </style>
