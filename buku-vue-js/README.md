@@ -206,7 +206,7 @@ Template Vue (mustache ```{{ ... }}```) mendukung JavaScript Expressions, sepert
           message1: 'Hello World!',
           message2: 'Halo Dunia!',
         },
-        template: '<h1>{{ message1 }}</h1>', // Properti Template
+        template: `<h1>{{ message1 }}</h1>`, // Properti Template
         render(createElement) { // Method Render
           return createElement('h1', this.message2);
         },
@@ -823,7 +823,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
             classCard: 'card'
           }
         },
-        props: ['judul', 'deskripsi', 'img'],
+        props: ['judul', 'deskripsi', 'img'], // Note: Tidak bisa menggunakan CamelCase
         template: `
           <div :class=" classCard">
             <h3>{{ judul }}</h3>
@@ -875,7 +875,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
             classCard: 'card'
           }
         },
-        props: ['judul', 'deskripsi', 'img'],
+        props: ['judul', 'deskripsi', 'img'], // Note: Tidak bisa menggunakan CamelCase
         template: `
           <div :class=" classCard">
             <h3>{{ judul }}</h3>
@@ -1144,7 +1144,7 @@ Idenya: Kita memuat suatu component yang sudah diregister secara dinamis, atau h
   </head>
 
   <body>
-    <div id="app">
+    <div id="app8">
       <button @click="currentComponent='item-a'">Item A</button>
       <button @click="currentComponent='item-b'">Item B</button>
       <button @click="currentComponent='item-c'">Item C</button>
@@ -1172,7 +1172,7 @@ Idenya: Kita memuat suatu component yang sudah diregister secara dinamis, atau h
       }
 
       var vm = new Vue({
-        el: '#app',
+        el: '#app8',
         data: {
           currentComponent: 'item-a' // Isi dengan nilai default, atau bisa juga dikosongkan.
         },
@@ -1280,7 +1280,267 @@ Efek animasi transisi bawaan Vue, pada contoh di bawah ini merupakan animasi per
 
 </details>
 
-## **12. ...** <a href="#top">⟲</a>
+## **12. Mixins** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+### **👉 12-1. Konsep Umum**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script>
+      var MixinHello = {
+        data(){
+          return{
+            message: "hello",
+            foo: "abc"
+          }
+        },
+        methods: {
+          pagi(){
+            console.log("Selamat pagi!");
+          },
+          sore(){
+            console.log("Selamat sore!");
+          }
+        }
+      }
+
+      var vm = new Vue({
+        mixins: [MixinHello], // "Import" data & method dari MixinHello
+        data(){
+          return{
+            message: "goodbye",
+            bar: "def"
+          }
+        },
+        methods: {
+          siang(){
+            console.log("Selamat siang!");
+          },
+          malam(){
+            console.log("Selamat malam!");
+          }
+        }
+      })
+
+      console.log(vm.message) // Output: goodbye  (karena conflict, akan diambil yang asli)
+      console.log(vm.foo)     // Output: abc      (berasal dari mixins)
+      console.log(vm.bar)     // Output: def
+
+      vm.pagi()   // Output: Selamat pagi!  (berasal dari mixins)
+      vm.sore()   // Output: Selamat sore!  (berasal dari mixins)
+      vm.siang()  // Output: Selamat siang!
+      vm.malam()  // Output: Selamat malam!
+    </script>
+  </body>
+</html>
+```
+
+### **👉 12-2. Implementasi di Component (Global)**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      .card {
+        background: #efefef;
+        border: 1px solid #ddd;
+        margin: 3px;
+        padding: 6px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <component-a ></component-a>
+      <component-b data_props="Ini dari props"></component-b>
+    </div>
+
+    <script>
+      MixinHeader = {
+        data() {
+          return {
+            dataMixinA: 'Header',
+            dataMixinB: 'Body',
+          };
+        },
+        provide() { 
+          return { 
+            child: this 
+          } 
+        },
+        components: {
+          super: {
+            inject: ['child'],
+            template: `
+              <div class="card">
+                <h4>{{ child.dataMixinA }}</h4>
+                <hr>
+                <slot></slot>
+              </div>`,
+          }
+          // <slot></slot> nantinya akan di-timpa
+        },
+      }
+
+      Vue.component('component-a', {
+        mixins: [MixinHeader],
+        data(){
+          return{
+            message: "Coding Lover"
+          }
+        },
+        template: `
+          <super>
+            <h6>{{ dataMixinB }}</h6>
+            <h6>{{ message }}</h6>
+          </super>
+        `
+        // <super></super> dan isi kontennya menimpa <slot></slot> di MixinHeader
+      })
+
+      Vue.component('component-b', {
+        mixins: [MixinHeader],
+        data(){
+          return{
+            message: "Design Lover"
+          }
+        },
+        created() {
+          this.dataMixinA = "Header New"; // Menimpa "dataMixinA" dari MixinHeader
+          this.dataMixinB = "Body New";   // Menimpa "dataMixinB" dari MixinHeader
+        },
+        props: ["data_props"],            // Menggunakan props
+        template: `
+          <super>
+            <h6>{{ dataMixinB }}</h6>
+            <h6>{{ data_props }}</h6>
+            <h6>{{ message }}</h6>
+          </super>
+        `
+      })
+
+      var vm = new Vue({
+        el: '#app'
+      });
+    </script>
+  </body>
+</html>
+```
+
+### **👉 12-3. Implementasi di Component (Local)**
+
+```HTML
+<html>
+  <head>
+    <title>Belajar Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+      .card {
+        background: #efefef;
+        border: 1px solid #ddd;
+        margin: 3px;
+        padding: 6px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <component-a ></component-a>
+      <component-b data_props="Ini dari props"></component-b>
+    </div>
+
+    <script>
+      MixinHeader = {
+        data() {
+          return {
+            dataMixinA: 'Header',
+            dataMixinB: 'Body',
+          };
+        },
+        provide() { 
+          return { 
+            child: this 
+          } 
+        },
+        components: {
+          super: {
+            inject: ['child'],
+            template: `
+              <div class="card">
+                <h4>{{ child.dataMixinA }}</h4>
+                <hr>
+                <slot></slot>
+              </div>`,
+          }
+          // <slot></slot> nantinya akan di-timpa
+        },
+      }
+
+      Vue.component('component-a', {
+        mixins: [MixinHeader],
+        data(){
+          return{
+            message: "Coding Lover"
+          }
+        },
+        template: `
+          <super>
+            <h6>{{ dataMixinB }}</h6>
+            <h6>{{ message }}</h6>
+          </super>
+        `
+        // <super></super> dan isi kontennya menimpa <slot></slot> di MixinHeader
+      })
+
+      Vue.component('component-b', {
+        mixins: [MixinHeader],
+        data(){
+          return{
+            message: "Design Lover"
+          }
+        },
+        created() {
+          this.dataMixinA = "Header New"; // Menimpa "dataMixinA" dari MixinHeader
+          this.dataMixinB = "Body New";   // Menimpa "dataMixinB" dari MixinHeader
+        },
+        props: ["data_props"],            // Menggunakan props
+        template: `
+          <super>
+            <h6>{{ dataMixinB }}</h6>
+            <h6>{{ data_props }}</h6>
+            <h6>{{ message }}</h6>
+          </super>
+        `
+      })
+
+      var vm = new Vue({
+        el: '#app'
+      });
+    </script>
+  </body>
+</html>
+```
+
+</details>
+
+## **13. ...** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
