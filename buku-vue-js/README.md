@@ -763,6 +763,7 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
     <div id="app2">
       <component-c></component-c>
       <component-d></component-d>
+      <component-e></component-e>
     </div>
 
     <script>
@@ -781,9 +782,25 @@ Hanya bisa dipakai di ```<div id="app1">...</div>```, sesuai dengan yang ditarge
 
       new Vue({
         el: '#app2',
+        data: {
+          message: "Component F"
+        },
         components: {
+          // "Import" component dari luar ke dalam Object Vue
           'component-c': ComponentC,
           'component-d': ComponentD,
+
+          // Atau langsung dibuat di dalam Object Vue pun bisa. Namun kekurangannya tidak 
+          // bisa menggunakan data melalui {{ message }} maupaun {{ this.message }}, jadi
+          // hanya berupa template HTML saja. Dan sebagai catatan, template harus dibungkus
+          // dengan menggunakan 1 tag terluar, misalnya <div> ...konten... </div>.
+          'component-e': {
+            template: `
+                <div>
+                  <h1>Component E</h1>
+                </div>
+              `
+          }, 
         }
       })
     </script>
