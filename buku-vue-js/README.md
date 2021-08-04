@@ -1588,6 +1588,8 @@ Mixins: Reusable data, methods, template, etc. Saat Object Vue atau Component me
 </html>
 ```
 
+</details>
+
 ## **14. ...** <a href="#top">⟲</a>
 
 <details>
