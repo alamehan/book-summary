@@ -412,6 +412,8 @@ var nudA = null;                      // Keadaan dimana data "kosong", biasanya 
 var nudB = undefined;                 // Keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 ```
 
+Sederhananya Undefined itu berarti JavaScript tidak dapat menemukan nilainya, namun sebenarnya "slot"nya sudah ada di memory. 🔔 Hal ini terkait dengan JavaScript Hoisting yang dibahas di bab 2-5 J.
+
 #### ⤷ Kasus yang menghasilkan Undefined:
 
 ```Javascript
