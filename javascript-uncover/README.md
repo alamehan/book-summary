@@ -93,7 +93,8 @@ Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat
 > - [X] 𝐁. Internal JavaScript
 > - [X] 𝐂. External JavaScript
 > - [X] 𝐃. Posisi Terbaik JavaScript
-> - [X] 𝐄. Tag No-Script
+> - [X] 𝐄. Helper Methods
+> - [X] 𝐅. Tag No-Script
 
 ### ![✔] 𝐀. Inline JavaScript
 
@@ -179,7 +180,19 @@ Tab Inspector (1) bisa digunakan untuk menelusuri seluruh kode HTML yang terdapa
 
 Tab yang sering kita akses selama membuat kode program JavaScript adalah **Tab Console**, yang berada di sebelah kanan tab Inspector. Apabila kode yang anda buat tidak berjalan sebagaimana mestinya, hal pertama yang harus dilakukan adalah memeriksa tab Console ini. Selain menampilkan pesan error, di dalam tab Console kita juga bisa menjalankan kode program JavaScript secara langsung, tanpa harus menulisnya di dalam file HTML. Fungsi ```console.log()``` berguna untuk menampilkan hasil kode program ke tab Console.
 
-### ![✔] 𝐄. Tag No-Script
+### ![✔] 𝐄. Helper Methods
+
+Terdapat 3 method bawaan JavaScript yang digunakan untuk membantu proses belajar dan debugging yaitu:
+
+```Javascript
+document.write("hello world");
+alert("hello world");
+console.log("hello world");
+```
+
+Dari ketiga methods tersebut, ```console.log()``` lebih banyak (dan lebih disarankan) untuk digunakan karena menampilkan informasi yang lebih lengkap, bisa menampilkan tipe data Object, serta bisa menulis perintah secara langsung di console.
+
+### ![✔] 𝐅. Tag No-Script
 
 ```HTML
 <html>
@@ -1208,7 +1221,7 @@ console.log(rataratav2(2, 4, 8, 16)); // Output: 7.5  (hasil dari (2+4+8+16)/4 �
 
 ### ![✔] 𝐅. Variable Scope
 
-Variable Scope adalah istilah tentang sejauh mana sebuah Variable masih dapat diakses. Global secara umum artinya **"Not insinde a Code Block"**, bisa berupa Blok Function, Blok Kondisi If-Else, Blok Perulangan For & While, atau bahkan Code BLock itu sendiri yaitu ```{}```. Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup yang terbatas.
+Variable Scope adalah istilah tentang sejauh mana sebuah Variable masih dapat diakses. Global secara umum artinya **"Not insinde a Code Block"**, bisa berupa Blok Function, Blok Kondisi If-Else, Blok Perulangan For & While, atau bahkan Code Block itu sendiri yaitu ```{}```. Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup yang terbatas.
 
 #### ⤷ Global Variable
 
