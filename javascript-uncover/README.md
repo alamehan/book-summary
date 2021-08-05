@@ -190,7 +190,7 @@ alert("hello world");
 console.log("hello world");
 ```
 
-Dari ketiga methods tersebut, ```console.log()``` lebih banyak (dan lebih disarankan) untuk digunakan karena menampilkan informasi yang lebih lengkap, bisa menampilkan tipe data Object, serta bisa menulis perintah secara langsung di console.
+Dari ketiga methods tersebut, ```console.log()``` lah yang lebih banyak dan lebih disarankan untuk digunakan. Mengapa? karena memiliki beberapa kelebihan, yaitu menampilkan informasi yang lebih lengkap, bisa menampilkan tipe data Object, serta bisa menulis perintah secara langsung di console.
 
 ### ![✔] 𝐅. Tag No-Script
 
