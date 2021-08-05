@@ -885,7 +885,7 @@ switch(nilaiTK){                      // Case 1-5: kurang, case 6-7: cukup, case
 
 ### ![✔] 𝐂. Operator Conditional Ternary
 
-Terdapat istilah unary, binary dan ternary. Dimana perbedaannya yaitu sebagai berikut (titik-titik tiga mewakili operand):
+Terdapat istilah unary, binary dan ternary. Dimana perbedaannya yaitu sebagai berikut, titik-titik ```…``` tiga mewakili operand:
 
 | Istilah 	| Definisi        	| Contoh                                           	|
 |---------	|-----------------	|--------------------------------------------------	|
