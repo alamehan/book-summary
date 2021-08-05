@@ -5021,7 +5021,22 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 </details>
 
-## ⑤ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 🦸‍♂️ <a href="#top">⟲</a>
+## ⑥ 𝓐𝓼𝔂𝓷𝓬𝓱𝓻𝓸𝓷𝓸𝓾𝓼 𝓙𝓪𝓿𝓪𝓢𝓬𝓻𝓲𝓹𝓽 ⏳ <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary>
+
+<br>
+
+**A. Urusan Date: moment.js**
+
+**B. Urusan Grafik: chart.js**
+
+**C. Urusan Visualisasi Data: D3.js**
+
+</details>
+
+## ⑥ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 🦸‍♂️ <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -5064,7 +5079,7 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 </details>
 
-## ⑥ 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖 <a href="#top">⟲</a>
+## ⑦ 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖 <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
