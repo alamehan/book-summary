@@ -763,7 +763,7 @@ var result = `${number} ditambah 6 = ${number+6}`;              // Template Stri
 console.log(result);                                            // Output: 24 ditambah 6 = 30
 ```
 
-#### ⤷ Kasus Konversi Number ke String:
+#### ⤷ Implicit Type Conversion: Number to String
 
 ```Javascript
 console.log(10 + 10 + 9);             // Output: 29     (Number)
@@ -771,6 +771,20 @@ console.log("10" + 10 + 9);           // Output: 10109  (String)  dari hasil kon
 console.log(10 + "10" + 9);           // Output: 10109  (String)  dari hasil konversi: console.log(10 + "10" + "9");
 console.log(10 + 10 + "9");           // Output: 209    (String)  dari hasil konversi: console.log(20 + "9");
 ```
+
+#### ⤷ Implicit Type Conversion: String to Number
+
+```Javascript
+let num1 = "10";
+let num2 = "23";
+
+console.log(num1 + num2);             // Output: 1023   (String)
+console.log(num1 - num2);             // Output: -13    (Number)
+console.log(num1 * num2);             // Output: 230    (Number)
+console.log(num1 / num2);             // Output: 0.4347 (Number)
+```
+
+Hati-hati dengan Implicit Type Conversion ini, karena bisa menimbulkan sebuah bug yang berbahaya, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah TypeScript sebagai Strongly typed JavaScript (Tidak dibahas disini, anda bisa mempelajarinya secara mandiri di internet).
 
 ### ![✔] 𝐊. Operator Bitwise
 
