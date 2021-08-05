@@ -3161,13 +3161,13 @@ console.log(Number.NEGATIVE_INFINITY) // Output: -Infinity                ⇨ Ca
 **A2. Object method**
 
 ```Javascript
-console.log(Number.isNaN(5/'a'));                     // Output: true     ⇨ Check apakah hasil operasi/suatu Variable berisi NaN
+console.log(Number.isNaN(5/'a'));                     // Output: true   ⇨ Check apakah hasil operasi/suatu Variable berisi NaN
 console.log(Number.isNaN(Number.NaN));                // Output: true
-console.log(Number.isFinite(3.21456));                // Output: true     ⇨ Check apakah sebuah nilai/Variable berisi angka standar
+console.log(Number.isFinite(3.21456));                // Output: true   ⇨ Check apakah sebuah nilai/Variable berisi angka standar
 console.log(Number.isFinite(1/0));                    // Output: false
-console.log(Number.isInteger(9007199254740992));      // Output: true     ⇨ Check apakah suatu nilai/Variable berisi angka integer
+console.log(Number.isInteger(9007199254740992));      // Output: true   ⇨ Check apakah suatu nilai/Variable berisi angka integer
 console.log(Number.isInteger(3.21456));               // Output: false
-console.log(Number.isSafeInteger(9007199254740992));  // Output: false    ⇨ Sama seperti isInteger, tapi dibatasi standar IEEE-754
+console.log(Number.isSafeInteger(9007199254740992));  // Output: false  ⇨ Sama seperti isInteger, tapi dibatasi standar IEEE-754
 console.log(Number.isSafeInteger(3.21456));           // Output: false
 
 console.log(Number.parseFloat("1.23"));               // Output: 1.23 (number)  ⇨ Mengkonversi String menjadi Number (Pecahan)
