@@ -5009,18 +5009,23 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 <!-- Daftar Referensi -->
 
 Referensi Indonesia:
-1. <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a>
-2. <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>
-3. <a href="https://devsaurus.com/">Devsaurus: Learn Fullstack</a>
-4. <a href="https://buku-laravel-vue.com/">buku-laravel-vue.com</a>
-5. <a href="https://bukureact.id/">bukureact.id</a>
+1. <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a> 📘
+2. <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a> 📕
+3. <a href="https://devsaurus.com/">Devsaurus: Learn Fullstack</a> 📕
+4. <a href="https://buku-laravel-vue.com/">buku-laravel-vue.com</a> 📕
+5. <a href="https://bukureact.id/">bukureact.id</a> 📕
   
 Referensi Inggris:
-1. <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> | **Note: Baru sampai selesai di Section 4: Javascript Tutorial Continued.**
-2. <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> | **Note: Belum Ditonton, baru mau dimulai.**
-3. <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a>
-4. <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a>
-5. <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a>
-6. <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a>
-7. <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a>
-8. <a href="https://www.w3docs.com/">W3Docs</a>
+1. <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 🔁
+2. <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> 📕
+3. <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a> 📕
+4. <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a> 📕
+5. <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a> 📕
+6. <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a> 📕
+7. <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a> 📘
+8. <a href="https://www.w3docs.com/">W3Docs</a> 📕
+
+Keterangan:
+- 🔁 On Progress, Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
+- 📘 Sudah dipelajari sebagian, dan sudah dibuat catatan hasil belajarnya, serta sudah ditambahkan ke dalam markdown JavaScript in One Page ini.
+- 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan.
