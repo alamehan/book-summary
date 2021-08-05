@@ -885,7 +885,7 @@ switch(nilaiTK){                      // Case 1-5: kurang, case 6-7: cukup, case
 
 ### ![✔] 𝐂. Operator Conditional Ternary
 
-Terdapat istilah unary, binary dan ternary. Dimana perbedaannya yaitu sebagai berikut, titik-titik ```…``` tiga mewakili operand:
+Terdapat istilah unary, binary dan ternary. Dimana perbedaannya yaitu sebagai berikut, titik-titik tiga ```…``` mewakili operand:
 
 | Istilah 	| Definisi        	| Contoh                                           	|
 |---------	|-----------------	|--------------------------------------------------	|
@@ -1259,31 +1259,70 @@ console.log(rataratav2(2, 4, 8, 16)); // Output: 7.5  (hasil dari (2+4+8+16)/4 �
 
 ### ![✔] 𝐅. Variable Scope
 
-Variable Scope adalah istilah tentang sejauh mana sebuah Variable masih dapat diakses. Global secara umum artinya **"Not insinde a Code Block"**, bisa berupa Blok Function, Blok Kondisi If-Else, Blok Perulangan For & While, atau bahkan Code Block itu sendiri yaitu ```{}```. Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup yang terbatas.
+Variable Scope adalah istilah tentang sejauh mana sebuah Variable masih dapat diakses. Global secara umum artinya **"Not insinde a Code Block"**, bisa berupa Blok Function, Blok Kondisi If-Else, Blok Perulangan For & While, atau bahkan Code Block itu sendiri yaitu ```{}```. 
+
+Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup yang terbatas, jika menggunakan ```var``` maka ruang lingkupnya berupa Function, sedangkan jika menggunakan ```let``` atau ```const``` maka ruang lingkupnya berupa Code Block ```{}```.
 
 #### ⤷ Global Variable
 
 ```Javascript
 var a = "Belajar JS";                 // Var a disini merupakan global Variable dan dapat diakses darimana saja
-function boo(){
-  console.log(a);                     // a yang diakses disini yaitu a di global Varibale, ini terjadi karena di dalam Function
-}                                     // boo() tidak ada local Variable a, maka JS akan mencari "keluar" hingga menemukan a.
 
-boo();                                // Output: Belajar JS   (Hasil dari dalam Function 🡲 global Variable a)
-console.log(a);                       // Output: Belajar JS   (Hasil dari global Variable a)
+// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟭: 𝗕𝗹𝗼𝗸 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻
+function boo(){
+  console.log(a);                     // a yang diakses disini yaitu a di global Variable, ini terjadi karena di dalam Function
+  a = "Belajar CSS";                  // boo() tidak ada local Variable a, maka JS akan mencari "keluar" hingga menemukan a.
+}                                     
+boo();                                // Output: Belajar JS 
+console.log(a);                       // Output: Belajar CSS
+
+// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟮: 𝗕𝗹𝗼𝗸 𝗜𝗳-𝗘𝗹𝘀𝗲
+if (true){                            
+  console.log(a);                     // Output: Belajar CSS
+  a = "Belajar HTML";
+}
+console.log(a);                       // Output: Belajar HTML
+
+// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟯: 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸 (𝗶𝘁𝘀𝗲𝗹𝗳)
+{
+  console.log(a);                     // Output: Belajar HTML
+  a = "Belajar PHP";
+}
+console.log(a);                       // Output: Belajar PHP
 ```
 
 #### ⤷ Local Variable
 
 ```Javascript
 var b = "Belajar JS";                 // Var b disini merupakan global Variable dan dapat diakses darimana saja
+
+// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟭: 𝗕𝗹𝗼𝗸 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻
 function coo(){
   var b = "Belajar CSS";              // b disini merupakan local Variable dan hanya bisa diakses di dalam Function coo saja
   console.log(b);                     // b yang diakses disini yaitu b local Variable (karena memang terdapat local Variable b)
 }
+coo();                                // Output: Belajar CSS  (hasil dari local Variable b)
+console.log(b);                       // Output: Belajar JS   (hasil dari global Variable b)
 
-coo();                                // Output: Belajar CSS  (Hasil dari dalam Function 🡲 local Variable b)
-console.log(b);                       // Output: Belajar JS   (Hasil dari global Variable b)
+// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟮: 𝗕𝗹𝗼𝗸 𝗜𝗳-𝗘𝗹𝘀𝗲
+if (true){
+  var umur1   = 100;
+  let umur2   = 200;
+  const umur3 = 300;
+}
+console.log(umur1);                   // Output: 100
+console.log(umur2);                   // Output: ReferenceError: umur2 is not defined
+console.log(umur3);                   // Output: ReferenceError: umur3 is not defined
+
+// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟯: 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸 (𝗶𝘁𝘀𝗲𝗹𝗳)
+{
+  var kota1   = "Bali";
+  let kota2   = "Solo";
+  const kota3 = "Medan";
+}
+console.log(kota1);                   // Output: Bali
+console.log(kota2);                   // Output: ReferenceError: kota2 is not defined
+console.log(kota3);                   // Output: ReferenceError: kota3 is not defined
 ```
 
 #### ⤷ Studi Kasus 1
