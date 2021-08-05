@@ -190,7 +190,7 @@ alert("hello world");
 console.log("hello world");
 ```
 
-Dari ketiga methods tersebut, ```console.log()``` lah yang lebih banyak dan lebih disarankan untuk digunakan, beberapa kelebihannya yaitu informasi yang ditampilkan lengkap, bisa menampilkan tipe data Object, serta bisa menulis perintah secara langsung di console.
+Dari ketiga methods tersebut, ```console.log()``` lah yang lebih banyak dan lebih disarankan untuk digunakan, beberapa kelebihannya yaitu informasi yang ditampilkan lebih lengkap, bisa menampilkan tipe data Object, serta bisa menulis perintah secara langsung di console.
 
 ### ![✔] 𝐅. Tag No-Script
 
@@ -1534,7 +1534,7 @@ console.log(nama);                    // console.log(nama);               🡲 O
 
 #### ⤷ Kesimpulan JavaScript Hoisting
 
-Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan Let & Const sebagai alternatif dari Var. Prilaku Let & Const lebih "masuk akal" dibandingkan dengan Var. Let & Const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan Var malah menghasilkan undefined (karena efek hoisting). Selain itu Let & Const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope.
+Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan Let & Const sebagai alternatif dari Var. Prilaku Let & Const lebih "masuk akal" dibandingkan dengan Var. Let & Const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan Var malah menghasilkan undefined (karena efek hoisting). Selain itu Let & Const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan Const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
 
 ### ![✔] 𝐊. Function Expressions & Anonymous Function
 
