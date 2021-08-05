@@ -265,7 +265,7 @@ Di CSS kita menggunakan cara penulisan selector yang dipisah dengan tanda “ - 
 
 **Strict Mode** memaksa JavaScript menampilkan error (di Tab Console) pada kode program yang seharusnya bisa berjalan “normal”. Tujuannya, meminimalisir kemungkinan bug karena penulisan yang salah, typo, dan berbagai hal lain. Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu anda gunakan, terutama jika terdapat kode JavaScript pendahulu yang terlalu rumit untuk diubah semuanya. Strict Mode akan membuat web browser menampilkan error dimana sebelumnya hanya ada **“silent error”**. Salah satunya ketika membuat Variable tanpa perintah ```var```. Untuk masuk ke dalam Strict Mode, tambahkan String ```"use strict";``` di baris pertama kode JavaScript atau di baris paling awal dari sebuah Function (jika ingin menerapkanya hanya pada sebuah Function tertentu).
 
-EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah ```let``` untuk membuat Variable (sebagai alternatif dari ```var```). Perbedaan mendasar dari ```var``` dan ```let``` adalah terkait dengan **Variable scope**, yakni di bagian mana sebuah Variable masih bisa diakses. Penjelasan mengenai Variable scope akan dibahas pada bab tentang Function. Selain Let, ada juga Konstanta (```const```) yaitu Variable yang nilainya tidak bisa diubah sepanjang kode program. Setelah Konstanta ditulis dan diberi nilai awal, isi Konstanta tersebut tidak bisa diubah.
+EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah ```let``` untuk membuat Variable (sebagai alternatif dari ```var```). Perbedaan mendasar dari ```var``` dan ```let``` adalah terkait dengan **Variable scope**, yakni di bagian mana sebuah Variable masih bisa diakses. Penjelasan mengenai Variable scope akan dibahas pada bab tentang Function. Selain let, ada juga Konstanta (```const```) yaitu Variable yang nilainya tidak bisa diubah sepanjang kode program. Setelah Konstanta ditulis dan diberi nilai awal, isi Konstanta tersebut tidak bisa diubah.
 
 Format penulisan: var/let diawali huruf kecil (```total```, ```totalBiaya```, dst), const huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). **Class dibahas di bab 11**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variable, Konstanta maupun Class.
 
@@ -1451,7 +1451,7 @@ init();                               // Output: Budi
 
 Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan mengatur ruang memory untuk setiap Variable & Function yang dibuat. Teknisnya JavaScript seolah "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai ```undefined```, sedangkan Function akan diisi Functionnya itu sendiri. 
 
-Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja**. Let, Const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
+Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja**. let, const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
 
 📚 Gunakan tools <a href="http://pythontutor.com/javascript.html">visualusasi hoisting</a>.
 
@@ -1615,7 +1615,7 @@ console.log(nama);                    // console.log(nama);               🡲 O
 
 Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan let & const sebagai alternatif dari Var. Prilaku let & const lebih "masuk akal" dibandingkan dengan Var. 
 
-let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan Const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
+let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
 
 ### ![✔] 𝐊. Function Expressions & Anonymous Function
 
@@ -1642,7 +1642,7 @@ console.log(hitung(4, 8));            // Output: 6
 
 ### ![✔] 𝐋. Callback & Higher Order Function
 
-Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument, disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function. 🔔 Nantinya Callback banyak dijumpai di **Asynchronous JS**.
+Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument (Dilempar ke Function lainnya sebagai argument dan dieksekusi di dalam Function tersebut), disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function. 🔔 Nantinya Callback banyak dijumpai di **Asynchronous JS**.
 
 #### ⤷ Menjalankan Function di Argument
 
@@ -1997,7 +1997,7 @@ sapa("Joko");                         // Output: Pagi, Joko!    ⇨ Menjalankan 
 
 ```Javascript
 let add = (function(){
-  let counter = 0;                    // Baik didefinisikan sebagai var maupun Let, dengan IIFE, counter seolah
+  let counter = 0;                    // Baik didefinisikan sebagai var maupun let, dengan IIFE, counter seolah
   function tambah(){                  // akan menjadi Private, nilainya tidak bisa diubah dari luar scope.
     return ++counter;
   }
@@ -3384,7 +3384,7 @@ let regA = "Belajar JavaScript dari buku JavaScript Uncover";
 let polaA = /JavaScript/;
 
 console.log(polaA.test(regA));          // Output: true           ⇨ Check apakah pola /JavaScript/ terdapat di dalam String regA
-console.log(/buku/.test(regA));         // Output: true           ⤷ Penulisan bisa langsung, tanpa disimpan ke dalam Let, hal ini
+console.log(/buku/.test(regA));         // Output: true           ⤷ Penulisan bisa langsung, tanpa disimpan ke dalam let, hal ini
 console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku juga untuk semua Object instance property & method 🔔
 console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
 ```
