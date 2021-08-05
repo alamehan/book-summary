@@ -1261,7 +1261,7 @@ console.log(rataratav2(2, 4, 8, 16)); // Output: 7.5  (hasil dari (2+4+8+16)/4 ð
 
 Variable Scope adalah istilah tentang sejauh mana sebuah Variable masih dapat diakses. Global secara umum artinya **"Not insinde a Code Block"**, bisa berupa Blok Function, Blok Kondisi If-Else, Blok Perulangan For & While, atau bahkan Code Block itu sendiri yaitu ```{}```. 
 
-Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup yang terbatas, jika menggunakan ```var``` maka ruang lingkupnya berupa Function, sedangkan jika menggunakan ```let``` atau ```const``` maka ruang lingkupnya berupa Code Block ```{}```.
+Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bisa diakses di dalam ruang lingkup yang terbatas, jika memakai ```var``` maka ruang lingkupnya berupa Function, sedangkan jika memakai ```let``` atau ```const``` maka ruang lingkupnya berupa Code Block ```{}```.
 
 #### â¤· Global Variable
 
