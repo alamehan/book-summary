@@ -255,7 +255,7 @@ JavaScript termasuk ke dalam bahasa pemrograman **Typeless Programming Language*
 
 Apabila anda sering mengikuti tutorial programming, nama Variable **foo**, **bar**, dan **baz** sering digunakan. Ketiganya dikenal sebagai **dummy Variable**, yakni Variable yang fungsinya hanya sebagai contoh. Mirip seperti teks “Lorem Ipsum dolor sit amet” dalam bidang design.
 
-Kita bisa memberi nama apa saja untuk Variable, apakah itu ```angka```, ```foo```, ```bar```, ```andi```, atau ```username```. Selain Variable (Var), kita juga bebas untuk membuat nama Konstanta (Const), Function, Object muapun Class. Semua inilah yang termasuk ke dalam kelompok **Identifier**. Identifier di dalam JavaScript memiliki aturan sebagai berikut:
+Kita bisa memberi nama apa saja untuk Variable, apakah itu ```angka```, ```foo```, ```bar```, ```andi```, atau ```username```. Selain Variable (var), kita juga bebas untuk membuat nama Konstanta (c), Function, Object muapun Class. Semua inilah yang termasuk ke dalam kelompok **Identifier**. Identifier di dalam JavaScript memiliki aturan sebagai berikut:
    - Bersifat case sensitive, dimana huruf besar dan kecil dianggap berbeda.
    - Bisa terdiri dari huruf, angka, underscore “_”, dan tanda dollar “$“. Selain itu, dianggap sebagai karakter ilegal.
    - Karakter pertama dari Identifier tidak boleh berupa angka. Angka hanya bisa digunakan sebagai karakter kedua dan seterusnya.
@@ -267,9 +267,9 @@ Di CSS kita menggunakan cara penulisan selector yang dipisah dengan tanda “ - 
 
 EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah ```let``` untuk membuat Variable (sebagai alternatif dari ```var```). Perbedaan mendasar dari ```var``` dan ```let``` adalah terkait dengan **Variable scope**, yakni di bagian mana sebuah Variable masih bisa diakses. Penjelasan mengenai Variable scope akan dibahas pada bab tentang Function. Selain Let, ada juga Konstanta (```const```) yaitu Variable yang nilainya tidak bisa diubah sepanjang kode program. Setelah Konstanta ditulis dan diberi nilai awal, isi Konstanta tersebut tidak bisa diubah.
 
-Format penulisan: Var/Let diawali huruf kecil (```total```, ```totalBiaya```, dst), Const huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). **Class dibahas di bab 11**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variable/Let, Konstanta maupun Class.
+Format penulisan: var/let diawali huruf kecil (```total```, ```totalBiaya```, dst), const huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). **Class dibahas di bab 11**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variable, Konstanta maupun Class.
 
-Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: Var ```harga```, Let ```namaLengkap```, dan Const ```NILAI_PI``` adalah Identifier. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah Literal.
+Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var ```harga```, let ```namaLengkap```, dan const ```NILAI_PI``` adalah Identifier. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah Literal.
 
 ```HTML
 <html>
@@ -427,7 +427,7 @@ Null menjadi sesuatu yang kita tetapkan sebagai nilai, dalam kasus di atas Null 
 #### ⤷ Kasus yang menghasilkan Undefined:
 
 ```Javascript
-var und1;                             // Var yang dibuat tanpa langsung diisi nilai menjadi Undefined
+var und1;                             // var yang dibuat tanpa langsung diisi nilai menjadi Undefined
 console.log(und1);                    // Output: undefined
 
 var und2 = [1, 2, 3];                 // Mengakses Array diluar indeks yang dibuat menghasilkan Undefined
@@ -896,12 +896,12 @@ Terdapat istilah unary, binary dan ternary. Dimana perbedaannya yaitu sebagai be
 ```Javascript
 var jumlah = 501;
 var pesan = jumlah > 500 ? "Cukup!" : "Produksi lagi!"; // Cara baca: Apakah jumlah > 500? jika iya (true), kirim String "Cukup!"
-                                                        // ke Var pesan. Jika tidak (false) kirim String "Produksi lagi!".
+                                                        // ke var pesan. Jika tidak (false) kirim String "Produksi lagi!".
 
 var user = "admin";
 var akses = user === "admin" ? true : false;            // Cara baca: Apakah user === "admin"? jika iya, kirim Boolean true ke
-if (akses){ // jika akses bernilai true                 // Var akses, lalu kondisi "if (akses)" akan dijalankan. Jika tidak,
-  console.log("Welcome, admin!");                       // kirim false ke Var akses, dan kondisi "if (akses)" tidak jalan.
+if (akses){ // jika akses bernilai true                 // var akses, lalu kondisi "if (akses)" akan dijalankan. Jika tidak,
+  console.log("Welcome, admin!");                       // kirim false ke var akses, dan kondisi "if (akses)" tidak jalan.
 }
 ```
 
@@ -1266,7 +1266,7 @@ Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bis
 #### ⤷ Global Variable
 
 ```Javascript
-var a = "Belajar JS";                 // Var a disini merupakan global Variable dan dapat diakses darimana saja
+var a = "Belajar JS";                 // var a disini merupakan global Variable dan dapat diakses darimana saja
 
 function boo(){                       // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟭: 𝗕𝗹𝗼𝗸 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻
   console.log(a);                     // a yang diakses disini yaitu a di global Variable, ini terjadi karena di dalam Function
@@ -1291,7 +1291,7 @@ console.log(a);                       // Output: Belajar PHP
 #### ⤷ Local Variable
 
 ```Javascript
-var b = "Belajar JS";                 // Var b disini merupakan global Variable dan dapat diakses darimana saja
+var b = "Belajar JS";                 // var b disini merupakan global Variable dan dapat diakses darimana saja
 
 function coo(){                       // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟭: 𝗕𝗹𝗼𝗸 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻
   var b = "Belajar CSS";              // b disini merupakan local Variable dan hanya bisa diakses di dalam Function coo saja
@@ -1306,8 +1306,8 @@ if (true){                            // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟮: 𝗕𝗹
   const umur3 = 300;
 }
 console.log(umur1);                   // Output: 100
-console.log(umur2);                   // Output: ReferenceError: umur2 is not defined
-console.log(umur3);                   // Output: ReferenceError: umur3 is not defined
+console.log(umur2);                   // Output: ReferenceError: umur2 is not defined   (tidak bisa diakses diluar Code Block)
+console.log(umur3);                   // Output: ReferenceError: umur3 is not defined   (tidak bisa diakses diluar Code Block)
 
 {                                     // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟯: 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸 (𝗶𝘁𝘀𝗲𝗹𝗳)
   var kota1   = "Bali";
@@ -1315,8 +1315,8 @@ console.log(umur3);                   // Output: ReferenceError: umur3 is not de
   const kota3 = "Medan";
 }
 console.log(kota1);                   // Output: Bali
-console.log(kota2);                   // Output: ReferenceError: kota2 is not defined
-console.log(kota3);                   // Output: ReferenceError: kota3 is not defined
+console.log(kota2);                   // Output: ReferenceError: kota2 is not defined   (tidak bisa diakses diluar Code Block)
+console.log(kota3);                   // Output: ReferenceError: kota3 is not defined   (tidak bisa diakses diluar Code Block)
 ```
 
 🔔 Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bagian berikutnya.
@@ -1332,11 +1332,11 @@ function doo(c, d){
 
 var c = 5;                            // c disini merupakan global Variable
 var d = 10;                           // d disini merupakan global Variable
-var e = doo(c, d);                    // Menjalankan Function doo dengan Argument, lalu hasil return-nya simpan ke dalam Var e
+var e = doo(c, d);                    // Menjalankan Function doo dengan Argument, lalu hasil return-nya simpan ke dalam var e
 
 console.log(c);                       // Output: 5  (c berasal dari global Variable c)
 console.log(d);                       // Output: 10 (d berasal dari global Variable d)
-console.log(e);                       // Output: 60 (nilai global Var c & d tertimpa oleh local Var saat di dalam Function doo)
+console.log(e);                       // Output: 60 (nilai global var c & d tertimpa oleh local var saat di dalam Function doo)
 ```
 
 #### ⤷ Studi Kasus 2
@@ -1359,11 +1359,11 @@ console.log(e);                       // Output: 60 (Bukan 15, karena nilai var 
 
 ### ![✔] 𝐆. Var, Let & Const
 
-Seperti yang kita lihat pada contoh sebelumnya, bahwa penggunaan Var dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan Let & Const tidak mempengaruhi nilai diluar scope (aman!). Var bersifat **Function Scope**, artinya cakupan scopenya itu Function, seolah tidak Private. Sedangkat Let & Const bersifat **Block Scope**, artinya cakupan scopenya itu tanda block yaitu ```{}```, seolah menjadi Private. 
+Seperti yang kita lihat pada contoh sebelumnya, bahwa penggunaan ```var``` dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan ```let``` & ```const``` tidak mempengaruhi nilai diluar scope (aman!). var bersifat **Function Scope**, artinya cakupan scopenya itu Function, seolah tidak Private. Sedangkan let & const bersifat **Block Scope**, artinya cakupan scopenya itu tanda block yaitu ```{}```, seolah menjadi Private. 
 
-Let & Const sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan Var. Perbedaan antara Let & Const yaitu Const nilainya tidak bisa diubah sepanjang kode program (isinya tetap).
+let & const sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu const nilainya tidak bisa diubah sepanjang kode program (isinya tetap).
 
-🔔 Mulai dari sini, istilah Variable itu bisa berarti Var/Let/Const.
+🔔 Mulai dari sini, istilah Variable itu bisa berarti var/let/const.
 
 #### ⤷ Var & Let (1)
 
@@ -1372,13 +1372,13 @@ for (var i=1; i<3; i++){
   console.log(i);
 }
 console.log(i);                       // Output: 3
-                                      // Var malah bisa diakses dari luar For (ini tidak aman!), seolah tidak Private.
+                                      // var malah bisa diakses dari luar For (ini tidak aman!), seolah tidak Private.
 
 for (let j=1; j<3; j++){
   console.log(j);
 }
 console.log(j);                       // Output: ReferenceError j is not defined
-                                      // Let tidak bisa diakses dari luar For (ini aman!), seolah Private.
+                                      // let tidak bisa diakses dari luar For (ini aman!), seolah Private.
 ```
 
 #### ⤷ Var & Let (2)
@@ -1408,7 +1408,7 @@ var tempA   = "Hello Wolrd!";
 let tempB   = "Hello Wolrd!";
 const tempC = "Hello Wolrd!";
 
-temC = "Teks diganti!";               // Output: TypeError Assignment to constant variable (Const tidak bisa ditimpa nilai baru)
+temC = "Teks diganti!";               // Output: TypeError Assignment to constant variable (const tidak bisa ditimpa nilai baru)
 ```
 
 ### ![✔] 𝐇. Inner & Outer Function
@@ -1438,7 +1438,7 @@ Inner Function yang memiliki akses/menggunakan data yang ada di parent scope-nya
 function init(){
   let nama = "Budi";
   function tampilNama(){              // Di dalam Function tampilNama tidak terdapat pendefinisian Variable nama, sehingga
-    console.log(nama);                // perintah console.log(nama) akan "mencari keluar" scope, dan ditemukanlah Let nama di
+    console.log(nama);                // perintah console.log(nama) akan "mencari keluar" scope, dan ditemukanlah let nama di
   }                                   // parent-nya, lalu digunakan. Dengan demikian Function tampilNama disebut Closures.
   tampilNama();                       // Menjalankan Function tampilNama yang berada di dalam Function init
 }
@@ -1609,21 +1609,21 @@ console.log(nama);                    // console.log(nama);               🡲 O
 
 #### ⤷ Kesimpulan JavaScript Hoisting
 
-Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan Let & Const sebagai alternatif dari Var. Prilaku Let & Const lebih "masuk akal" dibandingkan dengan Var. 
+Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan let & const sebagai alternatif dari Var. Prilaku let & const lebih "masuk akal" dibandingkan dengan Var. 
 
-Let & Const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan Var malah menghasilkan undefined (karena efek hoisting). Selain itu Let & Const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan Const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
+let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan Const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
 
 ### ![✔] 𝐊. Function Expressions & Anonymous Function
 
-Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (Var/Let/Const), disebut sebagai Function Expressions. Jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
+Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (var/let/const), disebut sebagai Function Expressions. Jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
 
 #### ⤷ Function Expressions
 
 ```Javascript
-let hitung = function ratarata(a, b){ // Function Expressions (dimana Function ratarata disimpan ke dalam Let hitung)
+let hitung = function ratarata(a, b){ // Function Expressions (dimana Function ratarata disimpan ke dalam let hitung)
   return (a+b)/2;
 }
-console.log(hitung(4, 8));            // Output: 6  ⇨ Yang dipanggil yaitu nama Let-nya (bukan nama Function-nya)
+console.log(hitung(4, 8));            // Output: 6  ⇨ Yang dipanggil yaitu nama let-nya (bukan nama Function-nya)
 console.log(ratarata(4, 8));          // Output: ReferenceError ratarata is not defined
 ```
 
@@ -1651,7 +1651,7 @@ function tambah(c, d){
 }
 let hasil = tambah(6, rerata(7, 3));  // Jalankan Function rerata(7, 3) lalu hasil return-nya yang bernilai 5 gunakan sebagai
                                       // Argument. Dengan demikian tambah(6, rerata(7, 3)) akan diolah menjadi tambah(6, 5).
-                                      // Lalu hasil dari Function tambah(6, 5) yang bernilai 11 disimpan ke dalam Let hasil.
+                                      // Lalu hasil dari Function tambah(6, 5) yang bernilai 11 disimpan ke dalam let hasil.
 console.log(hasil);                   // Output: 11
 ```
 
@@ -1879,13 +1879,13 @@ function luar(waktu){
 }
 
 let pagi = luar("Pagi");              // luar() baru berjalan ½ nya, dimana waktu sudah berisi dengan nilai String "Pagi",
-                                      // lalu disimpan ke Let pagi yang nantinya akan digunakan sebagai Factory Function.
+                                      // lalu disimpan ke let pagi yang nantinya akan digunakan sebagai Factory Function.
 
 pagi("Budi");                         // Output: Pagi, Budi!          ⇨ Menjalankan Factory Function pagi("Budi");
 pagi("Joko");                         // Output: Pagi, Joko!          ⇨ Menjalankan Factory Function pagi("Joko");
 
 let sore = luar("Sore");              // luar() baru berjalan ½ nya, dimana waktu sudah berisi dengan nilai String "Sore",
-                                      // lalu disimpan ke Let sore yang nantinya akan digunakan sebagai Factory Function.
+                                      // lalu disimpan ke let sore yang nantinya akan digunakan sebagai Factory Function.
 
 sore("Budi");                         // Output: Sore, Budi!          ⇨ Menjalankan Factory Function sore("Budi");
 sore("Joko");                         // Output: Sore, Joko!          ⇨ Menjalankan Factory Function sore("Budi");
@@ -1927,7 +1927,7 @@ Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut 
 
 Sebenarnya ide awalnya yaitu perintah berpola ```___()``` saja, namun kita tidak bisa langsung membuat Function lalu ditambahkan tanda () begitu saja, karena akan terjadi error. Melainkan Function tersebut harus dibungkus terlebih dahulu menggunakan tanda () lalu ditambah lagi tanda () yang kedua sebagai perintah untuk menjalankan Function tersebut. Sehingga pola perintahnya ```(___)()``` atau ```(___())```, bukan ```___()```.
 
-Selain itu, IIFE digunakan juga untuk membuat Var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga Var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, Var sudah "digantikan" oleh Let yang secara default memang sudah bersifat Block Scope.
+Selain itu, IIFE digunakan juga untuk membuat var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, var sudah "digantikan" oleh let yang secara default memang sudah bersifat Block Scope.
 
 #### ⤷ Function Biasa & IIFE
 
@@ -1993,7 +1993,7 @@ sapa("Joko");                         // Output: Pagi, Joko!    ⇨ Menjalankan 
 
 ```Javascript
 let add = (function(){
-  let counter = 0;                    // Baik didefinisikan sebagai Var maupun Let, dengan IIFE, counter seolah
+  let counter = 0;                    // Baik didefinisikan sebagai var maupun Let, dengan IIFE, counter seolah
   function tambah(){                  // akan menjadi Private, nilainya tidak bisa diubah dari luar scope.
     return ++counter;
   }
@@ -2110,15 +2110,15 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 
 JavaScript menggunakan konsep Prototypical Inheritance untuk menerapkan konsep pemrograman berbasis Object. Secara singkatnya, untuk membuat Object di JavaScript, caranya dengan langsung menulis Object tersebut (tidak perlu membuat Class, seperti yang dilakukan di bahasa pemrograman lain). Di dalam Object, terdapat istilah property & method.
 
-property merupakan Variable (Var/Let/Const) yang berada di dalam Object, sedangkan method merupakan Function yang berada di dalam Object. Baik property maupun method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian Variable biasa. Serta, diantara property maupun method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
+property merupakan Variable (var/let/const) yang berada di dalam Object, sedangkan method merupakan Function yang berada di dalam Object. Baik property maupun method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian Variable biasa. Serta, diantara property maupun method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
 
 #### ⤷ Pendefinisian Object
 
 ```Javascript
-let objA = {};                        // Let objA berisi Object kosong
+let objA = {};                        // let objA berisi Object kosong
 console.log(typeof objA);             // Output: object
 
-let objB = {                          // Let objB berisi Object dengan property & method
+let objB = {                          // let objB berisi Object dengan property & method
   property1: "isi_property1",         // Penulisan property
   property2: "isi_property1",
   property3: "isi_property1",
@@ -2138,7 +2138,7 @@ let objB = {                          // Let objB berisi Object dengan property 
 #### ⤷ Contoh Object
 
 ```Javascript
-let mobil = {                         // Let mobil berisi Object tentang mobil (Contoh saja)
+let mobil = {                         // let mobil berisi Object tentang mobil (Contoh saja)
   merk: "Toyota Avanza",
   tipe: "MPV",
   harga: 200000000,
@@ -2219,7 +2219,7 @@ Tipe data primitif bersifat Assignment by Value, artinya saat dipindahkan/disali
 
 ```Javascript
 let motor = "NMax";
-let motorBaru = motor;                // Assignment by Value        ⇨ Value (nilai) dari Let motor di-copy ke Let motorBaru
+let motorBaru = motor;                // Assignment by Value        ⇨ Value (nilai) dari let motor di-copy ke let motorBaru
 console.log(motor);                   // Output: NMax
 console.log(motorBaru);               // Output: NMax
 
@@ -2653,8 +2653,8 @@ function sapa2(a, b) {
   console.log(`Saya ${this.name}, ${this.age} tahun, asal ${a} ${b}.`);
 };
 
-const sapaBudi1 = sapa1.bind(userA);  // Buat Function sapa1 baru dgn this mengacu pada Object userA, simpan ke Const sapaBudi.
-const sapaJaka1 = sapa1.bind(userB);  // Buat Function sapa1 baru dgn this mengacu pada Object userB, simpan ke Const sapaJaka.
+const sapaBudi1 = sapa1.bind(userA);  // Buat Function sapa1 baru dgn this mengacu pada Object userA, simpan ke const sapaBudi.
+const sapaJaka1 = sapa1.bind(userB);  // Buat Function sapa1 baru dgn this mengacu pada Object userB, simpan ke const sapaJaka.
 const sapaBudi2 = sapa2.bind(userA, "Bandung", "ID"); // bind juga dapat disisipkan Argument, dan bahkan bisa lebih dari 1.
 const sapaJaka2 = sapa2.bind(userB, "Jakarta", "ID");
 
@@ -4116,8 +4116,8 @@ console.log(hasil);                         // Output: Sabtu, 5 Juni 2021 13:25:
 // ➋ Menghitung Selisih Tanggal
 
                                             // Membuat Date Object dengan 1 Argument dateString
-let tglAwal   = new Date("06/05/2021");     // Let tglAwal diisi dengan 5 Juni 2021          Note: Perhatikan, urutan tanggal
-let tglAkhir  = new Date("12/20/2021");     // Let tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik 🔔
+let tglAwal   = new Date("06/05/2021");     // let tglAwal diisi dengan 5 Juni 2021          Note: Perhatikan, urutan tanggal
+let tglAkhir  = new Date("12/20/2021");     // let tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik 🔔
 
 let timeAwal  = tglAwal.getTime();          // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAwal (5 Juni 2021)
 let timeAkhir = tglAkhir.getTime();         // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAkhir (12 Desember 2021)
@@ -4420,7 +4420,7 @@ masalah yang sering membuat pusing jika menelusuri struktur DOM tree satu per sa
 **C2. Node property**
 
 ```Javascript
-let bar = document.childNodes[1].childNodes[2].childNodes[3]; // Let bar berisi <𝗽> ... </𝗽>
+let bar = document.childNodes[1].childNodes[2].childNodes[3]; // let bar berisi <𝗽> ... </𝗽>
 
 console.log(bar.tagName);                           // Output: 𝗣
 console.log(bar.nodeName);                          // Output: 𝗣
@@ -4515,11 +4515,11 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
     <script>
-      // 1. Siapkan Let shorcut untuk Node
+      // 1. Siapkan let shorcut untuk Node
       let nodeBody  = document.childNodes[1].childNodes[2];
       let nodeP     = nodeBody.childNodes[3];
   
-      // 2. Buat tag <table> & siapkan beberapa Let untuk looping
+      // 2. Buat tag <table> & siapkan beberapa let untuk looping
       let nodeTable = document.createElement("table");
       let nodeTr, nodeTd1, nodeTd2, nomorUrut, nomorAcak, nomorAcakText;
   
@@ -4638,8 +4638,8 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 **E1. Memanipulasi tag HTML + konten isinya**
 
 ```Javascript
-let boo = document.querySelector("p");              // Let boo berisi <𝗽> ... </𝗽>
-let coo = document.querySelector("title");          // Let coo berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
+let boo = document.querySelector("p");              // let boo berisi <𝗽> ... </𝗽>
+let coo = document.querySelector("title");          // let coo berisi <𝘁𝗶𝘁𝗹𝗲>Belajar JavaScript</𝘁𝗶𝘁𝗹𝗲>
 
 console.log(boo.textContent);                       // Output: Sedang Belajar JavaScript dari Duniailkom
 console.log(boo.innerHTML);                         // Output: Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺> <𝗯>dari Duniailkom</𝗯>
@@ -4660,7 +4660,7 @@ coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹�
 **E2. Memanipulasi atribut di tag HTML**
 
 ```Javascript
-let doo = document.querySelector("h1");             // Let doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
+let doo = document.querySelector("h1");             // let doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
 
 console.log(doo.hasAttribute("id"));                // Output: true             ⇨ Memeriksa apakah doo memiliki atribut id
 console.log(doo.hasAttribute("class"));             // Output: false            ⇨ Memeriksa apakah doo memiliki atribut class
@@ -4687,7 +4687,7 @@ console.log(doo);                                   // Output: <𝗵𝟭 id="jud
 **E3. Memanipulasi Style CSS di tag HTML**
 
 ```Javascript
-let foo = document.querySelector("p:nth-child(3)"); // Let foo berisi <𝗽 style="color: blue;"> ... </𝗽>
+let foo = document.querySelector("p:nth-child(3)"); // let foo berisi <𝗽 style="color: blue;"> ... </𝗽>
                                                     // ⤷ Cara baca: Cari tag <p> yang berada pada urutan ke 3 dalam
                                                     //              sebuah parent element (dalam kasus ini: <body>)
 
@@ -4716,8 +4716,8 @@ console.log(goo.textDecoration);                    // Output: underline solid r
 **E4. Memanipulasi Class CSS di tag HTML**
 
 ```Javascript
-let hoo = document.querySelector("div:nth-child(4)");   // Let hoo berisi <𝗱𝗶𝘃 class="merah tebal"> ... </𝗱𝗶𝘃>
-let joo = document.querySelector("div:nth-child(5)");   // Let hoo berisi <𝗱𝗶𝘃 class="merah"> ... </𝗱𝗶𝘃>
+let hoo = document.querySelector("div:nth-child(4)");   // let hoo berisi <𝗱𝗶𝘃 class="merah tebal"> ... </𝗱𝗶𝘃>
+let joo = document.querySelector("div:nth-child(5)");   // let hoo berisi <𝗱𝗶𝘃 class="merah"> ... </𝗱𝗶𝘃>
 
                                                     // Menampilkan seluruh Class CSS yang digunakan sebuah tag HTML:
 console.log(hoo.className);                         // Output: merah tebal
