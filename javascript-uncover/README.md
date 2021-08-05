@@ -422,7 +422,7 @@ console.log(20 + null);               // Output: 20     (null jadi 0, maka 20+0 
 console.log(20 + undefined);          // Output: NaN    (Not a Number)
 ```
 
-Null menjadi sesuatu yang kita tetapkan sebagai nilai, dalam kasus di atas Null menjadi Number. Sedangkan Undefined ditetapkan oleh JavaScript itu sendiri, dalam kasus di atas Undefined menghasilkan NaN.
+Null menjadi sesuatu yang kita tetapkan sebagai nilai, dalam kasus di atas Null menjadi Number. Sedangkan Undefined ditetapkan oleh JavaScript itu sendiri, dalam kasus di atas penjumlahan Number dengan Undefined menghasilkan NaN.
 
 #### ⤷ Kasus yang menghasilkan Undefined:
 
@@ -884,6 +884,16 @@ switch(nilaiTK){                      // Case 1-5: kurang, case 6-7: cukup, case
 ```
 
 ### ![✔] 𝐂. Operator Conditional Ternary
+
+Terdapat istilah unary, binary dan ternary. Dimana perbedaanya mendasarnya yaitu sebagai berikut:
+
+| Istilah 	| Definisi        	| Contoh                                           	|
+|---------	|-----------------	|--------------------------------------------------	|
+| Unary   	| Punya 1 operand 	| ```typeof …``` (typeof) & ```… ++``` (increment) 	|
+| Binary  	| Punya 2 operand 	| ```… = …``` (assignment) & ```… + …``` addition  	|
+| Ternary 	| Punya 3 operand 	| ```… ? … : …``` (conditional ternary)            	|
+
+**Catatan:** Titik-titik tiga mewakili operand.
 
 ```Javascript
 var jumlah = 501;
