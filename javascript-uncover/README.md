@@ -1268,23 +1268,20 @@ Global Variable dapat diakses dari mana saja, sedangkan Local Variable hanya bis
 ```Javascript
 var a = "Belajar JS";                 // Var a disini merupakan global Variable dan dapat diakses darimana saja
 
-// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟭: 𝗕𝗹𝗼𝗸 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻
-function boo(){
+function boo(){                       // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟭: 𝗕𝗹𝗼𝗸 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻
   console.log(a);                     // a yang diakses disini yaitu a di global Variable, ini terjadi karena di dalam Function
   a = "Belajar CSS";                  // boo() tidak ada local Variable a, maka JS akan mencari "keluar" hingga menemukan a.
 }                                     
 boo();                                // Output: Belajar JS 
 console.log(a);                       // Output: Belajar CSS
 
-// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟮: 𝗕𝗹𝗼𝗸 𝗜𝗳-𝗘𝗹𝘀𝗲
-if (true){                            
+if (true){                            // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟮: 𝗕𝗹𝗼𝗸 𝗜𝗳-𝗘𝗹𝘀𝗲                          
   console.log(a);                     // Output: Belajar CSS
   a = "Belajar HTML";
 }
 console.log(a);                       // Output: Belajar HTML
 
-// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟯: 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸 (𝗶𝘁𝘀𝗲𝗹𝗳)
-{
+{                                     // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟯: 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸 (𝗶𝘁𝘀𝗲𝗹𝗳)
   console.log(a);                     // Output: Belajar HTML
   a = "Belajar PHP";
 }
@@ -1296,16 +1293,14 @@ console.log(a);                       // Output: Belajar PHP
 ```Javascript
 var b = "Belajar JS";                 // Var b disini merupakan global Variable dan dapat diakses darimana saja
 
-// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟭: 𝗕𝗹𝗼𝗸 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻
-function coo(){
+function coo(){                       // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟭: 𝗕𝗹𝗼𝗸 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻
   var b = "Belajar CSS";              // b disini merupakan local Variable dan hanya bisa diakses di dalam Function coo saja
   console.log(b);                     // b yang diakses disini yaitu b local Variable (karena memang terdapat local Variable b)
 }
 coo();                                // Output: Belajar CSS  (hasil dari local Variable b)
 console.log(b);                       // Output: Belajar JS   (hasil dari global Variable b)
 
-// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟮: 𝗕𝗹𝗼𝗸 𝗜𝗳-𝗘𝗹𝘀𝗲
-if (true){
+if (true){                            // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟮: 𝗕𝗹𝗼𝗸 𝗜𝗳-𝗘𝗹𝘀𝗲
   var umur1   = 100;
   let umur2   = 200;
   const umur3 = 300;
@@ -1314,8 +1309,7 @@ console.log(umur1);                   // Output: 100
 console.log(umur2);                   // Output: ReferenceError: umur2 is not defined
 console.log(umur3);                   // Output: ReferenceError: umur3 is not defined
 
-// 𝗖𝗼𝗻𝘁𝗼𝗵 𝟯: 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸 (𝗶𝘁𝘀𝗲𝗹𝗳)
-{
+{                                     // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟯: 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸 (𝗶𝘁𝘀𝗲𝗹𝗳)
   var kota1   = "Bali";
   let kota2   = "Solo";
   const kota3 = "Medan";
@@ -1324,6 +1318,8 @@ console.log(kota1);                   // Output: Bali
 console.log(kota2);                   // Output: ReferenceError: kota2 is not defined
 console.log(kota3);                   // Output: ReferenceError: kota3 is not defined
 ```
+
+Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bagian berikutnya.
 
 #### ⤷ Studi Kasus 1
 
