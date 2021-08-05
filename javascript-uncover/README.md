@@ -784,7 +784,7 @@ console.log(num1 * num2);             // Output: 230    (Number)
 console.log(num1 / num2);             // Output: 0.4347 (Number)
 ```
 
-Hati-hati dengan Implicit Type Conversion ini, karena bisa menimbulkan sebuah bug yang berbahaya, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah TypeScript sebagai Strongly typed JavaScript (Tidak dibahas disini, anda bisa mempelajarinya secara mandiri di internet).
+Hati-hati dengan Implicit Type Conversion ini karena bisa menimbulkan sebuah bug, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah **TypeScript** sebagai **Strongly typed JavaScript** (Tidak dibahas disini, anda bisa pelajari secara mandiri).
 
 ### ![✔] 𝐊. Operator Bitwise
 
