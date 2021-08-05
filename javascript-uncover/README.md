@@ -1359,7 +1359,7 @@ console.log(e);                       // Output: 60 (Bukan 15, karena nilai var 
 
 ### ![✔] 𝐆. Var, Let & Const
 
-Seperti yang kita lihat pada contoh sebelumnya, penggunaan ```var``` dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan ```let``` & ```const``` tidak mempengaruhi nilai diluar scope (aman!). var bersifat **Function Scope**, artinya cakupan scopenya itu Function, seolah tidak Private. Sedangkan let & const bersifat **Block Scope**, artinya cakupan scopenya itu tanda block yaitu ```{}```, seolah menjadi Private. 
+Seperti yang kita lihat di contoh sebelumnya, penggunaan ```var``` dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan ```let``` & ```const``` tidak mempengaruhi nilai diluar scope (aman!). var bersifat **Function Scope**, artinya cakupan scopenya itu Function, seolah tidak Private. Sedangkan let & const bersifat **Block Scope**, artinya cakupan scopenya itu tanda block yaitu ```{}```, seolah menjadi Private. 
 
 let & const sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu let nilainya bisa berubah-ubah sedangkan const nilainya tidak bisa diubah sepanjang kode program (isinya tetap).
 
