@@ -1319,6 +1319,8 @@ console.log(kota2);                   // Output: ReferenceError: kota2 is not de
 console.log(kota3);                   // Output: ReferenceError: kota3 is not defined   (tidak bisa diakses diluar Code Block)
 ```
 
+**Variable Lookup**: Dimana saat sebuah Variable digunakan, JavaScript akan memakai Variable yang berada di Lokal scope, jika tidak ditemukan, JavaScript akan naik mencari di scope parent-nya, jika masih tidak ditemukan, JavaScript akan naik lagi untuk mencari, dan begitu seterusnya, hingga sampai ke Global scope.
+
 🔔 Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bagian berikutnya.
 
 #### ⤷ Studi Kasus 1
