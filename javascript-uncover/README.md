@@ -3767,7 +3767,7 @@ console.log(arrM.indexOf("e"));         // Output: -1
 
 Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 
-**E4-1.** forEach() berfungsi menjalankan sebuah Function tertentu untuk setiap element di Array (mirip seperti for of, jalan sebanyak jumlah element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa Method Array lainnya (seperti: map, filter, find, reduce) mengembalikan Array baru.
+**E4-1.** forEach() berfungsi menjalankan sebuah Function tertentu untuk setiap element di Array (mirip seperti for of, jalan sebanyak jumlah element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa Method Array lainnya (seperti: map, filter, find, reduce) mengembalikan sebuah Array baru.
 
 ```Javascript
 let arrN = ["a","b","c","d"];
@@ -3789,7 +3789,7 @@ arrN.forEach(tampil);                                 // Simak cara penulisan & 
 arrO.forEach(tampil);                                 // ⤷ Lihat, Function tampil() bisa dipakai oleh arrN & arrO
 ```
 
-**E4-2.** map() serupa dengan forEach(), bedanya mengembalikan sebuah Array baru (memakai keyword return). Non-Mutating.
+**E4-2.** map() serupa dengan forEach(), bedanya mengembalikan sebuah Array baru (memakai keyword return). Array baru yang terbentuk jumlahnya sama dengan Array asal.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3812,7 +3812,7 @@ console.log(arrR.map(ganjilGenap));                   // Output: ["genap","ganji
 console.log(arrS.map(ganjilGenap));                   // Output: ["genap","ganjil","genap","ganjil"]
 ```
 
-**E4-3.** filter() serupa dengan map(), bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element.
+**E4-3.** filter() serupa dengan map(), bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element. Array baru yang terbentuk jumlahnya tergantung hasil filter.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3862,7 +3862,7 @@ console.log(arrQ.some(besarDari10));                  // Output: false  (karena 
 console.log(arrR.some(besarDari10));                  // Output: true   (karena terdapat nilai 16 & 25 yang memang memenuhi syarat)
 ```
 
-**E4-6.** find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return nilai yang ditemukan pertama kali. find() akan me-return nilai element Arrray tersebut, sedangkan findIndex() me-return index Array-nya.
+**E4-6.** find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return satu nilai yang ditemukan pertama kali (cocok untuk kasus mencari suatu nilai yang unik), bisa berupa object/number/dll. find() akan me-return nilai element Arrray tersebut, sedangkan findIndex() me-return index Array-nya. Jika nilai tidak ditemukan maka yang akan dikembalikan yaitu ```undefined```.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
