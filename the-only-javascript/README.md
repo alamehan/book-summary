@@ -5028,11 +5028,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 <br>
 
-**A. Urusan Date: moment.js**
-
-**B. Urusan Grafik: chart.js**
-
-**C. Urusan Visualisasi Data: D3.js**
+**Upcoming!**
 
 </details>
 
@@ -5085,6 +5081,8 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 <summary>Klik untuk membuka!</summary>
 
 <br>
+
+**Upcoming!**
 
 **A. Urusan Date: moment.js**
 
