@@ -3789,6 +3789,18 @@ arrN.forEach(tampil);                                 // Simak cara penulisan & 
 arrO.forEach(tampil);                                 // ⤷ Lihat, Function tampil() bisa dipakai oleh arrN & arrO
 ```
 
+```Javascript
+const people = [                                      // Contoh array of objects (biasanya format JSON pun seperti ini)
+  {name: "bob", age: 20, job: "developer"},
+  {name: "peter", age: 25, job: "designer"},
+  {name: "susy", age: 30, job: "the boss"}
+]
+
+people.forEach(function showGreet(person){                // Output: Morning, BOB!
+  console.log(`Morning, ${person.name.toUpperCase()}!`);  //         Morning, PETER!
+});                                                       //         Morning, SUSY!            
+```
+
 **E4-2.** map() serupa dengan forEach(), bedanya mengembalikan sebuah Array baru (memakai keyword return). Array baru yang terbentuk jumlahnya sama dengan Array asal.
 
 ```Javascript
@@ -3812,6 +3824,23 @@ console.log(arrR.map(ganjilGenap));                   // Output: ["genap","ganji
 console.log(arrS.map(ganjilGenap));                   // Output: ["genap","ganjil","genap","ganjil"]
 ```
 
+```Javascript
+const people = [
+  {name: "bob", age: 20, job: "developer"},
+  {name: "peter", age: 25, job: "designer"},
+  {name: "susy", age: 30, job: "the boss"}
+]
+
+const newPeople = people.map(function(person){        // Output:
+  return {                                            // [
+    newName: person.name.toUpperCase(),               //   {newName: "BOB", newAge: 40, newJob: "Senior developer"},
+    newAge: person.age + 20,                          //   {newName: "PETER", newAge: 45, newJob: "Senior designer"}, 
+    newJob: `Senior ${person.job}`                    //   {newName: "SUSY", newAge: 50, newJob: "Senior the boss"}
+  };                                                  // ]
+});
+console.log(newPeople);                               // Output lihat di atas ini
+```
+
 **E4-3.** filter() serupa dengan map(), bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element. Array baru yang terbentuk jumlahnya tergantung hasil filter.
 
 ```Javascript
@@ -3828,6 +3857,25 @@ console.log(arrP.filter(genapOnly));                  // Output: [2,4]
 console.log(arrQ.filter(genapOnly));                  // Output: [6,8]
 console.log(arrR.filter(genapOnly));                  // Output: [4,16]
 console.log(arrS.filter(genapOnly));                  // Output: [36,64]
+```
+
+```Javascript
+const people = [
+  {name: "bob", age: 20, job: "developer"},
+  {name: "peter", age: 25, job: "designer"},
+  {name: "susy", age: 30, job: "the boss"},
+  {name: "hana", age: 35, job: "the boss"}
+]
+
+youngPeople = people.filter(function(person){         // Output: [
+  return person.age < 27;                             //   {name: "bob", age: 20, job: "developer"},
+});                                                   //   {name: "peter", age: 25, job: "designer"}
+console.log(youngPeople);                             // ]
+
+bosses = people.filter(function(person){              // Output: [
+  return person.job === "the boss";                   //   {name: "susy", age: 30, job: "the boss"},
+});                                                   //   {name: "hana", age: 35, job: "the boss"}
+console.log(bosses);                                  // ]       
 ```
 
 **E4-4.** every() berfungsi memeriksa apakah seluruh element Array memenuhi syarat tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya (seluruh element menghasilkan true), maka method every() akan me-return true. Namun jika tidak (ada salah satu saja element yang menghasilkan false), maka method every () akan me-return false.
@@ -3881,6 +3929,19 @@ console.log(arrR.findIndex(besarDari10));             // Output: 2
 console.log(arrQ.findIndex(besarDari10));             // Output: -1
 ```
 
+```Javascript
+const people = [
+  {id: 1, name: "bob", age: 20, job: "developer"},
+  {id: 2, name: "peter", age: 25, job: "designer"},
+  {id: 3, name: "susy", age: 30, job: "the boss"},
+]
+
+const someone = people.find(function(person){
+  return person.id === 3;
+});
+console.log(someone);                                 // Output: ▶{id: 3, name: "susy", age: 30, job: "the boss"} 
+```
+
 **E4-7.** reduce() & reduceRight() digunakan untuk memproses total seluruh element Array dan menghasilkan 1 nilai akhir. reduce() memproses dari awal Array, sedangkan reduceRight() memproses dari akhir element Array.
 
 ```Javascript
@@ -3908,6 +3969,20 @@ console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dar
 ```
 
 Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Variable penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Variable total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Variable total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Variable total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
+
+```Javascript
+const people = [
+  {id: 1, name: "bob", age: 20, job: "developer", salary: 200},
+  {id: 2, name: "peter", age: 25, job: "designer", salary: 300},
+  {id: 3, name: "susy", age: 30, job: "the boss", salary: 500},
+]
+
+const total2 = people.reduce(function(total, elm){
+  return total = total + elm.salary;;
+}, 0);
+
+console.log(total2);                                  // Output: 1000 (dari hasil penjumlahan 200+300+500)
+```
 
 **E4-8.** sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. Method sort() bersifat Mutating ⚠️
 
