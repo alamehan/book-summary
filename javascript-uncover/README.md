@@ -1319,7 +1319,7 @@ console.log(kota2);                   // Output: ReferenceError: kota2 is not de
 console.log(kota3);                   // Output: ReferenceError: kota3 is not defined
 ```
 
-Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bagian berikutnya.
+🔔 Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bagian berikutnya.
 
 #### ⤷ Studi Kasus 1
 
