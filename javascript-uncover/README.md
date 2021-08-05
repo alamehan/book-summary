@@ -3862,7 +3862,7 @@ console.log(arrQ.some(besarDari10));                  // Output: false  (karena 
 console.log(arrR.some(besarDari10));                  // Output: true   (karena terdapat nilai 16 & 25 yang memang memenuhi syarat)
 ```
 
-**E4-6.** find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return satu nilai yang ditemukan pertama kali (cocok untuk kasus mencari suatu nilai yang unik), bisa berupa object/number/dll. find() akan me-return nilai element Arrray tersebut, sedangkan findIndex() me-return index Array-nya. Jika nilai tidak ditemukan maka yang akan dikembalikan yaitu ```undefined```.
+**E4-6.** find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return satu nilai yang ditemukan pertama kali (cocok untuk kasus mencari suatu nilai yang unik), bisa berupa Object, Number, dll. find() akan me-return nilai element Arrray tersebut, sedangkan findIndex() me-return index Array-nya. Jika nilai tidak ditemukan maka yang akan dikembalikan yaitu ```undefined```.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
