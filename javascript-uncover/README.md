@@ -1319,7 +1319,7 @@ console.log(kota2);                   // Output: ReferenceError: kota2 is not de
 console.log(kota3);                   // Output: ReferenceError: kota3 is not defined   (tidak bisa diakses diluar Code Block)
 ```
 
-**Variable Lookup**: Dimana saat sebuah Variable digunakan, JavaScript akan memakai Variable yang berada di Lokal scope, jika tidak ditemukan, JavaScript akan naik mencari di scope parent-nya, jika masih tidak ditemukan, JavaScript akan naik lagi untuk mencari, dan begitu seterusnya, hingga sampai ke Global scope.
+**Variable Lookup**: Dimana saat sebuah Variable digunakan, JavaScript akan memakai Variable yang berada di Lokal scope-nya terlebih dahulu, jika tidak ditemukan, JavaScript akan "naik" mencari di scope parent-nya, namun jika masih tidak ditemukan, JavaScript akan "naik lagi" untuk mencari, dan begitu seterusnya, hingga sampai ke Global scope.
 
 🔔 Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bagian berikutnya.
 
@@ -1449,7 +1449,9 @@ init();                               // Output: Budi
 
 ### ![✔] 𝐉. JavaScript Hoisting
 
-Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan mengatur ruang memory untuk setiap Variable & Function yang dibuat. Teknisnya JavaScript seolah "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai ```undefined```, sedangkan Function akan diisi Functionnya itu sendiri. Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja**. Let, Const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
+Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan mengatur ruang memory untuk setiap Variable & Function yang dibuat. Teknisnya JavaScript seolah "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai ```undefined```, sedangkan Function akan diisi Functionnya itu sendiri. 
+
+Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja**. Let, Const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
 
 📚 Gunakan tools <a href="http://pythontutor.com/javascript.html">visualusasi hoisting</a>.
 
