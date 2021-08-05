@@ -226,7 +226,7 @@ Salah satu kelemahan (sekaligus keunggulan) dari JavaScript adalah, pengunjung w
 
 ### ![✔] 𝐀. Statement
 
-**Statement** adalah sebutan untuk sebuah baris perintah JavaScript. Walaupun saya menggunakan kata “baris”, bisa saja sebuah Statement butuh beberapa baris (seperti Function). Atau dalam 1 baris bisa terdiri dari beberapa Statement. Setiap Statement diakhiri dengan tanda titik koma (semi colon): ‘ ; ‘. Sebenarnya, tanda titik koma untuk mengakhiri Statement JavaScript ini adalah opsional. Artinya, boleh tidak ditulis sepanjang Statement tersebut harus berada dalam baris baru (1 Statement, 1 baris). Untuk meminimalisir error, sebaiknya kita tetap menambahkan tanda titik koma saat mengakhiri setiap Statement di dalam JavaScript.
+**Statement** adalah sebutan untuk sebuah baris perintah JavaScript. Walaupun saya menggunakan kata “baris”, bisa saja sebuah Statement butuh beberapa baris (seperti Function). Atau dalam 1 baris bisa terdiri dari beberapa Statement. Setiap Statement diakhiri dengan tanda titik koma (semi colon): ```;```. Sebenarnya, tanda titik koma untuk mengakhiri Statement JavaScript ini adalah opsional. Artinya, boleh tidak ditulis sepanjang Statement tersebut harus berada dalam baris baru (1 Statement, 1 baris). Untuk meminimalisir error, sebaiknya kita tetap menambahkan tanda titik koma saat mengakhiri setiap Statement di dalam JavaScript.
 
 ### ![✔] 𝐁. Case Sensitive
 
@@ -796,7 +796,7 @@ Hati-hati dengan Implicit Type Conversion ini karena bisa menimbulkan sebuah bug
 
 Spread merupakan operator baru di ES6. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama Variable.<br>
 
-🔔 Kegunaan lain dari operator Spread yaitu dapat digunakan sebagai Rest Parameter, dibahas di bab 2-5 E.
+🔔 Kegunaan lain dari operator Spread yaitu Rest Parameter (bab 2-5 E) & Assignment by Value untuk Object (bab 2-6 C).
 
 ```Javascript
 var nilai1 = ["a", "b", "c", "d"];
@@ -2067,7 +2067,7 @@ let objB = {                          // Let objB berisi Object dengan property 
   property3: "isi_property1",
 
   method1(){                          // Penulisan method cara 1: Function Declaration (Tanpa perlu keyword function di depannya)
-    "isi method 1";
+    "isi method 1";                   // Cara penulisan seperti ini merupakan fitur baru di ES6
   },
   method2: function(){                // Penulisan method cara 2: Function Expressions (Anonymous Function)
     "isi method 2";
@@ -2217,6 +2217,29 @@ let mhs2Baru = {
 console.log(mhs2 == mhs2Baru);        // Output: false  (Why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
 console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
 ```
+
+#### ⤷ Assignment by Value untuk Object (ES6)
+
+```Javascript
+// Salin Object by Reference (default)
+let person    = {name: "bob"};
+let person2   = person;
+person2.name  = "ray";
+
+console.log(person.name);             // Output: ray
+console.log(person2.name);            // Output: ray
+```
+
+```Javascript
+// Salin Object by Value bisa dilakukan di ES6+
+let person    = {name: "bob"};
+let person2   = {...person};          // Menggunakan Spread (...)
+person2.name  = "ray";
+
+console.log(person.name);             // Output: bob
+console.log(person2.name);            // Output: ray
+```
+
 
 ### ![✔] 𝐃. Keyword this
 
