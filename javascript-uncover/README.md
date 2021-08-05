@@ -5026,6 +5026,6 @@ Referensi Inggris:
 8. <a href="https://www.w3docs.com/">W3Docs</a> 📕
 
 Keterangan:
-- 🔁 On Progress, Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
-- 📘 Sudah dipelajari sebagian, dan sudah dibuat catatan hasil belajarnya, serta sudah ditambahkan ke dalam markdown JavaScript in One Page ini.
-- 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan.
+1. 🔁 On Progress, Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
+2. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown JavaScript in One Page ini.
+3. 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan.
