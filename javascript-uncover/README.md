@@ -353,6 +353,7 @@ var numK = NaN;                       // Keadaan dimana data "bukan angka yang s
 var numL = Infinity;                  // Keadaan dimana data "angka tak hingga"
 var numM = -Infinity;                 // Keadaan dimana data "angka negatif tak hingga"
 ```
+
 #### ⤷ Kasus yang menghasilkan NaN & Infinity:
 
 ```Javascript
@@ -413,6 +414,15 @@ var nudB = undefined;                 // Keadaan dimana data "tidak terdefinisi"
 ```
 
 Null biasanya sengaja didefinisikan oleh programmer untuk tujuan tertentu. Undefined artinya JavaScript tidak dapat menemukan nilainya, namun sebenarnya "slot"nya sudah ada di memory. 🔔 Hal ini terkait dengan JavaScript Hoisting yang dibahas di bab 2-5 J.
+
+#### ⤷ Kasus unik:
+
+```Javascript
+console.log(20 + null);               // Output: 20     (null jadi 0, maka 20+0 = 20)
+console.log(20 + undefined);          // Output: NaN    (Not a Number)
+```
+
+Null menjadi sesuatu yang kita tetapkan sebagai nilai, dalam kasus di atas Null menjadi Number. Sedangkan Undefined ditetapkan oleh JavaScript itu sendiri, dalam kasus di atas Undefined menghasilkan NaN.
 
 #### ⤷ Kasus yang menghasilkan Undefined:
 
