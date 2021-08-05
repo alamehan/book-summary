@@ -5021,7 +5021,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 </details>
 
-## ⑥ 𝓐𝓼𝔂𝓷𝓬𝓱𝓻𝓸𝓷𝓸𝓾𝓼 𝓙𝓪𝓿𝓪𝓢𝓬𝓻𝓲𝓹𝓽 ⏳ <a href="#top">⟲</a>
+## ⑥ 𝒜𝓈𝓎𝓃𝒸𝒽𝓇𝑜𝓃𝑜𝓊𝓈 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 ⏳ <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
