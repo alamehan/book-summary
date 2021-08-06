@@ -503,7 +503,7 @@ console.log(arr2D[1][1]);             // Output: 5
 
 Operator Precedence atau Prioritas Operator menentukan bagaimana suatu operator dieksekusi. Operator dengan prioritas lebih tinggi akan dioperasikan terlebih dahulu. Ada operator yang dioperasikan dari kiri ke kanan (left-to-right), ada pula yang dari kanan ke kiri (right-to-left).
 
-📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN</a>.
+📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">disini (MDN)</a>.
 
 
 ### ![✔] 𝐁. Falsy & Truthy Value
@@ -533,6 +533,8 @@ console.log(false == null);           // Output: false  (*Pengecualian)
 console.log(null == undefined);       // Output: true   (Hasil konversi: false == false)
 console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian)
 ```
+
+📚 Tabel Equality Comparisons and Sameness dapat diakses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">disini (MDN)</a>.
 
 ```Javascript
 var text = "Hello World!";
@@ -5108,10 +5110,11 @@ Referensi Inggris:
 2. 📕 <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> | <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a>
 3. 📕 <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a>
 4. 📕 <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a>
-5. 📕 <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a>
-6. 📕 <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a>
-7. 📘 <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a>
-8. 📕 <a href="https://www.w3docs.com/">W3Docs</a>
+5. 📕 <a href="https://github.com/lukehoban/es6features">Overview of ECMAScript 6 Features</a>
+6. 📕 <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a>
+7. 📕 <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a>
+8. 📘 <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a>
+9. 📕 <a href="https://www.w3docs.com/">W3Docs</a>
 
 Keterangan:
 1. 🔁 On Progress, Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
