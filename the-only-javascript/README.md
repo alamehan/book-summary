@@ -1328,37 +1328,37 @@ console.log(kota3);                   // Output: ReferenceError: kota3 is not de
 #### ⤷ Studi Kasus 1
 
 ```Javascript
-function doo(c, d){
+function doo(c, d){                   // Step 4 🡲 Function doo dijalankan 
   var c = 20;                         // c disini merupakan local Variable
   var d = 40;                         // d disini merupakan local Variable
   return c+d;                         // Function mengembalikan nilai 60
 }
 
-var c = 5;                            // c disini merupakan global Variable
-var d = 10;                           // d disini merupakan global Variable
-var e = doo(c, d);                    // Menjalankan Function doo dengan Argument, lalu hasil return-nya simpan ke dalam var e
+var c = 5;                            // Step 1 🡲 c disini merupakan global Variable
+var d = 10;                           // Step 2 🡲 d disini merupakan global Variable
+var e = doo(c, d);                    // Step 3 🡲 Jalankan Function doo dengan Argument & hasil return-nya simpan ke dalam var e
 
-console.log(c);                       // Output: 5  (c berasal dari global Variable c)
-console.log(d);                       // Output: 10 (d berasal dari global Variable d)
-console.log(e);                       // Output: 60 (nilai global var c & d tertimpa oleh local var saat di dalam Function doo)
+console.log(c);                       // Step 5 🡲 Output: 5  (c berasal dari global Variable c)
+console.log(d);                       // Step 6 🡲 Output: 10 (d berasal dari global Variable d)
+console.log(e);                       // Step 7 🡲 Output: 60 (nilai global var c & d tertimpa saat di dalam Function doo)
 ```
 
 #### ⤷ Studi Kasus 2
 
 ```Javascript
-function foo(){
+function foo(){                       // Step 4 🡲 Function foo dijalankan
   c = 20;                             // c disini menimpa global Variable c (Jika didefinisikan tanpa var, maka berefek ke global)
   d = 40;                             // d disini menimpa global Variable d (Jika didefinisikan tanpa var, maka berefek ke global)
   return c+d;                         // Function mengembalikan nilai 60
 }
 
-var c = 5;                            // c disini merupakan global Variable
-var d = 10;                           // d disini merupakan global Variable
-var e = foo();                        // Menjalankan Function foo (disini global Variable c & d akan tertimpa)
+var c = 5;                            // Step 1 🡲 c disini merupakan global Variable
+var d = 10;                           // Step 2 🡲 d disini merupakan global Variable
+var e = foo();                        // Step 3 🡲 Jalankan Function foo (disini global Variable c & d akan tertimpa)
 
-console.log(c);                       // Output: 20 (Bukan 5, karena nilai c tertimpa saat di dalam Function foo)
-console.log(d);                       // Output: 40 (Bukan 10, karena nilai d tertimpa saat di dalam Function foo)
-console.log(e);                       // Output: 60 (Bukan 15, karena nilai var c & d tertimpa saat di dalam Function foo)
+console.log(c);                       // Step 5 🡲 Output: 20 (Bukan 5, karena nilai c tertimpa saat di dalam Function foo)
+console.log(d);                       // Step 6 🡲 Output: 40 (Bukan 10, karena nilai d tertimpa saat di dalam Function foo)
+console.log(e);                       // Step 7 🡲 Output: 60 (Bukan 15, karena nilai var c & d tertimpa di dalam Function foo)
 ```
 
 ### ![✔] 𝐆. Var, Let & Const
