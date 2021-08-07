@@ -1363,6 +1363,24 @@ console.log(d);                       // STEP 6 🡲 Output: 40 (Bukan 10, karen
 console.log(e);                       // STEP 7 🡲 Output: 60 (Bukan 15, karena nilai var c & d tertimpa di dalam Function foo)
 ```
 
+#### ⤷ Studi Kasus 3
+
+```Javascript
+function bar(){                       // STEP 6 🡲 Function bar dijalankan
+  console.log(a);                     // STEP 7 🡲 Jalankan console.log(a)   ⇨ Output: 1
+}
+
+function baz(){                       // STEP 3 🡲 Function baz dijalankan
+  var a = 2;                          // STEP 4 🡲 a disini merupakan local Variable
+  bar();                              // STEP 5 🡲 Jalankan Function bar
+}
+
+var a = 1;                            // STEP 1 🡲 a disini merupakan global Variable
+baz();                                // STEP 2 🡲 Jalankan Function baz
+```
+
+Pada contoh Studi Kasus 3 di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari di scope parent-nya yaitu di Global scope, dimana terdapat definisi ```var a = 1```.
+
 🔔 Keterangan STEP 1, STEP 2, dst untuk menunjukkan tahapan eksekusi baris kode (Code Execution).
 
 ### ![✔] 𝐆. Var, Let & Const
