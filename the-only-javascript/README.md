@@ -1374,6 +1374,23 @@ Sebuah konsep dimana saat sebuah Variable digunakan, JavaScript akan memakai Var
 #### ⤷ Studi Kasus 1
 
 ```Javascript
+function baz() {                      // STEP 3 🡲 Function baz dijalankan
+  var a = 2;                          // STEP 4 🡲 a disini merupakan local Variable
+  function bar() {                    // STEP 6 🡲 Function bar dijalankan
+    console.log(a);                   // STEP 7 🡲 Jalankan console.log(a)   ⇨ Output: 2
+  }
+  bar();                              // STEP 5 🡲 Jalankan Function bar
+}
+
+var a = 1;                            // STEP 1 🡲 a disini merupakan global Variable
+baz();                                // STEP 2 🡲 Jalankan Function baz
+```
+
+Pada contoh Studi Kasus 1 di atas, output dari ```console.log(a);``` yaitu ```2```. Hal ini terjadi karena Function bar didefinisikan (dan tentunya dijalankan juga) di dalam Function baz, ini berarti baz menjadi parent untuk bar. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari ```a``` di scope parent-nya yaitu di Function baz, ditemukanlah definisi ```var a = 2```.
+
+#### ⤷ Studi Kasus 2
+
+```Javascript
 function bar(){                       // STEP 6 🡲 Function bar dijalankan
   console.log(a);                     // STEP 7 🡲 Jalankan console.log(a)   ⇨ Output: 1
 }
@@ -1387,24 +1404,7 @@ var a = 1;                            // STEP 1 🡲 a disini merupakan global V
 baz();                                // STEP 2 🡲 Jalankan Function baz
 ```
 
-Pada contoh Studi Kasus 1 di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari di scope parent-nya yaitu di Global scope, dimana terdapat definisi ```var a = 1```.
-
-#### ⤷ Studi Kasus 2
-
-```Javascript
-function baz() {                      // STEP 3 🡲 Function baz dijalankan
-  var a = 2;                          // STEP 4 🡲 a disini merupakan local Variable
-  function bar() {                    // STEP 6 🡲 Function bar dijalankan
-    console.log(a);                   // STEP 7 🡲 Jalankan console.log(a)   ⇨ Output: 2
-  }
-  bar();                              // STEP 5 🡲 Jalankan Function bar
-}
-
-var a = 1;                            // STEP 1 🡲 a disini merupakan global Variable
-baz();                                // STEP 2 🡲 Jalankan Function baz
-```
-
-Berbeda dengan contoh sebelumnya, pada Studi Kasus 2 di atas output yang dihasilkan yaitu ```2```, bukan ```1```. Hal ini terjadi karena Function bar didefinisikan (dan tentunya dijalankan juga) di dalam Function baz, ini berarti baz parent untuk bar. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari di scope parent-nya yaitu di Function baz, dimana terdapat definisi ```var a = 2```.
+Pada contoh Studi Kasus 2 di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar, karena pendefinisian Function baz dilakukan di Global scope. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari ```a``` di scope parent-nya yaitu di Global scope, ditemukanlah definisi ```var a = 1```.
 
 ### ![✔] 𝐇. Var, Let & Const
 
