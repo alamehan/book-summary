@@ -3297,7 +3297,7 @@ console.log(String.fromCodePoint(0x2615, 0x2744, 0x2F40));  // Output: ☕❄⽀
 console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗🚲  ⤷ Berhasil menampilkan karakter terbaru unicode
 ```
 
-📚 Daftar Karakter Latin-1 & Unicode dapat diakses di<a href="http://unicode-table.com/">Unicode Table</a>.
+📚 Daftar Karakter Latin-1 & Unicode dapat diakses di <a href="http://unicode-table.com/">Unicode Table</a>.
 
 **C2. Object instance property**
 
@@ -3378,7 +3378,7 @@ console.log(strD.replace("kota", "X")); // Output: Bandung X kembang      ⇨ Me
 console.log(strD.replace(/a/g, "o"));   // Output: Bondung koto kembong   ⤷ Argument ke 1: bisa diisi juga dengan RegExp
 ```
 
-Note: substr(), substring() & slice() mirip satu sama lain, perbedaannya hanya pada prilaku Argument kedua masing-masing method.
+Note: ```substr()```, ```substring()``` & ```slice()``` mirip satu sama lain, perbedaannya hanya pada prilaku Argument kedua masing-masing method.
 
 ```Javascript
 let strH = "Nama saya Budi Setiawan";   // Studi kasus: menghitung berapa kali String "a" muncul di dalam String strH
@@ -3640,7 +3640,7 @@ console.log(polaX.test("duniailkom@gmail.com"));      // Output: true
 console.log(polaX.test("raihanralam@gmail.com"));     // Output: true
 ```
 
-polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat " @ . " dianggap true (ya karena memang lolos dari polaX), oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut: 
+polaX tujuannya untuk pola penulisan email, namun tidak sempurna, lihat ```" @ . "``` dianggap true (ya karena memang lolos dari polaX), oleh karena itu untuk kebutuhan pengecheck-an pola email yang lebih tepat & akurat dapat gunakan pola RegExp di link berikut: 
 
 📚 <a href="http://emailregex.com/">EmailRegEx</a> (pola RegExp email yang akurat disusun dengan sangat kompleks).
 
@@ -3783,7 +3783,7 @@ console.log(arrM.indexOf("e"));         // Output: -1
 
 Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 
-**E4-1.** forEach() berfungsi menjalankan sebuah Function tertentu untuk setiap element di Array (mirip seperti for of, jalan sebanyak jumlah element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa Method Array lainnya (seperti: map, filter, find, reduce) mengembalikan sebuah Array baru.
+**E4-1.** ```forEach()``` berfungsi menjalankan sebuah Function tertentu untuk setiap element di Array (mirip seperti for of, jalan sebanyak jumlah element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa Method Array lainnya (seperti: map, filter, find, reduce) mengembalikan sebuah Array baru.
 
 ```Javascript
 let arrN = ["a","b","c","d"];
@@ -3817,7 +3817,7 @@ people.forEach(function showGreet(person){                // Output: Morning, BO
 });                                                       //         Morning, SUSY!            
 ```
 
-**E4-2.** map() serupa dengan forEach(), bedanya mengembalikan sebuah Array baru (memakai keyword return). Array baru yang terbentuk jumlahnya sama dengan Array asal.
+**E4-2.** ```map()``` serupa dengan forEach, bedanya mengembalikan sebuah Array baru (memakai keyword return). Array baru yang terbentuk jumlahnya sama dengan Array asal.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3857,7 +3857,7 @@ const newPeople = people.map(function(person){        // Output:
 console.log(newPeople);                               // Output lihat di atas ini
 ```
 
-**E4-3.** filter() serupa dengan map(), bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element. Array baru yang terbentuk jumlahnya tergantung hasil filter.
+**E4-3.** ```filter()``` serupa dengan map, bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element. Array baru yang terbentuk jumlahnya tergantung hasil filter.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3894,7 +3894,7 @@ bosses = people.filter(function(person){              // Output: [
 console.log(bosses);                                  // ]       
 ```
 
-**E4-4.** every() berfungsi memeriksa apakah seluruh element Array memenuhi syarat tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya (seluruh element menghasilkan true), maka method every() akan me-return true. Namun jika tidak (ada salah satu saja element yang menghasilkan false), maka method every () akan me-return false.
+**E4-4.** ```every()``` berfungsi memeriksa apakah seluruh element Array memenuhi syarat tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya (seluruh element menghasilkan true), maka method every akan me-return true. Namun jika tidak (ada salah satu saja element yang menghasilkan false), maka method every akan me-return false.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3910,7 +3910,7 @@ console.log(arrR.every(besarDari10));                 // Output: false  (karena 
 console.log(arrS.every(besarDari10));                 // Output: true   (karena semua element di arrS bernilai lebih besar dari 10)
 ```
 
-**E4-5.** some() serupa dengan every(), bedanya syaratnya terbalik, yaitu method some() akan me-return true jika ada salah satu element saja yang menghasilkan true (memenuhi syarat yang telah didefinisikan).
+**E4-5.** ```some()``` serupa dengan every, bedanya syaratnya terbalik, yaitu method some akan me-return true jika ada salah satu element saja yang menghasilkan true (memenuhi syarat yang telah didefinisikan).
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3926,7 +3926,7 @@ console.log(arrQ.some(besarDari10));                  // Output: false  (karena 
 console.log(arrR.some(besarDari10));                  // Output: true   (karena terdapat nilai 16 & 25 yang memang memenuhi syarat)
 ```
 
-**E4-6.** find() & findIndex() digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return satu nilai yang ditemukan pertama kali (cocok untuk kasus mencari suatu nilai yang unik), bisa berupa Object, Number, dll. find() akan me-return nilai element Arrray tersebut, sedangkan findIndex() me-return index Array-nya. Jika nilai tidak ditemukan maka yang akan dikembalikan yaitu ```undefined```.
+**E4-6.** ```find()``` & ```findIndex()``` digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return satu nilai yang ditemukan pertama kali (cocok untuk kasus mencari suatu nilai yang unik), bisa berupa Object, Number, dll. find akan me-return nilai element Arrray tersebut, sedangkan findIndex me-return index Array-nya. Jika nilai tidak ditemukan maka yang akan dikembalikan yaitu ```undefined```.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3958,7 +3958,7 @@ const someone = people.find(function(person){
 console.log(someone);                                 // Output: ▶{id: 3, name: "susy", age: 30, job: "the boss"} 
 ```
 
-**E4-7.** reduce() & reduceRight() digunakan untuk memproses total seluruh element Array dan menghasilkan 1 nilai akhir. reduce() memproses dari awal Array, sedangkan reduceRight() memproses dari akhir element Array.
+**E4-7.** ```reduce()``` & ```reduceRight()``` digunakan untuk memproses total seluruh element Array dan menghasilkan 1 nilai akhir. reduce memproses dari awal Array, sedangkan reduceRight memproses dari akhir element Array.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -3984,7 +3984,7 @@ console.log(arrQ.reduceRight(pangkat2));              // Output: 183  (hasil dar
 console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
 ```
 
-Pada method reduce() & reduceRight(), Argument ke 1 yang berisi Variable penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2)), element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Variable total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Variable total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris console.log(arrQ.reduce(pangkat2,0)), Variable total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
+Pada method reduce & reduceRight, Argument ke 1 yang berisi Variable penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris ```console.log(arrQ.reduce(pangkat2))```, element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Variable total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Variable total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris ```console.log(arrQ.reduce(pangkat2,0))```, Variable total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
 
 ```Javascript
 const people = [
@@ -4000,7 +4000,7 @@ const total2 = people.reduce(function(total, elm){
 console.log(total2);                                  // Output: 1000 (dari hasil penjumlahan 200+300+500)
 ```
 
-**E4-8.** sort() berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. Method sort() bersifat Mutating ⚠️
+**E4-8.** ```sort()``` berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. Method sort bersifat Mutating ⚠️
 
 ```Javascript
 let arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
@@ -4430,7 +4430,7 @@ console.log(window.screen);               // Output: ▶Screen    (Object)      
 console.log(window.document);             // Output: ▶#document (Object)         ≈ console.log(document);
 ```
 
-console merupakan salah satu property Window, memiliki beberapa method diantaranya ```log()```, ```info()```, ```table()```, ```dir()```. ```console.table()``` berfungsi untuk menampilkan informasi dalam bentuk tabel. ```console.dir()``` berfungsi untuk menampilkan property/method apa yang tersedia dari Object yang dipilih.  📚 Selebihnya lihat <a href="https://www.w3schools.com/jsref/obj_console.asp">disini</a>. 
+console merupakan salah satu property Window, memiliki beberapa method diantaranya ```log()```, ```info()```, ```table()```, ```dir()```. ```console.table()``` berfungsi untuk menampilkan informasi dalam bentuk tabel. ```console.dir()``` berfungsi untuk menampilkan property/method apa yang tersedia dari Object yang dipilih.  📚 Selebihnya lihat di <a href="https://www.w3schools.com/jsref/obj_console.asp">W3Schools: Console Object</a>. 
 
 **A3. Window method**
 
@@ -4443,7 +4443,7 @@ window.print();                           // Output: Muncul Menu Print di Browse
 window.getComputedStyle();                // Output: (Menampilkan seluruh Style CSS)
 ```
 
-📚 Referensi window property & method lainnya lihat di <a href="W3Schools: Window Object">disini</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">MDN: Web API Window</a>.
+📚 Referensi window property & method lainnya lihat di <a href="https://www.w3schools.com/jsref/obj_window.asp">W3Schools: Window Object</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">MDN: Web API Window</a>.
 
 ### ![✔] 𝐁. Document Object (Part 1)
 
