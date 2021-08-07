@@ -1404,7 +1404,7 @@ var a = 1;                            // STEP 1 🡲 a disini merupakan global V
 baz();                                // STEP 2 🡲 Jalankan Function baz
 ```
 
-Pada contoh Studi Kasus 2 di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar, itu karena pendefinisian Function baz dilakukan di Global scope (berbeda dengan contoh pada Studi Kasus 1 sebelumnya). Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari ```a``` di scope parent-nya yaitu di Global scope, ditemukanlah definisi ```var a = 1```.
+Pada contoh Studi Kasus 2 di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar, itu karena pendefinisian Function bar dilakukan di Global scope (berbeda dengan contoh pada Studi Kasus 1 sebelumnya). Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari ```a``` di scope parent-nya yaitu di Global scope, ditemukanlah definisi ```var a = 1```.
 
 ### ![✔] 𝐇. Var, Let & Const
 
