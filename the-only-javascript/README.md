@@ -5,7 +5,8 @@
 <!-- 
 ⚠️Catatan Penting⚠️:
 1. Tanda 🔴 artinya catatan tersebut belum dilengkapi, menyusul.
-2. Keyword lihat../lihat di../point.. dinamis, harus diperbarui jika memang struktur tulisan berubah.
+2. Keyword [dibahas di...] [bagian...] [lihat../lihat] [di../point..]
+   Dinamis, harus diperbarui jika memang struktur tulisan berubah.
 -->
 
 <div id="top"></div>
@@ -415,7 +416,7 @@ var nudA = null;                      // Keadaan dimana data "kosong", biasanya 
 var nudB = undefined;                 // Keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 ```
 
-Null biasanya sengaja didefinisikan oleh programmer untuk tujuan tertentu. Undefined artinya JavaScript tidak dapat menemukan nilainya, namun sebenarnya "slot"nya sudah ada di memory. 🔔 Hal ini terkait dengan JavaScript Hoisting yang dibahas di bab 2-5 J.
+Null biasanya sengaja didefinisikan oleh programmer untuk tujuan tertentu. Undefined artinya JavaScript tidak dapat menemukan nilainya, namun sebenarnya "slot"nya sudah ada di memory. 🔔 Hal ini terkait dengan JavaScript Hoisting yang dibahas di bab 2-5 K.
 
 #### ⤷ Kasus unik:
 
@@ -1087,18 +1088,19 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 > > - [X] 𝐃. Arguments Object
 > > - [X] 𝐄. Rest Parameter
 > > - [X] 𝐅. Variable Scope
-> > - [X] 𝐆. Var, Let & Const
-> > - [X] 𝐇. Inner & Outer Function
-> > - [X] 𝐈. Closures (Function)
-> > - [X] 𝐉. JavaScript Hoisting
+> > - [X] 𝐆. Variable Lookup
+> > - [X] 𝐇. Var, Let & Const
+> > - [X] 𝐈. Inner & Outer Function
+> > - [X] 𝐉. Closures (Function)
 
 > 𝐅𝐢𝐫𝐬𝐭-𝐂𝐥𝐚𝐬𝐬 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧
-> > - [X] 𝐊. Function Expressions & Anonymous Function
-> > - [X] 𝐋. Callback & Higher Order Function
-> > - [X] 𝐌. Function as Return Value
-> > - [X] 𝐍. Factory Function
-> > - [X] 𝐎. Immediately Invoked Function Expression (IIFE)
-> > - [X] 𝐏. Arrow Function
+> > - [X] 𝐊. JavaScript Hoisting
+> > - [X] 𝐋. Function Expressions & Anonymous Function
+> > - [X] 𝐌. Callback & Higher Order Function
+> > - [X] 𝐍. Function as Return Value
+> > - [X] 𝐎. Factory Function
+> > - [X] 𝐏. Immediately Invoked Function Expression (IIFE)
+> > - [X] 𝐐. Arrow Function
 
 ### ![✔] 𝐀. Function Declaration
 
@@ -1325,9 +1327,9 @@ console.log(kota3);                   // Output: ReferenceError: kota3 is not de
 
 Dari contoh di atas bisa dilihat bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi nilai di luar scope **(tidak aman!)**, sedangkan penggunaan ```let``` & ```const``` sama sekali tidak mempengaruhi nilai di luar scope **(aman!)**.
 
-🔔 Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bagian berikutnya.
+🔔 Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bab 2-5 H di bawah.
 
-#### ⤷ Konsep: Variable Scope (1)
+#### ⤷ Studi Kasus 1
 
 ```Javascript
 function doo(c, d){                   // STEP 4 🡲 Function doo dijalankan 
@@ -1345,7 +1347,7 @@ console.log(d);                       // STEP 6 🡲 Output: 10 (d berasal dari 
 console.log(e);                       // STEP 7 🡲 Output: 60 (nilai global var c & d tertimpa saat di dalam Function doo)
 ```
 
-#### ⤷ Konsep: Variable Scope (2)
+#### ⤷ Studi Kasus 2
 
 ```Javascript
 function foo(){                       // STEP 4 🡲 Function foo dijalankan
@@ -1365,9 +1367,11 @@ console.log(e);                       // STEP 7 🡲 Output: 60 (Bukan 15, karen
 
 🔔 Keterangan STEP 1, STEP 2, dst untuk menunjukkan tahapan eksekusi baris kode (Code Execution).
 
+### ![✔] 𝐆. Variable Lookup
+
 **Variable Lookup**: Dimana saat sebuah Variable digunakan, JavaScript akan memakai Variable yang berada di Lokal scope-nya terlebih dahulu, jika tidak ditemukan, JavaScript akan "naik" mencari di scope parent-nya, namun jika masih tidak ditemukan, JavaScript akan "naik lagi" untuk mencari, dan begitu seterusnya, hingga sampai ke Global scope. Jika memang tidak ada, barulah JavaScript akan memunculkan error.
 
-#### ⤷ Konsep: Variable Lookup (1)
+#### ⤷ Studi Kasus 1
 
 ```Javascript
 function bar(){                       // STEP 6 🡲 Function bar dijalankan
@@ -1383,9 +1387,9 @@ var a = 1;                            // STEP 1 🡲 a disini merupakan global V
 baz();                                // STEP 2 🡲 Jalankan Function baz
 ```
 
-Pada contoh Variable Lookup (1) di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari di scope parent-nya yaitu di Global scope, dimana terdapat definisi ```var a = 1```.
+Pada contoh Studi Kasus 1 di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari di scope parent-nya yaitu di Global scope, dimana terdapat definisi ```var a = 1```.
 
-#### ⤷ Konsep: Variable Lookup (2)
+#### ⤷ Studi Kasus 2
 
 ```Javascript
 function baz() {                      // STEP 3 🡲 Function baz dijalankan
@@ -1400,9 +1404,9 @@ var a = 1;                            // STEP 1 🡲 a disini merupakan global V
 baz();                                // STEP 2 🡲 Jalankan Function baz
 ```
 
-Berbeda dengan contoh sebelumnya, pada Variable Lookup (2) di atas output yang dihasilkan yaitu ```2```, bukan ```1```. Hal ini terjadi karena Function bar didefinisikan (dan tentunya dijalankan juga) di dalam Function baz, ini berarti baz parent untuk bar. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari di scope parent-nya yaitu di Function baz, dimana terdapat definisi ```var a = 2```.
+Berbeda dengan contoh sebelumnya, pada Studi Kasus 2 di atas output yang dihasilkan yaitu ```2```, bukan ```1```. Hal ini terjadi karena Function bar didefinisikan (dan tentunya dijalankan juga) di dalam Function baz, ini berarti baz parent untuk bar. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari di scope parent-nya yaitu di Function baz, dimana terdapat definisi ```var a = 2```.
 
-### ![✔] 𝐆. Var, Let & Const
+### ![✔] 𝐇. Var, Let & Const
 
 var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function saja, maka ini berarti tidak termasuk blok If-Else dan semua yang bertanda Code Block ```{}``` (selain dari pada Code Block di Function tentunya), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **tidak private** dan bisa diakses di luar scope. 
 
@@ -1447,7 +1451,7 @@ console.log(`Harganya Rp.${l}`);      // Output: Harganya Rp.1000   (Nilai l glo
 #### ⤷ Var, Let & Const
 
 ```Javascript
-console.log(tempA);                   // Output: Undefined (Terjadi karena efek hoisting, dibahas pada point J di bawah)
+console.log(tempA);                   // Output: Undefined (Terjadi karena efek hoisting, dibahas pada point K di bawah)
 console.log(tempB);                   // Output: ReferenceError Cannot access 'tempB' before init (benar, memang seharusnya error)
 console.log(tempC);                   // Output: ReferenceError Cannot access 'tempC' before init (benar, memang seharusnya error)
 
@@ -1458,7 +1462,7 @@ const tempC = "Hello Wolrd!";
 temC = "Teks diganti!";               // Output: TypeError Assignment to constant variable (const tidak bisa ditimpa nilai baru)
 ```
 
-### ![✔] 𝐇. Inner & Outer Function
+### ![✔] 𝐈. Inner & Outer Function
 
 Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya".
 
@@ -1479,7 +1483,7 @@ luar();                               // STEP 1 🡲 Jalankan Function luar
 
 📚 Gunakan tools berikut untuk visualisasi **Execution Context** & **Execution Stack**: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a>.
 
-### ![✔] 𝐈. Closures (Function)
+### ![✔] 𝐉. Closures (Function)
 
 Inner Function yang memiliki akses/menggunakan data yang ada di parent scope-nya (Outer Function), disebut sebagai Closures.
 
@@ -1494,7 +1498,7 @@ function init(){
 init();                               // Output: Budi
 ```
 
-### ![✔] 𝐉. JavaScript Hoisting
+### ![✔] 𝐊. JavaScript Hoisting
 
 Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan mengatur ruang memory untuk setiap Variable & Function yang dibuat. Teknisnya JavaScript seolah "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai ```undefined```, sedangkan Function akan diisi Functionnya itu sendiri. 
 
@@ -1664,7 +1668,7 @@ Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan seb
 
 let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai di luar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
 
-### ![✔] 𝐊. Function Expressions & Anonymous Function
+### ![✔] 𝐋. Function Expressions & Anonymous Function
 
 Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (var/let/const), disebut sebagai Function Expressions. Jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
 
@@ -1687,7 +1691,7 @@ let hitung = function(a, b){          // Function Expressions tanpa nama Functio
 console.log(hitung(4, 8));            // Output: 6
 ```
 
-### ![✔] 𝐋. Callback & Higher Order Function
+### ![✔] 𝐌. Callback & Higher Order Function
 
 Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument (Dilempar ke Function lainnya sebagai Argument dan dieksekusi di dalam Function tersebut), disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function. 🔔 Nantinya Callback banyak dijumpai di **Asynchronous JS**.
 
@@ -1796,7 +1800,7 @@ funB("Joko", (arg) => console.log(arg));            // Output: Pagi, Joko!    �
 
 🔔 Contoh Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
 
-### ![✔] 𝐌. Function as Return Value
+### ![✔] 𝐍. Function as Return Value
 
 Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digunakan sebagai return value dari Function lainnya. Dan ketika sebuah Function memiliki return value berupa Function, ini disebut sebagai Higher Order Function juga.
 
@@ -1917,7 +1921,7 @@ cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengir
                                       //         Hello 2!
 ```
 
-### ![✔] 𝐍. Factory Function
+### ![✔] 𝐎. Factory Function
 
 Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya. Bisa dianggap Function yang baru berjalan separuhnya, lalu dijalankan secara penuh melalui Factory Function.
 
@@ -1972,7 +1976,7 @@ sapaJaka("Pintar");                   // Output: Pagi, Jaka Pintar!   ⇨ Menjal
 sapaJaka("Cerdas");                   // Output: Pagi, Jaka Cerdas!   ⇨ Menjalankan Factory Function sapaJaka("Cerdas");
 ```
 
-### ![✔] 𝐎. Immediately Invoked Function Expression (IIFE)
+### ![✔] 𝐏. Immediately Invoked Function Expression (IIFE)
 
 Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut sebagai IIFE. Jika dalam Function biasa kita menjalankan Function dengan cara memanggil nama Function yang dipilih lalu ditambahkan tanda (), maka dalam IIFE kita dapat menjalankan Function langsung saat Function tersebut dibuat dengan cara menulis perintah berpola ```(___)()```, dimana ___ diisi dengan Function yang hendak dibuat, misalnya ```(function(){ console.log("A") })()```. Atau bisa juga polanya ```(___())```, misalnya ```(function(){ console.log("A") }())```.
 
@@ -2056,7 +2060,7 @@ console.log(add());                   // Output: 2              ⇨ Menjalankan 
 console.log(add());                   // Output: 3              ⇨ Menjalankan IIFE add();
 ```
 
-### ![✔] 𝐏. Arrow Function
+### ![✔] 𝐐. Arrow Function
 
 Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. Namun tidak hanya itu, di bab 2-6 D nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
 
