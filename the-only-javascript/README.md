@@ -5106,9 +5106,12 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 </details>
 
-<hr>
+## ⑧ 𝑅𝑒𝒻𝑒𝓇𝑒𝓃𝓈𝒾 📚 <a href="#top">🠉</a>
 
-<!-- Daftar Referensi -->
+<details>
+<summary>Klik untuk membuka!</summary>
+
+<br>
 
 | Referensi Indonesia                                                                          	| Status 	  |
 |----------------------------------------------------------------------------------------------	|--------	  |
@@ -5136,6 +5139,10 @@ Keterangan:
 1. 🔁 On Progress, Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
 2. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
 3. 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan.
+
+</details>
+
+<hr>
 
 Tips print Markdown di GitHub:
 1. Gunakan Browser <a href="https://www.google.com/chrome/">Google Chrome</a> agar Markdown terbaca dengan baik dan optimal.
