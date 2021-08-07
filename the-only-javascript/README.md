@@ -1459,7 +1459,7 @@ Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fa
 
 Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja**. let, const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
 
-📚 Gunakan tools berikut ini: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a>.
+📚 Gunakan tools berikut ini: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a> (Konsep: Execution Context & Execution Stack).
 
 #### ⤷ Variable Hoisting
 
