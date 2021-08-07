@@ -14,7 +14,7 @@
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>. Jalur Belajar Web Developer akses di <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a>. Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari beberapa website di bawah (lihat Footer).
 
-## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">⟲</a>
+## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -297,7 +297,7 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var `
 
 </details>
 
-## ② 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒶𝓈𝒶𝓇 👨‍💻 <a href="#top">⟲</a>
+## ② 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒶𝓈𝒶𝓇 👨‍💻 <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -2867,7 +2867,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
 
 </details>
 
-## ③ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒪𝒪𝒫 🚀 <a href="#top">⟲</a>
+## ③ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒪𝒪𝒫 🚀 <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -4341,7 +4341,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 </details>
 
-## ④ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒪𝑀 🧩 <a href="#top">⟲</a>
+## ④ 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒪𝑀 🧩 <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -5037,7 +5037,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 </details>
 
-## ⑥ 𝒜𝓈𝓎𝓃𝒸𝒽𝓇𝑜𝓃𝑜𝓊𝓈 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 ⏳ <a href="#top">⟲</a>
+## ⑥ 𝒜𝓈𝓎𝓃𝒸𝒽𝓇𝑜𝓃𝑜𝓊𝓈 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 ⏳ <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -5048,7 +5048,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 </details>
 
-## ⑥ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 🦸‍♂️ <a href="#top">⟲</a>
+## ⑥ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 🦸‍♂️ <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -5091,7 +5091,7 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 </details>
 
-## ⑦ 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖 <a href="#top">⟲</a>
+## ⑦ 𝒥𝒶𝓋𝒶𝒮𝒸𝓇𝒾𝓅𝓉 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖 <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
