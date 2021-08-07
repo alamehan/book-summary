@@ -1361,7 +1361,7 @@ console.log(d);                       // STEP 6 🡲 Output: 40 (Bukan 10, karen
 console.log(e);                       // STEP 7 🡲 Output: 60 (Bukan 15, karena nilai var c & d tertimpa di dalam Function foo)
 ```
 
-🔔 Keterangan **STEP 1**, **STEP 2**, dst untuk menunjukkan tahap eksekusi baris kode (Code Execution).
+🔔 Keterangan STEP 1, STEP 2, dst untuk menunjukkan tahapan eksekusi baris kode (Code Execution).
 
 ### ![✔] 𝐆. Var, Let & Const
 
@@ -1441,7 +1441,7 @@ luar();                               // STEP 1 🡲 Jalankan Function luar
                                       // STEP 10 🡲 Output: A B C
 ```
 
-🔔 Keterangan **STEP 1**, **STEP 2**, dst untuk menunjukkan tahap eksekusi baris kode (Code Execution).
+🔔 Keterangan STEP 1, STEP 2, dst untuk menunjukkan tahapan eksekusi baris kode (Code Execution).
 
 ### ![✔] 𝐈. Closures (Function)
 
