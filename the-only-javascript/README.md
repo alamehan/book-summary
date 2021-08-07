@@ -1369,7 +1369,7 @@ console.log(e);                       // STEP 7 🡲 Output: 60 (Bukan 15, karen
 
 ### ![✔] 𝐆. Variable Lookup
 
-**Variable Lookup**: Dimana saat sebuah Variable digunakan, JavaScript akan memakai Variable yang berada di Lokal scope-nya terlebih dahulu, jika tidak ditemukan, JavaScript akan "naik" mencari di scope parent-nya, namun jika masih tidak ditemukan, JavaScript akan "naik lagi" untuk mencari, dan begitu seterusnya, hingga sampai ke Global scope. Jika memang tidak ada, barulah JavaScript akan memunculkan error.
+Sebuah konsep dimana saat sebuah Variable digunakan, JavaScript akan memakai Variable yang berada di Lokal scope-nya terlebih dahulu, jika tidak ditemukan, JavaScript akan "naik" mencari di scope parent-nya, namun jika masih tidak ditemukan, JavaScript akan "naik lagi" untuk mencari, dan begitu seterusnya, hingga sampai ke Global scope. Jika memang tidak ada, barulah JavaScript akan memunculkan error.
 
 #### ⤷ Studi Kasus 1
 
