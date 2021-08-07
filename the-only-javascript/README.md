@@ -430,10 +430,10 @@ Null menjadi sesuatu yang kita tetapkan sebagai nilai, dalam kasus di atas Null 
 var und1;                             // var yang dibuat tanpa langsung diisi nilai menjadi Undefined
 console.log(und1);                    // Output: undefined
 
-var und2 = [1, 2, 3];                 // Mengakses Array diluar indeks yang dibuat menghasilkan Undefined
+var und2 = [1, 2, 3];                 // Mengakses Array di luar indeks yang dibuat menghasilkan Undefined
 console.log(und2[3]);                 // Output: undefined
 
-var und3 = {nama: "iyan", umur: 24};  // Mengakses Object diluar key yang dibuat menghasilkan Undefined
+var und3 = {nama: "iyan", umur: 24};  // Mengakses Object di luar key yang dibuat menghasilkan Undefined
 console.log(und3["alamat"]);          // Output: undefined
 ```
 
@@ -1308,8 +1308,8 @@ if (true){                            // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟮: 𝗕𝗹
   const umur3 = 300;
 }
 console.log(umur1);                   // Output: 100
-console.log(umur2);                   // Output: ReferenceError: umur2 is not defined   (tidak bisa diakses diluar Code Block)
-console.log(umur3);                   // Output: ReferenceError: umur3 is not defined   (tidak bisa diakses diluar Code Block)
+console.log(umur2);                   // Output: ReferenceError: umur2 is not defined   (tidak bisa diakses di luar Code Block)
+console.log(umur3);                   // Output: ReferenceError: umur3 is not defined   (tidak bisa diakses di luar Code Block)
 
 {                                     // 𝗖𝗼𝗻𝘁𝗼𝗵 𝟯: 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸 (𝗶𝘁𝘀𝗲𝗹𝗳)
   var kota1   = "Bali";
@@ -1317,13 +1317,13 @@ console.log(umur3);                   // Output: ReferenceError: umur3 is not de
   const kota3 = "Medan";
 }
 console.log(kota1);                   // Output: Bali
-console.log(kota2);                   // Output: ReferenceError: kota2 is not defined   (tidak bisa diakses diluar Code Block)
-console.log(kota3);                   // Output: ReferenceError: kota3 is not defined   (tidak bisa diakses diluar Code Block)
+console.log(kota2);                   // Output: ReferenceError: kota2 is not defined   (tidak bisa diakses di luar Code Block)
+console.log(kota3);                   // Output: ReferenceError: kota3 is not defined   (tidak bisa diakses di luar Code Block)
 ```
 
-**Variable Lookup**: Dimana saat sebuah Variable digunakan, JavaScript akan memakai Variable yang berada di Lokal scope-nya terlebih dahulu, jika tidak ditemukan, JavaScript akan "naik" mencari di scope parent-nya, namun jika masih tidak ditemukan, JavaScript akan "naik lagi" untuk mencari, dan begitu seterusnya, hingga sampai ke Global scope. Jika memang tidak ada, barulah JavaScript akan memunculkan error.
-
 🔔 Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bagian berikutnya.
+
+**Variable Lookup**: Dimana saat sebuah Variable digunakan, JavaScript akan memakai Variable yang berada di Lokal scope-nya terlebih dahulu, jika tidak ditemukan, JavaScript akan "naik" mencari di scope parent-nya, namun jika masih tidak ditemukan, JavaScript akan "naik lagi" untuk mencari, dan begitu seterusnya, hingga sampai ke Global scope. Jika memang tidak ada, barulah JavaScript akan memunculkan error.
 
 #### ⤷ Studi Kasus 1
 
@@ -1363,7 +1363,11 @@ console.log(e);                       // Output: 60 (Bukan 15, karena nilai var 
 
 ### ![✔] 𝐆. Var, Let & Const
 
-Seperti yang kita lihat di contoh sebelumnya, penggunaan ```var``` dapat mempengaruhi nilai diluar scope (tidak aman!), sedangkan penggunaan ```let``` & ```const``` tidak mempengaruhi nilai diluar scope (aman!). var bersifat **Function Scope**, artinya cakupan scopenya itu Function, seolah tidak Private. Sedangkan let & const bersifat **Block Scope**, artinya cakupan scopenya itu tanda block yaitu ```{}```, seolah menjadi Private. 
+Pada bagian sebelumnya bisa dilihat bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi nilai di luar scope **(tidak aman!)**, sedangkan penggunaan ```let``` & ```const``` sama sekali tidak mempengaruhi nilai di luar scope **(aman!)**.
+
+var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function saja, maka ini berarti tidak termasuk blok If-Else dan semua yang bertanda Code Block ```{}``` (selain dari pada Code Block di Function tentunya), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **tidak private** dan bisa diakses di luar scope. 
+
+Sedangkan let & const bersifat **Block Scope** artinya cakupan scopenya itu semua yang bertanda Code Block ```{}``` (blok Function, blok If-Else, blok perulangan, dst), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **private** dan tidak bisa diakses di luar scope.
 
 let & const sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu let nilainya bisa berubah-ubah sedangkan const nilainya tidak bisa diubah sepanjang kode program (isinya tetap).
 
@@ -1617,7 +1621,7 @@ console.log(nama);                    // console.log(nama);               🡲 O
 
 Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan let & const sebagai alternatif dari Var. Prilaku let & const lebih "masuk akal" dibandingkan dengan Var. 
 
-let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai diluar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
+let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai di luar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
 
 ### ![✔] 𝐊. Function Expressions & Anonymous Function
 
