@@ -1361,7 +1361,7 @@ console.log(d);                       // STEP 6 🡲 Output: 40 (Bukan 10, karen
 console.log(e);                       // STEP 7 🡲 Output: 60 (Bukan 15, karena nilai var c & d tertimpa di dalam Function foo)
 ```
 
-Keterangan **STEP 1**, **STEP 2**, **STEP 3**, dst untuk menunjukkan tahap eksekusi baris kode (Code Execution).
+🔔 Keterangan **STEP 1**, **STEP 2**, dst untuk menunjukkan tahap eksekusi baris kode (Code Execution).
 
 ### ![✔] 𝐆. Var, Let & Const
 
@@ -1426,19 +1426,22 @@ temC = "Teks diganti!";               // Output: TypeError Assignment to constan
 Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Outer Function mengacu pada Function "parent-nya".
 
 ```Javascript
-function luar(){                      // "luar" merupakan Outer Function bagi "tengah"
-  console.log("A");
-  function tengah(){                  // "tengah" merupakan Inner Function bagi "luar" & Outer Function bagi "dalam"
-    console.log("B");
-    function dalam(){                 // "dalam" merupakan Inner Function bagi "tengah"
-      console.log("C");
+function luar(){                      // STEP 2 🡲 Function luar dijalankan    (Outer Function bagi tengah)
+  console.log("A");                   // STEP 3 🡲 Jalankan console.log("A")
+  function tengah(){                  // STEP 5 🡲 Function tengah dijalankan  (Inner Func. bagi luar & Outer Func. bagi dalam)
+    console.log("B");                 // STEP 6 🡲 Jalankan console.log("B")
+    function dalam(){                 // STEP 8 🡲 Function dalam dijalankan   (Inner Function bagi tengah)
+      console.log("C");               // STEP 9 🡲 Jalankan console.log("B")
     }
-    dalam();                          // Menjalankan Function dalam yang berada di dalam Function tengah
+    dalam();                          // STEP 7 🡲 Jalankan Function dalam
   }
-  tengah();                           // Menjalankan Function tengah yang beradai di dalam Function luar
+  tengah();                           // STEP 4 🡲 Jalankan Function tengah
 }
-luar();                               // Output: A B C
+luar();                               // STEP 1 🡲 Jalankan Function luar 
+                                      // STEP 10 🡲 Output: A B C
 ```
+
+🔔 Keterangan **STEP 1**, **STEP 2**, dst untuk menunjukkan tahap eksekusi baris kode (Code Execution).
 
 ### ![✔] 𝐈. Closures (Function)
 
