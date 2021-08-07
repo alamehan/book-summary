@@ -1328,38 +1328,40 @@ console.log(kota3);                   // Output: ReferenceError: kota3 is not de
 #### ⤷ Studi Kasus 1
 
 ```Javascript
-function doo(c, d){                   // Step 4 🡲 Function doo dijalankan 
+function doo(c, d){                   // STEP 4 🡲 Function doo dijalankan 
   var c = 20;                         // c disini merupakan local Variable
   var d = 40;                         // d disini merupakan local Variable
   return c+d;                         // Function mengembalikan nilai 60
 }
 
-var c = 5;                            // Step 1 🡲 c disini merupakan global Variable
-var d = 10;                           // Step 2 🡲 d disini merupakan global Variable
-var e = doo(c, d);                    // Step 3 🡲 Jalankan Function doo dengan Argument & hasil return-nya simpan ke dalam var e
+var c = 5;                            // STEP 1 🡲 c disini merupakan global Variable
+var d = 10;                           // STEP 2 🡲 d disini merupakan global Variable
+var e = doo(c, d);                    // STEP 3 🡲 Jalankan Function doo dengan Argument & hasil return-nya simpan ke dalam var e
 
-console.log(c);                       // Step 5 🡲 Output: 5  (c berasal dari global Variable c)
-console.log(d);                       // Step 6 🡲 Output: 10 (d berasal dari global Variable d)
-console.log(e);                       // Step 7 🡲 Output: 60 (nilai global var c & d tertimpa saat di dalam Function doo)
+console.log(c);                       // STEP 5 🡲 Output: 5  (c berasal dari global Variable c)
+console.log(d);                       // STEP 6 🡲 Output: 10 (d berasal dari global Variable d)
+console.log(e);                       // STEP 7 🡲 Output: 60 (nilai global var c & d tertimpa saat di dalam Function doo)
 ```
 
 #### ⤷ Studi Kasus 2
 
 ```Javascript
-function foo(){                       // Step 4 🡲 Function foo dijalankan
+function foo(){                       // STEP 4 🡲 Function foo dijalankan
   c = 20;                             // c disini menimpa global Variable c (Jika didefinisikan tanpa var, maka berefek ke global)
   d = 40;                             // d disini menimpa global Variable d (Jika didefinisikan tanpa var, maka berefek ke global)
   return c+d;                         // Function mengembalikan nilai 60
 }
 
-var c = 5;                            // Step 1 🡲 c disini merupakan global Variable
-var d = 10;                           // Step 2 🡲 d disini merupakan global Variable
-var e = foo();                        // Step 3 🡲 Jalankan Function foo (disini global Variable c & d akan tertimpa)
+var c = 5;                            // STEP 1 🡲 c disini merupakan global Variable
+var d = 10;                           // STEP 2 🡲 d disini merupakan global Variable
+var e = foo();                        // STEP 3 🡲 Jalankan Function foo (disini global Variable c & d akan tertimpa)
 
-console.log(c);                       // Step 5 🡲 Output: 20 (Bukan 5, karena nilai c tertimpa saat di dalam Function foo)
-console.log(d);                       // Step 6 🡲 Output: 40 (Bukan 10, karena nilai d tertimpa saat di dalam Function foo)
-console.log(e);                       // Step 7 🡲 Output: 60 (Bukan 15, karena nilai var c & d tertimpa di dalam Function foo)
+console.log(c);                       // STEP 5 🡲 Output: 20 (Bukan 5, karena nilai c tertimpa saat di dalam Function foo)
+console.log(d);                       // STEP 6 🡲 Output: 40 (Bukan 10, karena nilai d tertimpa saat di dalam Function foo)
+console.log(e);                       // STEP 7 🡲 Output: 60 (Bukan 15, karena nilai var c & d tertimpa di dalam Function foo)
 ```
+
+Keterangan **STEP 1**, **STEP 2**, **STEP 3**, dst untuk menunjukkan tahap eksekusi baris kode (Code Execution).
 
 ### ![✔] 𝐆. Var, Let & Const
 
@@ -1671,21 +1673,21 @@ console.log(hasil);                   // Output: 11
 function rerata(a, b){
   return (a+b)/2;
 }
-function tambah(c, d){                // Step 2 🡲 Parameter d akan menangkap Function bernama rerata dari Argument
-  return c+d(7, 3);                   // Step 3 🡲 Dengan demikian d(7, 3) akan menjadi rerata(7, 3)
+function tambah(c, d){                // STEP 2 🡲 Parameter d akan menangkap Function bernama rerata dari Argument
+  return c+d(7, 3);                   // STEP 3 🡲 Dengan demikian d(7, 3) akan menjadi rerata(7, 3)
 }
-let hasil = tambah(6, rerata);        // Step 1 🡲 Kirim Function bernama rerata (bukan menjalankannya) sebagai sebuah Argument
+let hasil = tambah(6, rerata);        // STEP 1 🡲 Kirim Function bernama rerata (bukan menjalankannya) sebagai sebuah Argument
 console.log(hasil);                   // Output: 11
 ```
 
 ```Javascript
 function foo(apa){
-  alert(apa);                         // Step 4 🡲 foo("Belajar JS") akan dieksekusi sebagai alert("Belajar JS")
+  alert(apa);                         // STEP 4 🡲 foo("Belajar JS") akan dieksekusi sebagai alert("Belajar JS")
 }
-function salam(bar){                  // Step 2 🡲 Parameter bar akan menangkap Function bernama foo dari Argument
-  bar("Belajar JS");                  // Step 3 🡲 Dengan demikian bar("Belajar JS") akan menjadi foo("Belajar JS")
+function salam(bar){                  // STEP 2 🡲 Parameter bar akan menangkap Function bernama foo dari Argument
+  bar("Belajar JS");                  // STEP 3 🡲 Dengan demikian bar("Belajar JS") akan menjadi foo("Belajar JS")
 }
-salam(foo);                           // Step 1 🡲 Kirim Function bernama foo (bukan menjalankannya) sebagai sebuah Argument
+salam(foo);                           // STEP 1 🡲 Kirim Function bernama foo (bukan menjalankannya) sebagai sebuah Argument
 ```
 
 #### ⤷ Istilah Callback & Higher Order Function (1)
