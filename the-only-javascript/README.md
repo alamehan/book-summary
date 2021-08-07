@@ -1427,23 +1427,20 @@ Inner Function mengacu pada Function yang berada di dalam Function, sedangkan Ou
 
 ```Javascript
 function luar(){                      // STEP 2 🡲 Function luar dijalankan    (Outer Function bagi tengah)
-  console.log("A");                   // STEP 3 🡲 Jalankan console.log("A")
+  console.log("A");                   // STEP 3 🡲 Jalankan console.log("A")   ⇨ Output: A
   function tengah(){                  // STEP 5 🡲 Function tengah dijalankan  (Inner Func. bagi luar & Outer Func. bagi dalam)
-    console.log("B");                 // STEP 6 🡲 Jalankan console.log("B")
+    console.log("B");                 // STEP 6 🡲 Jalankan console.log("B")   ⇨ Output: B
     function dalam(){                 // STEP 8 🡲 Function dalam dijalankan   (Inner Function bagi tengah)
-      console.log("C");               // STEP 9 🡲 Jalankan console.log("C")
+      console.log("C");               // STEP 9 🡲 Jalankan console.log("C")   ⇨ Output: C
     }
     dalam();                          // STEP 7 🡲 Jalankan Function dalam
   }
   tengah();                           // STEP 4 🡲 Jalankan Function tengah
 }
-luar();                               // STEP 1 🡲 Jalankan Function luar 
-                                      // STEP 10 🡲 Output: A B C
+luar();                               // STEP 1 🡲 Jalankan Function luar
 ```
 
-🔔 Keterangan STEP 1, STEP 2, dst untuk menunjukkan tahapan eksekusi baris kode (Code Execution).
-
-📚 Gunakan tools berikut ini: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a> (Konsep: Execution Context & Execution Stack).
+📚 Gunakan tools berikut untuk visualisasi **Execution Context** & **Execution Stack**: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a>.
 
 ### ![✔] 𝐈. Closures (Function)
 
@@ -1466,7 +1463,7 @@ Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fa
 
 Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja**. let, const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
 
-📚 Gunakan tools berikut ini: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a> (Konsep: Hoisting divisualkan disini).
+📚 Gunakan tools berikut untuk visualisasi Hoisting: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a>.
 
 #### ⤷ Variable Hoisting
 
