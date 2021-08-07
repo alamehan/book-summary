@@ -5156,36 +5156,35 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 <br>
 
-| Referensi Indonesia                                                                          	| Status 	  |
-|----------------------------------------------------------------------------------------------	|--------	  |
-| <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a> 	| 📘      	|
-| <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>  	| 📕      	|
-| <a href="https://www.udemy.com/user/yudi-krisnandi/">Course by Yudi Khirsnandi</a></p>       	| 📕      	|
-| <a href="https://devsaurus.com/">Devsaurus: Learn Fullstack</a>                              	| 📕      	|
-| <a href="https://buildwithangga.com/">Build With Angga</a></p>                               	| 📕      	|
-| <a href="https://buku-laravel-vue.com/">buku-laravel-vue.com</a>                             	| 📕      	|
-| <a href="https://bukureact.id/">bukureact.id</a>                                             	| 📕      	|
+| No 	| Referensi Indonesia                                                                          	| Status 	|
+|----	|----------------------------------------------------------------------------------------------	|--------	|
+| 1  	| <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a> 	| 📘      	|
+| 2  	| <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>  	| 📕      	|
+| 3  	| <a href="https://www.udemy.com/user/yudi-krisnandi/">Course by Yudi Khirsnandi</a>           	| 📕      	|
+| 4  	| <a href="https://buildwithangga.com/">Build With Angga</a>                                   	| 📕      	|
+| 5  	| <a href="https://devsaurus.com/">Devsaurus: Learn Fullstack</a>                              	| 📕      	|
+| 6  	| <a href="https://buku-laravel-vue.com/">buku-laravel-vue.com</a>                             	| 📕      	|
+| 7  	| <a href="https://bukureact.id/">bukureact.id</a>                                             	| 📕      	|
   
-| Referensi Inggris 	| Status 	|
-|---	|---	|
-| <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 	| 📘 *A  	|
-| <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> | <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a> 	| 📘 *B  |
-| <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a> 	| 📕 	|
-| <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a> 	| 📕 	|
-| <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Modern Javascript: Everything You Missed Over The Last 10 Years</a> 	| 📕 	|
-| <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">ES5 to ESNext: Here’s Every Feature Added to JavaScript Since 2015</a> 	| 📕 	|
-| <a href="https://github.com/lukehoban/es6features">Overview of ECMAScript 6 Features</a> 	| 📕 	|
-| <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a> 	| 📕 	|
-| <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a> 	| 📕 	|
-| <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a> 	| 📘 	|
-| <a href="https://www.w3docs.com/">W3Docs</a> 	| 📕 	|
+| No 	| Referensi Inggris 	| Status 	|
+|---	|---	|---	|
+| 1 	| <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 	| 📘 A* 	|
+| 2 	| <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> \| <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a> 	| 📘 B* 	|
+| 3 	| <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a> 	| 📕 	|
+| 4 	| <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a> 	| 📕 	|
+| 5 	| <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Modern Javascript: Everything You Missed Over The Last 10 Years</a> 	| 📕 	|
+| 6 	| <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">ES5 to ESNext: Here’s Every Feature Added to JavaScript Since 2015</a> 	| 📕 	|
+| 7 	| <a href="https://github.com/lukehoban/es6features">Overview of ECMAScript 6 Features</a> 	| 📕 	|
+| 8 	| <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a> 	| 📕 	|
+| 9 	| <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a> 	| 📕 	|
+| 10 	| <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a> 	| 📘 	|
+| 11 	| <a href="https://www.w3docs.com/">W3Docs</a> 	| 📕 	|
 
 Keterangan:
-1. 🔁 On Progress, sedang dipelajari saat ini, juga dibuat catatan hasil belajarnya.
-2. A* Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
-3. B* JavaScript: Understanding the Weird Parts by Anthony Alicea baru selesai sampai di **Section 3: Types and Operatos**
-4. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
-5. 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan.
+1. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
+2. 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan (karena memang referensinya berkualitas).
+3. A* Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
+4. B* JavaScript: Understanding the Weird Parts by Anthony Alicea baru selesai sampai di **Section 3: Types and Operatos**
 
 </details>
 
