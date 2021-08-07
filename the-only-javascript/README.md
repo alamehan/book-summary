@@ -1431,7 +1431,7 @@ function luar(){                      // STEP 2 🡲 Function luar dijalankan   
   function tengah(){                  // STEP 5 🡲 Function tengah dijalankan  (Inner Func. bagi luar & Outer Func. bagi dalam)
     console.log("B");                 // STEP 6 🡲 Jalankan console.log("B")
     function dalam(){                 // STEP 8 🡲 Function dalam dijalankan   (Inner Function bagi tengah)
-      console.log("C");               // STEP 9 🡲 Jalankan console.log("B")
+      console.log("C");               // STEP 9 🡲 Jalankan console.log("C")
     }
     dalam();                          // STEP 7 🡲 Jalankan Function dalam
   }
