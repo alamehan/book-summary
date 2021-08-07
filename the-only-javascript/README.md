@@ -1406,6 +1406,8 @@ baz();                                // STEP 2 🡲 Jalankan Function baz
 
 Pada contoh Studi Kasus 2 di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar, itu karena pendefinisian Function bar dilakukan di Global scope (berbeda dengan contoh pada Studi Kasus 1 sebelumnya). Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari ```a``` di scope parent-nya yaitu di Global scope, ditemukanlah definisi ```var a = 1```.
 
+🔔 Variable Lookup berlaku juga untuk ```let```, jadi bukan hanya ```var``` saja.
+
 ### ![✔] 𝐇. Var, Let & Const
 
 var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function saja, maka ini berarti tidak termasuk blok If-Else dan semua yang bertanda Code Block ```{}``` (selain dari pada Code Block di Function tentunya), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **tidak private** dan bisa diakses di luar scope. 
