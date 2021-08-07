@@ -14,8 +14,6 @@
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>. Jalur Belajar Web Developer akses di <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a>. Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari beberapa website di bawah (lihat Footer).
 
-Tips print Markdown di GitHub: Pertama gunakan Browser <a href="https://www.google.com/chrome/">Google Chrome</a>, kedua gunakan Extension <a href="https://chrome.google.com/webstore/detail/click-to-remove-element/jcgpghgjhhahcefnfpbncdmhhddedhnk">Click to Remove Element</a> untuk hapus beberapa Element HTML yang tidak diperlukan, dan ketiga gunakan Extension <a href="https://chrome.google.com/webstore/detail/github-markdown-printer/fehpdlpmcegfpbkgcnaleindodeegapk">GitHub Markdown Printer</a> untuk print Markdown di GitHub sebagai PDF, terakhir atur print ke ```Margins: Minimum``` & ```Scale: Custom = 75```, tujuannya agar source code bisa tampil seluruhnya.
-
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">⟲</a>
 
 <details>
@@ -5136,3 +5134,9 @@ Keterangan:
 1. 🔁 On Progress, Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
 2. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
 3. 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan.
+
+[BONUS] Tips print Markdown di GitHub:
+1. Gunakan Browser <a href="https://www.google.com/chrome/">Google Chrome</a>.
+2. Gunakan Extension <a href="https://chrome.google.com/webstore/detail/click-to-remove-element/jcgpghgjhhahcefnfpbncdmhhddedhnk">Click to Remove Element</a> untuk hapus Element HTML yang tidak diperlukan.
+3. Gunakan Extension <a href="https://chrome.google.com/webstore/detail/github-markdown-printer/fehpdlpmcegfpbkgcnaleindodeegapk">GitHub Markdown Printer</a> untuk print Markdown di GitHub sebagai PDF.
+4. Setting print options ```Paper size: A4```, ```Margins: Minimum``` & ```Scale: Custom = 75```, tujuannya agar source code tidak **Word Wrap** ke baris baru.
