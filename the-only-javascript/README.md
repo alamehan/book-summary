@@ -85,8 +85,6 @@ Namun perlu juga dipahami bahwa walaupun materi di eBook JavaScript Uncover suda
 Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat diakses di:
 - <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript (Wikipedia)</a>
 - <a href="https://www.jetbrains.com/lp/javascript-25/">25 years of JavaScript history (JetBrains)</a>
-- <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Modern Javascript: Everything you missed over the last 10 years (Turriate)</a>
-- <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">ES5 to ESNext: Here’s every feature added to JavaScript since 2015 (FreeCodeCamp)</a>
 
 <hr>
 <div id="bab1_3"></div>
@@ -5112,31 +5110,35 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 <!-- Daftar Referensi -->
 
-Referensi Indonesia:
-1. 📘 <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a>
-2. 📕 <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>
-3. 📕 <a href="https://devsaurus.com/">Devsaurus: Learn Fullstack</a>
-4. 📕 <a href="https://buku-laravel-vue.com/">buku-laravel-vue.com</a>
-5. 📕 <a href="https://bukureact.id/">bukureact.id</a>
+| Referensi Indonesia                                                                          	| Status 	  |
+|----------------------------------------------------------------------------------------------	|--------	  |
+| <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a> 	| 📘      	|
+| <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>  	| 📕      	|
+| <a href="https://devsaurus.com/">Devsaurus: Learn Fullstack</a>                              	| 📕      	|
+| <a href="https://buku-laravel-vue.com/">buku-laravel-vue.com</a>                             	| 📕      	|
+| <a href="https://bukureact.id/">bukureact.id</a>                                             	| 📕      	|
   
-Referensi Inggris:
-1. 📘 <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 🔁
-2. 📕 <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> | <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a>
-3. 📕 <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a>
-4. 📕 <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a>
-5. 📕 <a href="https://github.com/lukehoban/es6features">Overview of ECMAScript 6 Features</a>
-6. 📕 <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a>
-7. 📕 <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a>
-8. 📘 <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a>
-9. 📕 <a href="https://www.w3docs.com/">W3Docs</a>
+| Referensi Inggris 	| Status 	|
+|---	|---	|
+| <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 	| 📘 🔁  	|
+| <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> \| <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a> 	| 📕 	|
+| <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a> 	| 📕 	|
+| <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a> 	| 📕 	|
+| <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Modern Javascript: Everything You Missed Over The Last 10 Years</a> 	| 📕 	|
+| <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">ES5 to ESNext: Here’s Every Feature Added to JavaScript Since 2015</a> 	| 📕 	|
+| <a href="https://github.com/lukehoban/es6features">Overview of ECMAScript 6 Features</a> 	| 📕 	|
+| <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a> 	| 📕 	|
+| <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a> 	| 📕 	|
+| <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a> 	| 📘 	|
+| <a href="https://www.w3docs.com/">W3Docs</a> 	| 📕 	|
 
 Keterangan:
 1. 🔁 On Progress, Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
 2. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
 3. 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan.
 
-[BONUS] Tips print Markdown di GitHub:
-1. Gunakan Browser <a href="https://www.google.com/chrome/">Google Chrome</a>.
+Tips print Markdown di GitHub:
+1. Gunakan Browser <a href="https://www.google.com/chrome/">Google Chrome</a> agar Markdown terbaca dengan baik dan optimal.
 2. Gunakan Extension <a href="https://chrome.google.com/webstore/detail/click-to-remove-element/jcgpghgjhhahcefnfpbncdmhhddedhnk">Click to Remove Element</a> untuk hapus Element HTML yang tidak diperlukan.
 3. Gunakan Extension <a href="https://chrome.google.com/webstore/detail/github-markdown-printer/fehpdlpmcegfpbkgcnaleindodeegapk">GitHub Markdown Printer</a> untuk print Markdown di GitHub sebagai PDF.
-4. Setting print options ```Paper size: A4```, ```Margins: Minimum``` & ```Scale: Custom = 75```, tujuannya agar source code tidak **Word Wrap** ke baris baru.
+4. Setting print options ke ```Paper size: A4```, ```Margins: Minimum``` & ```Scale: Custom = 75```, tujuannya agar source code tidak **Word Wrap**.
