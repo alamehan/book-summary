@@ -1325,7 +1325,7 @@ console.log(kota2);                   // Output: ReferenceError: kota2 is not de
 console.log(kota3);                   // Output: ReferenceError: kota3 is not defined   (tidak bisa diakses di luar Code Block)
 ```
 
-Dari contoh di atas bisa dilihat bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi nilai di luar scope **(tidak aman!)**, sedangkan penggunaan ```let``` & ```const``` sama sekali tidak mempengaruhi nilai di luar scope **(aman!)**.
+Dari contoh di atas bisa dilihat bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi/dimanipulasi nilainya di luar scope (kecuali blok Function), ini menjadikannya **tidak aman**. Sedangkan penggunaan ```let``` & ```const```tidak mempengaruhi/tidak bisa dimanipulasi nilainya di luar scope, ini menjadikannya **aman**.
 
 🔔 Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bab 2-5 H di bawah.
 
@@ -1410,7 +1410,7 @@ Pada contoh Studi Kasus 2 di atas hati-hati keliru, output dari ```console.log(a
 
 ### ![✔] 𝐇. Var, Let & Const
 
-Melanjutkan pembahasan Local Variable di bab 2-5 F sebelumya, diketahui bahwa ```var``` sebagai Local Variable dapat mempengaruhi nilai di luar scope **(tidak aman!)**, sedangkan ```let``` & ```const``` sama sekali tidak mempengaruhi nilai di luar scope **(aman!)**.
+Melanjutkan pembahasan Local Variable di bab 2-5 F sebelumya, diketahui bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi/dimanipulasi nilainya di luar scope (kecuali blok Function), ini menjadikannya **tidak aman**. Sedangkan penggunaan ```let``` & ```const```tidak mempengaruhi/tidak bisa dimanipulasi nilainya di luar scope, ini menjadikannya **aman**.
 
 var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function saja, maka ini berarti tidak termasuk blok If-Else dan semua yang bertanda Code Block ```{}``` (selain dari pada Code Block di Function tentunya), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **tidak private** dan bisa diakses di luar scope. 
 
