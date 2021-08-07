@@ -1323,6 +1323,8 @@ console.log(kota2);                   // Output: ReferenceError: kota2 is not de
 console.log(kota3);                   // Output: ReferenceError: kota3 is not defined   (tidak bisa diakses di luar Code Block)
 ```
 
+Dari contoh di atas bisa dilihat bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi nilai di luar scope **(tidak aman!)**, sedangkan penggunaan ```let``` & ```const``` sama sekali tidak mempengaruhi nilai di luar scope **(aman!)**.
+
 🔔 Detail terkait dengan perbedaan antara ```var```, ```let``` dan ```const``` dibahas di bagian berikutnya.
 
 #### ⤷ Konsep: Variable Scope (1)
@@ -1398,11 +1400,9 @@ var a = 1;                            // STEP 1 🡲 a disini merupakan global V
 baz();                                // STEP 2 🡲 Jalankan Function baz
 ```
 
-Berbeda dengan contoh sebelumnya, pada Variable Lookup (2) di atas output yang dihasilkan yaitu ```2```, bukan ```1```. Hal ini terjadi karena Function bar didefinisikan (dan tentunya dijalankan juga) di dalam Function baz, ini berarti baz parent untuk bar. Sehinnga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari di scope parent-nya yaitu di Function baz, dimana terdapat definisi ```var a = 2```.
+Berbeda dengan contoh sebelumnya, pada Variable Lookup (2) di atas output yang dihasilkan yaitu ```2```, bukan ```1```. Hal ini terjadi karena Function bar didefinisikan (dan tentunya dijalankan juga) di dalam Function baz, ini berarti baz parent untuk bar. Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari di scope parent-nya yaitu di Function baz, dimana terdapat definisi ```var a = 2```.
 
 ### ![✔] 𝐆. Var, Let & Const
-
-Pada bagian sebelumnya bisa dilihat bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi nilai di luar scope **(tidak aman!)**, sedangkan penggunaan ```let``` & ```const``` sama sekali tidak mempengaruhi nilai di luar scope **(aman!)**.
 
 var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function saja, maka ini berarti tidak termasuk blok If-Else dan semua yang bertanda Code Block ```{}``` (selain dari pada Code Block di Function tentunya), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **tidak private** dan bisa diakses di luar scope. 
 
