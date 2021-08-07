@@ -1443,6 +1443,8 @@ luar();                               // STEP 1 🡲 Jalankan Function luar
 
 🔔 Keterangan STEP 1, STEP 2, dst untuk menunjukkan tahapan eksekusi baris kode (Code Execution).
 
+📚 Gunakan tools berikut ini: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a> (Konsep: Execution Context & Execution Stack).
+
 ### ![✔] 𝐈. Closures (Function)
 
 Inner Function yang memiliki akses/menggunakan data yang ada di parent scope-nya (Outer Function), disebut sebagai Closures.
@@ -1464,7 +1466,7 @@ Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fa
 
 Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja**. let, const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
 
-📚 Gunakan tools berikut ini: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a> (Konsep: Execution Context & Execution Stack).
+📚 Gunakan tools berikut ini: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a> (Konsep: Hoisting divisualkan disini).
 
 #### ⤷ Variable Hoisting
 
