@@ -1410,7 +1410,7 @@ Pada contoh Studi Kasus 2 di atas hati-hati keliru, output dari ```console.log(a
 
 ### ![✔] 𝐇. Var, Let & Const
 
-Melanjutkan pembahasan Local Variable di bab 2-5 F sebelumya, diketahui bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi nilai di luar scope **(tidak aman!)**, sedangkan penggunaan ```let``` & ```const``` sama sekali tidak mempengaruhi nilai di luar scope **(aman!)**.
+Melanjutkan pembahasan Local Variable di bab 2-5 F sebelumya, diketahui bahwa ```var``` sebagai Local Variable dapat mempengaruhi nilai di luar scope **(tidak aman!)**, sedangkan ```let``` & ```const``` sama sekali tidak mempengaruhi nilai di luar scope **(aman!)**.
 
 var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function saja, maka ini berarti tidak termasuk blok If-Else dan semua yang bertanda Code Block ```{}``` (selain dari pada Code Block di Function tentunya), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **tidak private** dan bisa diakses di luar scope. 
 
