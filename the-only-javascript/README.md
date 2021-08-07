@@ -253,7 +253,7 @@ Salah satu kelemahan (sekaligus keunggulan) dari JavaScript adalah, pengunjung w
 
 ## `1-5. Variable` <a href="#daftar_isi_bab1">🡅</a>
 
-Secara sederhana, Variable adalah “wadah/penampung” dari sebuah data. Disebut Variable karena data yang kita simpan bisa berubah-ubah sepanjang kode program (isinya tidak tetap). ```var angka = 192;``` **Operasi Assignment** atau memberikan nilai ke sebuah Variable dibaca dari kanan ke kiri (right-to-left, baca selengkapnya <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">disini</a>). Artinya, 192 “dimasukkan” sebagai nilai ke Variable ```angka```.
+Secara sederhana, Variable adalah “wadah/penampung” dari sebuah data. Disebut Variable karena data yang kita simpan bisa berubah-ubah sepanjang kode program (isinya tidak tetap). ```var angka = 192;``` **Operasi Assignment** atau memberikan nilai ke sebuah Variable dibaca dari kanan ke kiri (right-to-left, baca selengkapnya di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN: Operator Precedence</a>). Artinya, 192 “dimasukkan” sebagai nilai ke Variable ```angka```.
 
 JavaScript termasuk ke dalam bahasa pemrograman **Typeless Programming Language**, yakni kelompok bahasa pemrograman yang Variablenya bisa diisi dengan tipe data apa saja tanpa harus dideklarasikan terlebih dahulu.
 
@@ -507,7 +507,7 @@ console.log(arr2D[1][1]);             // Output: 5
 
 Operator Precedence atau Prioritas Operator menentukan bagaimana suatu operator dieksekusi. Operator dengan prioritas lebih tinggi akan dioperasikan terlebih dahulu. Ada operator yang dioperasikan dari kiri ke kanan (left-to-right), ada pula yang dari kanan ke kiri (right-to-left).
 
-📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">disini (MDN)</a>.
+📚 Tabel Operator Precedence lengkap beserta Associativity-nya dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN: Operator Precedence</a>.
 
 
 ### ![✔] 𝐁. Falsy & Truthy Value
@@ -538,7 +538,7 @@ console.log(null == undefined);       // Output: true   (Hasil konversi: false =
 console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian)
 ```
 
-📚 Tabel Equality Comparisons and Sameness dapat diakses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">disini (MDN)</a>.
+📚 Tabel perbandingan "unik" dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">MDN: Equality Comparions and Sameness</a>.
 
 ```Javascript
 var text = "Hello World!";
@@ -3101,7 +3101,9 @@ console.log(mobilJoko.pulang("Jakarta"));         // Output: Honda Civic pulang 
 
 ### ![✔] 𝐂. Pengantar Native Object
 
-Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak property & method. 📚 Daftar lengkap Object bawaan JavaScript dapat dilihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
+Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak property & method. 
+
+📚 Daftar lengkap Object bawaan JavaScript dapat dilihat di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">MDN: Global Object Reference</a>.
 
 Di buku ini akan dibahas beberapa diantaranya yang sering dijumpai, yaitu ```Number```, ```Math```, ```String```, ```RegExp```, ```Array```, dan ```Date```. Di dalam JavaScript Native Object, terdapat 4 istilah yang perlu diketahui terlebih dahulu (lihat perbedaan bagaimana cara mengaksesnya), yaitu:
 
@@ -3119,7 +3121,7 @@ Object instance property & Object instance method melekat ke Instance Object, ``
 
 Penulisan formal Object instance property & Object instance method yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object property & Object method, tepatnya saat membuka dokumentasi <a href="https://developer.mozilla.org/en-US/">MDN</a>.
 
-Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object, hanya memiliki Object property & Object method saja. Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja. 📚 Referensi bisa lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">disini</a>.
+Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object, hanya memiliki Object property & Object method saja. Selain itu, buku ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja.
 
 ⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 
@@ -3295,7 +3297,7 @@ console.log(String.fromCodePoint(0x2615, 0x2744, 0x2F40));  // Output: ☕❄⽀
 console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗🚲  ⤷ Berhasil menampilkan karakter terbaru unicode
 ```
 
-📚 Daftar Karakter <a href="http://unicode-table.com/">Latin-1 & Unicode</a>.
+📚 Daftar Karakter Latin-1 & Unicode dapat diakses di<a href="http://unicode-table.com/">Unicode Table</a>.
 
 **C2. Object instance property**
 
@@ -3429,7 +3431,7 @@ console.log(regC.match(/\w*u\w*/g));    // Output: ["Satu", "Dua"]         match
 console.log(regC.match(/\w*o\w*/g));    // Output: null                    akan langsung berhenti di pola pertama.
 ```
 
-Terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) & d (has indices), namun tidak banyak digunakan. 📚 Lihat <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags">MDN</a>.
+📚 Terdapat beberapa flag lainnya seperti m (multiline), u (unicode), s (dot all) & d (has indices), lihat: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#advanced_searching_with_flags">MDN: Advanced searching with flags</a>.
 
 
 ```Javascript
@@ -4441,7 +4443,7 @@ window.print();                           // Output: Muncul Menu Print di Browse
 window.getComputedStyle();                // Output: (Menampilkan seluruh Style CSS)
 ```
 
-📚 Referensi window property & method lainnya lihat <a href="https://www.w3schools.com/jsref/obj_window.asp">disini</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">disini</a>.
+📚 Referensi window property & method lainnya lihat di <a href="W3Schools: Window Object">disini</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window">MDN: Web API Window</a>.
 
 ### ![✔] 𝐁. Document Object (Part 1)
 
@@ -4690,7 +4692,7 @@ console.log(nodeQSA[0]);                // Output: <𝗯>dari Duniailkom</𝗯>
 console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 ```
 
-📚 Referensi document property & method lainnya lihat <a href="https://www.w3schools.com/jsref/dom_obj_document.asp">disini</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">disini</a>.
+📚 Referensi document property & method lainnya lihat di <a href="https://www.w3schools.com/jsref/dom_obj_document.asp">W3Schools: DOM Object</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">MDN: Web API Document</a>.
 
 ### ![✔] 𝐄. Node Object (Part 2)
 
@@ -4836,7 +4838,7 @@ joo.classList.remove("merah");                      // Menghapus Class tertentu
 console.log(joo.className);                         // Output: tebal
 ```
 
-📚 Referensi node property & method lainnya lihat <a href="https://www.w3schools.com/jsref/dom_obj_all.asp">disini</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">disini</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">disini</a>.
+📚 Referensi node property & method lainnya lihat di <a href="https://www.w3schools.com/jsref/dom_obj_all.asp">W3Schools: DOM Object All</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">MDN: Web API Node</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">MDN: Web API Element</a>.
 
 <hr>
 <div id="bab4_3"></div>
