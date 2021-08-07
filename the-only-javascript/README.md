@@ -86,7 +86,7 @@ Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat
 - <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript (Wikipedia)</a>
 - <a href="https://www.jetbrains.com/lp/javascript-25/">25 years of JavaScript history (JetBrains)</a>
 - <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Modern Javascript: Everything you missed over the last 10 years (Turriate)</a>
-- <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">ES5 to ESNext — Here’s every feature added to JavaScript since 2015 (FreeCodeCamp)</a>
+- <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">ES5 to ESNext: Here’s every feature added to JavaScript since 2015 (FreeCodeCamp)</a>
 
 <hr>
 <div id="bab1_3"></div>
