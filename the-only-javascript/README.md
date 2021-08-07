@@ -5169,16 +5169,17 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 | No 	| Referensi Inggris 	| Status 	|
 |---	|---	|---	|
 | 1 	| <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 	| 📘 A* 	|
-| 2 	| <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> \| <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a> 	| 📘 B* 	|
-| 3 	| <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a> 	| 📕 	|
-| 4 	| <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a> 	| 📕 	|
-| 5 	| <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Modern Javascript: Everything You Missed Over The Last 10 Years</a> 	| 📕 	|
-| 6 	| <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">ES5 to ESNext: Here’s Every Feature Added to JavaScript Since 2015</a> 	| 📕 	|
-| 7 	| <a href="https://github.com/lukehoban/es6features">Overview of ECMAScript 6 Features</a> 	| 📕 	|
-| 8 	| <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a> 	| 📕 	|
-| 9 	| <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a> 	| 📕 	|
-| 10 	| <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a> 	| 📘 	|
-| 11 	| <a href="https://www.w3docs.com/">W3Docs</a> 	| 📕 	|
+| 2 	| <a href="https://www.udemy.com/course/the-complete-javascript-course/">The Complete JavaScript Course 2021 by </a> Jonas Schmedtmann	| 📕 	|
+| 3 	| <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> \| <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a> 	| 📘 B* 	|
+| 4 	| <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a> 	| 📕 	|
+| 5 	| <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a> 	| 📕 	|
+| 6 	| <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Modern Javascript: Everything You Missed Over The Last 10 Years</a> 	| 📕 	|
+| 7 	| <a href="https://www.freecodecamp.org/news/es5-to-esnext-heres-every-feature-added-to-javascript-since-2015-d0c255e13c6e/">ES5 to ESNext: Here’s Every Feature Added to JavaScript Since 2015</a> 	| 📕 	|
+| 8 	| <a href="https://github.com/lukehoban/es6features">Overview of ECMAScript 6 Features</a> 	| 📕 	|
+| 9 	| <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a> 	| 📕 	|
+| 10 	| <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a> 	| 📕 	|
+| 11 	| <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a> 	| 📘 	|
+| 12 	| <a href="https://www.w3docs.com/">W3Docs</a> 	| 📕 	|
 
 Keterangan:
 1. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
