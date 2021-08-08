@@ -531,6 +531,46 @@ Di JavaScript sebuah tipe data akan berubah menjadi tipe data lain tergantung op
 | ''          	| String kosong   	|   	| infinity     	| Nilai infinity                                             	|
 | ""          	| String kosong   	|   	| -infinity    	| Nilai -infinity                                            	|
 
+#### ⤷ Periksa Hasil Konversi Boolean:
+
+```Javascript
+console.log(Boolean(false));          // Output: false
+console.log(Boolean(null));           // Output: false
+console.log(Boolean(undefined));      // Output: false
+console.log(Boolean(0));              // Output: false
+console.log(Boolean(NaN));            // Output: false
+console.log(Boolean(''));             // Output: false
+console.log(Boolean(""));             // Output: false
+
+console.log(Boolean(true));           // Output: true
+console.log(Boolean({}));             // Output: true
+console.log(Boolean([]));             // Output: true
+console.log(Boolean(42));             // Output: true
+console.log(Boolean("foo"));          // Output: true
+console.log(Boolean(Infinity));       // Output: true
+console.log(Boolean(-Infinity));      // Output: true
+```
+
+#### ⤷ Periksa Hasil Konversi Number:
+
+```Javascript
+console.log(Number(false));          // Output: 0
+console.log(Number(null));           // Output: 0
+console.log(Number(undefined));      // Output: NaN
+console.log(Number(0));              // Output: 0
+console.log(Number(NaN));            // Output: NaN
+console.log(Number(''));             // Output: 0
+console.log(Number(""));             // Output: 0
+
+console.log(Number(true));           // Output: 1
+console.log(Number({}));             // Output: NaN
+console.log(Number([]));             // Output: 0
+console.log(Number(42));             // Output: 42
+console.log(Number("foo"));          // Output: NaN
+console.log(Number(Infinity));       // Output: Infinity
+console.log(Number(-Infinity));      // Output: -Infinity
+```
+
 #### ⤷ Kasus Falsy & Truthy Value:
 
 ```Javascript
@@ -545,8 +585,6 @@ console.log(null == undefined);       // Output: true   (Hasil konversi: false =
 console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian)
 ```
 
-Tidak selalu jelas terkait tipe data apa yang diputuskan JavaScript sebagai hasil dari suatu perbandingan tertentu. Hal ini bisa menjadi kelebihan atau bahkan kekurangan dari JavaScript itu sendiri. 📚 Tabel perbandingan "unik" dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">MDN: Equality Comparions and Sameness</a>.
-
 ```Javascript
 var text = "Hello World!";
 
@@ -556,6 +594,8 @@ if (text) {
  console.log("text berupa Falsy");
 }
 ```
+
+Tidak selalu jelas terkait tipe data apa yang diputuskan JavaScript sebagai hasil dari suatu perbandingan tertentu. Hal ini bisa menjadi kelebihan atau bahkan kekurangan dari JavaScript itu sendiri. 📚 Tabel perbandingan "unik" dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">MDN: Equality Comparions and Sameness</a>.
 
 🔔 If & Else dibahas di bab 2-3 A
 
@@ -723,6 +763,8 @@ console.log(1 < 2 < 3)                // Output: true   Hasil konversi: (true < 
 console.log(3 < 2 < 1)                // Output: true   Hasil konversi: (false < 1) → (0 < 1) → true
 console.log(null < 1)                 // Output: true   Hasil konversi: (0 < 1)     → true
 ```
+
+🔔 Lihat lagi "Periksa Hasil Konversi Boolean & Number" pada bagian 2-2 B di atas.
 
 #### ⤷ Kasus Perbandingan String:
 
