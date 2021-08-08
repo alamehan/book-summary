@@ -551,26 +551,6 @@ console.log(Boolean(Infinity));       // Output: true
 console.log(Boolean(-Infinity));      // Output: true
 ```
 
-#### ⤷ Periksa Hasil Konversi Number:
-
-```Javascript
-console.log(Number(false));          // Output: 0
-console.log(Number(null));           // Output: 0
-console.log(Number(undefined));      // Output: NaN
-console.log(Number(0));              // Output: 0
-console.log(Number(NaN));            // Output: NaN
-console.log(Number(''));             // Output: 0
-console.log(Number(""));             // Output: 0
-
-console.log(Number(true));           // Output: 1
-console.log(Number({}));             // Output: NaN
-console.log(Number([]));             // Output: 0
-console.log(Number(42));             // Output: 42
-console.log(Number("foo"));          // Output: NaN
-console.log(Number(Infinity));       // Output: Infinity
-console.log(Number(-Infinity));      // Output: -Infinity
-```
-
 #### ⤷ Kasus Falsy & Truthy Value:
 
 ```Javascript
@@ -595,9 +575,35 @@ if (text) {
 }
 ```
 
-Tidak selalu jelas terkait tipe data apa yang diputuskan JavaScript sebagai hasil dari suatu perbandingan tertentu. Hal ini bisa menjadi kelebihan atau bahkan kekurangan dari JavaScript itu sendiri. 📚 Tabel perbandingan "unik" dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">MDN: Equality Comparions and Sameness</a>.
-
 🔔 If & Else dibahas di bab 2-3 A
+
+#### ⤷ Periksa Hasil Konversi Number:
+
+```Javascript
+console.log(Number(false));          // Output: 0
+console.log(Number(null));           // Output: 0
+console.log(Number(undefined));      // Output: NaN
+console.log(Number(0));              // Output: 0
+console.log(Number(NaN));            // Output: NaN
+console.log(Number(''));             // Output: 0
+console.log(Number(""));             // Output: 0
+
+console.log(Number(true));           // Output: 1
+console.log(Number({}));             // Output: NaN
+console.log(Number([]));             // Output: 0
+console.log(Number(42));             // Output: 42
+console.log(Number("foo"));          // Output: NaN
+console.log(Number(Infinity));       // Output: Infinity
+console.log(Number(-Infinity));      // Output: -Infinity
+```
+
+```Javascript
+console.log(1 < 2 < 3)                // Output: true   Hasil konversi: (true < 3)  → (1 < 3) → true
+console.log(3 < 2 < 1)                // Output: true   Hasil konversi: (false < 1) → (0 < 1) → true
+console.log(null < 1)                 // Output: true   Hasil konversi: (0 < 1)     → true
+```
+
+Tidak selalu jelas terkait tipe data apa yang diputuskan JavaScript sebagai hasil dari suatu perbandingan tertentu. Hal ini bisa menjadi kelebihan atau bahkan kekurangan dari JavaScript itu sendiri. 📚 Tabel perbandingan "unik" dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">MDN: Equality Comparions and Sameness</a>.
 
 ### ![✔] 𝐂. Operator typeof
 
@@ -756,12 +762,6 @@ console.log(0 === false);             // Output: false
 console.log(0.3 == 3e-1);             // Output: true
 console.log(0.3 === 3e-1);            // Output: true   (Karena memang nilainya sama)
 console.log(true > false)             // Output: true   (Ingat: true = 1, false = 0)
-```
-
-```Javascript
-console.log(1 < 2 < 3)                // Output: true   Hasil konversi: (true < 3)  → (1 < 3) → true
-console.log(3 < 2 < 1)                // Output: true   Hasil konversi: (false < 1) → (0 < 1) → true
-console.log(null < 1)                 // Output: true   Hasil konversi: (0 < 1)     → true
 ```
 
 🔔 Lihat lagi "Periksa Hasil Konversi Boolean & Number" pada bagian 2-2 B di atas.
