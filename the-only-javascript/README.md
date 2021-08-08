@@ -426,8 +426,6 @@ Null biasanya sengaja didefinisikan oleh programmer untuk tujuan tertentu. Sedan
 
 🔔 "Slot" di memory ini terkait dengan JavaScript Hoisting yang dibahas di bab 2-5 K.
 
-#### ⤷ Kasus unik:
-
 ```Javascript
 console.log(20 + null);               // Output: 20     (null jadi 0, maka 20+0 = 20)
 console.log(20 + undefined);          // Output: NaN    (Not a Number)
