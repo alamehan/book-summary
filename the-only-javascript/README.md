@@ -704,7 +704,7 @@ console.log(9 != '9');                // Output: false
 console.log(9 !== '9');               // Output: true   ⇨ Strict inequality (tidak identik dengan)
 ```
 
-Perbedaan antara ```==``` (Equality) dengan ```===``` (Strict equality) yaitu Equality akan mengkonvert secara paksa tipe data dari salah satu operand yang dibandingkan, misalnya ```console.log(9 == "9");``` maka akan dikonvert menjadi ```console.log("9" == "9");```, lalu menghasilkan ```true```. Sedangkan Strict equality akan membandingkan kedua operand apa adanya, dan tentunya ini jauh lebih aman. Sehingga, untuk menghindari bug dan masalah perbandingan lainnya, sebaiknya gunakan saja ```===``` (Strict equality), jangan ```==``` (Equality).
+Perbedaan antara ```==``` (Equality) dengan ```===``` (Strict equality) yaitu Equality akan mengkonversi secara paksa tipe data dari salah satu operand yang dibandingkan, misalnya ```console.log(9 == "9");``` maka akan dikonversi menjadi ```console.log("9" == "9");```, lalu menghasilkan ```true```. Sedangkan Strict equality akan membandingkan kedua operand apa adanya, dan tentunya ini jauh lebih aman. Sehingga, untuk menghindari bug dan masalah perbandingan lainnya, sebaiknya gunakan saja ```===``` (Strict equality), jangan ```==``` (Equality).
 
 #### ⤷ Kasus Perbadingan Unik:
 
