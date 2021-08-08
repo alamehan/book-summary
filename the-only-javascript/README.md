@@ -581,6 +581,8 @@ if (text) {
 
 #### ⤷ Periksa Hasil Konversi Number:
 
+Selain Falsy & Truthy Value, di JavaScript juga terdapat konversi otomatis ke tipe data Number. Di bawah ini contohnya.
+
 ```Javascript
 console.log(Number(false));          // Output: 0
 console.log(Number(null));           // Output: 0
