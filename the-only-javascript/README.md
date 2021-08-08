@@ -334,7 +334,7 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var `
 > > - [ ] 𝐈. Map & WeakMap
 > > - [ ] 𝐉. Set & WeakSet
 
-Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif, dan tipe data Object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Yang termasuk ke dalam **tipe data primitif**, yaitu: **Number, NaN, Infinity, String, Boolean, Null, Undefined, dan Symbol**. Sedangkan tipe data Object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya beragam. Adapun yang termasuk ke dalam **tipe data Object**, yaitu: **Array, Object, RegExp, Date, Map, WeakMap, Set, dan WeakSet.**
+Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif, dan tipe data Object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Yang termasuk ke dalam **Tipe data primitif**, yaitu: **Number, NaN, Infinity, String, Boolean, Null, Undefined, dan Symbol**. Sedangkan tipe data Object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya beragam. Adapun yang termasuk ke dalam **Tipe data Object**, yaitu: **Array, Object, RegExp, Date, Map, WeakMap, Set, dan WeakSet.**
 
 JavaScript termasuk ke dalam bahasa **Dynamic typing**, artinya kita tidak perlu memberi tahu mesin tipe data apa yang dimiliki sebuah Variabel, hal itu akan diketahui saat kode berjalan. Variabel dapat menampung berbagai jenis nilai karena semuanya diketahui selama eksekusi.
 
@@ -790,9 +790,9 @@ console.log(result);                                            // Output: 24 di
 
 ```Javascript
 console.log(10 + 10 + 9);             // Output: 29     (Number)
-console.log("10" + 10 + 9);           // Output: 10109  (String)  dari hasil konversi: console.log("10" + "10" + "9");
-console.log(10 + "10" + 9);           // Output: 10109  (String)  dari hasil konversi: console.log(10 + "10" + "9");
-console.log(10 + 10 + "9");           // Output: 209    (String)  dari hasil konversi: console.log(20 + "9");
+console.log("10" + 10 + 9);           // Output: 10109  (String)  dari konversi: "10" + "10" + "9" ➜ "10109"
+console.log(10 + "10" + 9);           // Output: 10109  (String)  dari konversi:  10  + "10" + "9" ➜ "10" + "109" ➜ "10109"
+console.log(10 + 10 + "9");           // Output: 209    (String)  dari konversi:  20  + "9"        ➜ "20" + "9"   ➜ "209"
 ```
 
 #### ⤷ Implicit Type Conversion: String to Number
