@@ -545,8 +545,6 @@ console.log(null == undefined);       // Output: true   (Hasil konversi: false =
 console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian)
 ```
 
-Tidak selalu jelas terkait tipe data apa yang diputuskan JavaScript sebagai hasil dari suatu perbandingan tertentu. Hal ini bisa menjadi kelebihan atau bahkan kekurangan dari JavaScript itu sendiri. 📚 Tabel perbandingan "unik" dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">MDN: Equality Comparions and Sameness</a>.
-
 ```Javascript
 var text = "Hello World!";
 
@@ -718,9 +716,15 @@ console.log(0.3 === 3e-1);            // Output: true   (Karena memang nilainya 
 console.log(true > false)             // Output: true   (Ingat: true = 1, false = 0)
 ```
 
-#### ⤷ Kasus Perbandingan String:
+```Javascript
+console.log(1 < 2 < 3)                // Output: true   Hasil konversi: (true < 3)  → (1 < 3) → true
+console.log(3 < 2 < 1)                // Output: true   Hasil konversi: (false < 1) → (0 < 1) → true
+console.log(null < 1)                 // Output: true   Hasil konversi: (0 < 1)     → true
+```
 
-📚 Setiap karakter dalam String menggunakan nomor urut desimal di <a href="https://www.ascii-code.com/">ASCII-Code</a>.
+Tidak selalu jelas terkait tipe data apa yang diputuskan JavaScript sebagai hasil dari suatu perbandingan tertentu. Hal ini bisa menjadi kelebihan atau bahkan kekurangan dari JavaScript itu sendiri. 📚 Tabel perbandingan "unik" dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">MDN: Equality Comparions and Sameness</a>.
+
+#### ⤷ Kasus Perbandingan String:
 
 ```Javascript
 console.log("a" < "b");               // Output: true   (a = 97, b = 98)
@@ -730,6 +734,8 @@ console.log("ali" < "alo");           // Output: true   (ali = 97→108→105, a
 console.log("ali" < "alika");         // Output: true   (String yang lebih pendek akan dianggap lebih kecil)
 console.log("ali" < 9999999);         // Output: false  (Perbandingan String & Number selalu menghasilkan false)
 ```
+
+📚 Setiap karakter dalam String menggunakan nomor urut desimal di <a href="https://www.ascii-code.com/">ASCII-Code</a>.
 
 ### ![✔] 𝐈. Operator Logika
 
