@@ -336,6 +336,8 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var `
 
 Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif, dan tipe data Object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Yang termasuk ke dalam **tipe data primitif**, yaitu: **Number, NaN, Infinity, String, Boolean, Null, Undefined, dan Symbol**. Sedangkan tipe data Object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya beragam. Adapun yang termasuk ke dalam **tipe data Object**, yaitu: **Array, Object, RegExp, Date, Map, WeakMap, Set, dan WeakSet.**
 
+JavaScript termasuk ke dalam bahasa **Dynamic typing**, artinya kita tidak perlu memberi tahu mesin tipe data apa yang dimiliki sebuah Variabel, hal itu akan diketahui saat kode berjalan. Variabel dapat menampung berbagai jenis nilai karena semuanya diketahui selama eksekusi.
+
 ### ![✔] 𝐀. Number
 
 ```Javascript
@@ -805,7 +807,7 @@ console.log(num1 * num2);             // Output: 230    (Number)
 console.log(num1 / num2);             // Output: 0.4347 (Number)
 ```
 
-Hati-hati dengan Implicit Type Conversion ini karena bisa menimbulkan sebuah bug, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah **TypeScript** sebagai **Strongly typed JavaScript** (Tidak dibahas disini, anda bisa pelajari secara mandiri).
+Hati-hati dengan Implicit Type Conversion (Coercion) ini karena bisa menimbulkan sebuah bug, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah **TypeScript** sebagai **Strongly typed JavaScript** (Tidak dibahas disini, anda bisa pelajari secara mandiri).
 
 ### ![✔] 𝐊. Operator Bitwise
 
