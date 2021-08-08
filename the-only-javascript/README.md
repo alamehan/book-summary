@@ -446,7 +446,15 @@ console.log(und2[3]);                 // Output: undefined
 
 var und3 = {nama: "iyan", umur: 24};  // Mengakses Object di luar key yang dibuat menghasilkan Undefined
 console.log(und3["alamat"]);          // Output: undefined
+
+function greet(name){
+  console.log(name);                  // Output: undefined
+}
+greet();                              // Menjalankan Function tanpa Argument padahal Function tersebut
+                                      // memiliki Parameter menghasilkan Undefined (sebagai default)
 ```
+
+🔔 Function dibahas di bab 2-5.
 
 ### ![✔] 𝐅. Symbol
 
