@@ -545,7 +545,7 @@ console.log(null == undefined);       // Output: true   (Hasil konversi: false =
 console.log('\t\r\n' == 0);           // Output: true   (*Pengecualian)
 ```
 
-📚 Tabel perbandingan "unik" dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">MDN: Equality Comparions and Sameness</a>.
+Tidak selalu jelas terkait tipe data apa yang diputuskan JavaScript sebagai hasil dari suatu perbandingan tertentu. Hal ini bisa menjadi kelebihan atau bahkan kekurangan dari JavaScript itu sendiri. 📚 Selebihnya terkait Tabel perbandingan "unik" dapat diakses di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">MDN: Equality Comparions and Sameness</a>.
 
 ```Javascript
 var text = "Hello World!";
@@ -716,6 +716,8 @@ console.log(0.3 === 3e-1);            // Output: true   (Karena memang nilainya 
 console.log(true > false)             // Output: true   (Ingat: true = 1, false = 0)
 ```
 
+CARISINIBOS
+
 #### ⤷ Kasus Perbandingan String:
 
 📚 Setiap karakter dalam String menggunakan nomor urut desimal di <a href="https://www.ascii-code.com/">ASCII-Code</a>.
@@ -794,9 +796,9 @@ console.log(result);                                            // Output: 24 di
 
 ```Javascript
 console.log(10 + 10 + 9);             // Output: 29     (Number)
-console.log("10" + 10 + 9);           // Output: 10109  (String)  dari konversi: "10" + "10" + "9" ➜ "10109"
-console.log(10 + "10" + 9);           // Output: 10109  (String)  dari konversi:  10  + "10" + "9" ➜ "10" + "109" ➜ "10109"
-console.log(10 + 10 + "9");           // Output: 209    (String)  dari konversi:  20  + "9"        ➜ "20" + "9"   ➜ "209"
+console.log("10" + 10 + 9);           // Output: 10109  (String)  dari konversi: "10" + "10" + "9" → "10109"
+console.log(10 + "10" + 9);           // Output: 10109  (String)  dari konversi:  10  + "10" + "9" → "10" + "109" → "10109"
+console.log(10 + 10 + "9");           // Output: 209    (String)  dari konversi:  20  + "9"        → "20" + "9"   → "209"
 ```
 
 #### ⤷ Implicit Type Conversion: String to Number
