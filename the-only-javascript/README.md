@@ -972,6 +972,26 @@ if (akses){ // jika akses bernilai true                 // var akses, lalu kondi
 
 Note: ```if (akses) { ... }``` merupakan **Shorthand** untuk ```if (akses === true) { ... }```. Selain itu ada juga ```if (!akses) { ... }``` yang berarti ```if (akses !== true) { ... }``` atau sama juga dengan ```if (akses === false) { ... }```.
 
+#### ⤷ Kasus Falsy & Truthy Value pada If:
+
+```Javascript
+if (null) { console.log("Lolos") }            // Output: -          konversi: null      → false
+if (undefined) { console.log("Lolos") }       // Output: -          konversi: undefined → false
+if (0) { console.log("Lolos") }               // Output: -          konversi: 0         → false
+if (NaN) { console.log("Lolos") }             // Output: -          konversi: NaN       → false
+if ('') { console.log("Lolos") }              // Output: -          konversi: ''        → false
+if ("") { console.log("Lolos") }              // Output: -          konversi: ""        → false
+
+if ({}) { console.log("Lolos") }              // Output: Lolos      konversi: {}        → true
+if ([]) { console.log("Lolos") }              // Output: Lolos      konversi: []        → true
+if (42) { console.log("Lolos") }              // Output: Lolos      konversi: 42        → true
+if ("foo") { console.log("Lolos") }           // Output: Lolos      konversi: "foo"     → true
+if (Infinity) { console.log("Lolos") }        // Output: Lolos      konversi: Infinity  → true
+if (-Infinity) { console.log("Lolos") }       // Output: Lolos      konversi: -Infinity → true
+```
+
+🔔 Lihat lagi "Periksa Hasil Konversi Boolean" pada bagian 2-2 B di atas.
+
 ### ![✔] 𝐃. Operator Nullish Coalescing
 
 ```Javascript
