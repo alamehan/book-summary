@@ -361,7 +361,7 @@ var numL = Infinity;                  // Keadaan dimana data "angka tak hingga"
 var numM = -Infinity;                 // Keadaan dimana data "angka negatif tak hingga"
 ```
 
-NaN & Infinity sebenarnya tidak termasuk ke dalam tipe data. Contoh di atas yaitu assign nilai NaN & Infinity ke dalam sebuah Variable, pada praktiknya tidak pernah dilakukan. NaN & Infinity hanya berupa nilai output yang dihasilkan JavaScript saat menjumpai kasus-kasus yang memang menghasilkan nilai tersebut.
+NaN & Infinity sebenarnya tidak termasuk ke dalam tipe data. Contoh di atas yaitu assign nilai NaN & Infinity ke dalam sebuah Variable, pada praktiknya tidak pernah dilakukan. NaN & Infinity hanya berupa nilai output yang dihasilkan JavaScript saat menjumpai kasus-kasus yang memang menghasilkan nilai tersebut, contohnya dapat dilihat di bawah ini.
 
 #### ⤷ Kasus yang menghasilkan NaN & Infinity:
 
@@ -422,7 +422,7 @@ var nudA = null;                      // Keadaan dimana data "kosong", biasanya 
 var nudB = undefined;                 // Keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 ```
 
-Null biasanya sengaja didefinisikan oleh programmer untuk tujuan tertentu. Sedangkan Undefined tidak dengan sengaja didefinisikan oleh programmer, melainkan dihasilkan secara otomatis oleh JavaScript sebagai nilai output saat menjumpai kasus-kasus yang memang menghasilkan Undefined. Undefined artinya JavaScript tidak dapat menemukan nilainya, namun sebenarnya "slot"-nya sudah tersedia di memory.
+Null biasanya sengaja didefinisikan oleh programmer untuk tujuan tertentu. Sedangkan Undefined tidak dengan sengaja didefinisikan oleh programmer, melainkan dihasilkan secara otomatis oleh JavaScript sebagai nilai output saat menjumpai kasus yang memang menghasilkan Undefined. Undefined artinya JavaScript tidak dapat menemukan nilainya, namun sebenarnya "slot"-nya sudah tersedia di memory.
 
 🔔 "Slot" di memory ini terkait dengan JavaScript Hoisting yang dibahas di bab 2-5 K.
 
