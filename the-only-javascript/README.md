@@ -454,7 +454,7 @@ greet();                              // Menjalankan Function tanpa Argument pad
                                       // memiliki Parameter menghasilkan Undefined (sebagai default)
 ```
 
-🔔 Function dibahas di bab 2-5.
+🔔 Function dibahas di bab 2-5
 
 ### ![✔] 𝐅. Symbol
 
