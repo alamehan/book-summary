@@ -334,7 +334,7 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var `
 > > - [ ] 𝐈. Map & WeakMap
 > > - [ ] 𝐉. Set & WeakSet
 
-Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif, dan tipe data Object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Yang termasuk ke dalam **Tipe data primitif**, yaitu: **Number, NaN, Infinity, String, Boolean, Null, Undefined, dan Symbol**. Sedangkan tipe data Object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya beragam. Adapun yang termasuk ke dalam **Tipe data Object**, yaitu: **Array, Object, RegExp, Date, Map, WeakMap, Set, dan WeakSet.**
+Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif, dan tipe data Object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Yang termasuk ke dalam **Tipe data primitif**, yaitu: **Number, String, Boolean, Null, Undefined, dan Symbol**. Sedangkan tipe data Object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya beragam. Adapun yang termasuk ke dalam **Tipe data Object**, yaitu: **Array, Object, RegExp, Date, Map, WeakMap, Set, dan WeakSet.**
 
 JavaScript termasuk ke dalam bahasa **Dynamic typing**, artinya kita tidak perlu memberi tahu mesin tipe data apa yang dimiliki sebuah Variabel, hal itu akan diketahui saat kode berjalan. Variabel dapat menampung berbagai jenis nilai karena semuanya diketahui selama eksekusi.
 
@@ -360,6 +360,8 @@ var numK = NaN;                       // Keadaan dimana data "bukan angka yang s
 var numL = Infinity;                  // Keadaan dimana data "angka tak hingga"
 var numM = -Infinity;                 // Keadaan dimana data "angka negatif tak hingga"
 ```
+
+NaN & Infinity sebenarnya tidak termasuk ke dalam tipe data. Contoh di atas yaitu assign nilai NaN & Infinity ke dalam sebuah Variable, pada praktiknya tidak pernah dilakukan. NaN & Infinity hanya berupa nilai output yang dihasilkan JavaScript saat menjumpai kasus-kasus yang memang menghasilkan nilai tersebut.
 
 #### ⤷ Kasus yang menghasilkan NaN & Infinity:
 
@@ -420,7 +422,9 @@ var nudA = null;                      // Keadaan dimana data "kosong", biasanya 
 var nudB = undefined;                 // Keadaan dimana data "tidak terdefinisi", biasanya terjadi karena error
 ```
 
-Null biasanya sengaja didefinisikan oleh programmer untuk tujuan tertentu. Undefined artinya JavaScript tidak dapat menemukan nilainya, namun sebenarnya "slot"nya sudah ada di memory. 🔔 Hal ini terkait dengan JavaScript Hoisting yang dibahas di bab 2-5 K.
+Null biasanya sengaja didefinisikan oleh programmer untuk tujuan tertentu. Sedangkan Undefined tidak dengan sengaja didefinisikan oleh programmer, melainkan dihasilkan secara otomatis oleh JavaScript sebagai nilai output saat menjumpai kasus-kasus yang memang menghasilkan Undefined. Undefined artinya JavaScript tidak dapat menemukan nilainya, namun sebenarnya "slot"-nya sudah tersedia di memory.
+
+🔔 "Slot" di memory ini terkait dengan JavaScript Hoisting yang dibahas di bab 2-5 K.
 
 #### ⤷ Kasus unik:
 
@@ -4680,7 +4684,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
         nodeTable.appendChild(nodeTr);
       }
   
-      // 5. Masukkan tag <table> kedalam DOM, posisi sebelum tag <p>
+      // 5. Masukkan tag <table> ke dalam DOM, posisi sebelum tag <p>
       nodeBody.insertBefore(nodeTable, nodeP);
     </script>
   </body>
