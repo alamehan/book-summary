@@ -857,7 +857,7 @@ console.log(10 + "10" + 9);           // Output: 10109  (String)  dari konversi:
 console.log(10 + 10 + "9");           // Output: 209    (String)  dari konversi:  20  + "9"        → "20" + "9"   → "209"
 ```
 
-Contoh di atas dibaca left-to-right, saat berjumpa dengan String, maka sisa nilai setelahnya otomatis dikonversi menjadi String juga.
+Contoh di atas dibaca left-to-right, saat berjumpa dengan String, maka sisa nilai setelahnya otomatis dikonversi menjadi String juga, kecuali terdapat operator ```-```, ```*```, ```/``` maka akan kembali dikonversi lagi menjadi Number.   
 
 #### ⤷ Implicit Type Conversion: String to Number
 
@@ -886,9 +886,12 @@ Pada kasus String yang hanya berisi angka (tidak ada huruf) seperti pada contoh 
 ```Javascript
 let num3 = "1" + 1;         // "1"  + 1 → "11"  (String)
 num3 = num3 - 1;            // "11" - 1 → 10    (Number)
-
 console.log(num3)           // Output: 10       (Number)
 console.log(typeof num3)    // number
+
+let num4 = 5 + 6 + "4" + 9 - 4 - 2;   // (5+6+"4"+9-4-2) → (11+"4"+9-4-2) → ("114"+9-4-2) → ("1149"-4-2) → (1145-2) → 1143
+console.log(num4);                    // Output: 1143 (Number)
+console.log(typeof num4);             // number
 ```
 
 Hati-hati dengan Implicit Type Conversion (Coercion) ini karena bisa menimbulkan sebuah bug, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah **TypeScript** sebagai **Strongly typed JavaScript** (Tidak dibahas disini, anda bisa pelajari secara mandiri).
