@@ -881,7 +881,7 @@ console.log(num1 <= num2);  // Output: true   (Boolean)
 console.log(num1 >= num2);  // Output: false  (Boolean)
 ```
 
-Pada kasus String yang hanya berisi angka (tidak ada huruf) seperti pada contoh ```let num1 = "10"``` dan ```let num2 = "23"``` di atas, jika operator ```+``` digunakan maka akan memicu konversi otomatis menjadi String, sedangkan operator ```-```, ```*```, ```/```, ```<```, ```>```, ```<=``` dan ```>=``` memicu konversi yang berlawanan, yaitu otomatis menjadi Number.
+Pada kasus String yang hanya berisi angka (tidak ada huruf) seperti pada contoh ```let num1 = "10"``` dan ```let num2 = "23"``` di atas, jika operator ```+``` digunakan maka akan memicu konversi otomatis menjadi String, sedangkan operator ```-```, ```*```, ```/```, ```<```, ```>```, ```<=``` dan ```>=``` memicu konversi yang berlawanan, yaitu otomatis menjadi Number. Tidak sedikit programmer yang kebingungan saat berjumpa dengan kasus tersebut.
 
 Hati-hati dengan Implicit Type Conversion (Coercion) ini karena bisa menimbulkan sebuah bug, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah **TypeScript** sebagai **Strongly typed JavaScript** (Tidak dibahas disini, anda bisa pelajari secara mandiri).
 
