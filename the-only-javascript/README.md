@@ -977,7 +977,7 @@ switch(nilaiTK){                      // Case 1-5: kurang, case 6-7: cukup, case
   case 10:
     console.log("baik");
     break;
-  default:
+  default:                            // Setara dengan else
     console.log("Tidak Valid!");
 }
 ```
