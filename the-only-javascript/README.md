@@ -857,17 +857,31 @@ console.log(10 + "10" + 9);           // Output: 10109  (String)  dari konversi:
 console.log(10 + 10 + "9");           // Output: 209    (String)  dari konversi:  20  + "9"        → "20" + "9"   → "209"
 ```
 
+Contoh di atas dibaca left-to-right, saat berjumpa dengan String, maka sisa nilai setelahnya otomatis dikonversi menjadi String juga.
+
 #### ⤷ Implicit Type Conversion: String to Number
 
 ```Javascript
 let num1 = "10";
 let num2 = "23";
 
-console.log(num1 + num2);             // Output: 1023   (String)
-console.log(num1 - num2);             // Output: -13    (Number)
-console.log(num1 * num2);             // Output: 230    (Number)
-console.log(num1 / num2);             // Output: 0.4347 (Number)
+console.log(num1 + num2);   // Output: 1023   (String)
+console.log(num1 - num2);   // Output: -13    (Number)
+console.log(num1 * num2);   // Output: 230    (Number)
+console.log(num1 / num2);   // Output: 0.4347 (Number)
+
+console.log(num1 == num2);  // Output: false  (Boolean)
+console.log(num1 != num2);  // Output: true   (Boolean)
+console.log(num1 === num2); // Output: false  (Boolean)
+console.log(num1 !== num2); // Output: true   (Boolean)
+
+console.log(num1 < num2);   // Output: true   (Boolean)
+console.log(num1 > num2);   // Output: false  (Boolean)
+console.log(num1 <= num2);  // Output: true   (Boolean)
+console.log(num1 >= num2);  // Output: false  (Boolean)
 ```
+
+Pada kasus String yang hanya berisi angka (tidak ada huruf) seperti pada contoh ```let num1 = "10"``` dan ```let num2 = "23"``` di atas, jika operator ```+``` digunakan maka akan memicu konversi otomatis menjadi String, sedangkan operator ```-```, ```*```, ```/```, ```<```, ```>```, ```<=``` dan ```>=``` memicu konversi yang berlawanan, yaitu otomatis menjadi Number.
 
 Hati-hati dengan Implicit Type Conversion (Coercion) ini karena bisa menimbulkan sebuah bug, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah **TypeScript** sebagai **Strongly typed JavaScript** (Tidak dibahas disini, anda bisa pelajari secara mandiri).
 
