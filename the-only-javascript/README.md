@@ -5268,9 +5268,9 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
   
 | No 	| Referensi Inggris 	| Status 	|
 |---	|---	|---	|
-| 1 	| <a href="https://www.udemy.com/course/the-complete-javascript-course/">The Complete JavaScript Course 2021 by Jonas Schmedtmann </a> 	| 📕 	|
-| 2 	| <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 	| 📘 A* 	|
-| 3 	| <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> \| <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a> 	| 📘 B* 	|
+| 1 	| <a href="https://www.udemy.com/course/the-complete-javascript-course/">The Complete JavaScript Course 2021 by Jonas Schmedtmann </a> 	| 📘 A* 	|
+| 2 	| <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 	| 📘 B* 	|
+| 3 	| <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> \| <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a> 	| 📘 C* 	|
 | 4 	| <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a> 	| 📕 	|
 | 5 	| <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a> 	| 📕 	|
 | 6 	| <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Modern Javascript: Everything You Missed Over The Last 10 Years</a> 	| 📕 	|
@@ -5284,8 +5284,9 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 Keterangan:
 1. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
 2. 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan (karena memang referensinya berkualitas).
-3. A* Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
-4. B* JavaScript: Understanding the Weird Parts by Anthony Alicea baru selesai sampai di **Section 3: Types and Operatos**
+3. A* The Complete JavaScript Course 2021 by Jonas Schmedtmann baru selesai sampai di **Section 6: HTML & CSS Crash Course**.
+4. B* Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
+5. C* JavaScript: Understanding the Weird Parts by Anthony Alicea baru selesai sampai di **Section 3: Types and Operatos**
 
 </details>
 
