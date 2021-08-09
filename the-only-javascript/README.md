@@ -1262,7 +1262,7 @@ console.log(ratarata(1, 2, 3));       // Output: NaN  (Argument ke-4 tidak ada, 
 
 Jika kita (secara eksplisit) tidak menuliskan keyword ```return``` beserta nilai yang di-return dari sebuah Function, maka secara default Function tersebut akan me-return nilai ```undefined```. Lantas apakah itu berarti bahwa setiap Function perlu me-return sesuatu? Jawabannya tidak, namun jika anda memiliki Function tanpa return, secara default akan me-return ```undefined```. Apa pun yang ditulis setelah keyword ```return``` akan diabaikan, dengan kata lain ```return``` selain untuk mengembalikan sebuah nilai, juga untuk memberhentikan Function.
 
-Dalam praktiknya, biasanya saat menjalankan sebuah Function yang me-return sesuatu hasilnya akan disimpan ke dalam sebuah Variable terlebih dahulu, misalnya ```var hasil = ratarata(1, 2, 3, 4)```. Namun jika menjalankan sebuah Function yang tidak me-return apa pun, maka Function tersebut cukup dijalankan saja, tidak ditampung ke dalam sebuah Variable.
+Dalam praktiknya, biasanya saat menjalankan sebuah Function yang me-return sesuatu hasilnya akan disimpan ke dalam sebuah Variable terlebih dahulu, misalnya ```var hasil = ratarata(1, 2, 3, 4)```, barulah kemudian diolah sesuai kebutuhan. Namun jika menjalankan sebuah Function yang tidak me-return apa pun, maka Function tersebut cukup dijalankan saja, tidak ditampung ke dalam sebuah Variable.
 
 ### ![✔] 𝐂. Default Parameter
 
