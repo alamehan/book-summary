@@ -949,6 +949,12 @@ if (nilai >= 0 && nilai <= 100){      // Jika nilai >= 0 dan <= 100, masuk ke ko
 }
 ```
 
+```Javascript
+var umur = 24;
+
+if (umur === 24) console.log("Anda sudah dewasa!");   // Penulisan bisa tanpa blok {} jika kondisinya hanya if saja
+```
+
 ### ![✔] 𝐁. Switch
 
 ```Javascript
