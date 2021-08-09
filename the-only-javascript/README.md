@@ -883,6 +883,8 @@ console.log(num1 >= num2);  // Output: false  (Boolean)
 
 Pada kasus String yang hanya berisi angka (tidak ada huruf) seperti pada contoh ```let num1 = "10"``` dan ```let num2 = "23"``` di atas, jika operator ```+``` digunakan maka akan memicu konversi otomatis menjadi String, sedangkan operator ```-```, ```*```, ```/```, ```<```, ```>```, ```<=``` dan ```>=``` memicu konversi yang berlawanan, yaitu otomatis menjadi Number. Tidak sedikit programmer yang kebingungan saat berjumpa dengan kasus tersebut.
 
+#### ⤷ Contoh Studi Kasus
+
 ```Javascript
 let num3 = "1" + 1;         // "1"  + 1 → "11"  (String)
 num3 = num3 - 1;            // "11" - 1 → 10    (Number)
