@@ -1238,7 +1238,7 @@ console.log(pagiMalam);               // Output: pagiMalam(){                   
                                       //         }
 ```
 
-Menjalankan sebuah Function disebut juga sebagai calling/running/invoking function.
+Menjalankan sebuah Function disebut juga sebagai calling/running/invoking/execute function.
 
 ### ![✔] 𝐁. Parameter, Argument & Return Value
 
