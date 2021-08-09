@@ -961,7 +961,7 @@ if (umur === 24) console.log("Anda sudah dewasa!");   // Penulisan bisa tanpa bl
 var nilaiTK = 6;
 
 switch(nilaiTK){                      // Case 1-5: kurang, case 6-7: cukup, case 8-10: baik, selain itu tidak valid!
-  case 1:
+  case 1:                             // Setara dengan: if (nilaiTK === 1), defaultnya langsung Strict equality!
   case 2:
   case 3:
   case 4:
