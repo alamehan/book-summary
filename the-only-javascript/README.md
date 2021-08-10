@@ -2969,7 +2969,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">5</td>
     <td rowspan="3">Di dalam Function (Strict Mode)</td>
-    <td>Function Definitions</td>
+    <td>Function Definitions (ES6)</td>
     <td rowspan="2">Undefined</td>
   </tr>
   <tr>
@@ -2982,7 +2982,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">6</td>
     <td rowspan="3">Di dalam method di Object</td>
-    <td>Function Definitions (Tanpa keyword Function)</td>
+    <td>Function Definitions</td>
     <td rowspan="2">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
@@ -3004,7 +3004,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">8</td>
     <td rowspan="3">Di dalam method di Class</td>
-    <td>Function Definitions (Tanpa keyword Function)</td>
+    <td>Function Definitions (ES6)</td>
     <td rowspan="3">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
@@ -3018,7 +3018,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
 
 #### ⤷ Kasus Nested
 
-Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Definitions (Tanpa keyword Function) & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" atau method apply() untuk mengacu ke Owner Object (Object yang dibuat).
+Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Definitions & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" atau method apply() untuk mengacu ke Owner Object (Object yang dibuat).
 
 <!-- TABLE 3 (KASUS NESTED) -->
 
