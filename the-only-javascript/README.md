@@ -394,7 +394,7 @@ var strE = "Dia berkata: \"Hey\"";    // Kutip dua di dalam kutip dua, pakai esc
 var strF = 'Hari Jum\'at';            // Kutip satu di dalam kutip satu, pakai escape character (\)
 var strG = "\u2764 You!"              // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
 
-var strH = `Hello World!`;            // String dengan backtick `` (Template String ES6)
+var strH = `Hello World!`;            // String dengan backtick `` (Template String ES6+)
 var strI = `"Hei!", Jum'at today.`;   // Kutip satu & dua di dalam backtick
 var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
 ```
@@ -844,7 +844,7 @@ console.log(undefined && "World");    // Output: undefined  (undefined ≈ false
 ```Javascript
 var arr  = ["Andri", "Joko", "Sukma"];
 var strA = arr[0] + " dan " + arr[1] + " adalah teman akrab.";  // String Concatenation (sebelum ES6), "+" sebagai penyambung
-var strB = `${arr[0]} dan ${arr[1]} adalah teman akrab.`;       // Template String (setelah ES6), memakai backtick (``)
+var strB = `${arr[0]} dan ${arr[1]} adalah teman akrab.`;       // Template String (setelah ES6+), memakai backtick (``)
 
 console.log(strA);                                              // Output: Andri dan Joko adalah teman akrab.
 console.log(strB);                                              // Output: Andri dan Joko adalah teman akrab.
@@ -915,7 +915,7 @@ Catatan: Terdapat istilah Type convertion (explicit) & Type coercion (implicit).
 
 ### ![✔] 𝐋. Operator Spread
 
-Spread merupakan operator baru di ES6. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama Variable.<br>
+Spread merupakan operator baru di ES6+. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama Variable.<br>
 
 🔔 Kegunaan lain dari operator Spread yaitu Rest Parameter (bab 2-5 E) & Assignment by Value untuk Object (bab 2-6 C).
 
@@ -1553,7 +1553,7 @@ var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function
 
 Sedangkan let & const bersifat **Block Scope** artinya cakupan scopenya itu semua yang bertanda Code Block ```{}``` (blok Function, blok If-Else, blok perulangan, dst), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **private** dan tidak bisa diakses di luar scope.
 
-let & const sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu let nilainya bisa berubah-ubah sedangkan const nilainya tidak bisa diubah sepanjang kode program (isinya tetap), namun terdapat pengecualian, yaitu untuk tipe data Object (Array dan Object) isi elementnya tetap bisa diubah, yang tidak bisa itu mengubah keseluruhan Object-nya.
+let & const sendiri merupakan fitur baru di ES6+ yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu let nilainya bisa berubah-ubah sedangkan const nilainya tidak bisa diubah sepanjang kode program (isinya tetap), namun terdapat pengecualian, yaitu untuk tipe data Object (Array dan Object) isi elementnya tetap bisa diubah, yang tidak bisa itu mengubah keseluruhan Object-nya.
 
 ⚠️ Mulai dari sini, istilah Variable itu bisa berarti var/let/const.
 
@@ -2158,7 +2158,7 @@ Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut 
 
 Sebenarnya ide awalnya yaitu perintah berpola ```___()``` saja, namun kita tidak bisa langsung membuat Function lalu ditambahkan tanda () begitu saja, karena akan terjadi error. Melainkan Function tersebut harus dibungkus terlebih dahulu menggunakan tanda () lalu ditambah lagi tanda () yang kedua sebagai perintah untuk menjalankan Function tersebut. Sehingga pola perintahnya ```(___)()``` atau ```(___())```, bukan ```___()```.
 
-Selain itu, IIFE digunakan juga untuk membuat var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6, var sudah "digantikan" oleh let yang secara default memang sudah bersifat Block Scope.
+Selain itu, IIFE digunakan juga untuk membuat var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6+, var sudah "digantikan" oleh let yang secara default memang sudah bersifat Block Scope.
 
 #### ⤷ Function Biasa & IIFE
 
@@ -2238,7 +2238,7 @@ console.log(add());                   // Output: 3              ⇨ Menjalankan 
 
 ### ![✔] 𝐑. Arrow Function
 
-Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. 🔔 Namun tidak hanya itu, di bab 2-6 D nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
+Arrow Function merupakan fitur baru ES6+, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. 🔔 Namun tidak hanya itu, di bab 2-6 D nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
 
 #### ⤷ Contoh Tanpa Argument
 
@@ -2355,7 +2355,7 @@ let objB = {                          // let objB berisi Object dengan property 
   property3: "isi_property1",
 
   method1(){                          // Penulisan method cara 1: Function Definitions (Tanpa perlu keyword function di depannya)
-    "isi method 1";                   // Cara penulisan seperti ini merupakan fitur baru di ES6 ⚠️
+    "isi method 1";                   // Cara penulisan seperti ini merupakan fitur baru di ES6+ ⚠️
   },
   method2: function(){                // Penulisan method cara 2: Function Expressions (Anonymous Function)
     "isi method 2";
@@ -2506,7 +2506,7 @@ console.log(mhs2 == mhs2Baru);        // Output: false  (Why? meskipun mhs2 & mh
 console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
 ```
 
-#### ⤷ Assignment by Value untuk Object (ES6)
+#### ⤷ Assignment by Value untuk Object (ES6+)
 
 ```Javascript
 // Salin Object by Reference (default)
@@ -2689,7 +2689,7 @@ let mhs = {
 mhs.halo();
 ```
 
-Atau sebagai alternatif selain menggunakan "that" seperti contoh di atas, bisa gunakan method apply() pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(this);```, ```innerB();``` menjadi ```innerB.apply(this);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya dibuat sama dengan konteks this milik method-nya (Outer Function-nya), yaitu mengacu ke Owner Object (Dalam kasus ini yaitu Object mhs). Lebih jelasnya terkait method apply() lihat contoh pada point nomor 8 di bawah.
+Atau sebagai alternatif selain menggunakan ```that``` seperti contoh di atas, bisa gunakan method apply() pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(this);```, ```innerB();``` menjadi ```innerB.apply(this);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya dibuat sama dengan konteks this milik method-nya (Outer Function-nya), yaitu mengacu ke Owner Object (Dalam kasus ini yaitu Object mhs). Lebih jelasnya terkait method ```apply()``` lihat contoh pada point nomor 8 di bawah.
 
 #### ⤷ 5. Di dalam method di Constructor Function, keyword this mengacu ke Owner Object (Object yang dibuat).
 
@@ -2727,7 +2727,7 @@ mobilBudi.pergi2();                      //           Menjalankan method pergi2 
 
 Dalam kasus method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
 
-Dimana jika Inner Function ditulis dengan cara Function Definitions & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" seperti pada contoh sebelumnya, atau gunakan method apply(). Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Definitions & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan ```that``` seperti pada contoh sebelumnya, atau gunakan method apply(). Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -2806,7 +2806,7 @@ mobilBudi.pergi3();                      //           Menjalankan method pergi3 
 
 Dalam kasus method di Class, cara penulisan yang paling banyak dijumpai yaitu Function Definitions. Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Class → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula, tergantung jenis Function yang digunakan.
 
-Dimana jika Inner Function ditulis dengan cara Function Definitions & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" atau method ```apply()```. Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Definitions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Definitions & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan ```that``` atau method ```apply()```. Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Definitions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -2940,7 +2940,7 @@ Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nanti
 </tbody>
 </table>
 
-Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan cara Arrow Function. Hal ini karena Arrow Function tidak memiliki konsep this. Penggunaan Arrow Function lebih sering dijumpai pada kasus Nested, dimana perannya yaitu sebagai Inner Function, yang memiliki konteks this sama seperti konteks this di parent scope-nya, yaitu mengacu pada Owner Object (Object yang dibuat).
+Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan cara Arrow Function. Hal ini karena Arrow Function tidak memiliki konsep ```this```. Penggunaan Arrow Function lebih sering dijumpai pada kasus Nested, dimana perannya yaitu sebagai Inner Function, yang memiliki konteks this sama seperti konteks this di parent scope-nya, yaitu mengacu pada Owner Object (Object yang dibuat).
 
 <!-- TABLE 2 -->
 
@@ -2969,7 +2969,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">5</td>
     <td rowspan="3">Di dalam Function (Strict Mode)</td>
-    <td>Function Definitions (ES6)</td>
+    <td>Function Definitions (ES6+)</td>
     <td rowspan="2">Undefined</td>
   </tr>
   <tr>
@@ -3004,7 +3004,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">8</td>
     <td rowspan="3">Di dalam method di Class</td>
-    <td>Function Definitions (ES6)</td>
+    <td>Function Definitions (ES6+)</td>
     <td rowspan="3">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
@@ -3018,7 +3018,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
 
 #### ⤷ Kasus Nested
 
-Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Definitions & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" atau method apply() untuk mengacu ke Owner Object (Object yang dibuat).
+Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Definitions & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan ```that``` atau method ```apply()``` untuk mengacu ke Owner Object (Object yang dibuat).
 
 <!-- TABLE 3 (KASUS NESTED) -->
 
@@ -3258,7 +3258,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Constructor Functions sebag
 ```
 
 ```Javascript
-// ➋ OOP dengan Class (Setelah ES6)
+// ➋ OOP dengan Class (Setelah ES6+)
 
 class Mobil{                                      // Class sebagai "blue print mobil" (Kedepannya Class inilah yang akan digunakan)
   constructor(merkArg, tipeArg, hargaArg){        // Note: Setiap property wajib berada di dalam method constructor(), 
@@ -3504,7 +3504,7 @@ console.log(String.fromCharCode(9749, 10052, 12096));       // Output: ☕❄⽀
 console.log(String.fromCharCode(0x2615, 0x2744, 0x2F40));   // Output: ☕❄⽀   ⤷ Penulisan dengan nomor urut heksadesimal (0x...)
 console.log(String.fromCharCode(128656, 128663, 128690));   // Output:      ‏‏‎ ‎‎⤷ Gagal menampilkan karakter terbaru unicode
 
-console.log(String.fromCodePoint(65, 66, 67));              // Output: ABC      ⇨ Membuat String berdasarkan kode unicode (ES6)
+console.log(String.fromCodePoint(65, 66, 67));              // Output: ABC      ⇨ Membuat String berdasarkan kode unicode (ES6+)
 console.log(String.fromCodePoint(9749, 10052, 12096));      // Output: ☕❄⽀     fromCodePoint "Versi Update" dari fromCharCode
 console.log(String.fromCodePoint(0x2615, 0x2744, 0x2F40));  // Output: ☕❄⽀
 console.log(String.fromCodePoint(128656, 128663, 128690));  // Output: 🚐🚗🚲  ⤷ Berhasil menampilkan karakter terbaru unicode
@@ -3539,7 +3539,7 @@ console.log(strC.toLocaleUpperCase());  // Output: BANDUNG  ⇨ Serupa dengan to
 console.log(strC.charAt(0));            // Output: B        ⇨ Menampilkan karakter yang berada di posisi tertentu dari String
 console.log(strC.charAt(5));            // Output: n        ⤷ strC.charAt(5) sebenarnya bisa juga diakses dengan strC[5]
 console.log(strC.charCodeAt(0));        // Output: 66       ⇨ Menampilkan kode unicode dari sebuah karakter di String (B = 66)
-console.log(strC.codePointAt(0));       // Output: 66       ⇨ codePointAt (ES6) merupakan "Versi Update" dari charCodeAt
+console.log(strC.codePointAt(0));       // Output: 66       ⇨ codePointAt (ES6+) merupakan "Versi Update" dari charCodeAt
 
 console.log(strC.substr(2));            // Output: ndung    ⇨ Ambil String dari indeks ke 2 (depan) s.d. akhir
 console.log(strC.substr(-2));           // Output: ng       ⤷ Ambil String dari indeks ke 2 (belakang) s.d. akhir
@@ -5270,7 +5270,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 🔴 Di bawah merupakan contoh materi saja, belum dilengkapi.
 
-Modern JavaScript yaitu JavaScript versi ES6 keatas. Beberapa fitur ES6+ sebenarnya sudah dibahas di bab-bab sebelumya secara singkat saja. Di bab ini, akan kembali membahas fitur ES6+ lebih banyak lagi dan secara mendetail.
+Modern JavaScript yaitu JavaScript versi ES6+. Beberapa fitur ES6+ sebenarnya sudah dibahas di bab-bab sebelumya secara singkat saja. Di bab ini, akan kembali membahas fitur ES6+ lebih banyak lagi dan secara mendetail.
 
 **A. Template String**
 
