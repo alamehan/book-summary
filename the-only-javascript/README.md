@@ -1217,6 +1217,8 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 > > - [X] 𝐂. Default Parameter
 > > - [X] 𝐃. Arguments Object
 > > - [X] 𝐄. Rest Parameter
+> 
+> 𝐊𝐨𝐧𝐬𝐞𝐩 𝐋𝐚𝐧𝐣𝐮𝐭𝐚𝐧
 > > - [X] 𝐅. Variable Scope
 > > - [X] 𝐆. Variable Lookup
 > > - [X] 𝐇. Var, Let & Const
