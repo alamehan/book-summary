@@ -855,6 +855,8 @@ var result = `${number} ditambah 6 = ${number+6}`;              // Template Stri
 console.log(result);                                            // Output: 24 ditambah 6 = 30
 ```
 
+🔔 Expressions dibahas di bab 2-5 L.
+
 #### ⤷ Implicit Type Conversion: Number to String
 
 ```Javascript
@@ -1826,6 +1828,8 @@ let hitung = function(a, b){          // Function Expressions tanpa nama Functio
 }
 console.log(hitung(4, 8));            // Output: 6
 ```
+
+Terdapat istilah Declaration & Expressions. Declaration ialah mendefinisikan sesuatu untuk kemudian akan digunakan nantinya. Sedangkan Expressions ialah segala sesuatu yang langsung menghasilkan atau mewakili sebuah nilai. Di JavaScript terdapat beragam Expressions, perhatikan tabel di bawah.
 
 ### ![✔] 𝐌. Callback & Higher Order Function
 
