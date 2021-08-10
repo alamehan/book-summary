@@ -1842,7 +1842,9 @@ Terdapat istilah Declaration & Expressions. Declaration ialah mendefinisikan ses
 | 7  	| Operasi String Concatenation  	| ```"Love" + "Indo"```                                       	| "Love Indo"       	|
 | 8  	| Memanggil Function            	| ```Cetak()```                                               	| "Contoh Teks"     	|
 | 9  	| Conditional Ternary           	| ```10 > 5 ? "😎" : "😒"```                                    	| "😎"               	|
-| 10 	| Nullish Coalescing            	| let data = "Ada isinya"; <br> ```data ?? "Nilai default"``` 	| "Nilai default"   	|
+| 10 	| Nullish Coalescing            	| let data = "Ada isinya"; <br> ```data ?? "Nilai default"``` 	| "Ada isinya"      	|
+
+Perhatikan bahwa semua ragam Expressions pada contoh di atas menghasilkan/mewakili sebuah nilai tertentu (lihat kolom Hasil). Dalam praktiknya, Expressions dapat digunakan di beberapa "tempat", misalnya:
 
 ### ![✔] 𝐌. Callback & Higher Order Function
 
