@@ -15,9 +15,18 @@
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>. Jalur Belajar Web Developer akses di <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a>. Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari beberapa website (lihat Referensi).
 
-Catatan: Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga seiring waktu berjalan. Pada markdown ini, beberapa konsep lanjutan yang diperkenalkan diawal ditandai dengan emoticon 🔔.
+Catatan: Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga. 
 
-⚠️ Rangkuman JavaScript Uncover baru sampai bab 21.5 Event Object (Halaman 451).
+| Emoticon 	| Keterangan                                	|
+|----------	|-------------------------------------------	|
+| 🔔        	| Konsep lanjutan yang diperkenalkan diawal 	|
+| ⚠️        	| Informasi yang sangat penting diketahui   	|
+| 📖        	| Informasi tambahan yang berguna           	|
+| 🚧        	| Materi tidak dibahas di markdown ini      	|
+| 📚        	| Resource eksternal (berupa website)       	|
+| ✔️        	| Direkomendasikan untuk digunakan          	|
+| ❌        	| Tidak direkomendasikan untuk digunakan    	|
+| 🔴        	| Catatan belum dilengkapi (menyusul)       	|
 
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">🠉</a>
 
@@ -5288,19 +5297,20 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 | No 	| Referensi Indonesia                                                                          	| Status 	|
 |----	|----------------------------------------------------------------------------------------------	|--------	|
-| 1  	| <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a> 	| 📘      	|
-| 2  	| <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>  	| 📕      	|
-| 3  	| <a href="https://www.udemy.com/user/yudi-krisnandi/">Course by Yudi Khirsnandi</a>           	| 📕      	|
-| 4  	| <a href="https://buildwithangga.com/">Build With Angga</a>                                   	| 📕      	|
-| 5  	| <a href="https://devsaurus.com/">Devsaurus: Learn Fullstack</a>                              	| 📕      	|
-| 6  	| <a href="https://buku-laravel-vue.com/">buku-laravel-vue.com</a>                             	| 📕      	|
-| 7  	| <a href="https://bukureact.id/">bukureact.id</a>                                             	| 📕      	|
+| 1  	| <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover</a> 	| 📘 A*     	|
+| 2  	| <a href="https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg">Web Programming UNPAS</a> 	| 📘      	|
+| 3  	| <a href="https://www.youtube.com/channel/UC14ZKB9XsDZbnHVmr4AmUpQ">Programmer Zaman Now</a>  	| 📕      	|
+| 4  	| <a href="https://www.udemy.com/user/yudi-krisnandi/">Course by Yudi Khirsnandi</a>           	| 📕      	|
+| 5  	| <a href="https://buildwithangga.com/">Build With Angga</a>                                   	| 📕      	|
+| 6  	| <a href="https://devsaurus.com/">Devsaurus: Learn Fullstack</a>                              	| 📕      	|
+| 7  	| <a href="https://buku-laravel-vue.com/">buku-laravel-vue.com</a>                             	| 📕      	|
+| 8  	| <a href="https://bukureact.id/">bukureact.id</a>                                             	| 📕      	|
   
 | No 	| Referensi Inggris 	| Status 	|
 |---	|---	|---	|
-| 1 	| <a href="https://www.udemy.com/course/the-complete-javascript-course/">The Complete JavaScript Course 2021 by Jonas Schmedtmann </a> 	| 📘 A* 	|
-| 2 	| <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 	| 📘 B* 	|
-| 3 	| <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> \| <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a> 	| 📘 C* 	|
+| 1 	| <a href="https://www.udemy.com/course/the-complete-javascript-course/">The Complete JavaScript Course 2021 by Jonas Schmedtmann </a> 	| 📘 B* 	|
+| 2 	| <a href="https://www.udemy.com/course/javascript-tutorial-for-beginners-w/">Javascript Tutorial and Projects Course by John Smilga</a> 	| 📘 C* 	|
+| 3 	| <a href="https://www.udemy.com/course/understand-javascript/">JavaScript: Understanding the Weird Parts by Anthony Alicea</a> \| <a href="https://github.com/jasonbaciulis/javascript-understanding-the-weird-parts">Note</a> 	| 📘 D* 	|
 | 4 	| <a href="https://github.com/leonardomso/33-js-concepts">33 Concepts Every JavaScript Developer Should Know</a> 	| 📕 	|
 | 5 	| <a href="https://flaviocopes.com/page/list-subscribed/">The JavaScript Beginner's & ES5 to ESNext Handbook by Flavio Copes</a> 	| 📕 	|
 | 6 	| <a href="https://turriate.com/articles/modern-javascript-everything-you-missed-over-10-years">Modern Javascript: Everything You Missed Over The Last 10 Years</a> 	| 📕 	|
@@ -5314,9 +5324,10 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 Keterangan:
 1. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
 2. 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan (karena memang referensinya berkualitas).
-3. A* The Complete JavaScript Course 2021 by Jonas Schmedtmann baru selesai sampai di **Section 6: HTML & CSS Crash Course**.
-4. B* Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
-5. C* JavaScript: Understanding the Weird Parts by Anthony Alicea baru selesai sampai di **Section 3: Types and Operatos**
+3. A* Buku JavaScript Uncover oleh Andre Pratama (referensi utama) baru selesai sampai di **Bab 21.5: Event Object (Halaman 451)**.
+4. B* The Complete JavaScript Course 2021 by Jonas Schmedtmann baru selesai sampai di **Section 6: HTML & CSS Crash Course**.
+5. C* Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
+6. D* JavaScript: Understanding the Weird Parts by Anthony Alicea baru selesai sampai di **Section 3: Types and Operatos**
 
 </details>
 
