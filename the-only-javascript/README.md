@@ -2198,7 +2198,7 @@ console.log(add());                   // Output: 3              ⇨ Menjalankan 
 
 ### ![✔] 𝐐. Arrow Function
 
-Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. Namun tidak hanya itu, di bab 2-6 D nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
+Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. 🔔 Namun tidak hanya itu, di bab 2-6 D nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
 
 #### ⤷ Contoh Tanpa Argument
 
@@ -2820,7 +2820,7 @@ mobilBudi.pergi1();
 ```
 
 ```Javascript
-// 🔴 Selebihnya lihat di video Web Programming Unpas
+// 🔴 Selebihnya lihat di video Web Programming Unpas.
 ```
 
 #### ⤷ 8. Method bind(), call() & apply() membuat keyword this mengacu pada Object yang dituju.
@@ -5226,9 +5226,9 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 <details>
 <summary>Klik untuk membuka!</summary>
 
-🔴 Di bawah merupakan contoh materi saja, belum dilengkapi.
-
 <br>
+
+🔴 Di bawah merupakan contoh materi saja, belum dilengkapi.
 
 Modern JavaScript yaitu JavaScript versi ES6 keatas. Beberapa fitur ES6+ sebenarnya sudah dibahas di bab-bab sebelumya secara singkat saja. Di bab ini, akan kembali membahas fitur ES6+ lebih banyak lagi dan secara mendetail.
 
