@@ -1838,7 +1838,7 @@ Perhatikan bahwa ragam Expressions pada contoh di atas menghasilkan/mewakili seb
 | 8  	| Return pada Function       	| ```let fun = function () { return … }``` 	| ```let fun = function () { return 10 > 5 ? "Yes" : "No" };``` <br> ```console.log(fun());```                              	| "Yes"  	|
 | 9  	| Dan lainnya (Menyusul)     	| -                                        	| -                                                                                                                         	| -      	|
 
-Jadi sewaktu-waktu misalnya bertemu dengan kode seperti ```let role = obj[experience > 100 ? "work" : "intern"]``` tidak perlu bingung lagi, pada dasarnya kode tersebut berupa ```let role = obj[...]``` dimana ```...``` berupa expressions yang menghasilkan nilai diantara "work" atau "intern".
+Jadi suatu saat misalnya anda bertemu dengan kode seperti ```let role = obj[experience > 100 ? "work" : "intern"]``` jangan pusing, pada dasarnya kode tersebut berupa ```let role = obj[...]``` dimana ```...``` berupa expressions yang menghasilkan nilai diantara "work" atau "intern".
 
 ### ![✔] 𝐌. Function Expressions & Anonymous Function
 
