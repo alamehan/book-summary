@@ -2354,8 +2354,8 @@ let objB = {                          // let objB berisi Object dengan property 
   property2: "isi_property1",
   property3: "isi_property1",
 
-  method1(){                          // Penulisan method cara 1: Function Declaration (Tanpa perlu keyword function di depannya)
-    "isi method 1";                   // Cara penulisan seperti ini merupakan fitur baru di ES6
+  method1(){                          // Penulisan method cara 1: Function Definitions (Tanpa perlu keyword function di depannya)
+    "isi method 1";                   // Cara penulisan seperti ini merupakan fitur baru di ES6 ⚠️
   },
   method2: function(){                // Penulisan method cara 2: Function Expressions (Anonymous Function)
     "isi method 2";
@@ -2374,10 +2374,10 @@ let mobil = {                         // let mobil berisi Object tentang mobil (
   tipe: "MPV",
   harga: 200000000,
 
-  hidupkan(){                         // Penulisan menggunakan Function Declaration
+  hidupkan(){                         // Penulisan menggunakan Function Definitions
     return "Mesin Dihidupkan!";
   },
-  pergi(tempat){                      // Penulisan menggunakan Function Declaration
+  pergi(tempat){                      // Penulisan menggunakan Function Definitions
     return `Pergi ke ${tempat}`;
   }
 };
@@ -2591,7 +2591,7 @@ let mhs = {
                                       // (Window). Untuk membuktikannya jalankan perintah console.log(mhs.coba); di luar Object.
 
                                       // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
-  halo1(){                            // halo1(){                           🡲 Penulisan method cara 1: Function Declaration (✔️)
+  halo1(){                            // halo1(){                           🡲 Penulisan method cara 1: Function Definitions (✔️)
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", umur: 16, halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
     console.log(this.umur);           //   console.log(mhs.umur);           🡲 Output: 16
@@ -2619,7 +2619,7 @@ mhs.halo3();
 
 Note (kode di atas): Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow Function di atas mengacu ke Global Object (Window).
 
-Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Declaration & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔴 🔔 Lihat point ... 
+Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Definitions & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔴 🔔 Lihat point ... 
 
 Selain itu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Pada contoh di bawah ini method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
@@ -2631,7 +2631,7 @@ let mhs = {
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
                                       //
-    function innerA(){                //   function innerA(){               🡲 Function Declaration (Sebagai Inner Function) (❌)
+    function innerA(){                //   function innerA(){               🡲 Function Definitions (Sebagai Inner Function) (❌)
       console.log(this);              //     console.log(window);           🡲 Output: Window {window: Window, self: Window, ...}
       console.log(this.nama);         //     console.log(window.nama);      🡲 Output: undefined
     };                                //   };
@@ -2655,7 +2655,7 @@ mhs.halo();
 
 Note (kode di atas): Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu method halo yang mengacu ke Object mhs. Karena itulah this pada contoh Arrow Function di atas mengacu ke Object mhs.
 
-Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Declaration (innerA) & Function Expressions (innerB) memiliki this yang mengacu ke Owner Object (dalam kasus ini Object mhs), maka this milik method halo perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut dapat digunakan di Inner Function. Sehingga this di Inner Function mengacu ke Object mhs sama halnya seperti this milik method halo. Simak contoh di bawah ini.
+Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Definitions (innerA) & Function Expressions (innerB) memiliki this yang mengacu ke Owner Object (dalam kasus ini Object mhs), maka this milik method halo perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut dapat digunakan di Inner Function. Sehingga this di Inner Function mengacu ke Object mhs sama halnya seperti this milik method halo. Simak contoh di bawah ini.
 
 ```Javascript
 let mhs = {
@@ -2667,7 +2667,7 @@ let mhs = {
                                       //
     let that = this;                  //   let that = mhs;                  🡲 that dibuat mengacu ke Object mhs layaknya this
                                       //
-    function innerA(){                //   function innerA(){               🡲 Function Declaration (Sebagai Inner Function) (✔️)
+    function innerA(){                //   function innerA(){               🡲 Function Definitions (Sebagai Inner Function) (✔️)
       console.log(that);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
       console.log(that.nama);         //     console.log(mhs.nama);         🡲 Output: Budi
     };                                //   };
@@ -2727,7 +2727,7 @@ mobilBudi.pergi2();                      //           Menjalankan method pergi2 
 
 Dalam kasus method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
 
-Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" seperti pada contoh sebelumnya, atau gunakan method apply(). Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Definitions & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" seperti pada contoh sebelumnya, atau gunakan method apply(). Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -2739,7 +2739,7 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
     console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
                                          //
-    function innerA(){                   //     function innerA(){              🡲 Function Declaration (Inner Function) (✔️)
+    function innerA(){                   //     function innerA(){              🡲 Function Definitions (Inner Function) (✔️)
       console.log(this);                 //       console.log(mobilBudi);       🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
       console.log(this.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
     };                                   //     };
@@ -2779,7 +2779,7 @@ class Mobil{                             // class Mobil{
     console.log(this.tipe);              //     console.log(mobilBudi.tipe);    🡲 Output: MPV
   };                                     //   };
                                          //
-  pergi1(){                              //   pergi1(){                         🡲 Penulisan cara 1: Function Declaration (✔️)
+  pergi1(){                              //   pergi1(){                         🡲 Penulisan cara 1: Function Definitions (✔️)
     console.log(this);                   //     console.log(mobilBudi);         🡲 Output: Mobil {merk: "ABC", tipe: "MPV", ...}
     console.log(this.merk);              //     console.log(mobilBudi.merk);    🡲 Output: ABC
     console.log(this.tipe);              //     console.log(mobilBudi.tipe);    🡲 Output: MPV
@@ -2804,9 +2804,9 @@ mobilBudi.pergi2();                      //           Menjalankan method pergi2 
 mobilBudi.pergi3();                      //           Menjalankan method pergi3 milik Object mobilBudi
 ```
 
-Dalam kasus method di Class, cara penulisan yang paling banyak dijumpai yaitu Function Declaration (Tanpa keyword Function). Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Class → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula, tergantung jenis Function yang digunakan.
+Dalam kasus method di Class, cara penulisan yang paling banyak dijumpai yaitu Function Definitions. Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Class → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula, tergantung jenis Function yang digunakan.
 
-Dimana jika Inner Function ditulis dengan cara Function Declaration & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" atau method apply(). Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Declaration (Tanpa keyword Function), sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Definitions & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan "that" atau method ```apply()```. Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Definitions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -2821,7 +2821,7 @@ class Mobil{                             // class Mobil{
                                          //
     let that = this;                     //     let that = mobilBudi;         🡲 Mengakali dengan "that"
                                          //
-    function innerA(){                   //     function innerA(){            🡲 Function Declaration (Inner Function) (✔️)
+    function innerA(){                   //     function innerA(){            🡲 Function Definitions (Inner Function) (✔️)
       console.log(that);                 //       console.log(this);          🡲 Output: Mobil {merk: "ABC"}
       console.log(that.merk);            //       console.log(this.merk);     🡲 Output: ABC
     };                                   //     };
@@ -2957,7 +2957,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">4</td>
     <td rowspan="3">Di dalam Function</td>
-    <td>Function Declaration</td>
+    <td>Function Definitions</td>
     <td rowspan="3">Global Object (Window)</td>
   </tr>
   <tr>
@@ -2969,7 +2969,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">5</td>
     <td rowspan="3">Di dalam Function (Strict Mode)</td>
-    <td>Function Declaration</td>
+    <td>Function Definitions</td>
     <td rowspan="2">Undefined</td>
   </tr>
   <tr>
@@ -2982,7 +2982,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">6</td>
     <td rowspan="3">Di dalam method di Object</td>
-    <td>Function Declaration (Tanpa keyword Function)</td>
+    <td>Function Definitions (Tanpa keyword Function)</td>
     <td rowspan="2">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
@@ -3004,7 +3004,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">8</td>
     <td rowspan="3">Di dalam method di Class</td>
-    <td>Function Declaration (Tanpa keyword Function)</td>
+    <td>Function Definitions (Tanpa keyword Function)</td>
     <td rowspan="3">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
@@ -3018,7 +3018,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
 
 #### ⤷ Kasus Nested
 
-Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Declaration (Tanpa keyword Function) & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" atau method apply() untuk mengacu ke Owner Object (Object yang dibuat).
+Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Definitions (Tanpa keyword Function) & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan "that" atau method apply() untuk mengacu ke Owner Object (Object yang dibuat).
 
 <!-- TABLE 3 (KASUS NESTED) -->
 
@@ -3037,7 +3037,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
     <td rowspan="3">9</td>
     <td rowspan="3">Di dalam method di Object (Kasus Nested)</td>
     <td rowspan="3">Function Expressions</td>
-    <td>Function Declaration</td>
+    <td>Function Definitions</td>
     <td rowspan="2">Global Object (Window). 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
   </tr>
   <tr>
@@ -3051,7 +3051,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
     <td rowspan="3">10</td>
     <td rowspan="3">Di dalam method di Constructor Function (Kasus Nested)</td>
     <td rowspan="3">Function Expressions</td>
-    <td>Function Declaration</td>
+    <td>Function Definitions</td>
     <td rowspan="2">Global Object (Window). 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
   </tr>
   <tr>
@@ -3064,8 +3064,8 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
   <tr>
     <td rowspan="3">11</td>
     <td rowspan="3">Di dalam method di Class (Kasus Nested)</td>
-    <td rowspan="3">Function Declaration (Tanpa keyword Function)</td>
-    <td>Function Declaration</td>
+    <td rowspan="3">Function Definitions (Tanpa keyword Function)</td>
+    <td>Function Definitions</td>
     <td rowspan="2">undefined. 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
   </tr>
   <tr>
