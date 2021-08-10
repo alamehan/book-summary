@@ -15,7 +15,9 @@
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>. Jalur Belajar Web Developer akses di <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a>. Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover by Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari beberapa website (lihat Referensi).
 
-**Catatan**: Rangkuman JavaScript Uncover baru sampai bab 21.5 Event Object (Halaman 451).
+Catatan: Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga seiring waktu berjalan. Pada markdown ini, beberapa konsep lanjutan yang diperkenalkan diawal ditandai dengan emoticon 🔔.
+
+⚠️ Rangkuman JavaScript Uncover baru sampai bab 21.5 Event Object (Halaman 451).
 
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">🠉</a>
 
@@ -367,13 +369,16 @@ NaN & Infinity sebenarnya tidak termasuk ke dalam tipe data. Contoh di atas yait
 
 ```Javascript
 var numN = 9/"a";                     // Membagi angka dengan bukan angka menghasilkan NaN
-console.log(numK);                    // Output: NaN (Not a Number)
+console.log(numN);                    // Output: NaN (Not a Number)
 
 var numO = 9/0;                       // Membagi angka dengan nol menghasilkan Infinity
-console.log(numL);                    // Output: Infinity (Tak Hingga)
+console.log(numO);                    // Output: Infinity (Tak Hingga)
 
 var numP = -9/0;                      // Membagi angka negatif dengan nol menghasilkan -Infinity
 console.log(numP);                    // Output: -Infinity (Negatif Tak Hingga)
+
+console.log(numN, numO, numP);        // Output: NaN Infinity -Infinity
+                                      // Nilai pada console bisa diisi lebih dari satu
 ```
 
 ### ![✔] 𝐂. String
@@ -857,7 +862,7 @@ console.log(10 + "10" + 9);           // Output: 10109  (String)  dari konversi:
 console.log(10 + 10 + "9");           // Output: 209    (String)  dari konversi:  20  + "9"        → "20" + "9"   → "209"
 ```
 
-Contoh di atas dibaca left-to-right, saat berjumpa dengan String, maka sisa nilai setelahnya otomatis dikonversi menjadi String juga, kecuali terdapat operator ```-```, ```*```, ```/``` maka akan kembali dikonversi lagi menjadi Number.   
+Contoh di atas dibaca left-to-right, saat berjumpa dengan String, maka sisa nilai setelahnya otomatis dikonversi menjadi String juga, kecuali terdapat operator ```-```, ```*```, ```/``` maka akan kembali dikonversi lagi menjadi Number.
 
 #### ⤷ Implicit Type Conversion: String to Number
 
@@ -897,6 +902,8 @@ console.log(typeof num4);             // number
 ```
 
 Hati-hati dengan Implicit Type Conversion (Coercion) ini karena bisa menimbulkan sebuah bug, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah **TypeScript** sebagai **Strongly typed JavaScript** (Tidak dibahas disini, anda bisa pelajari secara mandiri).
+
+Catatan: Terdapat istilah Type convertion (explicit) & Type coercion (implicit). Type convertion yaitu ketika kita secara manual mengkonversi satu tipe data ke tipe data lainnya, sedangkan Type coercion yaitu ketika JavaScript secara otomatis mengkonversi tipe data di belakang layar.
 
 ### ![✔] 𝐊. Operator Bitwise
 
