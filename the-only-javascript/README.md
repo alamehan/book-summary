@@ -1829,7 +1829,20 @@ let hitung = function(a, b){          // Function Expressions tanpa nama Functio
 console.log(hitung(4, 8));            // Output: 6
 ```
 
-Terdapat istilah Declaration & Expressions. Declaration ialah mendefinisikan sesuatu untuk kemudian akan digunakan nantinya. Sedangkan Expressions ialah segala sesuatu yang langsung menghasilkan atau mewakili sebuah nilai. Di JavaScript terdapat beragam Expressions, perhatikan tabel di bawah.
+Terdapat istilah Declaration & Expressions. Declaration ialah mendefinisikan sesuatu untuk kemudian akan digunakan nantinya. Sedangkan Expressions ialah segala sesuatu yang langsung menghasilkan atau mewakili sebuah nilai. Di JavaScript terdapat beragam Expressions:
+
+| No 	| Ragam Expressions             	| Contoh                                                      	| Hasil (Nilai)     	|
+|----	|-------------------------------	|-------------------------------------------------------------	|-------------------	|
+| 1  	| Variable                      	| let age = 24; <br> ```age```                                	| 24                	|
+| 2  	| Number, String & Boolean      	| ```123```, ```"Teks"```, ```true```                         	| 123, "Teks", true 	|
+| 3  	| Operasi Aritmatika            	| ```(4+4)*2```                                               	| 16                	|
+| 4  	| Operasi Increment & Decrement 	| ```50++```                                                  	| 51                	|
+| 5  	| Operasi Perbandingan          	| ```100 > 90```                                              	| true              	|
+| 6  	| Operasi Logika                	| ```true && false```                                         	| false             	|
+| 7  	| Operasi String Concatenation  	| ```"Love" + "Indo"```                                       	| "Love Indo"       	|
+| 8  	| Memanggil Function            	| ```Cetak()```                                               	| "Contoh Teks"     	|
+| 9  	| Conditional Ternary           	| ```10 > 5 ? "😎" : "😒"```                                    	| "😎"               	|
+| 10 	| Nullish Coalescing            	| let data = "Ada isinya"; <br> ```data ?? "Nilai default"``` 	| "Nilai default"   	|
 
 ### ![✔] 𝐌. Callback & Higher Order Function
 
