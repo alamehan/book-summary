@@ -2957,7 +2957,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">4</td>
     <td rowspan="3">Di dalam Function</td>
-    <td>Function Definitions</td>
+    <td>Function Definitions (ES6+)</td>
     <td rowspan="3">Global Object (Window)</td>
   </tr>
   <tr>
@@ -2982,7 +2982,7 @@ Dalam kasus umum, sebagai catatan, jarang sekali sebuah method ditulis dengan ca
   <tr>
     <td rowspan="3">6</td>
     <td rowspan="3">Di dalam method di Object</td>
-    <td>Function Definitions</td>
+    <td>Function Definitions (ES6+)</td>
     <td rowspan="2">𝐎𝐰𝐧𝐞𝐫 𝐎𝐛𝐣𝐞𝐜𝐭</td>
   </tr>
   <tr>
@@ -3037,7 +3037,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
     <td rowspan="3">9</td>
     <td rowspan="3">Di dalam method di Object (Kasus Nested)</td>
     <td rowspan="3">Function Expressions</td>
-    <td>Function Definitions</td>
+    <td>Function Definitions (ES6+)</td>
     <td rowspan="2">Global Object (Window). 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
   </tr>
   <tr>
@@ -3051,7 +3051,7 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
     <td rowspan="3">10</td>
     <td rowspan="3">Di dalam method di Constructor Function (Kasus Nested)</td>
     <td rowspan="3">Function Expressions</td>
-    <td>Function Definitions</td>
+    <td>Function Definitions (ES6+)</td>
     <td rowspan="2">Global Object (Window). 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
   </tr>
   <tr>
@@ -3064,8 +3064,8 @@ Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Fun
   <tr>
     <td rowspan="3">11</td>
     <td rowspan="3">Di dalam method di Class (Kasus Nested)</td>
-    <td rowspan="3">Function Definitions (Tanpa keyword Function)</td>
-    <td>Function Definitions</td>
+    <td rowspan="3">Function Definitions (ES6+)</td>
+    <td>Function Definitions (ES6+)</td>
     <td rowspan="2">undefined. 𝐒𝐨𝐥𝐮𝐬𝐢𝐧𝐲𝐚 𝐠𝐮𝐧𝐚𝐤𝐚𝐧 "𝐭𝐡𝐚𝐭" 𝐚𝐭𝐚𝐮 𝐌𝐞𝐭𝐡𝐨𝐝 𝐚𝐩𝐩𝐥𝐲().</td>
   </tr>
   <tr>
