@@ -4,7 +4,7 @@
 
 <div id="top"></div>
 
-# (っ◔◡◔)っ The Only JavaScript
+# 𝐓𝐡𝐞 𝐎𝐧𝐥𝐲 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>. Jalur Belajar Web Developer akses di <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a>. Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover oleh Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari beberapa website (lihat Referensi).
 
