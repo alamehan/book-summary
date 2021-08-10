@@ -2,13 +2,6 @@
 [✔]: assets/check-mark-1.png
 <!-- End -->
 
-<!-- 
-⚠️Catatan Penting⚠️:
-1. Tanda 🔴 artinya catatan tersebut belum dilengkapi, menyusul.
-2. Keyword [dibahas di...] [bagian...] [lihat../lihat] [di../point..]
-   Dinamis, harus diperbarui jika memang struktur tulisan berubah.
--->
-
 <div id="top"></div>
 
 # The Only JavaScript
@@ -20,10 +13,10 @@ Catatan: Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadan
 | Emoticon 	| Keterangan                                	|
 |----------	|-------------------------------------------	|
 | 🔔        	| Konsep lanjutan yang diperkenalkan diawal 	|
-| ⚠️        	| Informasi yang sangat penting diketahui   	|
-| 📖        	| Informasi tambahan yang berguna           	|
 | 🚧        	| Materi tidak dibahas di markdown ini      	|
 | 📚        	| Resource eksternal (berupa website)       	|
+| 📖        	| Informasi tambahan yang berguna           	|
+| ⚠️        	| Informasi yang sangat penting diketahui   	|
 | ✔️        	| Direkomendasikan untuk digunakan          	|
 | ❌        	| Tidak direkomendasikan untuk digunakan    	|
 | 🔴        	| Catatan belum dilengkapi (menyusul)       	|
@@ -466,11 +459,11 @@ greet();                              // Menjalankan Function tanpa Argument pad
                                       // memiliki Parameter menghasilkan Undefined (sebagai default)
 ```
 
-🔔 Function dibahas di bab 2-5
+🔔 Function dibahas di bab 2-5.
 
 ### ![✔] 𝐅. Symbol
 
-> 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
+> 🚧 Mungkin saja nanti akan ditambahkan.
 
 ### ![✔] 𝐆. Array
 
@@ -495,19 +488,19 @@ console.log(arr2D[1][1]);             // Output: 5
 
 ### ![✔] 𝐇. Object, RegExp & Date
 
-> 🔔 Object dibahas di bab 2-6 & bab 3
+> 🔔 Object dibahas di bab 2-6 & bab 3.
 >
-> 🔔 RegExp dibahas di bab 3-2 D
+> 🔔 RegExp dibahas di bab 3-2 D.
 >
-> 🔔 Date dibahas di bab 3-2 F
+> 🔔 Date dibahas di bab 3-2 F.
 
 ### ![✔] 𝐈. Map & WeakMap
 
-> 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
+> 🚧 Mungkin saja nanti akan ditambahkan.
 
 ### ![✔] 𝐉. Set & WeakSet
 
-> 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
+> 🚧 Mungkin saja nanti akan ditambahkan.
 
 <hr>
 <div id="bab2_2"></div>
@@ -597,7 +590,7 @@ if (text) {
 }
 ```
 
-🔔 If & Else dibahas di bab 2-3 A
+🔔 If & Else dibahas di bab 2-3 A.
 
 #### ⤷ Periksa Hasil Konversi Number:
 
@@ -662,10 +655,10 @@ var bol = true;                           // Tipe data: Boolean
 var nul = null;                           // Tipe data: Null
 var und = undefined;                      // Tipe data: Undefined
 var arr = [1, 2, "tiga"];                 // Tipe data: Array
-var obj = {nama: "Budi", umur: 13};       // Tipe data: Object      // 🔔 Object dibahas di bab 2-6 & bab 3
-var reg = /^\d\w\s$/;                     // Tipe data: RegExp      // 🔔 RegExp dibahas di bab 3-2 D
-var dat = new Date(2016,11,2,9,30,15);    // Tipe data: Date        // 🔔 Date dibahas di bab 3-2 F
-var fun = function(){ return "Hello!" };  // Function Expressions   // 🔔 Function dibahas di bab 2-5
+var obj = {nama: "Budi", umur: 13};       // Tipe data: Object      // 🔔 Object dibahas di bab 2-6 & bab 3.
+var reg = /^\d\w\s$/;                     // Tipe data: RegExp      // 🔔 RegExp dibahas di bab 3-2 D.
+var dat = new Date(2016,11,2,9,30,15);    // Tipe data: Date        // 🔔 Date dibahas di bab 3-2 F.
+var fun = function(){ return "Hello!" };  // Function Expressions   // 🔔 Function dibahas di bab 2-5.
 
 console.log(typeof num === "number");     // Output: true   (Check apakah datanya Number)
 console.log(Number.isNaN(nan));           // Output: true   (Check apakah datanya NaN)
@@ -691,7 +684,7 @@ console.log(fun.constructor === Function);// Output: true   (Check apakah datany
 
 ### ![✔] 𝐃. Operator instanceof
 
->  🔔 Operator instanceof dibahas di bab 3-1 B
+>  🔔 Operator instanceof dibahas di bab 3-1 B.
 
 ### ![✔] 𝐄. Operator Aritmatika
 
@@ -786,7 +779,7 @@ console.log(0.3 === 3e-1);            // Output: true   (Karena memang nilainya 
 console.log(true > false)             // Output: true   (Ingat: true = 1, false = 0)
 ```
 
-🔔 Lihat lagi "Periksa Hasil Konversi Boolean & Number" pada bagian 2-2 B di atas.
+📖 Lihat lagi "Periksa Hasil Konversi Boolean & Number" pada bagian 2-2 B di atas.
 
 #### ⤷ Kasus Perbandingan String:
 
@@ -916,7 +909,7 @@ Catatan: Terdapat istilah Type convertion (explicit) & Type coercion (implicit).
 
 ### ![✔] 𝐊. Operator Bitwise
 
-> 🚧 Tidak dibahas (mungkin saja nanti akan ditambahkan)
+> 🚧 Mungkin saja nanti akan ditambahkan.
 
 ### ![✔] 𝐋. Operator Spread
 
@@ -1045,7 +1038,7 @@ if (Infinity) { console.log("Lolos") }        // Output: Lolos      konversi: In
 if (-Infinity) { console.log("Lolos") }       // Output: Lolos      konversi: -Infinity → true
 ```
 
-🔔 Lihat lagi "Periksa Hasil Konversi Boolean" pada bagian 2-2 B di atas.
+📖 Lihat lagi "Periksa Hasil Konversi Boolean" pada bagian 2-2 B di atas.
 
 ### ![✔] 𝐃. Operator Nullish Coalescing
 
@@ -1186,7 +1179,7 @@ for (var [index, i] of arrSiswa.entries()){
 
 Perulangan For in digunakan khusus untuk menampilkan seluruh isi Object (property dan method). Sebenarnya, bisa juga digunakan untuk menampilkan isi Array (karena Array pun termasuk ke dalam tipe data Object), namun tidak disarankan.<br>
 
-🔔 Object dibahas di bab 2-6 & bab 3
+🔔 Object dibahas di bab 2-6 & bab 3.
 
 ```Javascript
 var objMobil = {
@@ -1504,7 +1497,7 @@ console.log(d);                       // STEP 6 🡲 Output: 40 (Bukan 10, karen
 console.log(e);                       // STEP 7 🡲 Output: 60 (Bukan 15, karena nilai var c & d tertimpa di dalam Function foo)
 ```
 
-🔔 Keterangan STEP 1, STEP 2, dst untuk menunjukkan tahapan eksekusi baris kode (Code Execution).
+📖 Keterangan STEP 1, STEP 2, dst untuk menunjukkan tahapan eksekusi baris kode (Code Execution).
 
 ### ![✔] 𝐆. Variable Lookup
 
@@ -1545,7 +1538,7 @@ baz();                                // STEP 2 🡲 Jalankan Function baz
 
 Pada contoh Studi Kasus 2 di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar, itu karena pendefinisian Function bar dilakukan di Global scope (berbeda dengan contoh pada Studi Kasus 1 sebelumnya). Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari ```a``` di scope parent-nya yaitu di Global scope, ditemukanlah definisi ```var a = 1```.
 
-🔔 Variable Lookup berlaku juga untuk ```let```, jadi bukan hanya ```var``` saja.
+📖 Variable Lookup berlaku juga untuk ```let```, jadi bukan hanya ```var``` saja.
 
 ### ![✔] 𝐇. Var, Let & Const
 
@@ -1557,7 +1550,7 @@ Sedangkan let & const bersifat **Block Scope** artinya cakupan scopenya itu semu
 
 let & const sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu let nilainya bisa berubah-ubah sedangkan const nilainya tidak bisa diubah sepanjang kode program (isinya tetap) namun dengan catatan hanya **berlaku pada tipe data primitif**, atau dengan kata lain tipe data Object sekalipun didefinsikan menggunakan const, isinya tetap bisa diubah.
 
-🔔 Mulai dari sini, istilah Variable itu bisa berarti var/let/const.
+⚠️ Mulai dari sini, istilah Variable itu bisa berarti var/let/const.
 
 #### ⤷ Var & Let (1)
 
@@ -1836,7 +1829,7 @@ console.log(hitung(4, 8));            // Output: 6
 
 ### ![✔] 𝐌. Callback & Higher Order Function
 
-Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument (Dilempar ke Function lainnya sebagai Argument dan dieksekusi di dalam Function tersebut), disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function. 🔔 Nantinya Callback banyak dijumpai di **Asynchronous JS**.
+Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument (Dilempar ke Function lainnya sebagai Argument dan dieksekusi di dalam Function tersebut), disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function. 📖 Nantinya Callback banyak dijumpai di **Asynchronous JS**.
 
 #### ⤷ Menjalankan Function di Argument (❌ Bukan Callback)
 
@@ -2267,7 +2260,7 @@ console.log(jumlahHurufC);                            // Output: [4, 4, 5]
 
 #### ⤷ Studi Kasus 2: Return Object
 
-🔔 Object dibahas di bab 2-6 & bab 3
+🔔 Object dibahas di bab 2-6 & bab 3.
 
 ```Javascript
 let arrSiswa = ["Budi", "Joko", "Sukma"];
@@ -2291,7 +2284,7 @@ console.log(jumlahHurufF);                            // Output: [{0: {nama: "Bu
 
 Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ```arrSiswa.map(nama => ({nama: nama}));```. Kemudian, yang membuat menarik yaitu jika nama property Object sama dengan nama nilainya maka tidak perlu ditulis keduanya, menjadi ```arrSiswa.map(nama => ({nama}));```.
 
-🔔 Pembungkusan menggunakan tanda () serupa dengan pembungkusan pada point O di atas terkait IIFE
+📖 Pembungkusan menggunakan tanda () serupa dengan pembungkusan pada point O di atas terkait IIFE.
 
 <hr>
 <div id="bab2_6"></div>
@@ -2353,8 +2346,8 @@ let mobil = {                         // let mobil berisi Object tentang mobil (
 #### ⤷ Mengakses property & method
 
 ```Javascript
-console.log(mobil.merk);              // Output: Toyota Avanza      ⇨ Mengakses property menggunakan Dot Notation (✔️ Recommended)
-console.log(mobil["merk"]);           // Output: Toyota Avanza      ⇨ Mengakses property menggunakan Bracket (❌ Not Recommended)
+console.log(mobil.merk);              // Output: Toyota Avanza      ⇨ Mengakses property menggunakan Dot Notation (✔️)
+console.log(mobil["merk"]);           // Output: Toyota Avanza      ⇨ Mengakses property menggunakan Bracket (❌)
 console.log(mobil.hidupkan());        // Output: Mesin Dihidupkan!  ⇨ Mengakses method tanpa Argument
 console.log(mobil.pergi("Bali"));     // Output: Pergi ke Bali      ⇨ Mengakses method dengan Argument
 ```
@@ -2660,7 +2653,7 @@ Atau sebagai alternatif selain menggunakan "that" seperti contoh di atas, bisa g
 
 #### ⤷ 5. Di dalam method di Constructor Function, keyword this mengacu ke Owner Object (Object yang dibuat).
 
-🔔 Constructor Function dibahas di bab 3-1 B
+🔔 Constructor Function dibahas di bab 3-1 B.
 
 ```Javascript
                                          // STEP 2 🡲 Saat instansiasi Object mobilBudi
@@ -2731,7 +2724,7 @@ mobilBudi.pergi1();
 
 #### ⤷ 6. Di dalam method di Class, keyword this mengacu ke Owner Object (Object yang dibuat).
 
-🔔 Class dibahas di bab 3-1 B
+🔔 Class dibahas di bab 3-1 B.
 
 ```Javascript
                                          // STEP 2 🡲 Saat instansiasi Object mobilBudi
@@ -2813,7 +2806,7 @@ mobilBudi.pergi1();
 
 #### ⤷ 7. Di dalam Event, keyword this mengacu ke Element yang menerima Event tersebut.
 
-🔔 Event dibahas di bab 4-7
+🔔 Event dibahas di bab 4-7.
 
 ```HTML
 <html>
@@ -2832,7 +2825,7 @@ mobilBudi.pergi1();
 
 #### ⤷ 8. Method bind(), call() & apply() membuat keyword this mengacu pada Object yang dituju.
 
-🔔 method bawaan JavaScript dibahas di bab 3-2
+🔔 Method bawaan JavaScript dibahas di bab 3-2.
 
 ```Javascript
 const userA = {
@@ -3091,26 +3084,26 @@ let hasil = teks.potongTeks(6, 10);   // Output: World  ⇨ berbasiskan Object
 #### ⤷ Penulisan Literals VS Object Constructor
 
 ```Javascript
-let num1 = 52;                        // Cara penulisan: Number literals  (✔️ Recommended)
-let num2 = new Number(52);            // Cara penulisan: Number object    (❌ Not Recommended)
-let str1 = "Belajar JS";              // Cara penulisan: String literals  (✔️ Recommended)
-let str2 = new String("Belajar JS");  // Cara penulisan: String Object    (❌ Not Recommended)
-let bol1 = true;                      // Cara penulisan: Boolean literals (✔️ Recommended)
-let bol2 = new Boolean(true);         // Cara penulisan: Boolean object   (❌ Not Recommended)
-let arr1 = [1, 2, 3];                 // Cara penulisan: Array literals   (✔️ Recommended)
-let arr2 = new Array(1, 2, 3);        // Cara penulisan: Array object     (❌ Not Recommended)
-let obj1 = {nama: "Budi", umur: 24};  // Cara penulisan: Object literals  (✔️ Recommended)
-let obj2 = new Object();              // Cara penulisan: Object object    (❌ Not Recommended)
+let num1 = 52;                        // Cara penulisan: Number literals  (✔️)
+let num2 = new Number(52);            // Cara penulisan: Number object    (❌)
+let str1 = "Belajar JS";              // Cara penulisan: String literals  (✔️)
+let str2 = new String("Belajar JS");  // Cara penulisan: String Object    (❌)
+let bol1 = true;                      // Cara penulisan: Boolean literals (✔️)
+let bol2 = new Boolean(true);         // Cara penulisan: Boolean object   (❌)
+let arr1 = [1, 2, 3];                 // Cara penulisan: Array literals   (✔️)
+let arr2 = new Array(1, 2, 3);        // Cara penulisan: Array object     (❌)
+let obj1 = {nama: "Budi", umur: 24};  // Cara penulisan: Object literals  (✔️)
+let obj2 = new Object();              // Cara penulisan: Object object    (❌)
 obj2.nama = "Budi";                   // ⤷ property & method didefinisikan
 obj2.umur = 24;                       // ⤷ setelah Object object dibuat
 
-let reg1 = /ab+c/;                    // Cara penulisan: RegExp literals  (✔️ Recommended)      🔔 RegExp dibahas di bab 3-2 D
-let reg2 = new RegExp("ab+c");        // Cara penulisan: RegExp object    (❌ Not Recommended)
-let date = new Date(2016,11,2,9,30);  // Cara penulisan: Date object      (✔️ Recommended)      🔔 Date dibahas di bab 3-2 F
+let reg1 = /ab+c/;                    // Cara penulisan: RegExp literals  (✔️)  🔔 RegExp dibahas di bab 3-2 D.
+let reg2 = new RegExp("ab+c");        // Cara penulisan: RegExp object    (❌)
+let date = new Date(2016,11,2,9,30);  // Cara penulisan: Date object      (✔️)  🔔 Date dibahas di bab 3-2 F.
                                       // ⤷ Date tidak ada literals-nya
 
-let fun1 = function (a, b){ return a+b; };        // Cara penulisan: Function Expressions/Anonymous Function  (✔️ Recommended)
-let fun2 = new Function('a', 'b', 'return a+b');  // Cara penulisan: Function Object                          (❌ Not Recommended)
+let fun1 = function (a, b){ return a+b; };        // Cara penulisan: Function Expressions/Anonymous Function  (✔️)
+let fun2 = new Function('a', 'b', 'return a+b');  // Cara penulisan: Function Object                          (❌)
 ```
 
 ### ![✔] 𝐁. Object Sebagai OOP
@@ -3308,7 +3301,7 @@ Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property,
 #### ⤷ Contoh JavaScript Native Object
 
 ```Javascript
-let foo = new String("Hello World");  // Cara penulisan: String object (❌ Not Recommended)
+let foo = new String("Hello World");  // Cara penulisan: String object (❌)
 console.log(foo.toUpperCase());       // Output: HELLO WORLD
 console.log(foo.length)               // Output: 11
 ```
@@ -3318,7 +3311,7 @@ Kita tidak pernah mendefinisikan Class String bukan? tetapi kenapa langsung bisa
 Kita tidak pernah mendefinisikan method ```toUpperCase()``` bukan? tetapi kenapa langsung bisa dipakai (melalui dot notation)? itu karena, toUpperCase() merupakan salah satu Instance method bawaan milik String Object, jadi kita bisa langsung pakai. ```length``` merupakan salah satu Instance property bawaan milik String Object.
 
 ```Javascript
-let bar = "Hello World";              // Cara penulisan: String literals (✔️ Recommended)
+let bar = "Hello World";              // Cara penulisan: String literals (✔️)
 console.log(bar.toUpperCase());       // Output: HELLO WORLD
 console.log(bar.length);              // Output: 11
 ```
@@ -3581,7 +3574,7 @@ let polaA = /JavaScript/;
 
 console.log(polaA.test(regA));          // Output: true           ⇨ Check apakah pola /JavaScript/ terdapat di dalam String regA
 console.log(/buku/.test(regA));         // Output: true           ⤷ Penulisan bisa langsung, tanpa disimpan ke dalam let, hal ini
-console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku juga untuk semua Object instance property & method 🔔
+console.log(/Buku/.test(regA));         // Output: false          ⤷ berlaku juga untuk semua Object instance property & method ⚠️
 console.log(/Buku/i.test(regA));        // Output: true           ⤷ i artinya mengabaikan Case Sensitive (selebihnya di point D2)
 ```
 
@@ -3653,7 +3646,7 @@ console.log(polaC.test("acaa"));        // Output: false
 
                                         // Character Set, membuat syarat bahwa hanya karakter tertentu saja yang boleh ditulis:
 let polaD = /[abcde]/;                  // ⤷ Artinya: [minimal terdapat 1 karakter diantara huruf a-e]
-let polaE = /[a-e]/;                    // ⤷ [a-e] merupakan alternatif penulisan dari [abcde] (✔️ Recommended)
+let polaE = /[a-e]/;                    // ⤷ [a-e] merupakan alternatif penulisan dari [abcde] (✔️)
 let polaF = /^[a-e]$/;                  // ⤷ Artinya: [tepat terdapat 1 karakter diantara huruf a-e]
 let polaG = /^[a-e][1-9]../;            // ⤷ Artinya: [tepat 1 karakter a-e] + [min 1 karakter 1-9] + [min 2 karakter bebas]
 let polaH = /[a-e][1-9]..$/;            // ⤷ Artinya: [min 1 karakter a-e] + [tepat 1 karakter 1-9] + [tepat 2 karakter bebas]
@@ -4392,7 +4385,7 @@ console.log(hasil);                         // Output: Sabtu, 5 Juni 2021 13:25:
 
                                             // Membuat Date Object dengan 1 Argument dateString
 let tglAwal   = new Date("06/05/2021");     // let tglAwal diisi dengan 5 Juni 2021          Note: Perhatikan, urutan tanggal
-let tglAkhir  = new Date("12/20/2021");     // let tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik 🔔
+let tglAkhir  = new Date("12/20/2021");     // let tglAkhir diisi dengan 12 Desember 2021          dan bulan terbalik ⚠️
 
 let timeAwal  = tglAwal.getTime();          // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAwal (5 Juni 2021)
 let timeAkhir = tglAkhir.getTime();         // Dapatkan total milidetik sejak 1 Januari 1970 hingga tglAkhir (12 Desember 2021)
@@ -4610,7 +4603,7 @@ console.log(window.screen);               // Output: ▶Screen    (Object)      
 console.log(window.document);             // Output: ▶#document (Object)         ≈ console.log(document);
 ```
 
-console merupakan salah satu property Window, memiliki beberapa method diantaranya ```log()```, ```info()```, ```table()```, ```dir()```. ```console.table()``` berfungsi untuk menampilkan informasi dalam bentuk tabel. ```console.dir()``` berfungsi untuk menampilkan property/method apa yang tersedia dari Object yang dipilih.  📚 Selebihnya lihat di <a href="https://www.w3schools.com/jsref/obj_console.asp">W3Schools: Console Object</a>. 
+console merupakan salah satu property Window, memiliki beberapa method diantaranya ```log()```, ```info()```, ```table()```, ```dir()```. ```console.table()``` berfungsi untuk menampilkan informasi dalam bentuk tabel. ```console.dir()``` berfungsi untuk menampilkan property/method apa yang tersedia dari Object yang dipilih. 📚 Selebihnya lihat di <a href="https://www.w3schools.com/jsref/obj_console.asp">W3Schools: Console Object</a>. 
 
 **A3. Window method**
 
@@ -4633,7 +4626,7 @@ window.getComputedStyle();                // Output: (Menampilkan seluruh Style 
 console.log(window.document.URL);       // Output: http://127.0.0.1:5500/contoh.html  ⇨ URL lengkap dari dokumen HTML
 console.log(window.document.baseURI);   // Output: http://127.0.0.1:5500/contoh.html  ⇨ Absolute base URI dari dokumen
 
-                                        // Note: Dari sini hingga seterusnya penulisan window tidak akan disertakan 🔔
+                                        // Note: Dari sini hingga seterusnya penulisan window tidak akan disertakan ⚠️
 console.log(document.domain);           // Output: 127.0.0.1                          ⇨ Nama domain server yang memuat dokumen
 console.log(document.lastModified);     // Output: 06/10/2021 00:22:21                ⇨ Tanggal & waktu dokumen terakhir diubah
 console.log(document.title);            // Output: Belajar JS                         ⇨ Judul dari dokumen
@@ -4661,7 +4654,7 @@ document.writeln("Hello World");        // Sama seperti write() namun menambah b
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
     <script>
-      // 🔔 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟭 & 𝗖𝟮 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+      // ⚠️ 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟭 & 𝗖𝟮 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
   </body>
 </html>
@@ -4738,7 +4731,7 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
       let nodeEm    = nodeP.childNodes[1];                      // Berisi <𝗲𝗺>JavaScript</𝗲𝗺>
       let nodeB     = nodeP.childNodes[3];                      // Berisi <𝗯>dari Duniailkom</𝗯>
 
-      // 🔔 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+      // ⚠️ 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗖𝟯 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
   </body>
 </html>
@@ -4839,7 +4832,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
     <input type="text" name="isian" value="Isian 1">
     <input type="text" name="isian" value="Isian 2">
     <script>
-      // 🔔 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+      // ⚠️ 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
   </body>
 </html>
@@ -4904,7 +4897,7 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
     <div class="merah tebal">Materi pertama tentang Variable</div>
     <div class="merah">Materi kedua tentang Function</div>
     <script>
-      // 🔔 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
+      // ⚠️ 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
   </body>
 </html>
@@ -4929,7 +4922,7 @@ boo.textContent = "<b>Teks baru 1!</b>";            // Mengubah konten isi dari 
 boo.innerHTML   = "<b>Teks baru 2!</b>";            // Mengubah konten isi dari <𝗽> ... </𝗽>   (<b> membuat teks menjadi tebal)
 boo.outerHTML   = "<h1>Teks baru 3!</h1>"           // Mengubah <𝗽> ... </𝗽> + konten isinya   (diganti menjadi <𝗵𝟭> ... </𝗵𝟭>)
 coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹𝗲> ... </𝘁𝗶𝘁𝗹𝗲> yang ada di <head> pun konten isinya bisa diubah
-                                                    // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
+                                                    // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! ⚠️
 ```
 
 **E2. Memanipulasi atribut di tag HTML**
@@ -4974,7 +4967,7 @@ console.log(foo.style.backgroundColor);             // Output: (kosong)         
 console.log(foo.style.textDecoration);              // Output: (kosong)
 
 foo.style.backgroundColor = "salmon";               // Menambah/menimpa sebuah 𝗜𝗻𝗹𝗶𝗻𝗲 𝗖𝗦𝗦 di tag HTML
-foo.style.fontSize = "1.4em";                       // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! 🔔
+foo.style.fontSize = "1.4em";                       // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! ⚠️
 
 let goo = getComputedStyle(foo);                    // Manampilkan seluruh Style CSS (bukan hanya dari inline CSS saja)
                                                     // ⤷ Method getComputedStyle() milik Window Object (lihat bagian A di atas)
@@ -5120,13 +5113,13 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
       // ➍ Menghapus event tertentu yang dipilih
       // nodeH1C.onclick       = null;   // Berikan nilai null ke property untuk menghapus event
       // nodeH1C.ondblclick    = null;   // Saat ini dilakukan maka event tidak akan berjalan
-      // nodeH1C.oncontextmenu = null;   // Coba jalankan Script di tab console 🔔
+      // nodeH1C.oncontextmenu = null;   // Coba jalankan Script di tab console ⚠️
     </script>
   </body>
 </html>
 ```
 
-### ![✔] 𝐂. Event Handler dari method Element (✔️ Recommended)
+### ![✔] 𝐂. Event Handler dari method Element (✔️)
 
 ```HTML
 <!DOCTYPE html>
@@ -5199,7 +5192,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
       // ➍ Menghapus event tertentu yang dipilih
       // nodeH1C.removeEventListener("click", tampilkanPTengah); // Menghapus event tertentu yang dipilih
-      // nodeH1C.removeEventListener("click", tampilkanPBawah);  // Coba jalankan Script di tab console 🔔
+      // nodeH1C.removeEventListener("click", tampilkanPBawah);  // Coba jalankan Script di tab console ⚠️
     </script>
   </body>
 </html>
@@ -5233,7 +5226,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 <details>
 <summary>Klik untuk membuka!</summary>
 
-<!-- 🔴 Di bawah merupakan contoh materi saja, segera selesaikan. -->
+🔴 Di bawah merupakan contoh materi saja, belum dilengkapi.
 
 <br>
 
