@@ -1548,7 +1548,7 @@ var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function
 
 Sedangkan let & const bersifat **Block Scope** artinya cakupan scopenya itu semua yang bertanda Code Block ```{}``` (blok Function, blok If-Else, blok perulangan, dst), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **private** dan tidak bisa diakses di luar scope.
 
-let & const sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu let nilainya bisa berubah-ubah sedangkan const nilainya tidak bisa diubah sepanjang kode program (isinya tetap), namun terdapat pengecualian, yaitu untuk tipe data Object (Array dan Object) isi elementnya bisa tetap bisa diubah, yang tidak bisa itu mengubah keseluruhan Object (Array dan Object) tersebut.
+let & const sendiri merupakan fitur baru di ES6 yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu let nilainya bisa berubah-ubah sedangkan const nilainya tidak bisa diubah sepanjang kode program (isinya tetap), namun terdapat pengecualian, yaitu untuk tipe data Object (Array dan Object) isi elementnya tetap bisa diubah, yang tidak bisa itu mengubah keseluruhan Object-nya.
 
 ⚠️ Mulai dari sini, istilah Variable itu bisa berarti var/let/const.
 
