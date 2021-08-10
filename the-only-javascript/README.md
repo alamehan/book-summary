@@ -1225,12 +1225,13 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 
 > 𝐅𝐢𝐫𝐬𝐭-𝐂𝐥𝐚𝐬𝐬 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧
 > > - [X] 𝐊. JavaScript Hoisting
-> > - [X] 𝐋. Function Expressions & Anonymous Function
-> > - [X] 𝐌. Callback & Higher Order Function
-> > - [X] 𝐍. Function as Return Value
-> > - [X] 𝐎. Factory Function
-> > - [X] 𝐏. Immediately Invoked Function Expression (IIFE)
-> > - [X] 𝐐. Arrow Function
+> > - [X] 𝐋. Declaration & Expressions
+> > - [X] 𝐌. Function Expressions & Anonymous Function
+> > - [X] 𝐍. Callback & Higher Order Function
+> > - [X] 𝐎. Function as Return Value
+> > - [X] 𝐏. Factory Function
+> > - [X] 𝐐. Immediately Invoked Function Expression (IIFE)
+> > - [X] 𝐑. Arrow Function
 
 ### ![✔] 𝐀. Function Declaration
 
@@ -1806,7 +1807,28 @@ Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan seb
 
 let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai di luar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
 
-### ![✔] 𝐋. Function Expressions & Anonymous Function
+### ![✔] 𝐋. Declaration & Expressions
+
+Terdapat istilah Declaration & Expressions. Declaration ialah mendefinisikan sesuatu untuk kemudian akan digunakan nantinya. Sedangkan Expressions ialah segala sesuatu yang langsung menghasilkan atau mewakili sebuah nilai. Di JavaScript terdapat beragam Expressions:
+
+| No 	| Ragam Expressions             	| Contoh                                                      	| Hasil (Nilai)     	|
+|----	|-------------------------------	|-------------------------------------------------------------	|-------------------	|
+| 1  	| Variable                      	| let age = 24; <br> ```age```                                	| 24                	|
+| 2  	| Number, String & Boolean      	| ```123```, ```"Teks"```, ```true```                         	| 123, "Teks", true 	|
+| 3  	| Operasi Aritmatika            	| ```(4+4)*2```                                               	| 16                	|
+| 4  	| Operasi Increment & Decrement 	| ```50++```                                                  	| 51                	|
+| 5  	| Operasi Perbandingan          	| ```100 > 90```                                              	| true              	|
+| 6  	| Operasi Logika                	| ```true && false```                                         	| false             	|
+| 7  	| Operasi String Concatenation  	| ```"Love" + "Indo"```                                       	| "Love Indo"       	|
+| 8  	| Memanggil Function            	| ```Cetak()```                                               	| "Contoh Teks"     	|
+| 9  	| Conditional Ternary           	| ```10 > 5 ? "😎" : "😒"```                                    	| "😎"               	|
+| 10 	| Nullish Coalescing            	| let data = "Ada isinya"; <br> ```data ?? "Nilai default"``` 	| "Ada isinya"      	|
+
+Perhatikan bahwa semua ragam Expressions pada contoh di atas menghasilkan/mewakili sebuah nilai tertentu (lihat kolom Hasil). Dalam implementasinya, Expressions dapat digunakan di beberapa "tempat" untuk menghasilkan sebuah nilai yang diinginkan, misalnya:
+
+... ... ...
+
+### ![✔] 𝐌. Function Expressions & Anonymous Function
 
 Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (var/let/const), disebut sebagai Function Expressions. Jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
 
@@ -1829,24 +1851,7 @@ let hitung = function(a, b){          // Function Expressions tanpa nama Functio
 console.log(hitung(4, 8));            // Output: 6
 ```
 
-Terdapat istilah Declaration & Expressions. Declaration ialah mendefinisikan sesuatu untuk kemudian akan digunakan nantinya. Sedangkan Expressions ialah segala sesuatu yang langsung menghasilkan atau mewakili sebuah nilai. Di JavaScript terdapat beragam Expressions:
-
-| No 	| Ragam Expressions             	| Contoh                                                      	| Hasil (Nilai)     	|
-|----	|-------------------------------	|-------------------------------------------------------------	|-------------------	|
-| 1  	| Variable                      	| let age = 24; <br> ```age```                                	| 24                	|
-| 2  	| Number, String & Boolean      	| ```123```, ```"Teks"```, ```true```                         	| 123, "Teks", true 	|
-| 3  	| Operasi Aritmatika            	| ```(4+4)*2```                                               	| 16                	|
-| 4  	| Operasi Increment & Decrement 	| ```50++```                                                  	| 51                	|
-| 5  	| Operasi Perbandingan          	| ```100 > 90```                                              	| true              	|
-| 6  	| Operasi Logika                	| ```true && false```                                         	| false             	|
-| 7  	| Operasi String Concatenation  	| ```"Love" + "Indo"```                                       	| "Love Indo"       	|
-| 8  	| Memanggil Function            	| ```Cetak()```                                               	| "Contoh Teks"     	|
-| 9  	| Conditional Ternary           	| ```10 > 5 ? "😎" : "😒"```                                    	| "😎"               	|
-| 10 	| Nullish Coalescing            	| let data = "Ada isinya"; <br> ```data ?? "Nilai default"``` 	| "Ada isinya"      	|
-
-Perhatikan bahwa semua ragam Expressions pada contoh di atas menghasilkan/mewakili sebuah nilai tertentu (lihat kolom Hasil). Dalam implementasinya, Expressions dapat digunakan di beberapa "tempat" untuk menghasilkan sebuah nilai yang diinginkan, misalnya:
-
-### ![✔] 𝐌. Callback & Higher Order Function
+### ![✔] 𝐍. Callback & Higher Order Function
 
 Selanjutnya karena dianggap sebagai tipe data inilah Function juga dapat digunakan sebagai Argument (Dilempar ke Function lainnya sebagai Argument dan dieksekusi di dalam Function tersebut), disebut Callback. Lalu Function yang memiliki Callback sebagai Argument disebut sebagai Higher Order Function. 📖 Nantinya Callback banyak dijumpai di **Asynchronous JS**.
 
@@ -1955,7 +1960,7 @@ funB("Joko", (arg) => console.log(arg));            // Output: Pagi, Joko!    �
 
 🔔 Contoh Callback & Higher Order Function dibahas di bab 3-2 E (forEach, map, filter, every, some, find, reduce, dll).
 
-### ![✔] 𝐍. Function as Return Value
+### ![✔] 𝐎. Function as Return Value
 
 Masih dengan alasan karena dianggap sebagai tipe data, Function juga dapat digunakan sebagai return value dari Function lainnya. Dan ketika sebuah Function memiliki return value berupa Function, ini disebut sebagai Higher Order Function juga.
 
@@ -2076,7 +2081,7 @@ cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengir
                                       //         Hello 2!
 ```
 
-### ![✔] 𝐎. Factory Function
+### ![✔] 𝐏. Factory Function
 
 Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya. Bisa dianggap Function yang baru berjalan separuhnya, lalu dijalankan secara penuh melalui Factory Function.
 
@@ -2131,7 +2136,7 @@ sapaJaka("Pintar");                   // Output: Pagi, Jaka Pintar!   ⇨ Menjal
 sapaJaka("Cerdas");                   // Output: Pagi, Jaka Cerdas!   ⇨ Menjalankan Factory Function sapaJaka("Cerdas");
 ```
 
-### ![✔] 𝐏. Immediately Invoked Function Expression (IIFE)
+### ![✔] 𝐐. Immediately Invoked Function Expression (IIFE)
 
 Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut sebagai IIFE. Jika dalam Function biasa kita menjalankan Function dengan cara memanggil nama Function yang dipilih lalu ditambahkan tanda (), maka dalam IIFE kita dapat menjalankan Function langsung saat Function tersebut dibuat dengan cara menulis perintah berpola ```(___)()```, dimana ___ diisi dengan Function yang hendak dibuat, misalnya ```(function(){ console.log("A") })()```. Atau bisa juga polanya ```(___())```, misalnya ```(function(){ console.log("A") }())```.
 
@@ -2215,7 +2220,7 @@ console.log(add());                   // Output: 2              ⇨ Menjalankan 
 console.log(add());                   // Output: 3              ⇨ Menjalankan IIFE add();
 ```
 
-### ![✔] 𝐐. Arrow Function
+### ![✔] 𝐑. Arrow Function
 
 Arrow Function merupakan fitur baru ES6, digunakan sebagai alternatif penulisan Function Expressions. Arrow Function lebih sederhana secara penulisan syntax. 🔔 Namun tidak hanya itu, di bab 2-6 D nanti akan dibahas fitur lainnya terkait konteks this pada Arrow Function.
 
