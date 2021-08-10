@@ -1222,10 +1222,10 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 > > - [X] 𝐇. Var, Let & Const
 > > - [X] 𝐈. Inner & Outer Function
 > > - [X] 𝐉. Closures (Function)
-
-> 𝐅𝐢𝐫𝐬𝐭-𝐂𝐥𝐚𝐬𝐬 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧
 > > - [X] 𝐊. JavaScript Hoisting
 > > - [X] 𝐋. Declaration & Expressions
+> 
+> 𝐅𝐢𝐫𝐬𝐭-𝐂𝐥𝐚𝐬𝐬 𝐅𝐮𝐧𝐜𝐭𝐢𝐨𝐧
 > > - [X] 𝐌. Function Expressions & Anonymous Function
 > > - [X] 𝐍. Callback & Higher Order Function
 > > - [X] 𝐎. Function as Return Value
@@ -1811,22 +1811,34 @@ let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di 
 
 Terdapat istilah Declaration & Expressions. Declaration ialah mendefinisikan sesuatu untuk kemudian akan digunakan nantinya. Sedangkan Expressions ialah segala sesuatu yang langsung menghasilkan atau mewakili sebuah nilai. Di JavaScript terdapat beragam Expressions:
 
-| No 	| Ragam Expressions             	| Contoh                                                      	| Hasil (Nilai)     	|
-|----	|-------------------------------	|-------------------------------------------------------------	|-------------------	|
-| 1  	| Variable                      	| let age = 24; <br> ```age```                                	| 24                	|
-| 2  	| Number, String & Boolean      	| ```123```, ```"Teks"```, ```true```                         	| 123, "Teks", true 	|
-| 3  	| Operasi Aritmatika            	| ```(4+4)*2```                                               	| 16                	|
-| 4  	| Operasi Increment & Decrement 	| ```50++```                                                  	| 51                	|
-| 5  	| Operasi Perbandingan          	| ```100 > 90```                                              	| true              	|
-| 6  	| Operasi Logika                	| ```true && false```                                         	| false             	|
-| 7  	| Operasi String Concatenation  	| ```"Love" + "Indo"```                                       	| "Love Indo"       	|
-| 8  	| Memanggil Function            	| ```Cetak()```                                               	| "Contoh Teks"     	|
-| 9  	| Conditional Ternary           	| ```10 > 5 ? "😎" : "😒"```                                    	| "😎"               	|
-| 10 	| Nullish Coalescing            	| let data = "Ada isinya"; <br> ```data ?? "Nilai default"``` 	| "Ada isinya"      	|
+| No 	| Ragam Expressions               	| Contoh                                                                                	| Output (Hasil)            	|
+|----	|---------------------------------	|---------------------------------------------------------------------------------------	|---------------------------	|
+| 1  	| Variable                        	| ```let age = 24;``` <br> ```console.log(age);```                                      	| 24                        	|
+| 2  	| Number <br> String <br> Boolean 	| ```console.log(123);``` <br> ```console.log("Teks");``` <br> ```console.log(true);``` 	| 123 <br> "Teks" <br> true 	|
+| 3  	| Operasi Aritmatika              	| ```console.log((4+4)*2);```                                                           	| 16                        	|
+| 4  	| Operasi Increment & Decrement   	| ```let age = 32;``` <br> ```console.log(++age);```                                    	| 33                        	|
+| 5  	| Operasi Perbandingan            	| ```console.log(100 > 90);```                                                          	| true                      	|
+| 6  	| Operasi Logika                  	| ```console.log(true && false)```                                                      	| false                     	|
+| 7  	| Operasi String Concatenation    	| ```console.log("Love" + "Indo");```                                                   	| "LoveIndo"                	|
+| 8  	| Memanggil Function              	| ```let fun = function () { return "Hello" };``` <br> ```console.log(fun());```        	| "Hello"                   	|
+| 9  	| Conditional Ternary             	| ```console.log(10 > 5 ? "Yes" : "No");```                                             	| "Yes"                     	|
+| 10 	| Nullish Coalescing              	| ```let data = "Ada isinya";``` <br> ```console.log(data ?? "Nilai default");```       	| "Ada isinya"              	|
 
-Perhatikan bahwa semua ragam Expressions pada contoh di atas menghasilkan/mewakili sebuah nilai tertentu (lihat kolom Hasil). Dalam implementasinya, Expressions dapat digunakan di beberapa "tempat" untuk menghasilkan sebuah nilai yang diinginkan, misalnya:
+Perhatikan bahwa semua ragam Expressions pada contoh di atas menghasilkan/mewakili sebuah nilai tertentu (lihat kolom Output). Dalam implementasinya, Expressions tidak hanya digunakan di ```console.log()``` seperti pada contoh di atas saja, namun juga di beberapa "tempat", yaitu:
 
-... ... ...
+| No 	| "Tempat" untuk Expressions 	| Pola                                     	| Contoh                                                                                                                    	| Output 	|
+|----	|----------------------------	|------------------------------------------	|---------------------------------------------------------------------------------------------------------------------------	|--------	|
+| 1  	| Debugging di Console       	| ```console.log(…)```                     	| ```let age = 32;``` <br> ```console.log(age);```                                                                          	| 32     	|
+| 2  	| Deklarasi Variable         	| ```let data = …```                       	| ```let data1 = (4+4)*2;``` <br> ```console.log(data1);```                                                                 	| 16     	|
+| 3  	| Deklarasi Array            	| ```let arr = […]```                      	| ```let arrA = [100 > 90];``` <br> ```console.log(arrA[0]);```                                                             	| true   	|
+| 4  	| Deklarasi Object           	| ```let obj = { key: … }```               	| ```let objA = { key: true && false };``` <br> ```console.log(objA["key"]);```                                             	| false  	|
+| 5  	| Memanggil Array            	| ```arrA[…]```                            	| ```let cetak = function() { return 10/5 };``` <br> ```let arrB = [1, 2, 3];``` <br> ```console.log(arrB[cetak()]);```     	| 3      	|
+| 6  	| Memanggil Object           	| ```objA[…]```                            	| ```let objB = { firstName: "Budi" };``` <br> ```let nameKey = "Name";``` <br> ```console.log(objB["first" + nameKey]);``` 	| "Budi" 	|
+| 7  	| Template String            	| ``` `${++…}` ```                         	| ```let umur = 32;``` <br> ``` let data2 = `${++umur};` ``` <br> ```console.log(data2);```                                 	| 33     	|
+| 8  	| Return pada Function       	| ```let fun = function () { return … }``` 	| ```let fun = function () { return 10 > 5 ? "Yes" : "No" };``` <br> ```console.log(fun());```                              	| "Yes"  	|
+| 9  	| Dan lainnya (Menyusul)     	| -                                        	| -                                                                                                                         	| -      	|
+
+Keterangan...
 
 ### ![✔] 𝐌. Function Expressions & Anonymous Function
 
