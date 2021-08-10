@@ -378,7 +378,7 @@ var numP = -9/0;                      // Membagi angka negatif dengan nol mengha
 console.log(numP);                    // Output: -Infinity (Negatif Tak Hingga)
 
 console.log(numN, numO, numP);        // Output: NaN Infinity -Infinity
-                                      // Nilai pada console bisa diisi lebih dari satu
+                                      // Nilai pada console.log() bisa diisi lebih dari satu
 ```
 
 ### ![✔] 𝐂. String
