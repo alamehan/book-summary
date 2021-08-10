@@ -1844,7 +1844,7 @@ Terdapat istilah Declaration & Expressions. Declaration ialah mendefinisikan ses
 | 9  	| Conditional Ternary           	| ```10 > 5 ? "😎" : "😒"```                                    	| "😎"               	|
 | 10 	| Nullish Coalescing            	| let data = "Ada isinya"; <br> ```data ?? "Nilai default"``` 	| "Ada isinya"      	|
 
-Perhatikan bahwa semua ragam Expressions pada contoh di atas menghasilkan/mewakili sebuah nilai tertentu (lihat kolom Hasil). Dalam praktiknya, Expressions dapat digunakan di beberapa "tempat", misalnya:
+Perhatikan bahwa semua ragam Expressions pada contoh di atas menghasilkan/mewakili sebuah nilai tertentu (lihat kolom Hasil). Dalam implementasinya, Expressions dapat digunakan di beberapa "tempat" untuk menghasilkan sebuah nilai yang diinginkan, misalnya:
 
 ### ![✔] 𝐌. Callback & Higher Order Function
 
