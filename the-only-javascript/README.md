@@ -1842,6 +1842,8 @@ Perhatikan bahwa ragam Expressions pada contoh di atas menghasilkan/mewakili seb
 
 Jadi suatu saat misalnya anda bertemu dengan kode seperti ```let role = obj[experience > 100 ? "work" : "intern"]``` jangan pusing, pada dasarnya kode tersebut berupa ```let role = obj[...]``` dimana ```...``` berupa expressions yang menghasilkan nilai diantara "work" atau "intern".
 
+🔔 Object dibahas di bab 2-6 & bab 3.
+
 ### ![✔] 𝐌. Function Expressions & Anonymous Function
 
 Hal yang unik dari JavaScript yaitu Function dianggap sebagai tipe data. Ini berarti Function dapat disimpan ke dalam Variable (var/let/const), disebut sebagai Function Expressions. Jika sebuah Function Expressions ditulis tanpa nama Function-nya, disebut sebagai Anonymous Function.
