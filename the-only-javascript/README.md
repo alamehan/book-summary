@@ -1824,7 +1824,7 @@ Terdapat istilah Declaration & Expressions. Declaration ialah mendefinisikan ses
 | 9  	| Conditional Ternary             	| ```console.log(10 > 5 ? "Yes" : "No");```                                             	| "Yes"                     	|
 | 10 	| Nullish Coalescing              	| ```let data = "Ada isinya";``` <br> ```console.log(data ?? "Nilai default");```       	| "Ada isinya"              	|
 
-Perhatikan bahwa ragam Expressions pada contoh di atas menghasilkan/mewakili sebuah nilai tertentu, seperti misalnya ```age``` yang mewakili nilai ```24```, atau ```100 > 90``` yang menghasilkan ```true```, atau ```10 > 5 ? "Yes" : "No"``` yang menghasilkan ```"Hello"```, dst. Dalam implementasinya, Expressions tidak hanya digunakan di ```console.log()``` seperti pada contoh di atas saja, namun juga di beberapa "tempat", yaitu:
+Perhatikan bahwa ragam Expressions pada contoh di atas menghasilkan/mewakili sebuah nilai tertentu, seperti misalnya ```age``` yang mewakili nilai ```24```, atau ```100 > 90``` yang menghasilkan ```true```, atau ```10 > 5 ? "Yes" : "No"``` yang menghasilkan ```"Yes"```, dst. Dalam implementasinya, Expressions tidak hanya digunakan di ```console.log()``` seperti pada contoh di atas saja, namun juga di beberapa "tempat", yaitu:
 
 | No 	| "Tempat" untuk Expressions 	| Pola                                     	| Contoh                                                                                                                    	| Output 	|
 |----	|----------------------------	|------------------------------------------	|---------------------------------------------------------------------------------------------------------------------------	|--------	|
