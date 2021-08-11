@@ -283,7 +283,10 @@ Format penulisan: var/let diawali huruf kecil (```total```, ```totalBiaya```, ds
 
 Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var ```harga```, let ```namaLengkap```, dan const ```NILAI_PI``` adalah Identifier. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah Literal.
 
-## `1-6. Strict Mode <a href="#daftar_isi_bab1">🡅</a>
+<hr>
+<div id="bab1_6"></div>
+
+## `1-6. Strict Mode` <a href="#daftar_isi_bab1">🡅</a>
 
 **Strict Mode** berfungsi untuk melarang programmer melakukan hal-hal tertentu, misalnya mendefinisikan Variable menggunakan "future" reserved word, artinya sebuah keyword yang sudah "dipesan" JavaScript untuk dijadikan reserved word di masa depan, seperti ```interface```, ```private```, ```protected```, dst. Selain itu, strict mode juga memaksa JavaScript menampilkan error (di Tab Console) pada kode program yang seharusnya bisa berjalan “normal”. Tujuannya, meminimalisir kemungkinan bug karena penulisan yang salah, typo, dan berbagai hal lain. 
 
