@@ -81,7 +81,9 @@ Setelah perang web browser pertama berakhir dengan kekalahan telak Netscape, per
 
 <img src="assets/chrome-winner.png"><br>
 
-ECMAScript 6 atau ES6 atau ECMAScript 2015 dirilis pada bulan Juni 2015. Banyak penambahan baru pada versi ini, sebagian besar merupakan fitur lanjutan untuk membuat aplikasi yang kompleks, seperti penggunaan **JavaScript di server menggunakan Node.js**. Mulai dari ECMAScript 6 dan selanjutnya, penamaan ECMAScript akan menggunakan nama tahun saat standar tersebut dirilis, seperti ECMAScript 2015, ECMAScript 2016, dst. Banyak perdebatan mengenai pilihan nama ini, sehingga masih sering disebut sebagai ECMAScript 6 (ES6).
+ES5 (ECMAScript 5) dirilis pada tahun 2009, menghadirkan beragam fitur menarik. Berselang 6 tahun kemudian yaitu pada tahun 2015, ES6 (ECMAScript 6/ES2015) rilis sebagai versi update terbesar yang pernah ada, menghadirkan banyak sekali fitur modern yang canggih dan powerful, sebagian besar merupakan fitur lanjutan untuk membuat aplikasi yang kompleks, seperti penggunaan **JavaScript di server menggunakan Node.js**. 
+
+Setelah ES6 ini, ECMAScript memutuskan tidak lagi rilis segudang fitur sekaligus dalam satu waktu dengan konsekuensi memakan waktu bertahun-tahun lamanya (seperti yang terjadi di ES6), melainkan mengubahnya menjadi pola rilis tahunan, men-deliver fitur terbarunya sedikit demit sedikit. ES6/ES2015 hingga ES11/ES2020 kemudian disebut sebagai ES6+, dan ES12/ES2021 hingga seterusnya disebut sebagai ESNext. Namun secara umum dari semenjak ES6 dan seterusnya disebut sebagai Modern JavaScript.
 
 **JavaScript Engine** adalah mekanisme internal yang dimiliki oleh web browser untuk menjalankan kode JavaScript. JavaScript Engine dapat disamakan dengan compiler dalam bahasa pemograman lain, yakni algoritma yang digunakan untuk menjalankan JavaScript. Semakin cepat sebuah web browser menjalankan JavaScript akan semakin baik. **V8** adalah nama JavaScript Engine untuk Google Chrome, **SpiderMonkey** untuk Mozilla Firefox, dan **Chakra** untuk Internet Explorer.
 
