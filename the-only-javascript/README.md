@@ -279,7 +279,7 @@ Di CSS kita menggunakan cara penulisan selector yang dipisah dengan tanda “ - 
 
 EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah ```let``` untuk membuat Variable (sebagai alternatif dari ```var```). Perbedaan mendasar dari ```var``` dan ```let``` adalah terkait dengan **Variable scope**, yakni di bagian mana sebuah Variable masih bisa diakses. Penjelasan mengenai Variable scope akan dibahas pada bab tentang Function. Selain let, ada juga Konstanta (```const```) yaitu Variable yang nilainya tidak bisa diubah sepanjang kode program. Setelah Konstanta ditulis dan diberi nilai awal, isi Konstanta tersebut tidak bisa diubah.
 
-Format penulisan: var/let diawali huruf kecil (```total```, ```totalBiaya```, dst), const huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). **Class dibahas di bab 11**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variable, Konstanta maupun Class.
+Format penulisan: var/let diawali huruf kecil (```total```, ```totalBiaya```, dst), const huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). 🔔 **Class dibahas di bab 3-1 B.**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variable, Konstanta maupun Class.
 
 Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var ```harga```, let ```namaLengkap```, dan const ```NILAI_PI``` adalah Identifier. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah Literal.
 
@@ -1177,7 +1177,7 @@ do {
 
 ### ![✔] 𝐃. For of Loop
 
-Perulangan For of digunakan khusus untuk menampilkan element Erray. Hasil dari perulangan For of di bawah ini sama saja dengan hasil perulangan For untuk menampilkan element Array pada point A di atas.
+Perulangan For of digunakan khusus untuk menampilkan element Erray. Hasil dari perulangan For of di bawah ini sama saja dengan hasil perulangan For untuk menampilkan element Array pada contoh A di atas 🔔.
 
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
@@ -1374,7 +1374,7 @@ console.log(ratarata(2, 4, 8, 16));   // Output: 7.5  (Hasil dari (2+4+8+16)/4 �
 
 ### ![✔] 𝐄. Rest Parameter
 
-Selain untuk menggabungkan Array seperti yang sudah dibahas di bab 2-2 L, Spread (...) juga dapat digunakan untuk menggantikan peran Arguments Object, dan inilah yang disebut dentan Rest Parameter. Hasil pemanggilan Function sama saja dengan point D di atas.
+Selain untuk menggabungkan Array seperti yang sudah dibahas sebelum-sebelumnya, Spread (...) juga dapat digunakan untuk menggantikan peran Arguments Object, dan inilah yang disebut dentan Rest Parameter. Hasil pemanggilan Function sama saja dengan point D di atas 🔔.
 
 ```Javascript
 function numC(...arg){                // Rest Parameter. Penulisannya tidak harus ...arg, bisa dengan kata lain, ...bebas.
@@ -1401,7 +1401,7 @@ numD(20, 25, 30, 15);                 // Output: 20, 25, [30, 15]
 #### ⤷ Studi Kasus: Rata-Rata (V2)
 
 ```Javascript
-function rataratav2(...nilai){        // Studi kasus rata-rata pada point D di atas, dapat kita buat ulang dengan memanfaatkan
+function rataratav2(...nilai){        // Studi kasus rata-rata pada point D di atas 🔔, dapat kita buat ulang dengan memanfaatkan
   var totalArg = nilai.length;        // Rest Parameter serta perulangan for of, hasilnya aka sama saja.
   var hasil = 0;
   for (var i of nilai){
@@ -1606,7 +1606,7 @@ console.log(`Harganya Rp.${l}`);      // Output: Harganya Rp.1000   (Nilai l glo
 #### ⤷ Var, Let & Const
 
 ```Javascript
-console.log(tempA);                   // Output: Undefined (Terjadi karena efek hoisting, dibahas pada point K di bawah)
+console.log(tempA);                   // Output: Undefined (Terjadi karena efek hoisting, 🔔 dibahas pada point K di bawah)
 console.log(tempB);                   // Output: ReferenceError Cannot access 'tempB' before init (benar, memang seharusnya error)
 console.log(tempC);                   // Output: ReferenceError Cannot access 'tempC' before init (benar, memang seharusnya error)
 
@@ -1808,7 +1808,7 @@ function funB(){                      //   var nama = undefined;          🡲 �
 console.log(nama);                    // function funB(){                 🡲 Tidak ada Parameter yang menangkap Argument
 var nama = "Jaka";                    //   console.log(nama);             🡲 Baris ini akan mencari variable "nama" di Global
 funA();                               //   console.log(arguments[0]);     🡲 Argument yang dikirim akan masuk ke Array Argument
-funB("Tono");                         // }                                   ⤷ Lihat lagi point D di atas
+funB("Tono");                         // }                                   ⤷ Lihat lagi point D di atas 🔔
 console.log(nama);                    // console.log(nama);               🡲 Output: undefined
                                       // nama = "Jaka";
                                       // funA();                          🡲 Output: Budi
@@ -1961,7 +1961,7 @@ function funA(){
 }
 function coba(aksi1, aksi2, n){       // aksi1 & aksi2 merupakan Callback, sehingga Function coba disebut Higher Order Function
   aksi1();                            // aksi1() akan menjadi funA()
-  aksi2();                            // aksi2() akan menjadi (function(){console.log("Ciluk")})() ⇨ IIFE, lihat point O di bawah.
+  aksi2();                            // aksi2() akan menjadi (function(){console.log("Ciluk")})() ⇨ IIFE, lihat point O 🔔.
   console.log(`Baa ${n} kali`);
 }
 coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   ⇨ Mengirim funA, function(){console.log("Ciluk")}
@@ -1972,7 +1972,7 @@ coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   �
 ```Javascript
 function funA(nama, aksi){            // aksi merupakan Callback, sehingga Function funA disebut Higher Order Function
   aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); menjadi (function(arg){ console.log(arg) }))(`Pagi, ${nama}!`);
-}                                     //                                  ⤷ IIFE dengan Argument, lihat point O di bawah.
+}                                     //                                  ⤷ IIFE dengan Argument, lihat point O di bawah 🔔.
 
 funA("Budi", function(arg){ console.log(arg) });    // Output: Pagi, Budi!    ⇨ Mengirim String "Budi" & function(arg){ ... }
                                                     //                           sebagai Argument. Perhatikan bahwa Function
@@ -1981,8 +1981,8 @@ funA("Budi", function(arg){ console.log(arg) });    // Output: Pagi, Budi!    �
 
 function funB(nama, aksi){            // Function ini sama seperti funA di atas
   aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); menjadi ((arg) => console.log(arg))(`Pagi, ${nama}!`);
-                                      //                                  ⤷ IIFE dengan Argument, lihat point O di bawah.
-                                      //                                  ⤷ Arrow Function, lihat point P di bawah.
+                                      //                                  ⤷ IIFE dengan Argument, lihat point O di bawah 🔔.
+                                      //                                  ⤷ Arrow Function, lihat point P di bawah 🔔.
 }
 funB("Joko", (arg) => console.log(arg));            // Output: Pagi, Joko!    ⇨ Sama seperti di atas, bedanya Function
                                                     //                           ditulis dengan cara Arrow Function.
@@ -2172,7 +2172,7 @@ Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut 
 
 Sebenarnya ide awalnya yaitu perintah berpola ```___()``` saja, namun kita tidak bisa langsung membuat Function lalu ditambahkan tanda () begitu saja, karena akan terjadi error. Melainkan Function tersebut harus dibungkus terlebih dahulu menggunakan tanda () lalu ditambah lagi tanda () yang kedua sebagai perintah untuk menjalankan Function tersebut. Sehingga pola perintahnya ```(___)()``` atau ```(___())```, bukan ```___()```.
 
-Selain itu, IIFE digunakan juga untuk membuat var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope** (lihat kembali point G di atas), sehingga var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6+, var sudah "digantikan" oleh let yang secara default memang sudah bersifat Block Scope.
+Selain itu, IIFE digunakan juga untuk membuat var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope**, sehingga var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6+, var sudah "digantikan" oleh let yang secara default memang sudah bersifat Block Scope.
 
 #### ⤷ Function Biasa & IIFE
 
@@ -2298,7 +2298,7 @@ console.log(totalC(1, 2, 3));                         // Output: 6
 let arrSiswa = ["Budi", "Joko", "Sukma"];
 
 let jumlahHurufA = arrSiswa.map(function(nama) {      // Penulisan Function Expressions biasa
-  return nama.length;                                 // Note: Object instance method "map" dibahas di bab 3-2 E
+  return nama.length;                                 // 🔔 Note: Object instance method "map" dibahas di bab 3-2 E
 });
 
 let jumlahHurufB = arrSiswa.map((nama) => {           // Penulisan dengan Arrow Function (1)
@@ -2338,7 +2338,7 @@ console.log(jumlahHurufF);                            // Output: [{0: {nama: "Bu
 
 Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ```arrSiswa.map(nama => ({nama: nama}));```. Kemudian, yang membuat menarik yaitu jika nama property Object sama dengan nama nilainya maka tidak perlu ditulis keduanya, menjadi ```arrSiswa.map(nama => ({nama}));```.
 
-📖 Pembungkusan menggunakan tanda () serupa dengan pembungkusan pada point O di atas terkait IIFE.
+🔔 Pembungkusan menggunakan tanda () serupa dengan pembungkusan pada point O di atas terkait IIFE.
 
 <hr>
 <div id="bab2_6"></div>
@@ -2703,7 +2703,7 @@ let mhs = {
 mhs.halo();
 ```
 
-Atau sebagai alternatif selain menggunakan ```that``` seperti contoh di atas, bisa gunakan method apply() pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(this);```, ```innerB();``` menjadi ```innerB.apply(this);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya dibuat sama dengan konteks this milik method-nya (Outer Function-nya), yaitu mengacu ke Owner Object (Dalam kasus ini yaitu Object mhs). Lebih jelasnya terkait method ```apply()``` lihat contoh pada point nomor 8 di bawah.
+Atau sebagai alternatif selain menggunakan ```that``` seperti contoh di atas, bisa gunakan method apply() pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(this);```, ```innerB();``` menjadi ```innerB.apply(this);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya dibuat sama dengan konteks this milik method-nya (Outer Function-nya), yaitu mengacu ke Owner Object (Dalam kasus ini yaitu Object mhs). Lebih jelasnya terkait method ```apply()``` lihat contoh pada point nomor 8 di bawah 🔔.
 
 #### ⤷ 5. Di dalam method di Constructor Function, keyword this mengacu ke Owner Object (Object yang dibuat).
 
@@ -2739,7 +2739,7 @@ mobilBudi.pergi1();                      // STEP 3 🡲 Menjalankan method pergi
 mobilBudi.pergi2();                      //           Menjalankan method pergi2 milik Object mobilBudi
 ```
 
-Dalam kasus method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas.
+Dalam kasus method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas 🔔.
 
 Dimana jika Inner Function ditulis dengan cara Function Definitions & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan ```that``` seperti pada contoh sebelumnya, atau gunakan method apply(). Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
@@ -3370,7 +3370,7 @@ console.log(bar.toUpperCase());       // Output: HELLO WORLD
 console.log(bar.length);              // Output: 11
 ```
 
-Ternyata meskipun Variable bar didefinisikan secara String literals, bukan secara String Object, kita masih tetap bisa memakai Instance method & Instance property bawaan String Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A di atas).
+Ternyata meskipun Variable bar didefinisikan secara String literals, bukan secara String Object, kita masih tetap bisa memakai Instance method & Instance property bawaan String Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A di atas 🔔).
 
 <hr>
 <div id="bab3_2"></div>
@@ -3572,7 +3572,7 @@ console.log(strD.split());              // Output: ["Bandung kota kembang"]     
 console.log(strD.split(""));            // Output: ["B", "a", "n", "d" ...]            menjadi sebuah Array, Argument pertama diisi
 console.log(strD.split("", 1));         // Output: ["B"]                               karakter "pembatas" yang digunakan untuk
 console.log(strD.split(" "));           // Output: ["Bandung", "kota", "kembang"]      memecah String (atau bisa juga diisi dengan
-console.log(strD.split(" ", 2));        // Output: ["Bandung", "kota"]                 RegExp, dibahas di point D), sedangkan
+console.log(strD.split(" ", 2));        // Output: ["Bandung", "kota"]                 RegExp, dibahas di point D 🔔), sedangkan
 console.log(strE.split(", "));          // Output: ["Satu", "dua", "tiga", "empat"]    Argument kedua (optional), diisi dengan
 console.log(strE.split(", ", 3));       // Output: ["Satu", "dua", "tiga"]             jumlah element Array yang ingin diambil.
 console.log(strF.split(/\W/));          // Output: ["Satu", "dua", "tiga", "empat"]  ⤷ /\W/ merupakan contoh pemakaian RegExp
@@ -4737,7 +4737,7 @@ console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  
 ```
 
 Note: Karakter Carriage Return adalah karakter enter/baris baru. Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
-masalah yang sering membuat pusing jika menelusuri struktur DOM tree satu per satu secara manual. Solusinya lihat di point D1 di bawah.
+masalah yang sering membuat pusing jika menelusuri struktur DOM tree secara manual. Solusinya lihat di point D1 di bawah 🔔.
 
 **C2. Node property**
 
