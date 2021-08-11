@@ -81,7 +81,7 @@ Setelah perang web browser pertama berakhir dengan kekalahan telak Netscape, per
 
 <img src="assets/chrome-winner.png"><br>
 
-ES5 (ECMAScript 5) dirilis pada tahun 2009, menghadirkan beragam fitur menarik. Berselang 6 tahun kemudian yaitu pada tahun 2015, ES6 (ECMAScript 6/ES2015) rilis sebagai versi update terbesar yang pernah ada, menghadirkan banyak sekali fitur modern yang canggih dan powerful, sebagian besar merupakan fitur lanjutan untuk membuat aplikasi yang kompleks, seperti penggunaan **JavaScript di server menggunakan Node.js**. 
+ES5 (ECMAScript 5) dirilis pada tahun 2009, menghadirkan beragam fitur menarik. Berselang 6 tahun kemudian yaitu pada tahun 2015, ES6 (ECMAScript 6/ES2015) rilis sebagai versi update terbesar yang pernah ada, menghadirkan banyak sekali fitur modern yang canggih dan powerful. Sebagian besar merupakan fitur lanjutan untuk membuat aplikasi yang kompleks.
 
 Setelah ES6 ini, ECMAScript memutuskan tidak lagi rilis segudang fitur sekaligus dalam satu waktu dengan konsekuensi memakan waktu bertahun-tahun lamanya (seperti yang terjadi di ES6), melainkan mengubahnya menjadi pola rilis tahunan, men-deliver fitur terbarunya sedikit demit sedikit. ES6/ES2015 hingga ES11/ES2020 kemudian disebut sebagai ES6+, dan ES12/ES2021 hingga seterusnya disebut sebagai ESNext. Namun secara umum dari semenjak ES6 dan seterusnya disebut sebagai Modern JavaScript.
 
