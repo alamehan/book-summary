@@ -36,6 +36,7 @@ Catatan: Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadan
 | <a href="#bab1_3">1-3. Menjalankan Kode</a>          	| X Menit       	|
 | <a href="#bab1_4">1-4. Aturan Dasar</a>              	| X Menit       	|
 | <a href="#bab1_5">1-5. Variable</a>                  	| X Menit       	|
+| <a href="#bab1_6">1-6. Strict Mode</a>                | X Menit       	|
 
 <hr>
 <div id="bab1_1"></div>
@@ -276,13 +277,19 @@ Kita bisa memberi nama apa saja untuk Variable, apakah itu ```angka```, ```foo``
 
 Di CSS kita menggunakan cara penulisan selector yang dipisah dengan tanda “ - ”, seperti ```main-box```, ```left-sidebar```, dan ```single-post```. Di PHP kita mengenal **Snake Case**, yakni menggunakan huruf kecil dan tanda underscore sebagai pemisah Variable, seperti ```jumlah_barang```, ```nama_dosen```, dan ```alamat_siswa```. Di JavaScript menggunakan **CamelCase**. CamelCase adalah cara penulisan Variable dimana jika sebuah Variable terdiri dari beberapa kata, huruf pertama dari kata kedua dan seterusnya diubah menjadi huruf besar, seperti: ```banyakAnggota```, ```totalBiaya```, ```mainBox```, atau ```jumlahKlikSatuHari```. Jika Variable tersebut hanya terdiri dari 1 kata, ditulis dengan huruf kecil semua.
 
-**Strict Mode** memaksa JavaScript menampilkan error (di Tab Console) pada kode program yang seharusnya bisa berjalan “normal”. Tujuannya, meminimalisir kemungkinan bug karena penulisan yang salah, typo, dan berbagai hal lain. Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu anda gunakan, terutama jika terdapat kode JavaScript pendahulu yang terlalu rumit untuk diubah semuanya. Strict Mode akan membuat web browser menampilkan error dimana sebelumnya hanya ada **“silent error”**. Salah satunya ketika membuat Variable tanpa perintah ```var```. Untuk masuk ke dalam Strict Mode, tambahkan String ```"use strict";``` di baris pertama kode JavaScript atau di baris paling awal dari sebuah Function (jika ingin menerapkanya hanya pada sebuah Function tertentu).
-
 EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah ```let``` untuk membuat Variable (sebagai alternatif dari ```var```). Perbedaan mendasar dari ```var``` dan ```let``` adalah terkait dengan **Variable scope**, yakni di bagian mana sebuah Variable masih bisa diakses. Penjelasan mengenai Variable scope akan dibahas pada bab tentang Function. Selain let, ada juga Konstanta (```const```) yaitu Variable yang nilainya tidak bisa diubah sepanjang kode program. Setelah Konstanta ditulis dan diberi nilai awal, isi Konstanta tersebut tidak bisa diubah.
 
 Format penulisan: var/let diawali huruf kecil (```total```, ```totalBiaya```, dst), const huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). **Class dibahas di bab 11**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variable, Konstanta maupun Class.
 
 Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var ```harga```, let ```namaLengkap```, dan const ```NILAI_PI``` adalah Identifier. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah Literal.
+
+## `1-6. Strict Mode <a href="#daftar_isi_bab1">🡅</a>
+
+**Strict Mode** berfungsi untuk melarang programmer melakukan hal-hal tertentu, misalnya mendefinisikan Variable menggunakan "future" reserved word, artinya sebuah keyword yang sudah "dipesan" JavaScript untuk dijadikan reserved word di masa depan, seperti ```interface```, ```private```, ```protected```, dst. Selain itu, strict mode juga memaksa JavaScript menampilkan error (di Tab Console) pada kode program yang seharusnya bisa berjalan “normal”. Tujuannya, meminimalisir kemungkinan bug karena penulisan yang salah, typo, dan berbagai hal lain. 
+
+Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu anda gunakan, terutama jika terdapat kode JavaScript pendahulu yang terlalu rumit untuk diubah semuanya. Strict Mode akan membuat web browser menampilkan error dimana sebelumnya hanya ada **“silent error”**. Salah satunya ketika membuat Variable tanpa didahului keyword ```var```/```let```/```const``` (bisa saja karena lupa). 
+
+Untuk masuk ke dalam Strict Mode, tambahkan String ```"use strict";``` di baris pertama kode JavaScript atau di baris paling awal dari sebuah Function (jika ingin menerapkanya hanya pada sebuah Function tertentu).
 
 ```HTML
 <html>
