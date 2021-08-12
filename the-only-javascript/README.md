@@ -1163,14 +1163,14 @@ while (j > 1){
 let dadu = ath.trunc(Math.random() * 6) + 1; // Generate nomor acak dari 1-6
 
 while (dadu !== 6) {
-	console.log(`Angka dadu yang muncul: ${dadu}`);
-	dadu = Math.trunc(Math.random() * 6) + 1; // Generate nomor acak baru
-
-	if (dadu === 6) console.log(`Angka dadu yang muncul: ${dadu} STOP!`);
+  console.log(`Angka dadu yang muncul: ${dadu}`);
+  dadu = Math.trunc(Math.random() * 6) + 1; // Generate nomor acak baru
+  
+  if (dadu === 6) console.log(`Angka dadu yang muncul: ${dadu} STOP!`);
 }
 ```
 
-Pada contoh di atas, perulangan While Loop hanya akan berhenti ketika nilai dadu-nya 6. Untuk eksperiment, coba ganti setiap angka 6 pada kode di atas menjadi angka berapapun, misalnya 9999.
+Pada contoh di atas, perulangan While Loop hanya akan berhenti ketika nilai dadu-nya sama dengan 6. Coba lakukan eksperimen, ganti setiap angka 6 pada kode di atas menjadi angka berapapun yang anda inginkan, misalnya 9999. Lalu lihat hasilnya pada Tab Console.
 
 ### ![✔] 𝐂. Do While Loop
 
