@@ -12,7 +12,7 @@ Catatan: Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadan
 
 | Emoticon 	| Keterangan                                	|
 |----------	|-------------------------------------------	|
-| 🔔        	| Konsep lanjutan yang diperkenalkan diawal 	|
+| 🔔        	| Baca selebihnya di bab/point yang ditunjuk 	|
 | 🚧        	| Materi tidak dibahas di markdown ini      	|
 | 📚        	| Resource eksternal (berupa website)       	|
 | 📖        	| Informasi tambahan yang berguna           	|
