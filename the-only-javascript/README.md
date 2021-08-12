@@ -25,6 +25,8 @@ Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu dik
 | ❌        	| Tidak direkomendasikan untuk digunakan    	|
 | 🔴        	| Catatan belum dilengkapi (menyusul)       	|
 
+# Let's Get Started!
+
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">🠉</a>
 
 <details>
