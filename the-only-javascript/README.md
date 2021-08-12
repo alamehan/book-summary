@@ -2459,13 +2459,15 @@ let mobil = {
     return `Pergi ke ${tempat}`;
   },
   discount(){
-    this.potong = this.harga - (this.harga*0.1);
+    this.potong = this.harga - (this.harga * 0.1);
     return this.potong;
   }
 };
 
 console.log(mobil.discount());        // Output: 180000000
 ```
+
+🔔 Keyword this dibahas pada bab 2-6 D dibawah.
 
 #### ⤷ Mengubah nilai property & method
 
