@@ -4112,7 +4112,7 @@ console.log(arrM.indexOf("e"));         // Output: -1
 
 **E4. Object instance method (dengan Callback)**
 
-Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
+Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). ⚠️ Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 
 **E4-1.** ```forEach()``` berfungsi menjalankan sebuah Function tertentu untuk setiap element di Array (mirip seperti for of, jalan sebanyak jumlah element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa Method Array lainnya (seperti: map, filter, find, reduce) mengembalikan sebuah Array baru.
 
