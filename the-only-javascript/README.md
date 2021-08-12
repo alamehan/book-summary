@@ -55,7 +55,7 @@ Perkembangan JavaScript yang sangat pesat akhir-akhir ini melahirkan banyak pene
 
 Apa yang akan kita pelajari dalam markdown ini terdiri dari 2 kelompok besar: JavaScript dan **DOM (Document Object Model)**. JavaScript adalah bahasa pemrograman, sedangkan DOM merupakan Object HTML yang akan kita manipulasi, seperti teks, gambar, form, tombol, title bar web browser, event, dll. Bahasa pemrograman JavaScript dikembangkan oleh ECMA, sedangkan DOM dikembangkan oleh W3C (organisasi yang juga membuat standar HTML dan CSS). Bisa dibilang, JavaScript sepenuhnya terpisah dari HTML.
 
-Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika anda merasa jenuh dengan pembahasan dari bab 1 hingga 3, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi Object HTML yang nantinya diakses lewat DOM di bab 4.
+Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika anda merasa jenuh dengan pembahasan dari bab 1 hingga 3, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi Object HTML yang nantinya diakses lewat DOM di bab 4 🔔.
 
 <hr>
 <div id="bab1_2"></div>
@@ -1561,7 +1561,7 @@ Pada contoh Studi Kasus 2 di atas hati-hati keliru, output dari ```console.log(a
 
 ### ![✔] 𝐇. Var, Let & Const
 
-Melanjutkan pembahasan Local Variable di bab 2-5 F sebelumya (di atas), diketahui bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi/dimanipulasi nilainya di luar scope (kecuali blok Function), ini menjadikannya **tidak aman**. Sedangkan penggunaan ```let``` & ```const``` sama sekali tidak mempengaruhi/tidak bisa dimanipulasi nilainya di luar scope, ini menjadikannya **aman**.
+Melanjutkan pembahasan Local Variable di bab 2-5 F sebelumya (di atas) 🔔, diketahui bahwa penggunaan ```var``` sebagai Local Variable dapat mempengaruhi/dimanipulasi nilainya di luar scope (kecuali blok Function), ini menjadikannya **tidak aman**. Sedangkan penggunaan ```let``` & ```const``` sama sekali tidak mempengaruhi/tidak bisa dimanipulasi nilainya di luar scope, ini menjadikannya **aman**.
 
 var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function saja, maka ini berarti tidak termasuk blok If-Else dan semua yang bertanda Code Block ```{}``` (selain dari pada Code Block di Function tentunya), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **tidak private** dan bisa diakses di luar scope. 
 
@@ -3328,7 +3328,7 @@ console.log(mobilJoko.pulang("Jakarta"));         // Output: Honda Civic pulang 
 
 ### ![✔] 𝐂. Pengantar Native Object
 
-Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B), keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak property & method. 
+Sampai disini, kita telah membuat Object sebagai tipe data (Bab 2-6 A) maupun Object sebagai OOP (Bab 3-1 B) 🔔, keduanya merupakan Object yang kita buat (definisikan) sendiri. Selain itu, JavaScript memiliki Object bawaan (JavaScript Native Object) yang bisa kita gunakan secara langsung. Object bawaan ini memiliki banyak property & method. 
 
 📚 Daftar lengkap Object bawaan JavaScript dapat dilihat di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">MDN: Global Object Reference</a>.
 
@@ -3934,7 +3934,7 @@ console.log(arrD.length);               // Output: 7
 ```
 
 ```Javascript
-let arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Contoh ini sama seperti di bab 2-4 A. Kondisi (n<arrSiswa.length)
+let arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];  // Ini sama seperti di bab 2-4 A 🔔. Kondisi (n<arrSiswa.length)
 for (let n=0; n<arrSiswa.length; n++){                      // ⤷ akan selalu di check nilainya dalam setiap perulangan, padahal
   console.log(arrSiswa[n]);                                 // ⤷ nilai arrSiswa.length tidak pernah berubah (tidak efisien).
 }                                                           // Output: Andri, Joko, Sukma, Rina, Sari
