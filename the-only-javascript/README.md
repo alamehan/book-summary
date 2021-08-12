@@ -2424,11 +2424,11 @@ console.log(person[data]);            // Output: Guru               ⇨ Bracket 
 console.log(person.data);             // Output: undefined          ⇨ Dot notation tidak bisa berupa expressions (variable, dll)
 
 let temp = "nama ";
-console.log(person[temp + "depan"]);  // Output: Budi               ⇨ Bracket notation bisa berupa expressions
+console.log(person[temp + "depan"]);  // Output: Budi               ⇨ Bracket notation bisa berupa expressions (variable, dll)
 console.log(person[temp + "tengah"]); // Output: Senjani
 ```
 
-📖 Pada tabel <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN: Operator Precedence</a>, Dot notation ialah **Member Access**, sedangkan Bracket notation ialah **Computed Member Access**.
+📖 Pada tabel <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN: Operator Precedence</a>, dot notation ialah **Member Access**, sedangkan bracket notation ialah **Computed Member Access**.
 
 #### ⤷ Menambah property & method
 
