@@ -2444,6 +2444,29 @@ console.log(mobil.modif);             // Output: true
 console.log(mobil.matikan());         // Output: Mesin Dimatikan!
 ```
 
+Perhatikan contoh di bawah ini, pada Object mobil tidak terdapat definisi property "potong", namun di method ```discount()``` terdapat perintah ```this.potong```. Karena ```this.potong``` tidak mengacu kemana-mana, maka secara otomatis JavaScript akan menjadikannya sebuah property baru bagi Object mobil.
+
+```Javascript
+let mobil = {
+  merk: "Toyota Avanza",
+  tipe: "MPV",
+  harga: 200000000,
+
+  hidupkan(){
+    return "Mesin Dihidupkan!";
+  },
+  pergi(tempat){
+    return `Pergi ke ${tempat}`;
+  },
+  discount(){
+    this.potong = this.harga - (this.harga*0.1);
+    return this.potong;
+  }
+};
+
+console.log(mobil.discount());        // Output: 180000000
+```
+
 #### ⤷ Mengubah nilai property & method
 
 ```Javascript
