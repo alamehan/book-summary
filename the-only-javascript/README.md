@@ -2406,7 +2406,7 @@ console.log(mobil.hidupkan());        // Output: Mesin Dihidupkan!  ⇨ Mengakse
 console.log(mobil.pergi("Bali"));     // Output: Pergi ke Bali      ⇨ Mengakses method dengan Argument
 ```
 
-Dalam banyak kasus dot notation lebih banyak dijumpai/digunakan, dan secara penulisan syntax lebih sederhana. Sedangkan bracket notation biasanya digunakan hanya dalam beberapa kasus tidak umum yang memang hanya bisa di-handle oleh bracket notation, misalnya contoh berikut:
+Dalam banyak kasus dot notation lebih banyak dijumpai/digunakan, dan penulisan syntax-nya sederhana. Sedangkan bracket notation biasanya digunakan hanya dalam beberapa kasus tidak umum yang memang hanya bisa di-handle oleh bracket notation, misalnya contoh berikut:
 
 ```Javascript
 let person = {
