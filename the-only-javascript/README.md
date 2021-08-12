@@ -2406,6 +2406,30 @@ console.log(mobil.hidupkan());        // Output: Mesin Dihidupkan!  ⇨ Mengakse
 console.log(mobil.pergi("Bali"));     // Output: Pergi ke Bali      ⇨ Mengakses method dengan Argument
 ```
 
+Dalam banyak kasus dot notation lebih banyak dijumpai/digunakan, dan secara penulisan syntax lebih sederhana. Sedangkan bracket notation biasanya digunakan hanya dalam beberapa kasus tidak umum yang memang hanya bisa di-handle oleh bracket notation, misalnya contoh berikut:
+
+```Javascript
+let person = {
+  "nama depan": "Budi",
+  "nama tengah": "Senjani",
+  pekerjaan: "Guru",
+  umur: 32
+}
+
+console.log(person["nama depan"]);    // Output: Budi               ⇨ Bracket notation bisa mengakses key dengan spasi
+// console.log(person.nama depan);    // Output: Error              ⇨ Dot notation tidak bisa mengakses key dengan spasi
+
+let data = prompt("Apa yang ingin kamu tahu tentang budi?");        // Misal nilai inputan diisi dengan: pekerjaan
+console.log(person[data]);            // Output: Guru               ⇨ Bracket notation bisa berupa expressions (variable, dll)
+console.log(person.data);             // Output: undefined          ⇨ Dot notation tidak bisa berupa expressions (variable, dll)
+
+let temp = "nama ";
+console.log(person[temp + "depan"]);  // Output: Budi               ⇨ Bracket notation bisa berupa expressions
+console.log(person[temp + "tengah"]); // Output: Senjani
+```
+
+memiliki beberapa kelebihan
+
 #### ⤷ Menambah property & method
 
 ```Javascript
@@ -2419,6 +2443,8 @@ console.log(mobil.warna);             // Output: Biru
 console.log(mobil.modif);             // Output: true
 console.log(mobil.matikan());         // Output: Mesin Dimatikan!
 ```
+
+📖 Pada tabel <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN: Operator Precedence</a>, Dot notation ialah **Member Access**, sedangkan Bracket notation ialah **Computed Member Access**.
 
 #### ⤷ Mengubah nilai property & method
 
