@@ -1160,11 +1160,11 @@ while (j > 1){
 #### ⤷ Studi Kasus
 
 ```Javascript
-let dadu = Math.trunc(Math.random() * 6) + 1; // Generate nomor acak dari 1-6
+let dadu = Math.trunc(Math.random() * 6) + 1;           // Generate nomor acak dari 1-6
 
 while (dadu !== 6) {
   console.log(`Angka dadu yang muncul: ${dadu}`);
-  dadu = Math.trunc(Math.random() * 6) + 1; // Generate nomor acak baru
+  dadu = Math.trunc(Math.random() * 6) + 1;             // Generate nomor acak baru (untuk perulangan berikutnya)
   
   if (dadu === 6) console.log(`Angka dadu yang muncul: ${dadu} STOP!`);
 }
