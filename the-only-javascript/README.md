@@ -2444,7 +2444,7 @@ console.log(mobil.modif);             // Output: true
 console.log(mobil.matikan());         // Output: Mesin Dimatikan!
 ```
 
-Perhatikan contoh di bawah ini, pada Object mobil tidak terdapat definisi property "potong", namun di method ```discount()``` terdapat perintah ```this.potong```. Karena ```this.potong``` tidak mengacu kemana-mana, maka secara otomatis JavaScript akan menjadikannya sebuah property baru bagi Object mobil.
+Perhatikan contoh di bawah ini, pada Object mobil tidak terdapat definisi property "potong", namun di method ```discount()``` terdapat perintah ```this.potong```. Karena ```this.potong``` tidak mengacu kemana-mana, maka secara otomatis JavaScript akan menjadikannya sebuah property baru.
 
 ```Javascript
 let mobil = {
