@@ -3392,7 +3392,7 @@ console.log(huruf);                   // Output: ["A", "B", "C"]
 console.log(tampung2);                // Output: D
 ```
 
-Karena ```push``` dan ```pop``` merupakan sebuah method, maka tentunya ia juga dapat mengembalikan/me-return sesuatu. Misalnya seperti pada contoh di atas, jika ditampung ke dalam sebuah Variable terlebih dahulu (tidak hanya menjalankan method-nya saja), maka method push me-return panjang (length) dari Array tersebut, sedangkan method pop me-return nilai yang di hapus dari Array. Namun, pada praktiknya jarang sekali hasil return sebuah method bawaan JavaScript ditampung ke Variable, kecuali memang ada keperluan tertentu untuk diolah lebih lanjut lagi. 
+Karena ```push``` dan ```pop``` merupakan sebuah method, maka tentunya ia juga dapat mengembalikan/me-return sesuatu. Misalnya seperti pada contoh di atas, jika ditampung ke dalam sebuah Variable terlebih dahulu (tidak hanya menjalankan method-nya saja), maka method push me-return panjang (length) dari Array tersebut, sedangkan method pop me-return nilai yang di hapus dari Array. Namun, pada praktiknya jarang sekali hasil return sebuah method bawaan JavaScript ditampung ke Variable, kecuali memang ada keperluan tertentu untuk diolah lebih lanjut.
 
 ⚠️ Di pembahasan-pembahasan berikutnya, method bawaan JavaScript hanya akan dijalankan saja, tidak ditampung hasil return-nya.
 
