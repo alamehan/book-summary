@@ -8,7 +8,11 @@
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>. Jalur Belajar Web Developer akses di <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a>. Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover oleh Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari beberapa website (lihat Referensi).
 
-Catatan: Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga. 
+"20+ years dev experience, 8 books with 100k+ copies sold, 300k+ hours watched of my videos, 4k+ taught in person... And you know what? I still struggle to get my code to work and it's still a tedious slog. And my code still confuses me the next day. You're not alone in these struggles." <a href="https://github.com/getify">Kyle Simpson (Getify)</a>, penulis buku seri "You Don't Know JS".
+
+Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu diketahui dalam Web Development. Web Development adalah bidang ilmu yang sangat luas, jadi itu benar-benar normal dan dapat diterima bahwa Anda tidak pernah tahu segalanya tentang Web Development. Jangan terlalu membebani pundakmu dan membuat terlalu banyak ekspektasi. Developer dan senior terbaik sekalipun tidak memiliki masalah dalam mengakui bahwa mereka tidak tahu segalanya seperti ungkapan Kyle Simpson di atas.
+
+**Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga.
 
 | Emoticon 	| Keterangan                                	|
 |----------	|-------------------------------------------	|
