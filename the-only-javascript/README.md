@@ -36,7 +36,7 @@ Catatan: Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadan
 | <a href="#bab1_3">1-3. Menjalankan Kode</a>          	| X Menit       	|
 | <a href="#bab1_4">1-4. Aturan Dasar</a>              	| X Menit       	|
 | <a href="#bab1_5">1-5. Variable</a>                  	| X Menit       	|
-| <a href="#bab1_6">1-6. Strict Mode</a>                | X Menit       	|
+| <a href="#bab1_6">1-6. Strict Mode & Debugger</a>     | X Menit       	|
 
 <hr>
 <div id="bab1_1"></div>
@@ -286,7 +286,7 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var `
 <hr>
 <div id="bab1_6"></div>
 
-## `1-6. Strict Mode` <a href="#daftar_isi_bab1">🡅</a>
+## `1-6. Strict Mode & Debugger` <a href="#daftar_isi_bab1">🡅</a>
 
 **Strict Mode** berfungsi untuk melarang programmer melakukan hal-hal tertentu, misalnya mendefinisikan Variable menggunakan "future" reserved word, artinya sebuah keyword yang sudah "dipesan" JavaScript untuk dijadikan reserved word di masa depan, seperti ```interface```, ```private```, ```protected```, dst. Selain itu, strict mode juga memaksa JavaScript menampilkan error (di Tab Console) pada kode program yang seharusnya bisa berjalan “normal”. Tujuannya, meminimalisir kemungkinan bug karena penulisan yang salah, typo, dan berbagai hal lain. 
 
@@ -312,6 +312,22 @@ Untuk masuk ke dalam Strict Mode, tambahkan String ```"use strict";``` di baris 
     </script>
   </body>
 </html>
+```
+
+**Debugger**: Merupakan sebuah keyword di JavaScript yang berfungsi untuk melakukan debugging code (menelusuri bug dalam kode). Sebenarnya debugging bisa dilakukan hanya dengan menggunakan ```console.log()```, namun untuk kode yang alurnya rumit ```debugger``` akan jauh lebih membantu. Cara kerjanya yaitu, JavaScript akan membaca seluruh kode yang dibuat dari atas ke bawah hingga ditemukan keyword ```debugger;```, maka secara otomatis proses akan berhenti, lalu akan ditampilkan informasi yang dibutuhkan pada Tab Sources (di sebelah kanan Tab Console pada menu Developer Tools). Berikut contoh penggunaanya:
+
+```Javascript
+...
+
+let nama = "Budi";
+let umur = 32;
+
+debugger;           // JavaScript akan berhenti disini
+
+nama = "Senjani";
+umur = 24;
+
+...
 ```
 
 </details>
