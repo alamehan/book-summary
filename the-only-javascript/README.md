@@ -14,6 +14,8 @@ Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu dik
 
 **Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga.
 
+# Let's Get Started!
+
 | Emoticon 	| Keterangan                                	|
 |----------	|-------------------------------------------	|
 | 🔔        	| Baca selebihnya di bab/point yang ditunjuk 	|
@@ -24,8 +26,6 @@ Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu dik
 | ✔️        	| Direkomendasikan untuk digunakan          	|
 | ❌        	| Tidak direkomendasikan untuk digunakan    	|
 | 🔴        	| Catatan belum dilengkapi (menyusul)       	|
-
-# Let's Get Started!
 
 ## ① 𝒫𝑒𝓇𝓀𝑒𝓃𝒶𝓁𝒶𝓃 👋 <a href="#top">🠉</a>
 
