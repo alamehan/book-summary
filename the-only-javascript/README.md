@@ -1157,6 +1157,21 @@ while (j > 1){
 }                                     // Output: 20, 18, 16, 14, 12
 ```
 
+#### ⤷ Studi Kasus
+
+```Javascript
+let dadu = ath.trunc(Math.random() * 6) + 1; // Generate nomor acak dari 1-6
+
+while (dadu !== 6) {
+	console.log(`Angka dadu yang muncul: ${dadu}`);
+	dadu = Math.trunc(Math.random() * 6) + 1; // Generate nomor acak baru
+
+	if (dadu === 6) console.log(`Angka dadu yang muncul: ${dadu} STOP!`);
+}
+```
+
+Pada contoh di atas, perulangan While Loop hanya akan berhenti ketika nilai dadu-nya 6. Untuk eksperiment, coba ganti setiap angka 6 pada kode di atas menjadi angka berapapun, misalnya 9999.
+
 ### ![✔] 𝐂. Do While Loop
 
 Berbeda dengan perulangan While, dalam perulangan Do While kondisi akan di check di akhir. Hal ini menyebabkan setidaknya perulangan akan diproses 1 kali, walaupun kondisi tersebut sudah tidak terpenuhi sejak awal.
