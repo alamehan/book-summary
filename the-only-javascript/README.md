@@ -4,7 +4,7 @@
 
 <div id="top"></div>
 
-# 𝐓𝐡𝐞 𝐎𝐧𝐥𝐲 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭
+# The Only JavaScript
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>. Jalur Belajar Web Developer akses di <a href="https://alamehan.github.io/road/webdev/">Right Tr4ck</a>. Materi utama di page ini diambil dari buku <a href="https://www.duniailkom.com/javascript-uncover-panduan-belajar-javascript-untuk-pemula/">JavaScript Uncover oleh Duniailkom.com</a>. Selebihnya merupakan materi pelengkap, gabungan dari beberapa website (lihat Referensi).
 
@@ -2428,7 +2428,7 @@ console.log(person[temp + "depan"]);  // Output: Budi               ⇨ Bracket 
 console.log(person[temp + "tengah"]); // Output: Senjani
 ```
 
-memiliki beberapa kelebihan
+📖 Pada tabel <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN: Operator Precedence</a>, Dot notation ialah **Member Access**, sedangkan Bracket notation ialah **Computed Member Access**.
 
 #### ⤷ Menambah property & method
 
@@ -2443,8 +2443,6 @@ console.log(mobil.warna);             // Output: Biru
 console.log(mobil.modif);             // Output: true
 console.log(mobil.matikan());         // Output: Mesin Dimatikan!
 ```
-
-📖 Pada tabel <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN: Operator Precedence</a>, Dot notation ialah **Member Access**, sedangkan Bracket notation ialah **Computed Member Access**.
 
 #### ⤷ Mengubah nilai property & method
 
