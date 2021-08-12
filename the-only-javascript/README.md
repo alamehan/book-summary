@@ -3372,6 +3372,30 @@ console.log(bar.length);              // Output: 11
 
 Ternyata meskipun Variable bar didefinisikan secara String literals, bukan secara String Object, kita masih tetap bisa memakai Instance method & Instance property bawaan String Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A di atas 🔔).
 
+#### ⤷ Hasil Return Method Bawaan JavaScript
+
+```JavaScript
+let huruf = ["A", "B", "C"];
+
+huruf.push("D");
+console.log(huruf);                   // Output: ["A", "B", "C", "D"]
+
+huruf.pop();
+console.log(huruf);                   // Output: ["A", "B", "C"]
+
+let tampung1 = huruf.push("D");
+console.log(huruf);                   // Output: ["A", "B", "C", "D"]
+console.log(tampung1);                // Output: 4
+
+let tampung2 = huruf.pop();
+console.log(huruf);                   // Output: ["A", "B", "C"]
+console.log(tampung2);                // Output: D
+```
+
+Karena ```push``` dan ```pop``` merupakan sebuah method, maka tentunya ia juga dapat mengembalikan/me-return sesuatu. Misalnya seperti pada contoh di atas, jika ditampung ke dalam sebuah Variable terlebih dahulu (tidak hanya menjalankan method-nya saja), maka method push me-return panjang (length) dari Array tersebut, sedangkan method pop me-return nilai yang di hapus dari Array. Namun, pada praktiknya jarang sekali hasil return sebuah method bawaan JavaScript ditampung ke Variable, kecuali memang ada keperluan tertentu untuk diolah lebih lanjut lagi. 
+
+⚠️ Di pembahasan-pembahasan berikutnya, method bawaan JavaScript hanya akan dijalankan saja, tidak ditampung hasil return-nya.
+
 <hr>
 <div id="bab3_2"></div>
 
