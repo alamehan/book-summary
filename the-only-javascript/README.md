@@ -57,7 +57,7 @@ HTML, CSS dan JavaScript sama-sama termasuk ke dalam kelompok “client side pro
 
 **Server Side Programming**: Untuk menjalankan kode program PHP kita harus menggunakan aplikasi seperti Apache web server (bagian dari XAMPP). Kita tidak bisa melihat kode PHP yang digunakan sebuah website secara langsung layaknya HTML, CSS dan JavaScript.
 
-Perkembangan JavaScript yang sangat pesat akhir-akhir ini melahirkan banyak penerapan lain dari JavaScript. Misal **Node.js** adalah penggunaan JavaScript di sisi server. Dalam markdown ini kita hanya fokus membahas penggunaan JavaScript di sisi client (di dalam web browser).
+Perkembangan JavaScript yang sangat pesat melahirkan banyak penerapan lain dari JavaScript. Sebagai contoh, **Node.js** adalah penggunaan JavaScript di sisi server. Dalam markdown ini kita hanya fokus membahas penggunaan JavaScript di sisi client (di dalam web browser).
 
 Apa yang akan kita pelajari dalam markdown ini terdiri dari 2 kelompok besar: JavaScript dan **DOM (Document Object Model)**. JavaScript adalah bahasa pemrograman, sedangkan DOM merupakan Object HTML yang akan kita manipulasi, seperti teks, gambar, form, tombol, title bar web browser, event, dll. Bahasa pemrograman JavaScript dikembangkan oleh ECMA, sedangkan DOM dikembangkan oleh W3C (organisasi yang juga membuat standar HTML dan CSS). Bisa dibilang, JavaScript sepenuhnya terpisah dari HTML.
 
