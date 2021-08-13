@@ -492,7 +492,7 @@ greet();                              // Menjalankan Function tanpa Argument pad
                                       // memiliki Parameter menghasilkan Undefined (sebagai default)
 ```
 
-🔔 Function dibahas di bab 2-5.
+🔔 Array dibahas di bab 2-1 G (di bawah). Object dibahas di bab 2-6 & bab 3. Function dibahas di bab 2-5.
 
 ### ![✔] 𝐅. Symbol
 
