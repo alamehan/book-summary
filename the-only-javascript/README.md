@@ -3285,7 +3285,7 @@ let mobilJoko = {
 };
 ```
 
-Object mobilBudi & mobilJoko sebenarnya memiliki property dan method yang sama. Bagaimana jika nanti ada Object mobilPutri, mobilAndi, dst, misalya kita butuh hingga 100 Object mobil (dengan property dan method yang sama), maka akan sangat tidak efisien jika Object tersebut ditulis secara manual satu per satu secara berulang. Oleh karena itulah, konsep OOP hadir sebagai solusi, dimana kita dapat menggunakan Class sebagai wadah yang menyediakan semua hal yang dibutuhkan oleh Object.
+Object mobilBudi & mobilJoko sebenarnya memiliki property dan method yang sama. Bagaimana jika nanti ada Object mobilPutri, mobilAndi, dst, misalya kita butuh hingga 100 Object mobil (dengan property dan method yang sama), maka akan sangat tidak efisien jika Object tersebut ditulis secara manual satu per satu secara berulang (**DRY: Don't Repeat Yourself!**). Oleh karena itulah, konsep OOP hadir sebagai solusi, dimana kita dapat menggunakan Class sebagai wadah yang menyediakan semua hal yang dibutuhkan oleh Object.
 
 Class berperan sebagai "blue print"/cetakan/sesuatu yang masih abstrak yang menjadi kelompok umum dari Object. Misalnya, jika Mobil adalah Class, maka mobilBudi, mobilJoko, mobilPutri, dst merupakan Object dari Class Mobil. Jika Binatang adalah Class, maka sapi, kambing, kuda, dst merupakan Object dari Class Binatang. Jika Buah adalah Class, maka jeruk, apel, nanas, dst merupakan Object dari Class Buah.
 
@@ -3312,7 +3312,7 @@ function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang b
 ```Javascript
 // ➋ OOP dengan Function Declaration + Object.create()
 
-const khususmethod = {
+const khususMethod = {
   hidupkan: function(){
     return `Mesin ${this.merk} dihidupkan!`;
   },
@@ -3322,7 +3322,7 @@ const khususmethod = {
 }
 
 function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang berfungsi sebagai "blue print mobil"
-  let mobil   = Object.create(khususmethod);      // Note: Sebenarnya sama dengan "let mobil = {}", hanya saja dengan
+  let mobil   = Object.create(khususMethod);      // Note: Sebenarnya sama dengan "let mobil = {}", hanya saja dengan
   mobil.merk  = merkArg;                          //       menggunakan Object.create() kita dapat menyimpan Parameter
   mobil.tipe  = tipeArg;                          //       yang mengacu ke Object lainnya, tujuannya untuk membawa
   mobil.harga = hargaArg;                         //       Propery & method dari Object lainnya tersebut.
@@ -3404,7 +3404,7 @@ console.log(mobilJoko.pergi("Solo"));             // Output: Honda Civic pergi k
 
 Sebenarnya instansiasi Object sama seperti menjalankan Function pada umumnya, dalam kasus di atas berarti ```Mobil()```. Hanya saja perbedaanya, ada tambahan keyword ```new``` di depannya, menjadi ```new Mobil()```. Lalu disimpan ke dalam Variable, ```mobilBudi = new Mobil()```.
 
-Dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak perlu repot-repot menulis Object Mobil secara manual satu per satu secara berulang, cukup dengan membuat "blue print" berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi. Ini akan terasa manfaatnya saat aplikasi sudah besar.
+Dengan menerapkan konsep OOP melalui Constructor Functions maupun Class (kedepannya kita hanya akan menggunakan Class saja), kita tidak perlu repot-repot menulis Object Mobil secara manual satu per satu secara berulang, cukup dengan membuat "blue print" berupa Class, lalu buat Object yang diinginkan melalui proses instansiasi. Ini akan terasa manfaatnya saat aplikasi sudah semakin besar dan kompleks.
 
 #### ⤷ Menambah property & method sebuah Class dengan Prototype
 
@@ -3433,8 +3433,8 @@ Di markdown ini akan dibahas beberapa diantaranya yang sering dijumpai, yaitu ``
 |--------------------------	|----------------------------------------------------------------	|-------------------------	|
 | Object property          	| ```console.log(Number.MAX_VALUE);```                           	| 1.7976931348623157e+308 	|
 | Object method            	| ```console.log(Number.parseInt("12.045"));```                  	| 12 (Number, not String) 	|
-| Object instance property 	| ```let foo = "Belajar JavaScript"; console.log(foo.length);``` 	| 18                      	|
-| Object instance method   	| ```let foo = 50.12345; console.log(foo.toPrecision(5));```     	| 50.123                  	|
+| Object instance property 	| ```let foo = "Belajar JavaScript";```<br>```console.log(foo.length);``` 	| 18                      	|
+| Object instance method   	| ```let foo = 50.12345;```<br>```console.log(foo.toPrecision(5));```     	| 50.123                  	|
 
 
 Object property & Object method melekat langsung ke Object-nya (Class-nya), ```Number.MAX_VALUE``` & ```Number.parseInt("12.045")```, dimana ```Number``` merupakan Object-nya, sedangkan ```MAX_VALUE``` sebagai Object property & ```parsetInt()``` sebagai Object method-nya.
