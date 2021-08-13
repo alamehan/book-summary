@@ -12,7 +12,7 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu diketahui dalam Web Development. Web Development adalah bidang ilmu yang sangat luas, jadi itu benar-benar normal dan dapat diterima bahwa Anda tidak pernah tahu segalanya tentang Web Development. Jangan terlalu membebani pundakmu dan membuat terlalu banyak ekspektasi. Developer dan senior terbaik sekalipun tidak memiliki masalah dalam mengakui bahwa mereka tidak tahu segalanya seperti ungkapan Kyle Simpson di atas.
 
-**Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga.
+**Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga, bersabarlah. Usahakan **ketik ulang** contoh kode yang dipelajari, tidak hanya copy-paste saja, hasilnya akan berbeda, percayalah.
 
 # Let's Get Started!
 
@@ -2269,7 +2269,7 @@ sapa("Budi");                           // contoh("Budi");          🡲 Output:
 sapa("Joko");                           // contoh("Joko");          🡲 Output: Pagi, Joko!
 ```
 
-Pada contoh IIFE di atas, Outer & Inner Function akan secara otomatis dijalankan bersamaan. Sebenarnya hal ini sama saja dengan Factory Function, namun bedanya pada IIFE tidak ditampung terlebih dahulu kedalam sebuah Variable (bisa langsung dijalankan), sedangkan pada Factory Function, Outer Function dijalankan untuk disimpan ke dalam Variable terlebih dahulu, baru setelahnya dijankan Inner Function-nya.
+Pada contoh IIFE di atas, Outer & Inner Function akan secara otomatis dijalankan bersamaan. Sebenarnya hal ini sama saja dengan Factory Function, bedanya pada IIFE tidak ditampung terlebih dahulu kedalam sebuah Variable (bisa langsung dijalankan), sedangkan pada Factory Function, Outer Function dijalankan untuk disimpan ke dalam Variable dahulu, baru setelahnya dijalankan Inner Function-nya.
 
 #### ⤷ Studi Kasus 2
 
@@ -2290,7 +2290,7 @@ console.log(add());                     // console.log(contoh());   🡲 Output:
 console.log(add());                     // console.log(contoh());   🡲 Output: 4
 ```
 
-Pada contoh IIFE di atas, Variable counter baik didefinisikan dengan var maupun let, tetap seolah akan menjadi private, nilainya tidak bisa diubah atau dimanipulasi dari luar scope.
+Pada contoh IIFE di atas, Variable counter baik didefinisikan dengan menggunakan let maupun var sekalipun, tetap seolah akan menjadi private, nilainya tidak bisa diubah atau dimanipulasi dari luar scope (ingat var itu Function Scope, dan let itu Block Scope).
 
 ### ![✔] 𝐑. Arrow Function
 
