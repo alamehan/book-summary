@@ -98,7 +98,7 @@ Setelah ES6 ini, ECMAScript memutuskan tidak lagi rilis segudang fitur sekaligus
 
 Perkembangan JavaScript Saat Ini: Website yang tidak berbentuk “website”, tetapi menyerupai aplikasi desktop yang dikenal sebagai **Single-page Application (SPA)**. Contoh dari Single-page Application ini seperti aplikasi Google: Gmail, GDrive, Google Doc, dll. Di website tersebut, halamannya akan tetap sama, tidak di reload seperti layaknya sebuah website.
 
-Namun perlu juga dipahami bahwa walaupun materi di markdown ini sudah lumayan rumit, ini barulah dasar dari JavaScript. Jika anda serius ingin mempelajari JavaScript lebih jauh lagi, bisa lanjut ke library seperti **jQuery**, framework seperti **AngularJS**, **ReactJS** maupun **VueJS**, atau ke server menggunakan **Node.js**.
+Namun perlu juga dipahami bahwa walaupun materi di markdown ini sudah lumayan rumit, ini barulah dasar dari JavaScript. Jika anda serius ingin mempelajari JavaScript lebih jauh lagi, bisa lanjut ke library seperti **jQuery**, framework seperti **AngularJS**, **ReactJS** maupun **VueJS**, atau ke sisi server dengan menggunakan **Node.js**.
 
 Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat diakses di:
 - <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript (Wikipedia)</a>
