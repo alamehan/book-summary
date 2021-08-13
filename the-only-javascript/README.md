@@ -12,7 +12,7 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu diketahui dalam Web Development. Web Development adalah bidang ilmu yang sangat luas, jadi itu benar-benar normal dan dapat diterima bahwa Anda tidak pernah tahu segalanya tentang Web Development. Jangan terlalu membebani pundakmu dan membuat terlalu banyak ekspektasi. Developer dan senior terbaik sekalipun tidak memiliki masalah dalam mengakui bahwa mereka tidak tahu segalanya seperti ungkapan Kyle Simpson di atas.
 
-**Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga, bersabarlah. Usahakan **ketik ulang** contoh kode yang dipelajari, tidak hanya copy-paste saja, hasilnya akan berbeda, percayalah.
+**Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga, bersabarlah. **Ketik ulang** contoh kode yang sedang dipelajar (dari situlah proses belajar didapat), bukan hanya copy-paste kode.
 
 # Let's Get Started!
 
