@@ -2728,7 +2728,7 @@ mhs.halo3();
 
 Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow Function di atas mengacu ke Global Object (Window).
 
-Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Definitions & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔴 🔔 Lihat point ... 
+Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Definitions & Function Expressions. Sedangkan untuk **Arrow Function biasanya banyak digunakan untuk Callback** (Function yang digunakan sebagai Argument).
 
 Selain itu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Pada contoh di bawah ini method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
@@ -2774,7 +2774,7 @@ let mhs = {
     console.log(this);                //   console.log(mhs);                🡲 Output: {nama: "Budi", halo: ƒ}
     console.log(this.nama);           //   console.log(mhs.nama);           🡲 Output: Budi
                                       //
-    let that = this;                  //   let that = mhs;                  🡲 that dibuat mengacu ke Object mhs layaknya this
+    let that = this;                  //   let that = mhs;                  🡲 𝘁𝗵𝗮𝘁 𝗱𝗶𝗯𝘂𝗮𝘁 𝗺𝗲𝗻𝗴𝗮𝗰𝘂 𝗸𝗲 𝗢𝗯𝗷𝗲𝗰𝘁 𝗺𝗵𝘀 𝗹𝗮𝘆𝗮𝗸𝗻𝘆𝗮 𝘁𝗵𝗶𝘀
                                       //
     function innerA(){                //   function innerA(){               🡲 Function Definitions (Sebagai Inner Function) (✔️)
       console.log(that);              //     console.log(mhs);              🡲 Output: {nama: "Budi", halo: ƒ}
@@ -2798,7 +2798,7 @@ let mhs = {
 mhs.halo();
 ```
 
-Atau sebagai alternatif selain menggunakan ```that``` seperti contoh di atas, bisa gunakan method apply() pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(this);```, ```innerB();``` menjadi ```innerB.apply(this);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya dibuat sama dengan konteks this milik method-nya (Outer Function-nya), yaitu mengacu ke Owner Object (Dalam kasus ini yaitu Object mhs). Lebih jelasnya terkait method ```apply()``` lihat contoh pada point nomor 8 di bawah 🔔.
+Atau sebagai alternatif selain menggunakan ```that``` seperti contoh di atas, bisa gunakan method ```apply()``` pada saat pemanggilan Function. ```innerA();``` menjadi ```innerA.apply(this);```, ```innerB();``` menjadi ```innerB.apply(this);```, ini berarti pada saat memanggil Function innerA/innerB sekaligus juga membuat konteks this-nya dibuat sama dengan konteks this milik method-nya (Outer Function-nya), yaitu mengacu ke Owner Object (Dalam kasus ini yaitu Object mhs). Lebih jelasnya terkait method ```apply()``` lihat contoh pada point nomor 8 di bawah 🔔.
 
 #### ⤷ 5. Di dalam method di Constructor Function, keyword this mengacu ke Owner Object (Object yang dibuat).
 
@@ -2836,7 +2836,7 @@ mobilBudi.pergi2();                      //           Menjalankan method pergi2 
 
 Dalam kasus method di Constructor, cara penulisan yang paling banyak dijumpai yaitu Function Expressions. Lalu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Constructor Function → method → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang sama dengan konteks this pada kasus Nested pada contoh Object (point nomor 4) di atas 🔔.
 
-Dimana jika Inner Function ditulis dengan cara Function Definitions & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan ```that``` seperti pada contoh sebelumnya, atau gunakan method apply(). Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
+Dimana jika Inner Function ditulis dengan cara Function Definitions & Function Expressions maka this akan mengacu ke Global Object (Window). Untuk "mengakalinya", gunakan ```that``` seperti pada contoh sebelumnya, atau gunakan method ```apply()```. Pada contoh di bawah ini method (sebagai Outer Function) ditulis dengan cara Function Expressions, dan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
 ```Javascript
                                          // ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -2861,8 +2861,8 @@ function Mobil(merkArg, tipeArg){        // function Mobil(merkArg, tipeArg, har
       console.log(this.merk);            //       console.log(mobilBudi.merk);  🡲 Output: ABC
     };                                   //     };
                                          //
-    innerA.apply(this);                  //     innerA.apply(mobilBudi);        🡲 Mengakali dengan method apply()
-    innerB.apply(this);                  //     innerB.apply(mobilBudi);        🡲 Mengakali dengan method apply()
+    innerA.apply(this);                  //     innerA.apply(mobilBudi);        🡲 𝗠𝗲𝗻𝗴𝗮𝗸𝗮𝗹𝗶 𝗱𝗲𝗻𝗴𝗮𝗻 𝗺𝗲𝘁𝗵𝗼𝗱 𝗮𝗽𝗽𝗹𝘆()
+    innerB.apply(this);                  //     innerB.apply(mobilBudi);        🡲 𝗠𝗲𝗻𝗴𝗮𝗸𝗮𝗹𝗶 𝗱𝗲𝗻𝗴𝗮𝗻 𝗺𝗲𝘁𝗵𝗼𝗱 𝗮𝗽𝗽𝗹𝘆()
     innerC();                            //     innerC();
   };                                     //   };
 }                                        // }
@@ -4129,7 +4129,7 @@ console.log(arrM.indexOf("e"));         // Output: -1
 
 Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). ⚠️ Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 
-**E4-1.** ```forEach()``` berfungsi menjalankan sebuah Function tertentu untuk setiap element di Array (mirip seperti for of, jalan sebanyak jumlah element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa Method Array lainnya (seperti: map, filter, find, reduce) mengembalikan sebuah Array baru.
+**E4-1.** ```forEach()``` berfungsi menjalankan sebuah Function tertentu untuk setiap element di Array (mirip seperti for of, jalan sebanyak jumlah element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa method Array lainnya (seperti: map, filter, find, reduce) mengembalikan sebuah Array baru.
 
 ```Javascript
 let arrN = ["a","b","c","d"];
