@@ -617,9 +617,9 @@ Tidak selalu jelas terkait tipe data apa yang diputuskan JavaScript sebagai hasi
 var text = "Hello World!";
 
 if (text) {
- console.log("text berupa Truthy");   // Output: "text berupa Truthy
+ console.log("text berupa Truthy");   // Output: "text berupa Truthy"
 } else {
- console.log("text berupa Falsy");
+ console.log("text berupa Falsy");    // Tidak dieksekusi
 }
 ```
 
