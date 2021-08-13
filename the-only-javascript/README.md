@@ -4399,7 +4399,7 @@ Dalam contoh disini, kode dieksekusi di Jawa Barat Indonesia (WIB), oleh karena 
 let datB = new Date(2021,05,04,17,42,22,125);         // Cara penulisan 2: Dengan 7 Argument
                                                       // ⤷ Argument ke 1: tahun
                                                       // ⤷ Argument ke 2: bulan     (Indeks dimulai dari 0 = Januari, dst)
-                                                      // ⤷ Argument ke 3: hari
+                                                      // ⤷ Argument ke 3: tanggal   (Otomatis hari akan muncul di Output)
                                                       // ⤷ Argument ke 4: jam
                                                       // ⤷ Argument ke 5: menit
                                                       // ⤷ Argument ke 6: detik
@@ -4408,7 +4408,7 @@ console.log(datB);                                    // Output: Fri Jun 04 2021
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
 ```
 
-Kita tidak harus menginput ke 7 Argument ini sekaligus (optional), namun jika menginput hanya Argument ke 1 saja, perhatikan bahwa, secara otomatis JS membacanya sebagai milidetik, bukan tahun.
+Kita tidak harus menginput ke 7 Argument ini sekaligus (optional), namun jika menginput hanya Argument ke 1 saja, perhatikan bahwa, secara otomatis JavaScript membacanya sebagai milidetik, bukan tahun ⚠️.
 
 ```Javascript
 // ➌ Dengan 1 Argument dateString
@@ -4428,19 +4428,19 @@ console.log(datD);                                    // Output: Fri Jun 04 2021
                                                       // ⤷ Menampilkan waktu sesuai dengan yang diinputkan di Argument
 ```
 
-Satu Argument di atas merupakan total milidetik sejak tanggal 1 Januari 1970 atau yang disebut UNIX Epoch Time. Dalam contoh di samping 1622803342000 milidetik berarti ± 51 tahun 167 hari 10 jam 42 menit 22 detik semenjak 1 Januari 1970, maka itu berarti ± 4 Juni 2021.
+Satu Argument di atas merupakan total milidetik sejak tanggal 1 Januari 1970 atau yang disebut **UNIX Epoch Time**. Dalam contoh di samping 1622803342000 milidetik berarti ± 51 tahun 167 hari 10 jam 42 menit 22 detik semenjak 1 Januari 1970, maka itu berarti ± 4 Juni 2021.
 
 **F2. Object instance method**
 
-GMT atau UTC merupakan standard waktu internasional. WIB merupakan waktu untuk daerah Jawa Barat, Indonesia (dimana konten ini ditulis). GMT/UTC dengan WIB memiliki selisih waktu, dimana WIB lebih cepat 7 jam dibandingkan GMT/UTC. Misalnya:
+GMT atau UTC merupakan standard waktu internasional. WIB merupakan waktu untuk daerah Jawa Barat, Indonesia (dimana markdown ini ditulis). GMT/UTC dengan WIB memiliki selisih waktu, dimana WIB lebih cepat 7 jam dibandingkan GMT/UTC. Misalnya:
 - Sabtu, 5 Juni 2021 pukul 07:55:30 WIB ⇨ Sabtu, 5 Juni 2021 pukul 00:55:30 GMT (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
 - Sabtu, 5 Juni 2021 pukul 03:30:00 WIB ⇨ Sabtu, 4 Juni 2021 pukul 20:30:00 GMT (Waktu di WIB dikurangi 7 jam, jadinya GMT/UTC)
 
 Method Getter & Setter UTC yang akan dijelaskan di bawah menampilkan tanggal dan waktu dalam UTC (standard waktu internasional), method Getter & Setter Locale menampilkan tanggal dan waktu sesuai settingan di sistem lokal, dalam kasus ini WIB (Jawa Barat).
 
 Dari mana JavaScript tahu sistem lokal memakai waktu WIB? Dari web browser, dimana web browser mengambilnya dari sistem operasi, yakni settingan tanggal dari Windows. Umumnya, tampilan seperti inilah yang akan dipakai di website nanti. Catatan tambahan:
-- method Getter UTC & Getter Locale pada contoh di bawah dieksekusi pada : Sabtu, 5 Juni 2021, pukul 07:55:30 (di Jawa Barat)
-- method Setter UTC & Setter Locale pada contoh di bawah dibuat ke tanggal : Sabtu, 5 Juni 2021, pukul 10:55:30
+- Method Getter UTC & Getter Locale pada contoh di bawah dieksekusi pada : Sabtu, 5 Juni 2021, pukul 07:55:30 (di Jawa Barat)
+- Method Setter UTC & Setter Locale pada contoh di bawah dibuat ke tanggal : Sabtu, 5 Juni 2021, pukul 10:55:30
 
 ```Javascript
 // ➊ Getter UTC (Waktu UTC)
@@ -4586,15 +4586,15 @@ console.log(`Selisih = ${selisihHari_coba} hari`);  // Output: Selisih = 198 har
 Tantangan selanjutnya, bagaimana mengkonversi 198 hari ini menjadi sekian tahun, sekian bulan dan sekian hari? Di bawah ini merupakan contoh algoritma (lebih ke ilustrasi menjawab persoalan) yang dapat diaplikasikan.
 
 500 hari itu berapa tahun, berapa bulan dan berapa hari?
-- Pertama, bagi 500 dengan 365, 500/365 = 1.37. Artinya 500 hari sama dengan 1.37 tahun. Simpan angka 1 tahun, dan kita akan konversi kelebihan 0.37 tahun menjadi bulan dan hari.
-- Kedua, karena 500 hari terdiri dari 1 tahun lebih, sisa hari bisa didapat dengan rumus 500-(1*365) = 135. Dengan mengasumsikan 1 bulan = 30 hari, maka 135 hari sama dengan 135/30 = 4.5 bulan. Simpan 4 bulan, dan kita akan konversi kelebihan 0.5 bulan ini menjadi hari.
-- Ketiga, sisa hari didapat dari pengurangan jumlah tahun dan jumlah bulan. Ini bisa dicari dengan rumus 500-(1*365)-(4*30) = 15 hari.
+- Pertama, bagi 500 dengan 365, ```500/365 = 1.37```. Artinya 500 hari sama dengan 1.37 tahun. Simpan angka 1 tahun, dan kita akan konversi kelebihan 0.37 tahun menjadi bulan dan hari.
+- Kedua, karena 500 hari terdiri dari 1 tahun lebih, sisa hari bisa didapat dengan rumus ```500-(1*365) = 135```. Dengan mengasumsikan 1 bulan = 30 hari, maka 135 hari sama dengan ```135/30 = 4```.5 bulan. Simpan 4 bulan, dan kita akan konversi kelebihan 0.5 bulan ini menjadi hari.
+- Ketiga, sisa hari didapat dari pengurangan jumlah tahun dan jumlah bulan. Ini bisa dicari dengan rumus ```500-(1*365)-(4*30) = 15 hari```.
 - Akhirnya didapat bahwa 500 hari = 1 tahun 4 bulan 15 hari.
 
 Sekarang, bagaimana dengan 198 hari? Mari kita hitung:
-- Jumlah tahun = 198/365 = 0.54. Artinya tidak cukup 1 tahun. Simpan 0.
-- Jumlah bulan = 198-(0*365)/30 = 6.6. Artinya terdapat 6 bulan lebih. Simpan 6, dan kita akan cari berapa hari lebihnya.
-- Jumlah hari = 198-(0*365)-(6*30) = 18. Akhirnya didapat bahwa 198 hari = 0 tahun 6 bulan 18 hari.
+- Jumlah tahun = ```198/365 = 0.54```. Artinya tidak cukup 1 tahun. Simpan 0.
+- Jumlah bulan = ```198-(0*365)/30 = 6.6```. Artinya terdapat 6 bulan lebih. Simpan 6, dan kita akan cari berapa hari lebihnya.
+- Jumlah hari = ```198-(0*365)-(6*30) = 18```. Akhirnya didapat bahwa 198 hari = 0 tahun 6 bulan 18 hari.
 
 ```Javascript
 let tglAwal   = new Date("06/05/2021");
@@ -4656,7 +4656,7 @@ console.log(goo);                       // Output: null
 
 ### ![✔] 𝐁. Global Function
 
-**B1. Dibawah ini sudah kita dipelajari**
+**B1. Dibawah ini sudah kita dipelajari sebelumnya**
 
 ```Javascript
 console.log(isNaN(5/'a'));              // Output: true   ⇨ Sama dengan Number.isNaN(5/'a')
