@@ -275,7 +275,7 @@ JavaScript termasuk ke dalam bahasa pemrograman **Typeless Programming Language*
 
 Apabila anda sering mengikuti tutorial programming, nama Variable **foo**, **bar**, dan **baz** sering digunakan. Ketiganya dikenal sebagai **dummy Variable**, yakni Variable yang fungsinya hanya sebagai contoh. Mirip seperti teks “Lorem Ipsum dolor sit amet” dalam bidang design.
 
-Kita bisa memberi nama apa saja untuk Variable, apakah itu ```angka```, ```foo```, ```bar```, ```andi```, atau ```username```. Selain Variable (var), kita juga bebas untuk membuat nama konstanta (const), Function, Object muapun Class. Semua inilah yang termasuk ke dalam kelompok **Identifier**. Identifier di dalam JavaScript memiliki aturan sebagai berikut:
+Kita bisa memberi nama apa saja untuk Variable, apakah itu ```angka```, ```foo```, ```bar```, ```andi```, atau ```username```. Selain Variable (var), kita juga bebas untuk membuat nama konstanta (const), Function, Object muapun Class. Semua inilah yang termasuk ke dalam kelompok **Identifier**, semuanya akan di bahas di markdown ini. Identifier di dalam JavaScript memiliki aturan sebagai berikut:
    - Bersifat case sensitive, dimana huruf besar dan kecil dianggap berbeda.
    - Bisa terdiri dari huruf, angka, underscore “_”, dan tanda dollar “$“. Selain itu, dianggap sebagai karakter ilegal.
    - Karakter pertama dari Identifier tidak boleh berupa angka. Angka hanya bisa digunakan sebagai karakter kedua dan seterusnya.
@@ -285,7 +285,7 @@ Di CSS kita menggunakan cara penulisan selector yang dipisah dengan tanda “ - 
 
 EcmaScript 6 membawa fitur baru ke dalam JavaScript, yakni menggunakan perintah ```let``` untuk membuat Variable (sebagai alternatif dari ```var```). Perbedaan mendasar dari ```var``` dan ```let``` adalah terkait dengan **Variable scope**, yakni di bagian mana sebuah Variable masih bisa diakses. Penjelasan mengenai Variable scope akan dibahas pada bab tentang Function. Selain let, ada juga konstanta (```const```) yaitu Variable yang nilainya tidak bisa diubah sepanjang kode program. Setelah konstanta ditulis dan diberi nilai awal, isi konstanta tersebut tidak bisa diubah.
 
-Format penulisan: var/let diawali huruf kecil (```total```, ```totalBiaya```, dst), const huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). 🔔 **Class dibahas di bab 3-1 B.**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variable, konstanta maupun Class.
+Format penulisan: var/let diawali huruf kecil (```total```, ```totalBiaya```, dst), const huruf besar semua (```PI```, ```RUMUS_A```, dst), dan Class diawali huruf besar (```Mobil```, ```MobilBaru```, dst). 🔔 **Class dibahas di bab 3-1 B**. Tujuan dari format penulisan ini yaitu agar programmer dapat dengan mudah membedakan mana Variable, konstanta maupun Class.
 
 Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var ```harga```, let ```namaLengkap```, dan const ```NILAI_PI``` adalah Identifier. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah Literal.
 
