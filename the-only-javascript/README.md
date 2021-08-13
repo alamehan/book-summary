@@ -4142,13 +4142,24 @@ arrN.forEach(
 );                                                    // ⤷ Penulisan Argument tidak harus element/index/arrray (bebas saja)
                                                       // ⤷ Peranan Argument ke 3 tidak sepenting Argument ke 1 & ke 2, oleh
                                                       // ⤷ karena itu contoh di samping tidak menyertakan console.log(array);
+                                                      // Output:
+                                                      // Index ke-0 = a
+                                                      // Index ke-1 = b
+                                                      // Index ke-2 = c
+                                                      // Index ke-3 = d
 
 function tampil(elm, idx, arr){                       // Dalam contoh di atas, Function Callback secara langsung disimpan dalam
   console.log(`Index ke-${idx} = ${elm}`);            // Argument, namun sebenarnya bisa pula dipisah menjadi Function tersendiri
 }                                                     // (dipisahkan keluar), dengan demikian dapat dipakai oleh Array lainnya.
 
 arrN.forEach(tampil);                                 // Simak cara penulisan & pemanggilan Callback-nya pada contoh di samping.
-arrO.forEach(tampil);                                 // ⤷ Lihat, Function tampil() bisa dipakai oleh arrN & arrO
+                                                      // Output: (Sama seperti Output di atas)
+
+arrO.forEach(tampil);                                 // Function tampil() bisa dipakai oleh arrN & arrO.
+                                                      // Output: 
+                                                      // Index ke-0 = Budi
+                                                      // Index ke-1 = Joko
+                                                      // Index ke-2 = Putri
 ```
 
 ```Javascript
