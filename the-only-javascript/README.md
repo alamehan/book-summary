@@ -4155,7 +4155,7 @@ function tampil(elm, idx, arr){                       // Dalam contoh di atas, F
 arrN.forEach(tampil);                                 // Simak cara penulisan & pemanggilan Callback-nya pada contoh di samping.
                                                       // Output: (Sama seperti Output di atas)
 
-arrO.forEach(tampil);                                 // Function tampil() bisa dipakai oleh arrN & arrO.
+arrO.forEach(tampil);                                 // Function tampil bisa dipakai oleh Array arrN maupun Array arrO.
                                                       // Output: 
                                                       // Index ke-0 = Budi
                                                       // Index ke-1 = Joko
