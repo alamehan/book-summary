@@ -289,6 +289,22 @@ Format penulisan: var/let diawali huruf kecil (```total```, ```totalBiaya```, ds
 
 Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var ```harga```, let ```namaLengkap```, dan const ```NILAI_PI``` adalah Identifier. Sedangkan ```12000```, ```"Rudi Siswoyo"```, dan ```3.14``` adalah Literal.
 
+```HTML
+<html>
+  <head>
+    ...
+  </head>
+  <body>
+    ...
+    <script>
+      var harga = 12000;
+      let namaLengkap = "Rudi Siswoyo";
+      const NILAI_PI = 3.14;
+    </script>
+  </body>
+</html>
+```
+
 <hr>
 <div id="bab1_6"></div>
 
@@ -309,10 +325,6 @@ Untuk masuk ke dalam Strict Mode, tambahkan String ```"use strict";``` di baris 
     ...
     <script>
       "use strict";
-
-      var harga = 12000;
-      let namaLengkap = "Rudi Siswoyo";
-      const NILAI_PI = 3.14;
 
       ...
     </script>
