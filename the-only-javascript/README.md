@@ -4968,16 +4968,16 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
     <script>
-      // 1. Siapkan shorcut (variable) untuk Node
+      // ➊ Siapkan shorcut (variable) untuk Node
       let nodeBody  = document.childNodes[1].childNodes[2];
       let nodeP     = nodeBody.childNodes[3];
   
-      // 2. Buat tag <table> & siapkan beberapa variable untuk looping
+      // ➋ Buat tag <table> & siapkan beberapa variable untuk looping
       let nodeTable = document.createElement("table");
       let nodeTr, nodeTd1, nodeTd2, nomorUrut, nomorAcak, nomorAcakText;
   
       for (let i = 1; i <= 10; i++) {
-        // 3. Buat 1 tag <tr>, 2 tag <td> & text node (nomor urut & nomor acak)
+        // ➌ Buat 1 tag <tr>, 2 tag <td> & text node (nomor urut & nomor acak)
         nodeTr        = document.createElement("tr");
         nodeTd1       = document.createElement("td");
         nodeTd2       = document.createElement("td");
@@ -4985,7 +4985,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
         nomorAcak     = Math.floor(Math.random() * 90) + 10; // Rentang 10-99
         nomorAcakText = document.createTextNode(nomorAcak);
   
-        // 4. Rangkai text node ➜ <td> ➜ <tr> ➜ <table>
+        // ➍ Rangkai text node ➜ <td> ➜ <tr> ➜ <table>
         nodeTd1.appendChild(nomorUrut);
         nodeTd2.appendChild(nomorAcakText);
         nodeTr.appendChild(nodeTd1);
@@ -4993,7 +4993,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
         nodeTable.appendChild(nodeTr);
       }
   
-      // 5. Masukkan tag <table> ke dalam DOM, posisi sebelum tag <p>
+      // ➎ Masukkan tag <table> ke dalam DOM, posisi sebelum tag <p>
       nodeBody.insertBefore(nodeTable, nodeP);
     </script>
   </body>
@@ -5387,6 +5387,63 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 <div id="bab4_4"></div>
 
 ## `4-4. Event Object` <a href="#daftar_isi_bab4">🡅</a>
+
+```Javascript
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1 id="judul1">Hello</h1>
+    <h1 id="judul2">World</h1>
+    
+    <script>
+      var nodeH1A = document.getElementById("judul1");
+      var nodeH1B = document.getElementById("judul2");
+      
+      // ➊ Event Object: Daftar property (dalam kasus ini untuk event click)
+      nodeH1A.addEventListener("click", function(event){
+        console.log(event);                   // Output: ▶PointerEvent [altKey: false, ...] ⇨ Tampilkan semua informasi event
+        console.log(event.target);            // Output: <h1 id="judul">Hello</h1> ⇨ Node Object tempat event terjadi
+        console.log(event.type);              // Output: click                     ⇨ Tipe event yang dijalankan
+        console.log(event.bubbles);           // Output: true                      ⇨ Apa event bersifat bubbles?
+        console.log(event.cancelable);        // Output: true                      ⇨ Apa event bisa di cancel?
+        console.log(event.defaultPrevented);  // Output: false                     ⇨ Apa event default sudah dihentikan?
+        console.log(event.detail);            // Output: 1                         ⇨ Jumlah klik (jika dblclick akan berisi 2)
+        console.log(event.currentTarget);     // Output: <h1 id="judul">Hello</h1> ⇨ Node tempat event ditulis
+        console.log(event.relatedTarget);     // Output: null                      ⇨ Node yang berhubungan dengan event
+        console.log(event.button);            // Output: 0                         ⇨ Klik kiri=0, tengah=1, dan kanan=2
+        console.log(event.ctrlKey);           // Output: false                     ⇨ Apa CTRL ditekan saat event terjadi?
+        console.log(event.shiftKey);          // Output: false                     ⇨ Apa SHIFT ditekan saat event terjadi?
+        console.log(event.altKey);            // Output: false                     ⇨ Apa ALT ditekan saat event terjadi?
+        console.log(event.screenX);           // Output: 157                       ⇨ Posisi cursor sumbu-x (acuan lebar layar)
+        console.log(event.screenY);           // Output: 112                       ⇨ Posisi cursor sumbi-y (acuan tinggi layar)
+        console.log(event.clientX);           // Output: 157                       ⇨ Posisi cursor sumbu-x (acuan lebar element)
+        console.log(event.clientY);           // Output: 41                        ⇨ Posisi cursor sumbu-y (acuan tinggi element)
+      });
+
+      // ➋ Memanfaatkan property Event Object untuk keperluan tertentu
+      function tampilkan(event){
+        if (event.ctrlKey === true){
+          nodeH1B.innerHTML = "Tombol CTRL terdeteksi";
+        } else if(event.shiftKey === true){
+          nodeH1B.innerHTML = "Tombol SHIFT terdeteksi";
+        } else if(event.altKey === true){
+          nodeH1B.innerHTML = "Tombol ALT terdeteksi";
+        } else{
+          nodeH1B.innerHTML = "World di klik!";
+        }
+      }
+      nodeH1B.addEventListener("click", tampilkan);
+
+      // ➌ ...
+
+    </script>
+  </body>
+</html>
+```
 
 <hr>
 <div id="bab4_5"></div>
