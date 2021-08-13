@@ -948,7 +948,7 @@ Catatan: Terdapat istilah Type convertion (explicit) & Type coercion (implicit).
 
 ### ![✔] 𝐋. Operator Spread
 
-Spread merupakan operator baru di ES6+. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali (...), kemudian diikuti dengan nama Variable.<br>
+Spread merupakan operator baru di ES6+. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali ```...```, kemudian diikuti dengan nama Variable.<br>
 
 🔔 Kegunaan lain dari operator Spread yaitu Rest Parameter (bab 2-5 E) & Assignment by Value untuk Object (bab 2-6 C).
 
@@ -993,7 +993,7 @@ if (nilai >= 0 && nilai <= 100){      // Jika nilai >= 0 dan <= 100, masuk ke ko
   } else{
     console.log("E");
   }
-} else {
+} else{
   console.log("Tidak Valid!");
 }
 ```
@@ -1130,7 +1130,7 @@ for (var k=1; k<3; k++){
 for (var m=10; m>=1; m--){
   if (m === 2){
     break;                            // Break: Berhenti memproses perulangan (keluar dari perulangan)
-  }
+  }                                   // Saat break terjadi, perulangan akan berhenti.
   console.log(m);
 }                                     // Output: 10, 9, 8, 7, 6, 5, 4, 3
 ```
@@ -1142,7 +1142,7 @@ for (var m=10; m>=1; m--){
   if (m === 2){
     continue;                         // Continue: Berhenti memproses perulangan saat ini & lanjut ke perulangan berikutnya
   }
-  console.log(m);
+  console.log(m);                     // Baris ini tidak dieksekusi saat nilai m === 2 (langsung lanjut ke loop berikutnya)
 }                                     // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
 ```
 
@@ -1189,7 +1189,7 @@ while (dadu !== 6) {
 }
 ```
 
-Pada contoh di atas, perulangan While Loop hanya akan berhenti ketika nilai dadu-nya sama dengan 6. Coba lakukan eksperimen, ganti setiap angka 6 pada kode di atas menjadi angka berapapun yang anda inginkan, misalnya 9999. Lalu lihat hasilnya pada tab console.
+Pada contoh di atas, perulangan While Loop hanya akan berhenti ketika nilai dadu === 6. Coba lakukan eksperimen, ganti setiap angka 6 pada kode di atas menjadi angka berapapun yang anda inginkan, misalnya 9999. Lalu lihat hasilnya pada tab console.
 
 ### ![✔] 𝐂. Do While Loop
 
@@ -1300,7 +1300,7 @@ console.log(pagiMalam);               // Output: pagiMalam(){                   
                                       //         }
 ```
 
-Menjalankan sebuah Function disebut juga sebagai calling/running/invoking/execute function.
+📖 Menjalankan sebuah Function disebut juga sebagai calling/running/invoking/execute function.
 
 ### ![✔] 𝐁. Parameter, Argument & Return Value
 
@@ -1408,7 +1408,7 @@ console.log(ratarata(2, 4, 8, 16));   // Output: 7.5  (Hasil dari (2+4+8+16)/4 �
 
 ### ![✔] 𝐄. Rest Parameter
 
-Selain untuk menggabungkan Array seperti yang sudah dibahas sebelum-sebelumnya, Spread (...) juga dapat digunakan untuk menggantikan peran Arguments Object, dan inilah yang disebut dentan Rest Parameter. Hasil pemanggilan Function sama saja dengan point D di atas 🔔.
+Selain untuk menggabungkan Array seperti yang sudah dibahas sebelum-sebelumnya, Spread (...) juga dapat digunakan untuk menggantikan peran Arguments Object, dan inilah yang disebut dengan Rest Parameter. Hasil pemanggilan Function sama saja dengan point D di atas 🔔.
 
 ```Javascript
 function numC(...arg){                // Rest Parameter. Penulisannya tidak harus ...arg, bisa dengan kata lain, ...bebas.
@@ -1591,7 +1591,7 @@ baz();                                // STEP 2 🡲 Jalankan Function baz
 
 Pada contoh Studi Kasus 2 di atas hati-hati keliru, output dari ```console.log(a);``` yaitu ```1```, bukan ```2```. Meskipun ```bar()``` dijalankan di dalam Function baz, bukan berarti baz menjadi parent untuk bar, itu karena pendefinisian Function bar dilakukan di Global scope (berbeda dengan contoh pada Studi Kasus 1 sebelumnya). Sehingga pada konsep Variable Lookup, Function bar (yang memang di dalamnya tidak terdapat definisi ```var a```) akan "naik" mencari ```a``` di scope parent-nya yaitu di Global scope, ditemukanlah definisi ```var a = 1```.
 
-📖 Variable Lookup berlaku juga untuk ```let```, jadi bukan hanya ```var``` saja.
+📖 Variable Lookup berlaku juga untuk ```let``` & ```const```, jadi bukan hanya ```var``` saja.
 
 ### ![✔] 𝐇. Var, Let & Const
 
@@ -1691,11 +1691,11 @@ init();                               // Output: Budi
 
 Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan mengatur ruang memory untuk setiap Variable & Function yang dibuat. Teknisnya JavaScript seolah "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai ```undefined```, sedangkan Function akan diisi Functionnya itu sendiri. 
 
-Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke Variable dan Function Declaration saja**. let, const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
+Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke var dan Function Declaration saja**. let, const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
 
 📚 Gunakan tools berikut untuk visualisasi Hoisting: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a>.
 
-#### ⤷ Variable Hoisting
+#### ⤷ Var Hoisting
 
 ```Javascript
 // Contoh 1-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -1727,7 +1727,7 @@ console.log(satu);                    // dua = "Belajar CSS";
                                       // console.log(satu);               🡲 Output: Belajar HTML
 ```
 
-#### ⤷ Function Hoisting
+#### ⤷ Function Declaration Hoisting
 
 ```Javascript
 // Contoh 2-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -1763,7 +1763,7 @@ function sapaMalam(){                 // }
                                       // }
 ```
 
-#### ⤷ Variable & Function Hoisting
+#### ⤷ Var & Function Declaration Hoisting
 
 ```Javascript
 // Contoh 3-1                         ʏᴀɴɢ ᴛᴇʀᴊᴀᴅɪ ᴅɪ ʙᴇʟᴀᴋᴀɴɢ ʟᴀʏᴀʀ:
@@ -1853,7 +1853,7 @@ console.log(nama);                    // console.log(nama);               🡲 O
 
 #### ⤷ Kesimpulan JavaScript Hoisting
 
-Pertama, selalu definisikan Variable (var) diawal kode program/Function, dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan let & const sebagai alternatif dari Var. Prilaku let & const lebih "masuk akal" dibandingkan dengan Var. 
+Pertama, selalu definisikan Variable (var/let/const) diawal kode program/Function (sebelum Variable digunakan, definsikan dulu), dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan let & const sebagai alternatif dari var. Prilaku let & const lebih "masuk akal" dibandingkan dengan var. 
 
 let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai di luar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
 
