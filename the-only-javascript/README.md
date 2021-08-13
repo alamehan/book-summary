@@ -1053,7 +1053,7 @@ if (akses){ // jika akses bernilai true                 // var akses, lalu kondi
 }
 ```
 
-Note: ```if (akses) { ... }``` merupakan **Shorthand** untuk ```if (akses === true) { ... }```. Selain itu ada juga ```if (!akses) { ... }``` yang berarti ```if (akses !== true) { ... }``` atau sama juga dengan ```if (akses === false) { ... }```.
+Catatan: ```if (akses) { ... }``` merupakan **Shorthand** untuk ```if (akses === true) { ... }```. Selain itu ada juga ```if (!akses) { ... }``` yang berarti ```if (akses !== true) { ... }``` atau sama juga dengan ```if (akses === false) { ... }```.
 
 #### ⤷ Kasus Falsy & Truthy Value pada If:
 
@@ -2401,7 +2401,7 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 
 JavaScript menggunakan konsep Prototypical Inheritance untuk menerapkan konsep pemrograman berbasis Object. Secara singkatnya, untuk membuat Object di JavaScript, caranya dengan langsung menulis Object tersebut (tidak perlu membuat Class, seperti yang dilakukan di bahasa pemrograman lain). Di dalam Object, terdapat istilah property & method.
 
-property merupakan Variable (var/let/const) yang berada di dalam Object, sedangkan method merupakan Function yang berada di dalam Object. Baik property maupun method diberi nilai menggunakan tanda titik dua ":", bukan tanda sama dengan "=" sebagaimana layaknya pengisian Variable biasa. Serta, diantara property maupun method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ",".
+Property merupakan Variable (var/let/const) yang berada di dalam Object, sedangkan method merupakan Function yang berada di dalam Object. Baik property maupun method diberi nilai menggunakan tanda titik dua ```:```, bukan tanda sama dengan ```=``` sebagaimana layaknya pengisian Variable biasa. Serta, diantara property maupun method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ```,```.
 
 #### ⤷ Pendefinisian Object
 
@@ -2414,8 +2414,8 @@ let objB = {                          // let objB berisi Object dengan property 
   property2: "isi_property1",
   property3: "isi_property1",
 
-  method1(){                          // Penulisan method cara 1: Function Definitions (Tanpa perlu keyword function di depannya)
-    "isi method 1";                   // Cara penulisan seperti ini merupakan fitur baru di ES6+ ⚠️
+  method1(){                          // Penulisan method cara 1: Function Definitions (ES6+) ⚠️
+    "isi method 1";
   },
   method2: function(){                // Penulisan method cara 2: Function Expressions (Anonymous Function)
     "isi method 2";
@@ -2447,7 +2447,7 @@ let mobil = {                         // let mobil berisi Object tentang mobil (
 
 ```Javascript
 console.log(mobil.merk);              // Output: Toyota Avanza      ⇨ Mengakses property menggunakan Dot Notation (✔️)
-console.log(mobil["merk"]);           // Output: Toyota Avanza      ⇨ Mengakses property menggunakan Bracket (❌)
+console.log(mobil["merk"]);           // Output: Toyota Avanza      ⇨ Mengakses property menggunakan Bracket Notation (❌)
 console.log(mobil.hidupkan());        // Output: Mesin Dihidupkan!  ⇨ Mengakses method tanpa Argument
 console.log(mobil.pergi("Bali"));     // Output: Pergi ke Bali      ⇨ Mengakses method dengan Argument
 ```
@@ -2640,7 +2640,7 @@ console.log(person2.name);            // Output: ray
 
 ### ![✔] 𝐃. Keyword this
 
-Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu this. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parent-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam method di Object, di dalam method di Class, atau di sebuah Event, dst.
+Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu ```this```. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parent-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam method di Object, di dalam method di Class, atau di sebuah Event, dst.
 
 Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan mengacu pada this milik parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga Global Object (Window).
 
@@ -2726,7 +2726,7 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-Note (kode di atas): Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow Function di atas mengacu ke Global Object (Window).
+Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow Function di atas mengacu ke Global Object (Window).
 
 Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Definitions & Function Expressions. Sedangkan untuk Arrow Function biasanya banyak digunakan untuk Callback (Function yang digunakan sebagai Argument). 🔴 🔔 Lihat point ... 
 
@@ -2762,7 +2762,7 @@ let mhs = {
 mhs.halo();
 ```
 
-Note (kode di atas): Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu method halo yang mengacu ke Object mhs. Karena itulah this pada contoh Arrow Function di atas mengacu ke Object mhs.
+Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu method halo yang mengacu ke Object mhs. Karena itulah this pada contoh Arrow Function di atas mengacu ke Object mhs.
 
 Dalam contoh di atas, agar Inner Function yang ditulis dengan cara Function Definitions (innerA) & Function Expressions (innerB) memiliki this yang mengacu ke Owner Object (dalam kasus ini Object mhs), maka this milik method halo perlu ditampung terlebih dahulu ke dalam sebuah Variable, untuk kemudian Variable tersebut dapat digunakan di Inner Function. Sehingga this di Inner Function mengacu ke Object mhs sama halnya seperti this milik method halo. Simak contoh di bawah ini.
 
@@ -3443,7 +3443,7 @@ Object instance property & Object instance method melekat ke Instance Object, ``
 
 Penulisan formal Object instance property & Object instance method yaitu ```Object.prototype.property/method()```, terdapat keyword prototype-nya. Ini perlu diketahui untuk membedakan dengan Object property & Object method, tepatnya saat membuka dokumentasi <a href="https://developer.mozilla.org/en-US/">MDN</a>.
 
-Note: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object, hanya memiliki Object property & Object method saja. Selain itu, markdown ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja.
+Catatan: Tidak semua Object bawaan JavaScript secara utuh memiliki Object property, Object method, Object instance property, dan Object instance method. Misal seperti Math Object, hanya memiliki Object property & Object method saja. Selain itu, markdown ini hanya akan membahas Object property/Object method/Object instance property/Object instance method yang umum saja.
 
 ⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 
@@ -3724,7 +3724,7 @@ console.log(strD.replace("kota", "X")); // Output: Bandung X kembang      ⇨ Me
 console.log(strD.replace(/a/g, "o"));   // Output: Bondung koto kembong   ⤷ Argument ke 1: bisa diisi juga dengan RegExp
 ```
 
-Note: ```substr()```, ```substring()``` & ```slice()``` mirip satu sama lain, perbedaannya hanya pada prilaku Argument kedua masing-masing method.
+Catatan: ```substr()```, ```substring()``` & ```slice()``` mirip satu sama lain, perbedaannya hanya pada prilaku Argument kedua-nya saja.
 
 ```Javascript
 let strH = "Nama saya Budi Setiawan";   // Studi kasus: menghitung berapa kali String "a" muncul di dalam String strH
@@ -4613,7 +4613,7 @@ let hasil = `${selisihTahun} Tahun ${selisihBulan} Bulan ${selisihHari} Hari`;
 console.log(hasil);                         // Output: 0 Tahun 6 Bulan 18 Hari
 ```
 
-Note: Program menghitung selisih tanggal ini belum sempurna, karena tidak memperhitungkan aspek lainnya seperti tahun kabisat dan perbedaan hari dalam tiap bulan. Untuk pemrosesan Date yang lebih advanced, pelajari library JavaScript seperti 𝗠𝗼𝗺𝗲𝗻𝘁𝗝𝗦.
+Catatan: Program menghitung selisih tanggal ini belum sempurna, karena tidak memperhitungkan aspek lainnya seperti tahun kabisat dan perbedaan hari dalam tiap bulan. Untuk pemrosesan Date yang lebih advanced, pelajari library JavaScript seperti 𝗠𝗼𝗺𝗲𝗻𝘁𝗝𝗦.
 
 Info: Algoritma di atas, serupa juga dengan algoritma "Membagi nilai rupiah". Misalnya jika inputan awal 257,500. Hasil kode program berupa: 2 lembar uang 100.000, 1 lembar uang 50.000, 1 lembar uang 5000, 1 lembar uang 2000, 1 lembar uang 500. Untuk mempertajam kemampuan problem solving & analysis, coba buat program "Membagi nilai rupiah" ini menggunakan JavaScript. Good Luck!
 
@@ -4855,7 +4855,7 @@ console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[2]);  
 console.log(document.childNodes[1].childNodes[2].childNodes[3].childNodes[3]);  // Output: <𝗯>dari Duniailkom</𝗯>
 ```
 
-Note: Karakter Carriage Return adalah karakter enter/baris baru. Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
+Catatan: Karakter Carriage Return adalah karakter enter/baris baru. Karakter tersebut dianggap sebagai Text Node. Inilah salah satu
 masalah yang sering membuat pusing jika menelusuri struktur DOM tree secara manual. Solusinya lihat di point D1 di bawah 🔔.
 
 **C2. Node property**
