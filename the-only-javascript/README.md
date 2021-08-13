@@ -5398,12 +5398,37 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
   <body>
     <h1 id="judul1">Hello</h1>
     <h1 id="judul2">World</h1>
+    <h2 id="judul3">Belajar HTML</h2>
+    <h3 id="judul4">Belajar CSS</h3>
+    <p id="placeholder"></p>
+
+    <table border="1">
+      <tr>
+        <td>red</td>
+        <td>blue</td>
+        <td>green</td>
+      </tr>
+      <tr>
+        <td>yellow</td>
+        <td>brown</td>
+        <td>pink</td>
+      </tr>
+      <tr>
+        <td>aqua</td>
+        <td>magenta</td>
+        <td>orange</td>
+      </tr>
+    </table>
     
     <script>
-      var nodeH1A = document.getElementById("judul1");
-      var nodeH1B = document.getElementById("judul2");
+      var nodeH1A   = document.getElementById("judul1");
+      var nodeH1B   = document.getElementById("judul2");
+      var nodeH2    = document.getElementById("judul3");
+      var nodeH3    = document.getElementById("judul4");
+      var nodeP     = document.getElementById("placeholder");
+      var nodeTable = document.querySelector("table"); 
       
-      // ➊ Event Object: Daftar property (dalam kasus ini untuk event click)
+      // ➊ Daftar property Event Object (dalam kasus ini untuk event click)
       nodeH1A.addEventListener("click", function(event){
         console.log(event);                   // Output: ▶PointerEvent [altKey: false, ...] ⇨ Tampilkan semua informasi event
         console.log(event.target);            // Output: <h1 id="judul">Hello</h1> ⇨ Node Object tempat event terjadi
@@ -5425,7 +5450,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
       });
 
       // ➋ Memanfaatkan property Event Object untuk keperluan tertentu
-      function tampilkan(event){
+      function tampilkanClick1(event){
         if (event.ctrlKey === true){
           nodeH1B.innerHTML = "Tombol CTRL terdeteksi";
         } else if(event.shiftKey === true){
@@ -5436,14 +5461,29 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
           nodeH1B.innerHTML = "World di klik!";
         }
       }
-      nodeH1B.addEventListener("click", tampilkan);
+      nodeH1B.addEventListener("click", tampilkanClick1);
 
-      // ➌ ...
+      // ➌ Property Event Object yang paling penting ialah target (1)
+      function tampilkanClick2(e){
+        var pesan = `${e.target.nodeName} berisi ${e.target.innerHTML}`;
+        nodeP.innerHTML = pesan;
+      };
+      nodeH2.addEventListener("click", tampilkanClick2);
+      nodeH3.addEventListener("click", tampilkanClick2);
 
+      // ➍ Property Event Object yang paling penting ialah target (2)
+      function ubahWarna(e){
+        e.target.style.backgroundColor = e.target.innerHTML;
+      }
+      nodeTable.addEventListener("click", ubahWarna);
     </script>
   </body>
 </html>
 ```
+
+Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, seperti apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya argument sebuah fungsi berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada contoh di atas, Variable ```event``` langsung diinput tanpa diisi nilai apapun. Nilai dari argument ```event``` akan di generate otomatis oleh web browser. 
+
+Nama argument untuk Event Object bisa apa saja, tidak harus ```event```, misalnya pada contoh Function ```ubahWarna()``` di atas Variable yang digunakan yaitu ```e```. Property Event Object yang ada pada contoh di atas hanya sebagian saja yang memang banyak dijumpai, untuk daftar lengkapnya bisa gunakan perintah ```console.log(event);```. Namun sebenarnya property yang paling penting yaitu ```event.target``` yang berisi element node dimana event terjadi.
 
 <hr>
 <div id="bab4_5"></div>
