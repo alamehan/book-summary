@@ -12,7 +12,7 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu diketahui dalam Web Development. Web Development adalah bidang ilmu yang sangat luas, jadi itu benar-benar normal dan dapat diterima bahwa Anda tidak pernah tahu segalanya tentang Web Development. Jangan terlalu membebani pundakmu dan membuat terlalu banyak ekspektasi. Developer dan senior terbaik sekalipun tidak memiliki masalah dalam mengakui bahwa mereka tidak tahu segalanya seperti ungkapan Kyle Simpson di atas.
 
-**Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga, bersabarlah. **Ketik ulang** contoh kode yang sedang dipelajar (dari situlah proses belajar didapat), bukan hanya copy-paste kode.
+**Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga, bersabarlah. **Ketik ulang** contoh kode yang sedang dipelajari (dari situlah proses belajar didapat), bukan hanya copy-paste kode.
 
 # Let's Get Started!
 
@@ -2373,14 +2373,18 @@ let jumlahHurufF = arrSiswa.map(nama => ({            // Penulisan dengan Arrow 
   nama: nama, jumlah: nama.length
 }));
 
+let jumlahHurufG = arrSiswa.map(nama => ({nama, jumlah: nama.length})); // Jika nama property sama dengan nilainya,
+                                                                        // maka tidak perlu ditulis keduanya.
+
 console.log(jumlahHurufD);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 console.log(jumlahHurufE);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 console.log(jumlahHurufF);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
+console.log(jumlahHurufG);                            // Output: [{0: {nama: "Budi", jumlah: 4}}, {...}, {...}]
 ```
 
 Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-return Object di Arrow Function tidak bisa langsung ditulis dengan cara ```arrSiswa.map(nama => {nama: nama});```, karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus terlebih dahulu menggunakan tanda (), menjadi ```arrSiswa.map(nama => ({nama: nama}));```. Kemudian, yang membuat menarik yaitu jika nama property Object sama dengan nama nilainya maka tidak perlu ditulis keduanya, menjadi ```arrSiswa.map(nama => ({nama}));```.
 
-🔔 Pembungkusan menggunakan tanda () serupa dengan pembungkusan pada point O di atas terkait IIFE.
+🔔 Pembungkusan menggunakan tanda () serupa dengan pembungkusan pada point Q di atas terkait IIFE.
 
 <hr>
 <div id="bab2_6"></div>
