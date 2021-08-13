@@ -1612,13 +1612,13 @@ for (var i=1; i<3; i++){
   console.log(i);
 }
 console.log(i);                       // Output: 3
-                                      // var malah bisa diakses dari luar For (ini tidak aman!), seolah tidak Private.
+                                      // var malah bisa diakses dari luar For (ini tidak aman!), seolah tidak private.
 
 for (let j=1; j<3; j++){
   console.log(j);
 }
 console.log(j);                       // Output: ReferenceError j is not defined
-                                      // let tidak bisa diakses dari luar For (ini aman!), seolah Private.
+                                      // let tidak bisa diakses dari luar For (ini aman!), seolah private.
 ```
 
 #### ⤷ Var & Let (2)
@@ -1995,7 +1995,7 @@ function funA(){
 }
 function coba(aksi1, aksi2, n){       // aksi1 & aksi2 merupakan Callback, sehingga Function coba disebut Higher Order Function
   aksi1();                            // aksi1() akan menjadi funA()
-  aksi2();                            // aksi2() akan menjadi (function(){console.log("Ciluk")})() ⇨ IIFE, lihat point O 🔔.
+  aksi2();                            // aksi2() akan menjadi (function(){console.log("Ciluk")})() ⇨ IIFE, lihat point Q 🔔.
   console.log(`Baa ${n} kali`);
 }
 coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   ⇨ Mengirim funA, function(){console.log("Ciluk")}
@@ -2006,7 +2006,7 @@ coba(funA, function(){console.log("Ciluk")}, 100);  // Output: Hello World!   �
 ```Javascript
 function funA(nama, aksi){            // aksi merupakan Callback, sehingga Function funA disebut Higher Order Function
   aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); menjadi (function(arg){ console.log(arg) }))(`Pagi, ${nama}!`);
-}                                     //                                  ⤷ IIFE dengan Argument, lihat point O di bawah 🔔.
+}                                     //                                  ⤷ IIFE dengan Argument, lihat point Q di bawah 🔔.
 
 funA("Budi", function(arg){ console.log(arg) });    // Output: Pagi, Budi!    ⇨ Mengirim String "Budi" & function(arg){ ... }
                                                     //                           sebagai Argument. Perhatikan bahwa Function
@@ -2015,8 +2015,8 @@ funA("Budi", function(arg){ console.log(arg) });    // Output: Pagi, Budi!    �
 
 function funB(nama, aksi){            // Function ini sama seperti funA di atas
   aksi(`Pagi, ${nama}!`);             // aksi(`Pagi, ${nama}!`); menjadi ((arg) => console.log(arg))(`Pagi, ${nama}!`);
-                                      //                                  ⤷ IIFE dengan Argument, lihat point O di bawah 🔔.
-                                      //                                  ⤷ Arrow Function, lihat point P di bawah 🔔.
+                                      //                                  ⤷ IIFE dengan Argument, lihat point Q di bawah 🔔.
+                                      //                                  ⤷ Arrow Function, lihat point R di bawah 🔔.
 }
 funB("Joko", (arg) => console.log(arg));            // Output: Pagi, Joko!    ⇨ Sama seperti di atas, bedanya Function
                                                     //                           ditulis dengan cara Arrow Function.
@@ -2147,7 +2147,7 @@ cetak(external);                      // Output: Hello 1!     STEP 1 🡲 Mengir
 
 ### ![✔] 𝐏. Factory Function
 
-Pada Implementasinya, Function as Return Value yang dibahas di atas akan sering dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya. Bisa dianggap Function yang baru berjalan separuhnya, lalu dijalankan secara penuh melalui Factory Function.
+Function as Return Value yang dibahas sebelumnya akan banyak dijumpai di Factory Function, yaitu Function yang berjalan dari hasil Function lainnya. Bisa dianggap Function yang baru berjalan separuhnya, lalu dijalankan secara penuh melalui Factory Function.
 
 ```Javascript
 function luar(waktu){
@@ -2157,13 +2157,13 @@ function luar(waktu){
   return dalam;
 }
 
-let pagi = luar("Pagi");              // luar() baru berjalan ½ nya, dimana waktu sudah berisi dengan nilai String "Pagi",
+let pagi = luar("Pagi");              // luar() baru berjalan 1/2 nya, dimana waktu sudah berisi dengan nilai String "Pagi",
                                       // lalu disimpan ke let pagi yang nantinya akan digunakan sebagai Factory Function.
 
 pagi("Budi");                         // Output: Pagi, Budi!          ⇨ Menjalankan Factory Function pagi("Budi");
 pagi("Joko");                         // Output: Pagi, Joko!          ⇨ Menjalankan Factory Function pagi("Joko");
 
-let sore = luar("Sore");              // luar() baru berjalan ½ nya, dimana waktu sudah berisi dengan nilai String "Sore",
+let sore = luar("Sore");              // luar() baru berjalan 1/2 nya, dimana waktu sudah berisi dengan nilai String "Sore",
                                       // lalu disimpan ke let sore yang nantinya akan digunakan sebagai Factory Function.
 
 sore("Budi");                         // Output: Sore, Budi!          ⇨ Menjalankan Factory Function sore("Budi");
@@ -2181,18 +2181,18 @@ function luar(waktu){
   return tengah;
 }
 
-let pagi = luar("Pagi");              // luar() baru berjalan ⅓ nya, dimana waktu sudah berisi dengan nilai String "Pagi".
-let sapaBudi = pagi("Budi");          // luar() baru berjalan ⅔ nya, dimana waktu berisi "Pagi" & nama berisi "Budi".
-let sapaJoko = pagi("Joko");          // luar() baru berjalan ⅔ nya, dimana waktu berisi "Pagi" & nama berisi "Joko".
+let pagi = luar("Pagi");              // luar() baru berjalan 1/3 nya, dimana waktu sudah berisi dengan nilai String "Pagi".
+let sapaBudi = pagi("Budi");          // luar() baru berjalan 2/3 nya, dimana waktu berisi "Pagi" & nama berisi "Budi".
+let sapaJoko = pagi("Joko");          // luar() baru berjalan 2/3 nya, dimana waktu berisi "Pagi" & nama berisi "Joko".
 
 sapaBudi("Pintar");                   // Output: Pagi, Budi Pintar!   ⇨ Menjalankan Factory Function sapaBudi("Pintar");
 sapaBudi("Cerdas");                   // Output: Pagi, Budi Cerdas!   ⇨ Menjalankan Factory Function sapaBudi("Cerdas");
 sapaJoko("Pintar");                   // Output: Pagi, Joko Pintar!   ⇨ Menjalankan Factory Function sapaJoko("Pintar");
 sapaJoko("Cerdas");                   // Output: Pagi, Joko Cerdas!   ⇨ Menjalankan Factory Function sapaJoko("Cerdas");
 
-let sore = luar("Sore");              // luar() baru berjalan ⅓ nya, dimana waktu sudah berisi dengan nilai String "Sore".
-let sapaTono = sore("Tono");          // luar() baru berjalan ⅔ nya, dimana waktu berisi "Sore" & nama berisi "Tono".
-let sapaJaka = sore("Jaka");          // luar() baru berjalan ⅔ nya, dimana waktu berisi "Sore" & nama berisi "Jaka".
+let sore = luar("Sore");              // luar() baru berjalan 1/3 nya, dimana waktu sudah berisi dengan nilai String "Sore".
+let sapaTono = sore("Tono");          // luar() baru berjalan 2/3 nya, dimana waktu berisi "Sore" & nama berisi "Tono".
+let sapaJaka = sore("Jaka");          // luar() baru berjalan 2/3 nya, dimana waktu berisi "Sore" & nama berisi "Jaka".
 
 sapaTono("Pintar");                   // Output: Pagi, Tono Pintar!   ⇨ Menjalankan Factory Function sapaTono("Pintar");
 sapaTono("Cerdas");                   // Output: Pagi, Tono Cerdas!   ⇨ Menjalankan Factory Function sapaTono("Cerdas");
@@ -2206,7 +2206,7 @@ Kita bisa membuat sebuah Function sekaligus menjalankannya, inilah yang disebut 
 
 Sebenarnya ide awalnya yaitu perintah berpola ```___()``` saja, namun kita tidak bisa langsung membuat Function lalu ditambahkan tanda () begitu saja, karena akan terjadi error. Melainkan Function tersebut harus dibungkus terlebih dahulu menggunakan tanda () lalu ditambah lagi tanda () yang kedua sebagai perintah untuk menjalankan Function tersebut. Sehingga pola perintahnya ```(___)()``` atau ```(___())```, bukan ```___()```.
 
-Selain itu, IIFE digunakan juga untuk membuat var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope**, sehingga var menjadi Private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6+, var sudah "digantikan" oleh let yang secara default memang sudah bersifat Block Scope.
+Selain itu, IIFE digunakan juga untuk membuat var yang mulanya bersifat **Function Scope** seolah menjadi **Block Scope**, sehingga var menjadi private, tidak bisa diakses dari luar scope (tidak mempengaruhi nilai di luar scope). Namun semenjak ES6+, var sudah "digantikan" oleh let yang secara default memang sudah bersifat Block Scope. 📖 Lihat lagi point 2-5 H di atas. 
 
 #### ⤷ Function Biasa & IIFE
 
@@ -2256,33 +2256,41 @@ cetak("Budi", 17);                    // Function dipanggil terlebih dahulu untu
 #### ⤷ Studi Kasus 1
 
 ```Javascript
-let sapa = (function(waktu){          // Secara bersamaan Outer & Inner Function akan otomatis berjalan, berbeda dengan
-  waktu = "Pagi";                     // kasus di Factory Function, dimana hanya Outer Function-nya saja yang berjalan.
-  function tampilkan(nama){
-    console.log(`${waktu}, ${nama}!`);
-  }
-  return tampilkan;
-})();
-
-sapa("Budi");                         // Output: Pagi, Budi!    ⇨ Menjalankan IIFE sapa("Budi");
-sapa("Joko");                         // Output: Pagi, Joko!    ⇨ Menjalankan IIFE sapa("Joko");
+                                        // ꜱᴇᴛᴀʀᴀ ᴅᴇɴɢᴀɴ ꜰᴀᴄᴛᴏʀʏ ꜰᴜɴᴄᴛɪᴏɴ ʙᴇʀɪᴋᴜᴛ:
+let sapa = (function(waktu){            // let sapa = (function(waktu)){
+  waktu = "Pagi";                       //   waktu = "Pagi";
+  function tampilkan(nama){             //   function tampilkan(nama){
+    console.log(`${waktu}, ${nama}!`);  //     console.log(`${waktu}, ${nama}!`);
+  }                                     //   }
+  return tampilkan;                     //   return tampilkan;
+})();                                   // };
+                                        // let contoh = sapa();
+sapa("Budi");                           // contoh("Budi");          🡲 Output: Pagi, Budi!
+sapa("Joko");                           // contoh("Joko");          🡲 Output: Pagi, Joko!
 ```
+
+Pada contoh IIFE di atas, Outer & Inner Function akan secara otomatis dijalankan bersamaan. Sebenarnya hal ini sama saja dengan Factory Function, namun bedanya pada IIFE tidak ditampung terlebih dahulu kedalam sebuah Variable (bisa langsung dijalankan), sedangkan pada Factory Function, Outer Function dijalankan untuk disimpan ke dalam Variable terlebih dahulu, baru setelahnya dijankan Inner Function-nya.
 
 #### ⤷ Studi Kasus 2
 
 ```Javascript
-let add = (function(){
-  let counter = 0;                    // Baik didefinisikan sebagai var maupun let, dengan IIFE, counter seolah
-  function tambah(){                  // akan menjadi Private, nilainya tidak bisa diubah dari luar scope.
-    return ++counter;
-  }
-  return tambah;
-})();
-
-console.log(add());                   // Output: 1              ⇨ Menjalankan IIFE add();
-console.log(add());                   // Output: 2              ⇨ Menjalankan IIFE add();
-console.log(add());                   // Output: 3              ⇨ Menjalankan IIFE add();
+                                        // ꜱᴇᴛᴀʀᴀ ᴅᴇɴɢᴀɴ ꜰᴀᴄᴛᴏʀʏ ꜰᴜɴᴄᴛɪᴏɴ ʙᴇʀɪᴋᴜᴛ:
+let add = (function(){                  // let add = function(){
+  let counter = 0;                      //   let counter = 0;
+  function tambah(){                    //   function tambah(){
+    return ++counter;                   //     return ++counter;
+  }                                     //   }
+  return tambah;                        //   return tambah;
+})();                                   // };
+                                        // let contoh = add();
+console.log(add());                     // console.log(contoh());   🡲 Output: 1
+console.log(add());                     // console.log(contoh());   🡲 Output: 2
+counter = 100;                          // counter = 100;           🡲 Tidak mempengaruhi nilai counter di dalam function add
+console.log(add());                     // console.log(contoh());   🡲 Output: 3
+console.log(add());                     // console.log(contoh());   🡲 Output: 4
 ```
+
+Pada contoh IIFE di atas, Variable counter baik didefinisikan dengan var maupun let, tetap seolah akan menjadi private, nilainya tidak bisa diubah atau dimanipulasi dari luar scope.
 
 ### ![✔] 𝐑. Arrow Function
 
