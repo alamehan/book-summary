@@ -5393,6 +5393,8 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 > - [X] 𝐂. Event Default
 > - [X] 𝐃. Mouse Events
 
+Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya argument sebuah fungsi berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada Event Object bisa langsung diinput tanpa diisi nilai apapun. Misalnya pada contoh di bawah ini, nilai dari argument ```event``` akan di generate otomatis oleh web browser. Penulisan tidak harus ```event```, bisa apa saja.
+
 ### ![✔] 𝐀. Event Object
 
 ```HTML
@@ -5437,7 +5439,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
       
       // ➊ Daftar property Event Object (dalam kasus ini untuk event click)
       nodeH1A.addEventListener("click", function(event){
-        console.log(event);                   // Output: ▶PointerEvent [altKey: false, ...] ⇨ Tampilkan semua informasi event
+        console.log(event);                   // Output: ▶PointerEvent [altKey: false, ...] ⇨ Tampilkan seluruh informasi event
         console.log(event.target);            // Output: <h1 id="judul">Hello</h1> ⇨ Node Object tempat event terjadi
         console.log(event.type);              // Output: click                     ⇨ Tipe event yang dijalankan
         console.log(event.bubbles);           // Output: true                      ⇨ Apa event bersifat bubbles?
@@ -5471,7 +5473,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
       nodeH1B.addEventListener("click", tampilkanClick1);
 
       // ➌ Property Event Object yang paling penting ialah target (1)
-      function tampilkanClick2(e){
+      function tampilkanClick2(e){ // e ibarat i dalam perulangan
         var pesan = `${e.target.nodeName} berisi ${e.target.innerHTML}`;
         nodeP.innerHTML = pesan;
       };
@@ -5483,16 +5485,19 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
         e.target.style.backgroundColor = e.target.innerHTML;
       };
       nodeTable.addEventListener("click", ubahWarna);
+      /* 
+        Meskipun event click ditujukan kepada tag <table>, namun jika yang di klik adalah
+        sel tabel <td> maka isi dari property e.target adalah tag <td>, bukan tag <table>
+        itu sendiri. Hal ini terkait dengan Event Propagation, bahasan sub-bab berikutnya.
+      */
     </script>
   </body>
 </html>
 ```
 
-Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, seperti apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya argument sebuah fungsi berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada contoh di atas, Variable ```event``` langsung diinput tanpa diisi nilai apapun. Nilai dari argument ```event``` akan di generate otomatis oleh web browser. 
-
-Nama argument untuk Event Object bisa apa saja, tidak harus ```event```, misalnya pada contoh Function ```ubahWarna()``` di atas Variable yang digunakan yaitu ```e```. Property Event Object yang ada pada contoh di atas hanya sebagian saja yang memang banyak dijumpai, untuk daftar lengkapnya bisa gunakan perintah ```console.log(event);```. Namun sebenarnya property yang paling penting yaitu ```event.target``` yang berisi Element Node dimana event terjadi.
-
 ### ![✔] 𝐁. Event Propagation
+
+Event Propagation adalah istilah yang merujuk kepada cara event "ditangkap" oleh web browser. Misalnya ketika tag ```<h1>``` di klik, bukankah kita sebenarnya juga men-klik tag ```<body>```? Aspek inilah yang dimaksud dengan Event Propagation.
 
 ...
 
