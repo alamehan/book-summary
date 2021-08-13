@@ -4163,7 +4163,7 @@ arrO.forEach(tampil);                                 // Function tampil bisa di
 ```
 
 ```Javascript
-const people = [                                      // Contoh array of objects (biasanya format JSON pun seperti ini)
+const people = [                                      // Contoh Array of Objects (Format 𝗝𝗦𝗢𝗡 pun seperti ini)
   {name: "bob", age: 20, job: "developer"},
   {name: "peter", age: 25, job: "designer"},
   {name: "susy", age: 30, job: "the boss"}
