@@ -4811,6 +4811,7 @@ console.log(window.document.URL);       // Output: http://127.0.0.1:5500/contoh.
 console.log(window.document.baseURI);   // Output: http://127.0.0.1:5500/contoh.html  ⇨ Absolute base URI dari dokumen
 
                                         // Note: Dari sini hingga seterusnya penulisan window tidak akan disertakan ⚠️
+
 console.log(document.domain);           // Output: 127.0.0.1                          ⇨ Nama domain server yang memuat dokumen
 console.log(document.lastModified);     // Output: 06/10/2021 00:22:21                ⇨ Tanggal & waktu dokumen terakhir diubah
 console.log(document.title);            // Output: Belajar JS                         ⇨ Judul dari dokumen
@@ -4823,7 +4824,7 @@ document.write("Hello World");          // Menulis ekspresi/teks HTML atau kode 
 document.writeln("Hello World");        // Sama seperti write() namun menambah baris baru untuk setiap statement
 ```
 
-```wirete()``` dan ```writeln()``` biasanya banyak dipakai di tutorial-tutorial di Internet. Namun untuk proses debugging, ```console.log()``` lebih banyak (dan lebih disarankan) digunakan, karena menampilkan informasi yang lebih lengkap.
+```wirete()``` dan ```writeln()``` biasanya banyak dipakai di tutorial-tutorial di Internet. Namun untuk proses debugging, ```console.log()``` lebih banyak digunakan, karena menampilkan informasi yang lebih lengkap. 📖 Lihat lagi point 1-3 E tentang Helper Methods.
 
 ### ![✔] 𝐂. Node Object (Part 1)
 
@@ -4926,10 +4927,10 @@ console.log(bar.nextElementSibling);                // Output: <𝘀𝗰𝗿𝗶
 ```Javascript
 let nodeP_new1    = document.createElement("p");              // createElement() untuk Membuat Element Node baru
 let nodeP_new2    = document.createElement("h2");             // createTextNode() untuk Membuat Text Node baru
-let nodeP_new3    = document.createElement("span");           // Note: Method createElement() & createTextNode() bukan
-let nodeText_new1 = document.createTextNode("Text Baru 1");   //       milik Node Object, melainkan milik Document Object
-let nodeText_new2 = document.createTextNode("Text Baru 2");   //       (lihat bagian B di atas). Selain itu, terdapat juga
-let nodeText_new3 = document.createTextNode("Text Baru 3");   //       method createAttribute(), namun tidak dibahas disini.
+let nodeP_new3    = document.createElement("span");           // Note: Method createElement() & createTextNode() sebenarnya
+let nodeText_new1 = document.createTextNode("Text Baru 1");   //       bukan milik Node Object, melainkan milik Document Object.
+let nodeText_new2 = document.createTextNode("Text Baru 2");   //       (📖 point B di atas). Selain itu, terdapat juga method
+let nodeText_new3 = document.createTextNode("Text Baru 3");   //       createAttribute(), namun tidak dibahas disini.
 
 nodeP_new1.appendChild(nodeText_new1);              // Hasilnya menjadi: <𝗽>Text Baru 1</𝗽>
 nodeP_new2.appendChild(nodeText_new2);              // Hasilnya menjadi: <𝗵𝟮>Text Baru 2</𝗵𝟮>
@@ -4938,7 +4939,7 @@ nodeP_new3.appendChild(nodeText_new3);              // Hasilnya menjadi: <𝘀�
 nodeBody.appendChild(nodeP_new1);                   // Memasukkan <𝗽>Text Baru 1</𝗽> ke dalam <𝗯𝗼𝗱𝘆> (sebagai Node terakhir)
 nodeBody.insertBefore(nodeP_new2, nodeH1);          // Memasukkan <𝗵𝟮>Text Baru 2</𝗵𝟮> sebelum <𝗵𝟭>Belajar JavaScript</𝗵𝟭>
 nodeBody.replaceChild(nodeP_new3, nodeH1);          // Mengganti <𝗵𝟭>Belajar JavaScript</𝗵𝟭> menjadi <𝘀𝗽𝗮𝗻>Text Baru 3</𝘀𝗽𝗮𝗻>
-let ambil = nodeP.removeChild(nodeB);               // Menghapus <𝗯>dari Duniailkom</𝗯> dari <𝗽> ... </𝗽> (disimpan di Let)
+let ambil = nodeP.removeChild(nodeB);               // Menghapus <𝗯>dari Duniailkom</𝗯> dari <𝗽> ... </𝗽> (simpan di variable)
 let klon1 = nodeP.cloneNode(true);                  // Copy nodeP dengan Childnya : <𝗽>Sedang belajar <𝗲𝗺>JavaScript</𝗲𝗺></𝗽>
 let klon2 = nodeP.cloneNode(false);                 // Copy nodeP tanpa Childnya  : <𝗽></𝗽>
 console.log(nodeP.contains(nodeEm));                // Output: true   ⇨ Check apakah nodeP memiliki Child nodeEm di dalamnya
@@ -4967,16 +4968,16 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
     <h1>Belajar JavaScript</h1>
     <p>Sedang belajar <em>JavaScript</em> <b>dari Duniailkom</b></p>
     <script>
-      // 1. Siapkan let shorcut untuk Node
+      // 1. Siapkan shorcut (variable) untuk Node
       let nodeBody  = document.childNodes[1].childNodes[2];
       let nodeP     = nodeBody.childNodes[3];
   
-      // 2. Buat tag <table> & siapkan beberapa let untuk looping
+      // 2. Buat tag <table> & siapkan beberapa variable untuk looping
       let nodeTable = document.createElement("table");
       let nodeTr, nodeTd1, nodeTd2, nomorUrut, nomorAcak, nomorAcakText;
   
       for (let i = 1; i <= 10; i++) {
-        // 3. Buat 1 tag <tr>, 2 tag <td>, text node (nomor urut & acak)
+        // 3. Buat 1 tag <tr>, 2 tag <td> & text node (nomor urut & nomor acak)
         nodeTr        = document.createElement("tr");
         nodeTd1       = document.createElement("td");
         nodeTd2       = document.createElement("td");
@@ -5119,8 +5120,8 @@ console.log(doo.hasAttribute("class"));             // Output: false            
 console.log(doo.getAttribute("id"));                // Output: judul            ⇨ Mengambil nilai dari suatu atribut
 
 doo.setAttribute("title", "Sedang belajar");        // Menambah/menimpa sebuah atribut + nilainya
-console.log(doo.hasAttribute("title"));             // Output: true             ⤷ Argument ke 1: Nama atributenya
-console.log(doo.getAttribute("title"));             // Output: Sedang belajar   ⤷ Argument ke 2: Nilai atributnya
+console.log(doo.hasAttribute("title"));             // Output: true             ⤷ Argument ke 1: Nama atribute-nya
+console.log(doo.getAttribute("title"));             // Output: Sedang belajar   ⤷ Argument ke 2: Nilai atribut-nya
 console.log(doo);                                   // Output: <𝗵𝟭 id="judul" title="Sedang belajar">Belajar JavaScript</𝗵𝟭>
 
                                                     // Menampilkan seluruh atribut beserta nilainya, dari sebuah tag HTML:
@@ -5154,14 +5155,14 @@ foo.style.backgroundColor = "salmon";               // Menambah/menimpa sebuah �
 foo.style.fontSize = "1.4em";                       // ⤷ Jalankan Script di tab console, dan lihat perubahannya secara live! ⚠️
 
 let goo = getComputedStyle(foo);                    // Manampilkan seluruh Style CSS (bukan hanya dari inline CSS saja)
-                                                    // ⤷ Method getComputedStyle() milik Window Object (lihat bagian A di atas)
+                                                    // ⤷ Method getComputedStyle() milik Window Object (📖 bagian A di atas)
 
 console.log(goo);                                   // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "align-content", ...]
 console.log(goo.length);                            // Output: 325 (Total 325 Style CSS sebagai nilai awal bawaan browser)
 console.log(goo[0]);                                // Output: align-content
 console.log(goo[324]);                              // Output: -webkit-writing-mode
 console.log(goo.color);                             // Output: rgb(0, 0, 255)                   (Format yang dipakai: RGB)
-console.log(goo.backgroundColor);                   // Output: rgba(0, 0, 0, 0)                 (Format yang dipakai: RGB)
+console.log(goo.backgroundColor);                   // Output: rgba(0, 0, 0, 0)                 (Format yang dipakai: RGBA)
 console.log(goo.textDecoration);                    // Output: underline solid rgb(0, 0, 255)   (Format yang dipakai: RGB)
 ```
 
@@ -5210,7 +5211,7 @@ Di dalam DOM, event adalah segala sesuatu yang bisa kita lakukan dengan halaman 
 
 Ketika event terjadi, kita bisa menyiapkan kode JavaScript untuk melakukan sesuatu, yakni sebagai respon dari event tersebut. Misalnya saat sebuah tombol di klik, tampilkan pesan ```alert()```, atau ketika cursor mouse berada di atas menu, ubah warna background menu tersebut. Secara teknis, kode program yang dibuat untuk “menangkap” event ini dikenal dengan istilah **Event Handler** atau **Event Listener**.
 
-Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah. Secara garis besar di kelompokkan dalam beberapa tipe (mouse, keyboard, form, drag and drop, wheel, touch, gestures, gamepad, virtual reality, speech, mutation, svg, dll), yang paling banyak digunakan adalah event mouse, keyboard, dan form. Ketiga event inilah yang akan dibahas berikutnya.
+Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah. Secara garis besar di kelompokkan dalam beberapa tipe (mouse, keyboard, form, drag and drop, wheel, touch, gestures, gamepad, virtual reality, speech, mutation, svg, dll), yang paling banyak digunakan adalah event mouse, keyboard, dan form. Ketiga event inilah yang akan dibahas di materi berikutnya.
 
 ### ![✔] 𝐀. Event Handler dari atribut HTML
 
