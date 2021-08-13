@@ -628,21 +628,21 @@ if (text) {
 #### ⤷ Periksa Hasil Konversi Number:
 
 ```Javascript
-console.log(Number(false));          // Output: 0
-console.log(Number(null));           // Output: 0
-console.log(Number(undefined));      // Output: NaN
-console.log(Number(0));              // Output: 0
-console.log(Number(NaN));            // Output: NaN
-console.log(Number(''));             // Output: 0
-console.log(Number(""));             // Output: 0
+console.log(Number(false));           // Output: 0
+console.log(Number(null));            // Output: 0
+console.log(Number(undefined));       // Output: NaN
+console.log(Number(0));               // Output: 0
+console.log(Number(NaN));             // Output: NaN
+console.log(Number(''));              // Output: 0
+console.log(Number(""));              // Output: 0
 
-console.log(Number(true));           // Output: 1
-console.log(Number({}));             // Output: NaN
-console.log(Number([]));             // Output: 0
-console.log(Number(42));             // Output: 42
-console.log(Number("foo"));          // Output: NaN
-console.log(Number(Infinity));       // Output: Infinity
-console.log(Number(-Infinity));      // Output: -Infinity
+console.log(Number(true));            // Output: 1
+console.log(Number({}));              // Output: NaN
+console.log(Number([]));              // Output: 0
+console.log(Number(42));              // Output: 42
+console.log(Number("foo"));           // Output: NaN
+console.log(Number(Infinity));        // Output: Infinity
+console.log(Number(-Infinity));       // Output: -Infinity
 ```
 
 Selain Falsy & Truthy Value, di JavaScript juga terdapat konversi otomatis ke tipe data Number. Di bawah ini contohnya.
