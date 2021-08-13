@@ -198,7 +198,7 @@ Berbeda dengan mayoritas bahasa pemrograman lain, secara default kita tidak bisa
 
 Tab Inspector (1) bisa digunakan untuk menelusuri seluruh kode HTML yang terdapat di dalam halaman web (2), di sisi kanan kita bisa melihat kode CSS yang digunakan oleh tag HTML tersebut (3). Jika anda sering mengedit kode CSS, tab Inspector ini sangat bermanfaat untuk melihat dan menjalankan (mengedit) kode CSS tanpa perlu mengubah file asli.
 
-Tab yang sering kita akses selama membuat kode program JavaScript adalah **Tab Console**, yang berada di sebelah kanan tab Inspector. Apabila kode yang anda buat tidak berjalan sebagaimana mestinya, hal pertama yang harus dilakukan adalah memeriksa tab Console ini. Selain menampilkan pesan error, di dalam tab Console kita juga bisa menjalankan kode program JavaScript secara langsung, tanpa harus menulisnya di dalam file HTML. Fungsi ```console.log()``` berguna untuk menampilkan hasil kode program ke tab Console.
+Tab yang sering kita akses selama membuat kode program JavaScript adalah **tab console**, yang berada di sebelah kanan tab Inspector. Apabila kode yang anda buat tidak berjalan sebagaimana mestinya, hal pertama yang harus dilakukan adalah memeriksa tab console ini. Selain menampilkan pesan error, di dalam tab console kita juga bisa menjalankan kode program JavaScript secara langsung, tanpa harus menulisnya di dalam file HTML. Fungsi ```console.log()``` berguna untuk menampilkan hasil kode program ke tab console.
 
 ### ![✔] 𝐄. Helper Methods
 
@@ -310,11 +310,11 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var `
 
 ## `1-6. Strict Mode & Debugger` <a href="#daftar_isi_bab1">🡅</a>
 
-**Strict Mode** berfungsi untuk melarang programmer melakukan hal-hal tertentu, misalnya mendefinisikan Variable menggunakan "future" reserved word, artinya sebuah keyword yang sudah "dipesan" JavaScript untuk dijadikan reserved word di masa depan, seperti ```interface```, ```private```, ```protected```, dst. Selain itu, strict mode juga memaksa JavaScript menampilkan error (di Tab Console) pada kode program yang seharusnya bisa berjalan “normal”. Tujuannya, meminimalisir kemungkinan bug karena penulisan yang salah, typo, dan berbagai hal lain. 
+**Strict Mode** berfungsi untuk melarang programmer melakukan hal-hal tertentu, misalnya mendefinisikan Variable menggunakan "future" reserved word, artinya sebuah keyword yang sudah "dipesan" JavaScript untuk dijadikan reserved word di masa depan, seperti ```interface```, ```private```, ```protected```, dst. Selain itu, Strict Mode juga memaksa JavaScript menampilkan error (di tab console) pada kode program yang seharusnya bisa berjalan “normal” atau **“silent error”**, misalnya ketika membuat Variable tanpa didahului keyword ```var```/```let```/```const``` (bisa saja karena lupa). Dengan Strict Mode setidaknya dapat meminimalisir kemungkinan bug karena penulisan yang salah, typo, dan berbagai hal lain. 
 
-Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu anda gunakan, terutama jika terdapat kode JavaScript pendahulu yang terlalu rumit untuk diubah semuanya. Strict Mode akan membuat web browser menampilkan error dimana sebelumnya hanya ada **“silent error”**. Salah satunya ketika membuat Variable tanpa didahului keyword ```var```/```let```/```const``` (bisa saja karena lupa). 
+Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu digunakan, terutama jika terdapat kode JavaScript pendahulu yang terlalu rumit untuk diubah semuanya. Untuk masuk ke dalam Strict Mode, tambahkan String ```"use strict";``` di baris pertama kode JavaScript atau di baris paling awal dari sebuah Function (jika ingin scopenya hanya ingin pada sebuah Function tertentu saja).
 
-Untuk masuk ke dalam Strict Mode, tambahkan String ```"use strict";``` di baris pertama kode JavaScript atau di baris paling awal dari sebuah Function (jika ingin menerapkanya hanya pada sebuah Function tertentu).
+**Debugger**: Merupakan sebuah keyword di JavaScript yang berfungsi untuk melakukan debugging code (menelusuri bug dalam kode). Sebenarnya debugging bisa dilakukan hanya dengan menggunakan ```console.log()```, namun untuk kode yang alurnya rumit ```debugger``` akan jauh lebih membantu. Cara kerjanya yaitu, JavaScript akan membaca seluruh kode yang dibuat dari atas ke bawah hingga ditemukan keyword ```debugger;```, maka secara otomatis proses akan berhenti, lalu akan ditampilkan informasi yang dibutuhkan pada **tab sources** (di sebelah kanan tab console pada menu Developer Tools).
 
 ```HTML
 <html>
@@ -324,28 +324,16 @@ Untuk masuk ke dalam Strict Mode, tambahkan String ```"use strict";``` di baris 
   <body>
     ...
     <script>
-      "use strict";
+      "use strict";   // Strict Mode ditulis di baris pertama JavaScript.
+
+      ...
+
+      debugger;       // Dengan debugger, JavaScript akan berhenti disini.
 
       ...
     </script>
   </body>
 </html>
-```
-
-**Debugger**: Merupakan sebuah keyword di JavaScript yang berfungsi untuk melakukan debugging code (menelusuri bug dalam kode). Sebenarnya debugging bisa dilakukan hanya dengan menggunakan ```console.log()```, namun untuk kode yang alurnya rumit ```debugger``` akan jauh lebih membantu. Cara kerjanya yaitu, JavaScript akan membaca seluruh kode yang dibuat dari atas ke bawah hingga ditemukan keyword ```debugger;```, maka secara otomatis proses akan berhenti, lalu akan ditampilkan informasi yang dibutuhkan pada Tab Sources (di sebelah kanan Tab Console pada menu Developer Tools). Berikut contoh penggunaanya:
-
-```Javascript
-...
-
-let nama = "Budi";
-let umur = 32;
-
-debugger;           // JavaScript akan berhenti disini
-
-nama = "Senjani";
-umur = 24;
-
-...
 ```
 
 </details>
@@ -1204,7 +1192,7 @@ while (dadu !== 6) {
 }
 ```
 
-Pada contoh di atas, perulangan While Loop hanya akan berhenti ketika nilai dadu-nya sama dengan 6. Coba lakukan eksperimen, ganti setiap angka 6 pada kode di atas menjadi angka berapapun yang anda inginkan, misalnya 9999. Lalu lihat hasilnya pada Tab Console.
+Pada contoh di atas, perulangan While Loop hanya akan berhenti ketika nilai dadu-nya sama dengan 6. Coba lakukan eksperimen, ganti setiap angka 6 pada kode di atas menjadi angka berapapun yang anda inginkan, misalnya 9999. Lalu lihat hasilnya pada tab console.
 
 ### ![✔] 𝐂. Do While Loop
 
