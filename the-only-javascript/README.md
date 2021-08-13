@@ -956,10 +956,10 @@ Spread merupakan operator baru di ES6+. Operator ini digunakan untuk berbagai ke
 var nilai1 = ["a", "b", "c", "d"];
 var nilai2 = [1, 2, 3, 4];
 
-var nilai3 = [...nilai1, "e", "f"];   // ...nilai1 berarti mengakses seluruh element dari array nilai1
+var nilai3 = [...nilai1, "e", "f"];   // ...nilai1 berarti mengakses seluruh Element dari array nilai1
 console.log(nilai3);                  // Output: ["a", "b", "c", "d", "e", "f"]
 
-var nilai4 = [0, ...nilai2, 5, 6];    // ...nilai2 berarti mengakses seluruh element dari array nilai2
+var nilai4 = [0, ...nilai2, 5, 6];    // ...nilai2 berarti mengakses seluruh Element dari array nilai2
 console.log(nilai4);                  // Output: [0, 1, 2, 3, 4, 5, 6]
 
 var nilai5 = [...nilai3, ...nilai4];
@@ -1146,7 +1146,7 @@ for (var m=10; m>=1; m--){
 }                                     // Output: 10, 9, 8, 7, 6, 5, 4, 3, 1
 ```
 
-#### ⤷ Menampilkan element Array:
+#### ⤷ Menampilkan Element Array:
 
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
@@ -1211,7 +1211,7 @@ do {
 
 ### ![✔] 𝐃. For of Loop
 
-Perulangan For of digunakan khusus untuk menampilkan element Erray. Hasil dari perulangan For of di bawah ini sama saja dengan hasil perulangan For untuk menampilkan element Array pada contoh A di atas 🔔.
+Perulangan For of digunakan khusus untuk menampilkan Element Erray. Hasil dari perulangan For of di bawah ini sama saja dengan hasil perulangan For untuk menampilkan Element Array pada contoh A di atas 🔔.
 
 ```Javascript
 var arrSiswa = ["Andri", "Joko", "Sukma", "Rina", "Sari"];
@@ -1601,7 +1601,7 @@ var bersifat **Function Scope** artinya cakupan scopenya itu hanya blok Function
 
 Sedangkan let & const bersifat **Block Scope** artinya cakupan scopenya itu semua yang bertanda Code Block ```{}``` (blok Function, blok If-Else, blok perulangan, dst), akibatnya saat didefinisikan sebagai Local Variable seolah menjadi **private** dan tidak bisa diakses di luar scope.
 
-let & const sendiri merupakan fitur baru di ES6+ yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu let nilainya bisa berubah-ubah sedangkan const nilainya tidak bisa diubah sepanjang kode program (isinya tetap), namun terdapat pengecualian, yaitu untuk tipe data Object (Array dan Object) isi elementnya tetap bisa diubah, yang tidak bisa itu mengubah keseluruhan Object-nya.
+let & const sendiri merupakan fitur baru di ES6+ yang tujuannya untuk "menggantikan" penggunaan var. Perbedaan antara let & const yaitu let nilainya bisa berubah-ubah sedangkan const nilainya tidak bisa diubah sepanjang kode program (isinya tetap), namun terdapat pengecualian, yaitu untuk tipe data Object (Array dan Object) isi Elementnya tetap bisa diubah, yang tidak bisa itu mengubah keseluruhan Object-nya.
 
 ⚠️ Mulai dari sini, istilah Variable itu bisa berarti var/let/const.
 
@@ -3693,7 +3693,7 @@ console.log(strD.split("", 1));         // Output: ["B"]                        
 console.log(strD.split(" "));           // Output: ["Bandung", "kota", "kembang"]      memecah String (atau bisa juga diisi dengan
 console.log(strD.split(" ", 2));        // Output: ["Bandung", "kota"]                 RegExp, dibahas di point D 🔔), sedangkan
 console.log(strE.split(", "));          // Output: ["Satu", "dua", "tiga", "empat"]    Argument kedua (optional), diisi dengan
-console.log(strE.split(", ", 3));       // Output: ["Satu", "dua", "tiga"]             jumlah element Array yang ingin diambil.
+console.log(strE.split(", ", 3));       // Output: ["Satu", "dua", "tiga"]             jumlah Element Array yang ingin diambil.
 console.log(strF.split(/\W/));          // Output: ["Satu", "dua", "tiga", "empat"]  ⤷ /\W/ merupakan contoh pemakaian RegExp
 console.log(strF.split(/\W/, 3));       // Output: ["Satu", "dua", "tiga"]
 
@@ -4039,7 +4039,7 @@ let arrB = [[1,2],[3,4],[5,6]];
 let arrC = [1,2,3,4,5];
 let arrD = [1,2,3,4,5];
 
-console.log(arrA.length);               // Output: 5        ⇨ Mengambil info jumlah element dari sebuah Array
+console.log(arrA.length);               // Output: 5        ⇨ Mengambil info jumlah Element dari sebuah Array
 console.log(arrB.length);               // Output: 3
 console.log(arrB[0].length);            // Output: 2
 
@@ -4072,11 +4072,11 @@ let arrE = ["a","b","c"];
 let arrF = [1,2,3];
 let arrG = ["a","b","c","d","e","f","g"];
 
-console.log(arrE.reverse());            // Output: ["c","b","a"]          ⇨ Membalik urutan element Array
+console.log(arrE.reverse());            // Output: ["c","b","a"]          ⇨ Membalik urutan Element Array
 console.log(arrE);                      // Output: ["c","b","a"]          ⤷ method reverse() bersifat Mutating ⚠️
 console.log(arrE.concat(arrF));         // Output: ["c","b","a",1,2,3]    ⇨ Menggabungkan/menyambung Array
 console.log(arrE.concat(arrF,4,5));     // Output: ["c","b","a",1,2,3,4,5]⤷ Argument bisa lebih dari satu
-console.log(arrG.slice(3));             // Output: ["d","e","f","g"]      ⇨ Mengambil sebagian element Array
+console.log(arrG.slice(3));             // Output: ["d","e","f","g"]      ⇨ Mengambil sebagian Element Array
 console.log(arrG.slice(3,5));           // Output: ["d","e"]              ⤷ Argument ke 1: index awal pengambilan
 console.log(arrG.slice(-5));            // Output: ["c","d","e","f","g"]  ⤷ Argument ke 2: index akhir pengambilan
 console.log(arrG.slice(-5,-2));         // Output: ["c","d","e"]          ⤷ (Tetapi tidak termasuk index akhir itu sendiri)
@@ -4086,29 +4086,29 @@ let arrI = [1,2,3,4,5,6];
 let arrJ = [1,2,3,4,5,6];
 let arrK = [1,2,3,4,5,6];
 
-console.log(arrH.splice(3));            // Output: [4,5,6]                ⇨ Menambah atau mengurangi element Array
+console.log(arrH.splice(3));            // Output: [4,5,6]                ⇨ Menambah atau mengurangi Element Array
 console.log(arrH);                      // Output: [1,2,3]                ⤷ method splice() bersifat Mutating ⚠️
 console.log(arrI.splice(3,2));          // Output: [4,5]                  ⤷ Argument ke 1: index awal penambahan/pengurangan
-console.log(arrI);                      // Output: [1,2,3,6]              ⤷ Argument ke 2: jumlah element yang akan dihapus, jika
-console.log(arrJ.splice(3,2,"new"));    // Output: [4,5]                  ⤷ Diisi 0 (nol), artinya tidak ada element yang dihapus
-console.log(arrJ);                      // Output: [1,2,3,"new",6]        ⤷ Argument ke 3 dan seterusnya: element Array baru yang
+console.log(arrI);                      // Output: [1,2,3,6]              ⤷ Argument ke 2: jumlah Element yang akan dihapus, jika
+console.log(arrJ.splice(3,2,"new"));    // Output: [4,5]                  ⤷ Diisi 0 (nol), artinya tidak ada Element yang dihapus
+console.log(arrJ);                      // Output: [1,2,3,"new",6]        ⤷ Argument ke 3 dan seterusnya: Element Array baru yang
 console.log(arrK.splice(3,0,97,98,99)); // Output: []                     ⤷ Ingin ditambahkan (ditambahkannya dimulai dari index
 console.log(arrK);                      // Output: [1,2,3,97,98,99,4,5,6] ⤷ yang diinputkan di Argument ke 1)
 
 let arrL = ["a","b","c"];
 let tempA, tempB;
 
-console.log(arrL.join());               // Output: a,b,c                  ⇨ Menggabungkan element Array menjadi String
+console.log(arrL.join());               // Output: a,b,c                  ⇨ Menggabungkan Element Array menjadi String
 console.log(arrL.join("-"));            // Output: a-b-c                  ⤷ Argument diisi dengan karakter yang diinginkan sebagai
-console.log(arrL.join(" "));            // Output: a b c                  ⤷ Pemisah antar element (Defaul pemisahnya ialah koma)
-arrL.push("d","e","f");                 // push() untuk menambah element Array ke posisi terakhir (bisa lebih dari 1 Argument)
+console.log(arrL.join(" "));            // Output: a b c                  ⤷ Pemisah antar Element (Defaul pemisahnya ialah koma)
+arrL.push("d","e","f");                 // push() untuk menambah Element Array ke posisi terakhir (bisa lebih dari 1 Argument)
 console.log(arrL);                      // ⤷ Output: ["a","b","c","d","e","f"]
-tempA = arrL.pop();                     // pop() untuk mengurangi element Array dari posisi terakhir (hanya 1 element saja)
+tempA = arrL.pop();                     // pop() untuk mengurangi Element Array dari posisi terakhir (hanya 1 Element saja)
 console.log(tempA);                     // ⤷ Output: f
 console.log(arrL);                      // ⤷ Output: ["a","b","c","d","e"]
-arrL.unshift("x","y","z");              // unshift() untuk menambah element Array ke posisi awal (bisa lebih dari 1 Argument)
+arrL.unshift("x","y","z");              // unshift() untuk menambah Element Array ke posisi awal (bisa lebih dari 1 Argument)
 console.log(arrL);                      // ⤷ Output: ["x","y","z","a","b","c","d","e"]
-tempB = arrL.shift();                   // shift() untuk mengurangi element Array dari posisi awal (hanya 1 elemnt saja)
+tempB = arrL.shift();                   // shift() untuk mengurangi Element Array dari posisi awal (hanya 1 elemnt saja)
 console.log(tempB);                     // ⤷ Output: x
 console.log(arrL);                      // ⤷ Output: ["y","z","a","b","c","d","e"]
                                         // method push(), pop(), unshift() & shift() bersifat Mutating ⚠️
@@ -4117,7 +4117,7 @@ let arrM = ["a","b","c","d"];
 
 console.log(arrM.toString());           // Output: a,b,c,d  ⇨ Konversi Array menjadi String (serupa dengan join())
 console.log(arrM.toLocaleString());     // Output: a,b,c,d  ⇨ Konversi Array menjadi String + memakai format bahasa lokal
-console.log(arrM.includes("a"));        // Output: true     ⇨ Check apakah sebuah nilai ada di dalam element Array
+console.log(arrM.includes("a"));        // Output: true     ⇨ Check apakah sebuah nilai ada di dalam Element Array
 console.log(arrM.includes("a",1));      // Output: false    ⤷ Argument ke 2: 1 menjadi indeks dimana pencarian dimulai
 console.log(arrM.includes("e"));        // Output: false
 console.log(arrM.indexOf("a"));         // Output: 0        ⇨ Serupa dengan includes(), namun outputnya berupa posisi indeks
@@ -4129,17 +4129,17 @@ console.log(arrM.indexOf("e"));         // Output: -1
 
 Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). ⚠️ Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
 
-**E4-1.** ```forEach()``` berfungsi menjalankan sebuah Function tertentu untuk setiap element di Array (mirip seperti for of, jalan sebanyak jumlah element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa method Array lainnya (seperti: map, filter, find, reduce) mengembalikan sebuah Array baru.
+**E4-1.** ```forEach()``` berfungsi menjalankan sebuah Function tertentu untuk setiap Element di Array (mirip seperti for of, jalan sebanyak jumlah Element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa method Array lainnya (seperti: map, filter, find, reduce) mengembalikan sebuah Array baru.
 
 ```Javascript
 let arrN = ["a","b","c","d"];
 let arrO = ["Budi","Joko","Putri"];
 
 arrN.forEach(
-  function(element, index, array){                    // Argument ke 1: nilai element/value Array
-    console.log(`Index ke-${index} = ${element}`);    // Argument ke 2: index element/key Array   (optional)
+  function(element, index, array){                    // Argument ke 1: nilai Element/value Array
+    console.log(`Index ke-${index} = ${element}`);    // Argument ke 2: index Element/key Array   (optional)
   }                                                   // Argument ke 3: isi seluruh Array         (optional)
-);                                                    // ⤷ Penulisan Argument tidak harus element/index/arrray (bebas saja)
+);                                                    // ⤷ Penulisan Argument tidak harus Element/index/arrray (bebas saja)
                                                       // ⤷ Peranan Argument ke 3 tidak sepenting Argument ke 1 & ke 2, oleh
                                                       // ⤷ karena itu contoh di samping tidak menyertakan console.log(array);
                                                       // Output:
@@ -4214,7 +4214,7 @@ const newPeople = people.map(function(person){        // Output:
 console.log(newPeople);                               // Output lihat di atas ini
 ```
 
-**E4-3.** ```filter()``` serupa dengan map, bedanya hasil return berupa true/false. Jika true pertahankan element Array, jika false hapus element. Array baru yang terbentuk jumlahnya tergantung hasil filter.
+**E4-3.** ```filter()``` serupa dengan map, bedanya hasil return berupa true/false. Jika true pertahankan Element Array, jika false hapus Element. Array baru yang terbentuk jumlahnya tergantung hasil filter.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -4251,7 +4251,7 @@ bosses = people.filter(function(person){              // Output: [
 console.log(bosses);                                  // ]       
 ```
 
-**E4-4.** ```every()``` berfungsi memeriksa apakah seluruh element Array memenuhi syarat tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya (seluruh element menghasilkan true), maka method every akan me-return true. Namun jika tidak (ada salah satu saja element yang menghasilkan false), maka method every akan me-return false.
+**E4-4.** ```every()``` berfungsi memeriksa apakah seluruh Element Array memenuhi syarat tertentu (syarat kita definisikan sendiri di dalam Function). Jika ya (seluruh Element menghasilkan true), maka method every akan me-return true. Namun jika tidak (ada salah satu saja Element yang menghasilkan false), maka method every akan me-return false.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -4264,10 +4264,10 @@ function besarDari10(elm){                            // Jika lebih dari 10 retu
 }
 
 console.log(arrR.every(besarDari10));                 // Output: false  (karena terdapat nilai 4 & 9 yang memang kurang dari 10)
-console.log(arrS.every(besarDari10));                 // Output: true   (karena semua element di arrS bernilai lebih besar dari 10)
+console.log(arrS.every(besarDari10));                 // Output: true   (karena semua Element di arrS bernilai lebih besar dari 10)
 ```
 
-**E4-5.** ```some()``` serupa dengan every, bedanya syaratnya terbalik, yaitu method some akan me-return true jika ada salah satu element saja yang menghasilkan true (memenuhi syarat yang telah didefinisikan).
+**E4-5.** ```some()``` serupa dengan every, bedanya syaratnya terbalik, yaitu method some akan me-return true jika ada salah satu Element saja yang menghasilkan true (memenuhi syarat yang telah didefinisikan).
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -4279,11 +4279,11 @@ function besarDari10(elm){                            // Jika lebih dari 10 retu
   return (elm>10);                                    // genapOnly(), sebenarnya bisa ditulis dengan IF-ELSE, tapi tidak efisien.
 }
 
-console.log(arrQ.some(besarDari10));                  // Output: false  (karena semua element di arrQ bernilai lebih kecil dari 10)
+console.log(arrQ.some(besarDari10));                  // Output: false  (karena semua Element di arrQ bernilai lebih kecil dari 10)
 console.log(arrR.some(besarDari10));                  // Output: true   (karena terdapat nilai 16 & 25 yang memang memenuhi syarat)
 ```
 
-**E4-6.** ```find()``` & ```findIndex()``` digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return satu nilai yang ditemukan pertama kali (cocok untuk kasus mencari suatu nilai yang unik), bisa berupa Object, Number, dll. find akan me-return nilai element Arrray tersebut, sedangkan findIndex me-return index Array-nya. Jika nilai tidak ditemukan maka yang akan dikembalikan yaitu ```undefined```.
+**E4-6.** ```find()``` & ```findIndex()``` digunakan untuk mencari suatu nilai di dalam Array berdasarkan syarat tertentu. Kedua method ini akan langsung berhenti dan me-return satu nilai yang ditemukan pertama kali (cocok untuk kasus mencari suatu nilai yang unik), bisa berupa Object, Number, dll. find akan me-return nilai Element Arrray tersebut, sedangkan findIndex me-return index Array-nya. Jika nilai tidak ditemukan maka yang akan dikembalikan yaitu ```undefined```.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -4315,7 +4315,7 @@ const someone = people.find(function(person){
 console.log(someone);                                 // Output: ▶{id: 3, name: "susy", age: 30, job: "the boss"} 
 ```
 
-**E4-7.** ```reduce()``` & ```reduceRight()``` digunakan untuk memproses total seluruh element Array dan menghasilkan 1 nilai akhir. reduce memproses dari awal Array, sedangkan reduceRight memproses dari akhir element Array.
+**E4-7.** ```reduce()``` & ```reduceRight()``` digunakan untuk memproses total seluruh Element Array dan menghasilkan 1 nilai akhir. reduce memproses dari awal Array, sedangkan reduceRight memproses dari akhir Element Array.
 
 ```Javascript
 let arrP = [1,2,3,4,5];
@@ -4324,8 +4324,8 @@ let arrR = [4,9,16,25];
 let arrS = [36,49,64,81];
 
 function tambah(total, elm, idx, arr){                // Argument ke 1: Variable penampung nilai total
-  return total + elm;                                 // Argument ke 2: nilai element/value Array
-}                                                     // Argument ke 3: index element/key Array       (optional)
+  return total + elm;                                 // Argument ke 2: nilai Element/value Array
+}                                                     // Argument ke 3: index Element/key Array       (optional)
                                                       // Argument ke 4: isi seluruh Array             (optional)
 function pangkat2(total, elm, idx, arr){
   return total + Math.pow(elm, 2);
@@ -4341,7 +4341,7 @@ console.log(arrQ.reduceRight(pangkat2));              // Output: 183  (hasil dar
 console.log(arrQ.reduceRight(pangkat2,0));            // Output: 255  (hasil dari 0+9²+8²+7²+6²+5²)
 ```
 
-Pada method reduce & reduceRight, Argument ke 1 yang berisi Variable penampung nilai total pada awalnya akan langsung diisi oleh nilai dari element pertama di Array (default). Perhatikan proses perhitungan pada baris ```console.log(arrQ.reduce(pangkat2))```, element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Variable total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Variable total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris ```console.log(arrQ.reduce(pangkat2,0))```, Variable total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari element pertama Array.
+Pada method reduce & reduceRight, Argument ke 1 yang berisi Variable penampung nilai total pada awalnya akan langsung diisi oleh nilai dari Element pertama di Array (default). Perhatikan proses perhitungan pada baris ```console.log(arrQ.reduce(pangkat2))```, Element pertama arrQ yang bernilai 5 tidak ikut dipangkatkan 2, itu karena 5 langsung disimpan ke dalam Variable total. Untuk menghindari hal seperti ini, kita dapat mengatur nilai awal untuk Variable total dengan cara menyisipkan Argument tambahan setelah Callback. Perhatikan proses perhitungan pada baris ```console.log(arrQ.reduce(pangkat2,0))```, Variable total diisi oleh nilai 0 diawal, sesuai dengan Argument tambahan yang disisipkan setelah Callback, tidak lagi mengambil dari Element pertama Array.
 
 ```Javascript
 const people = [
@@ -4357,7 +4357,7 @@ const total2 = people.reduce(function(total, elm){
 console.log(total2);                                  // Output: 1000 (dari hasil penjumlahan 200+300+500)
 ```
 
-**E4-8.** ```sort()``` berfungsi mengurutkan element Array berdasarkan nomor urut Unicode. Method sort bersifat Mutating ⚠️
+**E4-8.** ```sort()``` berfungsi mengurutkan Element Array berdasarkan nomor urut Unicode. Method sort bersifat Mutating ⚠️
 
 ```Javascript
 let arrT = ["Zaki","Aldo","Erpan","Joko","Budi"];
@@ -4375,7 +4375,7 @@ function bandingkan(a, b){                            // Function ini mempunyai 
 }                                                     // ⤷ Jika a > b, return angka positif, artinya a diurutkan setelah b.
                                                       // ⤷ Jika a = b, return 0, artinya a dan b sama, urutan tidak berubah.
 
-arrV.sort(bandingkan);                                // sort() yang menggunakan Callback sebagai pengatur urutan element Array
+arrV.sort(bandingkan);                                // sort() yang menggunakan Callback sebagai pengatur urutan Element Array
 console.log(arrV);                                    // Output: [1,2,3,5,8,11,22,31,33,44]
 ```
 
@@ -4710,9 +4710,9 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 |-----------------------------------------------------	|---------------	|
 | <a href="#bab4_1">4-1. Pengantar DOM</a><br>        	| X Menit       	|
 | <a href="#bab4_2">4-2. DOM Object</a>            	    | X Menit       	|
-| <a href="#bab4_3">4-3. DOM Event</a>     	            | X Menit       	|
-| <a href="#bab4_4">4-4. Event Object</a>     	        | X Menit       	|
-| <a href="#bab4_5">4-5. Event Prevent Default</a>      | X Menit       	|
+| <a href="#bab4_3">4-3. DOM Event (1)</a> 	            | X Menit       	|
+| <a href="#bab4_4">4-4. DOM Event (2)</a>     	        | X Menit       	|
+| <a href="#bab4_5">4-5. Form Processing</a>            | X Menit       	|
 
 <hr>
 <div id="bab4_1"></div>
@@ -5031,8 +5031,8 @@ let nodeClass = document.getElementsByClassName("kelas-a");   // Mencari Element
 let nodeTag   = document.getElementsByTagName("p");           // Mencari Element Node berdasarkan nama tag
 let nodeName  = document.getElementsByName("isian");          // Mencari Element Node berdasarkan nilai atribut name
 let nodeQS    = document.querySelector("p b");                // Mencari Element Node menggunakan 𝗦𝗲𝗹𝗲𝗰𝘁𝗼𝗿 𝗖𝗦𝗦
-let nodeQSA   = document.querySelectorAll("p b");             // ⤷ querySelector() mengambil element yang ditemukan pertama saja
-                                                              // ⤷ querySelectorAll() mengambil seluruh element yang ditemukan
+let nodeQSA   = document.querySelectorAll("p b");             // ⤷ querySelector() mengambil Element yang ditemukan pertama saja
+                                                              // ⤷ querySelectorAll() mengambil seluruh Element yang ditemukan
 
 console.log(nodeEm);                    // Output: <𝗲𝗺 id="miring">JavaScript</𝗲𝗺>
 console.log(nodeClass);                 // Output: ▶𝗛𝗧𝗠𝗟𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻(𝟮) [h2.kelas-a, p.kelas-a]
@@ -5142,7 +5142,7 @@ console.log(doo);                                   // Output: <𝗵𝟭 id="jud
 ```Javascript
 let foo = document.querySelector("p:nth-child(3)"); // let foo berisi <𝗽 style="color: blue;"> ... </𝗽>
                                                     // ⤷ Cara baca: Cari tag <p> yang berada pada urutan ke 3 dalam
-                                                    //              sebuah parent element (dalam kasus ini: <body>)
+                                                    //              sebuah parent Element (dalam kasus ini: <body>)
 
 console.log(foo.style);                             // Output: ▶𝗖𝗦𝗦𝗦𝘁𝘆𝗹𝗲𝗗𝗲𝗰𝗹𝗮𝗿𝗮𝘁𝗶𝗼𝗻 [0: "color"]  ⇨ Menampilkan seluruh 𝗜𝗻𝗹𝗶𝗻𝗲
 console.log(foo.style[0]);                          // Output: color                               𝗖𝗦𝗦 dari sebuah tag HTML
@@ -5201,7 +5201,7 @@ console.log(joo.className);                         // Output: tebal
 <hr>
 <div id="bab4_3"></div>
 
-## `4-3. DOM Event` <a href="#daftar_isi_bab4">🡅</a>
+## `4-3. DOM Event (1)` <a href="#daftar_isi_bab4">🡅</a>
 
 > - [X] 𝐀. Event Handler dari atribut HTML
 > - [X] 𝐁. Event Handler dari property Element
@@ -5226,9 +5226,9 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
     <span onclick="alert('Saya di klik');">Click</span><br>
     <span ondblclick="alert('Saya di double klik');">Double Click</span><br>
     <span oncontextmenu="alert('Saya di klik kanan');">Right Click</span><br>
-    <span onmouseenter="alert('Pointer masuk ke element');">Mouse Enter</span><br>
-    <span onmouseover="alert('Pointer berada di atas element');">Mouse Over</span><br>
-    <span onmouseleave="alert('Pointer keluar dari element');">Mouse Leave</span><br>
+    <span onmouseenter="alert('Pointer masuk ke Element');">Mouse Enter</span><br>
+    <span onmouseover="alert('Pointer berada di atas Element');">Mouse Over</span><br>
+    <span onmouseleave="alert('Pointer keluar dari Element');">Mouse Leave</span><br>
 
     <h1 onclick="document.querySelector('p').innerHTML='Paragraf 1 muncul!';">Klik saya</h1>
     <p></p> <!-- tag p sebagai placeholder/penampung hasil ketika event terjadi-->
@@ -5386,7 +5386,14 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 <hr>
 <div id="bab4_4"></div>
 
-## `4-4. Event Object` <a href="#daftar_isi_bab4">🡅</a>
+## `4-4. DOM Event (2)` <a href="#daftar_isi_bab4">🡅</a>
+
+> - [X] 𝐀. Event Object
+> - [X] 𝐁. Event Propagation
+> - [X] 𝐂. Event Default
+> - [X] 𝐃. Mouse Events
+
+### ![✔] 𝐀. Event Object
 
 ```HTML
 <!DOCTYPE html>
@@ -5445,8 +5452,8 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
         console.log(event.altKey);            // Output: false                     ⇨ Apa ALT ditekan saat event terjadi?
         console.log(event.screenX);           // Output: 157                       ⇨ Posisi cursor sumbu-x (acuan lebar layar)
         console.log(event.screenY);           // Output: 112                       ⇨ Posisi cursor sumbi-y (acuan tinggi layar)
-        console.log(event.clientX);           // Output: 157                       ⇨ Posisi cursor sumbu-x (acuan lebar element)
-        console.log(event.clientY);           // Output: 41                        ⇨ Posisi cursor sumbu-y (acuan tinggi element)
+        console.log(event.clientX);           // Output: 157                       ⇨ Posisi cursor sumbu-x (acuan lebar Element)
+        console.log(event.clientY);           // Output: 41                        ⇨ Posisi cursor sumbu-y (acuan tinggi Element)
       });
 
       // ➋ Memanfaatkan property Event Object untuk keperluan tertentu
@@ -5483,12 +5490,24 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, seperti apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya argument sebuah fungsi berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada contoh di atas, Variable ```event``` langsung diinput tanpa diisi nilai apapun. Nilai dari argument ```event``` akan di generate otomatis oleh web browser. 
 
-Nama argument untuk Event Object bisa apa saja, tidak harus ```event```, misalnya pada contoh Function ```ubahWarna()``` di atas Variable yang digunakan yaitu ```e```. Property Event Object yang ada pada contoh di atas hanya sebagian saja yang memang banyak dijumpai, untuk daftar lengkapnya bisa gunakan perintah ```console.log(event);```. Namun sebenarnya property yang paling penting yaitu ```event.target``` yang berisi element node dimana event terjadi.
+Nama argument untuk Event Object bisa apa saja, tidak harus ```event```, misalnya pada contoh Function ```ubahWarna()``` di atas Variable yang digunakan yaitu ```e```. Property Event Object yang ada pada contoh di atas hanya sebagian saja yang memang banyak dijumpai, untuk daftar lengkapnya bisa gunakan perintah ```console.log(event);```. Namun sebenarnya property yang paling penting yaitu ```event.target``` yang berisi Element Node dimana event terjadi.
+
+### ![✔] 𝐁. Event Propagation
+
+...
+
+### ![✔] 𝐂. Event Default
+
+...
+
+### ![✔] 𝐃. Mouse Events
+
+...
 
 <hr>
 <div id="bab4_5"></div>
 
-## `4-5. Event Prevent Default` <a href="#daftar_isi_bab4">🡅</a>
+## `4-5. Form Processing` <a href="#daftar_isi_bab4">🡅</a>
 
 </details>
 
