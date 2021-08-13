@@ -5460,7 +5460,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
         } else{
           nodeH1B.innerHTML = "World di klik!";
         }
-      }
+      };
       nodeH1B.addEventListener("click", tampilkanClick1);
 
       // ➌ Property Event Object yang paling penting ialah target (1)
@@ -5474,7 +5474,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
       // ➍ Property Event Object yang paling penting ialah target (2)
       function ubahWarna(e){
         e.target.style.backgroundColor = e.target.innerHTML;
-      }
+      };
       nodeTable.addEventListener("click", ubahWarna);
     </script>
   </body>
