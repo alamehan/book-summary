@@ -5388,7 +5388,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 ## `4-4. Event Object` <a href="#daftar_isi_bab4">🡅</a>
 
-```Javascript
+```HTML
 <!DOCTYPE html>
 <html>
   <head>
