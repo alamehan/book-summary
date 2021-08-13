@@ -325,11 +325,8 @@ Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu digunakan, terutam
     ...
     <script>
       "use strict";   // Strict Mode ditulis di baris pertama JavaScript.
-
       ...
-
       debugger;       // Dengan debugger, JavaScript akan berhenti disini.
-
       ...
     </script>
   </body>
