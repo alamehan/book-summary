@@ -5544,7 +5544,7 @@ nodeH1.addEventListener("click", tampilkanH1, true);
 nodeEm.addEventListener("click", tampilkanEm, true);
 ```
 
-Lalu bagaimana jika kita tidak menginginkan event bubbling maupun capturing? hanya ingin menargetkan element yang di-klik saja. Maka untuk mengatasi ini, Event Object memiliki method ```stopPropagation()``` untuk menghentikannya. Pada contoh di atas, modifikasi baris kode Function ```tampilkanEm()``` menjadi seperti di bawah ini (saat tag ```<em>``` di klik, efek event propagation tidak akan terjadi):
+Lalu bagaimana jika kita tidak menginginkan event bubbling maupun capturing? hanya ingin menargetkan element yang di-klik saja. Maka untuk mengatasi ini, Event Object memiliki method ```stopPropagation()``` untuk menghentikannya. Pada contoh di atas, modifikasi baris kode Function ```tampilkanEm()``` menjadi seperti di bawah ini (hasilnya: saat tag ```<em>``` di klik, efek event propagation tidak akan terjadi):
 
 ```Javascript
 function tampilkanEm(e){
