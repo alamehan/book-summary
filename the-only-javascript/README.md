@@ -5534,7 +5534,9 @@ Event Propagation adalah istilah yang merujuk kepada cara event "ditangkap" oleh
 </html>
 ```
 
-Pada contoh di atas, jika tag ```<em>``` yakni tulisan "World" yang di klik, secara tidak langsung kita juga men-klik tag ```<h1>``` dan ```<div>``` (sebagai parent-nya). Jika diperhatikan hasilnya pada tab console, urutan outputnya dimulai dari "Tag em di-klik!", "Tag h1 di-klik!" dan terakhir "Tag div di-klik!". Artinya, event dijalankan dari elemen paling dalam hingga terluar. Urutan event inilah yang dikenal dengan istilah **Event Bubbling**, yang merupakan mekanisme default yang dijalankan untuk event propagation. Namun selain bubbling, terdapat istilah lain yakni **Event Capturing** yang merupakan kebalikan dari bubbling, dimana event akan dijalankan dari yang paling terluar hingga terdalam. Untuk mengubah bubbling menjadi capturing, cukup input nilai ```true``` ke dalam argument ketiga dari method ```addEventListener()```, simak contoh berikut:
+Pada contoh di atas, jika tag ```<em>``` yakni tulisan "World" yang di klik, secara tidak langsung kita juga men-klik tag ```<h1>``` dan ```<div>``` (sebagai parent-nya). Jika diperhatikan hasilnya pada tab console, urutan outputnya dimulai dari "Tag em di-klik!", "Tag h1 di-klik!" dan terakhir "Tag div di-klik!". Artinya, event dijalankan dari elemen paling dalam hingga terluar. Urutan event inilah yang dikenal dengan istilah **Event Bubbling**, yang merupakan mekanisme default yang dijalankan untuk event propagation. 
+
+Namun selain bubbling, terdapat istilah lain yakni **Event Capturing** yang merupakan kebalikan dari bubbling, dimana event akan dijalankan dari yang paling terluar hingga terdalam. Untuk mengubah bubbling menjadi capturing, cukup input nilai ```true``` ke dalam argument ketiga dari method ```addEventListener()```, simak contoh berikut:
 
 ```HTML
 
