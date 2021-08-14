@@ -5452,10 +5452,12 @@ Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browse
         console.log(event.ctrlKey);           // Output: false                     ⇨ Apa CTRL ditekan saat event terjadi?
         console.log(event.shiftKey);          // Output: false                     ⇨ Apa SHIFT ditekan saat event terjadi?
         console.log(event.altKey);            // Output: false                     ⇨ Apa ALT ditekan saat event terjadi?
-        console.log(event.screenX);           // Output: 157                       ⇨ Posisi cursor sumbu-x (acuan lebar layar)
-        console.log(event.screenY);           // Output: 112                       ⇨ Posisi cursor sumbi-y (acuan tinggi layar)
-        console.log(event.clientX);           // Output: 157                       ⇨ Posisi cursor sumbu-x (acuan lebar Element)
-        console.log(event.clientY);           // Output: 41                        ⇨ Posisi cursor sumbu-y (acuan tinggi Element)
+        console.log(event.screenX);           // Output: 43   (contoh)             ⇨ Cursor sumbu-x (acuan lebar layar monitor)
+        console.log(event.screenY);           // Output: 115  (contoh)             ⇨ Cursor sumbi-y (acuan tinggi layar monitor)
+        console.log(event.clientX);           // Output: 43   (contoh)             ⇨ Cursor sumbu-x (acuan lebar web browser)
+        console.log(event.clientY);           // Output: 44   (contoh)             ⇨ Cursor sumbu-y (acuan tinggi web browser)
+        console.log(event.pageX);             // Output: 43   (contoh)             ⇨ Cursor sumbu-x (acuan lebar document)
+        console.log(event.pageY);             // Output: 44   (contoh)             ⇨ Cursor sumbu-y (acuan tinggi document)
       });
 
       // ➋ Memanfaatkan property Event Object untuk keperluan tertentu
@@ -5494,6 +5496,8 @@ Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browse
   </body>
 </html>
 ```
+
+📚 Referensi Event Objects lainnya lihat di: <a href="https://www.w3schools.com/jsref/obj_events.asp">W3Schools: Event Object</a>.
 
 ### ![✔] 𝐁. Event Propagation
 
@@ -5606,22 +5610,57 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
   </head>
   <style>
     div {
-      width: 500px;
-      height: 100px;
+      width: 720px;
       border: 3px solid black;
       text-align: center;
       font-size: 20px;
-      margin: 10px 0px;
-      padding: 10px 0px;
+      margin: 10px auto;
+      padding: 20px 0px;
+    }
+    p {
+      width: 560px;
+      height: 80px;
+      line-height: 80px;
+      border: 1px solid black;
+      text-align: center;
+      font-size: 20px;
+      margin: 10px auto;
+    }
+    h3 {
+      text-align: center;
     }
   </style>
   <body>
-    <div id="div1">Klik kiri <br> Klik tengah <br> Klik kanan <br> Double Klik</div>
-    <div id="div2">Mouse ditahan <br> Mouse dilepas</div>
-    <div id="div3">Mouse masuk area element/child-nya <br> Mouse keluar area element/child-nya</div>
-    <div id="div4">Mouse masuk area element <br> Mouse keluar area element</div>
+    <div id="div1">click, contextmenu, auxclick & dblclick</div>
+    <div id="div2">mousedown & mouseup</div>
+
+    <div id="div3"><p>mouseover & mouseout</p></div>    <!-- terdapat tag <p> sebagai child -->
+    <div id="div4"><p>mouseenter & mouseleave</p></div> <!-- terdapat tag <p> sebagai child -->
+
+    <div id="div5">mousemove</div>
+    <h3>
+      Koordinat screen:
+      (X = <span id="sumbuXS"></span>) <!-- terdapat tag <span> sebagai placeholder -->
+      (Y = <span id="sumbuYS"></span>) <!-- terdapat tag <span> sebagai placeholder -->
+    </h3>
+    <h3>
+      Koordinat client:
+      (X = <span id="sumbuXC"></span>) <!-- terdapat tag <span> sebagai placeholder -->
+      (Y = <span id="sumbuYC"></span>) <!-- terdapat tag <span> sebagai placeholder -->
+    </h3>
+    <h3>
+      Koordinat page:
+      (X = <span id="sumbuXP"></span>) <!-- terdapat tag <span> sebagai placeholder -->
+      (Y = <span id="sumbuYP"></span>) <!-- terdapat tag <span> sebagai placeholder -->
+    </h3>
     
     <script>
+      /* ➊
+         click        : Klik kiri
+         contextmenu  : Klik kanan
+         auxclick     : Klik tengah
+         dblclick     : Double klik
+      */
       function clickEvent(e){
         e.target.style.backgroundColor = "salmon";
         e.target.innerHTML = "Terjadi event click";
@@ -5638,6 +5677,16 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
         e.target.style.backgroundColor = "violet";
         e.target.innerHTML = "Terjadi event dblclick";
       }
+      var nodeDiv1 = document.querySelector("#div1");
+      nodeDiv1.addEventListener("click", clickEvent);
+      nodeDiv1.addEventListener("contextmenu", contextmenuEvent);
+      nodeDiv1.addEventListener("auxclick", auxclickEvent);
+      nodeDiv1.addEventListener("dblclick", dblclickEvent);
+
+      /* ➋
+         mousedown    : Mouse ditahan (klik + tahan)
+         mouseup      : Mouse dilepas
+      */
       function mousedownEvent(e){
         e.target.style.backgroundColor = "lightgreen";
         e.target.innerHTML = "Terjadi event mousedown";
@@ -5646,44 +5695,57 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
         e.target.style.backgroundColor = "lightblue";
         e.target.innerHTML = "Terjadi event mouseup";
       }
-      function mouseoverEvent(e){
-        e.target.style.backgroundColor = "wheat";
-        e.target.innerHTML = "Terjadi event mouseover";
-      }
-      function mouseoutEvent(e){
-        e.target.style.backgroundColor = "silver";
-        e.target.innerHTML = "Terjadi event mouseout";
-      }
-      function mouseenterEvent(e){
-        e.target.style.backgroundColor = "pink";
-        e.target.innerHTML = "Terjadi event mouseout";
-      }
-      function mouseleaveEvent(e){
-        e.target.style.backgroundColor = "khaki";
-        e.target.innerHTML = "Terjadi event mouseout";
-      }
-
-      var nodeDiv1 = document.querySelector("#div1");
-      nodeDiv1.addEventListener("click", clickEvent);             // click       : Klik kiri
-      nodeDiv1.addEventListener("contextmenu", contextmenuEvent); // contextmenu : Klik kanan
-      nodeDiv1.addEventListener("auxclick", auxclickEvent);       // auxclick    : Klik tengah
-      nodeDiv1.addEventListener("dblclick", dblclickEvent);       // dblclick    : Double klik
-
       var nodeDiv2 = document.querySelector("#div2");
-      nodeDiv2.addEventListener("mousedown", mousedownEvent);     // mousedown   : Mouse ditahan
-      nodeDiv2.addEventListener("mouseup", mouseupEvent);         // mouseup     : Mouse dilepas
+      nodeDiv2.addEventListener("mousedown", mousedownEvent);
+      nodeDiv2.addEventListener("mouseup", mouseupEvent); 
 
+      /* ➌
+         mouseover    : Mouse masuk area element (child dianggap terpisah)
+         mouseout     : Mouse keluar area element (child dianggap terpisah)
+         mouseenter   : Mouse masuk area element (child dianggap menyatu)
+         mouseleave   : Mouse keluar area element (child dianggap menyatu)
+      */
+      function gantiPink(e){
+        e.target.style.backgroundColor = "pink";
+      }
+      function gantiKhaki(e){
+        e.target.style.backgroundColor = "khaki";
+      }
       var nodeDiv3 = document.querySelector("#div3");
-      nodeDiv3.addEventListener("mouseover", mouseoverEvent);     // mouseover   : Mouse masuk area element/child-nya
-      nodeDiv3.addEventListener("mouseout", mouseoutEvent);       // mouseout    : Mouse keluar area element/child-nya
-
       var nodeDiv4 = document.querySelector("#div4");
-      nodeDiv4.addEventListener("mouseenter", mouseenterEvent);   // mouseenter  : Mouse masuk area element
-      nodeDiv4.addEventListener("mouseleave", mouseleaveEvent);   // mouseleave  : Mouse keluar area element
+      nodeDiv3.addEventListener("mouseover", gantiPink);
+      nodeDiv3.addEventListener("mouseout", gantiKhaki);
+      nodeDiv4.addEventListener("mouseenter", gantiPink);
+      nodeDiv4.addEventListener("mouseleave", gantiKhaki);
+
+      /* ➍
+         mousemove : Mouse digerakkan dalam element
+         screen ➜ Acuannya lebar layar monitor secara keseluruhan
+         client ➜ Acuannya lebar jendela web browser
+         page   ➜ Acuannya lebar document
+      */
+      function mousemoveEvent(e){
+        nodeXS.innerHTML = e.screenX;
+        nodeYS.innerHTML = e.screenY;
+        nodeXC.innerHTML = e.clientX;
+        nodeYC.innerHTML = e.clientY;
+        nodeXP.innerHTML = e.pageX;
+        nodeYP.innerHTML = e.pageY;
+      }
+      var nodeDiv5 = document.querySelector("#div5");
+      var nodeXS = document.getElementById("sumbuXS");
+      var nodeYS = document.getElementById("sumbuYS");
+      var nodeXC = document.getElementById("sumbuXC");
+      var nodeYC = document.getElementById("sumbuYC");
+      var nodeXP = document.getElementById("sumbuXP");
+      var nodeYP = document.getElementById("sumbuYP");
+      nodeDiv5.addEventListener("mousemove", mousemoveEvent);
     </script>
   </body>
 </html>
 ```
+
+📚 Referensi DOM Event lainnya lihat di: <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">W3Schools: HTML DOM Events</a>.
 
 <hr>
 <div id="bab4_5"></div>
