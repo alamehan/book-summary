@@ -5595,6 +5595,8 @@ Selain tag ```<a>```, contoh lainnya yaitu event bawaan pada tombol submit di fo
 
 ### ![✔] 𝐃. Mouse Events
 
+Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. Karena itulah mouse event perlu dibahas dengan detail.
+
 ```HTML
 <!DOCTYPE html>
 <html>
