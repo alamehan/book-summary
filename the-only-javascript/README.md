@@ -5536,10 +5536,21 @@ Event Propagation adalah istilah yang merujuk kepada cara event "ditangkap" oleh
 
 Pada contoh di atas, jika tag ```<em>``` yakni tulisan "World" yang di klik, secara tidak langsung kita juga men-klik tag ```<h1>``` dan ```<div>``` (sebagai parent-nya). Jika diperhatikan hasilnya pada tab console, urutan outputnya dimulai dari "Tag em di-klik!", "Tag h1 di-klik!" dan terakhir "Tag div di-klik!". Artinya, event dijalankan dari elemen paling dalam hingga terluar. Urutan event inilah yang dikenal dengan istilah **Event Bubbling**, yang merupakan mekanisme default yang dijalankan untuk event propagation. 
 
-Namun selain bubbling, terdapat istilah lain yakni **Event Capturing** yang merupakan kebalikan dari bubbling, dimana event akan dijalankan dari yang paling terluar hingga terdalam. Untuk mengubah bubbling menjadi capturing, cukup input nilai ```true``` ke dalam argument ketiga dari method ```addEventListener()```, simak contoh berikut:
+Namun selain bubbling, terdapat istilah lain yakni **Event Capturing** yang merupakan kebalikan dari bubbling, dimana event akan dijalankan dari yang paling terluar hingga terdalam. Untuk mengubah bubbling menjadi capturing, cukup input nilai ```true``` ke dalam argument ketiga dari method ```addEventListener()```. Pada contoh di atas, maka baris kode diubah menjadi:
 
-```HTML
+```Javascript
+nodeDiv.addEventListener("click", tampilkanDiv, true);
+nodeH1.addEventListener("click", tampilkanH1, true);
+nodeEm.addEventListener("click", tampilkanEm, true);
+```
 
+Lalu bagaimana jika kita tidak menginginkan event bubbling maupun capturing? hanya ingin menargetkan element yang di-klik saja (tidak menyertakan element parent/child-nya). Maka untuk mengatasi ini, Event Object memiliki method ```stopPropagation()``` untuk menghentikannya. Pada contoh di atas coba modifikasi baris kode Function ```tampilkanEm()``` menjadi seperti di bawah ini (saat tag ```<em>``` di klik, efek event propagation tidak akan terjadi):
+
+```Javascript
+function tampilkanEm(e){
+  console.log("Tag em di-klik!");
+  e.stopPropagation();
+}
 ```
 
 ### ![✔] 𝐂. Event Default
