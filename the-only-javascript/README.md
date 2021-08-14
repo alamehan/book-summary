@@ -5499,7 +5499,46 @@ Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browse
 
 Event Propagation adalah istilah yang merujuk kepada cara event "ditangkap" oleh web browser. Misalnya ketika tag ```<h1>``` di klik, bukankah kita sebenarnya juga men-klik tag ```<body>```? Aspek inilah yang dimaksud dengan Event Propagation.
 
-...
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <div>
+      <h1>Hello <em>World</em></h1>
+    </div>
+
+    <script>
+      var nodeDiv = document.querySelector("div");
+      var nodeH1  = document.querySelector("h1");
+      var nodeEm  = document.querySelector("em");
+
+      function tampilkanDiv(){
+        console.log("Tag div di-klik!");
+      }
+      function tampilkanH1(){
+        console.log("Tag h1 di-klik!");
+      }
+      function tampilkanEm(){
+        console.log("Tag em di-klik!");
+      }
+
+      nodeDiv.addEventListener("click", tampilkanDiv);
+      nodeH1.addEventListener("click", tampilkanH1);
+      nodeEm.addEventListener("click", tampilkanEm);
+    </script>
+  </body>
+</html>
+```
+
+Pada contoh di atas, jika tag ```<em>``` yakni tulisan "World" yang di klik, secara tidak langsung kita juga men-klik tag ```<h1>``` dan ```<div>``` (sebagai parent-nya). Jika diperhatikan hasilnya pada tab console, urutan outputnya dimulai dari "Tag em di-klik!", "Tag h1 di-klik!" dan terakhir "Tag div di-klik!". Artinya, event dijalankan dari elemen paling dalam hingga terluar. Urutan event inilah yang dikenal dengan istilah **Event Bubbling**, yang merupakan mekanisme default yang dijalankan untuk event propagation. Namun selain bubbling, terdapat istilah lain yakni **Event Capturing** yang merupakan kebalikan dari bubbling, dimana event akan dijalankan dari yang paling terluar hingga terdalam. Untuk mengubah bubbling menjadi capturing, cukup input nilai ```true``` ke dalam argument ketiga dari method ```addEventListener()```, simak contoh berikut:
+
+```HTML
+
+```
 
 ### ![✔] 𝐂. Event Default
 
