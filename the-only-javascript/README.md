@@ -4750,9 +4750,9 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 > - [X] 𝐀. Window Object
 > - [X] 𝐁. Document Object (Part 1)
-> - [X] 𝐂. Node Object (Part 1)
+> - [X] 𝐂. Node Object
 > - [X] 𝐃. Document Object (Part 2)
-> - [X] 𝐄. Node Object (Part 2)
+> - [X] 𝐄. Node Object: Element Object
 
 <img src="assets/dom-object.png">
 
@@ -4826,7 +4826,7 @@ document.writeln("Hello World");        // Sama seperti write() namun menambah b
 
 ```wirete()``` dan ```writeln()``` biasanya banyak dipakai di tutorial-tutorial di Internet. Namun untuk proses debugging, ```console.log()``` lebih banyak digunakan, karena menampilkan informasi yang lebih lengkap. 📖 Lihat lagi point 1-3 E tentang Helper Methods.
 
-### ![✔] 𝐂. Node Object (Part 1)
+### ![✔] 𝐂. Node Object
 
 ```HTML
 <!DOCTYPE html>
@@ -5052,7 +5052,7 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
 
 📚 Referensi document property & method lainnya lihat di <a href="https://www.w3schools.com/jsref/dom_obj_document.asp">W3Schools: DOM Object</a> dan <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">MDN: Web API Document</a>.
 
-### ![✔] 𝐄. Node Object (Part 2)
+### ![✔] 𝐄. Node Object: Element Object
 
 ```HTML
 <!DOCTYPE html>
