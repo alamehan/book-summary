@@ -5590,7 +5590,7 @@ function tampilkan(e){
 
 Selain event bawaan pada tag ```<a>```, contoh lainnya yaitu event bawaan pada tombol submit di form. Secara default saat tombol submit di klik, isi form langsung dikirim ke server untuk diproses. Namun dengan menggunakan ```preventDefault()```, event bawaan tersebut bisa dihentikan. Misalnya untuk dilakukan pengecekan terlebih dahulu, jika ditemukan data yang salah, jalankan ```preventDefault()```. Dengan demikian, form tidak jadi di submit.
 
-🔔 Form processing dibahas di bab berikutnya (4-4 D).
+🔔 Form processing dibahas di bab 4-5.
 
 ### ![✔] 𝐃. Mouse Events
 
