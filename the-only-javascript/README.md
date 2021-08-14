@@ -4127,7 +4127,7 @@ console.log(arrM.indexOf("e"));         // Output: -1
 
 **E4. Object instance method (dengan Callback)**
 
-Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). ⚠️ Sekarang, kita akan mulai membahas method yang argumentnya berupa Function (Callback).
+Dari semua method bawaan JavaScript yang telah kita pelajari hingga saat ini, seluruh Argument dari method tersebut berupa tipe data primitif (String, Number, Array, dll). ⚠️ Sekarang, kita akan mulai membahas method yang Argumentnya berupa Function (Callback).
 
 **E4-1.** ```forEach()``` berfungsi menjalankan sebuah Function tertentu untuk setiap Element di Array (mirip seperti for of, jalan sebanyak jumlah Element di Array). forEach tidak mengembalikan Array baru, sedangkan seluruh sisa method Array lainnya (seperti: map, filter, find, reduce) mengembalikan sebuah Array baru.
 
@@ -5326,7 +5326,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
     <p></p>
 
     <script>
-      // ➊ Cara penulisan 1: Dengan input Function sebagai argument
+      // ➊ Cara penulisan 1: Dengan input Function sebagai Argument
       function tampilkanClick(){
         nodeP1.innerHTML="Saya di klik";
       }
@@ -5393,7 +5393,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 > - [X] 𝐂. Event Default
 > - [X] 𝐃. Mouse Events
 
-Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya argument sebuah fungsi berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada Event Object bisa langsung diinput tanpa diisi nilai apapun. Misalnya pada contoh di bawah ini, nilai dari argument ```event``` akan di generate otomatis oleh web browser. Penulisan tidak harus ```event```, bisa apa saja, misalnya ```e```, dll.
+Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya Argument sebuah fungsi berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada Event Object bisa langsung diinput tanpa diisi nilai apapun. Misalnya pada contoh di bawah ini, nilai dari Argument ```event``` akan di generate otomatis oleh web browser. Penulisan tidak harus ```event```, bisa apa saja, misalnya ```e```, dll.
 
 ### ![✔] 𝐀. Event Object
 
@@ -5536,7 +5536,7 @@ Event Propagation adalah istilah yang merujuk kepada cara event "ditangkap" oleh
 
 Pada contoh di atas, jika tag ```<em>``` yakni tulisan "World" yang di klik, secara tidak langsung kita juga men-klik tag ```<h1>``` dan ```<div>``` (sebagai parent-nya). Jika diperhatikan hasilnya pada tab console, urutan outputnya dimulai dari "Tag em di-klik!", "Tag h1 di-klik!" dan terakhir "Tag div di-klik!". Artinya, event dijalankan dari elemen paling dalam hingga terluar. Urutan event inilah yang dikenal dengan istilah **Event Bubbling**, yang merupakan mekanisme default yang dijalankan untuk event propagation. 
 
-Namun selain bubbling, terdapat istilah lain yakni **Event Capturing** yang merupakan kebalikan dari bubbling, dimana event akan dijalankan dari yang paling terluar hingga terdalam. Untuk mengubah bubbling menjadi capturing, cukup input nilai ```true``` ke dalam argument ketiga dari method ```addEventListener()```. Pada contoh di atas, maka baris kode dimodifikasi menjadi:
+Namun selain bubbling, terdapat istilah lain yakni **Event Capturing** yang merupakan kebalikan dari bubbling, dimana event akan dijalankan dari yang paling terluar hingga terdalam. Untuk mengubah bubbling menjadi capturing, cukup input nilai ```true``` ke dalam Argument ketiga dari method ```addEventListener()```. Pada contoh di atas, maka baris kode dimodifikasi menjadi:
 
 ```Javascript
 nodeDiv.addEventListener("click", tampilkanDiv, true);
@@ -5555,7 +5555,42 @@ function tampilkanEm(e){
 
 ### ![✔] 𝐂. Event Default
 
-...
+Beberapa tag HTML memiliki event bawaan. Sebagai contoh, link yang dibuat dari tag ```<a>``` memiliki event click yang akan membuat halaman saat ini pindah ke halaman lain. Jika kita menginput event click lagi ke dalam tag ```<a>```, hasilnya akan "bergabung", dimana event default akan dijalankan pada posisi terakhir.
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <a href="https://www.google.com/">Hello Wolrd!</a>
+    
+    <script>
+      function tampilkan(){
+        alert("Link di klik");
+      }
+
+      var nodeA = document.querySelector("a");
+      nodeA.addEventListener("click", tampilkan);
+    </script>
+  </body>
+</html>
+```
+
+Pada contoh di atas, saat link di klik akan muncul alert terlebih dahulu. Begitu tombol OK di klik, barulah halaman berpindah ke target yang dituju. Lalu bagaimana caranya untuk menghentikan event bawaan dari HTML? Misalnya kita hanya ingin muncul alert saja tanpa berpindah ke halaman lain. Solusinya yaitu dengan menggunakan **preventDefault()** milik Event Object. Modifikasi baris kode Function ```tampilkan()``` menjadi seperti berikut ini:
+
+```Javascript
+function tampilkan(e){
+  alert("Link di klik");
+  e.preventDefault();       // Hentikan event bawaan HTML
+}
+```
+
+Selain event bawaan pada tag ```<a>```, contoh lainnya yaitu event bawaan pada tombol submit di form. Secara default saat tombol submit di klik, isi form langsung dikirim ke server untuk diproses. Namun dengan menggunakan ```preventDefault()```, event bawaan tersebut bisa dihentikan. Misalnya untuk dilakukan pengecekan terlebih dahulu, jika ditemukan data yang salah, jalankan ```preventDefault()```. Dengan demikian, form tidak jadi di submit.
+
+🔔 Form processing dibahas di bab berikutnya (4-4 D).
 
 ### ![✔] 𝐃. Mouse Events
 
