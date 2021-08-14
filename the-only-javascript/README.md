@@ -5555,7 +5555,7 @@ function tampilkanEm(e){
 
 ### ![✔] 𝐂. Event Default
 
-Beberapa tag HTML memiliki event bawaan. Contohnya, tag ```<a>``` memiliki event click yang akan membuat halaman saat ini pindah ke halaman lain. Jika kita menginput event click lagi ke dalam tag ```<a>```, hasilnya akan "bergabung" (event default dijalankan pada belakangan).
+Beberapa tag HTML memiliki event bawaan. Contohnya, tag ```<a>``` memiliki event click yang akan membuat halaman saat ini pindah ke halaman lain. Jika kita menginput event click lagi ke dalam tag ```<a>```, hasilnya akan "bergabung" (dimana event default dijalankan belakangan).
 
 ```HTML
 <!DOCTYPE html>
@@ -5579,7 +5579,7 @@ Beberapa tag HTML memiliki event bawaan. Contohnya, tag ```<a>``` memiliki event
 </html>
 ```
 
-Pada contoh di atas, saat link di klik akan muncul alert terlebih dahulu. Begitu tombol OK di klik, barulah halaman berpindah ke target yang dituju. Lalu bagaimana caranya untuk menghentikan event bawaan dari HTML? Misalnya kita hanya ingin muncul alert saja tanpa berpindah ke halaman lain. Solusinya yaitu dengan menggunakan **preventDefault()** milik Event Object. Sebagai catatan, tidak semua event bisa dihentikan, gunakan property ```cancelable``` untuk memeriksanya. Modifikasi baris kode Function ```tampilkan()``` menjadi seperti berikut ini:
+Pada contoh di atas, saat link di klik akan muncul alert terlebih dahulu. Begitu tombol OK di klik, barulah halaman berpindah ke link yang dituju. Lalu bagaimana caranya untuk menghentikan event bawaan dari HTML? Misalnya kita hanya ingin muncul alert saja tanpa berpindah ke halaman lain. Solusinya yaitu dengan menggunakan **preventDefault()** milik Event Object. Sebagai catatan, tidak semua event bisa dihentikan, gunakan property ```cancelable``` untuk memeriksanya. Modifikasi baris kode Function ```tampilkan()``` menjadi seperti berikut ini:
 
 ```Javascript
 function tampilkan(e){
@@ -5589,7 +5589,7 @@ function tampilkan(e){
 }
 ```
 
-Selain event bawaan pada tag ```<a>```, contoh lainnya yaitu event bawaan pada tombol submit di form. Secara default saat tombol submit di klik, isi form langsung dikirim ke server untuk diproses. Namun dengan menggunakan ```preventDefault()```, event bawaan tersebut bisa dihentikan. Misalnya untuk dilakukan pengecekan terlebih dahulu, jika ditemukan data yang salah, jalankan ```preventDefault()```. Dengan demikian, form tidak jadi di submit.
+Selain tag ```<a>```, contoh lainnya yaitu event bawaan pada tombol submit di form. Secara default saat tombol submit di klik, isi form langsung dikirim ke server untuk diproses. Namun dengan menggunakan ```preventDefault()```, event bawaan tersebut bisa dihentikan. Misalnya untuk dilakukan pengecekan terlebih dahulu, jika ada data yang salah, jalankan ```preventDefault()```. Dengan demikian, form tidak jadi di submit.
 
 🔔 Form processing dibahas di bab 4-5.
 
