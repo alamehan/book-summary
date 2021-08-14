@@ -5595,7 +5595,93 @@ Selain tag ```<a>```, contoh lainnya yaitu event bawaan pada tombol submit di fo
 
 ### ![✔] 𝐃. Mouse Events
 
-...
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <style>
+    div {
+      width: 500px;
+      height: 100px;
+      border: 3px solid black;
+      text-align: center;
+      font-size: 20px;
+      margin: 10px 0px;
+      padding: 10px 0px;
+    }
+  </style>
+  <body>
+    <div id="div1">Klik kiri <br> Klik tengah <br> Klik kanan <br> Double Klik</div>
+    <div id="div2">Mouse ditahan <br> Mouse dilepas</div>
+    <div id="div3">Mouse masuk area element/child-nya <br> Mouse keluar area element/child-nya</div>
+    <div id="div4">Mouse masuk area element <br> Mouse keluar area element</div>
+    
+    <script>
+      function clickEvent(e){
+        e.target.style.backgroundColor = "salmon";
+        e.target.innerHTML = "Terjadi event click";
+      }
+      function contextmenuEvent(e){
+        e.target.style.backgroundColor = "coral";
+        e.target.innerHTML = "Terjadi event contextmenu";
+      }
+      function auxclickEvent(e){
+        e.target.style.backgroundColor = "gold";
+        e.target.innerHTML = "Terjadi event auxclick";
+      }
+      function dblclickEvent(e){
+        e.target.style.backgroundColor = "violet";
+        e.target.innerHTML = "Terjadi event dblclick";
+      }
+      function mousedownEvent(e){
+        e.target.style.backgroundColor = "lightgreen";
+        e.target.innerHTML = "Terjadi event mousedown";
+      }
+      function mouseupEvent(e){
+        e.target.style.backgroundColor = "lightblue";
+        e.target.innerHTML = "Terjadi event mouseup";
+      }
+      function mouseoverEvent(e){
+        e.target.style.backgroundColor = "wheat";
+        e.target.innerHTML = "Terjadi event mouseover";
+      }
+      function mouseoutEvent(e){
+        e.target.style.backgroundColor = "silver";
+        e.target.innerHTML = "Terjadi event mouseout";
+      }
+      function mouseenterEvent(e){
+        e.target.style.backgroundColor = "pink";
+        e.target.innerHTML = "Terjadi event mouseout";
+      }
+      function mouseleaveEvent(e){
+        e.target.style.backgroundColor = "khaki";
+        e.target.innerHTML = "Terjadi event mouseout";
+      }
+
+      var nodeDiv1 = document.querySelector("#div1");
+      nodeDiv1.addEventListener("click", clickEvent);             // click       : Klik kiri
+      nodeDiv1.addEventListener("contextmenu", contextmenuEvent); // contextmenu : Klik kanan
+      nodeDiv1.addEventListener("auxclick", auxclickEvent);       // auxclick    : Klik tengah
+      nodeDiv1.addEventListener("dblclick", dblclickEvent);       // dblclick    : Double klik
+
+      var nodeDiv2 = document.querySelector("#div2");
+      nodeDiv2.addEventListener("mousedown", mousedownEvent);     // mousedown   : Mouse ditahan
+      nodeDiv2.addEventListener("mouseup", mouseupEvent);         // mouseup     : Mouse dilepas
+
+      var nodeDiv3 = document.querySelector("#div3");
+      nodeDiv3.addEventListener("mouseover", mouseoverEvent);     // mouseover   : Mouse masuk area element/child-nya
+      nodeDiv3.addEventListener("mouseout", mouseoutEvent);       // mouseout    : Mouse keluar area element/child-nya
+
+      var nodeDiv4 = document.querySelector("#div4");
+      nodeDiv4.addEventListener("mouseenter", mouseenterEvent);   // mouseenter  : Mouse masuk area element
+      nodeDiv4.addEventListener("mouseleave", mouseleaveEvent);   // mouseleave  : Mouse keluar area element
+    </script>
+  </body>
+</html>
+```
 
 <hr>
 <div id="bab4_5"></div>
