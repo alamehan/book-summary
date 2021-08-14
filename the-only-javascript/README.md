@@ -5555,7 +5555,7 @@ function tampilkanEm(e){
 
 ### ![✔] 𝐂. Event Default
 
-Beberapa tag HTML memiliki event bawaan. Sebagai contoh, link yang dibuat dari tag ```<a>``` memiliki event click yang akan membuat halaman saat ini pindah ke halaman lain. Jika kita menginput event click lagi ke dalam tag ```<a>```, hasilnya akan "bergabung", dimana event default akan dijalankan pada posisi terakhir.
+Beberapa tag HTML memiliki event bawaan. Contohnya, tag ```<a>``` memiliki event click yang akan membuat halaman saat ini pindah ke halaman lain. Jika kita menginput event click lagi ke dalam tag ```<a>```, hasilnya akan "bergabung" (event default dijalankan pada belakangan).
 
 ```HTML
 <!DOCTYPE html>
@@ -5579,12 +5579,13 @@ Beberapa tag HTML memiliki event bawaan. Sebagai contoh, link yang dibuat dari t
 </html>
 ```
 
-Pada contoh di atas, saat link di klik akan muncul alert terlebih dahulu. Begitu tombol OK di klik, barulah halaman berpindah ke target yang dituju. Lalu bagaimana caranya untuk menghentikan event bawaan dari HTML? Misalnya kita hanya ingin muncul alert saja tanpa berpindah ke halaman lain. Solusinya yaitu dengan menggunakan **preventDefault()** milik Event Object. Modifikasi baris kode Function ```tampilkan()``` menjadi seperti berikut ini:
+Pada contoh di atas, saat link di klik akan muncul alert terlebih dahulu. Begitu tombol OK di klik, barulah halaman berpindah ke target yang dituju. Lalu bagaimana caranya untuk menghentikan event bawaan dari HTML? Misalnya kita hanya ingin muncul alert saja tanpa berpindah ke halaman lain. Solusinya yaitu dengan menggunakan **preventDefault()** milik Event Object. Sebagai catatan, tidak semua event bisa dihentikan, gunakan property ```cancelable``` untuk memeriksanya. Modifikasi baris kode Function ```tampilkan()``` menjadi seperti berikut ini:
 
 ```Javascript
 function tampilkan(e){
+  console.log(e.cancelable);  // Output: true   ⇨ artinya event bawaan bisa dihentikan
   alert("Link di klik");
-  e.preventDefault();       // Hentikan event bawaan HTML
+  e.preventDefault();         // Hentikan event bawaan HTML (dalam kasus ini tag <a>)
 }
 ```
 
