@@ -5837,11 +5837,17 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
   <body>
     <form id="formKu" name="formKu" method="get" action="proses.php">
       <p>Username: <input type="text" name="username" id="username"></p>
-      <input type="submit" name="kirim" id="kirim" value="Cetak">
+      <p><input type="submit" name="kirim" id="kirim" value="Cetak"></p>
     </form>
     <p>Hasil property value: <span id="hasil"></span></p>
     <hr>
-    <p>Username: <input type="text" name="username2" id="username2" value="budi"></p>
+    <p>Nama: <input type="text" name="myname" id="myname" value="budi"></p>
+    <p>Email: <input type="text" name="myemail" id="myemail" value="budi@gmail.com"></p>
+    <hr>
+    <p>
+      <button id="focusName">Fokus ke Name</button>
+      <button id="focusEmail">Fokus ke Email</button>
+    </p>
 
     <script>      
       // ➊ Input Element | <input type="text"> | property
@@ -5868,15 +5874,26 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
       nodeForm.addEventListener("submit", diProses);
 
       // ➋ Input Element | <input type="text"> | event
-      var nodeUname2 = document.getElementById("username2");
+      var nodeName = document.getElementById("myname");
+      var nodeEmail = document.getElementById("myemail");
 
       function diFocus(e){ e.target.style.border = "4px solid violet" };
       function diBlur(e){ e.target.style.border = "4px solid salmon" };
       function diChange(e){ e.target.style.backgroundColor = "lightblue" };
 
-      nodeUname2.addEventListener("focus", diFocus);      // Event focus: Aktif saat sebuah Element dipilih (di klik, dll)
-      nodeUname2.addEventListener("blur", diBlur);        // Event blur: Aktif saat sebuah Element tidak fokus (pindah)
-      nodeUname2.addEventListener("change", diChange);    // Event change: Aktif saat nilai sebuah Element berubah
+      nodeName.addEventListener("focus", diFocus);      // Event focus: Aktif saat sebuah Element dipilih (di klik, dll)
+      nodeName.addEventListener("blur", diBlur);        // Event blur: Aktif saat sebuah Element tidak fokus (pindah)
+      nodeName.addEventListener("change", diChange);    // Event change: Aktif saat nilai sebuah Element berubah
+      nodeEmail.addEventListener("focus", diFocus);
+      nodeEmail.addEventListener("blur", diBlur);
+      nodeEmail.addEventListener("change", diChange);
+
+      // ➌ Menjalankan Event milik Element lain
+      var nodeFocusName = document.getElementById("focusName");
+      var nodeFocusEmail = document.getElementById("focusEmail");
+
+      nodeFocusName.addEventListener("click", function(){ nodeName.focus() });    // Jalankan event focus milik nodeName
+      nodeFocusEmail.addEventListener("click", function(){ nodeEmail.focus() });  // Jalankan event focus milik nodeEmail
     </script>
   </body>
 </html>
