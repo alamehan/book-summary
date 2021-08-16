@@ -398,7 +398,7 @@ var numL = Infinity;                  // Keadaan dimana data "angka tak hingga"
 var numM = -Infinity;                 // Keadaan dimana data "angka negatif tak hingga"
 ```
 
-NaN & Infinity sebenarnya tidak termasuk ke dalam tipe data. Contoh di atas yaitu assign nilai NaN & Infinity ke dalam sebuah Variable, pada praktiknya tidak pernah dilakukan. NaN & Infinity hanya berupa nilai output yang dihasilkan JavaScript saat menjumpai kasus-kasus yang memang menghasilkan nilai tersebut, contohnya dapat dilihat di bawah ini.
+NaN & Infinity sebenarnya tidak termasuk ke dalam tipe data. Contoh di atas yaitu assign nilai NaN & Infinity ke dalam sebuah Variable, dalam kasus real tidak pernah dilakukan. NaN & Infinity hanya berupa nilai output yang dihasilkan JavaScript saat menjumpai kasus-kasus yang memang menghasilkan nilai tersebut, contohnya dapat dilihat di bawah ini.
 
 #### ⤷ Kasus yang menghasilkan NaN & Infinity:
 
@@ -1324,7 +1324,7 @@ console.log(ratarata(1, 2, 3));       // Output: NaN  (Argument ke-4 tidak ada, 
 
 Jika kita (secara eksplisit) tidak menuliskan keyword ```return``` beserta nilai yang di-return dari sebuah Function, maka secara default Function tersebut akan me-return nilai ```undefined```. Lantas apakah itu berarti bahwa setiap Function perlu me-return sesuatu? Jawabannya tidak, namun jika anda memiliki Function tanpa return, secara default akan me-return ```undefined```. Apa pun yang ditulis setelah keyword ```return``` akan diabaikan, dengan kata lain ```return``` selain untuk mengembalikan sebuah nilai, juga untuk memberhentikan Function.
 
-Dalam praktiknya, biasanya saat menjalankan sebuah Function yang me-return sesuatu hasilnya akan disimpan ke dalam sebuah Variable terlebih dahulu, misalnya ```var hasil = ratarata(1, 2, 3, 4)```, barulah kemudian diolah sesuai kebutuhan. Namun jika menjalankan sebuah Function yang tidak me-return apa pun, maka Function tersebut cukup dijalankan saja, tidak ditampung ke dalam sebuah Variable.
+Dalam kasus real, biasanya saat menjalankan sebuah Function yang me-return sesuatu hasilnya akan disimpan ke dalam sebuah Variable terlebih dahulu, misalnya ```var hasil = ratarata(1, 2, 3, 4)```, barulah kemudian diolah sesuai kebutuhan. Namun jika menjalankan sebuah Function yang tidak me-return apa pun, maka Function tersebut cukup dijalankan saja, tidak ditampung ke dalam sebuah Variable.
 
 ### ![✔] 𝐂. Default Parameter
 
@@ -3487,7 +3487,7 @@ console.log(huruf);                   // Output: ["A", "B", "C"]
 console.log(tampung2);                // Output: D
 ```
 
-Karena ```push``` dan ```pop``` merupakan sebuah method, maka tentunya ia juga dapat mengembalikan/me-return sesuatu. Misalnya seperti pada contoh di atas, jika ditampung ke dalam sebuah Variable terlebih dahulu (tidak hanya menjalankan method-nya saja), maka method push me-return panjang (length) dari Array tersebut, sedangkan method pop me-return nilai yang di hapus dari Array. Namun, pada praktiknya jarang sekali hasil return sebuah method bawaan JavaScript ditampung ke Variable, kecuali memang ada keperluan tertentu untuk diolah lebih lanjut.
+Karena ```push``` dan ```pop``` merupakan sebuah method, maka tentunya ia juga dapat mengembalikan/me-return sesuatu. Misalnya seperti pada contoh di atas, jika ditampung ke dalam sebuah Variable terlebih dahulu (tidak hanya menjalankan method-nya saja), maka method push me-return panjang (length) dari Array tersebut, sedangkan method pop me-return nilai yang di hapus dari Array. Namun, dalam kasus real jarang sekali hasil return sebuah method bawaan JavaScript ditampung ke Variable, kecuali memang ada keperluan tertentu untuk diolah lebih lanjut.
 
 ⚠️ Di pembahasan-pembahasan berikutnya, method bawaan JavaScript hanya akan dijalankan saja, tidak ditampung hasil return-nya.
 
@@ -4710,9 +4710,10 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 |-----------------------------------------------------	|---------------	|
 | <a href="#bab4_1">4-1. Pengantar DOM</a><br>        	| X Menit       	|
 | <a href="#bab4_2">4-2. DOM Object</a>            	    | X Menit       	|
-| <a href="#bab4_3">4-3. DOM Event (1)</a> 	            | X Menit       	|
-| <a href="#bab4_4">4-4. DOM Event (2)</a>     	        | X Menit       	|
-| <a href="#bab4_5">4-5. Form Processing</a>            | X Menit       	|
+| <a href="#bab4_3">4-3. Event Handler</a> 	            | X Menit       	|
+| <a href="#bab4_4">4-4. DOM Event</a>     	            | X Menit       	|
+| <a href="#bab4_4">4-5. Mouse Events</a>     	        | X Menit       	|
+| <a href="#bab4_5">4-6. Form Processing</a>            | X Menit       	|
 
 <hr>
 <div id="bab4_1"></div>
@@ -5201,7 +5202,7 @@ console.log(joo.className);                         // Output: tebal
 <hr>
 <div id="bab4_3"></div>
 
-## `4-3. DOM Event (1)` <a href="#daftar_isi_bab4">🡅</a>
+## `4-3. Event Handler` <a href="#daftar_isi_bab4">🡅</a>
 
 > - [X] 𝐀. Event Handler dari atribut HTML
 > - [X] 𝐁. Event Handler dari property Element
@@ -5386,12 +5387,11 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 <hr>
 <div id="bab4_4"></div>
 
-## `4-4. DOM Event (2)` <a href="#daftar_isi_bab4">🡅</a>
+## `4-4. DOM Event` <a href="#daftar_isi_bab4">🡅</a>
 
 > - [X] 𝐀. Event Object
 > - [X] 𝐁. Event Propagation
 > - [X] 𝐂. Event Default
-> - [X] 𝐃. Mouse Events
 
 Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya Argument sebuah fungsi berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada Event Object bisa langsung diinput tanpa diisi nilai apapun. Misalnya pada contoh di bawah ini, nilai dari Argument ```event``` akan di generate otomatis oleh web browser. Penulisan tidak harus ```event```, bisa apa saja, misalnya ```e```, dll.
 
@@ -5437,7 +5437,7 @@ Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browse
       var nodeP     = document.getElementById("placeholder");
       var nodeTable = document.querySelector("table"); 
       
-      // ➊ Daftar property Event Object (dalam kasus ini untuk event click)
+      // ➊ Daftar property Event Object (dalam kasus ini MouseEvent)
       nodeH1A.addEventListener("click", function(event){
         console.log(event);                   // Output: ▶PointerEvent [altKey: false, ...] ⇨ Tampilkan seluruh informasi event
         console.log(event.target);            // Output: <h1 id="judul">Hello</h1> ⇨ Node Object tempat event terjadi
@@ -5497,7 +5497,7 @@ Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browse
 </html>
 ```
 
-📚 Referensi Event Objects lainnya lihat di: <a href="https://www.w3schools.com/jsref/obj_events.asp">W3Schools: Event Object</a>.
+📚 Referensi Event Objects & Property-nya (MouseEvent, InputEvent, KeyboardEvent, dll): <a href="https://www.w3schools.com/jsref/obj_events.asp">W3Schools: Event Object</a>.
 
 ### ![✔] 𝐁. Event Propagation
 
@@ -5597,7 +5597,10 @@ Selain tag ```<a>```, contoh lainnya yaitu event bawaan pada tombol submit di fo
 
 🔔 Form processing dibahas di bab 4-5.
 
-### ![✔] 𝐃. Mouse Events
+<hr>
+<div id="bab4_5"></div>
+
+## `4-5. Mouse Events` <a href="#daftar_isi_bab4">🡅</a>
 
 Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. Karena itulah mouse event perlu dibahas dengan detail.
 
@@ -5745,19 +5748,23 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 </html>
 ```
 
-📚 Referensi DOM Event lainnya lihat di: <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">W3Schools: HTML DOM Events</a>.
+📚 Referensi Event Objects & Property-nya (MouseEvent, InputEvent, KeyboardEvent, dll): <a href="https://www.w3schools.com/jsref/obj_events.asp">W3Schools: Event Object</a>.
 
 <hr>
-<div id="bab4_5"></div>
+<div id="bab4_6"></div>
 
-## `4-5. Form Processing` <a href="#daftar_isi_bab4">🡅</a>
+## `4-6. Form Processing` <a href="#daftar_isi_bab4">🡅</a>
 
-> - [X] 𝐀. Form Element: property, method & event
-> - [X] 𝐁. Input Element Text: property & event
-> - [X] 𝐂. ...
-> - [X] 𝐃. ...
+> - [X] 𝐀. Form Element (property, method & event)
+> - [X] 𝐁. Input Element Type Text
+> - [X] 𝐂. Keyboard Events
+> - [X] 𝐃. Input Element Type Password
+> - [X] 𝐄. Input Element Type Checkbox
+> - [X] 𝐅. Input Element Type Radio
+> - [X] 𝐆. Textarea Element
+> - [X] 𝐈. Select Element
 
-### ![✔] 𝐀. Form Element: property, method & event
+### ![✔] 𝐀. Form Element (property, method & event)
 
 ```HTML
 <!DOCTYPE html>
@@ -5818,7 +5825,7 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 
 📚 Referensi Element Objects (form, input, dll) lihat di: <a href="https://www.w3schools.com/jsref/default.asp">W3Schools: HTML Element Objects Reference</a>.
 
-### ![✔] 𝐁. Input Element Text: property & event
+### ![✔] 𝐁. Input Element Type Text
 
 ```HTML
 <!DOCTYPE html>
@@ -5899,13 +5906,120 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 </html>
 ```
 
-### ![✔] 𝐂. ...
+### ![✔] 𝐂. Keyboard Events
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <style>
+    #hasil {
+      width: 300px;
+      height: 50px;
+      border: 2px solid black;
+    }
+  </style>
+  <body>
+    <p>[Events] Ketik disini: <input type="text" name="ketik" id="ketik"></p>
+    <div id="hasil"></div>
+    <br>
+    <p>Hasil keydown: <span id="hasilKeydown"></span></p>
+    <p>Hasil keyup: <span id="hasilKeyup"></span></p>
+    <hr>
+    <p>[Property] Ketik disini: <input type="text" name="ketik2" id="ketik2"></p>
+    <hr>
+    <p>[Latihan] Ketik disini: <input type="text" name="ketik3" id="ketik3"></p>
+    <p>Jumlah huruf "a": <span id="hasilA"></span></p>
+    <p>Jumlah huruf "e": <span id="hasilE"></span></p>
+    
+    <script>
+      // ➊ Keyboard Events
+      var nodeKetik = document.getElementById("ketik");
+      var nodeHasil = document.getElementById("hasil");
+      var nodeHasilKeydown = document.getElementById("hasilKeydown");
+      var nodeHasilKeyup = document.getElementById("hasilKeyup");
+
+      function diKeydown(){ 
+        nodeHasil.style.backgroundColor = "red";
+        nodeHasilKeydown.innerHTML = nodeKetik.value;
+      };
+      function diKeyup(){ 
+        nodeHasil.style.backgroundColor = "yellow";
+        nodeHasilKeyup.innerHTML = nodeKetik.value;
+      };
+
+      nodeKetik.addEventListener("keydown", diKeydown);   // Event keydown: Aktif saat tombol keyboard ditekan
+      nodeKetik.addEventListener("keyup", diKeyup);       // Event keyup: Aktif saat tombol keyboard dilepas
+
+      // ➋ Daftar property Event Object (dalam kasus ini KeyboardEvent)
+      var nodeKetik2 = document.getElementById("ketik2");
+
+      function diProses(e){
+        console.log(e.key);                   // Output: (karakter yang diinput)   ⇨ String dari tombol yang ditekan
+        console.log(e.keyCode);               // Output: 65 (contoh untuk "a")     ⇨ Kode Unicode dari tombol yang ditekan
+        console.log(e.altKey);                // Output: false                     ⇨ Apa tombol ALT ditekan (ditahan)?
+        console.log(e.ctrlKey);               // Output: false                     ⇨ Apa tombol CTRL ditekan (ditahan)?
+        console.log(e.shiftKey);              // Output: false                     ⇨ Apa tombol SHIFT ditekan (ditahan)?
+      };
+
+      nodeKetik2.addEventListener("keydown", diProses);   // Coba ubah event menjadi "keypress", maka prilaku saat menahan
+                                                          // tombol ALT/CTRL/SHIFT/Capslock (tombol fungsi) akan berbeda.
+
+      // ➌ Latihan: Program menghitung banyak huruf "a" dan "e" yang diketik dari sebuah tag <input>
+      var nodeKetik3 = document.getElementById("ketik3");
+      var nodeHasilA = document.getElementById("hasilA");
+      var nodeHasilE = document.getElementById("hasilE");
+      var jumlahA = 0;
+      var jumlahE = 0;
+
+      function tampilkanJumlah(e){
+        if (e.key == "a"){
+          jumlahA++;
+          nodeHasilA.innerHTML = jumlahA;
+        } else if (e.key == "e"){
+          jumlahE++;
+          nodeHasilE.innerHTML = jumlahE;
+        }
+      };
+
+      nodeKetik3.addEventListener("keydown", tampilkanJumlah);
+    </script>
+  </body>
+</html>
+```
+
+Sebagai catatan, terdapat event yang serupa dengan ```keydown``` yaitu ```keypress```. Namun dalam kasus real, ```keydown``` lebih banyak dijumpai.
+
+📚 Referensi Event Objects & Property-nya (MouseEvent, InputEvent, KeyboardEvent, dll): <a href="https://www.w3schools.com/jsref/obj_events.asp">W3Schools: Event Object</a>.
+
+### ![✔] 𝐃. Input Element Type Password
 
 ```HTML
 
 ```
 
-### ![✔] 𝐃. ...
+### ![✔] 𝐄. Input Element Type Checkbox
+
+```HTML
+
+```
+
+### ![✔] 𝐅. Input Element Type Radio
+
+```HTML
+
+```
+
+### ![✔] 𝐆. Textarea Element
+
+```HTML
+
+```
+
+### ![✔] 𝐈. Select Element
 
 ```HTML
 
