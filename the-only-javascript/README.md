@@ -5752,6 +5752,13 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 
 ## `4-5. Form Processing` <a href="#daftar_isi_bab4">🡅</a>
 
+> - [X] 𝐀. Form Element: property, method & event
+> - [X] 𝐁. Input Element Text: property & event
+> - [X] 𝐂. ...
+> - [X] 𝐃. ...
+
+### ![✔] 𝐀. Form Element: property, method & event
+
 ```HTML
 <!DOCTYPE html>
 <html>
@@ -5775,10 +5782,6 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
     <br>
     <span id="spanSubmit">Submit</span> <!-- Submit kustom ini ada di luar form, namun terhubung melalui nodeForm.submit() -->
     <span id="spanReset">Reset</span>   <!-- Reset kustom ini ada di luar form, namun terhubung melalui nodeForm.reset() -->
-    <hr>
-    <p>Hasil property value: <span id="hasil"></span></p> <!-- tag <span> disini sebagai placeholder -->
-    <hr>
-    <p>Username: <input type="text" name="username2" id="username2" value="budi"></p>
 
     <script>      
       // ➊ Form Element | <form> | property
@@ -5808,8 +5811,41 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 
       nodeForm.addEventListener("submit", cetakTipe);     // Event submit: Event aktif saat form di submit
       nodeForm.addEventListener("reset", cetakTipe);      // Event reset: Event aktif saat form di reset
+    </script>
+  </body>
+</html>
+```
 
-      // ➍ Input Element | <input type="text"> | property
+📚 Referensi Element Objects (form, input, dll) lihat di: <a href="https://www.w3schools.com/jsref/default.asp">W3Schools: HTML Element Objects Reference</a>.
+
+### ![✔] 𝐁. Input Element Text: property & event
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <style>
+    #spanSubmit, #spanReset {
+      background-color: lightblue;
+      padding: 5px 20px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <form id="formKu" name="formKu" method="get" action="proses.php">
+      <p>Username: <input type="text" name="username" id="username"></p>
+      <input type="submit" name="kirim" id="kirim" value="Cetak">
+    </form>
+    <p>Hasil property value: <span id="hasil"></span></p>
+    <hr>
+    <p>Username: <input type="text" name="username2" id="username2" value="budi"></p>
+
+    <script>      
+      // ➊ Input Element | <input type="text"> | property
+      var nodeForm = document.getElementById("formKu");
       var nodeUname = document.getElementById("username");
       var nodeHasil = document.getElementById("hasil");
 
@@ -5829,10 +5865,9 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
         nodeHasil.innerHTML = nodeUname.value;  // Contoh: Property value dikirim ke placeholder <span id="hasil"></span>
         // nodeForm.submit();                   // Aktifkan untuk melanjutkan proses mengirim data form ke server
       }
+      nodeForm.addEventListener("submit", diProses);
 
-      nodeForm.addEventListener("submit", diProses);      // Event submit disini akan bergabung dengan yang sebelumnya
-
-      // ➎ Input Element | <input type="text"> | event
+      // ➋ Input Element | <input type="text"> | event
       var nodeUname2 = document.getElementById("username2");
 
       function diFocus(e){ e.target.style.border = "4px solid violet" };
@@ -5847,7 +5882,17 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 </html>
 ```
 
-📚 Referensi Element Objects (form, input, dll) lihat di: <a href="https://www.w3schools.com/jsref/default.asp">W3Schools: HTML Element Objects Reference</a>.
+### ![✔] 𝐂. ...
+
+```HTML
+
+```
+
+### ![✔] 𝐃. ...
+
+```HTML
+
+```
 
 </details>
 
