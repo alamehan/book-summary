@@ -4712,8 +4712,8 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 | <a href="#bab4_2">4-2. DOM Object</a>            	    | X Menit       	|
 | <a href="#bab4_3">4-3. Event Handler</a> 	            | X Menit       	|
 | <a href="#bab4_4">4-4. DOM Event</a>     	            | X Menit       	|
-| <a href="#bab4_4">4-5. Mouse Events</a>     	        | X Menit       	|
-| <a href="#bab4_5">4-6. Form Processing</a>            | X Menit       	|
+| <a href="#bab4_5">4-5. Mouse Events</a>     	        | X Menit       	|
+| <a href="#bab4_6">4-6. Form Processing</a>            | X Menit       	|
 
 <hr>
 <div id="bab4_1"></div>
@@ -4756,6 +4756,12 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 > - [X] 𝐄. Node Object (Part 2: Element Object)
 
 <img src="assets/dom-object.png">
+
+Catatan: Perhatikan gambar di atas, terdapat hirarki Windows Object ➜ Document Object ➜ Node Object ➜ Element Object ➜ HTMLElement Object. Setiap Object yang diturunkan dari Object lain (misalnya Element Object merupakan turunan Node Object), secara otomatis akan memiliki seluruh property dan method dari Object induknya tersebut. Hal ini menunjukkan bahwa halaman web itu terdiri dari banyak Object.
+
+Element Object sebenarnya tidak hanya menurunkan HTMLElement Object saja, melainkan ada juga Object yang terkait dengan form seperti HTMLFormElement, HTMLInputElement, HTMLTextAreaElement, HTMLSelectElement dan HTMLOptionElement. 
+
+🔔 Form processing dibahas di bab 4-6.
 
 ### ![✔] 𝐀. Window Object
 
@@ -4947,6 +4953,8 @@ console.log(nodeP.contains(nodeEm));                // Output: true   ⇨ Check 
 console.log(klon1.hasChildNodes());                 // Output: true   ⇨ Check apakah klon1 memiliki Child (meskipun hanya 1)
 console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya berisi <𝗽></𝗽> (artinya tidak punya Child)
 ```
+
+⚠️ Method baru yang belum dibahas di markdown ini: ```childNode.replaceWith()``` & ```Element.replaceWith()```.
 
 **C4. Studi Kasus: Menambahkan Table ke Dalam DOM**
 
@@ -5212,7 +5220,7 @@ Di dalam DOM, event adalah segala sesuatu yang bisa kita lakukan dengan halaman 
 
 Ketika event terjadi, kita bisa menyiapkan kode JavaScript untuk melakukan sesuatu, yakni sebagai respon dari event tersebut. Misalnya saat sebuah tombol di klik, tampilkan pesan ```alert()```, atau ketika cursor mouse berada di atas menu, ubah warna background menu tersebut. Secara teknis, kode program yang dibuat untuk “menangkap” event ini dikenal dengan istilah **Event Handler** atau **Event Listener**.
 
-Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah. Secara garis besar di kelompokkan dalam beberapa tipe (mouse, keyboard, form, drag and drop, wheel, touch, gestures, gamepad, virtual reality, speech, mutation, svg, dll), yang paling banyak digunakan adalah event mouse, keyboard, dan form. Ketiga event inilah yang akan dibahas di materi berikutnya.
+Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah. Secara garis besar di kelompokkan dalam beberapa tipe (mouse, keyboard, form, drag and drop, wheel, touch, gestures, gamepad, virtual reality, speech, mutation, svg, dll), **yang paling banyak digunakan adalah event mouse, keyboard, dan form**. Ketiga event inilah yang akan dibahas di materi berikutnya.
 
 ### ![✔] 𝐀. Event Handler dari atribut HTML
 
@@ -5595,7 +5603,7 @@ function tampilkan(e){
 
 Selain tag ```<a>```, contoh lainnya yaitu event bawaan pada tombol submit di form. Secara default saat tombol submit di klik, isi form langsung dikirim ke server untuk diproses. Namun dengan menggunakan ```preventDefault()```, event bawaan tersebut bisa dihentikan. Misalnya untuk dilakukan pengecekan terlebih dahulu, jika ada data yang salah, jalankan ```preventDefault()```. Dengan demikian, form tidak jadi di submit.
 
-🔔 Form processing dibahas di bab 4-5.
+🔔 Form processing dibahas di bab 4-6.
 
 <hr>
 <div id="bab4_5"></div>
@@ -5764,6 +5772,12 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 > - [X] 𝐆. Textarea Element
 > - [X] 𝐈. Select Element
 
+Form merupakan salah satu aspek terpenting di dalam sebuah web. Dengan menggunakan form, kita bisa meminta pengunjung menginput data seperti form login, register, pencarian, mengisi survey, mengisi biodata, ujian online, dsb. JavaScript memungkinkan kita untuk memeriksa isian form apakah sudah sesuai atau belum. Jika ada yang kurang, tampilkan pesan kesalahan agar user bisa memperbaiki bagian yang salah.
+
+Menggunakan JavaScript, validasi form bisa dilakukan di web browser sebelum dikirim ke web server. Dengan demikian, form baru benar-benar di submit jika semua data sudah benar dan valid. Namun juga perlu diketahui bahwa validasi di sisi web browser menggunakan JavaScript hanya sebagai proses tambahan. Ini karena JavaScript bisa dimatikan dari web browser. Validasi akhir tetap harus dilakukan di web server.
+
+Selain itu, tidak semua proses validasi bisa dilakukan dengan JavaScript. Untuk validasi yang melibatkan database, hanya bisa di proses di server. Misalnya mencari apakah username yang diinput sudah ada yang menggunakan atau tidak. Proses ini tidak bisa ditangani JavaScript, kecuali menggunakan teknologi tambahan seperti AJAX.
+
 ### ![✔] 𝐀. Form Element (property, method & event)
 
 ```HTML
@@ -5822,6 +5836,8 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
   </body>
 </html>
 ```
+
+Pada bagian ```action="proses.php"``` di atas hanyalah contoh saja. Kita hanya akan berfokus kepada proses sebelum dikirim ke server (misal PHP). 
 
 📚 Referensi Element Objects (form, input, dll) lihat di: <a href="https://www.w3schools.com/jsref/default.asp">W3Schools: HTML Element Objects Reference</a>.
 
