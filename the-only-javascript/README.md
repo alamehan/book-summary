@@ -5858,14 +5858,14 @@ Pada bagian ```action="proses.php"``` di atas hanyalah contoh saja. Kita hanya a
     }
   </style>
   <body>
-    <form id="formKu" name="formKu" method="get" action="proses.php">
-      <p>Username: <input type="text" name="username" id="username"></p>
-      <p><input type="submit" name="kirim" id="kirim" value="Cetak"></p>
+    <form id="formKu" method="get" action="proses.php">
+      <p>Username: <input type="text" id="username"></p>
+      <p><input type="submit" id="kirim" value="Cetak"></p>
     </form>
     <p>Hasil property value: <span id="hasil"></span></p>
     <hr>
-    <p>Nama: <input type="text" name="myname" id="myname" value="budi"></p>
-    <p>Email: <input type="text" name="myemail" id="myemail" value="budi@gmail.com"></p>
+    <p>Nama: <input type="text" id="myname" value="budi"></p>
+    <p>Email: <input type="text"id="myemail" value="budi@gmail.com"></p>
     <hr>
     <p>
       <button id="focusName">Fokus ke Name</button>
@@ -5939,15 +5939,15 @@ Pada bagian ```action="proses.php"``` di atas hanyalah contoh saja. Kita hanya a
     }
   </style>
   <body>
-    <p>[Events] Ketik disini: <input type="text" name="ketik" id="ketik"></p>
+    <p>[Events] Ketik disini: <input type="text" id="ketik"></p>
     <div id="hasil"></div>
     <br>
     <p>Hasil keydown: <span id="hasilKeydown"></span></p>
     <p>Hasil keyup: <span id="hasilKeyup"></span></p>
     <hr>
-    <p>[Property] Ketik disini: <input type="text" name="ketik2" id="ketik2"></p>
+    <p>[Property] Ketik disini: <input type="text" id="ketik2"></p>
     <hr>
-    <p>[Latihan] Ketik disini: <input type="text" name="ketik3" id="ketik3"></p>
+    <p>[Latihan] Ketik disini: <input type="text" id="ketik3"></p>
     <p>Jumlah huruf "a": <span id="hasilA"></span></p>
     <p>Jumlah huruf "e": <span id="hasilE"></span></p>
     
@@ -6021,7 +6021,7 @@ Sebagai catatan, terdapat event yang serupa dengan ```keydown``` yaitu ```keypre
     <title>Belajar JavaScript</title>
   </head>
   <body>
-    <p>Password: <input type="password" name="sandi" id="sandi"></p>
+    <p>Password: <input type="password" id="sandi"></p>
     <p><button id="tombol">Tampilkan Password</button></p>
 
     <script>
@@ -6047,13 +6047,134 @@ Sebagai catatan, terdapat event yang serupa dengan ```keydown``` yaitu ```keypre
 ### ![✔] 𝐄. Input Element Type Checkbox
 
 ```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <p>
+      <input type="checkbox" id="belajarHTML" value="HTML">HTML
+      <input type="checkbox" id="belajarCSS" value="CSS">CSS
+      <input type="checkbox" id="belajarJS" value="JS">JS
+    </p>
+    <p>
+      <button id="periksa">Periksa</button>
+      <button id="pilihSemua">Pilih semua</button>
+      <button id="hapusSemua">Hapus semua</button>
+    </p>
+    <p>Hasil: <span id="hasil"></span></p>
+    
+    <script>
+      var nodeBelajarHTML = document.getElementById("belajarHTML");
+      var nodeBelajarCSS = document.getElementById("belajarCSS");
+      var nodeBelajarJS = document.getElementById("belajarJS");
+      
+      var nodePeriksa = document.getElementById("periksa");
+      var nodePilihSemua = document.getElementById("pilihSemua");
+      var nodeHapusSemua = document.getElementById("hapusSemua");
 
+      var nodeHasil = document.getElementById("hasil");
+
+      function diPeriksa(){
+        nodeHasil.innerHTML = "";         // Bersihkan konten hasil terlebih dahulu (agar tidak duplikat)
+
+        if (nodeBelajarHTML.checked){     // Shorthand untuk (nodeBelajarHTML.checked === true)
+          nodeHasil.innerHTML += nodeBelajarHTML.value + " ";
+        }
+        if (nodeBelajarCSS.checked){      // Shorthand untuk (nodeBelajarCSS.checked === true)
+          nodeHasil.innerHTML += nodeBelajarCSS.value + " ";
+        }
+        if (nodeBelajarJS.checked){       // Shorthand untuk (nodeBelajarJS.checked === true)
+          nodeHasil.innerHTML += nodeBelajarJS.value + " ";
+        }
+      };
+      function diPilihSemua(){
+        nodeBelajarHTML.checked = true;   // Centang checkbox
+        nodeBelajarCSS.checked = true;    // Centang checkbox
+        nodeBelajarJS.checked = true;     // Centang checkbox
+      };
+      function diHapusSemua(){
+        nodeBelajarHTML.checked = false;  // Kosongkan checkbox
+        nodeBelajarCSS.checked = false;   // Kosongkan checkbox
+        nodeBelajarJS.checked = false;    // Kosongkan checkbox
+      };
+
+      nodePeriksa.addEventListener("click", diPeriksa);
+      nodePilihSemua.addEventListener("click", diPilihSemua);
+      nodeHapusSemua.addEventListener("click", diHapusSemua);
+    </script>
+  </body>
+</html>
 ```
 
 ### ![✔] 𝐅. Input Element Type Radio
 
-```HTML
+Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya bisa meilih satu nilai dari pilihan yang ada. Pastikan saat mendefinisikan radio sertakan atribut ```name="..."``` yang sama disetiap Input Element type radio, kegunaannya untuk membuat radio bergabung dalam satu kelompok. Contoh baris kode di bawah ini sangat mirip dengan baris kode checkbox sebelumnya.
 
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <p>
+      <input type="radio" name="belajar" id="belajarHTML" value="HTML">HTML <!-- Sertakan name="..." yang sama -->
+      <input type="radio" name="belajar" id="belajarCSS" value="CSS">CSS    <!-- Sertakan name="..." yang sama -->
+      <input type="radio" name="belajar" id="belajarJS" value="JS">JS       <!-- Sertakan name="..." yang sama -->
+    </p>
+    <p>
+      <button id="periksa">Periksa V1</button>
+      <button id="periksaLoop">Periksa V2</button>
+    </p>
+    <p>Hasil: <span id="hasil"></span></p>
+    
+    <script>
+      var nodeBelajarHTML = document.getElementById("belajarHTML");
+      var nodeBelajarCSS = document.getElementById("belajarCSS");
+      var nodeBelajarJS = document.getElementById("belajarJS");
+      
+      var nodePeriksa = document.getElementById("periksa");
+      var nodeHasil = document.getElementById("hasil");
+
+      // ➊ Contoh Radio 1: Versi Standard
+      function diPeriksa(){
+        nodeHasil.innerHTML = "";         // Bersihkan konten hasil terlebih dahulu (agar tidak duplikat)
+
+        if (nodeBelajarHTML.checked){     // Shorthand untuk (nodeBelajarHTML.checked === true)
+          nodeHasil.innerHTML += nodeBelajarHTML.value + " ";
+        }
+        if (nodeBelajarCSS.checked){      // Shorthand untuk (nodeBelajarCSS.checked === true)
+          nodeHasil.innerHTML += nodeBelajarCSS.value + " ";
+        }
+        if (nodeBelajarJS.checked){       // Shorthand untuk (nodeBelajarJS.checked === true)
+          nodeHasil.innerHTML += nodeBelajarJS.value + " ";
+        }
+      };
+
+      nodePeriksa.addEventListener("click", diPeriksa);
+
+      // ➋ Contoh Radio 2: Versi Looping
+      var nodePeriksaLoop = document.getElementById("periksaLoop");
+      var nodeBelajarAll = document.querySelectorAll("input");
+      // console.log(nodeBelajarAll);     // Periksa hasil querySelectorAll
+
+      function diPeriksaVersiLooping(){
+        var jumlahRadio = nodeBelajarAll.length;
+        for (let i = 0; i < jumlahRadio; i++){
+          if (nodeBelajarAll[i].checked === true){
+            nodeHasil.innerHTML = nodeBelajarAll[i].value;
+          }
+        }
+      };
+
+      nodePeriksaLoop.addEventListener("click", diPeriksaVersiLooping);
+    </script>
+  </body>
+</html>
 ```
 
 ### ![✔] 𝐆. Textarea Element
@@ -6066,12 +6187,12 @@ Sebagai catatan, terdapat event yang serupa dengan ```keydown``` yaitu ```keypre
     <title>Belajar JavaScript</title>
   </head>
   <body>
-    <p>Ketik disini: <textarea name="kalimat" id="kalimat">Teks Default</textarea></p>
+    <p>Ketik disini: <textarea id="kalimat">Teks Default</textarea></p>
     <p>Hasil: <span id="hasil"></span></p>
     <hr>
-    <p>Nama Kota: <input type="text" name="namaKota" id="namaKota" placeholder="Enter untuk menambah"></p>
+    <p>Nama Kota: <input type="text" id="namaKota" placeholder="Enter untuk menambah"></p>
     <p><button id="tambahKota">Tambah Kota</button></p>
-    <p><textarea name="daftarKota" id="daftarKota" cols="20" rows="10"></textarea></p>
+    <p><textarea id="daftarKota" cols="20" rows="10"></textarea></p>
 
     <script>
       // ➊ Contoh Textarea 1
@@ -6088,15 +6209,15 @@ Sebagai catatan, terdapat event yang serupa dengan ```keydown``` yaitu ```keypre
       var nodeDaftarKota = document.getElementById("daftarKota");
 
       function diTambahKota(){
-        var namaKotaSekarang = nodeNamaKota.value + "\n";
-        var daftarKotaSekarang = nodeDaftarKota.value;
-        nodeDaftarKota.value = daftarKotaSekarang + namaKotaSekarang;
-        nodeNamaKota.value = "";
-        nodeNamaKota.focus();
+        var namaKotaSekarang = nodeNamaKota.value + "\n"; // 1. var diisi nilai dari kolom <input>
+        var daftarKotaSekarang = nodeDaftarKota.value;    // 2. Ambil nilai dari <textarea>
+        nodeDaftarKota.value = daftarKotaSekarang + namaKotaSekarang; // 3. "Update" nilai <textarea>
+        nodeNamaKota.value = "";                          // 4. Kosongkan kolom isian <input>
+        nodeNamaKota.focus();                             // 5. Langsung beri event focus()
       };
       function diTambahKotaViaEnter(e){
         // console.log(e.key);  // Untuk memeriksa String dari tombol yang ditekan
-        if (e.key === "Enter"){ diTambahKota() };
+        if (e.key === "Enter"){ diTambahKota() };         // Jika user tekan "Enter" jalankan function
       };
 
       nodeTambahKota.addEventListener("click", diTambahKota);
