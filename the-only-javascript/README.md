@@ -4759,9 +4759,9 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 
 Catatan: Perhatikan gambar di atas, terdapat hirarki Windows Object ➜ Document Object ➜ Node Object ➜ Element Object ➜ HTMLElement Object. Setiap Object yang diturunkan dari Object lain (misalnya Element Object merupakan turunan Node Object), secara otomatis akan memiliki seluruh property dan method dari Object induknya tersebut. Hal ini menunjukkan bahwa halaman web itu terdiri dari banyak Object.
 
-Element Object sebenarnya tidak hanya menurunkan HTMLElement Object saja, melainkan ada juga Object yang terkait dengan form seperti HTMLFormElement, HTMLInputElement, HTMLTextAreaElement, HTMLSelectElement dan HTMLOptionElement. 
+Element Object sebenarnya tidak hanya menurunkan HTMLElement Object saja, melainkan ada juga Object yang terkait dengan form seperti HTMLFormElement, HTMLInputElement, HTMLTextAreaElement, HTMLSelectElement dan HTMLOptionElement (🔔 Form processing dibahas di bab 4-6), maupun puluhan Object lainnya lagi seperti HTMLImageElement, HTMLTableElement, HTMLTimeElement, dsb.
 
-🔔 Form processing dibahas di bab 4-6.
+📚 Selengkapnya bisa lihat di <a href="https://developer.mozilla.org/en-US/docs/Web/API#interfaces">MDN: Web APIs Interfaces</a>.
 
 ### ![✔] 𝐀. Window Object
 
@@ -6014,7 +6014,34 @@ Sebagai catatan, terdapat event yang serupa dengan ```keydown``` yaitu ```keypre
 ### ![✔] 𝐃. Input Element Type Password
 
 ```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <p>Password: <input type="password" name="sandi" id="sandi"></p>
+    <p><button id="tombol">Tampilkan Password</button></p>
 
+    <script>
+      var nodeSandi = document.getElementById("sandi");
+      var nodeTombol = document.getElementById("tombol");
+
+      function showHideSandi(){
+        if (nodeSandi.type === "password"){
+          nodeSandi.type = "text";
+          nodeTombol.innerHTML = "Sembunyikan Password";
+        } else if (nodeSandi.type === "text"){
+          nodeSandi.type = "password";
+          nodeTombol.innerHTML = "Tampilkan Password";
+        }
+      };
+
+      nodeTombol.addEventListener("click", showHideSandi);
+    </script>
+  </body>
+</html>
 ```
 
 ### ![✔] 𝐄. Input Element Type Checkbox
@@ -6032,7 +6059,51 @@ Sebagai catatan, terdapat event yang serupa dengan ```keydown``` yaitu ```keypre
 ### ![✔] 𝐆. Textarea Element
 
 ```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <p>Ketik disini: <textarea name="kalimat" id="kalimat">Teks Default</textarea></p>
+    <p>Hasil: <span id="hasil"></span></p>
+    <hr>
+    <p>Nama Kota: <input type="text" name="namaKota" id="namaKota" placeholder="Enter untuk menambah"></p>
+    <p><button id="tambahKota">Tambah Kota</button></p>
+    <p><textarea name="daftarKota" id="daftarKota" cols="20" rows="10"></textarea></p>
 
+    <script>
+      // ➊ Contoh Textarea 1
+      var nodeKalimat = document.getElementById("kalimat");
+      var nodeHasil = document.getElementById("hasil");
+
+      function diProses(){ nodeHasil.innerHTML = nodeKalimat.value };
+
+      nodeKalimat.addEventListener("keyup", diProses);
+
+      // ➋ Contoh Textarea 2
+      var nodeNamaKota = document.getElementById("namaKota");
+      var nodeTambahKota = document.getElementById("tambahKota");
+      var nodeDaftarKota = document.getElementById("daftarKota");
+
+      function diTambahKota(){
+        var namaKotaSekarang = nodeNamaKota.value + "\n";
+        var daftarKotaSekarang = nodeDaftarKota.value;
+        nodeDaftarKota.value = daftarKotaSekarang + namaKotaSekarang;
+        nodeNamaKota.value = "";
+        nodeNamaKota.focus();
+      };
+      function diTambahKotaViaEnter(e){
+        // console.log(e.key);  // Untuk memeriksa String dari tombol yang ditekan
+        if (e.key === "Enter"){ diTambahKota() };
+      };
+
+      nodeTambahKota.addEventListener("click", diTambahKota);
+      nodeNamaKota.addEventListener("keydown", diTambahKotaViaEnter);
+    </script>
+  </body>
+</html>
 ```
 
 ### ![✔] 𝐈. Select Element
