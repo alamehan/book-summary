@@ -5752,6 +5752,12 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 
 ## `4-5. Form Processing` <a href="#daftar_isi_bab4">🡅</a>
 
+```HTML
+
+```
+
+📚 Referensi Element Objects (form, input, dll) lihat di: <a href="https://www.w3schools.com/jsref/default.asp">W3Schools: HTML Element Objects Reference</a>.
+
 </details>
 
 ## ⑥ 𝒜𝓈𝓎𝓃𝒸𝒽𝓇𝑜𝓃𝑜𝓊𝓈 𝒥𝒮 ⏳ <a href="#top">🠉</a>
@@ -5857,6 +5863,13 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 | 10 	| <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a> 	| 📕 	|
 | 11 	| <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a> 	| 📘 	|
 | 12 	| <a href="https://www.w3docs.com/">W3Docs</a> 	| 📕 	|
+
+| No | Uji Pengetahuan & Kemampuan Anda                                                                                                                                                                             |
+|----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1  | <a href="https://github.com/sudheerj/javascript-interview-questions">JavaScript Interview Questions & Answers by ZTM</a>                                                                                     |
+| 2  | <a href="https://github.com/lydiahallie/javascript-questions">JavaScript Questions by Lydiahallie</a> \| <a href="https://github.com/lydiahallie/javascript-questions/tree/master/id-ID">Versi Indonesia</a> |
+| 3  | <a href="https://github.com/learning-zone/javascript-interview-questions">JavaScript Interview Questions by Learning Zone</a>                                                                                |
+| 4  | <a href="https://github.com/ganqqwerty/123-Essential-JavaScript-Interview-Questions">123 Essential JavaScript Interview Questions by Gangqqwerty</a>                                                         |
 
 Keterangan:
 1. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
