@@ -5753,7 +5753,98 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 ## `4-5. Form Processing` <a href="#daftar_isi_bab4">🡅</a>
 
 ```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <style>
+    #spanSubmit, #spanReset {
+      background-color: lightblue;
+      padding: 5px 20px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <form id="formKu" name="formKu" method="get" action="proses.php" target="_self" accept-charset="utf-8">
+      <p>Username: <input type="text" name="username" id="username" placeholder="input username" maxlength="12" size="24"></p>
+      <input type="submit" name="kirim" id="kirim" value="Submit"> <!-- name & id jangan diisi "submit", nanti submit() error -->
+      <input type="reset" name="ulang" id="ulang" value="Reset">   <!-- name & id jangan diisi "reset", nanti reset() error -->
+    </form>
+    <br>
+    <span id="spanSubmit">Submit</span> <!-- Submit kustom ini ada di luar form, namun terhubung melalui nodeForm.submit() -->
+    <span id="spanReset">Reset</span>   <!-- Reset kustom ini ada di luar form, namun terhubung melalui nodeForm.reset() -->
+    <hr>
+    <p>Hasil property value: <span id="hasil"></span></p> <!-- tag <span> disini sebagai placeholder -->
+    <hr>
+    <p>Username: <input type="text" name="username2" id="username2" value="budi"></p>
 
+    <script>      
+      // ➊ Form Element | <form> | property
+      var nodeForm = document.getElementById("formKu");
+
+      console.log(nodeForm.elements);       // Output: ▶HTMLFormCollection(3) [...]   ⇨ Anggota/Element penyusun form
+      console.log(nodeForm.length);         // Output: 3                              ⇨ Jumlah anggota/Element penyusun form
+      console.log(nodeForm.name);           // Output: formKu                         ⇨ Nilai atribut name dari tag <form>
+      console.log(nodeForm.method);         // Output: get                            ⇨ Nilai atribut method dari tag <form>
+      console.log(nodeForm.action);         // Output: .../proses.php (contoh)        ⇨ Nilai atribut action dari tag <form>
+      console.log(nodeForm.target);         // Output: _self                          ⇨ Nilai atribut target dari tag <form>
+      console.log(nodeForm.acceptCharset);  // Output: utf-8                          ⇨ Nilai atribut accept-charset tag <form>
+      console.log(nodeForm.encoding);       // Output: app/x-www-form-urlencoded      ⇨ Nilai atribut enctype dari tag <form>
+      
+      // ➋ Form Element | <form> | method
+      var spanSubmitNode = document.getElementById("spanSubmit");
+      var spanResetNode = document.getElementById("spanReset");
+
+      function diSubmit(){ nodeForm.submit() };           // Method submit(): "Submit kustom" untuk mengirim form ke server
+      function diReset(){ nodeForm.reset() };             // Method reset(): "Reset kustom" untuk membersihkan isian form
+
+      spanSubmitNode.addEventListener("click", diSubmit);
+      spanResetNode.addEventListener("click", diReset);
+
+      // ➌ Form Element | <form> | event
+      function cetakTipe(e){ console.log(e.type) };       // Output: submit/reset (tergantung event yang dipanggil)
+
+      nodeForm.addEventListener("submit", cetakTipe);     // Event submit: Event aktif saat form di submit
+      nodeForm.addEventListener("reset", cetakTipe);      // Event reset: Event aktif saat form di reset
+
+      // ➍ Input Element | <input type="text"> | property
+      var nodeUname = document.getElementById("username");
+      var nodeHasil = document.getElementById("hasil");
+
+      function diProses(e){ 
+        e.preventDefault();                 // Stop event default submit (menahan form agar tidak dikirim ke server)
+        console.log(nodeUname.form);        // Output: <form ...>...</form>   ⇨ Form tempat dimana tag <input> berada
+        console.log(nodeUname.type);        // Output: text                   ⇨ Nilai atribut type dari tag <input>
+        console.log(nodeUname.name);        // Output: username               ⇨ Nilai atribut name dari tag <input>
+        console.log(nodeUname.placeholder); // Output: input username         ⇨ Nilai atribut placeholder dari tag <input>
+        console.log(nodeUname.value);       // Output: (teks yang diinput)    ⇨ Nilai atribut value dari tag <input>
+        console.log(nodeUname.autofocus);   // Output: false                  ⇨ Apakah atribut autofocus aktif?
+        console.log(nodeUname.maxLength);   // Output: 12                     ⇨ Nilai atribut maxLength ... (default: -1)
+        console.log(nodeUname.size);        // Output: 24                     ⇨ Nilai atribut size ... (default: 20)
+        console.log(nodeUname.readOnly);    // Output: false                  ⇨ Apakah atribut readOnly aktif?
+        console.log(nodeUname.disabled)     // Output: false                  ⇨ Apakah atribut disabled digunakan?
+
+        nodeHasil.innerHTML = nodeUname.value;  // Contoh: Property value dikirim ke placeholder <span id="hasil"></span>
+        // nodeForm.submit();                   // Aktifkan untuk melanjutkan proses mengirim data form ke server
+      }
+
+      nodeForm.addEventListener("submit", diProses);      // Event submit disini akan bergabung dengan yang sebelumnya
+
+      // ➎ Input Element | <input type="text"> | event
+      var nodeUname2 = document.getElementById("username2");
+
+      function diFocus(e){ e.target.style.border = "4px solid violet" };
+      function diBlur(e){ e.target.style.border = "4px solid salmon" };
+      function diChange(e){ e.target.style.backgroundColor = "lightblue" };
+
+      nodeUname2.addEventListener("focus", diFocus);      // Event focus: Aktif saat sebuah Element dipilih (di klik, dll)
+      nodeUname2.addEventListener("blur", diBlur);        // Event blur: Aktif saat sebuah Element tidak fokus (pindah)
+      nodeUname2.addEventListener("change", diChange);    // Event change: Aktif saat nilai sebuah Element berubah
+    </script>
+  </body>
+</html>
 ```
 
 📚 Referensi Element Objects (form, input, dll) lihat di: <a href="https://www.w3schools.com/jsref/default.asp">W3Schools: HTML Element Objects Reference</a>.
