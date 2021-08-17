@@ -6308,8 +6308,8 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 ## `4-7. Studi Kasus DOM` <a href="#daftar_isi_bab4">🡅</a>
 
 > - [X] 𝐀. Membuat Dropdown Dinamis
-> - [X] 𝐁. Membuat Form Validation
-> - [X] 𝐂. Validasi Berbagai Element Form
+> - [X] 𝐁. Membuat Form Validation (V1)
+> - [X] 𝐂. Membuat Form Validation (V2)
 
 ### ![✔] 𝐀. Membuat Dropdown Dinamis
 
@@ -6382,7 +6382,7 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 </html>
 ```
 
-### ![✔] 𝐁. Membuat Form Validation
+### ![✔] 𝐁. Membuat Form Validation (V1)
 
 ```HTML
 <!DOCTYPE html>
@@ -6452,10 +6452,187 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 </html>
 ```
 
-### ![✔] 𝐂. Validasi Berbagai Element Form
+### ![✔] 𝐂. Membuat Form Validation (V2)
 
 ```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <style>
+    .error {
+      color: red;
+      width: 300px;
+      text-align: center;
+      padding: 2px 10px;
+      margin-left: 10px;
+    }
+  </style>
+  <body>
+    <form id="formKu" name="formKu" method="get" action="proses.php">
+      <p>
+        Username:
+        <input type="text" name="username" id="username">
+        <span id="pesan1"></span> <!-- Placeholder untuk pesan error -->
+      </p>
+      <p>
+        Email:
+        <input type="text" name="surel" id="surel">
+        <span id="pesan2"></span> <!-- Placeholder untuk pesan error -->
+      </p>
+      <p>
+        Password:
+        <input type="password" name="sandi" id="sandi">
+        <span id="pesan3"></span> <!-- Placeholder untuk pesan error -->
+      </p>
+      <p>
+        Konfirmasi Password:
+        <input type="password" name="sandiKo" id="sandiKo">
+        <span id="pesan4"></span> <!-- Placeholder untuk pesan error -->
+      </p>
+      <p>
+        <input type="checkbox" name="syarat" id="syarat">
+        Saya menyetujui syarat dan ketentuan
+        <span id="pesan5"></span> <!-- Placeholder untuk pesan error -->
+      </p>
+      <p>
+        <input type="submit" name="kirim" id="kirim" value="Kirim Data">
+      </p>
+    </form>
 
+    <script>
+      var nodeForm = document.getElementById("formKu");
+
+      var nodeUname = document.getElementById("username");
+      var nodeSurel = document.getElementById("surel");
+      var nodeSandi = document.getElementById("sandi");
+      var nodeSandiKo = document.getElementById("sandiKo");
+      var nodeSyarat = document.getElementById("syarat");
+      
+      var nodePesan1 = document.getElementById("pesan1");
+      var nodePesan2 = document.getElementById("pesan2");
+      var nodePesan3 = document.getElementById("pesan3");
+      var nodePesan4 = document.getElementById("pesan4");
+      var nodePesan5 = document.getElementById("pesan5");
+
+      function validasiForm(e){
+        // ==================== A. Validasi Username ==================== //
+        var pesanError1 = "";
+
+        // Proses Validasi
+        if (nodeUname.value.trim() === ""){
+          pesanError1 = "Username harus diisi";
+        } else if(/\W/.test(nodeUname.value.trim())){
+          pesanError1 = "Hanya bisa diisi karekter alfanumerik";
+        } else if(nodeUname.value.trim().length < 6){
+          pesanError1 = "Minimal diisi 6 karakter";
+        }
+
+        // Tampilkan Error jika ada
+        if (pesanError1 !== ""){
+          nodePesan1.innerHTML = pesanError1;
+          nodePesan1.className = "error";
+          nodeUname.style.border = "2px solid red";
+          e.preventDefault();
+        } else {
+          nodeUname.style.backgroundColor = "lightgreen";
+        }
+
+        // ==================== B. Validasi Email ==================== //
+        var pesanError2 = "";
+
+        // Proses Validasi
+        if (nodeSurel.value.trim() === ""){
+          pesanError2 = "Email harus diisi";
+        } else if (!(/.+@.+\..+/.test(nodeSurel.value.trim()))){
+          pesanError2 = "Format email harus sesuai";
+        }
+
+        // Tampilkan Error jika ada
+        if (pesanError2 !== ""){
+          nodePesan2.innerHTML = pesanError2;
+          nodePesan2.className = "error";
+          nodeSurel.style.border = "2px solid red";
+          e.preventDefault();
+        } else {
+          nodeSurel.style.backgroundColor = "lightgreen";
+        }
+
+        // ==================== C. Validasi Password ==================== //
+        var pesanError3 = "";
+
+        // Proses Validasi
+        if (nodeSandi.value.trim() === ""){
+          pesanError3 = "Password harus diisi";
+        } else if (nodeSandi.value.trim().length < 6){
+          pesanError3 = "Password minimal 6 karakter";
+        }
+
+        // Tampilkan Error jika ada
+        if (pesanError3 !== ""){
+          nodePesan3.innerHTML = pesanError3;
+          nodePesan3.className = "error";
+          nodeSandi.style.border = "2px solid red";
+          e.preventDefault();
+        } else {
+          nodeSandi.style.backgroundColor = "lightgreen";
+        }
+
+        // ==================== D. Validasi Konfirmasi Password ==================== //
+        var pesanError4 = "";
+
+        // Proses Validasi
+        if (nodeSandiKo.value.trim() === ""){
+          pesanError4 = "Konfirmasi Password harus diisi";
+        } else if (nodeSandiKo.value.trim().length < 6){
+          pesanError4 = "Konfirmasi Password minimal 6 karakter";
+        } else if (nodeSandiKo.value !== nodeSandi.value){
+          pesanError4 = "Konfirmasi Password tidak sama";
+        }
+
+        // Tampilkan Error jika ada
+        if (pesanError4 !== ""){
+          nodePesan4.innerHTML = pesanError4;
+          nodePesan4.className = "error";
+          nodeSandiKo.style.border = "2px solid red";
+          e.preventDefault();
+        } else {
+          nodeSandiKo.style.backgroundColor = "lightgreen";
+        }
+
+        // ==================== E. Validasi Checkbox Syarat ==================== //
+        var pesanError5 = "";
+
+        // Proses Validasi
+        if (nodeSyarat.checked !== true){
+          pesanError5 = "Syarat dan ketentuan harus di setujui";
+        }
+
+        // Tampilkan Error jika ada
+        if (pesanError5 !== ""){
+          nodePesan5.innerHTML = pesanError5;
+          nodePesan5.className = "error";
+          e.preventDefault();
+        }
+      };
+      
+      // ==================== Hapus pesan error ==================== //
+      function hapusError(e){
+        // console.log(e.target.parentElement.lastElementChild);  // Output: <span id="pesan1"></span>
+        e.target.style.border = "";                               // Hapus border merah pada input field
+        e.target.parentElement.lastElementChild.innerHTML = "";   // Hapus pesan error pada input filed
+      };
+
+      nodeForm.addEventListener("submit", validasiForm);  // STEP 1 🡲 Lakukan validasi form & munculkan error jika tidak valid
+      nodeUname.addEventListener("focus", hapusError);    // STEP 2 🡲 Hapus pesan error saat user "focus" lagi ke input filed
+      nodeSandi.addEventListener("focus", hapusError);    // ....
+      nodeSandiKo.addEventListener("focus", hapusError);  // ....
+      nodeSyarat.addEventListener("focus", hapusError);   // ....
+    </script>
+  </body>
+</html>
 ```
 
 </details>
