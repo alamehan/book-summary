@@ -4714,6 +4714,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 | <a href="#bab4_4">4-4. DOM Event</a>     	            | X Menit       	|
 | <a href="#bab4_5">4-5. Mouse Events</a>     	        | X Menit       	|
 | <a href="#bab4_6">4-6. Form Processing</a>            | X Menit       	|
+| <a href="#bab4_7">4-7. Studi Kasus DOM</a>            | X Menit       	|
 
 <hr>
 <div id="bab4_1"></div>
@@ -4761,7 +4762,7 @@ Catatan: Perhatikan gambar di atas, terdapat hirarki Windows Object ➜ Document
 
 Element Object sebenarnya tidak hanya menurunkan HTMLElement Object saja, melainkan ada juga Object yang terkait dengan form seperti HTMLFormElement, HTMLInputElement, HTMLTextAreaElement, HTMLSelectElement dan HTMLOptionElement (🔔 Form processing dibahas di bab 4-6), maupun puluhan Object lainnya lagi seperti HTMLImageElement, HTMLTableElement, HTMLTimeElement, dsb.
 
-📚 Selengkapnya bisa lihat di <a href="https://developer.mozilla.org/en-US/docs/Web/API#interfaces">MDN: Web APIs Interfaces</a>.
+📚 Selengkapnya bisa lihat di <a href="https://developer.mozilla.org/en-US/docs/Web/API#interfaces">MDN: Web APIs Interfaces</a> & <a href="https://docs.w3cub.com/dom/htmlanchorelement">W3CubDocs: DOM Elements</a>.
 
 ### ![✔] 𝐀. Window Object
 
@@ -5000,7 +5001,7 @@ console.log(klon2.hasChildNodes());                 // Output: false  ⇨ Hanya 
         nodeTr.appendChild(nodeTd1);
         nodeTr.appendChild(nodeTd2);
         nodeTable.appendChild(nodeTr);
-      }
+      };
   
       // ➎ Masukkan tag <table> ke dalam DOM, posisi sebelum tag <p>
       nodeBody.insertBefore(nodeTable, nodeP);
@@ -5248,7 +5249,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
     <script>
       function tampilkan(){
         document.querySelector("p:nth-child(16)").innerHTML="Paragraf 2 muncul!";
-      }
+      };
     </script>
   </body>
 </html>
@@ -5277,7 +5278,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
       // ➊ Cara penulisan 1: Dengan input Function ke property
       function tampilkan1(){
         document.querySelector("p").innerHTML="Paragraf 1 muncul!";
-      }
+      };
       let nodeH1A = document.getElementById("judul1");
       nodeH1A.onclick = tampilkan1;
 
@@ -5285,18 +5286,18 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
       let nodeH1B = document.getElementById("judul2");
       nodeH1B.onclick = function(){
         document.querySelector("p:nth-child(4)").innerHTML="Paragraf 2 muncul!";
-      }
+      };
 
       // ➌ Menambahkan beberapa event berbeda sekaligus (Contoh disini memakai cara penulisan 1)
       function tampilkanClick(){
         nodeP3.innerHTML="Saya di klik";
-      }
+      };
       function tampilkanDoubleClick(){
         nodeP3.innerHTML="Saya di double klik";
-      }
+      };
       function tampilkanContextMenu(){
         nodeP3.innerHTML="Saya di klik kanan";
-      }
+      };
 
       let nodeH1C = document.getElementById("judul3");     
       let nodeP3  = document.querySelector("p:nth-child(6)");
@@ -5338,13 +5339,13 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
       // ➊ Cara penulisan 1: Dengan input Function sebagai Argument
       function tampilkanClick(){
         nodeP1.innerHTML="Saya di klik";
-      }
+      };
       function tampilkanDoubleClick(){
         nodeP1.innerHTML="Saya di double klik";
-      }
+      };
       function tampilkanContextMenu(){
         nodeP1.innerHTML="Saya di klik kanan";
-      }
+      };
 
       let nodeH1A = document.getElementById("judul1");
       let nodeP1  = document.querySelector("p");
@@ -5369,13 +5370,13 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
       // ➌ Menggabungkan multiple event yang sama (Contoh disini memakai cara penulisan 1)
       function tampilkanPAtas(){
         nodeP3.innerHTML="P atas muncul!";
-      }
+      };
       function tampilkanPTengah(){
         nodeP4.innerHTML="P tengah muncul!";
-      }
+      };
       function tampilkanPBawah(){
         nodeP5.innerHTML="P bawah muncul!";
-      }
+      };
       let nodeH1C = document.getElementById("judul3");
       let nodeP3  = document.querySelector("p:nth-child(6)");
       let nodeP4  = document.querySelector("p:nth-child(7)");
@@ -5530,13 +5531,13 @@ Event Propagation adalah istilah yang merujuk kepada cara event "ditangkap" oleh
 
       function tampilkanDiv(){
         console.log("Tag div di-klik!");
-      }
+      };
       function tampilkanH1(){
         console.log("Tag h1 di-klik!");
-      }
+      };
       function tampilkanEm(){
         console.log("Tag em di-klik!");
-      }
+      };
 
       nodeDiv.addEventListener("click", tampilkanDiv);
       nodeH1.addEventListener("click", tampilkanH1);
@@ -5675,19 +5676,19 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
       function clickEvent(e){
         e.target.style.backgroundColor = "salmon";
         e.target.innerHTML = "Terjadi event click";
-      }
+      };
       function contextmenuEvent(e){
         e.target.style.backgroundColor = "coral";
         e.target.innerHTML = "Terjadi event contextmenu";
-      }
+      };
       function auxclickEvent(e){
         e.target.style.backgroundColor = "gold";
         e.target.innerHTML = "Terjadi event auxclick";
-      }
+      };
       function dblclickEvent(e){
         e.target.style.backgroundColor = "violet";
         e.target.innerHTML = "Terjadi event dblclick";
-      }
+      };
       var nodeDiv1 = document.querySelector("#div1");
       nodeDiv1.addEventListener("click", clickEvent);
       nodeDiv1.addEventListener("contextmenu", contextmenuEvent);
@@ -5701,11 +5702,11 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
       function mousedownEvent(e){
         e.target.style.backgroundColor = "lightgreen";
         e.target.innerHTML = "Terjadi event mousedown";
-      }
+      };
       function mouseupEvent(e){
         e.target.style.backgroundColor = "lightblue";
         e.target.innerHTML = "Terjadi event mouseup";
-      }
+      };
       var nodeDiv2 = document.querySelector("#div2");
       nodeDiv2.addEventListener("mousedown", mousedownEvent);
       nodeDiv2.addEventListener("mouseup", mouseupEvent); 
@@ -5718,10 +5719,10 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
       */
       function gantiPink(e){
         e.target.style.backgroundColor = "pink";
-      }
+      };
       function gantiKhaki(e){
         e.target.style.backgroundColor = "khaki";
-      }
+      };
       var nodeDiv3 = document.querySelector("#div3");
       var nodeDiv4 = document.querySelector("#div4");
       nodeDiv3.addEventListener("mouseover", gantiPink);
@@ -5742,7 +5743,7 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
         nodeYC.innerHTML = e.clientY;
         nodeXP.innerHTML = e.pageX;
         nodeYP.innerHTML = e.pageY;
-      }
+      };
       var nodeDiv5 = document.querySelector("#div5");
       var nodeXS = document.getElementById("sumbuXS");
       var nodeYS = document.getElementById("sumbuYS");
@@ -5893,7 +5894,7 @@ Pada bagian ```action="proses.php"``` di atas hanyalah contoh saja. Kita hanya a
 
         nodeHasil.innerHTML = nodeUname.value;  // Contoh: Property value dikirim ke placeholder <span id="hasil"></span>
         // nodeForm.submit();                   // Aktifkan untuk melanjutkan proses mengirim data form ke server
-      }
+      };
       nodeForm.addEventListener("submit", diProses);
 
       // ➋ Input Element | <input type="text"> | event
@@ -6216,7 +6217,7 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
         nodeNamaKota.focus();                             // 5. Langsung beri event focus()
       };
       function diTambahKotaViaEnter(e){
-        // console.log(e.key);  // Untuk memeriksa String dari tombol yang ditekan
+        // console.log(e.key);                            // Untuk memeriksa String dari tombol yang ditekan
         if (e.key === "Enter"){ diTambahKota() };         // Jika user tekan "Enter" jalankan function
       };
 
@@ -6228,6 +6229,99 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 ```
 
 ### ![✔] 𝐈. Select Element
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <p>Belajar:
+      <select name="belajar" id="belajar">
+        <option value="HTML" id="belajarHTML" selected>BelajarHTML</option> <!-- selected: option ini sbg pilihan default -->
+        <option value="CSS" id="belajarCSS" disabled>BelajarCSS</option>    <!-- disabled: option ini di non-aktif kan -->
+        <option value="JS" id="belajarJS">BelajarJS</option>
+      </select>
+    </p>
+    <p>
+      <button id="periksaSelect">Periksa (Select)</button>
+      <button id="periksaOption">Periksa (Option)</button>
+    </p>
+    <p>Hasil: <span id="hasil"></span></p>
+    
+    <script>
+      // ➊ Select Element | <select> | property
+      var nodePeriksa1 = document.getElementById("periksaSelect");
+      var nodeBelajar = document.getElementById("belajar");
+
+      function diPeriksaSelect(){
+        console.log(nodeBelajar.name);            // Output: belajar                          ⇨ Nilai dari atribut name
+        console.log(nodeBelajar.length);          // Output: 3                                ⇨ Jumlah pilihan yang ada
+        console.log(nodeBelajar.value);           // Output: HTML                             ⇨ Nilai dari atribut value 
+        console.log(nodeBelajar.selectedIndex);   // Output: 0                                ⇨ Index dari value saat ini
+        console.log(nodeBelajar.options);         // Output: ▶HTMLOptionsCollection(3) [...]  ⇨ Seluruh <option> yang ada
+        console.log(nodeBelajar.selectedOptions); // Output: ▶HTMLCollection [...]            ⇨ <option> yang aktif saat ini
+        console.log(nodeBelajar[0]);              // Output: <option ...>BelajarHTML</option> ⇨ <option> index ke 0
+        console.log(nodeBelajar[1]);              // Output: <option ...>BelajarCSS</option>  ⇨ <option> index ke 1
+        console.log(nodeBelajar[2]);              // Output: <option ...>BelajarJS</option>   ⇨ <option> index ke 2
+      };
+
+      nodePeriksa1.addEventListener("click", diPeriksaSelect);
+
+      // ➋ Option Element | <option> | property
+      var nodePeriksa2 = document.getElementById("periksaOption");
+      var nodeBelajarHTML = document.getElementById("belajarHTML");
+
+      function diPeriksaOption(){
+        console.log(nodeBelajarHTML.value);           // Output: HTML           ⇨ Nilai dari atribut value <option> saat ini
+        console.log(nodeBelajarHTML.index);           // Output: 0              ⇨ Urutan index <option> saat ini
+        console.log(nodeBelajarHTML.text);            // Output: BelajarHTML    ⇨ Teks dalam <option> saat ini
+        console.log(nodeBelajarHTML.selected);        // Output: true           ⇨ Apakah <option> saat ini sedang dipilih?
+        console.log(nodeBelajarHTML.defaultSelected); // Output: true           ⇨ Apakah <option> saat ini sbg nilai default?
+        console.log(nodeBelajarHTML.disabled);        // Output: false          ⇨ Apakah atribut disabled aktif?
+      };
+
+      nodePeriksa2.addEventListener("click", diPeriksaOption);
+
+      // ➌ Contoh Select & Option: Menampilkan Pilihan Select
+      var nodeHasil = document.getElementById("hasil");
+
+      function diTampilkan(){
+        nodeHasil.innerHTML = nodeBelajar.value;
+      };
+
+      nodeBelajar.addEventListener("change", diTampilkan);  // Jika menggunakan event "click", maka pada saat baru men-klik
+                                                            // dropdown (simbol ˅) hasilnya sudah langsung muncul, padahal
+                                                            // belum memilih option. Makanya disini kita gunakan "change".
+    </script>
+  </body>
+</html>
+```
+
+<hr>
+<div id="bab4_7"></div>
+
+## `4-7. Studi Kasus DOM` <a href="#daftar_isi_bab4">🡅</a>
+
+> - [X] 𝐀. Membuat Dropdown Dinamis
+> - [X] 𝐁. Membuat Form Validation
+> - [X] 𝐂. Validasi Berbagai Element Form
+
+### ![✔] 𝐀. Membuat Dropdown Dinamis
+
+```HTML
+
+```
+
+### ![✔] 𝐁. Membuat Form Validation
+
+```HTML
+
+```
+
+### ![✔] 𝐂. Validasi Berbagai Element Form
 
 ```HTML
 
@@ -6336,8 +6430,9 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 | 8 	| <a href="https://github.com/lukehoban/es6features">Overview of ECMAScript 6 Features</a> 	| 📕 	|
 | 9 	| <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheat Sheet</a> 	| 📕 	|
 | 10 	| <a href="https://github.com/daumann/ECMAScript-new-features-list">ECMAScript New Features List</a> 	| 📕 	|
-| 11 	| <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a> 	| 📘 	|
-| 12 	| <a href="https://www.w3docs.com/">W3Docs</a> 	| 📕 	|
+| 11 	| <a href="https://www.w3schools.com/jsref/default.asp">W3Schools</a> (Digunakan sebagai Cheat Sheet)	| 📘 	|
+| 12	| <a href="https://docs.w3cub.com/">W3CubDocs</a> (Digunakan sebagai Cheat Sheet)	| 📕 	|
+| 13 	| <a href="https://www.w3docs.com/">W3Docs</a> (Digunakan sebagai Cheat Sheet)	| 📕 	|
 
 | No | Uji Pengetahuan & Kemampuan Anda                                                                                                                                                                             |
 |----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
