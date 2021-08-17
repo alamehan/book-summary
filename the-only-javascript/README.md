@@ -6329,6 +6329,18 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 
 </details>
 
+## ⑤ 𝒮𝑒𝓅𝓊𝓉𝒶𝓇 𝐵𝒪𝑀 🔮 <a href="#top">🠉</a>
+
+<details>
+<summary>Klik untuk membuka!</summary>
+
+<br>
+
+**Upcoming!**
+
+</details>
+
+
 ## ⑥ 𝒜𝓈𝓎𝓃𝒸𝒽𝓇𝑜𝓃𝑜𝓊𝓈 𝒥𝒮 ⏳ <a href="#top">🠉</a>
 
 <details>
@@ -6340,7 +6352,7 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 
 </details>
 
-## ⑥ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒮 🦸‍♂️ <a href="#top">🠉</a>
+## ⑦ 𝑀𝑜𝒹𝑒𝓇𝓃 𝒥𝒮 🦸‍♂️ <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -6383,7 +6395,7 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 </details>
 
-## ⑦ 𝒥𝒮 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖 <a href="#top">🠉</a>
+## ⑧ 𝒥𝒮 𝐿𝒾𝒷𝓇𝒶𝓇𝒾𝑒𝓈 🤖 <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
@@ -6400,7 +6412,7 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 
 </details>
 
-## ⑧ 𝑅𝑒𝒻𝑒𝓇𝑒𝓃𝓈𝒾 📚 <a href="#top">🠉</a>
+## ⑨ 𝑅𝑒𝒻𝑒𝓇𝑒𝓃𝓈𝒾 📚 <a href="#top">🠉</a>
 
 <details>
 <summary>Klik untuk membuka!</summary>
