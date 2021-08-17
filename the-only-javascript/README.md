@@ -6312,7 +6312,72 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 ### ![✔] 𝐀. Membuat Dropdown Dinamis
 
 ```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <p>
+      Fakultas:
+      <select name="fakultas" id="fakultas">
+        <option value="FASILKOM">FASILKOM</option>
+        <option value="EKONOMI">EKONOMI</option>
+        <option value="FMIPA">FMIPA</option>
+      </select>
+      Jurusan:
+      <select name="jurusan" id="jurusan"></select> <!-- Placeholder untuk jurusan -->
+    </p>
+    <br>
+    <p>Pilihan Anda: <span id="hasil"></span></p>   <!-- Placeholder untuk hasil -->
 
+    <script>
+      var nodeFakultas = document.getElementById("fakultas");
+      var nodeJurusan = document.getElementById("jurusan");
+      var nodeHasil = document.getElementById("hasil");
+
+      var jurusanFASILKOM = "";   // Pendifinisian jurusan & nilai awal di set String kosong
+      var jurusanEKONOMI = "";    // Pendifinisian jurusan & nilai awal di set String kosong
+      var jurusanFMIPA = "";      // Pendifinisian jurusan & nilai awal di set String kosong
+
+      function tampilkanJurusan(){
+        if (nodeFakultas.value === "FASILKOM"){
+          jurusanFASILKOM = `<option value="Ilkom">Ilmu Komputer</option>
+          <option value="TI">Teknik Informatika</option>
+          <option value="SI">Sistem Informasi</option>`;
+          nodeJurusan.innerHTML = jurusanFASILKOM;  // Masukkan ke placeholder jurusan
+        }
+        if (nodeFakultas.value === "EKONOMI"){
+          jurusanEKONOMI = `<option value="Akuntansi">Akuntansi</option>
+          <option value="Manajemen">Manajemen</option>
+          <option value="Ilmu Ekonomi">Ilmu Ekonomi</option>`;
+          nodeJurusan.innerHTML = jurusanEKONOMI;   // Masukkan ke placeholder jurusan
+        }
+        if (nodeFakultas.value === "FMIPA"){
+          jurusanFMIPA = `<option value="Matematika">Matematika</option>
+          <option value="Fisika">Fisika</option>
+          <option value="Kimia">Kimia</option>
+          <option value="Biologi">Biologi</option>`;
+          nodeJurusan.innerHTML = jurusanFMIPA;     // Masukkan ke placeholder jurusan
+        }
+
+        tampilkanHasil();         // STEP 2 🡲 Diperlukan agar saat halaman dimuat, hasil bisa langsung muncul di placeholder.
+      };
+
+      function tampilkanHasil(){
+        nodeHasil.innerHTML = `Fakultas ${nodeFakultas.value}, Jurusan ${nodeJurusan.value}`;
+      };
+
+      window.addEventListener("load", tampilkanJurusan);          // STEP 1 🡲 Event load: Aktif saat halaman dimuat. Mengapa?
+                                                                  // Agar pilihan jurusan langsung muncul, tanpa perlu menunggu
+                                                                  // Event "change" terlebih dahulu (lihat baris kode di bawah).
+
+      nodeFakultas.addEventListener("change", tampilkanJurusan);  // STEP 3 🡲 Event change: Aktif saat terjadi perubahan nilai
+      nodeJurusan.addEventListener("change", tampilkanHasil);     // dari sebuah Element. Maka hasil di placeholder ikut berubah.
+    </script>
+  </body>
+</html>
 ```
 
 ### ![✔] 𝐁. Membuat Form Validation
