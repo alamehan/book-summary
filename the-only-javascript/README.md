@@ -6364,7 +6364,7 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
           nodeJurusan.innerHTML = jurusanFMIPA;     // Masukkan ke placeholder jurusan
         }
 
-        tampilkanHasil();         // STEP 2 🡲 Diperlukan agar saat halaman dimuat, hasil bisa langsung muncul di placeholder.
+        tampilkanHasil(); // STEP 2 🡲 Diperlukan agar saat halaman dimuat, hasil bisa langsung muncul di placeholder.
       };
 
       function tampilkanHasil(){
