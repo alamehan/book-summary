@@ -180,7 +180,7 @@ Dengan memanggil file external JavaScript dari bagian bawah tag ```<body>```, me
   <body>
     ...
     <script>
-      // Internal JavaScript
+      // ⚠️ Internal JavaScript (Disinilah contoh kode di sepanjang markdown ini diletakkan)
     </script>
   </body>
 </html>
