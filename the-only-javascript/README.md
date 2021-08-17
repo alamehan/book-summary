@@ -6385,7 +6385,71 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 ### ![✔] 𝐁. Membuat Form Validation
 
 ```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <style>
+    .error {
+      color: red;
+      width: 300px;
+      text-align: center;
+      padding: 2px 10px;
+      margin-left: 10px;
+    }
+  </style>
+  <body>
+    <form id="formKu" name="formKu" method="get" action="proses.php">
+      <p>
+        Username:
+        <input type="text" name="username" id="username">
+        <span id="pesan"></span> <!-- Placeholder untuk pesan error -->
+      </p>
+      <p><input type="submit" name="kirim" id="kirim" value="Kirim Data"></p>
+    </form>
 
+    <script>
+      var nodeForm = document.getElementById("formKu");
+      var nodeUname = document.getElementById("username");
+      var nodePesan = document.getElementById("pesan");
+
+      function validasiForm(e){
+        var pesanError = "";
+
+        // Username tidak boleh kosong atau tidak boleh hanya berisi whitespace saja
+        if (nodeUname.value.trim() === ""){
+          pesanError = "Username harus diisi";
+        } 
+        // Username hanya terdiri dari huruf + angka saja (pola RegExp Alfanumerik)
+        else if(/\W/.test(nodeUname.value.trim())){
+          pesanError = "Hanya bisa diisi karekter alfanumerik";
+        }
+        // Username harus terdiri dari minimal 6 karakter
+        else if(nodeUname.value.trim().length < 6){
+          pesanError = "Minimal diisi 6 karakter";
+        }
+
+        if (pesanError !== ""){ // Jika terdapat pesan error, jalankan kondisi berikut
+          nodePesan.innerHTML = pesanError;
+          nodePesan.className = "error";
+          nodeUname.style.border = "2px solid red";
+          e.preventDefault();
+        }
+      };
+      
+      function hapusError(e){
+        // console.log(e.target.parentElement.lastElementChild);  // Output: <span id="pesan"></span>
+        e.target.style.border = "";                               // Hapus border merah pada input field
+        e.target.parentElement.lastElementChild.innerHTML = "";   // Hapus pesan error pada input filed
+      };
+
+      nodeForm.addEventListener("submit", validasiForm);  // STEP 1 🡲 Lakukan validasi form & munculkan error jika tidak valid
+      nodeUname.addEventListener("focus", hapusError);    // STEP 2 🡲 Hapus pesan error saat user "focus" lagi ke input filed
+    </script>
+  </body>
+</html>
 ```
 
 ### ![✔] 𝐂. Validasi Berbagai Element Form
