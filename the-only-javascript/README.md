@@ -333,6 +333,8 @@ Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu digunakan, terutam
 </html>
 ```
 
+**Nasihat Senior**: Jika kode JavaScript yang akan dirancang cukup panjang, sangat disarankan untuk memeriksa hasilnya secara berkala. Buat beberapa baris, cek ```console.log()```. Jika aman, barulah lanjut. Setelah beberapa baris, cek lagi dengan ```console.log()```, demikian hingga akhir kode program. Ini untuk memastikan kita bisa mengatasi masalah sedini mungkin. **Akan jauh lebih mudah mencari error di 10 baris kode program dibandingkan 100 baris**. Dengan memeriksa secara reguler, kita juga menciptakan sebuah "save point". Yakni jika terjadi error, bisa ditelusuri itu kemungkinan besar berasal dari beberapa baris kode terakhir.
+
 </details>
 
 ## ② 𝒦𝑜𝓃𝓈𝑒𝓅 𝒟𝒶𝓈𝒶𝓇 👨‍💻 <a href="#top">🠉</a>
