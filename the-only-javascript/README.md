@@ -6444,7 +6444,7 @@ Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan seb
 Keterangan:
 1. 📘 Sudah dipelajari sebagian dan dibuat catatan hasil belajarnya + sudah ditambahkan ke dalam markdown The Only JavaScript ini.
 2. 📕 Belum dipelajari dan belum dibuat catatan hasil belajarnya, namun kelak akan dituntaskan (karena memang referensinya berkualitas).
-3. A* Buku JavaScript Uncover oleh Andre Pratama (referensi utama) baru selesai sampai di **Bab 21.5: Event Object (Halaman 451)**.
+3. A* Buku JavaScript Uncover oleh Andre Pratama (referensi utama) baru selesai sampai di **Bab 22: Form Processing (Halaman 562)**.
 4. B* The Complete JavaScript Course 2021 by Jonas Schmedtmann baru selesai sampai di **Section 6: HTML & CSS Crash Course**.
 5. C* Javascript Tutorial and Projects Course by John Smilga baru selesai sampai di **Section 4: Javascript Tutorial Continued**.
 6. D* JavaScript: Understanding the Weird Parts by Anthony Alicea baru selesai sampai di **Section 3: Types and Operatos**
