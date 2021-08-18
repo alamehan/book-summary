@@ -1689,6 +1689,8 @@ function init(){
 init();                               // Output: Budi
 ```
 
+Implementasi dari Closure ini banyak dijumpai pada kasus Factory Function (🔔 Lihat point P di bawah) & Function as Return Value yang menggunakan data Outer Function-nya (🔔 Lihat studi kasus 1 & 2 pada point Q di bawah mengenai IIFE). 
+
 ### ![✔] 𝐊. JavaScript Hoisting
 
 Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan mengatur ruang memory untuk setiap Variable & Function yang dibuat. Teknisnya JavaScript seolah "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai ```undefined```, sedangkan Function akan diisi Functionnya itu sendiri. 
@@ -2293,6 +2295,12 @@ console.log(add());                     // console.log(contoh());   🡲 Output:
 ```
 
 Pada contoh IIFE di atas, Variable counter baik didefinisikan dengan menggunakan let maupun var sekalipun, tetap seolah akan menjadi private, nilainya tidak bisa diubah atau dimanipulasi dari luar scope (ingat var itu Function Scope, dan let itu Block Scope).
+
+Agar lebih mudah memahami kode di atas, lihat comment "Setara dengan Factory Function" di sebelah kanan-nya. Cara baca alur kode: 
+- Pertama, jalankan Function add dan simpan hasilnya ke dalam Variable ```contoh```. Sampai disini Function add baru berjalan 1/2 nya (atau kita kenal dengan istilah Factory Function), dimana nilai  ```counter``` sudah ter-set menjadi ```0```. 
+- Kedua, jalankan Function tambah (setengah sisanya) dengan menuliskan perintah ```console.log(contoh());```, dimana nilai ```counter``` milik Function add (parent-nya) akan ter-increment menjadi ```1``` lalu ditampilkan di tab console.
+- Selanjutnya, saat perintah ```console.log(contoh());``` dijalankan lagi, ini artinya jalankan Function tambah lagi, maka nilai ```counter``` milik Function add (parent-nya) akan ter-increment dan muncul di tab console lagi, begitu seterusnya.
+- Sebagai catatan, nilai ```counter``` di-set menjadi ```0``` itu hanya terjadi 1x saja pada saat mejalankan Function add melalui perintah ```let contoh = add();```. Oleh karena itu pada setiap menjalankan Function tambah (setengah sisanya) nilai ```counter``` tidak akan ter-set menjadi ```0``` lagi, melainkan "melanjutkan" hasil increment sebelumnya.
 
 ### ![✔] 𝐑. Arrow Function
 
