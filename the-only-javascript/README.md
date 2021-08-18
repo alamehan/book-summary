@@ -12,7 +12,7 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu diketahui dalam Web Development. Web Development adalah bidang ilmu yang sangat luas, jadi itu benar-benar normal dan dapat diterima bahwa Anda tidak pernah tahu segalanya tentang Web Development. Jangan terlalu membebani pundakmu dan membuat terlalu banyak ekspektasi. Developer dan senior terbaik sekalipun tidak memiliki masalah dalam mengakui bahwa mereka tidak tahu segalanya seperti ungkapan Kyle Simpson di atas.
 
-**Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya anda akan memahaminya juga, bersabarlah. **Ketik ulang** contoh kode yang sedang dipelajari (dari situlah proses belajar didapat), bukan hanya copy-paste kode.
+**Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya Anda akan memahaminya juga, bersabarlah. **Ketik ulang** contoh kode yang sedang dipelajari (dari situlah proses belajar didapat), bukan hanya copy-paste kode.
 
 # 𝐋𝐞𝐭'𝐬 𝐆𝐞𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝!
 
@@ -61,7 +61,7 @@ Perkembangan JavaScript yang sangat pesat melahirkan banyak penerapan lain dari 
 
 Apa yang akan kita pelajari dalam markdown ini terdiri dari 2 kelompok besar: JavaScript dan **DOM (Document Object Model)**. JavaScript adalah bahasa pemrograman, sedangkan DOM merupakan Object HTML yang akan kita manipulasi, seperti teks, gambar, form, tombol, title bar web browser, event, dll. Bahasa pemrograman JavaScript dikembangkan oleh ECMA, sedangkan DOM dikembangkan oleh W3C (organisasi yang juga membuat standar HTML dan CSS). Bisa dibilang, JavaScript sepenuhnya terpisah dari HTML.
 
-Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika anda merasa jenuh dengan pembahasan dari bab 1 hingga 3, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi Object HTML yang nantinya diakses lewat DOM di bab 4 🔔.
+Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript digunakan untuk mengubah total tampilan halaman web. Jadi, jika Anda merasa jenuh dengan pembahasan dari bab 1 hingga 3, tahan dulu! Paksakan untuk terus mempelajarinya. Dengan pemahaman JavaScript yang cukup, kita memiliki pondasi yang kuat untuk memanipulasi Object HTML yang nantinya diakses lewat DOM di bab 4 🔔.
 
 <hr>
 <div id="bab1_2"></div>
@@ -98,7 +98,7 @@ Setelah ES6 ini, ECMAScript memutuskan tidak lagi rilis segudang fitur sekaligus
 
 Perkembangan JavaScript Saat Ini: Website yang tidak berbentuk “website”, tetapi menyerupai aplikasi desktop yang dikenal sebagai **Single-page Application (SPA)**. Contoh dari Single-page Application ini seperti aplikasi Google: Gmail, GDrive, Google Doc, dll. Di website tersebut, halamannya akan tetap sama, tidak di reload seperti layaknya sebuah website.
 
-Namun perlu juga dipahami bahwa walaupun materi di markdown ini sudah lumayan rumit, ini barulah dasar dari JavaScript. Jika anda serius ingin mempelajari JavaScript lebih jauh lagi, bisa lanjut ke library seperti **jQuery**, framework seperti **AngularJS**, **ReactJS** maupun **VueJS**, atau ke sisi server dengan menggunakan **Node.js**.
+Namun perlu juga dipahami bahwa walaupun materi di markdown ini sudah lumayan rumit, ini barulah dasar dari JavaScript. Jika Anda serius ingin mempelajari JavaScript lebih jauh lagi, bisa lanjut ke library seperti **jQuery**, framework seperti **AngularJS**, **ReactJS** maupun **VueJS**, atau ke sisi server dengan menggunakan **Node.js**.
 
 Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat diakses di:
 - <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript (Wikipedia)</a>
@@ -196,9 +196,9 @@ Berbeda dengan mayoritas bahasa pemrograman lain, secara default kita tidak bisa
 
 <img src="assets/developer-tools.png"><br>
 
-Tab Inspector (1) bisa digunakan untuk menelusuri seluruh kode HTML yang terdapat di dalam halaman web (2), di sisi kanan kita bisa melihat kode CSS yang digunakan oleh tag HTML tersebut (3). Jika anda sering mengedit kode CSS, tab Inspector ini sangat bermanfaat untuk melihat dan menjalankan (mengedit) kode CSS tanpa perlu mengubah file asli.
+Tab Inspector (1) bisa digunakan untuk menelusuri seluruh kode HTML yang terdapat di dalam halaman web (2), di sisi kanan kita bisa melihat kode CSS yang digunakan oleh tag HTML tersebut (3). Jika Anda sering mengedit kode CSS, tab Inspector ini sangat bermanfaat untuk melihat dan menjalankan (mengedit) kode CSS tanpa perlu mengubah file asli.
 
-Tab yang sering kita akses selama membuat kode program JavaScript adalah **tab console**, yang berada di sebelah kanan tab Inspector. Apabila kode yang anda buat tidak berjalan sebagaimana mestinya, hal pertama yang harus dilakukan adalah memeriksa tab console ini. Selain menampilkan pesan error, di dalam tab console kita juga bisa menjalankan kode program JavaScript secara langsung, tanpa harus menulisnya di dalam file HTML. Fungsi ```console.log()``` berguna untuk menampilkan hasil kode program ke tab console.
+Tab yang sering kita akses selama membuat kode program JavaScript adalah **tab console**, yang berada di sebelah kanan tab Inspector. Apabila kode yang Anda buat tidak berjalan sebagaimana mestinya, hal pertama yang harus dilakukan adalah memeriksa tab console ini. Selain menampilkan pesan error, di dalam tab console kita juga bisa menjalankan kode program JavaScript secara langsung, tanpa harus menulisnya di dalam file HTML. Fungsi ```console.log()``` berguna untuk menampilkan hasil kode program ke tab console.
 
 ### ![✔] 𝐄. Helper Methods
 
@@ -225,7 +225,7 @@ Dari ketiga methods tersebut, ```console.log()``` lah yang lebih banyak dan lebi
       alert("JavaScript aktif");
     </script>
     <noscript>
-      JavaScript anda tidak aktif, mohon diaktifkan untuk bisa mengakses web ini.
+      JavaScript Anda tidak aktif, mohon diaktifkan untuk bisa mengakses web ini.
     </noscript>
   </body>
 </html>
@@ -273,7 +273,7 @@ Secara sederhana, Variable adalah “wadah/penampung” dari sebuah data. Disebu
 
 JavaScript termasuk ke dalam bahasa pemrograman **Typeless Programming Language**, yakni kelompok bahasa pemrograman yang Variablenya bisa diisi dengan tipe data apa saja tanpa harus dideklarasikan terlebih dahulu.
 
-Apabila anda sering mengikuti tutorial programming, nama Variable **foo**, **bar**, dan **baz** sering digunakan. Ketiganya dikenal sebagai **dummy Variable**, yakni Variable yang fungsinya hanya sebagai contoh. Mirip seperti teks “Lorem Ipsum dolor sit amet” dalam bidang design.
+Apabila Anda sering mengikuti tutorial programming, nama Variable **foo**, **bar**, dan **baz** sering digunakan. Ketiganya dikenal sebagai **dummy Variable**, yakni Variable yang fungsinya hanya sebagai contoh. Mirip seperti teks “Lorem Ipsum dolor sit amet” dalam bidang design.
 
 Kita bisa memberi nama apa saja untuk Variable, apakah itu ```angka```, ```foo```, ```bar```, ```andi```, atau ```username```. Selain Variable (var), kita juga bebas untuk membuat nama konstanta (const), Function, Object muapun Class. Semua inilah yang termasuk ke dalam kelompok **Identifier**, semuanya akan di bahas di markdown ini. Identifier di dalam JavaScript memiliki aturan sebagai berikut:
    - Bersifat case sensitive, dimana huruf besar dan kecil dianggap berbeda.
@@ -940,7 +940,7 @@ console.log(num4);                    // Output: 1143 (Number)
 console.log(typeof num4);             // number
 ```
 
-Hati-hati dengan Implicit Type Conversion (Coercion) ini karena bisa menimbulkan sebuah bug, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah **TypeScript** sebagai **Strongly typed JavaScript** (Tidak dibahas disini, anda bisa pelajari secara mandiri).
+Hati-hati dengan Implicit Type Conversion (Coercion) ini karena bisa menimbulkan sebuah bug, misalnya user input berupa Number namun dibaca JavaScript sebagai String atau sebaliknya. Ingatlah bahwa kode Anda itu nantinya bisa bergantung pada banyak hal, entah itu data dari database, data dari eksternal API, atau data dari user input. Anda perlu hati-hati akan masalah yang tampaknya "sepele" namun berbahaya ini. Dengan alasan itu, lahirlah **TypeScript** sebagai **Strongly typed JavaScript** (Tidak dibahas disini, Anda bisa pelajari secara mandiri).
 
 Catatan: Terdapat istilah Type convertion (explicit) & Type coercion (implicit). Type convertion yaitu ketika kita secara manual mengkonversi satu tipe data ke tipe data lainnya, sedangkan Type coercion yaitu ketika JavaScript secara otomatis mengkonversi tipe data di belakang layar.
 
@@ -1191,7 +1191,7 @@ while (dadu !== 6) {
 }
 ```
 
-Pada contoh di atas, perulangan While Loop hanya akan berhenti ketika nilai dadu === 6. Coba lakukan eksperimen, ganti setiap angka 6 pada kode di atas menjadi angka berapapun yang anda inginkan, misalnya 9999. Lalu lihat hasilnya pada tab console.
+Pada contoh di atas, perulangan While Loop hanya akan berhenti ketika nilai dadu === 6. Coba lakukan eksperimen, ganti setiap angka 6 pada kode di atas menjadi angka berapapun yang Anda inginkan, misalnya 9999. Lalu lihat hasilnya pada tab console.
 
 ### ![✔] 𝐂. Do While Loop
 
@@ -1324,9 +1324,15 @@ console.log(ratarata(1, 2, 3, 4, 5)); // Output: 2.5  (Argument ke-5 akan diabai
 console.log(ratarata(1, 2, 3));       // Output: NaN  (Argument ke-4 tidak ada, maka secara defaultnya nilainya Undefined)
 ```
 
-Jika kita (secara eksplisit) tidak menuliskan keyword ```return``` beserta nilai yang di-return dari sebuah Function, maka secara default Function tersebut akan me-return nilai ```undefined```. Lantas apakah itu berarti bahwa setiap Function perlu me-return sesuatu? Jawabannya tidak, namun jika anda memiliki Function tanpa return, secara default akan me-return ```undefined```. Apa pun yang ditulis setelah keyword ```return``` akan diabaikan, dengan kata lain ```return``` selain untuk mengembalikan sebuah nilai, juga untuk memberhentikan Function.
+Jika kita (secara eksplisit) tidak menuliskan keyword ```return``` beserta nilai yang di-return dari sebuah Function, maka secara default Function tersebut akan me-return nilai ```undefined```. Lantas apakah itu berarti bahwa setiap Function perlu me-return sesuatu? Jawabannya tidak, namun jika Anda memiliki Function tanpa return, secara default akan me-return ```undefined```. Apa pun yang ditulis setelah keyword ```return``` akan diabaikan, dengan kata lain ```return``` selain untuk mengembalikan sebuah nilai, juga untuk memberhentikan Function.
 
-Dalam kasus real, biasanya saat menjalankan sebuah Function yang me-return sesuatu hasilnya akan disimpan ke dalam sebuah Variable terlebih dahulu, misalnya ```var hasil = ratarata(1, 2, 3, 4)```, barulah kemudian diolah sesuai kebutuhan. Namun jika menjalankan sebuah Function yang tidak me-return apa pun, maka Function tersebut cukup dijalankan saja, tidak ditampung ke dalam sebuah Variable.
+⚠️ Berikut catatan penting terkait keyword ```return``` pada Function:
+
+Dalam kasus real, biasanya saat menjalankan sebuah Function yang me-return sesuatu, hasilnya akan disimpan ke dalam sebuah Variable terlebih dahulu. Misalnya ```var hasil = ratarata(1, 2, 3, 4)```, dimana Variable ```hasil``` akan menampung hasil return dari Function ```ratarata(1, 2, 3, 4)```, barulah kemudian Variable ```hasil``` ini diolah sesuai kebutuhan. Atau untuk keperluan debugging, agar lebih cepat, bisa juga hasil return sebuah Function langsung ditampilkan di tab console tanpa perlu ditampung ke dalam sebuah Variable terlebih dahulu, misalnya ```console.log(ratarata(1, 2, 3, 4))``` yang akan langsung menampilkan hasil return di tab console. 
+
+Hal semacam ini akan banyak sekali dijumpai di dalam markdown ini. Mindset yang perlu ditanamkan yaitu "**Jika di dalam sebuah Function terdapat keyword return, artinya hasil return tersebut butuh ditampung terlebih dahulu untuk diolah kemudian atau munculkan langsung di tab console.**". Di pembahasan mengenai Closures, Function as Return Value, Factory Function & Immediately Invoked Function Expression (IIFE) nanti, mindset tersebut akan sangat membantu untuk memudahkan Anda dalam memahami baris kode.
+
+Sebagai catatan tambahan, jika Anda mendapati sebuah Function yang tidak me-return apa pun (tidak terdapat keyword ```return``` di dalam Function tersebut), maka Function tersebut cukup dijalankan saja, tidak ditampung ke dalam sebuah Variable.
 
 ### ![✔] 𝐂. Default Parameter
 
@@ -1892,7 +1898,7 @@ Perhatikan bahwa ragam Expressions pada contoh di atas menghasilkan/mewakili seb
 | 8  	| Return pada Function       	| ```let fun = function () { return … }``` 	| ```let fun = function () { return 10 > 5 ? "Yes" : "No" };``` <br> ```console.log(fun());```                              	| "Yes"  	|
 | 9  	| Dan lainnya (Menyusul)     	| -                                        	| -                                                                                                                         	| -      	|
 
-Jadi suatu saat misalnya anda bertemu dengan kode seperti ```let role = obj[experience > 100 ? "work" : "intern"]``` jangan pusing, pada dasarnya kode tersebut berupa ```let role = obj[...]``` dimana ```...``` berupa expressions yang menghasilkan nilai diantara "work" atau "intern".
+Jadi suatu saat misalnya Anda bertemu dengan kode seperti ```let role = obj[experience > 100 ? "work" : "intern"]``` jangan pusing, pada dasarnya kode tersebut berupa ```let role = obj[...]``` dimana ```...``` berupa expressions yang menghasilkan nilai diantara "work" atau "intern".
 
 🔔 Object dibahas di bab 2-6 & bab 3.
 
@@ -2174,6 +2180,8 @@ sore("Budi");                         // Output: Sore, Budi!          ⇨ Menjal
 sore("Joko");                         // Output: Sore, Joko!          ⇨ Menjalankan Factory Function sore("Budi");
 ```
 
+📖 Lihat kembali "Mindset" keyword ```return``` pada point B (jauh di atas). Ide "Function yang baru berjalan separuhnya" ini sesederhana kita punya Outer Function yang di dalamnya me-return Inner Function. Maka untuk menjalankan Inner Function yang berupa hasil return tersebut, kita perlu tampung terlebih dahulu ke dalam sebuah Variable. Variable inilah yang akan digunakan untuk menjalankan Inner Function. Catatan, segala hal yang sudah dijalankan di Outer Function akan dimiliki oleh Inner Function (karena memang sudah berjalan separuhnya bukan?).
+
 ```Javascript
 function luar(waktu){
   function tengah(nama){
@@ -2301,7 +2309,7 @@ Agar lebih mudah memahami kode di atas, lihat comment "Setara dengan Factory Fun
 - Kedua, jalankan Function tambah (setengah sisanya) dengan menuliskan perintah ```console.log(contoh());```, dimana nilai ```counter``` milik Function add (parent-nya) akan ter-increment menjadi ```1``` lalu ditampilkan di tab console.
 - Selanjutnya, saat perintah ```console.log(contoh());``` dijalankan lagi, ini artinya jalankan Function tambah lagi, maka nilai ```counter``` milik Function add (parent-nya) akan ter-increment dan muncul di tab console lagi, begitu seterusnya.
 
-Beberapa catatan yang bisa membantu pemahaman anda agar jauh lebih baik lagi: 
+Beberapa catatan yang bisa membantu pemahaman Anda agar jauh lebih baik lagi: 
 - Nilai ```counter``` di-set menjadi ```0``` itu hanya terjadi 1x saja pada saat mejalankan Function add melalui perintah ```let contoh = add();```. Oleh karena itu pada setiap menjalankan Function tambah (setengah sisanya) nilai ```counter``` tidak akan ter-set menjadi ```0``` lagi, melainkan "melanjutkan" hasil increment sebelumnya.
 - Baris kode ```return ++counter;``` akan me-return nilai ```counter``` yang telah di-increment. Karena itulah pada saat menjalankan Function tambah (setengah sisanya), kita tidak bisa hanya menuliskan perintah ```contoh()``` saja, karena tidak akan menghasilkan apa-apa. Melainkan butuh "penampung" hasil return-nya terlebih dahulu, layaknya baris ```let contoh = add();``` (dimana hasil return add() ditampung ke dalam Variable contoh). Maka dalam kasus ini, perintah ```let hasil = contoh();``` bisa digunakan untuk menampung hasil return nilai ```counter```. Namun mengingat nilai ```counter``` akan terus ditambahkan, maka pada contoh di atas kita tidak menampungnya ke dalam Variable, melainkan langsung menampilkannya di tab console melalui perintah ```console.log(contoh());```.
 
