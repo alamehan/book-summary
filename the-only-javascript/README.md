@@ -1695,7 +1695,7 @@ function init(){
 init();                               // Output: Budi
 ```
 
-Implementasi dari Closure ini banyak dijumpai pada kasus Factory Function (🔔 Lihat point P di bawah) & Function as Return Value yang menggunakan data Outer Function-nya (🔔 Lihat studi kasus 1 & 2 pada point Q di bawah mengenai IIFE). 
+Implementasi dari Closures ini banyak dijumpai pada kasus Factory Function (🔔 Lihat point P di bawah) & Function as Return Value yang menggunakan data Outer Function-nya (🔔 Lihat studi kasus 1 & 2 pada point Q di bawah mengenai IIFE). 
 
 ### ![✔] 𝐊. JavaScript Hoisting
 
