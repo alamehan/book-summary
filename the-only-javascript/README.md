@@ -2273,7 +2273,7 @@ sapa("Budi");                           // contoh("Budi");          🡲 Output:
 sapa("Joko");                           // contoh("Joko");          🡲 Output: Pagi, Joko!
 ```
 
-Pada contoh IIFE di atas, Outer & Inner Function akan secara otomatis dijalankan bersamaan. Sebenarnya hal ini sama saja dengan Factory Function, bedanya pada IIFE tidak ditampung terlebih dahulu kedalam sebuah Variable (bisa langsung dijalankan), sedangkan pada Factory Function, Outer Function dijalankan untuk disimpan ke dalam Variable dahulu, baru setelahnya dijalankan Inner Function-nya.
+Pada contoh IIFE di atas, Outer & Inner Function akan secara otomatis dijalankan bersamaan. Sebenarnya hal ini sama saja dengan Factory Function, bedanya pada IIFE tidak ditampung terlebih dahulu ke dalam sebuah Variable (bisa langsung dijalankan), sedangkan pada Factory Function, Outer Function dijalankan untuk disimpan ke dalam Variable dahulu, baru setelahnya dijalankan Inner Function-nya.
 
 #### ⤷ Studi Kasus 2
 
@@ -2303,7 +2303,7 @@ Agar lebih mudah memahami kode di atas, lihat comment "Setara dengan Factory Fun
 
 Beberapa catatan yang bisa membantu pemahaman anda agar jauh lebih baik lagi: 
 - Nilai ```counter``` di-set menjadi ```0``` itu hanya terjadi 1x saja pada saat mejalankan Function add melalui perintah ```let contoh = add();```. Oleh karena itu pada setiap menjalankan Function tambah (setengah sisanya) nilai ```counter``` tidak akan ter-set menjadi ```0``` lagi, melainkan "melanjutkan" hasil increment sebelumnya.
-- Baris kode ```return ++counter;``` akan me-return nilai ```counter``` yang telah di-increment. Karena itulah pada saat menjalankan Function tambah (setengah sisanya), kita tidak bisa hanya menuliskan perintah ```contoh()``` saja, karena tidak akan menghasilkan apa-apa. Melainkan butuh "penampung" hasil return-nya terlebih dahulu, layaknya baris ```let contoh = add();``` (dimana hasil return add() ditampung ke dalam Variable contoh). Maka dalam kasus ini, perintah ```let hasil = contoh();``` bisa digunakan untuk menampung hasil return nilai ```counter```. Namun mengingat nilai ```counter``` akan terus ditambahkan, maka pada contoh di atas kita tidak menampungnya kedalam Variable, melainkan langsung menampilkannya di tab console melalui perintah ```console.log(contoh())```.
+- Baris kode ```return ++counter;``` akan me-return nilai ```counter``` yang telah di-increment. Karena itulah pada saat menjalankan Function tambah (setengah sisanya), kita tidak bisa hanya menuliskan perintah ```contoh()``` saja, karena tidak akan menghasilkan apa-apa. Melainkan butuh "penampung" hasil return-nya terlebih dahulu, layaknya baris ```let contoh = add();``` (dimana hasil return add() ditampung ke dalam Variable contoh). Maka dalam kasus ini, perintah ```let hasil = contoh();``` bisa digunakan untuk menampung hasil return nilai ```counter```. Namun mengingat nilai ```counter``` akan terus ditambahkan, maka pada contoh di atas kita tidak menampungnya ke dalam Variable, melainkan langsung menampilkannya di tab console melalui perintah ```console.log(contoh())```.
 
 ### ![✔] 𝐑. Arrow Function
 
