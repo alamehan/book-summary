@@ -6654,7 +6654,386 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 <details>
 <summary>Klik untuk membuka!</summary>
 
+<div id="daftar_isi_bab6"></div>
 <br>
+
+| Bab 6                                            	      | Estimasi Baca 	|
+|------------------------------------------------------	  |---------------	|
+| <a href="#bab6_1">6-1. Teknologi AJAX</a> 	            | X Menit       	|
+| <a href="#bab6_2">6-2. Fetch, Promise & Async Await</a> | X Menit       	|
+
+<hr>
+<div id="bab6_1"></div>
+
+## `6-1. Teknologi AJAX` <a href="#daftar_isi_bab6">🡅</a>
+
+> - [X] 𝐀. Contoh Penggunaan AJAX
+> - [X] 𝐁. Contoh Penggunaan AJAX + Database
+
+**AJAX** adalah singkatan dari **Asynchronous JavaScript And XML**. Diberi nama seperti itu karena pada awalnya AJAX digunakan untuk mengirim dan menerima data XML dari web server. Sekarang, data yang dikirm tidak hanya XML saja, tapi jga bisa berupa file teks maupun **JSON (JavaScript Object Nontation)**. Secara sederhana AJAX digunakan untuk membuat HTML dan JavaScritp bisa berkomunikasi dengan web server, tanpa perlu reload/refresh page. Dengan menggunakan AJAX, kita bisa mengirim isian form HTML ke web server secara realtime, menampilkan isi database tanpa men-klik tombol submit, atau mengupdate sebagian data tanpa harus me-load ulang seluruh halaman web.
+
+Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilakukan terlebih dahulu, yaitu:
+1. Install XAMPP, kunjungi link berikut <a href="https://www.apachefriends.org/index.html">Download Latest XAMPP</a>.
+2. Buka XAMPP lalu jalankan service Apache & MySQL.
+3. Buat folder bernama ```belajar_ajax``` di ```C:\xampp\htdocs```.
+4. Simpan semua file belajar pada materi ini di ```C:\xampp\htdocs\belajar_ajax\```.
+5. Akses file belajar di ```http://localhost/belajar_ajax/``` (buka di web browser).
+
+### ![✔] 𝐀. Contoh Penggunaan AJAX
+
+```1_contoh_ajax.html```
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <button id="tombol1">Ambil Data (Synchronous & GET)</button>
+    <p>Hasil: <span id="hasil1"></span></p>
+    <hr>
+    <input type="text" name="dataKu" id="dataKu" placeholder="input fasilkom/ekonomi">
+    <button id="tombol2">Ambil Data Spesifik (Asynchronous & POST)</button>
+    <p>Hasil: <span id="hasil2"></span></p>
+
+    <script>
+      // ➊ Contoh Synchronous & GET
+      var nodeTombol1 = document.getElementById("tombol1");
+      var nodeHasil1 = document.getElementById("hasil1");
+
+      function syncGetAJAX(){
+        var request = new XMLHttpRequest();
+        request.open("GET", "1_file_tanggal.php", false); // false artinya Synchronous
+        request.send();
+        nodeHasil1.innerHTML = request.responseText;
+      };
+
+      nodeTombol1.addEventListener("click", syncGetAJAX);
+
+      // ➋ Contoh Asynchronous & POST
+      var nodeDataKu = document.getElementById("dataKu");
+      var nodeTombol2 = document.getElementById("tombol2");
+      var nodeHasil2 = document.getElementById("hasil2");
+
+      function asyncPostAJAX(){
+        // String hasil input field simpan ke variable
+        var cari = nodeDataKu.value;
+
+        var request = new XMLHttpRequest();
+        request.open("POST", "1_file_fakultas.php", true); // true artinya Asynchronous
+
+        // Karena POST maka perlu setRequestHeader
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        request.send(`f=${cari}`);
+
+        // Karena Asynchronous maka perlu onreadystatechange
+        request.onreadystatechange = function(){
+          if (request.readyState == 4 && request.status == 200){
+            nodeHasil2.innerHTML = request.responseText;
+          }
+        }
+      };
+      
+      nodeTombol2.addEventListener("click", asyncPostAJAX);
+    </script>
+  </body>
+</html>
+```
+
+```1_file_tanggal.php```
+
+```PHP
+<?php
+  date_default_timezone_set("Asia/Jakarta");
+
+  $tanggal = date("j F Y, h:i:s A");
+  echo "<span>Tanggal saat ini di server: <i>$tanggal</i></span>";
+?>
+```
+
+```1_file_fakultas.php```
+
+```PHP
+<?php
+  $fakultas = $_POST["f"];
+
+  if ($fakultas === "fasilkom"){
+    echo "Anda memilih fakultas FASILKOM";
+  } else if ($fakultas === "ekonomi"){
+    echo "Anda memilih fakultas Ekonomi";
+  }
+?>
+```
+
+### ![✔] 𝐁. Contoh Penggunaan AJAX + Database
+
+#### ⤷ Generate Database
+
+Catatan: Tidak usah dibuat pusing dengan kode PHP di bawah ini, cukup lakukan copy-paste saja. Tujuannya disini hanya untuk meng-generate/menghasilkan database yang diperlukan dalam pembelajaran AJAX ini.
+
+```generate_database.php```
+
+```PHP
+<?php
+  // buat koneksi dengan database mysql
+  $dbhost = "localhost";
+  $dbuser = "root";
+  $dbpass = "";
+  $link = mysqli_connect($dbhost,$dbuser,$dbpass);
+  
+  //periksa koneksi, tampilkan pesan kesalahan jika gagal
+  if(!$link){
+    die ("Koneksi dengan database gagal: ".mysqli_connect_errno().
+         " - ".mysqli_connect_error());
+  }
+  
+  //buat database kampusku jika belum ada
+  $query = "CREATE DATABASE IF NOT EXISTS kampusku";
+  $result = mysqli_query($link, $query);
+  
+  if(!$result){
+    die ("Query Error: ".mysqli_errno($link).
+         " - ".mysqli_error($link));
+  }
+  else {
+    echo "Database <b>'kampusku'</b> berhasil dibuat... <br>";
+  }
+  
+  //pilih database kampusku
+  $result = mysqli_select_db($link, "kampusku");
+  
+  if(!$result){
+    die ("Query Error: ".mysqli_errno($link).
+         " - ".mysqli_error($link));
+  }
+  else {
+    echo "Database <b>'kampusku'</b> berhasil dipilih... <br>";
+  }
+ 
+  // cek apakah tabel mahasiswa sudah ada. jika ada, hapus tabel
+  $query = "DROP TABLE IF EXISTS mahasiswa";
+  $hasil_query = mysqli_query($link, $query);
+  
+  if(!$hasil_query){
+    die ("Query Error: ".mysqli_errno($link).
+         " - ".mysqli_error($link));
+  }
+  else {
+    echo "Tabel <b>'mahasiswa'</b> berhasil dihapus... <br>";
+  }
+  
+  // buat query untuk CREATE tabel mahasiswa
+  $query  = "CREATE TABLE mahasiswa (nim CHAR(8), nama VARCHAR(100), "; 
+  $query .= "tempat_lahir VARCHAR(50), tanggal_lahir DATE, ";
+  $query .= "fakultas VARCHAR(50), jurusan VARCHAR(50), ";
+  $query .= "ipk DECIMAL(3,2), PRIMARY KEY (nim))";
+
+  $hasil_query = mysqli_query($link, $query);
+  
+  if(!$hasil_query){
+      die ("Query Error: ".mysqli_errno($link).
+           " - ".mysqli_error($link));
+  }
+  else {
+    echo "Tabel <b>'mahasiswa'</b> berhasil dibuat... <br>";
+  }
+  
+  // buat query untuk INSERT data ke tabel mahasiswa
+  $query  = "INSERT INTO mahasiswa VALUES "; 
+  $query .= "('14005011', 'Riana Putria', 'Padang', '1996-11-23', ";
+  $query .= "'FMIPA', 'Kimia', 3.1), ";
+  $query .= "('15021044', 'Rudi Permana', 'Bandung', '1994-08-22', ";
+  $query .= "'FASILKOM', 'Ilmu Komputer', 2.9), ";
+  $query .= "('15003036', 'Sari Citra Lestari', 'Jakarta', '1997-12-31', ";
+  $query .= "'Ekonomi', 'Manajemen', 3.5), ";
+  $query .= "('15002032', 'Rina Kumala Sari', 'Jakarta', '1997-06-28', ";
+  $query .= "'Ekonomi', 'Akuntansi', 3.4), ";
+  $query .= "('13012012', 'James Situmorang', 'Medan', '1995-04-02', ";
+  $query .= "'Kedokteran','Kedokteran Gigi', 2.7)";
+
+  $hasil_query = mysqli_query($link, $query);
+  
+  if(!$hasil_query){
+      die ("Query Error: ".mysqli_errno($link).
+           " - ".mysqli_error($link));
+  }
+  else {
+    echo "Tabel <b>'mahasiswa'</b> berhasil diisi... <br>";
+  }
+    
+  // cek apakah tabel admin sudah ada. jika ada, hapus tabel
+  $query = "DROP TABLE IF EXISTS admin";
+  $hasil_query = mysqli_query($link, $query);
+  
+  if(!$hasil_query){
+    die ("Query Error: ".mysqli_errno($link).
+         " - ".mysqli_error($link));
+  }
+  else {
+    echo "Tabel <b>'admin'</b> berhasil dihapus... <br>";
+  }
+  
+  // buat query untuk CREATE tabel admin
+  $query  = "CREATE TABLE admin (username VARCHAR(50), password CHAR(40))"; 
+  $hasil_query = mysqli_query($link, $query);
+  
+  if(!$hasil_query){
+      die ("Query Error: ".mysqli_errno($link).
+           " - ".mysqli_error($link));
+  }
+  else {
+    echo "Tabel <b>'admin'</b> berhasil dibuat... <br>";
+  }
+  
+  // buat username dan password untuk admin
+  $username = "admin123";
+  $password = sha1("rahasia");
+  
+  // buat query untuk INSERT data ke tabel admin
+  $query  = "INSERT INTO admin VALUES ('$username','$password')"; 
+
+  $hasil_query = mysqli_query($link, $query);
+  
+  if(!$hasil_query){
+      die ("Query Error: ".mysqli_errno($link).
+           " - ".mysqli_error($link));
+  }
+  else {
+    echo "Tabel <b>'admin'</b> berhasil diisi... <br>";
+  }
+  
+  
+  // buat username dan password untuk admin2
+  $username = "jojo123";
+  $password = sha1("belajar");
+  
+  // buat query untuk INSERT data ke tabel admin
+  $query  = "INSERT INTO admin VALUES ('$username','$password')"; 
+
+  $hasil_query = mysqli_query($link, $query);
+  
+  if(!$hasil_query){
+      die ("Query Error: ".mysqli_errno($link).
+           " - ".mysqli_error($link));
+  }
+  else {
+    echo "Tabel <b>'admin'</b> berhasil diisi... <br>";
+  }
+  
+  // tutup koneksi dengan database mysql
+  mysqli_close($link);
+?>
+```
+
+📖 Untuk meng-generate database cukup buka ```http://localhost/belajar_ajax/generate_database.php``` di web browser.
+
+#### ⤷ Buat & Jalankan App
+
+```2_contoh_ajax_db.html```
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h1>Tabel Mahasiswa dengan AJAX</h1>
+    <p>Nama Mahasiswa:
+      <select name="namaMhs" id="namaMhs"></select>
+    </p>
+    <div id="hasil"></div>
+
+    <script>
+      // ➊ Load data di "2_mhs_nama.php"
+      var nodeNamaMhs = document.getElementById("namaMhs");
+
+      function generateMhs(){
+        var request = new XMLHttpRequest();
+        request.open("GET", "2_mhs_nama.php", false);
+        request.send();
+        nodeNamaMhs.innerHTML = request.responseText;
+      };
+
+      generateMhs();
+
+      // ➋ Load data di "2_mhs_tabel.php"
+      var nodeHasil = document.getElementById("hasil");
+
+      function tabelMhs(){
+        var nama = nodeNamaMhs.value;
+        var request = new XMLHttpRequest();
+        request.open("GET", "2_mhs_tabel.php?n="+nama, false);
+        request.send();
+        nodeHasil.innerHTML = request.responseText;
+      };
+      
+      nodeNamaMhs.addEventListener("change", tabelMhs);
+    </script>
+  </body>
+</html>
+```
+
+```2_mhs_nama.php```
+
+```PHP
+<?php
+  // buat koneksi dengan database mysql
+  $link = mysqli_connect("localhost","root","","kampusku");
+ 
+  // ambil kolom nama dari tabel mahasiswa
+  $query  = "SELECT nama FROM mahasiswa";
+  $result = mysqli_query($link, $query);
+  
+  // tambahkan tag <option> untuk setiap nama mahasiswa
+  while($data = mysqli_fetch_array($result)) { 
+    echo "<option value='{$data['nama']}'>{$data['nama']}</option>";
+  }
+?>
+```
+
+```2_mhs_tabel.php```
+
+```PHP
+<?php
+  // buat koneksi dengan database mysql
+  $link = mysqli_connect("localhost","root","","kampusku");
+  
+  // ambil nama mahasiswa dari query string
+  $nama_mahasiswa = $_GET["n"];
+  
+  // ambil dara dari tabel mahasiswa
+  $query  = "SELECT * FROM mahasiswa WHERE nama = '$nama_mahasiswa' ";
+  $result = mysqli_query($link, $query);
+
+  //buat perulangan untuk element tabel dari data mahasiswa
+  while($data = mysqli_fetch_row($result))
+  { 
+    // konversi date MySQL (yyyy-mm-dd) menjadi dd-mm-yyyy
+    $tanggal_php = strtotime($data[3]);
+    $tanggal = date("d - m - Y", $tanggal_php);
+    
+    // tampilkan data dalam bentuk tabel HTML
+    echo "<table border='1'>";
+    echo "<tr><td>NIM</td><td>$data[0]</td></tr>";
+    echo "<tr><td>Nama</td><td>$data[1]</td>";
+    echo "<tr><td>Tempat Lahir</td><td>$data[2]</td>";
+    echo "<tr><td>Tanggal Lahir</td><td>$tanggal</td>";
+    echo "<tr><td>Fakultas</td><td>$data[4]</td>";
+    echo "<tr><td>Jurusan</td><td>$data[5]</td>";
+    echo "<tr><td>IPK</td><td>$data[6]</td>";
+    echo "</table>";
+  }
+?>
+```
+
+<hr>
+<div id="bab6_2"></div>
+
+## `6-2. Fetch, Promise & Async Await` <a href="#daftar_isi_bab6">🡅</a>
 
 **Upcoming!**
 
@@ -6698,8 +7077,6 @@ console.log(fragmen);                 // Output: <div>
 Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan sebagai <a href="https://www.youtube.com/watch?v=sbjkjjCcz8M">Tagged Templates Literals</a>.
 
 **B. OOP: Inheritance, Encapsulation, dll**
-
-**C. Asynchronous: Promise, Fetch, Async Await, dll**
 
 </details>
 
