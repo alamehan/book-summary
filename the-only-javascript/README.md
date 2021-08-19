@@ -6686,10 +6686,18 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 
 ## `6-1. Teknologi AJAX` <a href="#daftar_isi_bab6">🡅</a>
 
-> - [X] 𝐀. Contoh Penggunaan AJAX
-> - [X] 𝐁. Contoh Penggunaan AJAX + Database
+> - [X] 𝐀. Pengantar Asynchronous JavaScript
+> - [X] 𝐁. AJAX + Baca File (Local)
+> - [X] 𝐂. AJAX + Baca File (Database)
+> - [X] 𝐃. AJAX + Online API
 
-**AJAX** adalah singkatan dari **Asynchronous JavaScript And XML**. Diberi nama seperti itu karena pada awalnya AJAX digunakan untuk mengirim dan menerima data XML dari web server. Sekarang, data yang dikirm tidak hanya XML saja, tapi jga bisa berupa file teks maupun **JSON (JavaScript Object Nontation)**. Secara sederhana AJAX digunakan untuk membuat HTML dan JavaScritp bisa berkomunikasi dengan web server, tanpa perlu reload/refresh page. Dengan menggunakan AJAX, kita bisa mengirim isian form HTML ke web server secara realtime, menampilkan isi database tanpa men-klik tombol submit, atau mengupdate sebagian data tanpa harus me-load ulang seluruh halaman web.
+### ![✔] Pengantar Asynchronous JavaScript
+
+"JavaScript is a **single-threaded**, **non-blocking**, **asynchronous** and **concurrent** language". Dimana single-thread artinya JavaScript hanya bisa melakukan satu hal dalam satu waktu tertentu. Non-blocking artinya saat JavaScript mengerjakan satu tugas yang memakan waktu cukup lama, ia bisa lanjut ke tugas lainnya, atau dengan kata lain JavaScript bisa lanjut ke tugas 2 tanpa perlu mengunggu tugas 1 selesai terlebih dahulu. Asynchronous artinya thread pada JavaScript bisa berpindah dari satu tugas ke tugas lainnya, dan tugas yang memakan waktu lebih cepat akan selesai lebih awal. Concurrency yaitu istilah untuk single-threaded + asynchronous.
+
+Asynchronous dalam JavaScript ialah "Teknik programming" yang berhubungan dengan HTTP Request (client mengirim permintaan ke server). Implementasinya yaitu pada saat menggunakan teknologi AJAX. **AJAX** adalah singkatan dari **Asynchronous JavaScript And XML**. Diberi nama seperti itu karena pada awalnya AJAX digunakan untuk mengirim dan menerima data XML dari web server. Sekarang, data yang dikirim tidak hanya XML saja, tapi juga bisa berupa file teks maupun **JSON (JavaScript Object Nontation)**. 
+
+Secara sederhana AJAX digunakan untuk membuat HTTP Request, atau dengan kata lain membuat HTML dan JavaScript bisa berkomunikasi dengan web server, tanpa perlu reload/refresh page. Dengan menggunakan AJAX, kita bisa mengirim isian form HTML ke web server secara realtime (POST), menampilkan isi database tanpa men-klik tombol submit (GET), mengupdate sebagian data (PUT) hingga  menghapus suatu data tertentu (DELETE) tanpa harus me-load ulang seluruh halaman web. Beberapa API yang biasa digunakan untuk membuat HTTP Request/ implementasi AJAX yaitu **XMLHttpRequest** (cara lama), **Fetch API** (cara baru), **JQuery AJAX** (library) dan **Axios** (library).
 
 Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilakukan terlebih dahulu, yaitu:
 1. Install XAMPP, kunjungi link berikut <a href="https://www.apachefriends.org/index.html">Download Latest XAMPP</a>.
@@ -6698,7 +6706,7 @@ Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilaku
 4. Simpan semua file belajar pada materi ini di ```C:\xampp\htdocs\belajar_ajax\```.
 5. Akses file belajar di ```http://localhost/belajar_ajax/``` (buka di web browser).
 
-### ![✔] 𝐀. Contoh Penggunaan AJAX
+### ![✔] 𝐁. AJAX + Baca File (Local)
 
 ```1_contoh_ajax.html```
 
@@ -6786,7 +6794,7 @@ Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilaku
 ?>
 ```
 
-### ![✔] 𝐁. Contoh Penggunaan AJAX + Database
+### ![✔] 𝐂. AJAX + Baca File (Database)
 
 #### ⤷ Generate Database
 
@@ -7048,6 +7056,10 @@ Catatan: Tidak usah dibuat pusing dengan kode PHP di bawah ini, cukup lakukan co
   }
 ?>
 ```
+
+### ![✔] 𝐃. AJAX + Online API
+
+**Upcoming!**
 
 <hr>
 <div id="bab6_2"></div>
