@@ -6691,7 +6691,7 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 > - [X] 𝐂. AJAX + Baca File (Database)
 > - [X] 𝐃. AJAX + Online API
 
-### ![✔] Pengantar Asynchronous JavaScript
+### ![✔] 𝐀. Pengantar Asynchronous JavaScript
 
 "JavaScript is a **single-threaded**, **non-blocking**, **asynchronous** and **concurrent** language". Dimana single-thread artinya JavaScript hanya bisa melakukan satu hal dalam satu waktu tertentu. Non-blocking artinya saat JavaScript mengerjakan satu tugas yang memakan waktu cukup lama, ia bisa lanjut ke tugas lainnya, atau dengan kata lain JavaScript bisa lanjut ke tugas 2 tanpa perlu mengunggu tugas 1 selesai terlebih dahulu. Asynchronous artinya thread pada JavaScript bisa berpindah dari satu tugas ke tugas lainnya, dan tugas yang memakan waktu lebih cepat akan selesai lebih awal. Concurrency yaitu istilah untuk single-threaded + asynchronous.
 
