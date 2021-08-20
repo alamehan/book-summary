@@ -6680,7 +6680,6 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 |------------------------------------------------------   |---------------	|
 | <a href="#bab6_1">6-1. Pengantar Asynchronous JS</a> 	  | X Menit       	|
 | <a href="#bab6_2">6-2. Teknologi AJAX</a>               | X Menit       	|
-| <a href="#bab6_2">6-2. Fetch, Promise & Async Await</a> | X Menit       	|
 
 <hr>
 <div id="bab6_1"></div>
@@ -6689,7 +6688,6 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 
 > - [X] 𝐀. Definisi JavaScript Lanjutan
 > - [X] 𝐁. Synchronous vs. Asynchronous
-> - [X] 𝐂. Persiapan belajar AJAX
 
 ### ![✔] 𝐀. Definisi JavaScript Lanjutan
 
@@ -6743,31 +6741,104 @@ Contoh di atas merupakan modifikasi dari contoh sebelumnya, dimana sekarang pros
 
 Dalam kasus ini argument kedua di-set menjadi ```0``` (nol), karena kita memang tidak akan men-set nya secara manual, melainkan membiarkan proses looping selesai dengan sendirinya, berapapun waktu yang diperlukan. Alhasil saat kita periksa hasilnya di tab console, urutan outputnya akan menjadi: "Tugas A selesai", "Tugas B selesai", dan terakhir "Tugas kompleks selesai". Perhatikan bawah kini "Tugas B selesai" bisa langsung muncul tanpa harus menunggu proses eksekusi tugas looping sebelumnya (yang memakan banyak waktu) selesai terlebih dahulu.
 
-### ![✔] Persiapan belajar AJAX
-
-Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilakukan terlebih dahulu, yaitu:
-1. Install XAMPP, kunjungi link berikut <a href="https://www.apachefriends.org/index.html">Download Latest XAMPP</a>.
-2. Buka XAMPP lalu jalankan service Apache & MySQL.
-3. Buat folder bernama ```belajar_ajax``` di ```C:\xampp\htdocs```.
-4. Simpan semua file belajar pada materi ini di ```C:\xampp\htdocs\belajar_ajax\```.
-5. Akses file belajar di ```http://localhost/belajar_ajax/``` (buka di web browser).
-
 <hr>
 <div id="bab6_2"></div>
 
 ## `6-2. Teknologi AJAX` <a href="#daftar_isi_bab6">🡅</a>
 
 > 𝐂𝐨𝐧𝐭𝐨𝐡 𝐒𝐞𝐝𝐞𝐫𝐡𝐚𝐧𝐚
-> > - [X] 𝐀. AJAX dengan XMLHttpRequest
-> > - [X] 𝐁. AJAX dengan JQuery AJAX
-> > - [X] 𝐂. AJAX dengan Fetch API
+> > - [X] 𝐀. Studi kasus Local File: XMLHttpRequest vs. JQuery AJAX vs. Fetch API
+> > - [X] 𝐁. Studi kasus Online API: XMLHttpRequest vs. JQuery AJAX vs. Fetch API
 > 
 > 𝐂𝐨𝐧𝐭𝐨𝐡 𝐋𝐚𝐧𝐣𝐮𝐭𝐚𝐧
-> > - [X] 𝐃. AJAX + Simulasi baca File Local
-> > - [X] 𝐄. AJAX + Simulasi baca File Local + Database
-> > - [X] 𝐅. AJAX + Online API (Kasus Real)
+> > - [X] 𝐂. AJAX + PHP: Simulasi baca File Local
+> > - [X] 𝐃. AJAX + PHP: Simulasi baca File Local + Database
 
-### ![✔] 𝐃. AJAX + Simulasi baca File Local
+### ![✔] 𝐀. Studi kasus Local File: XMLHttpRequest vs. JQuery AJAX vs. Fetch API
+
+```HTML
+
+```
+
+### ![✔] 𝐁. Studi kasus Online API: XMLHttpRequest vs. JQuery AJAX vs. Fetch API
+
+Contoh di bawah ini menggunakan (Online) OMDb API, yaitu sebuah RESTful API yang berisi data-data film dari seluruh dunia. 📚 Buka websitenya disini: <a href="http://www.omdbapi.com/">OMDb API</a>. Diperlukan **API Key** untuk dapat menggunakan data di OMDb API. Anda bisa membuat API Key secara gratis di website resmi OMDb API-nya. Namun tentunya dengan fitur yang terbatas, seperti maksimal 1000 jumlah hit API per hari, dan data yang dimunculkan terbatas hanya 10 saja. Namun itu sudah sangat cukup untuk keperluan belajar pada markdown ini.
+
+⚠️ Contoh di bawah, API Key penulis yaitu ```41b09fd8``` & search keyword ```"avengers"```. Anda bisa ganti search keyword sesuai keinginan.
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <div id="target1"></div>
+    <div id="target2"></div>
+    <div id="target3"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+      const url_API = "http://www.omdbapi.com/?apikey=41b09fd8&s=avengers"
+
+      // Cara 1: XMLHttpRequest
+      const hasil = new XMLHttpRequest();
+      hasil.open("GET", url_API);
+      hasil.onreadystatechange = function(){
+        if (hasil.readyState !== 4) return;                       // Stop jika request tidak complete
+        if (hasil.status === 200){                                // ✅ Request Successfull
+          console.log(JSON.parse(hasil.response));                // 1. Log hasil di console      (keperluan check aja)
+          let data = JSON.parse(hasil.response);                  // 2. Ubah data jadi Object     (parse, perlu dilakukan)
+          data.Search.forEach(i => console.log(i.Title));         // 3. Show data di console      (misalnya data Title)
+          let tampil = document.getElementById("target1");        // 4. Dapatkan element target1  (interaksi dengan DOM)
+          tampil.innerHTML = `<p>${data.Search[0].Title}</p>`;    // 5. Isi HTML dengan data      (salah satu data Title)
+        } else{                                                   // ❎ Request Error
+          console.log(`${hasil.status} ${hasil.statusText}`)      // Log status error             (agar lebih informatif)
+        }
+      };
+      hasil.send();
+
+      // Cara 2: JQuery AJAX
+      $.ajax({
+        url: url_API,
+        success: sukses => {                                      // ✅ Request Successfull
+          console.log(sukses);                                    // 1. Log hasil di console      (keperluan check aja)
+          sukses.Search.forEach(i => console.log(i.Title));       // 2. Show data & auto parse    (misalnya data Title)
+          let tampil = document.getElementById("target2");        // 3. Dapatkan element target2  (interaksi dengan DOM)
+          tampil.innerHTML = `<p>${sukses.Search[0].Title}</p>`;  // 4. Isi HTML dengan data      (salah satu data Title)
+        },
+        error: gagal => {                                         // ❎ Request Error
+          console.log(`${gagal.status} ${gagal.statusText}`);     // Log status error             (agar lebih informatif)
+        }
+      });
+
+      // Cara 3: Fetch API
+      fetch(url_API, {method: "GET"})
+        .then(response => response.json())                        // Ubah data jadi Object        (parse, perlu dilakukan)
+        .then(sukses => {                                         // ✅ Request Successfull
+          console.log(sukses);                                    // 1. Log hasil di console      (keperluan check aja)
+          sukses.Search.forEach(i => console.log(i.Title));       // 2. Show data di console      (misalnya data Title)
+          let tampil = document.getElementById("target3");        // 3. Dapatkan element target3  (interaksi dengan DOM)
+          tampil.innerHTML = `<p>${sukses.Search[0].Title}</p>`;  // 4. Isi HTML dengan data      (salah satu data Title)
+        })
+        .catch(gagal => {                                         // ❎ Request Error
+          console.log(gagal);                                     // Log status error             (agar lebih informatif)
+        });
+    </script>
+  </body>
+</html>
+```
+
+### ![✔] 𝐂. AJAX + PHP: Simulasi baca File Local
+
+Sebelum melanjutkan belajar materi AJAX di bawah, terdapat beberapa hal yang harus dilakukan terlebih dahulu, yaitu:
+1. Install XAMPP, kunjungi link berikut <a href="https://www.apachefriends.org/index.html">Download Latest XAMPP</a>.
+2. Buka XAMPP lalu jalankan service Apache & MySQL.
+3. Buat folder bernama ```belajar_ajax``` di ```C:\xampp\htdocs```.
+4. Simpan semua file belajar pada materi ini di ```C:\xampp\htdocs\belajar_ajax\```.
+5. Akses file belajar di ```http://localhost/belajar_ajax/``` (buka di web browser).
 
 ```1_contoh_ajax.html```
 
@@ -6855,7 +6926,7 @@ Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilaku
 ?>
 ```
 
-### ![✔] 𝐄. AJAX + Simulasi baca File Local + Database
+### ![✔] 𝐃. AJAX + PHP: Simulasi baca File Local + Database
 
 #### ⤷ Generate Database
 
@@ -7117,17 +7188,6 @@ Catatan: Tidak usah dibuat pusing dengan kode PHP di bawah ini, cukup lakukan co
   }
 ?>
 ```
-
-### ![✔] 𝐅. AJAX + Online API (Kasus Real)
-
-**Upcoming!**
-
-<hr>
-<div id="bab6_3"></div>
-
-## `6-3. Fetch, Promise & Async Await` <a href="#daftar_isi_bab6">🡅</a>
-
-**Upcoming!**
 
 </details>
 
