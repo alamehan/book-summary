@@ -6678,13 +6678,13 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 
 | Bab 6                                            	      | Estimasi Baca 	|
 |------------------------------------------------------   |---------------	|
-| <a href="#bab6_1">6-1. Pengantar Asynchronous JS</a> 	  | X Menit       	|
-| <a href="#bab6_2">6-2. Teknologi AJAX</a>               | X Menit       	|
+| <a href="#bab6_1">6-1. Pengantar Asynchronous</a> 	    | X Menit       	|
+| <a href="#bab6_2">6-2. Teknologi AJAX di JavaScript</a> | X Menit       	|
 
 <hr>
 <div id="bab6_1"></div>
 
-## `6-1. Pengantar Asynchronous JavaScript` <a href="#daftar_isi_bab6">🡅</a>
+## `6-1. Pengantar Asynchronous` <a href="#daftar_isi_bab6">🡅</a>
 
 > - [X] 𝐀. Definisi JavaScript Lanjutan
 > - [X] 𝐁. Synchronous vs. Asynchronous
@@ -6744,7 +6744,7 @@ Dalam kasus ini argument kedua di-set menjadi ```0``` (nol), karena kita memang 
 <hr>
 <div id="bab6_2"></div>
 
-## `6-2. Teknologi AJAX` <a href="#daftar_isi_bab6">🡅</a>
+## `6-2. Teknologi AJAX di JavaScript` <a href="#daftar_isi_bab6">🡅</a>
 
 > 𝐂𝐨𝐧𝐭𝐨𝐡 𝐒𝐞𝐝𝐞𝐫𝐡𝐚𝐧𝐚
 > > - [X] 𝐀. Studi kasus Local File: XMLHttpRequest vs. JQuery AJAX vs. Fetch API
