@@ -6720,6 +6720,8 @@ Pada contoh di atas terdapat sebuah Function ```contohProsesYangMakanBanyakWaktu
 
 Dalam kasus real, salah satu proses yang memakan waktu cukup lama bisa terjadi pada saat mengirim/menerima data (misalnya .json) dari web server menggunakan AJAX. Dibandingkan harus menunggu proses kirim/terima data dari server hingga selesai terlebih dahulu baru kemudian menjalankan tugas berikutnya, alangkah lebih baiknya sembari menunggu proses (yang memakan waktu cukup lama) tersebut selesai, JavaScript bisa pindah ke tugas lainnya untuk diselesaikan. Inilah yang dimaksud dengan Asynchronous.
 
+Dengan teknik Asynchronous, komponen dari sebuah website bisa muncul langsung terlebih dahulu sembari menunggu data/asset dari server tiba.
+
 ```Javascript
 // B. Contoh Asynchronous
 
