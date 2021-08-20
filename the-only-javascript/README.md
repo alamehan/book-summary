@@ -6688,6 +6688,7 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 
 > - [X] 𝐀. Definisi JavaScript Lanjutan
 > - [X] 𝐁. Synchronous vs. Asynchronous
+> - [X] 𝐂. API, REST API & RESTful API
 
 ### ![✔] 𝐀. Definisi JavaScript Lanjutan
 
@@ -6741,30 +6742,48 @@ Contoh di atas merupakan modifikasi dari contoh sebelumnya, dimana sekarang pros
 
 Dalam kasus ini argument kedua di-set menjadi ```0``` (nol), karena kita memang tidak akan men-set nya secara manual, melainkan membiarkan proses looping selesai dengan sendirinya, berapapun waktu yang diperlukan. Alhasil saat kita periksa hasilnya di tab console, urutan outputnya akan menjadi: "Tugas A selesai", "Tugas B selesai", dan terakhir "Tugas kompleks selesai". Perhatikan bawah kini "Tugas B selesai" bisa langsung muncul tanpa harus menunggu proses eksekusi tugas looping sebelumnya (yang memakan banyak waktu) selesai terlebih dahulu.
 
+### ![✔] 𝐂. API, REST API & RESTful API
+
+API adalah sebuah antarmuka (interface) yang digunakan untuk menghubungkan antara satu aplikasi dengan aplikasi yang lain, tujuannya untuk saling berbagi data antar aplikasi, pada aplikasi web secara umum datanya berbentuk JSON. REST API adalah salah satu desain arsitektur ("gaya ngoding") atau aturan-aturan untuk membuat web service. Sedangkan RESTful API adalah kondisi pada saat REST API memanfaatkan HTTP Method/Verbs sesuai fungsinya, yaitu GET untuk mengambil data, POST untuk menambah data, PUT untuk mengubah data & DELETE untuk menghapus data. Atau agar lebih mudah dipahami, jika diilustrasikan ke dalam sebuah kegiatan di restoran, yaitu sebagai berikut:
+1. Data/JSON adalah makanan di restoran.
+2. Client adalah pengunjung restoran yang akan memesan makanan.
+3. Web Server adalah dapur tempat dimana makanan di produksi.
+4. API adalah pelayan restoran yang bertugas menghubungkan pengunjung & dapur.
+5. REST API & RESTful API adalah menu di restoran.
+
+Kemudian ilustrasinya sebagai berikut:
+1. Pengunjung (Client) memesan makanan (Data/JSON) melalui menu di restoran (REST API & RESTful API). Mengapa butuh menu? Agar pengunjung tidak bisa sembarangan memesan makanan di dapur (Agar client tidak bisa sembarang meminta data di Web Server).
+2. Pengunjung (Client) meminta pelayan (API) untuk mengirimkan pesanan ke dapur (Web Server). Proses ini disebut HTTP Request.
+3. Pelayan (API) membawakan makanan (Data/JSON) dari dapur (Web Server) ke pengunjung (Client). Proses ini disebut HTTP Response.
+
+Selain beberapa istilah yang telah dijelaskan di atas, terdapa juga istilah Online API/Public API/Open API, yaitu sebuah API Online yang dapat digunakan oleh siapa saja bahkan lintas platform. Jenis API ini merupakan yang paling banyak dijumpai dan paling mudah untuk digunakan. Kita hanya perlu menyisipkan url Public API di dalam AJAX, lalu kita sudah bisa langsung menggunakan data yang diberikan. 
+
+🔔 Implementasi Public API di dalam AJAX di bahas pada point 6-2 B di bawah.
+
 <hr>
 <div id="bab6_2"></div>
 
 ## `6-2. Teknologi AJAX di JavaScript` <a href="#daftar_isi_bab6">🡅</a>
 
 > 𝐂𝐨𝐧𝐭𝐨𝐡 𝐒𝐞𝐝𝐞𝐫𝐡𝐚𝐧𝐚
-> > - [X] 𝐀. Studi kasus Local File: XMLHttpRequest vs. JQuery AJAX vs. Fetch API
-> > - [X] 𝐁. Studi kasus Online API: XMLHttpRequest vs. JQuery AJAX vs. Fetch API
+> > - [X] 𝐀. AJAX studi kasus Local File
+> > - [X] 𝐁. AJAX Studi kasus Public API
 > 
 > 𝐂𝐨𝐧𝐭𝐨𝐡 𝐋𝐚𝐧𝐣𝐮𝐭𝐚𝐧
 > > - [X] 𝐂. AJAX + PHP: Simulasi baca File Local
 > > - [X] 𝐃. AJAX + PHP: Simulasi baca File Local + Database
 
-### ![✔] 𝐀. Studi kasus Local File: XMLHttpRequest vs. JQuery AJAX vs. Fetch API
+### ![✔] 𝐀. AJAX studi kasus Local File
 
 ```HTML
 
 ```
 
-### ![✔] 𝐁. Studi kasus Online API: XMLHttpRequest vs. JQuery AJAX vs. Fetch API
+### ![✔] 𝐁. AJAX Studi kasus Public API
 
-Contoh di bawah ini menggunakan (Online) OMDb API, yaitu sebuah RESTful API yang berisi data-data film dari seluruh dunia. 📚 Buka websitenya disini: <a href="http://www.omdbapi.com/">OMDb API</a>. Diperlukan **API Key** untuk dapat menggunakan data di OMDb API. Anda bisa membuat API Key secara gratis di website resmi OMDb API-nya. Namun tentunya dengan fitur yang terbatas, seperti maksimal 1000 jumlah hit API per hari, dan data yang dimunculkan terbatas hanya 10 saja. Namun itu sudah sangat cukup untuk keperluan belajar pada markdown ini.
+Contoh di bawah ini menggunakan <a href="http://www.omdbapi.com/">OMDb API</a>, yaitu sebuah Public API yang berisi data-data film dari seluruh dunia. Diperlukan **API Key** untuk dapat menggunakan data di OMDb API. Anda bisa membuat API Key secara gratis di website resmi OMDb API-nya. Namun tentunya dengan fitur yang terbatas, seperti maksimal 1000 jumlah hit/request per hari, dan data yang dimunculkan terbatas hanya 10 saja. Namun itu sudah sangat cukup untuk keperluan belajar pada markdown ini. Sebagai catatan, gunakan VS Code Extension bernama <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">LiveServer</a> untuk menghindari pemblokiran CORS pada saat menjalankan file HTML + JavaScript pada contoh kode di bawah.
 
-⚠️ Contoh di bawah, API Key penulis yaitu ```41b09fd8``` & search keyword ```"avengers"```. Anda bisa ganti search keyword sesuai keinginan.
+⚠️ API Key penulis yaitu ```41b09fd8``` & search keyword ```"avengers"```. Anda bisa ganti search keyword sesuai keinginan.
 
 ```HTML
 <!DOCTYPE html>
