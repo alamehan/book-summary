@@ -6677,21 +6677,21 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 <br>
 
 | Bab 6                                            	      | Estimasi Baca 	|
-|------------------------------------------------------	  |---------------	|
-| <a href="#bab6_1">6-1. Teknologi AJAX</a> 	            | X Menit       	|
+|------------------------------------------------------   |---------------	|
+| <a href="#bab6_1">6-1. Pengantar Asynchronous JS</a> 	  | X Menit       	|
+| <a href="#bab6_2">6-2. Teknologi AJAX</a>               | X Menit       	|
 | <a href="#bab6_2">6-2. Fetch, Promise & Async Await</a> | X Menit       	|
 
 <hr>
 <div id="bab6_1"></div>
 
-## `6-1. Teknologi AJAX` <a href="#daftar_isi_bab6">🡅</a>
+## `6-1. Pengantar Asynchronous JavaScript` <a href="#daftar_isi_bab6">🡅</a>
 
-> - [X] 𝐀. Pengantar Asynchronous JavaScript
-> - [X] 𝐁. AJAX + Baca File (Local)
-> - [X] 𝐂. AJAX + Baca File (Database)
-> - [X] 𝐃. AJAX + Online API
+> - [X] 𝐀. Definisi JavaScript Lanjutan
+> - [X] 𝐁. Synchronous vs. Asynchronous
+> - [X] 𝐂. Persiapan belajar AJAX
 
-### ![✔] 𝐀. Pengantar Asynchronous JavaScript
+### ![✔] 𝐀. Definisi JavaScript Lanjutan
 
 "JavaScript is a **single-threaded**, **non-blocking**, **asynchronous** and **concurrent** language". Dimana single-thread artinya JavaScript hanya bisa melakukan satu hal dalam satu waktu tertentu. Non-blocking artinya saat JavaScript mengerjakan satu tugas yang memakan waktu cukup lama, ia bisa lanjut ke tugas lainnya, atau dengan kata lain JavaScript bisa lanjut ke tugas 2 tanpa perlu mengunggu tugas 1 selesai terlebih dahulu. Asynchronous artinya thread pada JavaScript bisa berpindah dari satu tugas ke tugas lainnya, dan tugas yang memakan waktu lebih cepat akan selesai lebih awal. Concurrency yaitu istilah untuk single-threaded + asynchronous.
 
@@ -6699,7 +6699,7 @@ Asynchronous dalam JavaScript ialah "Teknik programming" yang berhubungan dengan
 
 Secara sederhana AJAX digunakan untuk membuat HTTP Request, atau dengan kata lain membuat HTML dan JavaScript bisa berkomunikasi dengan web server, tanpa perlu reload/refresh page. Dengan menggunakan AJAX, kita bisa mengirim isian form HTML ke web server secara realtime (POST), menampilkan isi database tanpa men-klik tombol submit (GET), mengupdate sebagian data (PUT) hingga  menghapus suatu data tertentu (DELETE) tanpa harus me-load ulang seluruh halaman web. Beberapa API yang biasa digunakan untuk membuat HTTP Request/ implementasi AJAX yaitu **XMLHttpRequest** (cara lama), **Fetch API** (cara baru), **JQuery AJAX** (library) dan **Axios** (library).
 
-#### ⤷ Synchronous vs. Asynchronous
+### ![✔] 𝐁. Synchronous vs. Asynchronous
 
 ```Javascript
 // A. Contoh Synchronous
@@ -6743,7 +6743,7 @@ Contoh di atas merupakan modifikasi dari contoh sebelumnya, dimana sekarang pros
 
 Dalam kasus ini argument kedua di-set menjadi ```0``` (nol), karena kita memang tidak akan men-set nya secara manual, melainkan membiarkan proses looping selesai dengan sendirinya, berapapun waktu yang diperlukan. Alhasil saat kita periksa hasilnya di tab console, urutan outputnya akan menjadi: "Tugas A selesai", "Tugas B selesai", dan terakhir "Tugas kompleks selesai". Perhatikan bawah kini "Tugas B selesai" bisa langsung muncul tanpa harus menunggu proses eksekusi tugas looping sebelumnya (yang memakan banyak waktu) selesai terlebih dahulu.
 
-#### ⤷ Persiapan belajar
+### ![✔] Persiapan belajar AJAX
 
 Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilakukan terlebih dahulu, yaitu:
 1. Install XAMPP, kunjungi link berikut <a href="https://www.apachefriends.org/index.html">Download Latest XAMPP</a>.
@@ -6752,7 +6752,16 @@ Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilaku
 4. Simpan semua file belajar pada materi ini di ```C:\xampp\htdocs\belajar_ajax\```.
 5. Akses file belajar di ```http://localhost/belajar_ajax/``` (buka di web browser).
 
-### ![✔] 𝐁. AJAX + Baca File (Local)
+<hr>
+<div id="bab6_2"></div>
+
+## `6-2. Teknologi AJAX` <a href="#daftar_isi_bab6">🡅</a>
+
+> - [X] 𝐀. AJAX + Baca File (Local)
+> - [X] 𝐁. AJAX + Baca File (Database)
+> - [X] 𝐂. AJAX + Online API
+
+### ![✔] 𝐀. AJAX + Baca File (Local)
 
 ```1_contoh_ajax.html```
 
@@ -6840,7 +6849,7 @@ Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilaku
 ?>
 ```
 
-### ![✔] 𝐂. AJAX + Baca File (Database)
+### ![✔] 𝐁. AJAX + Baca File (Database)
 
 #### ⤷ Generate Database
 
@@ -7103,14 +7112,14 @@ Catatan: Tidak usah dibuat pusing dengan kode PHP di bawah ini, cukup lakukan co
 ?>
 ```
 
-### ![✔] 𝐃. AJAX + Online API
+### ![✔] 𝐂. AJAX + Online API
 
 **Upcoming!**
 
 <hr>
-<div id="bab6_2"></div>
+<div id="bab6_3"></div>
 
-## `6-2. Fetch, Promise & Async Await` <a href="#daftar_isi_bab6">🡅</a>
+## `6-3. Fetch, Promise & Async Await` <a href="#daftar_isi_bab6">🡅</a>
 
 **Upcoming!**
 
