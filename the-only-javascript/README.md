@@ -6699,6 +6699,50 @@ Asynchronous dalam JavaScript ialah "Teknik programming" yang berhubungan dengan
 
 Secara sederhana AJAX digunakan untuk membuat HTTP Request, atau dengan kata lain membuat HTML dan JavaScript bisa berkomunikasi dengan web server, tanpa perlu reload/refresh page. Dengan menggunakan AJAX, kita bisa mengirim isian form HTML ke web server secara realtime (POST), menampilkan isi database tanpa men-klik tombol submit (GET), mengupdate sebagian data (PUT) hingga  menghapus suatu data tertentu (DELETE) tanpa harus me-load ulang seluruh halaman web. Beberapa API yang biasa digunakan untuk membuat HTTP Request/ implementasi AJAX yaitu **XMLHttpRequest** (cara lama), **Fetch API** (cara baru), **JQuery AJAX** (library) dan **Axios** (library).
 
+#### ⤷ Synchronous vs. Asynchronous
+
+```Javascript
+// A. Contoh Synchronous
+
+function contohProsesYangMakanBanyakWaktu(){
+  for (let i = 0; i < 20000000; i++){
+    let date = new Date();
+  }
+  console.log("Tugas kompleks selesai")
+};
+
+console.log("Tugas A selesai");
+contohProsesYangMakanBanyakWaktu();
+console.log("Tugas B selesai");
+```
+
+Pada contoh di atas terdapat sebuah Function ```contohProsesYangMakanBanyakWaktu()``` yang memakan waktu cukup lama pada saat dieksekusi. Di dalam Function tersebut terdapat proses looping yang berat. Alhasil, "Tugas B selesai" harus menunggu proses eksekusi Function (kompleks) tersebut selesai terlebih dahulu. Urutan output: "Tugas A selesai", "Tugas kompleks selesai", dan terakhir "Tugas B selesai".
+
+Dalam kasus real, salah satu proses yang memakan waktu cukup lama bisa terjadi pada saat mengirim/menerima data (misalnya .json) dari web server menggunakan AJAX. Dibandingkan harus menunggu proses kirim/terima data dari server hingga selesai terlebih dahulu baru kemudian menjalankan tugas berikutnya, alangkah lebih baiknya sembari menunggu proses (yang memakan waktu cukup lama) tersebut selesai, JavaScript bisa pindah ke tugas lainnya untuk diselesaikan. Inilah yang dimaksud dengan Asynchronous.
+
+```Javascript
+// B. Contoh Asynchronous
+
+function contohProsesYangMakanBanyakWaktu(){
+  setTimeout(function(){
+    for (let i = 0; i < 20000000; i++){
+      let date = new Date();
+    }
+    console.log("Tugas kompleks selesai")
+  }, 0);
+};
+
+console.log("Tugas A selesai");
+contohProsesYangMakanBanyakWaktu();
+console.log("Tugas B selesai");
+```
+
+Contoh di atas merupakan modifikasi dari contoh sebelumnya, dimana sekarang proses looping (yang berat itu) dibungkus terlebih dahulu menggunakan method ```setTimeOut()```. setTimeOut merupakan salah satu method yang digunakan untuk melakukan simulasi Asynchronous di JavaScript. Method ini mempunyai 2 argument, dimana argument pertama berupa Function Callback yang berisi tugas yang ingin dilakukan, pada contoh di atas yaitu tugas looping. Argument kedua berupa waktu (dalam milidetik) yang kita set secara manual. 
+
+Dalam kasus ini argument kedua di-set menjadi ```0``` (nol), karena kita memang tidak akan men-set nya secara manual, melainkan membiarkan proses looping selesai dengan sendirinya, berapapun waktu yang diperlukan. Alhasil saat kita periksa hasilnya di tab console, urutan outputnya akan menjadi: "Tugas A selesai", "Tugas B selesai", dan terakhir "Tugas kompleks selesai". Perhatikan bawah kini "Tugas B selesai" bisa langsung muncul tanpa harus menunggu proses eksekusi tugas looping sebelumnya (yang memakan banyak waktu) selesai terlebih dahulu.
+
+#### ⤷ Persiapan belajar
+
 Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilakukan terlebih dahulu, yaitu:
 1. Install XAMPP, kunjungi link berikut <a href="https://www.apachefriends.org/index.html">Download Latest XAMPP</a>.
 2. Buka XAMPP lalu jalankan service Apache & MySQL.
