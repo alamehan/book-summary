@@ -6757,11 +6757,17 @@ Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilaku
 
 ## `6-2. Teknologi AJAX` <a href="#daftar_isi_bab6">🡅</a>
 
-> - [X] 𝐀. AJAX + Baca File (Local)
-> - [X] 𝐁. AJAX + Baca File (Database)
-> - [X] 𝐂. AJAX + Online API
+> 𝐂𝐨𝐧𝐭𝐨𝐡 𝐒𝐞𝐝𝐞𝐫𝐡𝐚𝐧𝐚
+> > - [X] 𝐀. AJAX dengan XMLHttpRequest
+> > - [X] 𝐁. AJAX dengan JQuery AJAX
+> > - [X] 𝐂. AJAX dengan Fetch API
+> 
+> 𝐂𝐨𝐧𝐭𝐨𝐡 𝐋𝐚𝐧𝐣𝐮𝐭𝐚𝐧
+> > - [X] 𝐃. AJAX + Simulasi baca File Local
+> > - [X] 𝐄. AJAX + Simulasi baca File Local + Database
+> > - [X] 𝐅. AJAX + Online API (Kasus Real)
 
-### ![✔] 𝐀. AJAX + Baca File (Local)
+### ![✔] 𝐃. AJAX + Simulasi baca File Local
 
 ```1_contoh_ajax.html```
 
@@ -6849,7 +6855,7 @@ Sebelum memulai belajar materi AJAX ini, terdapat beberapa hal yang harus dilaku
 ?>
 ```
 
-### ![✔] 𝐁. AJAX + Baca File (Database)
+### ![✔] 𝐄. AJAX + Simulasi baca File Local + Database
 
 #### ⤷ Generate Database
 
@@ -7112,7 +7118,7 @@ Catatan: Tidak usah dibuat pusing dengan kode PHP di bawah ini, cukup lakukan co
 ?>
 ```
 
-### ![✔] 𝐂. AJAX + Online API
+### ![✔] 𝐅. AJAX + Online API (Kasus Real)
 
 **Upcoming!**
 
