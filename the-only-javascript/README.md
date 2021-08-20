@@ -6778,6 +6778,7 @@ Contoh di bawah ini menggunakan (Online) OMDb API, yaitu sebuah RESTful API yang
     <div id="target2"></div>
     <div id="target3"></div>
 
+    <!-- Import JQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script>
