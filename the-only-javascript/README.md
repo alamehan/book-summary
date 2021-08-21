@@ -5468,6 +5468,7 @@ Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browse
       var nodeTable = document.querySelector("table"); 
       
       // ➊ Daftar property Event Object (dalam kasus ini MouseEvent)
+      // (🔔 Untuk KeyboardEvent lihat di bab 4-6 C pada bagian ➋)
       nodeH1A.addEventListener("click", function(event){
         console.log(event);                   // Output: ▶PointerEvent [altKey: false, ...] ⇨ Tampilkan seluruh informasi event
         console.log(event.target);            // Output: <h1 id="judul">Hello</h1> ⇨ Node Object tempat event terjadi
@@ -5996,6 +5997,7 @@ Pada bagian ```action="proses.php"``` di atas hanyalah contoh saja. Kita hanya a
       var nodeKetik2 = document.getElementById("ketik2");
 
       function diProses(e){
+        console.log(e);                       // Output: ▶KeyboardEvent [altKey: false, ...] ⇨ Tampilkan seluruh informasi event
         console.log(e.key);                   // Output: (karakter yang diinput)   ⇨ String dari tombol yang ditekan
         console.log(e.keyCode);               // Output: 65 (contoh untuk "a")     ⇨ Kode Unicode dari tombol yang ditekan
         console.log(e.altKey);                // Output: false                     ⇨ Apa tombol ALT ditekan (ditahan)?
