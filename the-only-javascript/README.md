@@ -5112,6 +5112,7 @@ console.log(nodeQSA[1]);                // Output: <𝗯>Duniailkom</𝗯>
     <p style="color: blue;">Mohon tidak mengganggu, terimakasih!</p>
     <div class="merah tebal">Materi pertama tentang Variable</div>
     <div class="merah">Materi kedua tentang Function</div>
+    <img id="gambar" src="contoh.jpg">
     <script>
       // ⚠️ 𝗦𝗰𝗿𝗶𝗽𝘁 𝗱𝗶 𝗯𝗮𝘄𝗮𝗵 𝘀𝗶𝗺𝗽𝗮𝗻 𝗱𝗶𝘀𝗶𝗻𝗶
     </script>
@@ -5145,6 +5146,7 @@ coo.innerHTML   = "Title baru di tab browser!";     // Bahkan <𝘁𝗶𝘁𝗹�
 
 ```Javascript
 let doo = document.querySelector("h1");             // let doo berisi <𝗵𝟭 id="judul">Belajar JavaScript</𝗵𝟭>
+let img = document.querySelector("#gambar");        // let img berisi <img id="gambar" src="foto.jpg">
 
 console.log(doo.hasAttribute("id"));                // Output: true             ⇨ Memeriksa apakah doo memiliki atribut id
 console.log(doo.hasAttribute("class"));             // Output: false            ⇨ Memeriksa apakah doo memiliki atribut class
@@ -5157,9 +5159,20 @@ console.log(doo);                                   // Output: <𝗵𝟭 id="jud
 
                                                     // Menampilkan seluruh atribut beserta nilainya, dari sebuah tag HTML:
 console.log(doo.attributes);                        // Output: ▶𝗡𝗮𝗺𝗲𝗱𝗡𝗼𝗱𝗲𝗠𝗮𝗽 [id="judul", title="Sedang belajar"] (length: 2)
+console.log(doo.attributes.length);                 // Output: 2
 console.log(doo.attributes[0]);                     // Output: id="judul"
 console.log(doo.attributes[1]);                     // Output: title="Sedang belajar"
-console.log(doo.attributes.length);                 // Output: 2
+console.log(doo.attributes[0].value);               // Output: judul
+console.log(doo.attributes[1].value);               // Output: Sedang belajar   ⇨ Nilai dari atribut bisa diakses malalui .value
+console.log(doo.title);                             // Output: Sedang belajar   ⇨ Bisa juga langsung menyebutkan nama atributnya
+
+console.log(img.attributes);                        // Output: ▶𝗡𝗮𝗺𝗲𝗱𝗡𝗼𝗱𝗲𝗠𝗮𝗽 [id="gambar", src="contoh.jpg"] (length: 2)
+console.log(img.attributes.length);                 // Output: 2
+console.log(img.attributes[0]);                     // Output: id="gambar"
+console.log(img.attributes[1]);                     // Output: src="contoh.jpg"
+console.log(img.attributes[0].value);               // Output: gambar
+console.log(img.attributes[1].value);               // Output: contoh.jpg       ⇨ Nilai dari atribut bisa diakses malalui .value
+console.log(img.src);                               // Output: contoh.jpg       ⇨ Bisa juga langsung menyebutkan nama atributnya
 
 doo.removeAttribute("title");                       // Menghapus sebuah atribut + nilainya (Mempengaruhi baris kode diatasnya ⚠️)
                                                     // ⤷ Note: Meskipun atribut "title" di hapus di baris ini, namun saat check
@@ -5224,6 +5237,11 @@ console.log(joo.classList.contains("tebal"));       // Output: false
 joo.classList.add("tebal");                         // Menambah Class tertentu
 console.log(joo.className);                         // Output: merah tebal
 joo.classList.remove("merah");                      // Menghapus Class tertentu
+console.log(joo.className);                         // Output: tebal
+
+joo.classList.toggle("merah");                      // Tambahkan Class tertentu jika tidak ada atau hapus jika sudah ada ✔️
+console.log(joo.className);                         // Output: tebal merah
+joo.classList.toggle("merah");                      // Tambahkan Class tertentu jika tidak ada atau hapus jika sudah ada ✔️
 console.log(joo.className);                         // Output: tebal
 ```
 
