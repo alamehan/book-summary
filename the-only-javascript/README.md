@@ -5441,6 +5441,8 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 > - [X] 𝐁. Event Propagation
 > - [X] 𝐂. Event Default
 
+<img src="assets/dom-event.png">
+
 Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya Argument sebuah fungsi berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada Event Object bisa langsung diinput tanpa diisi nilai apapun. Misalnya pada contoh di bawah ini, nilai dari Argument ```event``` akan di generate otomatis oleh web browser. Penulisan tidak harus ```event```, bisa apa saja, misalnya ```e```, dll.
 
 ### ![✔] 𝐀. Event Object
