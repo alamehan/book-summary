@@ -1699,9 +1699,9 @@ Implementasi dari Closures ini banyak dijumpai pada kasus Factory Function (🔔
 
 ### ![✔] 𝐊. JavaScript Hoisting
 
-Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan mengatur ruang memory untuk setiap Variable & Function yang dibuat. Teknisnya JavaScript seolah "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai ```undefined```, sedangkan Function akan diisi Functionnya itu sendiri. 
+Hoisting terkait cara JavaScript mengeksekusi kode program, dimana terdapat 2 fase yaitu creation & execution. Di fase creation, pertama-tama JavaScript akan mengatur ruang memory untuk setiap Variable & Function yang dibuat. Teknisnya JavaScript seolah "mengangkat" (hoisting) semua Variable & Function yang dibuat ke baris paling atas kode program. Untuk setiap Variable akan diisi nilai ```undefined```, sedangkan Function akan diisi Functionnya itu sendiri. Kemudian barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris.
 
-Selanjutya, barulah masuk ke fase execution, dimana kode program akan dieksekusi baris per baris, dari atas ke bawah. **Efek hoisting ini hanya berlaku ke var dan Function Declaration saja**. let, const, Function Expressions, Anonymous Function, dan Arrow Function (nanti dibahas setelah bagian ini) tidak terkena efek hoisting.
+⚠️ **Efek hoisting ini hanya berlaku ke var dan Function Declaration saja**. Untuk let dan const tidak terkena efek hoisting. Kemudian untuk Function Expressions, Anonymous Function dan Arrow Function (nanti dibahas setelah bagian ini) tergantung pendefinisikannya menggunakan keyword apa, jika dedefinisikan menggunakan var maka akan terkena efek hoisting serta otomatis bersifat **Function Scope**, sementara itu jika didefinisikan menggunakan let/const maka tidak akan terkena efek hoisting serta otomatis bersifat **Block Scope**.
 
 📚 Gunakan tools berikut untuk visualisasi Hoisting: <a href="http://pythontutor.com/javascript.html">Visualize JavaScript Code Execution</a>.
 
@@ -1863,7 +1863,7 @@ console.log(nama);                    // console.log(nama);               🡲 O
 
 #### ⤷ Kesimpulan JavaScript Hoisting
 
-Pertama, selalu definisikan Variable (var/let/const) diawal kode program/Function (sebelum Variable digunakan, definsikan dulu), dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, gunakan let & const sebagai alternatif dari var. Prilaku let & const lebih "masuk akal" dibandingkan dengan var. 
+Pertama, selalu definisikan Variable (var/let/const) diawal kode program/Function (sebelum Variable digunakan, definsikan dulu), dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, definisikan Function Expressions/Anonymous Function/Arrow Function menggunakan let dan const agar tidak terkena efek hoisting. Keempat, gunakan let & const sebagai alternatif dari var. Prilaku let & const lebih "masuk akal" dibandingkan dengan var.
 
 let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai di luar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi Let.
 
