@@ -2694,7 +2694,7 @@ console.log(person2.name);            // Output: ray
 
 ### ![✔] 𝐃. Keyword this
 
-Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu ```this```. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parent-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam method di Object, di dalam method di Class, atau di sebuah Event, dst.
+Pada setiap pembuatan Function maupun Object, JavaScript akan secara otomatis mendefinisikan sebuah keyword spesial, yaitu ```this```. Keyword this ini mengacu/merujuk pada suatu Object tertentu (Object parent-nya), tergantung dimana keyword this tersebut dipanggil. Apakah dipanggil langsung di baris kode global, di dalam Function, di dalam method di Object, Class, atau di sebuah Event, dst.
 
 Sebagai catatan **Arrow Function tidak memiliki konsep this**. Oleh karena itu setiap keyword this yang berada di dalam Arrow Function, akan mengacu pada this milik parent scope-nya. Jika tidak ditemukan, akan terus mencari "keluar" hingga Global Object (Window).
 
@@ -2780,7 +2780,7 @@ mhs.halo2();
 mhs.halo3();
 ```
 
-Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow Function di atas mengacu ke Global Object (Window).
+Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow Function di atas mengacu ke Global Object (Window). Pahami dengan baik dan teliti, karena tidak sedikit programmer yang kebingungan dengan hal ini.
 
 Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Definitions & Function Expressions. Sedangkan untuk **Arrow Function biasanya banyak digunakan untuk Callback** (Function yang digunakan sebagai Argument).
 
