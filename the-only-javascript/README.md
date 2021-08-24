@@ -3181,7 +3181,7 @@ Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nanti
 
 #### ⤷ Kasus Nested
 
-**Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Definitions (ES6+) & Function Expressions (Anonymous Function). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function**, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan ```that``` atau method ```apply()``` untuk mengacu ke Owner Object (Object yang dibuat).
+**Dalam kasus Nested, Outer Function ditulis dengan menggunakan cara penulisan Function Expressions (Anonymous Function) & Function Definitions (ES6+). Sedangkan Inner Function-nya ditulis menggunakan cara penulisan Arrow Function**, atau bisa juga dengan cara penulisan Function lainnya dengan catatan gunakan ```that``` atau method ```apply()``` untuk mengacu ke Owner Object (Object yang dibuat).
 
 <!-- TABLE 3 (KASUS NESTED) -->
 
@@ -3241,7 +3241,7 @@ Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nanti
 </tbody>
 </table>
 
-Jika diperhatikan, 
+Contoh beberapa kasus Inner Function yang ditampilkan di atas sebenarnya sama halnya dengan Function yang didefinisikan di Global. Oleh karena itulah konteks this-nya sama-sama mengacu ke Global Object (Window) atau undefined dalam Strict Mode.
 
 </details>
 
