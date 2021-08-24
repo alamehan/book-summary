@@ -2693,6 +2693,8 @@ console.log(person.name);             // Output: bob
 console.log(person2.name);            // Output: ray
 ```
 
+Sebagai catatan, sebelum ES6 sebenarnya Assignment by Value untuk Object bisa juga dilakukan dengan menggunakan baris perintah berikut ```Object.assign({}, namaObjectYangDisalin)```, hanya saja tidak berjalan untuk kasus nested Object, atau istilahnya Shallow Clone Objects.
+
 
 ### ![✔] 𝐃. Keyword this
 
