@@ -1861,6 +1861,39 @@ console.log(nama);                    // console.log(nama);               🡲 O
                                       // console.log(nama);               🡲 Output: Jaka
 ```
 
+#### ⤷ New: Function Declaration vs. Function Expressions/Anonymous vs. Function & Arrow Function
+
+```Javascript
+console.log(funDeclaration);                // Output: f funDeclaration(a, b){ ... }
+console.log(funExpressionsVar);             // Output: undefined
+console.log(funArrowVar);                   // Output: undefined
+console.log(funExpressionsLet);             // Output: Error: Cannot access 'funExpressionsLet' before initialization
+console.log(funArrowLet);                   // Output: Error: Cannot access 'funArrowLet' before initialization
+
+console.log(funDeclaration(1, 2));          // Output: 3
+console.log(funExpressionsVar(1, 2));       // Output: Error: funExpressionsVar is not a function   (setara dengan undefined(1, 2))
+console.log(funArrowVar(1, 2));             // Output: Error: funArrowVar is not a function         (setara dengan undefined(1, 2))
+console.log(funExpressionsLet(1, 2));       // Output: Error: Cannot access 'funExpressionsLet' before initialization
+console.log(funArrowLet(1, 2));             // Output: Error: Cannot access 'funArrowLet' before initialization
+
+// Function Declaration
+function funDeclaration(a, b){
+  return a + b;
+};
+
+// Function Expressions & Arrow Function with var
+var funExpressionsVar = function(a, b){
+  return a + b;
+};
+var funArrowVar = (a, b) => a + b;
+
+// Function Expressions & Arrow Function with let/const
+let funExpressionsLet = function(a, b){
+  return a + b;
+};
+let funArrowLet = (a, b) => a + b;
+```
+
 #### ⤷ Kesimpulan JavaScript Hoisting
 
 Pertama, selalu definisikan Variable (var/let/const) diawal kode program/Function (sebelum Variable digunakan, definisikan dulu) dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, definisikan Function Expressions/Anonymous Function/Arrow Function menggunakan let dan const agar tidak terkena efek hoisting. Keempat, gunakan let & const sebagai alternatif dari var. Prilaku let & const lebih "masuk akal" dibandingkan dengan var.
