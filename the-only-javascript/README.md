@@ -1414,7 +1414,7 @@ console.log(ratarata(2, 4));          // Output: 3    (Hasil dari (2+4)/2 🡲 6
 console.log(ratarata(2, 4, 8, 16));   // Output: 7.5  (Hasil dari (2+4+8+16)/4 🡲 30/4)
 ```
 
-Arguments Object tidak bisa digunakan di Arrow Function (🔔 Dibahas di bab 2-5 R), dan memang penggunaanya tidak banyak dijumpai saat ini, terlebih sejak munculnya konsep Rest Parameter yang menjadi pembahasan selanjuntya.
+Arguments Object tidak bisa digunakan di Arrow Function (🔔 Dibahas di bab 2-5 R) dan memang penggunaanya tidak banyak dijumpai saat ini. Di Modern JavaScript, Rest Parameter digunakan sebagai alternatif dari Arguments Object.
 
 ### ![✔] 𝐄. Rest Parameter
 
