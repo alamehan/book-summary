@@ -2782,7 +2782,7 @@ mhs.halo3();
 
 Catatan: Karena Arrow Function tidak memiliki konsep this, maka this yang diacu yakni this milik parent scope-nya, yaitu Object mhs, yang mana this pada Object mhs mengacu ke Global Object (Window). Oleh karena itulah this pada contoh Arrow Function di atas mengacu ke Global Object (Window). Pahami dengan baik dan teliti, karena tidak sedikit programmer yang kebingungan dengan hal ini.
 
-Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Definitions & Function Expressions. Sedangkan untuk **Arrow Function biasanya banyak digunakan untuk Callback** (Function yang digunakan sebagai Argument).
+Dalam kasus method di Object, cara penulisan yang paling banyak dijumpai yaitu Function Definitions & Function Expressions. Sedangkan untuk **Arrow Function biasanya banyak digunakan di dalam kasus Nested dan Callback** (Function yang digunakan sebagai Argument).
 
 Selain itu, jika dalam method terdapat Inner Function lagi di dalamnya (Ilustrasi: Object → method (Outer Function) → Inner Function), atau disebut juga kasus Nested, maka Inner Function tersebut memiliki konteks this yang berbeda pula. Pada contoh di bawah ini method (Outer Function) ditulis dengan cara Function Expressions, sedangkan Inner Function di dalamnya ditulis dengan 3 cara berbeda.
 
