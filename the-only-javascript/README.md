@@ -1896,7 +1896,7 @@ let funArrowLet = (a, b) => a + b;
 
 #### ⤷ Kesimpulan JavaScript Hoisting
 
-Pertama, selalu definisikan Variable (var/let/const) diawal kode program/Function (sebelum Variable digunakan, definisikan dulu) dan sebaiknya langsung diisi nilai agar tidak Undefined. Kedua, agar lebih "aman" dari kesalahan, definisikan Function Declaration diawal kode program juga. Ketiga, definisikan Function Expressions/Anonymous Function/Arrow Function menggunakan let dan const agar tidak terkena efek hoisting. Keempat, gunakan let & const sebagai alternatif dari var. Prilaku let & const lebih "masuk akal" dibandingkan dengan var.
+Pertama, selalu definisikan Variable (var/let/const) diawal kode program/Function, dengan kata lain sebelum Variable digunakan definisikan terlebih dahulu, dan sebaiknya langsung diisi nilai. Kedua, gunakan let & const sebagai pengganti var. Ketiga, definisikan semua jenis Function (Declaration, Expressions, Anonymous, Arrow) di awal kode program, dengan kata lain sebelum Function digunakan, definisikan terlebih dahulu. Keempat, definisikan Function Expressions, Anonymous Function dan Arrow Function menggunakan let/const. 
 
 let & const akan menghasilkan error jika dipanggil namun belum didefinisikan di baris atas kode programnya (memang ini yang seharusnya terjadi, error!), sedangkan var malah menghasilkan undefined (karena efek hoisting). Selain itu let & const pun sudah bersifat Block Scope, ini lebih "aman" karena tidak mempengaruhi nilai di luar scope. Sebagai catatan, banyak programmer mendefinisikan semua Variablenya diawal menggunakan const, kemudian jika satu waktu Variable tersebut memang perlu diubah nilainya, maka barulah diubah/ditimpa menjadi let.
 
