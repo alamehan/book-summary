@@ -950,9 +950,7 @@ Catatan: Terdapat istilah Type convertion (explicit) & Type coercion (implicit).
 
 ### ![✔] 𝐋. Operator Spread
 
-Spread merupakan operator baru di ES6+. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali ```...```, kemudian diikuti dengan nama Variable.<br>
-
-🔔 Kegunaan lain dari operator Spread yaitu Rest Parameter (bab 2-5 E) & Assignment by Value untuk Object (bab 2-6 C).
+Spread merupakan operator baru di ES6+. Operator ini digunakan untuk berbagai keperluan yang berhubungan dengan Array, salah satunya untuk menggabungkan Array. Operator ini menggunakan tanda titik tiga kali ```...```, kemudian diikuti dengan nama Variable.
 
 ```Javascript
 var nilai1 = ["a", "b", "c", "d"];
@@ -967,6 +965,45 @@ console.log(nilai4);                  // Output: [0, 1, 2, 3, 4, 5, 6]
 var nilai5 = [...nilai3, ...nilai4];
 console.log(nilai5);                  // Output: ["a", "b", "c", "d", "e", "f", 0, 1, 2, 3, 4, 5, 6]
 ```
+
+Spread juga digunakan untuk memecah iterables (String, Array, Arguments/NodeList, Map, Set, dst) menjadi single element.
+
+```Javascript
+var siswa = ["Budi", "Tono", "Jaka"];
+console.log(...siswa);                // Output: Budi Tono Jaka
+console.log(...siswa[0]);             // Output: B u d i
+console.log(...siswa[1]);             // Output: T o n o
+console.log(...siswa[2]);             // Output: J a k a
+```
+
+⚠️ Contoh di bawah ini merupakan materi lanjutan, kembali lagi kesini setelah menyelesaikan bab 1, 2, 3 dan 4.
+
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <ul>
+      <li>Budi</li>
+      <li>Tono</li>
+      <li>Jaka</li>
+    </ul>
+
+    <script>
+      var siswa = document.querySelectorAll("li");
+      console.log(siswa);             // ▶𝗡𝗼𝗱𝗲𝗟𝗶𝘀𝘁(3) [li, li, li]
+
+      var siswaOlah = [...siswa].map(m => m.textContent);
+      console.log(siswaOlah);         // ["Budi", "Tono", "Jaka"]
+    </script>
+  </body>
+</html>
+```
+
+🔔 Kegunaan lain dari operator Spread yaitu Rest Parameter (bab 2-5 E) & Clone Object dan Array (bab 2-6 C).
 
 <hr>
 <div id="bab2_3"></div>
@@ -2672,10 +2709,10 @@ console.log(mhs2 == mhs2Baru);        // Output: false  (Why? meskipun mhs2 & mh
 console.log(mhs2 === mhs2Baru);       // Output: false  (Why? meskipun mhs2 & mhs2Baru isinya sama, tapi berbeda alamat memory)
 ```
 
-#### ⤷ Assignment by Value untuk Object (ES6+)
+#### ⤷ Clone Object (ES6+)
 
 ```Javascript
-// Salin Object by Reference (default)
+// Salin Object (default)
 let person    = {name: "bob"};
 let person2   = person;
 person2.name  = "ray";
@@ -2685,7 +2722,7 @@ console.log(person2.name);            // Output: ray
 ```
 
 ```Javascript
-// Salin Object by Value bisa dilakukan di ES6+
+// Clone Object bisa dilakukan di ES6+
 let person    = {name: "bob"};
 let person2   = {...person};          // Menggunakan Spread (...)
 person2.name  = "ray";
@@ -2694,7 +2731,7 @@ console.log(person.name);             // Output: bob
 console.log(person2.name);            // Output: ray
 ```
 
-Sebagai catatan, sebelum ES6 sebenarnya Assignment by Value untuk Object bisa juga dilakukan dengan menggunakan baris perintah berikut ```Object.assign({}, namaObjectYangDisalin)```, hanya saja tidak berjalan untuk kasus nested Object, atau istilahnya Shallow Clone Objects.
+Sebagai catatan, sebelum ES6 sebenarnya Clone Object bisa juga dilakukan dengan menggunakan baris perintah berikut ```Object.assign({}, namaObjectYangDisalin)```, hanya saja tidak berjalan untuk kasus nested Object, atau istilahnya Shallow Clone Objects. Selain Object, Clone Array pun dilakukan dengan cara yang sama menggunakan Spred (```...```), contohnya ```let arrBaru = [...arr];```.
 
 
 ### ![✔] 𝐃. Keyword this
