@@ -2452,6 +2452,7 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 > - [X] 𝐂. Object Reference
 > - [X] 𝐃. Keyword this
 > - [X] 𝐄. Kesimpulan keyword this
+> - [X] 𝐅. Destructuring (ES6)
 
 ### ![✔] 𝐀. Object Sebagai Tipe Data
 
@@ -3246,6 +3247,170 @@ Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nanti
 </table>
 
 Contoh beberapa kasus Inner Function yang ditampilkan di atas sebenarnya sama halnya dengan Function yang didefinisikan di Global. Oleh karena itulah konteks this-nya sama-sama mengacu ke Global Object (Window) atau undefined dalam Strict Mode.
+
+### ![✔] 𝐅. Destructuring (ES6)
+
+Destructuring merupakan Expression pada JavaScript yang membuat kita dapat membongkar (unpacking) nilai dari Array atau properti dari Object ke dalam Variable yang terpisah. Destructuring memungkinkan pemetaan Array atau Object secara instan ke banyak Variable.
+
+#### ⤷ Swap Items
+
+```Javascript
+let valA = 1;
+let valB = 2;
+console.log(valA);                      // Output: 1
+console.log(valB);                      // Output: 2
+
+[valA, valB] = [valB, valA];
+console.log(valA);                      // Output: 2
+console.log(valB);                      // Output: 1
+```
+
+#### ⤷ Destructuring Array
+
+Sebagai catatan, urutan Destructuring harus sesuai dengan urutan nilai pada Array.
+
+```Javascript
+const arr = ["satu", "dua", ["v1", "v2"]];
+
+// Contoh Sederhana
+const [a1, a2, a3] = arr;
+console.log(a1);                      // Output: satu
+console.log(a2);                      // Output: dua
+console.log(a3);                      // Output: ["v1", "v2"]
+
+// Contoh Nested
+const [b1, b2, [b3, b4]] = arr;
+console.log(b1);                      // Output: satu
+console.log(b2);                      // Output: dua
+console.log(b3);                      // Output: v1
+console.log(b4);                      // Output: v2
+
+// Contoh dengan Skip
+const [c1, ,c3] = arr;
+console.log(c1);                      // Output: satu
+console.log(c3);                      // Output: ["v1", "v2"]
+
+// Contoh dengan Default Value
+const [d1, d2, d3, d4="default"] = arr;
+console.log(d1);                      // Output: satu 
+console.log(d2);                      // Output: dua
+console.log(d3);                      // Output: ["v1", "v2"]
+console.log(d4);                      // Output: default          (dari Default Value)
+
+// Contoh dengan Rest Parameter
+const [e1, ...e2] = arr;
+console.log(e1);                      // Output: satu
+console.log(e2);                      // Output: ["dua", ["v1", "v2"]]
+```
+
+#### ⤷ Destructuring Object
+
+Berbeda dengan Array, urutan Destructuring pada Object tidak harus sesuai.
+
+```Javascript
+const mhs = {
+  id: 123,
+  nama: "Budi Setiawan",
+  umur: 32,
+  hobi: ["coding", "catur", "basket"],
+  alamat: {kota: "Bandung", pos: "40154"}
+};
+
+// Contoh Sederhana
+const {id, nama, umur, hobi, alamat} = mhs;
+console.log(id);                      // Output: 123
+console.log(nama);                    // Output: Budi Setiawan
+console.log(umur);                    // Output: 32
+console.log(hobi);                    // Output: ["coding", "catur", "basket"]
+console.log(alamat);                  // Output: {kota: "Bandung", pos: "40154"}
+
+// Contoh Nested (& Skip)
+const {hobi:[hobi1, hobi2, hobi3], alamat:{kota, pos}} = mhs;
+console.log(hobi1);                   // Output: coding
+console.log(hobi2);                   // Output: catur
+console.log(hobi3);                   // Output: basket
+console.log(kota);                    // Output: Bandung
+console.log(pos);                     // Output: 40154
+
+// Contoh nama Variable baru
+const {id:a1, nama:a2, umur:a3, hobi:a4, alamat:{kota:a5, pos:a6}} = mhs;
+console.log(a1);                      // Output: 123
+console.log(a2);                      // Output: Budi Setiawan
+console.log(a3);                      // Output: 32
+console.log(a4);                      // Output: ["coding", "catur", "basket"]
+console.log(a5);                      // Output: Bandung
+console.log(a6);                      // Output: 40154
+
+// Contoh dengan Default Value
+const {id:b1, nama:b2="lorem", prestasi:b3="default"} = mhs;
+console.log(b1);                      // Output: 123
+console.log(b2);                      // Output: Budi Setiawan
+console.log(b3);                      // Output: default          (dari Default Value)
+
+// Contoh dengan Rest Parameter
+const {id:c1, nama:c2, umur:c3, ...c4} = mhs;
+console.log(c1);                      // Output: 123
+console.log(c2);                      // Output: Budi Setiawan
+console.log(c3);                      // Output: 32
+console.log(c4);                      // Output: {hobi: ["coding", ...], alamat: {kota: "Bandung", ...}}
+```
+
+```Javascript
+// Contoh Assignment tanpa Deklarasi
+const obj = {
+  valC:24, 
+  valD:32
+};
+
+({valC:newA, valD:newB} = obj);       // Dibungkus terlebih dahulu menggunakan ()
+console.log(newA);                    // Output: 24
+console.log(newB);                    // Output: 32
+```
+
+🔔 Pembungkusan menggunakan tanda () serupa dengan pembungkusan pada point 2-5 Q di terkait IIFE.
+
+#### ⤷ Destructuring Function
+
+```Javascript
+// Destructuring Function: Return Value Array
+function calcArr(a, b){
+  return [a+b, a-b, a*b, a/b];
+};
+const [add, sub, mul, div] = calcArr(2, 3); 
+console.log(add);                     // Output: 5
+console.log(sub);                     // Output: -1
+console.log(mul);                     // Output: 6
+console.log(div);                     // Output: 0.6667
+
+// Destructuring Function: Return Value Object
+function calcObj(a, b){
+  return {
+    tambah: a+b,
+    kurang: a-b,
+    kali: a*b,
+    bagi: a/b
+  }
+};
+const {bagi, kali, kurang, tambah} = calcObj(3, 4);
+console.log(tambah);                  // Output: 7
+console.log(kurang);                  // Output: -1
+console.log(kali);                    // Output: 12
+console.log(bagi);                    // Output: 0.75
+
+// Destructuring Function Argument (Case: Object)
+const mhs = {
+  id: 123,
+  nama: "Budi Setiawan",
+  umur: 32,
+  hobi: ["coding", "catur", "basket"],
+  alamat: {kota: "Bandung", pos: "40154"}
+};
+
+function getMhs({id, hobi:[h1], alamat:{kota}, job="default"}){
+  return `${id} ${h1} ${kota} ${job}`;
+};
+console.log(getMhs(mhs));             // Output: 123 coding Bandung default
+```
 
 </details>
 
@@ -7309,7 +7474,7 @@ console.log(fragmen);                 // Output: <div>
 
 Selain manfaat yang disebutkan di atas, Template String juga dapat digunakan sebagai <a href="https://www.youtube.com/watch?v=sbjkjjCcz8M">Tagged Templates Literals</a>.
 
-**B. OOP: Inheritance, Encapsulation, dll**
+**X. OOP: Inheritance, Encapsulation, dll**
 
 </details>
 
