@@ -3246,7 +3246,7 @@ Tujuan keyword this sebenarnya sederhana saja, yaitu sebagai "tempat" yang nanti
 </tbody>
 </table>
 
-Contoh beberapa kasus Inner Function yang ditampilkan di atas sebenarnya sama halnya dengan Function yang didefinisikan di Global. Oleh karena itulah konteks this-nya sama-sama mengacu ke Global Object (Window) atau undefined dalam Strict Mode.
+⚠️ Contoh kasus Inner Function yang ditampilkan di atas sebenarnya sama halnya dengan Function yang didefinisikan di Global. Oleh karena itulah konteks this-nya sama-sama mengacu ke Global Object (Window) atau undefined dalam Strict Mode.
 
 ### ![✔] 𝐅. Destructuring (ES6)
 
