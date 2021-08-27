@@ -2493,7 +2493,7 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 
 ### ![✔] 𝐀. Object Sebagai Tipe Data
 
-JavaScript menggunakan konsep Prototypical Inheritance untuk menerapkan konsep pemrograman berbasis Object. Secara singkatnya, untuk membuat Object di JavaScript, caranya dengan langsung menulis Object tersebut (tidak perlu membuat Class, seperti yang dilakukan di bahasa pemrograman lain). Di dalam Object, terdapat istilah property & method.
+JavaScript awal mulanya menggunakan konsep Prototypical Inheritance untuk menerapkan konsep pemrograman berbasis Object. Secara singkatnya, untuk membuat Object di JavaScript, caranya dengan langsung menulis Object tersebut (tidak perlu membuat Class, seperti yang dilakukan di bahasa pemrograman lain). 🔔 Lihat bab 3-1 B (Object sebagai OOP). Di dalam Object, terdapat istilah property & method.
 
 Property merupakan Variable (var/let/const) yang berada di dalam Object, sedangkan method merupakan Function yang berada di dalam Object. Baik property maupun method diberi nilai menggunakan tanda titik dua ```:```, bukan tanda sama dengan ```=``` sebagaimana layaknya pengisian Variable biasa. Serta, diantara property maupun method yang satu dengan yang lain, dipisahkan menggunakan tanda koma ```,```.
 
@@ -3586,8 +3586,8 @@ const khususMethod = {
 function Mobil(merkArg, tipeArg, hargaArg){       // Function Declaration yang berfungsi sebagai "blue print mobil"
   let mobil   = Object.create(khususMethod);      // Note: Sebenarnya sama dengan "let mobil = {}", hanya saja dengan
   mobil.merk  = merkArg;                          //       menggunakan Object.create() kita dapat menyimpan Parameter
-  mobil.tipe  = tipeArg;                          //       yang mengacu ke Object lainnya, tujuannya untuk membawa
-  mobil.harga = hargaArg;                         //       Propery & method dari Object lainnya tersebut.
+  mobil.tipe  = tipeArg;                          //       yang mengacu ke Object lainnya (Prototypical Inheritance),
+  mobil.harga = hargaArg;                         //       tujuannya untuk membawa Propery & method dari Object tsb.
   return mobil;                                   // Note: Di baris akhir Function Declaration harus ada return
 }
 ```
@@ -3709,7 +3709,7 @@ Catatan: Tidak semua Object bawaan JavaScript secara utuh memiliki Object proper
 
 ⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 
-#### ⤷ Contoh JavaScript Native Object
+#### ⤷ Contoh JavaScript Native Object & Methodnya
 
 ```Javascript
 let foo = new String("Hello World");  // Cara penulisan: String object (❌)
@@ -3729,7 +3729,26 @@ console.log(bar.length);              // Output: 11
 
 Ternyata meskipun Variable bar didefinisikan secara String literals, bukan secara String Object, kita masih tetap bisa memakai Instance method & Instance property bawaan String Object. Oleh karena itu penulisan literals lebih direkomendasikan (lihat lagi point A di atas 🔔).
 
-#### ⤷ Hasil Return Method Bawaan JavaScript
+#### ⤷ Menampilkan Seluruh Property & Method Bawaan JavaScript dengan Prototype
+
+```Javascript
+console.log(Number.prototype);            // Output: (All property & method)
+console.log(String.prototype);            // Output: (All property & method)
+console.log(Boolean.prototype);           // Output: (All property & method)
+console.log(Array.prototype);             // Output: (All property & method)
+console.log(Object.prototype);            // Output: (All property & method)
+console.log(Math);                        // Output: (All property & method)
+console.log(RegExp.prototype);            // Output: (All property & method)
+console.log(Date.prototype);              // Output: (All property & method)
+```
+
+Lihat hasilnya di tab console, maka akan ditampilkan seluruh property & method bawaan yang tersedia. Khusus untuk property berada di dalam constructor. Jika Anda menulis kode JavaScript menggunakan **Visual Studio Code (VS Code)** seluruh property & method bawaan JavaScript ini bisa ditampilkan dengan mudah melalui fitur **Trigger suggestion** (sehingga Anda tidak perlu menghafalnya). 
+
+Misalnya Anda mendefinisikan sebuah Array berikut ```let arr = [1, 2, 3];```, maka pada saat memanggil ```arr.``` (ketik: arr + titik) secara otomatis VS Code akan menampilkan saran berupa seluruh property & method yang bisa digunakan. Namun jika saran tidak muncul, Anda dapat menekan **Ctrl + Space** pada keyboard untuk men-triggernya secara manual. Lihat screenshot di bawah ini:
+
+<img src="assets/vscode-suggestion.png">
+
+#### ⤷ Catatan: Hasil Return Method Bawaan JavaScript
 
 ```JavaScript
 let huruf = ["A", "B", "C"];
