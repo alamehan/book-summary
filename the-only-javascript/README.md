@@ -3709,7 +3709,7 @@ Catatan: Tidak semua Object bawaan JavaScript secara utuh memiliki Object proper
 
 ⚠️ Beberapa method bersifat Mutating (mengubah Object/data aslinya), selebihnya Non-Mutating (tidak mengubah data aslinya).
 
-#### ⤷ Contoh JavaScript Native Object & Methodnya
+#### ⤷ Contoh JavaScript Native Object beserta Property & Methodnya
 
 ```Javascript
 let foo = new String("Hello World");  // Cara penulisan: String object (❌)
