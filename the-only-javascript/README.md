@@ -1900,7 +1900,7 @@ console.log(nama);                    // console.log(nama);               🡲 O
                                       // console.log(nama);               🡲 Output: Jaka
 ```
 
-#### ⤷ New: Function Declaration vs. Function Expressions/Anonymous vs. Function & Arrow Function
+#### ⤷ New: Function Declaration vs. Function Expressions/Anonymous Function vs. Arrow Function
 
 ```Javascript
 console.log(funDeclaration);                // Output: f funDeclaration(a, b){ ... }
