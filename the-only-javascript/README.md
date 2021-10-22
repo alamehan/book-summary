@@ -1992,7 +1992,7 @@ console.log(ratarata(4, 8));          // Output: ReferenceError ratarata is not 
 
 ```Javascript
 let hitung = function(a, b){          // Function Expressions tanpa nama Function disebut sebagai Anonymous Function
-  return (a+b)/2;                     // Kedepannya penggunaan Anonymous Function inlah yang lebih banyak dijumpai
+  return (a+b)/2;                     // Kedepannya penggunaan Anonymous Function inilah yang lebih banyak dijumpai
 }
 console.log(hitung(4, 8));            // Output: 6
 ```
