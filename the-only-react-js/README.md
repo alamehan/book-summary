@@ -8,70 +8,1366 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    ReactDOM.render(<h1>Hello, world!</h1>, document.getElementById('root'))
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **2. Memperkenalkan JSX** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root1"></div>
+  <div id="root2"></div>
+  <div id="root3"></div>
+  <div id="root4"></div>
+
+  <script type="text/babel">
+
+    const name = "John Doe";
+    const age = 24;
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 1                                 */
+    /* ----------------------------------------------------------------------- */
+
+    // Tanpa JSX
+    const elementA1 = React.createElement(
+      'h1',
+      { className: 'my-style', style: { marginBottom: 100 } },
+      `Halo ${name} ${age}!`
+    )
+    // Dengan JSX
+    const elementA2 = (
+      <h1 className='my-style' style={{ marginBottom: 100 }}>
+        Halo {name} {age}!
+      </h1>
+    )
+
+    ReactDOM.render(elementA1, document.getElementById('root1'))
+    ReactDOM.render(elementA2, document.getElementById('root2'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 2                                 */
+    /* ----------------------------------------------------------------------- */
+
+    // Tanpa JSX: Nested
+    const elementB1 = React.createElement(
+      'div',
+      {},
+      [
+        React.createElement('h1', {}, `Name: ${name}`),
+        React.createElement('h2', {}, `Age: ${age}`),
+        React.createElement('h3', {}, `No: ${9 * 9}`),
+      ]
+    )
+    // Dengan JSX: Nested
+    const elementB2 = (
+      <div>
+        <h1>Name: {name}</h1>
+        <h2>Age: {age}</h2>
+        <h3>No: {9 * 9}</h3>
+      </div>
+    )
+
+    ReactDOM.render(elementB1, document.getElementById('root3'))
+    ReactDOM.render(elementB2, document.getElementById('root4'))
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **3. Merender Elements** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root1"></div>
+  <div id="root2"></div>
+
+  <script type="text/babel">
+
+    // 1. Penulisan Function biasa
+    function tick1() {
+      const element1 = (
+        <div>
+          <h1>It's {new Date().toLocaleTimeString()}</h1>
+        </div>
+      )
+      ReactDOM.render(element1, document.getElementById('root1'))
+    }
+
+    // 2. Penulisan Arrow Function
+    let tick2 = () => {
+      const element2 = (
+        <div>
+          <h1>It's {new Date().toLocaleTimeString()}</h1>
+        </div>
+      )
+      ReactDOM.render(element2, document.getElementById('root2'))
+    }
+
+    // ReactDOM.render akan dipanggil setiap detiknya dari sebuah callback setInterval()
+    setInterval(tick1, 1000)
+    setInterval(tick2, 1000)
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **4. Komponen dan Props** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root1"></div>
+  <div id="root2"></div>
+
+  <script type="text/babel">
+
+    /*  
+      Komponen mirip dengan fungsi pada Javascript. Komponen menerima beberapa 
+      masukan (biasa disebut “props”) dan mengembalikan element React yang 
+      mendeskripsikan apa yang seharusnya tampil pada layar. Sebagai catatan,
+      props bersifat read-only, artinya nilai dari props tidak bisa ditimpa.
+    */
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 1                                 */
+    /* ----------------------------------------------------------------------- */
+
+    // Cara 1: Function Components (dimana props sebagai parameter)
+    function ComponentA(props) {
+      return (
+        <div>
+          <h1>Halo {props.name}</h1>
+          <h2>Umur Anda {props.age}</h2>
+        </div>
+      )
+    }
+
+    // Cara 2: Class Components (dimana props sebagai property)
+    class ComponentB extends React.Component {
+      render() {
+        return (
+          <div>
+            <h1>Halo {this.props.name}</h1>
+            <h2>Umur Anda {this.props.age}</h2>
+          </div>
+        )
+      }
+    }
+
+    // Gabungkan kedalam satu element (contoh saja)
+    // & Oper nilai ke props-nya (name & age)
+    const element = (
+      <div>
+        <ComponentA name="Raihan" age={21} />
+        <ComponentB name="Allaam" age={24} />
+      </div>
+    )
+
+    ReactDOM.render(element, document.getElementById('root1'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 2                                 */
+    /* ----------------------------------------------------------------------- */
+
+    // 1. Contoh data untuk props
+    const data = {
+      author: {
+        name: 'Hello Kitty',
+        avatarUrl: 'https://placekitten.com/g/64/64',
+      },
+      text: 'I hope you enjoy learning React!',
+      date: new Date(),
+    };
+
+    // 2. Komponen Avatar
+    function Avatar(props) {
+      return <img src={props.attExamp.avatarUrl} alt={props.attExamp.name} />
+    }
+
+    // 3. Komponen UserInfo (didalamnya memakai komponen Avatar)
+    function UserInfo(props) {
+      return (
+        <div>
+          <Avatar attExamp={props.attUser} />
+          <p>{props.attUser.name}</p>
+        </div>
+      )
+    }
+
+    // 4. Komponen Comment (didalamnya memakai komponen UserInfo)
+    function Comment(props) {
+      return (
+        <div>
+          <UserInfo attUser={props.attAuthor} />
+          <p>{props.attText}</p>
+          <p>{props.attDate.toLocaleDateString()}</p>
+        </div>
+      )
+    }
+
+    // 5, Render Komponen Comment & Oper nilai props-nya
+    ReactDOM.render(
+
+      // Alur data props yaitu satu arah, turun dari parent ke child,
+      // dimulai dari sini <Comment /> ke <UserInfo /> ke <Avatar /> 
+      <Comment attAuthor={data.author} attText={data.text} attDate={data.date} />,
+      document.getElementById('root2')
+    )
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **5. State dan Lifecycle** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root1"></div>
+  <div id="root2"></div>
+
+  <script type="text/babel">
+
+    /*  
+      Baris kode ini merupakan perbaikan dari fille "3-merender-elements.html",
+      alih-alih hanya sebagai function biasa, disini kita akan membuat komponen 
+      Clock yang benar-benar dapat digunakan kembali (reusable) dan terenkapsulasi.
+      Hal ini akan mengatur timer-nya sendiri dan memperbaruiya setiap detik.
+
+      Mulanya hanya Class Components yang dapat menggunakan state & lifecycle method,
+      namun semenjak adanya Hook (fitur baru), Function Components pun punya cara
+      tersendiri untuk menggunakan state & lifecycle method (dibahas nanti).
+
+      State adalah data private sebuah component. D̶a̶t̶a̶ ̶i̶n̶i̶ ̶h̶a̶n̶y̶a̶ ̶t̶e̶r̶s̶e̶d̶i̶a̶ ̶u̶n̶t̶u̶k̶
+      c̶o̶m̶p̶o̶n̶e̶n̶t̶ ̶t̶e̶r̶s̶e̶b̶u̶t̶ ̶d̶a̶n̶ ̶t̶i̶d̶a̶k̶ ̶b̶i̶s̶a̶ ̶d̶i̶ ̶a̶k̶s̶e̶s̶ ̶d̶a̶r̶i̶ ̶c̶o̶m̶p̶o̶n̶e̶n̶t̶ ̶l̶a̶i̶n̶. Component dapat
+      merubah statenya sendiri (tujuan state memang untuk berubah-ubah nilainya).
+    */
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 1                                 */
+    /* ----------------------------------------------------------------------- */
+
+    class Clock extends React.Component {
+
+      // 𝐒𝐓𝐄𝐏 𝟑: Constructor dipanggil, state di inisialisasi
+      constructor(props) {
+        super(props)
+        this.state = {
+          date: new Date(),
+          name: `Saya nomor ${Math.floor(Math.random() * 100) + 1}` // 1-100
+        }
+      }
+
+      // 𝐒𝐓𝐄𝐏 𝟒: Method tick() disini berfungsi untuk memperbarui state
+      // date & name yang nanti akan dijalankan di componentDidMount()
+      tick() {
+
+        /*
+          Agar lebih mudah dibaca, baris di bawah idenya adalah: 
+          ➜ this.state.date = new Date()
+          ➜ this.state.name = `Saya ${Math.floor(Math.random() * 11)}`
+          
+          hanya saja di aturan React kita tidak bisa memperbarui state 
+          dengan statement tersebut, sebagai gantinya gunakan setState()
+        */
+
+        this.setState({
+          date: new Date(),
+          name: `Saya nomor ${Math.floor(Math.random() * 100) + 1}` // 1-100
+        })
+      }
+
+      // 𝐒𝐓𝐄𝐏 𝟔: Saat sudah terjadi render DOM pertama kalinya, React
+      // kemudian akan memanggil method lifecycle componentDidMount()
+      componentDidMount() {
+
+        /* 
+          timerID (nama "new state" bebas saja, bisa langsung dipanggil tanpa 
+          perlu inisialisasi di constructor) akan menyuruh browser untuk memanggil
+          method tick() setiap detik. Sebenarnya baris di bawah idenya adalah:
+          ➜ setInterval(() => this.tick(), 1000)
+          
+          hanya saja selain setInterval langsung dijalankan, kita simpan terlebih 
+          dahulu ke dalam this.timerID untuk nantinya dipakai di componentWillUnmount()
+        */
+
+        this.timerID = setInterval(() => this.tick(), 1000)
+      }
+
+      // 𝐒𝐓𝐄𝐏 𝟖: Jika komponen Clock dihapus dari DOM, React akan memanggil method
+      // lifecycle componentWillUnmount(), sehingga timer akan berhenti
+      componentWillUnmount() {
+        clearInterval(this.timerID)
+      }
+
+      // 𝐒𝐓𝐄𝐏 𝟓: React me-render DOM sesuai nilai state saat ini (state saat inisialisasi)
+      // 𝐒𝐓𝐄𝐏 𝟕: Setiap detik React akan re-render spesifik DOM sesuai nilai state terbaru
+      render() {
+        return (
+          <div>
+            <h1>Date: {this.state.date.toLocaleTimeString()}</h1>
+            <h2>{this.state.name}</h2>
+          </div>
+        )
+      }
+    }
+
+    // 𝐒𝐓𝐄𝐏 𝟏: Komponen App yang menampilkan 3 komponen Clock di dalamnya
+    function App() {
+      return (
+
+        /*
+          Perhatikan bahwa hasilnya nanti, ke 3 komponen Clock benar-benar terisolasi,
+          setiap Clock membuat timer-nya sendiri dan memperbaruinya secara independen
+        */
+
+        <div>
+          <Clock />
+          <Clock />
+          <Clock />
+        </div>
+      )
+    }
+
+    // 𝐒𝐓𝐄𝐏 𝟐: Komponen App diberikan ke ReactDOM.render()
+    ReactDOM.render(<App />, document.getElementById("root1"))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 2                                 */
+    /* ----------------------------------------------------------------------- */
+
+    class Counter extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          value: 0,
+        }
+
+        // Untuk penulisan Function Definitions (ES6+) di dalam sebuah Class, lihat nomor 4 di bawah,
+        // keyword this perlu di binding terlebih dahulu agar konteksnya sesuai/berfungsi dengan baik
+        this.incrementA = this.incrementA.bind(this)
+        this.incrementB = this.incrementB.bind(this)
+      }
+
+      /*
+        Note: Perhatikan bahwa penulisan Arrow Function di dalam sebuah Class tidak perlu menyertakan keyword
+        var/let/const. Berbeda dengan jika didefinisikan di global, tentunya keyword var/let/const disertakan.
+      */
+
+      // 1. Mungkin saja props & state diperbarui secara Asynchronous, maka penulisan di bawah ini kurang tepat:
+      handleIncrement1 = () => this.setState({ value: this.state.value + this.props.step })
+      handleDecrement1 = () => this.setState({ value: this.state.value - this.props.step })
+
+      // 2. Sebagai gantinya, pakai setState() yang menerima fungsi daripada sebuah object langsung:
+      handleIncrement2 = () => this.setState((state, props) => ({ value: state.value + props.step }))
+      handleDecrement2 = () => this.setState((state, props) => ({ value: state.value - props.step }))
+
+      /*
+        Note: Return object di Arrow Function tidak bisa langsung ditulis (state, props) => { ... },
+        karena tanda {} akan dianggap sebagai pembuka Function oleh JavaScript. Solusinya bungkus
+        terlebih dahulu object-nya menggunakan tanda (), menjadi (state, props) => ({ ... }).
+      */
+
+      // 3. Function yang menjadi argument pada setState juga bisa ditulis dengan Function biasa:
+      handleIncrement3 = () => this.setState(function (state, props) { return { value: state.value + props.step } })
+      handleDecrement3 = () => this.setState(function (state, props) { return { value: state.value - props.step } })
+
+      // 4. Ketiga contoh Function di atas bisa juga ditulis menggunakan Function Definitions (ES6+):
+      incrementA() { this.setState((state, props) => ({ value: state.value + props.step })) }
+      incrementB() { this.setState(function (state, props) { return { value: state.value + props.step } }) }
+
+      /*
+        Note: Jangan lupa! seperti catatan yang ditulis pada bagian constructor, bahwa jika menggunakan
+        Function Definitions (ES6+), terdapat sebuah syarat, yaitu keyword this-nya perlu di binding
+        terlebih dahulu di constructor, agar konteksnya sesuai/berfungsi dengan baik.
+      */
+
+      render() {
+        return (
+
+          /*
+            Terdapat perbedaan cara penulisan penanganan events antara HTML dengan React, simak contoh berikut:
+            HTML biasa          : <button onclick="handleEvent()">Click me</button>
+            React (JSX) cara 1  : <button onClick={handleEvent}>Click me</button>
+            React (JSX) cara 2  : <button onClick={() => this.handleEvent()}>Click me</button>
+          */
+
+          <div>
+            <h1>{this.state.value}</h1>
+            <button onClick={this.handleIncrement2}>+</button>
+            <button onClick={() => this.handleDecrement2()}>-</button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Counter step={5} />, document.getElementById("root2"))
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **6. Penanganan Events** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root1"></div>
+  <div id="root2"></div>
+
+  <script type="text/babel">
+
+    /* ----------------------------------------------------------------------- */
+    /*                       Bagian 1: Contoh State saja                       */
+    /* ----------------------------------------------------------------------- */
+
+    class Toggle1 extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          isToggleOn: true
+        }
+
+        // Ingat: Binding diperlukan agar konteks this 
+        // pada Function Definitions (ES6+) berfungsi
+        this.handleClick = this.handleClick.bind(this)
+      }
+
+      handleClick() {
+        // Nama parameter "state" bisa bebas (misalnya data, status, dll)
+        this.setState(state => ({ isToggleOn: !state.isToggleOn }))
+      }
+
+      render() {
+        return (
+          <div>
+            <h1>Status click : {this.state.isToggleOn ? "ON" : "OFF"}</h1>
+            <button onClick={this.handleClick}>Click me</button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Toggle1 step={1} />, document.getElementById('root1'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                     Bagian 2: Contoh State & Props                      */
+    /* ----------------------------------------------------------------------- */
+
+    class Toggle2 extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          isToggleOn: true,
+          totalClick: 0,
+        }
+
+        this.handleClick = this.handleClick.bind(this)
+      }
+
+      handleClick() {
+        this.setState((state, props) => ({
+          isToggleOn: !state.isToggleOn,
+          totalClick: state.totalClick + props.counter,
+        }))
+      }
+
+      render() {
+        return (
+          <div>
+            <h1>Status click : {this.state.isToggleOn ? "ON" : "OFF"}</h1>
+            <h3>Total click  : {this.state.totalClick}</h3>
+            <button onClick={this.handleClick}>Click me</button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Toggle2 counter={1} />, document.getElementById('root2'))
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **7. Render Bersyarat** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root1"></div>
+  <hr>
+  <div id="root2"></div>
+  <hr>
+  <div id="root3"></div>
+
+  <script type="text/babel">
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 1                                 */
+    /* ----------------------------------------------------------------------- */
+
+    // 1. Komponen Greeting
+    function UsersGreeting(props) { return <h1>Welcome back!</h1> }
+    function GuestGreeting(props) { return <h1>Please sign up.</h1> }
+
+    function Greeting(props) {
+      const isLoggedIn = props.masuk
+
+      /*
+        Jika kondisi hanya if saja, bisa ditulis 1 baris tanpa tanda {} seperti contoh
+        di bawah. Dan sebagai catatan "return" value tidak bisa digunakan di ternary
+        operator, oleh karena itu di bawah ini digunakan struktur logika if biasa.
+      */
+
+      if (isLoggedIn) return <UsersGreeting />
+      return <GuestGreeting />
+    }
+
+    // 2. Komponen Button
+    function LoginButton(props) { return <button onClick={props.diKlik}>Login</button> }
+    function LogotButton(props) { return <button onClick={props.diKlik}>Logot</button> }
+
+    // 3. Komponen LoginControl
+    class LoginControl extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = { isLoggedIn: true }
+      }
+
+      handleLoginClick = () => this.setState({ isLoggedIn: true })
+      handleLogotClick = () => this.setState({ isLoggedIn: false })
+
+      render() {
+        const isLoggedIn = this.state.isLoggedIn
+        let button
+
+        isLoggedIn
+          ? button = <LogotButton diKlik={this.handleLogotClick} />
+          : button = <LoginButton diKlik={this.handleLoginClick} />
+
+        /*
+          Struktur logika di atas menggunakan ternary operator. Namun selain itu,
+          bisa juga menggunakan struktur logika if-else biasa maupun operator
+          short-circuit-evaluation && atau || (lihat bagian 2 di bawah)
+        */
+
+        return (
+          <div>
+            <Greeting masuk={isLoggedIn} />
+            {button}
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<LoginControl />, document.getElementById('root1'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 2                                 */
+    /* ----------------------------------------------------------------------- */
+
+    function MailBox(props) {
+      const unreadMsg = props.msg
+
+      return (
+        <div>
+          {unreadMsg.length > 0 && <h2>You have {unreadMsg.length} unread Messages.</h2>}
+        </div>
+      )
+
+      /*
+        Cara baca operator short-circuit-evaluation && diatas, yaitu:
+        Jika (unreadMsg.length > 0) maka artinya "true", akibatnya perintah setelah 
+        tanda && akan dieksekusi. Namun sebaliknya, jika "false", tidak dieksekusi.
+      */
+    }
+
+    const messages = ['lorem', 'ipsum', 'dolor']
+
+    ReactDOM.render(<MailBox msg={messages} />, document.getElementById('root2'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 3                                 */
+    /* ----------------------------------------------------------------------- */
+
+    /*
+      Pada kasus yang jarang terjadi, Anda mungkin ingin komponen menyembunyikan 
+      dirinya sendiri meskipun komponen itu di-render oleh komponen lain. Untuk
+      melakukan ini, gunakan return null. Simak contoh dibawah.
+    */
+
+    function WarningBanner(props) {
+
+      /*
+        Ingat bahwa perintah di bawah ini saling setara:
+        1. if (props.warn)  ➜ if (props.warn === true)
+        2. if (!props.warn) ➜ if (props.warn !== true) ➜ if (props.warn === false)
+
+        Dengan demikian, perintah "if (!props.warn) return null" di bawah berarti
+        jika (props.warn === false) maka jangan render WarningBanner (return null), 
+        sebaliknya jika (props.warn === true) maka render <div>Warning!</div>
+      */
+
+      if (!props.warn) return null
+      return <div>Warning!</div>
+    }
+
+    class Page extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = { showWarning: false }
+      }
+
+      handleToggleClick = () => this.setState(prevState => ({ showWarning: !prevState.showWarning }))
+
+      render() {
+        return (
+          <div>
+            <WarningBanner warn={this.state.showWarning} />
+            <button onClick={this.handleToggleClick}>
+              {this.state.showWarning ? "Hide" : "Show"}
+            </button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Page />, document.getElementById('root3'))
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **8. Lists dan Keys** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root1"></div>
+  <hr>
+  <div id="root2"></div>
+  <hr>
+  <div id="root3"></div>
+
+  <script type="text/babel">
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 1                                 */
+    /* ----------------------------------------------------------------------- */
+
+    function NumberList(props) {
+      const numbers = props.nums
+      // Dalam element list harus ada atribut key yang berisi string unik. Kenapa? key
+      // membatu React mengidentifikasi item mana yang telah diubah, ditambah, dihapus.
+      const listItems = numbers.map(number => <li key={number.toString()}>{number}</li>)
+      return <ul>{listItems}</ul>
+    }
+
+    const numA = [1, 2, 3, 4, 5]
+
+    ReactDOM.render(<NumberList nums={numA} />, document.getElementById('root1'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 2                                 */
+    /* ----------------------------------------------------------------------- */
+
+    function ListItem(props) {
+      // Penempatan atribut key bukan disini ya. Terdapat sebuah aturan yang mudah 
+      // diingat, yaitu atribut key ditempatkan dimana method map() dipanggil.
+      return <li>{props.value}</li>
+    }
+
+    function NumberList2(props) {
+      const numbers = props.nums
+      // Method map() dipanggil disini, artinya atribut key disisipkan di <ListItem />
+      const listItems = numbers.map(number => <ListItem key={number.toString()} value={number} />)
+      return <ul>{listItems}</ul>
+    }
+
+    const numB = [6, 7, 8, 9, 10]
+
+    ReactDOM.render(<NumberList2 nums={numB} />, document.getElementById('root2'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 3                                 */
+    /* ----------------------------------------------------------------------- */
+
+    /*
+      Kita dapat menggunakan key yang sama ketika kita mem-produce 2/lebih Array
+      yang berbeda. Misalnya contoh di bawah ini, key={post.id} digunakan di
+      list pada sidebar & di div pada content. Dan hal tersebut valid.
+    */
+
+    function Blog(props) {
+
+      // Ingat dalam Arrow Function, jika isi Function hanya berupa return saja, 
+      // maka tanda {} serta keyword return tidak perlu ditulis. Contohnya:
+      const sidebar = (
+        <ul>
+          {props.posts.map(post => <li key={post.id}>{post.title}</li>)}
+        </ul>
+      )
+
+      // Namun jika tanda {} dan keyword return ingin tetap ditulis pun tak apa:
+      const content = props.posts.map(post => {
+        return (
+          <div key={post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+          </div>
+        )
+      })
+
+      return (
+        <div>
+          {sidebar}
+          {content}
+        </div>
+      )
+    }
+
+    const postsA = [
+      { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
+      { id: 2, title: 'Installation', content: 'You can install React from npm.' }
+    ]
+
+    ReactDOM.render(<Blog posts={postsA} />, document.getElementById('root3'))
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **9. Form di React** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root1"></div>
+  <hr>
+  <div id="root2"></div>
+  <hr>
+
+  <script type="text/babel">
+
+    /* ----------------------------------------------------------------------- */
+    /*                     Bagian 1: handleChange dipisah                      */
+    /* ----------------------------------------------------------------------- */
+
+    class NameForm1 extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          name: '',           // Nilai default untuk input text
+          age: null,          // Nilai default untuk input number
+          comment: '',        // Nilai default untuk textarea
+          category: 'food',   // Nilai default untuk select
+          gender: '',         // Nilai default untuk input radio
+          isMember: false,    // Nilai default untuk input checkbox
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
+      }
+
+      // 1. Arrow Function cocok digunakan untuk kebutuhan update state dengan setState()
+      handleChangeA = event => this.setState({ name: event.target.value })        // <- value
+      handleChangeB = event => this.setState({ age: event.target.value })         // <- value
+      handleChangeC = event => this.setState({ comment: event.target.value })     // <- value
+      handleChangeD = event => this.setState({ category: event.target.value })    // <- value
+      handleChangeE = event => this.setState({ gender: event.target.value })      // <- value
+      handleChangeF = event => this.setState({ isMember: event.target.checked })  // <- checked
+
+      // 2. Function Definitions (ES6+) cocok digunakan untuk baris kode yang lebih banyak
+      handleSubmit(event) {
+        alert(`
+          Nama yang diinput : ${this.state.name}
+          Umur yang diinput: ${this.state.age}
+          Komentar yang diinput : ${this.state.comment}
+          Kategori yang dipilih : ${this.state.category}
+          Gender yang dipilih: ${this.state.gender}
+          Termasuk member : ${this.state.isMember ? "ya" : "tidak"}
+        `)
+
+        // Mencegah terjadinya event bawaan dari sebuah DOM (dalam kasus ini pindah halaman)
+        event.preventDefault()
+      }
+
+      render() {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <table>
+              <tr>
+                <td>Name</td>
+                <td><input type="text" value={this.state.name} onChange={this.handleChangeA} /></td>
+              </tr>
+              <tr>
+                <td>Age</td>
+                <td><input type="number" value={this.state.age} onChange={this.handleChangeB} /></td>
+              </tr>
+              <tr>
+                <td>Comment</td>
+                <td><textarea value={this.state.comment} onChange={this.handleChangeC} /></td>
+              </tr>
+              <tr>
+                <td>Category</td>
+                <td>
+                  <select value={this.state.category} onChange={this.handleChangeD}>
+                    <option value="food">Food</option>
+                    <option value="drink">Drink</option>
+                    <option value="fruit">Fruit</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td>
+                  <input type="radio" value="Male" checked={this.state.gender === "Male"} onChange={this.handleChangeE} /> Male
+                  <input type="radio" value="Female" checked={this.state.gender === "Female"} onChange={this.handleChangeE} /> Female
+                  <input type="radio" value="Alien" checked={this.state.gender === "Alien"} onChange={this.handleChangeE} /> Alien
+                </td>
+              </tr>
+              <tr>
+                <td>Member</td>
+                <td><input type="checkbox" checked={this.state.isMember} onChange={this.handleChangeF} /></td>
+              </tr>
+            </table>
+
+            <br />
+            <input type="submit" value="Submit" />
+          </form>
+        )
+      }
+    }
+
+    ReactDOM.render(<NameForm1 />, document.getElementById('root1'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                    Bagian 2: handleChange disatukan                     */
+    /* ----------------------------------------------------------------------- */
+
+    class NameForm2 extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          name: '',
+          age: null,
+          comment: '',
+          category: 'food',
+          gender: '',
+          isMember: false,
+        }
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+      }
+
+      // handleChange disatukan, untuk membedakan setiap field digunakan atribut name
+      handleChange(event) {
+        const name = event.target.name
+        switch (name) {
+          case "_name": this.setState({ name: event.target.value }); break;
+          case "_age": this.setState({ age: event.target.value }); break;
+          case "_comment": this.setState({ comment: event.target.value }); break;
+          case "_category": this.setState({ category: event.target.value }); break;
+          case "_gender": this.setState({ gender: event.target.value }); break;
+          case "_isMember": this.setState({ isMember: event.target.checked }); break;
+          default: null;
+        }
+      }
+
+      handleSubmit(event) {
+        alert(`
+          Nama yang diinput : ${this.state.name}
+          Umur yang diinput: ${this.state.age}
+          Komentar yang diinput : ${this.state.comment}
+          Kategori yang dipilih : ${this.state.category}
+          Gender yang dipilih: ${this.state.gender}
+          Termasuk member : ${this.state.isMember ? "ya" : "tidak"}
+        `)
+
+        event.preventDefault()
+      }
+
+      render() {
+        return (
+          // Ingat: Atribut "name" diperlukan untuk digunakan di handleChange
+          <form onSubmit={this.handleSubmit}>
+            <table>
+              <tr>
+                <td>Name</td>
+                <td><input name="_name" type="text" value={this.state.name} onChange={this.handleChange} /></td>
+              </tr>
+              <tr>
+                <td>Age</td>
+                <td><input name="_age" type="number" value={this.state.age} onChange={this.handleChange} /></td>
+              </tr>
+              <tr>
+                <td>Comment</td>
+                <td><textarea name="_comment" value={this.state.comment} onChange={this.handleChange} /></td>
+              </tr>
+              <tr>
+                <td>Category</td>
+                <td>
+                  <select name="_category" value={this.state.category} onChange={this.handleChange}>
+                    <option value="food">Food</option>
+                    <option value="drink">Drink</option>
+                    <option value="fruit">Fruit</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td>
+                  <input name="_gender" type="radio" value="Male" checked={this.state.gender === "Male"} onChange={this.handleChange} /> Male
+                  <input name="_gender" type="radio" value="Female" checked={this.state.gender === "Female"} onChange={this.handleChange} /> Female
+                  <input name="_gender" type="radio" value="Alien" checked={this.state.gender === "Alien"} onChange={this.handleChange} /> Alien
+                </td>
+              </tr>
+              <tr>
+                <td>Member</td>
+                <td><input name="_isMember" type="checkbox" checked={this.state.isMember} onChange={this.handleChange} /></td>
+              </tr>
+            </table>
+
+            <br />
+            <input type="submit" value="Submit" />
+          </form>
+        )
+      }
+    }
+
+    ReactDOM.render(<NameForm2 />, document.getElementById('root2'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 3                                 */
+    /* ----------------------------------------------------------------------- */
+
+    // Gunakan library "Formik" untuk kebutuhan Form yang lebih lengkap dan mudah
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **10. Memindahkan State ke Atas** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root1"></div>
+  <br><br><br>
+  <div id="root2"></div>
+  <br><br><br>
+  <div id="root3"></div>
+
+  <script type="text/babel">
+
+    /* ----------------------------------------------------------------------- */
+    /*                       Bagian 1: Contoh Sederhana                        */
+    /* ----------------------------------------------------------------------- */
+
+    function Mendidih1(props) {
+      if (props.attCelsius >= 100) return <p>Air akan mendidih.</p>
+      return <p>Air tidak akan mendidih.</p>
+    }
+
+    class Kalkulator1 extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = { temperature: "" }            // <- Nilai default temperature
+      }
+
+      handleChange = event => this.setState({ temperature: event.target.value })
+
+      render() {
+        const temperature = this.state.temperature  // <- Untuk menyingkat saja
+
+        return (
+          <fieldset>
+            <legend>Masukkan temperature dalam Celsius:</legend>
+            <input value={temperature} onChange={this.handleChange} />
+            <Mendidih1 attCelsius={parseFloat(temperature)} />
+          </fieldset>
+        )
+      }
+    }
+
+    ReactDOM.render(<Kalkulator1 />, document.getElementById('root1'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                       Bagian 2: Contoh 2 Inputan                        */
+    /* ----------------------------------------------------------------------- */
+
+    function Mendidih2(props) {
+      if (props.attScl == "celsius" && props.attDeg >= 100) return <p>Air akan mendidih.</p>
+      if (props.attScl == "fahrenheit" && props.attDeg >= 212) return <p>Air akan mendidih.</p>
+      return <p>Air tidak akan mendidih.</p>
+    }
+
+    class InputTemperatur2 extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = { temperature: 100 }           // <- Nilai default temperature
+      }
+
+      handleChange = event => this.setState({ temperature: event.target.value })
+
+      render() {
+        const temperature = this.state.temperature  // <- Untuk menyingkat saja
+        const scale = this.props.attScale           // <- Untuk menyingkat saja
+
+        return (
+          <fieldset>
+            <legend>Masukkan temperature dalam {scale}:</legend>
+            <input value={temperature} onChange={this.handleChange} />
+            <Mendidih2 attScl={scale} attDeg={parseFloat(temperature)} />
+          </fieldset>
+        )
+      }
+    }
+
+    class Kalkulator2 extends React.Component {
+      render() {
+        return (
+          <div>
+            <InputTemperatur2 attScale="Celsius" />
+            <InputTemperatur2 attScale="Fahrenheit" />
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Kalkulator2 />, document.getElementById('root2'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                     Bagian 3: Sinkronasi 2 Inputan                      */
+    /* ----------------------------------------------------------------------- */
+
+    /*
+      Tujuan: Saat kita memperbarui inputan celsius maka inputan fahrenheit juga
+      ikut diperbarui (konversi secara otomatis), dan sebaliknya.
+
+      Dalam react, state bersama dicapai dengan memindahkannya ke komponen induk
+      bersama terdekat dari komponen yang membutuhkannya. Hal inilah yang disebut
+      dengan "memindahkan state ke atas". 
+      
+      Dalam contoh di bawah, state temperature yang mulanya didefinisikan di komponen
+      InputTemperatur3 akan "dipindahkan ke atas" yaitu ke komponen Kalkulator3.
+    */
+
+    // -----------------
+    // A. Fungsionalitas
+    // -----------------
+
+    const keCelsius = fahrenheit => (fahrenheit - 32) * 5 / 9
+    const keFahrenheit = celsius => (celsius * 9 / 5) + 32
+
+    function konversi(temperature, convert) {
+      const input = parseFloat(temperature)             // <- Untuk menyingkat saja
+      if (Number.isNaN(input)) return ''                // <- Selain number gak valid
+      const output = convert(input)                     // <- Proses konversi
+      const rounded = Math.round(output * 1000) / 1000  // <- Proses pembulatan
+      return rounded.toString()                         // <- Return hasil
+    }
+
+    // ------------------------------
+    // B1. Komponen Cucu (Grandchild)
+    // ------------------------------
+
+    function Mendidih3(props) {
+      if (props.attDeg >= 100) return <p>Air akan mendidih.</p>
+      return <p>Air tidak akan mendidih.</p>
+    }
+
+    // -------------------------
+    // B2. Komponen Anak (Child)
+    // -------------------------
+
+    class InputTemperatur3 extends React.Component {
+      constructor(props) {
+        super(props)
+      }
+
+      // STEP 2: Alih-alih memanggil this.setState() saat kita ingin melakukan perubahan, kita sekarang
+      // memanggil this.props... yang akan disediakan oleh komponen induk, yaitu Kalkulator3.
+      handleChange = event => this.props.onTemperatureChange(event.target.value)
+
+      /*
+        Untuk celcius akan menjadi: handleChange = event => this.props.handleCelsiusChange(event.target.value)
+        Untuk fahrenheit akan menjadi: handleChange = event => this.props.handleFahrenheitChange(event.target.value)
+
+        / Tambahan /
+
+        Dibelakang layar yang terjadi ialah:
+        handleChange = event => (handleCelsiusChange = temperature => this.setState({ scale: "c", temperature }))(event.target.value)
+        handleChange = event => (handleFahrenheitChange = temperature => this.setState({ scale: "f", temperature }))(event.target.value)
+
+        Ingat kembali konsep IIFE pada JavaScript, dimana Function didefinisikan + langsung dijalankan. Polanya: (___)(),
+        dimana ___ diisi dengan Function yang hendak dibuat dan tanda () kedua sebagai perintah eksekusi Function. Jika
+        terdapat parameter & argument maka polanya (___)(argument), dimana argument diisi oleh nilai yang dikirim. 
+      */
+
+      render() {
+        // STEP 1: Sekarang temperature bukan lagi sebagai state lokal, melainkan berasal dari induknya
+        // yaitu Kalkulator3, sebagai sebuah props. Dengan demikian, komponen InputTemperatur3
+        // tidak memiliki kendali atasnya (ingat bahwa props bersifat read-only).
+        const temperature = this.props.attTemperature
+        const scale = this.props.attScale
+
+        return (
+          <fieldset>
+            <legend>Masukkan temperature dalam {scale}:</legend>
+            <input value={temperature} onChange={this.handleChange} />
+          </fieldset>
+        )
+      }
+    }
+
+    // ------------------------------
+    // B3. Komponen Orangtua (Parent)
+    // ------------------------------
+
+    class Kalkulator3 extends React.Component {
+      constructor(props) {
+        super(props)
+        // STEP 3: Sekarang temperature didefinisikan disini (Kalkulator3) sebagai state komponen induk,
+        // yang kemudian akan diolah (dikonversi) untuk dikirimkan nantinya ke komponen InputTemperatur3.
+        this.state = { scale: "c", temperature: "" }    // <- Nilai default
+      }
+
+      // STEP 4: Function ini nantinya akan dikirim dan dijalankan di komponen InputTemperatur3
+      handleCelsiusChange = temperature => this.setState({ scale: "c", temperature })
+      handleFahrenheitChange = temperature => this.setState({ scale: "f", temperature })
+
+      render() {
+        // STEP 5: State scale & temperature saat ini
+        const scale = this.state.scale
+        const temperature = this.state.temperature
+
+        // Jika scale-nya fahrenheit, maka konversi temperature ke celcius, lalu masukkan ke dalam const celcius
+        // (Ini berarti kita mendapatkan temperature celcius berdasarkan temperature fahrenheit yang ada saat ini).
+        // Namun jika bukan (artinya scale-nya celcius), maka temperature saat ini langsung dimasukkan ke const celcius.
+        const celsius = scale === "f" ? konversi(temperature, keCelsius) : temperature
+
+        // Jika scale-nya celcius, maka konversi temperature ke fahrenheit, lalu masukkan ke dalam const fahrenheit.
+        // (Ini berarti kita mendapatkan temperature fahrenheit berdasarkan temperature celcius yang ada saat ini).
+        // Namun jika bukan (artinya scale-nya fahrenheit), maka temperature saat ini langsung dimasukkan ke const fahrenheit.
+        const fahrenheit = scale === "c" ? konversi(temperature, keFahrenheit) : temperature
+
+        // Tujuan dari baris kode di atas tidak lain untuk kebutuhan sinkronasi 2 inputan. Sederhananya: Saat ini kita input
+        // temperature dalam scale celcius, maka dapatkan temperature dalam scale fahrenheit-nya, dan begitu sebaliknya.
+
+        return (
+          <div>
+            <InputTemperatur3 attScale="Celcius" attTemperature={celsius} onTemperatureChange={this.handleCelsiusChange} />
+            <InputTemperatur3 attScale="Fahrenheit" attTemperature={fahrenheit} onTemperatureChange={this.handleFahrenheitChange} />
+            <Mendidih3 attDeg={parseFloat(celsius)} />
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Kalkulator3 />, document.getElementById('root3'))
+
+  </script>
+</body>
+
+</html>
+```
+
 </details>
 
 ## **11. Komposisi vs Pewarisan** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
 </details>
 
 ## **12. Cara Berpikir dengan React** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
 </details>
