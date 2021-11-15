@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-# The Only Vue.js
+# 𝐓𝐡𝐞 𝐎𝐧𝐥𝐲 𝐕𝐮𝐞.𝐣𝐬
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>.
 
