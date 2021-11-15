@@ -4,6 +4,43 @@
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>.
 
+## **0. Notes** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+### A. Setup Project
+
+1. Install <a href="https://nodejs.org/en">Node.js</a>
+2. Install React App
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
+3. Install Prettier ESLint (VSCode Extension)
+
+- Install Depedencies: ```npm i prettier prettier-eslint -D``` (untuk eslint sudah include saat menginstall create-react-app)
+- Install Extension <a href="https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint">Prettier ESLint</a> & Restart VSCode
+- Buka File > Preferences > Settings > User > Ketik "Editor: Default Formatter" lalu pilih Prettier ESLint
+- Buka File > Preferences > Settings > User > Ketik "Editor: Format on" lalu ceklis "Editor: Format on Save" & "Editor: Format on Type"
+
+### B. Catatan Penting
+
+1. Jika component Anda tidak membutuhkan state (data yang nilainya berubah-ubah) & life cycle method, maka gunakan Functional Component. Sebaliknya, jika component Anda membutuhkan state & life cycle method, gunakan Classes Component. [Sebagai catatan: di React Hook nanti, Functional Component bisa menggunakan state & life cycle method]
+2. Component itu sesimple class/fungsi yang menerima props (data dari luar) dan me-return HTML (JSX).
+3. "npm audit fix" akan memperbarui/menimpa package ke versi yang aman, yang tidak memiliki masalah keamanan (security). untuk menghilangkan "vulnerabilities".
+4. Catatan di package.json
+```
+"react": "16.8.6" berarti versi react yang digunakan yaitu tepat 16.8.6.
+"react": "^16.8.6", tanda ^ berarti versi react yang digunakan minimal 16.8.6.
+
+Artinya jika ada versi react terbaru bisa diupdate secara otomatis menggunakan perintah "npm update". Untuk proses update versi package, 
+lebih baik gunakan "npm update" dibandingkan "npm install".
+```
+
+</details>
+
 ## **1. Hello World** <a href="#top">⟲</a>
 
 <details>
