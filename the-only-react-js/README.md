@@ -35,8 +35,8 @@ npm start
 "react": "16.8.6" berarti versi react yang digunakan yaitu tepat 16.8.6.
 "react": "^16.8.6", tanda ^ berarti versi react yang digunakan minimal 16.8.6.
 
-Artinya jika ada versi react terbaru bisa diupdate secara otomatis menggunakan perintah "npm update". Untuk proses update versi package, 
-lebih baik gunakan "npm update" dibandingkan "npm install".
+Artinya jika ada versi react terbaru bisa diupdate secara otomatis menggunakan perintah "npm update". Untuk proses update versi
+package, lebih baik gunakan "npm update" dibandingkan "npm install".
 ```
 
 </details>
