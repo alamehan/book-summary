@@ -24,5 +24,5 @@ The Only Series merupakan sebuah markdown/catatan pribadi @alamehan yang berisik
   width: 1096px !important;
 }
 ```
-3. Buka File > Preferences > Settings > User > Extensions > Markdown > Markdown: Styles. (Atau pakai fitur search)
+3. Buka File > Preferences > Settings > User > Extensions > Markdown > Markdown: Styles. (Atau pakai search)
 4. Isi Add item dengan ```markdown-styles.css```, lalu klik OK. Tujuannya agar lebar markdown sama dengan di GitHub.
