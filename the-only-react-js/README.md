@@ -416,11 +416,22 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
           method tick() setiap detik. Sebenarnya baris di bawah idenya adalah:
           ➜ setInterval(() => this.tick(), 1000)
           
-          hanya saja selain setInterval langsung dijalankan, kita simpan terlebih 
+          Hanya saja selain setInterval langsung dijalankan, kita simpan terlebih 
           dahulu ke dalam this.timerID untuk nantinya dipakai di componentWillUnmount()
         */
 
         this.timerID = setInterval(() => this.tick(), 1000)
+
+        /*
+          Selain itu, jika Anda bertanya mengapa tidak langsung ditulis:
+          ➜ setInterval(this.tick, 1000) saja?
+          
+          Mengapa malah dibuatkan bentukArrow Function-nya? hal tersebut dilakukan
+          agar konteks this-nya sesuai/berfungsi dengan baik. Sebenarnya bisa saja
+          langsung ditulis "setInterval(this.tick, 1000)", hanya saja konteks this
+          untuk tick() perlu di binding terlebih dahulu di constructor (selebihnya,
+          lihat contoh pada Bagian 2 di bawah)
+        */
       }
 
       // 𝐒𝐓𝐄𝐏 𝟖: Jika komponen Clock dihapus dari DOM, React akan memanggil method
