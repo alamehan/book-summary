@@ -1821,6 +1821,8 @@ export const BookComponent = {
 <details>
 <summary>Klik untuk membuka!</summary><br>
 
+**⚠️ BELUM DIRANGKUM ⚠️**
+
 ```HTML
 <html>
   <head>
@@ -1847,6 +1849,8 @@ export const BookComponent = {
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
+
+**⚠️ BELUM DIRANGKUM ⚠️**
 
 ```HTML
 <html>
