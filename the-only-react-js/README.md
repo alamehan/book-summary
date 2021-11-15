@@ -528,7 +528,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
           /*
             Terdapat perbedaan cara penulisan penanganan events antara HTML dengan React, simak contoh berikut:
             HTML biasa          : <button onclick="handleEvent()">Click me</button>
-            React (JSX) cara 1  : <button onClick={handleEvent}>Click me</button>
+            React (JSX) cara 1  : <button onClick={this.handleEvent}>Click me</button>
             React (JSX) cara 2  : <button onClick={() => this.handleEvent()}>Click me</button>
           */
 
