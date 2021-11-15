@@ -354,6 +354,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 <body>
   <div id="root1"></div>
   <div id="root2"></div>
+  <div id="root3"></div>
 
   <script type="text/babel">
 
@@ -373,7 +374,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     */
 
     /* ----------------------------------------------------------------------- */
-    /*                                Bagian 1                                 */
+    /*                           Bagian 1: Clock (A)                           */
     /* ----------------------------------------------------------------------- */
 
     class Clock extends React.Component {
@@ -430,7 +431,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
           agar konteks this-nya sesuai/berfungsi dengan baik. Sebenarnya bisa saja
           langsung ditulis "setInterval(this.tick, 1000)", hanya saja konteks this
           untuk tick() perlu di binding terlebih dahulu di constructor (selebihnya,
-          lihat contoh pada Bagian 2 di bawah)
+          lihat contoh pada Bagian 2 & Bagian 3 di bawah)
         */
       }
 
@@ -473,7 +474,59 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     ReactDOM.render(<App />, document.getElementById("root1"))
 
     /* ----------------------------------------------------------------------- */
-    /*                                Bagian 2                                 */
+    /*                           Bagian 2: Clock (B)                           */
+    /* ----------------------------------------------------------------------- */
+
+    class Clock extends React.Component {
+
+      constructor(props) {
+        super(props)
+        this.state = {
+          date: new Date()
+        }
+
+        // 1. Untuk penulisan Function Definitions (ES6+) di dalam sebuah Class, lihat function tick() di bawah,
+        // keyword this perlu di binding terlebih dahulu agar konteksnya sesuai/berfungsi dengan baik
+        this.tick = this.tick.bind(this)
+      }
+
+      tick() {
+        this.setState({
+          date: new Date()
+        })
+      }
+
+      componentDidMount() {
+        // 2. Dengan demikian penulisan cukup "this.tick" saja, tidak perlu menggunakan format Arrow Function
+        this.timerID = setInterval(this.tick, 1000)
+      }
+
+      componentWillUnmount() {
+        clearInterval(this.timerID)
+      }
+
+      // 4. Render bersyarat berdasarkan props yang diterima (hanya sebagai contoh saja)
+      render() {
+        if (this.props.con === "local") return <h1>{this.state.date.toLocaleTimeString()}</h1>
+        if (this.props.con === "utc") return <h1>{this.state.date.toTimeString()}</h1>
+      }
+    }
+
+    function App() {
+
+      // 3. Kita coba kirimkan props untuk nantinya digunakan sebagai render bersyarat
+      return (
+        <div>
+          <Clock format="local" />
+          <Clock format="utc" />
+        </div>
+      )
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root2"))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 3                                 */
     /* ----------------------------------------------------------------------- */
 
     class Counter extends React.Component {
@@ -528,7 +581,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
           /*
             Terdapat perbedaan cara penulisan penanganan events antara HTML dengan React, simak contoh berikut:
             HTML biasa          : <button onclick="handleEvent()">Click me</button>
-            React (JSX) cara 1  : <button onClick={this.handleEvent}>Click me</button>
+            React (JSX) cara 1  : <button onClick={handleEvent}>Click me</button>
             React (JSX) cara 2  : <button onClick={() => this.handleEvent()}>Click me</button>
           */
 
@@ -541,7 +594,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       }
     }
 
-    ReactDOM.render(<Counter step={5} />, document.getElementById("root2"))
+    ReactDOM.render(<Counter step={5} />, document.getElementById("root3"))
 
   </script>
 </body>
