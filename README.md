@@ -2,8 +2,8 @@
 The Only Series merupakan sebuah markdown/catatan pribadi @alamehan yang berisikan rangkuman maupun cheat sheet dari beragam topik programming. Hingga saat ini terdapat 3 markdown yang bisa diakses dan digunakan sebagai referensi maupun sumber belajar, yaitu:
 
 1. <a href="/the-only-javascript">The Only JavaScript</a>
-2. <a href="/the-only-react-js">The Only React JS</a>
-3. <a href="/the-only-vue-js">The Only Vue JS</a>
+2. <a href="/the-only-react-js">The Only React.js</a>
+3. <a href="/the-only-vue-js">The Only Vue.js</a>
 
 ## 🖨️ Tips print Markdown di GitHub:
 1. Gunakan Browser <a href="https://www.google.com/chrome/">Google Chrome</a> agar Markdown terbaca dengan baik dan optimal.
