@@ -1309,15 +1309,13 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         super(props)
       }
 
-      // STEP 2: Alih-alih memanggil this.setState() saat kita ingin melakukan perubahan, kita sekarang
+      // 𝐒𝐓𝐄𝐏 𝟐: Alih-alih memanggil this.setState() saat kita ingin melakukan perubahan, kita sekarang
       // memanggil this.props... yang akan disediakan oleh komponen induk, yaitu Kalkulator3.
       handleChange = event => this.props.onTemperatureChange(event.target.value)
 
       /*
         Untuk celcius akan menjadi: handleChange = event => this.props.handleCelsiusChange(event.target.value)
         Untuk fahrenheit akan menjadi: handleChange = event => this.props.handleFahrenheitChange(event.target.value)
-
-        / Tambahan /
 
         Dibelakang layar yang terjadi ialah:
         handleChange = event => (handleCelsiusChange = temperature => this.setState({ scale: "c", temperature }))(event.target.value)
@@ -1329,7 +1327,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       */
 
       render() {
-        // STEP 1: Sekarang temperature bukan lagi sebagai state lokal, melainkan berasal dari induknya
+        // 𝐒𝐓𝐄𝐏 𝟏: Sekarang temperature bukan lagi sebagai state lokal, melainkan berasal dari induknya
         // yaitu Kalkulator3, sebagai sebuah props. Dengan demikian, komponen InputTemperatur3
         // tidak memiliki kendali atasnya (ingat bahwa props bersifat read-only).
         const temperature = this.props.attTemperature
@@ -1351,17 +1349,17 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     class Kalkulator3 extends React.Component {
       constructor(props) {
         super(props)
-        // STEP 3: Sekarang temperature didefinisikan disini (Kalkulator3) sebagai state komponen induk,
+        // 𝐒𝐓𝐄𝐏 𝟑: Sekarang temperature didefinisikan disini (Kalkulator3) sebagai state komponen induk,
         // yang kemudian akan diolah (dikonversi) untuk dikirimkan nantinya ke komponen InputTemperatur3.
         this.state = { scale: "c", temperature: "" }    // <- Nilai default
       }
 
-      // STEP 4: Function ini nantinya akan dikirim dan dijalankan di komponen InputTemperatur3
+      // 𝐒𝐓𝐄𝐏 𝟒: Function ini nantinya akan dikirim dan dijalankan di komponen InputTemperatur3
       handleCelsiusChange = temperature => this.setState({ scale: "c", temperature })
       handleFahrenheitChange = temperature => this.setState({ scale: "f", temperature })
 
       render() {
-        // STEP 5: State scale & temperature saat ini
+        // 𝐒𝐓𝐄𝐏 𝟓: State scale & temperature saat ini
         const scale = this.state.scale
         const temperature = this.state.temperature
 
