@@ -673,11 +673,49 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
   <div id="root2"></div>
   <hr>
   <div id="root3"></div>
+  <hr>
+  <div id="root4"></div>
 
   <script type="text/babel">
 
     /* ----------------------------------------------------------------------- */
-    /*                                Bagian 1                                 */
+    /*                    Bagian 1: LoginControl Sederhana                     */
+    /* ----------------------------------------------------------------------- */
+
+    class LoginControl1 extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = { isLoggedIn: true }
+      }
+
+      handleLogin = () => this.setState({ isLoggedIn: true })
+      handleLogot = () => this.setState({ isLoggedIn: false })
+
+      render() {
+        const status = this.state.isLoggedIn
+        let button, greeting
+
+        if (status) {
+          button = <button onClick={this.handleLogot}>Logout</button>
+          greeting = <h1>Welcome back!</h1>
+        } else {
+          button = <button onClick={this.handleLogin}>Login</button>
+          greeting = <h1>Please sign up.</h1>
+        }
+
+        return (
+          <div>
+            {greeting}
+            {button}
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<LoginControl1 />, document.getElementById("root1"))
+
+    /* ----------------------------------------------------------------------- */
+    /*                         Bagian 2: LoginControl                          */
     /* ----------------------------------------------------------------------- */
 
     // 1. Komponen Greeting
@@ -699,10 +737,10 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 
     // 2. Komponen Button
     function LoginButton(props) { return <button onClick={props.diKlik}>Login</button> }
-    function LogotButton(props) { return <button onClick={props.diKlik}>Logot</button> }
+    function LogotButton(props) { return <button onClick={props.diKlik}>Logout</button> }
 
     // 3. Komponen LoginControl
-    class LoginControl extends React.Component {
+    class LoginControl2 extends React.Component {
       constructor(props) {
         super(props)
         this.state = { isLoggedIn: true }
@@ -722,7 +760,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         /*
           Struktur logika di atas menggunakan ternary operator. Namun selain itu,
           bisa juga menggunakan struktur logika if-else biasa maupun operator
-          short-circuit-evaluation && atau || (lihat bagian 2 di bawah)
+          short-circuit-evaluation && atau || (lihat bagian 3 di bawah)
         */
 
         return (
@@ -734,10 +772,10 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       }
     }
 
-    ReactDOM.render(<LoginControl />, document.getElementById('root1'))
+    ReactDOM.render(<LoginControl2 />, document.getElementById('root2'))
 
     /* ----------------------------------------------------------------------- */
-    /*                                Bagian 2                                 */
+    /*                                Bagian 3                                 */
     /* ----------------------------------------------------------------------- */
 
     function MailBox(props) {
@@ -758,10 +796,10 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 
     const messages = ['lorem', 'ipsum', 'dolor']
 
-    ReactDOM.render(<MailBox msg={messages} />, document.getElementById('root2'))
+    ReactDOM.render(<MailBox msg={messages} />, document.getElementById('root3'))
 
     /* ----------------------------------------------------------------------- */
-    /*                                Bagian 3                                 */
+    /*                                Bagian 4                                 */
     /* ----------------------------------------------------------------------- */
 
     /*
@@ -806,7 +844,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       }
     }
 
-    ReactDOM.render(<Page />, document.getElementById('root3'))
+    ReactDOM.render(<Page />, document.getElementById('root4'))
 
   </script>
 </body>
