@@ -7601,11 +7601,3 @@ Keterangan:
 6. D* JavaScript: Understanding the Weird Parts by Anthony Alicea baru selesai sampai di **Section 3: Types and Operatos**
 
 </details>
-
-<hr>
-
-Tips print Markdown di GitHub:
-1. Gunakan Browser <a href="https://www.google.com/chrome/">Google Chrome</a> agar Markdown terbaca dengan baik dan optimal.
-2. Gunakan Extension <a href="https://chrome.google.com/webstore/detail/click-to-remove-element/jcgpghgjhhahcefnfpbncdmhhddedhnk">Click to Remove Element</a> untuk hapus Element HTML yang tidak diperlukan.
-3. Gunakan Extension <a href="https://chrome.google.com/webstore/detail/github-markdown-printer/fehpdlpmcegfpbkgcnaleindodeegapk">GitHub Markdown Printer</a> untuk print Markdown di GitHub sebagai PDF.
-4. Setting print options ke ```Paper size: A4```, ```Margins: Minimum``` & ```Scale: Custom = 75```, tujuannya agar source code tidak **Word Wrap**.
