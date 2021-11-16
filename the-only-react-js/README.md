@@ -1237,8 +1237,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* ----------------------------------------------------------------------- */
 
     function Mendidih2(props) {
-      if (props.attScl == "celsius" && props.attDeg >= 100) return <p>Air akan mendidih.</p>
-      if (props.attScl == "fahrenheit" && props.attDeg >= 212) return <p>Air akan mendidih.</p>
+      if (props.attScl == "Celsius" && props.attDeg >= 100) return <p>Air akan mendidih.</p>
+      if (props.attScl == "Fahrenheit" && props.attDeg >= 212) return <p>Air akan mendidih.</p>
       return <p>Air tidak akan mendidih.</p>
     }
 
