@@ -1123,31 +1123,32 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       render() {
         return (
           // Ingat: Atribut "name" diperlukan untuk digunakan di handleChange
+          // Nama field pada contoh dibawah mengambil Object Key, tidak lagi ditulis manual
           <form onSubmit={this.handleSubmit}>
-            <div>1. Name</div>
+            <div>1. {Object.keys(this.state)[0].toLocaleUpperCase()}</div>
             <input name="_name" type="text" value={this.state.name} onChange={this.handleChange} />
 
-            <div>2. Age</div>
+            <div>2. {Object.keys(this.state)[1].toLocaleUpperCase()}</div>
             <input name="_age" type="number" value={this.state.age} onChange={this.handleChange} />
 
-            <div>3. Comment</div>
+            <div>3. {Object.keys(this.state)[2].toLocaleUpperCase()}</div>
             <textarea name="_comment" value={this.state.comment} onChange={this.handleChange} />
 
-            <div>4. Category</div>
+            <div>4. {Object.keys(this.state)[3].toLocaleUpperCase()}</div>
             <select name="_category" value={this.state.category} onChange={this.handleChange}>
               <option value="food">Food</option>
               <option value="drink">Drink</option>
               <option value="fruit">Fruit</option>
             </select>
 
-            <div>5. Gender</div>
+            <div>5. {Object.keys(this.state)[4].toLocaleUpperCase()}</div>
             <div>
               <input name="_gender" type="radio" value="Male" checked={this.state.gender === "Male"} onChange={this.handleChange} /> Male
               <input name="_gender" type="radio" value="Female" checked={this.state.gender === "Female"} onChange={this.handleChange} /> Female
               <input name="_gender" type="radio" value="Alien" checked={this.state.gender === "Alien"} onChange={this.handleChange} /> Alien
             </div>
 
-            <div>6. Member</div>
+            <div>6. {Object.keys(this.state)[5].toLocaleUpperCase()}</div>
             <input name="_isMember" type="checkbox" checked={this.state.isMember} onChange={this.handleChange} />
 
             <div></div>
