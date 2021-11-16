@@ -1004,7 +1004,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         super(props)
         this.state = {
           name: '',           // Nilai default untuk input text
-          age: null,          // Nilai default untuk input number
+          age: 0,             // Nilai default untuk input number
           comment: '',        // Nilai default untuk textarea
           category: 'food',   // Nilai default untuk select
           gender: '',         // Nilai default untuk input radio
@@ -1039,44 +1039,33 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       render() {
         return (
           <form onSubmit={this.handleSubmit}>
-            <table>
-              <tr>
-                <td>Name</td>
-                <td><input type="text" value={this.state.name} onChange={this.handleChangeA} /></td>
-              </tr>
-              <tr>
-                <td>Age</td>
-                <td><input type="number" value={this.state.age} onChange={this.handleChangeB} /></td>
-              </tr>
-              <tr>
-                <td>Comment</td>
-                <td><textarea value={this.state.comment} onChange={this.handleChangeC} /></td>
-              </tr>
-              <tr>
-                <td>Category</td>
-                <td>
-                  <select value={this.state.category} onChange={this.handleChangeD}>
-                    <option value="food">Food</option>
-                    <option value="drink">Drink</option>
-                    <option value="fruit">Fruit</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Gender</td>
-                <td>
-                  <input type="radio" value="Male" checked={this.state.gender === "Male"} onChange={this.handleChangeE} /> Male
-                  <input type="radio" value="Female" checked={this.state.gender === "Female"} onChange={this.handleChangeE} /> Female
-                  <input type="radio" value="Alien" checked={this.state.gender === "Alien"} onChange={this.handleChangeE} /> Alien
-                </td>
-              </tr>
-              <tr>
-                <td>Member</td>
-                <td><input type="checkbox" checked={this.state.isMember} onChange={this.handleChangeF} /></td>
-              </tr>
-            </table>
+            <div>1. Name</div>
+            <input type="text" value={this.state.name} onChange={this.handleChangeA} />
 
-            <br />
+            <div>2. Age</div>
+            <input type="number" value={this.state.age} onChange={this.handleChangeB} />
+
+            <div>3. Comment</div>
+            <textarea value={this.state.comment} onChange={this.handleChangeC} />
+
+            <div>4. Category</div>
+            <select value={this.state.category} onChange={this.handleChangeD}>
+              <option value="food">Food</option>
+              <option value="drink">Drink</option>
+              <option value="fruit">Fruit</option>
+            </select>
+
+            <div>5. Gender</div>
+            <div>
+              <input type="radio" value="Male" checked={this.state.gender === "Male"} onChange={this.handleChangeE} /> Male
+              <input type="radio" value="Female" checked={this.state.gender === "Female"} onChange={this.handleChangeE} /> Female
+              <input type="radio" value="Alien" checked={this.state.gender === "Alien"} onChange={this.handleChangeE} /> Alien
+            </div>
+
+            <div>6. Member</div>
+            <input type="checkbox" checked={this.state.isMember} onChange={this.handleChangeF} />
+
+            <div></div>
             <input type="submit" value="Submit" />
           </form>
         )
@@ -1094,7 +1083,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         super(props)
         this.state = {
           name: '',
-          age: null,
+          age: 0,
           comment: '',
           category: 'food',
           gender: '',
@@ -1135,44 +1124,33 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         return (
           // Ingat: Atribut "name" diperlukan untuk digunakan di handleChange
           <form onSubmit={this.handleSubmit}>
-            <table>
-              <tr>
-                <td>Name</td>
-                <td><input name="_name" type="text" value={this.state.name} onChange={this.handleChange} /></td>
-              </tr>
-              <tr>
-                <td>Age</td>
-                <td><input name="_age" type="number" value={this.state.age} onChange={this.handleChange} /></td>
-              </tr>
-              <tr>
-                <td>Comment</td>
-                <td><textarea name="_comment" value={this.state.comment} onChange={this.handleChange} /></td>
-              </tr>
-              <tr>
-                <td>Category</td>
-                <td>
-                  <select name="_category" value={this.state.category} onChange={this.handleChange}>
-                    <option value="food">Food</option>
-                    <option value="drink">Drink</option>
-                    <option value="fruit">Fruit</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>Gender</td>
-                <td>
-                  <input name="_gender" type="radio" value="Male" checked={this.state.gender === "Male"} onChange={this.handleChange} /> Male
-                  <input name="_gender" type="radio" value="Female" checked={this.state.gender === "Female"} onChange={this.handleChange} /> Female
-                  <input name="_gender" type="radio" value="Alien" checked={this.state.gender === "Alien"} onChange={this.handleChange} /> Alien
-                </td>
-              </tr>
-              <tr>
-                <td>Member</td>
-                <td><input name="_isMember" type="checkbox" checked={this.state.isMember} onChange={this.handleChange} /></td>
-              </tr>
-            </table>
+            <div>1. Name</div>
+            <input name="_name" type="text" value={this.state.name} onChange={this.handleChange} />
 
-            <br />
+            <div>2. Age</div>
+            <input name="_age" type="number" value={this.state.age} onChange={this.handleChange} />
+
+            <div>3. Comment</div>
+            <textarea name="_comment" value={this.state.comment} onChange={this.handleChange} />
+
+            <div>4. Category</div>
+            <select name="_category" value={this.state.category} onChange={this.handleChange}>
+              <option value="food">Food</option>
+              <option value="drink">Drink</option>
+              <option value="fruit">Fruit</option>
+            </select>
+
+            <div>5. Gender</div>
+            <div>
+              <input name="_gender" type="radio" value="Male" checked={this.state.gender === "Male"} onChange={this.handleChange} /> Male
+              <input name="_gender" type="radio" value="Female" checked={this.state.gender === "Female"} onChange={this.handleChange} /> Female
+              <input name="_gender" type="radio" value="Alien" checked={this.state.gender === "Alien"} onChange={this.handleChange} /> Alien
+            </div>
+
+            <div>6. Member</div>
+            <input name="_isMember" type="checkbox" checked={this.state.isMember} onChange={this.handleChange} />
+
+            <div></div>
             <input type="submit" value="Submit" />
           </form>
         )
