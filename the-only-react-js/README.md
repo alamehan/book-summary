@@ -1301,8 +1301,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     const keFahrenheit = celsius => (celsius * 9 / 5) + 32
 
     function konversi(temperature, convert) {
-      const input = parseFloat(temperature)             // <- Untuk menyingkat saja
-      if (Number.isNaN(input)) return ''                // <- Selain number gak valid
+      const input = parseFloat(temperature)             // <- String menjadi number
+      if (Number.isNaN(input)) return ''                // <- Jika NaN hentikan proses
       const output = convert(input)                     // <- Proses konversi
       const rounded = Math.round(output * 1000) / 1000  // <- Proses pembulatan
       return rounded.toString()                         // <- Return hasil
@@ -1371,9 +1371,11 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         this.state = { scale: "c", temperature: "" }    // <- Nilai default
       }
 
-      // 𝐒𝐓𝐄𝐏 𝟒: Function ini nantinya akan dikirim dan dijalankan di komponen InputTemperatur3
-      handleCelsiusChange = temperature => this.setState({ scale: "c", temperature })
-      handleFahrenheitChange = temperature => this.setState({ scale: "f", temperature })
+      // 𝐒𝐓𝐄𝐏 𝟒: Function ini nantinya akan dikirim dan dijalankan di komponen InputTemperatur3.
+      // Dalam object, jika "key: value" namanya sama maka cukup tulis salah satunya saja, pada
+      // contoh di bawah "temperature: temperature" sebenarnya bisa ditulis "temperature" saja.
+      handleCelsiusChange = temperature => this.setState({ scale: "c", temperature: temperature })
+      handleFahrenheitChange = temperature => this.setState({ scale: "f", temperature: temperature })
 
       render() {
         // 𝐒𝐓𝐄𝐏 𝟓: State scale & temperature saat ini
@@ -1404,6 +1406,128 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     }
 
     ReactDOM.render(<Kalkulator3 />, document.getElementById('root3'))
+
+  </script>
+</body>
+
+</html>
+```
+
+```HTML
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    /* ----------------------------------------------------------------------- */
+    /*              Sinkronasi 2 Inputan (Simplified & Explained)              */
+    /* ----------------------------------------------------------------------- */
+
+    /* --------------------------------------------------------------------- */
+    /* 𝐒𝐓𝐄𝐏 𝟏: Komponen KalkulatorSuhu yang menampilkan 2 komponen InputSuhu */
+    /* --------------------------------------------------------------------- */
+
+    class KalkulatorSuhu extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = { skala: "celsius", suhu: "" } // <- Definisikan data state yang dibutuhkan nantinya
+      }
+
+      handleCelsiusChange = suhu => this.setState({ skala: "celsius", suhu: suhu })         // <- suhu nantinya akan didapat 
+      handleFahrenheitChange = suhu => this.setState({ skala: "fahrenheit", suhu: suhu })   // <- dari event.target.value
+
+      // Ingat: Dalam object jika "key: value" namanya sama, misal "suhu: suhu" maka sebenarnya cukup ditulis "suhu" saja
+
+      render() {
+        const skala = this.state.skala // <- Untuk menyingkat saja
+        const suhu = this.state.suhu   // <- Untuk menyingkat saja
+
+        /* ----------------------------------------------------------------------------------------------- */
+        /* 𝐒𝐓𝐄𝐏 𝟐: Dapatkan data suhu dalam skala celsius & fahrenheit berdasarkan (inputan) suhu saat ini */
+        /* ----------------------------------------------------------------------------------------------- */
+
+        const celsius = skala === "fahrenheit" ? konversi(suhu, keCelsius) : suhu
+        const fahrenheit = skala === "celsius" ? konversi(suhu, keFahrenheit) : suhu
+
+        /* ----------------------------------------------------------------------------------------- */
+        /* 𝐒𝐓𝐄𝐏 𝟒: Pakai komponen InputSuhu serta kirim data props yang diperlukan komponen tersebut */
+        /* ----------------------------------------------------------------------------------------- */
+
+        return (
+          <div>
+            <InputSuhu _title="Celsius" _suhu={celsius} _onSuhuChange={this.handleCelsiusChange} />
+            <InputSuhu _title="Fahrenheit" _suhu={fahrenheit} _onSuhuChange={this.handleFahrenheitChange} />
+            <h3>{celsius >= 100 ? "Air akan mendidih." : "Air tidak akan mendidih."}</h3>
+          </div>
+        )
+      }
+    }
+
+    /* ------------------------------------- */
+    /* 𝐒𝐓𝐄𝐏 𝟑: Definisikan function konversi */
+    /* ------------------------------------- */
+
+    const keCelsius = fahrenheit => (fahrenheit - 32) * 5 / 9
+    const keFahrenheit = celsius => (celsius * 9 / 5) + 32
+
+    function konversi(suhu, keSkala) {
+      const input = parseFloat(suhu)        // <- Konversi string menjadi number (pecahan), selain number akan di-remove
+      if (Number.isNaN(input)) return ""    // <- Cek apakah hasil konversi (input) berisi NaN, jika iya hentikan proses
+      const output = keSkala(input)         // <- Jika skala saat ini celsius maka konversi ke fahrenheit & sebaliknya
+      const rounded = Math.round(output * 1000) / 1000  // <- Pembulatan (jika pecahan, dibuat 3 angka di belakang koma)
+      return rounded.toString()                         // <- Return hasil (yang sudah dibulatkan) dalam bentuk string
+    }
+
+    /* -------------------------------------- */
+    /* 𝐒𝐓𝐄𝐏 𝟓: Definisikan komponen InputSuhu */
+    /* -------------------------------------- */
+
+    class InputSuhu extends React.Component {
+      constructor(props) {
+        super(props)
+      }
+
+      handleChange = event => this.props._onSuhuChange(event.target.value)
+
+      /*
+        A. Untuk celsius akan menjadi: 
+        handleChange = event => this.props.handleCelsiusChange(event.target.value)
+
+        B. Dibelakang layar handleCelsiusChange():
+        (handleCelsiusChange = suhu => this.setState({ skala: "celsius", suhu: suhu }))(event.target.value)
+        
+        Dimana event.target.value bertindak sebagai argument dari function handleCelsiusChange(), maka yang
+        terjadi ialah nilai state "suhu" akan diisi oleh event.target.value, kurang lebih seperti baris
+        berikut -> this.setState({ skala: "celsius", suhu: event.target.value })
+
+        C. Hal yang serupa terjadi juga untuk skala fahrenheit
+      */
+
+      render() {
+        const title = this.props._title // <- Mengambil data props title
+        const suhu = this.props._suhu   // <- Mengambil data props suhu
+
+        return (
+          <fieldset>
+            <legend>Masukkan suhu dalam {title}:</legend>
+            <input value={suhu} onChange={this.handleChange} />
+          </fieldset>
+        )
+      }
+    }
+
+    ReactDOM.render(<KalkulatorSuhu />, document.getElementById('root'))
 
   </script>
 </body>
