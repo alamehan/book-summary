@@ -1586,7 +1586,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       - <FilterableProductTable/>    (orange)      komponen utama
         - <SearchBar/>               (biru)        menerima inputan user
         - <ProductTable/>            (hijau)       show & filter data berdasarkan inputan user
-          - <ProductCategoryRow/>    (biru muda)   show judul untu setiap kategori
+          - <ProductCategoryRow/>    (biru muda)   show judul untuk setiap kategori
           - <ProductRow/>            (merah)       show baris untuk setiap produk
 
       Tips: Setiap komponen idealnya melakukan satu tugas tertentu saja.
