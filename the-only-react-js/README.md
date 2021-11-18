@@ -1617,7 +1617,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       Implementasi:
       - Tambahkan this.state = {filterText: "", inStockOnly: false} di method constructor-nya <FilterableProductTable/>.
       - Hal tersebut akan merefleksikan kondisi state awal dari aplikasi Anda. 
-      - Lalu oper "filterText" & "isStockOnly" ke <ProductTable/> & <SearchBar/> sebagai sebuah props. 
+      - Lalu oper "filterText" & "inStockOnly" ke <ProductTable/> & <SearchBar/> sebagai sebuah props. 
       - Gunakan props tersebut untuk memfilter baris di <ProductTable/> dan set nilai dari field di <SearchBar/>.
 
       𝐒𝐓𝐄𝐏 𝟔: Tambahkan aliran data ke arah sebaliknya
@@ -1679,22 +1679,28 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         // Jalankan perintah berikut untuk setiap data produk. Setiap produk berisi: category, price, stocked, name.
         this.props.products.forEach(product => {
 
-          // Cek apakah (string) filterText ada di dalam (string) product.name, stop (return) jika tidak ditemukan
-          // (-1 artinya string tidak ditemukan). Misalnya, filterText berisi string "od" & product.name berisi string 
-          // "iPod", oleh karena "od" ada di dalam "iPod" maka lolos pengecekan dan lanjut ke baris kode selanjutnya.
-          // Catatan, dalam contoh disini pencarian bersifat case sensitive, itu berari "foot" dengan "Foot" berbeda.
+          /*
+            Cek apakah (string) filterText ada di dalam (string) product.name, stop (return) jika tidak ditemukan
+            (-1 artinya string tidak ditemukan). Misalnya, filterText berisi string "od" & product.name berisi string 
+            "iPod", oleh karena "od" ada di dalam "iPod" maka lolos pengecekan dan lanjut ke baris kode selanjutnya.
+            Catatan, dalam contoh disini pencarian bersifat case sensitive, itu berari "foot" dengan "Foot" berbeda.
+          */
           if (product.name.indexOf(filterText) === -1) return
 
-          // Cek apakah inStockOnly true (checkbox di centang)? Jika ya, cek lagi apakah product.stocked false? Jika ya lagi
-          // maka stop (return), artinya produk yang tidak ada stoknya tidak akan ditampilkan (tidak di push ke array rows).
+          /*
+            Cek apakah inStockOnly true (checkbox di centang)? Jika ya, cek lagi apakah product.stocked false? Jika ya lagi
+            maka stop (return), artinya produk yang tidak ada stoknya tidak akan ditampilkan (tidak di push ke array rows).
+          */
           if (inStockOnly && !product.stocked) return
 
-          // Tujuan baris kode ini untuk menampilkan nama setiap kategori ke dalam tabel agar tampil 1x saja (tidak berulang),
-          // ini berarti nama setiap kategori hanya akan 1x saja di push ke array rows. Teknisnya, lastCategory berperan
-          // untuk pengecekan, jika product.category != null (hanya di cek pertama kali, sudah pasti hasilnya true) maka push
-          // product.category tersebut ke dalam array rows. Jika product.category == lastCategory (artinya product.category
-          // tersebut sebelumnya sudah di push ke array rows), maka skip, namun jika product.category != lastCategory
-          // (artinya product.category tersebut memang baru dan belum pernah di push), maka push ke array rows.
+          /*
+            Tujuan baris kode ini untuk menampilkan nama setiap kategori ke dalam tabel agar tampil 1x saja (tidak berulang),
+            ini berarti nama setiap kategori hanya akan 1x saja di push ke array rows. Teknisnya, lastCategory berperan
+            untuk pengecekan, jika product.category != null (hanya di cek pertama kali, sudah pasti hasilnya true) maka push
+            product.category tersebut ke dalam array rows. Jika product.category == lastCategory (artinya product.category
+            tersebut sebelumnya sudah di push ke array rows), maka skip, namun jika product.category != lastCategory
+            (artinya product.category tersebut memang baru dan belum pernah di push), maka push ke array rows.
+          */
           if (product.category !== lastCategory) rows.push(<ProductCategoryRow category={product.category} key={product.category} />)
           lastCategory = product.category
 
@@ -1721,12 +1727,21 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* ----------------------------------------------------------------------- */
 
     class SearchBar extends React.Component {
-      constructor(props) {
-        super(props)
-      }
+      
+      handleFilterTextChange = event => this.props.onFilterTextChange(event.target.value) // <- value
+      handleInStockChange = event => this.props.onInStockChange(event.target.checked)     // <- checked
+      
+      /*
+        Baris kode di atas akan mengupdate state filterText & inStockOnly berdasarkan inputan user saat ini.
 
-      handleFilterTextChange = event => this.props.onFilterTextChange(event.target.value)
-      handleInStockChange = event => this.props.onInStockChange(event.target.checked)
+        Yang terjadi di belakang layar:
+        - handleFilterTextChange = event => this.props.handleFilterTextChangeRoot(event.target.value)
+        - handleInStockChange = event => this.props.handleInStockChangeRoot(event.target.checked)
+
+        Dimana handleFilterTextChangeRoot() & handleInStockChangeRoot() berasal dari <FilterableProductTable/>
+        yang di oper ke dalam <SearchBar/> melalui props. Dengan inilah state filterText & inStockOnly di 
+        <FilterableProductTable/> dapat ter-update melalui komponen <SearchBar/> ini.       
+      */
 
       render() {
         return (
@@ -1753,17 +1768,22 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         }
       }
 
-      handleFilterTextChange = value => this.setState({ filterText: value })
-      handleInStockChange = value => this.setState({ inStockOnly: value })
+      handleFilterTextChangeRoot = value => this.setState({ filterText: value })
+      handleInStockChangeRoot = value => this.setState({ inStockOnly: value })
 
       render() {
         return (
+          /*
+            Props filterText & inStockOnly pada <SearchBar/> digunakan untuk set nilai dari field pada form,
+            atau dengan kata lain untuk kebutuhan update state. Proses update state dilakukan di <SearchBar/>.
+            Props filterText & inStockOnly pada <ProductTable/> digunakan untuk memfilter baris.
+          */
           <div>
             <SearchBar
               filterText={this.state.filterText}
               inStockOnly={this.state.inStockOnly}
-              onFilterTextChange={this.handleFilterTextChange}
-              onInStockChange={this.handleInStockChange}
+              onFilterTextChange={this.handleFilterTextChangeRoot}
+              onInStockChange={this.handleInStockChangeRoot}
             />
             <ProductTable
               products={this.props.products}
