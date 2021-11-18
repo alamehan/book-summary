@@ -1682,6 +1682,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
           // Cek apakah (string) filterText ada di dalam (string) product.name, stop (return) jika tidak ditemukan
           // (-1 artinya string tidak ditemukan). Misalnya, filterText berisi string "od" & product.name berisi string 
           // "iPod", oleh karena "od" ada di dalam "iPod" maka lolos pengecekan dan lanjut ke baris kode selanjutnya.
+          // Catatan, dalam contoh disini pencarian bersifat case sensitive, itu berari "foot" dengan "Foot" berbeda.
           if (product.name.indexOf(filterText) === -1) return
 
           // Cek apakah inStockOnly true (checkbox di centang)? Jika ya, cek lagi apakah product.stocked false? Jika ya lagi
