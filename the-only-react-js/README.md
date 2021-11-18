@@ -1554,7 +1554,226 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 <summary>Klik untuk membuka!</summary><br>
 
 ```HTML
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    /* ----------------------------------------------------------------------- */
+    /*                            Thinking in React                            */
+    /* ----------------------------------------------------------------------- */
+
+    /*
+
+      𝐒𝐓𝐄𝐏 𝟏: Berangkat dari UI, berikut contoh UI yang digunakan:
+      https://id.reactjs.org/static/1071fbcc9eed01fddc115b41e193ec11/d4770/thinking-in-react-mock.png
+
+      𝐒𝐓𝐄𝐏 𝟐: Pecah UI menjadi hierarki komponen, berikut hasil pemecahan komponen:
+      https://id.reactjs.org/static/eb8bda25806a89ebdc838813bdfa3601/6b2ea/thinking-in-react-components.png
+
+      Hierarki-nya sebagai berikut:
+      - <FilterableProductTable/>    (orange)      komponen utama
+        - <SearchBar/>               (biru)        menerima inputan user
+        - <ProductTable/>            (hijau)       show & filter data berdasarkan inputan user
+          - <ProductCategoryRow/>    (biru muda)   show judul untu setiap kategori
+          - <ProductRow/>            (merah)       show baris untuk setiap produk
+
+      Tips: Setiap komponen idealnya melakukan satu tugas tertentu saja.
+
+      𝐒𝐓𝐄𝐏 𝟑: Buat versi statis (sederhana) terlebih dahulu
+      - Gunakan props (sebuah cara mengoper data dari komponen parent ke child).
+      - Untuk sementara jangan gunakan state (data yang nilai-nya berubah-ubah).
+      - Mulai membangun komponen dari paling bawah ke komponen paling atas (meminimalisir bug).
+
+      𝐒𝐓𝐄𝐏 𝟒: Identifikasi kebutuhan penggunaan state
+      - Jika data dioper dari komponen induk melalui props, maka data tersebut bukanlah state.
+      - Jika data tidak perlu berubah-ubah nilainya, maka data tersebut bukanlah state.
+      
+      Hasil identifikasi:
+      - Daftar produk dioper ke dalam komponen melalui props, maka data tersebut bukanlah state.
+      - Teks pencarian yang diinput user & nilai dari checkbox dapat berubah, maka data tersebut state.
+
+      𝐒𝐓𝐄𝐏 𝟓: Identifikasi dimana state Anda berada
+      - Prinsip dasar React yaitu aliran data satu arah yang mengalir ke bawah sejalan dengan hierarki komponen.
+      - Cara 1 -> Temukan sebuah komponen yang menjadi pemilik bersama dari state, maka state disimpan disana.
+      - Cara 2 -> Jika sulit, cukup buat komponen baru yang bertugas hanya untuk menyimpan state. Gunakan saat perlu.
+      
+      Hasil identifikasi:
+      - <ProductTable/> perlu memfilter dafar produk berdasarkan state.
+      - <SearchBar/> perlu menampilkan teks pencarian dan state dari checkbox.
+      - Maka akan menjadi masuk akal apabila teks pencarian dan nilai dari checkbox berada di <FilterableProductTable/>.
+
+      Implementasi:
+      - Tambahkan this.state = {filterText: "", inStockOnly: false} di method constructor-nya <FilterableProductTable/>.
+      - Hal tersebut akan merefleksikan kondisi state awal dari aplikasi Anda. 
+      - Lalu oper "filterText" & "isStockOnly" ke <ProductTable/> & <SearchBar/> sebagai sebuah props. 
+      - Gunakan props tersebut untuk memfilter baris di <ProductTable/> dan set nilai dari field di <SearchBar/>.
+
+      𝐒𝐓𝐄𝐏 𝟔: Tambahkan aliran data ke arah sebaliknya
+      - Komponen form yang berada di bawah hierarki perlu untuk memberbarui state di <FilterableProductTable/>.
+      - Artinya saat user mengubah form, state akan di-update sesuai inputan user.
+      - Karena state hanya dapat di-update di <FilterableProductTable/>, maka <FilterableProductTable/> akan mengoper
+        callback ke <SearchBar/> yang kemudian akan dipanggil kapanpun state harus di-update.
+
+    */
+
+    /* ----------------------------------------------------------------------- */
+    /*                     Komponen: <ProductCategoryRow/>                     */
+    /* ----------------------------------------------------------------------- */
+
+    class ProductCategoryRow extends React.Component {
+      render() {
+        const category = this.props.category
+
+        return (
+          <tr>
+            <th colSpan="2">{category}</th>
+          </tr>
+        )
+      }
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /*                         Komponen: <ProductRow/>                         */
+    /* ----------------------------------------------------------------------- */
+
+    class ProductRow extends React.Component {
+      render() {
+        const product = this.props.product
+        const name = product.stocked ? product.name : <span style={{ color: "red" }}>{product.name}</span>
+
+        return (
+          <tr>
+            <td>{name}</td>
+            <td>{product.price}</td>
+          </tr>
+        )
+      }
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /*                        Komponen: <ProductTable/>                        */
+    /* ----------------------------------------------------------------------- */
+
+    class ProductTable extends React.Component {
+      render() {
+        const filterText = this.props.filterText
+        const inStockOnly = this.props.inStockOnly
+
+        const rows = []
+        let lastCategory = null
+
+        this.props.products.forEach(product => {
+          if (product.name.indexOf(filterText) === -1) return
+          if (inStockOnly && !product.stocked) return
+          if (product.category !== lastCategory) rows.push(<ProductCategoryRow category={product.category} key={product.category} />)
+          rows.push(<ProductRow product={product} key={product.name} />)
+          lastCategory = product.category
+        })
+
+        return (
+          <table border="1" width="172px">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>{rows}</tbody>
+          </table>
+        )
+      }
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /*                         Komponen: <SearchBar/>                          */
+    /* ----------------------------------------------------------------------- */
+
+    class SearchBar extends React.Component {
+      constructor(props) {
+        super(props)
+      }
+
+      handleFilterTextChange = event => this.props.onFilterTextChange(event.target.value)
+      handleInStockChange = event => this.props.onInStockChange(event.target.checked)
+
+      render() {
+        return (
+          <form>
+            <input type="text" placeholder="Search..." value={this.props.filterText} onChange={this.handleFilterTextChange} />
+            <p>
+              <input type="checkbox" checked={this.props.inStockOnly} onChange={this.handleInStockChange} />Only show products in stock
+            </p>
+          </form>
+        )
+      }
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /*                   Komponen: <FilterableProductTable/>                   */
+    /* ----------------------------------------------------------------------- */
+
+    class FilterableProductTable extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          filterText: "",
+          inStockOnly: false
+        }
+      }
+
+      handleFilterTextChange = value => this.setState({ filterText: value })
+      handleInStockChange = value => this.setState({ inStockOnly: value })
+
+      render() {
+        return (
+          <div>
+            <SearchBar
+              filterText={this.state.filterText}
+              inStockOnly={this.state.inStockOnly}
+              onFilterTextChange={this.handleFilterTextChange}
+              onInStockChange={this.handleInStockChange}
+            />
+            <ProductTable
+              products={this.props.products}
+              filterText={this.state.filterText}
+              inStockOnly={this.state.inStockOnly}
+            />
+          </div>
+        )
+      }
+    }
+
+    /* ----------------------------------------------------------------------- */
+    /*                              Data & Render                              */
+    /* ----------------------------------------------------------------------- */
+
+    const PRODUCTS = [
+      { category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football' },
+      { category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball' },
+      { category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball' },
+      { category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch' },
+      { category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5' },
+      { category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7' }
+    ]
+
+    ReactDOM.render(<FilterableProductTable products={PRODUCTS} />, document.getElementById("root"))
+
+  </script>
+</body>
+
+</html>
 ```
 
 </details>
