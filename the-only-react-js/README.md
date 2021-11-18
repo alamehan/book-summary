@@ -1651,6 +1651,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     class ProductRow extends React.Component {
       render() {
         const product = this.props.product
+
+        // Jika product.stocked false beri warna merah pada nama produk tersebut
         const name = product.stocked ? product.name : <span style={{ color: "red" }}>{product.name}</span>
 
         return (
@@ -1674,12 +1676,29 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         const rows = []
         let lastCategory = null
 
+        // Jalankan perintah berikut untuk setiap data products. Setiap produk berisi: category, price, stocked, name.
         this.props.products.forEach(product => {
+
+          // Cek apakah (string) filterText ada di dalam (string) product.name, stop (return) jika tidak ditemukan
+          // (-1 artinya string tidak ditemukan). Misalnya, filterText berisi string "od" & product.name berisi string 
+          // "iPod", oleh karena "od" ada di dalam "iPod" maka lolos pengecekan dan lanjut ke baris kode selanjutnya.
           if (product.name.indexOf(filterText) === -1) return
+
+          // Cek apakah inStockOnly true (checkbox di centang)? Jika ya, cek lagi apakah product.stocked false? Jika ya lagi
+          // maka stop (return), artinya product yang tidak ada stoknya tidak akan ditampilkan (tidak di push ke array rows).
           if (inStockOnly && !product.stocked) return
+
+          // Tujuan baris kode ini untuk menampilkan nama setiap kategori ke dalam tabel agar tampil 1x saja (tidak berulang),
+          // ini berarti nama setiap kategori hanya akan 1x saja di push ke array rows. Teknisnya, lastCategory berperan
+          // untuk pengecekan, jika product.category != null (hanya di cek pertama kali, sudah pasti hasilnya true) maka push
+          // product.category tersebut ke dalam array rows. Jika product.category == lastCategory (artinya product.category
+          // tersebut sebelumnya sudah di push ke array ros), maka skip, namun jika product.category != lastCategory
+          // (artinya product.category tersebut memang baru dan belum pernah di push), maka push ke array rows.
           if (product.category !== lastCategory) rows.push(<ProductCategoryRow category={product.category} key={product.category} />)
-          rows.push(<ProductRow product={product} key={product.name} />)
           lastCategory = product.category
+
+          // Tujuan baris kode ini untuk menampilkan data produk ke dalam tabel (push data product ke array rows)
+          rows.push(<ProductRow product={product} key={product.name} />)
         })
 
         return (
