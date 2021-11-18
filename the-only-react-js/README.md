@@ -1693,7 +1693,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
           // ini berarti nama setiap kategori hanya akan 1x saja di push ke array rows. Teknisnya, lastCategory berperan
           // untuk pengecekan, jika product.category != null (hanya di cek pertama kali, sudah pasti hasilnya true) maka push
           // product.category tersebut ke dalam array rows. Jika product.category == lastCategory (artinya product.category
-          // tersebut sebelumnya sudah di push ke array ros), maka skip, namun jika product.category != lastCategory
+          // tersebut sebelumnya sudah di push ke array rows), maka skip, namun jika product.category != lastCategory
           // (artinya product.category tersebut memang baru dan belum pernah di push), maka push ke array rows.
           if (product.category !== lastCategory) rows.push(<ProductCategoryRow category={product.category} key={product.category} />)
           lastCategory = product.category
