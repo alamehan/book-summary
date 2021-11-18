@@ -1676,7 +1676,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         const rows = []
         let lastCategory = null
 
-        // Jalankan perintah berikut untuk setiap data products. Setiap produk berisi: category, price, stocked, name.
+        // Jalankan perintah berikut untuk setiap data produk. Setiap produk berisi: category, price, stocked, name.
         this.props.products.forEach(product => {
 
           // Cek apakah (string) filterText ada di dalam (string) product.name, stop (return) jika tidak ditemukan
@@ -1686,7 +1686,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
           if (product.name.indexOf(filterText) === -1) return
 
           // Cek apakah inStockOnly true (checkbox di centang)? Jika ya, cek lagi apakah product.stocked false? Jika ya lagi
-          // maka stop (return), artinya product yang tidak ada stoknya tidak akan ditampilkan (tidak di push ke array rows).
+          // maka stop (return), artinya produk yang tidak ada stoknya tidak akan ditampilkan (tidak di push ke array rows).
           if (inStockOnly && !product.stocked) return
 
           // Tujuan baris kode ini untuk menampilkan nama setiap kategori ke dalam tabel agar tampil 1x saja (tidak berulang),
@@ -1698,7 +1698,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
           if (product.category !== lastCategory) rows.push(<ProductCategoryRow category={product.category} key={product.category} />)
           lastCategory = product.category
 
-          // Tujuan baris kode ini untuk menampilkan data produk ke dalam tabel (push data product ke array rows)
+          // Tujuan baris kode ini untuk menampilkan data produk ke dalam tabel (push data produk ke array rows)
           rows.push(<ProductRow product={product} key={product.name} />)
         })
 
