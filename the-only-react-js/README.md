@@ -1853,8 +1853,6 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 <details>
 <summary>Klik untuk membuka!</summary><br>
 
-# 𝐑𝐞𝐚𝐜𝐭: 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐆𝐮𝐢𝐝𝐞𝐬
-
 ## A. Aksesibilitas
 
 ### 1. HTML semantik
@@ -1964,5 +1962,20 @@ Jika menemukan syntax/modul berikut dalam sebuah project React, artinya project 
 Jika Anda menemukan syntax/modul ```React.createElement()``` (baris perintah ini bertujuan untuk membuat sebuah element) dalam sebuah project React, artinya project tersebut (atau terdapat bagian dari projecy tersebut) tidak memakai JSX.
 
 ## O. Rekonsiliasi
+
+Rekonsilisasi berarti perbuatan menyelesaikan perbedaan. React menyediakan API deklaratif jadi Anda tidak perlu khawatir tentang apa yang pasti berubah pada setiap pembaruan. Ini membuat penulisan aplikasi menjadi lebih mudah. Semua ini karena The Diffing Algorithm-nya React.
+
+## P. Ref dan DOM
+
+Ref menyediakan cara untuk mengakses simpul DOM atau elemen React yang dibuat dalam render method. Dalam aliran data React yang umum, props adalah satu-satunya cara bagi komponen induk untuk berinteraksi dengan anaknya. Untuk memodifikasi anak, Anda me-render ulang dengan props yang baru. Tetapi ada beberapa kasus ketika Anda harus memodifikasi anak secara imperatif di luar aliran data yang umum. Anak yang akan dimodifikasi bisa berupa komponen React atau elemen DOM. Pada kedua kasus ini, React menyediakan jalan keluar. 
+
+Hindari penggunaan ref untuk semua yang bisa dilakukan secara deklaratif, jangan berlebihan menggunakan ref, karena mungkin Anda tergoda menggunakan ref agar aplikasi "dapat berfungsi". Pada React 16.3 diperkenalkan ```React.createRef()``` sebagai cara baru untuk ```callback ref```.
+
+Kapan harus menggunakan Ref?
+- Mengelola focus, text selection, atau media playback.
+- Memicu imperative animations.
+- Mengintegrasikan dengan library DOM pihak ketiga.
+
+## Q. Render Props
 
 </details>
