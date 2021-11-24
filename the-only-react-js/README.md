@@ -978,11 +978,18 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* ----------------------------------------------------------------------- */
 
     /*
-      Sebisa mungkin hindari penggunaan key menggunakan index, karena dalam beberapa
-      kasus, seperti pengurutan kembali item-item akan menjadi lambat.
+      Key harus stabil, dapat diprediksi, dan unik. Key yang tidak stabil (seperti yang
+      diproduksi oleh Math.random()) akan menyebabkan banyak instance komponen dan node
+      DOM tidak perlu diciptakan kembali, yang dapat menyebabkan penurunan kinerja.
 
-      Contoh penggunaan index sebagai key: https://codepen.io/alamehan/pen/JjyQBWv
-      Contoh yang sama namun dengan perbaikan (tanpa index): https://codepen.io/alamehan/pen/dyzBjvg
+      Sebisa mungkin hindari penggunaan key menggunakan index, karena dalam beberapa
+      kasus, seperti pengurutan kembali item-item pada list akan menjadi lambat.
+
+      - Contoh penggunaan index sebagai key: 
+        https://codepen.io/alamehan/pen/JjyQBWv
+
+      - Contoh yang sama namun dengan perbaikan (tanpa index): 
+        https://codepen.io/alamehan/pen/dyzBjvg
     */
 
   </script>
