@@ -897,6 +897,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       const numbers = props.nums
       // Dalam element list harus ada atribut key yang berisi string unik. Kenapa? key
       // membatu React mengidentifikasi item mana yang telah diubah, ditambah, dihapus.
+      // Hal ini berpengaruh pada proses render DOM agar lebih cepat dan efisien.
       const listItems = numbers.map(number => <li key={number.toString()}>{number}</li>)
       return <ul>{listItems}</ul>
     }
