@@ -1832,6 +1832,116 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 <details>
 <summary>Klik untuk membuka!</summary><br>
 
+# 𝐑𝐞𝐚𝐜𝐭: 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐆𝐮𝐢𝐝𝐞𝐬
 
+## A. Aksesibilitas
+
+### 1. HTML semantik
+
+- Ganti wrapper ```<div></div>``` di return value dari sebuah komponen menjadi ```<React.Fragment></React.Fragment>```.
+- Atau jika wrapper tidak membutuhkan props cukup gunakan ```<></>``` saja (a11y best practice).
+
+### 2. Form yang aksesibel
+
+- Berikan pesan kesalahan (error notification/feedback) ke user, misalnya pada saat salah input format di form.
+- Setiap element form seperti ```<input>``` dan ```<textarea>``` perlu diberi label (di JSX for menjadi htmlFor), misalnya:
+
+```HTML
+<label htmlFor="namedInput">Name:</label>
+<input id="namedInput" type="text" name="name">
+```
+
+### 3. Focus control, mouse & pointer events
+
+- Pastikan focus keyboard dan garis luar focus terlihat dengan jelas, jangan coba-coba dihilangkan dengan CSS.
+- Pastikan fungsionalitas mouse & pointer events juga dapat diakses dengan menggunakan keyboard (Tab & Shift+Tab).
+- Uji apakah seluruh web Anda dapat dijangkau hanya dengan menggunakan keyboard (Tab, Shift+Tab, Enter & Arrow keys).
+
+### 4. Widget yang lebih kompleks
+
+- Aksesibilitas paling mudah dicapai dengan menulis kode yang sedekat mungkin dengan HTML.
+- Pelajari ARIA in HTML. Kunjungi web berikut ini: https://inclusive-components.design/.
+
+### 5. Hal-hal lain yang perlu dipertimbangkan
+
+- Mengatur bahasa yang digunakan web. Pertimbangkan penggunaan multi-bahasa.
+  - Resource: https://react.i18next.com/.
+- Mengatur document title ```<title>``` agar menggambarkan dengan tepat isi halaman yang sedang dibuka.
+  - Resource: https://github.com/gaearon/react-document-title
+- Pastikan seluruh teks yang dapat dibaca di web memiliki kontras warna yang cukup.
+  - Resource: http://colorsafe.co/ & https://jxnblk.github.io/colorable/
+- Periksa beberapa fitur aksesibilitas secara langsung dalam kode JSX Anda.
+  - Resource: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
+- Uji aksesibilitas (teknis kode HTML Anda) di browser secara langsung.
+  - Resource: https://www.deque.com/axe/ & https://wave.webaim.org/extension/
+- Uji responsive (pengalaman mengakses web yang optimal dalam berbagai device).
+  - Resource: http://iloveadaptive.com/, http://responsivetesttool.com/ & https://webmobilefirst.com/
+- Uji konten (text) di web Anda menggunakan pembaca layar (screen reader).
+  - Resource: https://www.naturalreaders.com/ & https://getpericles.com/
+
+## B. Code-Splitting
+
+Code-splitting pada aplikasi Anda dapat dimanfaatkan untuk melakukan “lazy-load” untuk memuat hanya hal-hal yang sedang dibutuhkan oleh pengguna saja, yang dapat meningkatkan performa aplikasi Anda secara drastis. Pelajari modul ```import()```, ```export()```, dan ```React.lazy()```.
+
+## C. Context
+ 
+Dalam aplikasi React data dioper dari komponen atas ke bawah (parent ke child) melalui props, tetapi ini bisa menjadi rumit untuk tipe props tertentu yang dibutuhkan oleh banyak komponen. **Context** dirancang untuk berbagi data yang dapat dianggap "global", seperti tema, bahasa yang disukai hingga cache data. Terkadang data yang sama harus dapat diakses oleh banyak komponen pada tingkat bersarang yang berbeda. Context memungkinkan Anda “menyiarkan” data tersebut, dan mengubahnya, ke semua komponen di bawah.
+
+Sebelum Anda menggunakan Context: Jika Anda hanya ingin menghindari mengoper beberapa props melalui banyak tingkatan, **Component Composition** seringkali menjadi solusi yang lebih sederhana daripada Context.
+
+## D. Error Boundaries
+
+Sebuah class component menjadi komponen error boundary jika komponen tersebut mendefinisikan salah satu (atau kedua) metode lifecycle static: ```getDerivedStateFromError()``` untuk me-render antarmuka darurat saat kesalahan dilontarkan & ```componentDidCatch()``` untuk mencatat informasi kesalahan. Error boundaries bekerja seperti blok JavaScript ```catch {},``` tetapi diperuntukkan bagi komponen. Hanya komponen kelas yang bisa menjadi komponen error boundaries.
+
+## E. Forwarding Refs
+
+Forwarding Refs adalah sebuah teknik untuk meneruskan ref secara otomatis melalui komponen ke salah satu anaknya. Ini biasanya tidak diperlukan untuk sebagian besar komponen dalam aplikasi. Namun, ini bisa berguna untuk beberapa jenis komponen, terutama pada reusable component libraries. Forwarding Refs adalah sebuah fitur keikutsertaan yang memperbolehkan beberapa komponen-komponen mengambil sebuah ref yang didapatkan, dan menurunkannya (dengan kata lain, “meneruskan” nya) kepada child.
+
+## F. Fragments
+
+Salah satu pola umum pada React adalah return banyak elemen sekaligus. Fragments memungkinkan Anda untuk mengelompokkan sejumlah elemen anak tanpa perlu menambahkan lagi node ekstra ke DOM. Teknisnya gunakan ```<React.Fragment></React.Fragment>``` atau ```<></>``` sebagai wrapper untuk return value sebuah komponen. Sebelum ada fragments ini, para react programmer menjadikan ```<div></div>``` sebagai wrapper.
+
+## G. Higher-Order Components
+
+Higher-order component (HOC) merupakan teknik lanjutan dalam React untuk menggunakan kembali logika sebuah komponen. Konkritnya, HOC merupakan fungsi yang mengambil sebuah komponen dan mengembalikan sebuah komponen baru. Kita ingin sebuah abstraksi yang mengizinkan kita mendefinisikan logika ini pada satu tempat dan membaginya antar komponen. Dalam kondisi inilah, HOC digunakan.
+
+## H. Integrasi dengan Library Lain
+
+React dapat digunakan pada web application apapun. React juga dapat ditanamkan di aplikasi lain (misal jQuery dan Backbone), begitu juga sebaliknya, dengan sedikit pengaturan, aplikasi lain dapat ditanamkan di React. Jika tertarik baca di official dokumentasi react.
+
+## I. JSX In Depth
+
+Pada dasarnya, JSX hanya menyediakan sintaksis-sintaksis yang mudah ditulis dan dimengerti (syntatic sugar) untuk fungsi React berikut: ```React.createElement(component, prop, ...children)```. Misalnya kode JSX ```<MyButton color="blue" shadowSize={2}>Klik saya</MyButton>``` akan di-compile menjadi ```React.createElement(MyButton, {color: 'blue', shadowSize: 2}, 'Klik saya')```.
+
+## J. Mengoptimalkan Performa
+
+Secara internal, React menggunakan beberapa teknik cermat untuk meminimalkan jumlah operasi DOM boros yang diperlukan untuk memperbarui UI. Bagi sebagian besar aplikasi, React akan menghasilkan UI yang cepat tanpa harus melakukan pekerjaan tambahan untuk mengoptimalkan performa secara spesifik. Meskipun demikian, ada beberapa cara untuk mempercepat aplikasi React Anda:
+
+1. Gunakan versi produksi. Ingat bahwa hanya file React yang berakhir dengan ```.production.min.js``` yang layak digunakan untuk produksi.
+2. Memvirtualisasi Long List. Jika aplikasi Anda me-render list data yang panjang (ratusan/ribuan baris), kami sarankan untuk menggunakan teknik “windowing”. Teknik ini hanya me-render bagian kecil dari baris-baris data Anda dalam waktu tertentu. <a href="https://react-window.vercel.app/">react-window</a> dan <a href="https://bvaughn.github.io/react-virtualized/">react-virtualized</a> merupakan library windowing paling populer yang bisa Anda gunakan.
+3. Meskipun React hanya memperbarui simpul DOM yang berubah, me-render ulang tetap memerlukan waktu tambahan. Dalam banyak kasus ini tidak menjadi masalah, namun ketika ada perlambatan yang signifikan, Anda dapat mempercepatnya dengan meng-override lifecycle ```shouldComponentUpdate()``` yang dijalankan sebelum proses render ulang dimulai. Dalam banyak kasus, alih-alih menuliskan ```shouldComponentUpdate()``` secara manual, Anda dapat meng-inherit dari ```React.PureComponent``` (helper khusus yang disediakan React).
+4. Ketika berurusan dengan objek bersarang yang dalam, memperbaruinya secara immutable dapat menjadi sulit. Jika Anda memiliki masalah ini, cobalah <a href="https://github.com/immerjs/immer">Immer</a> atau <a href="https://github.com/kolodny/immutability-helper">immutability-helper</a>. Library ini memungkinkan Anda membuat kode yang lebih mudah dibaca tanpa menanggalkan keuntungan-keuntungan immutability.
+
+## K. Portal
+
+Portal menyediakan sebuah cara utama untuk me-render anak ke dalam simpul DOM yang berada di luar hierarki komponen induk. ```ReactDOM.createPortal(child, container)```, dimana Argumen pertama (child) berupa anak React yang bisa di-render, misalnya sebuah elemen, string, atau fragment. Argumen kedua (container) merupakan elemen DOM. Penggunaan umum untuk portal adalah ketika komponen induk memiliki style ```overflow: hidden``` atau ```z-index```, tetapi Anda harus “memisahkan” anak secara visual dari kontainernya. Misal dialog/tooltip.
+
+## L. Profiler
+
+Profiler mengukur seberapa sering aplikasi React dirender dan berapa "cost" renderingnya. Tujuannya adalah untuk membantu mengidentifikasi bagian dari aplikasi yang lambat dan dapat mengambil manfaat dari pengoptimalan seperti memoization. Meskipun Profiler komponen yang ringan, itu harus digunakan hanya jika diperlukan; setiap penggunaan menambahkan beberapa overhead CPU dan memori ke aplikasi.
+
+## M. React Tanpa ES6
+
+Jika menemukan syntax/modul berikut dalam sebuah project React, artinya project tersebut belum menggunakan ES6: 
+- ```var createReactClass = require('create-react-class')``` ➜ Membuat sebuah komponen class
+- ```getDefaultProps()``` ➜ Mendeklarasikan props default
+- ```getInitialState()``` ➜ Menyetel state awal
+- ```mixins``` ➜ React tidak menyarankan Anda menggunakan mixin
+
+## N. React Tanpa JSX
+
+Jika Anda menemukan syntax/modul ```React.createElement()``` (baris perintah ini bertujuan untuk membuat sebuah element) dalam sebuah project React, artinya project tersebut (atau terdapat bagian dari projecy tersebut) tidak memakai JSX.
+
+## O. Rekonsiliasi
 
 </details>
