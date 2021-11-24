@@ -245,7 +245,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* ----------------------------------------------------------------------- */
 
     // Cara 1: Function Components (dimana props sebagai parameter)
-    function ComponentA(props) {
+    function ComponentA(props) { // <- Nama component harus diawali huruf kapital
       return (
         <div>
           <h1>Halo {props.name}</h1>
@@ -255,7 +255,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     }
 
     // Cara 2: Class Components (dimana props sebagai property)
-    class ComponentB extends React.Component {
+    class ComponentB extends React.Component { // <- Nama component harus diawali huruf kapital
       render() {
         return (
           <div>
