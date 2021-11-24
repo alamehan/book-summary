@@ -1969,7 +1969,7 @@ Rekonsilisasi berarti perbuatan menyelesaikan perbedaan. React menyediakan API d
 
 Ref menyediakan cara untuk mengakses simpul DOM atau elemen React yang dibuat dalam render method. Dalam aliran data React yang umum, props adalah satu-satunya cara bagi komponen induk untuk berinteraksi dengan anaknya. Untuk memodifikasi anak, Anda me-render ulang dengan props yang baru. Tetapi ada beberapa kasus ketika Anda harus memodifikasi anak secara imperatif di luar aliran data yang umum. Anak yang akan dimodifikasi bisa berupa komponen React atau elemen DOM. Pada kedua kasus ini, React menyediakan jalan keluar. 
 
-Hindari penggunaan ref untuk semua yang bisa dilakukan secara deklaratif, jangan berlebihan menggunakan ref, karena mungkin Anda tergoda menggunakan ref agar aplikasi "dapat berfungsi". Pada React 16.3 diperkenalkan ```React.createRef()``` sebagai cara baru untuk ```callback ref```. Kemudian pada React Hook diperkenalkan ```useRef()```. Lalu kapan & dalam kasus apa Ref digunakan? Berikut beberapa contoh kasus:
+Hindari penggunaan ref untuk semua yang bisa dilakukan secara deklaratif, jangan berlebihan menggunakan ref, karena mungkin Anda tergoda menggunakan ref agar aplikasi "dapat berfungsi". Pada React 16.3 diperkenalkan ```React.createRef()``` sebagai cara baru untuk ```callback ref```. Kemudian pada React Hook diperkenalkan ```useRef()```. Lalu kapan Ref digunakan? Berikut beberapa contoh kasus:
 - Mengelola focus, text selection, atau media playback.
 - Memicu imperative animations.
 - Mengintegrasikan dengan library DOM pihak ketiga.
