@@ -268,14 +268,21 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       }
     }
 
-    // Gabungkan kedalam satu element (contoh saja)
-    // & Oper nilai ke props-nya (name & age)
+    // Memberikan nilai default untuk props
+    ComponentA.defaultProps = { name: "Anonim", age: 0 }
+    ComponentB.defaultProps = { name: "Anonim", age: 0 }
+
+    // Gabungkan kedalam satu element (contoh saja) & Oper nilai ke props-nya (name & age)
     const element = (
       <div>
         <ComponentA name="Raihan" age={21} />
         <ComponentB name="Allaam" age={24} />
+        <ComponentA />
+        <ComponentB />
       </div>
     )
+    // Pada contoh di atas komponen yang tidak mengoper nilai props akan secara otomatis
+    // menggunakan nilai default dari props (defaultProps)
 
     ReactDOM.render(element, document.getElementById('root1'))
 
@@ -1817,5 +1824,14 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 
 </html>
 ```
+
+</details>
+
+## **13. Rangkuman React Advanced Guides** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+
 
 </details>
