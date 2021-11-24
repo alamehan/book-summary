@@ -934,7 +934,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /*
       Kita dapat menggunakan key yang sama ketika kita mem-produce 2/lebih Array
       yang berbeda. Misalnya contoh di bawah ini, key={post.id} digunakan di
-      list pada sidebar & di div pada content. Dan hal tersebut valid.
+      list pada sidebar & di div pada content. Dan hal tersebut valid. Sebagai
+      catatan, key hanya harus unik antar sibling, bukan unik secara global.
     */
 
     function Blog(props) {
@@ -971,6 +972,18 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     ]
 
     ReactDOM.render(<Blog posts={postsA} />, document.getElementById('root3'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 4                                 */
+    /* ----------------------------------------------------------------------- */
+
+    /*
+      Sebisa mungkin hindari penggunaan key menggunakan index, karena dalam beberapa
+      kasus, seperti pengurutan kembali item-item akan menjadi lambat.
+
+      Contoh penggunaan index sebagai key: https://codepen.io/alamehan/pen/JjyQBWv
+      Contoh yang sama namun dengan perbaikan (tanpa index): https://codepen.io/alamehan/pen/dyzBjvg
+    */
 
   </script>
 </body>
