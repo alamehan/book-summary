@@ -238,6 +238,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       masukan (biasa disebut “props”) dan mengembalikan element React yang 
       mendeskripsikan apa yang seharusnya tampil pada layar. Sebagai catatan,
       props bersifat read-only, artinya nilai dari props tidak bisa ditimpa.
+      Juga, secara default jika Anda tidak mengoper nilai apapun ke sebuah
+      props maka nilainya adalah "true".
     */
 
     /* ----------------------------------------------------------------------- */
