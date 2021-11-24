@@ -1848,7 +1848,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 
 </details>
 
-## **13. Rangkuman React Advanced Guides** <a href="#top">⟲</a>
+## **13. React Advanced Guides [Summary]** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
