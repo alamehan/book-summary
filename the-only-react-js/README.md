@@ -683,8 +683,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* ----------------------------------------------------------------------- */
 
     class LoginControl1 extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor() {
+        super()
         this.state = { isLoggedIn: true }
       }
 
@@ -719,8 +719,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* ----------------------------------------------------------------------- */
 
     // 1. Komponen Greeting
-    function UsersGreeting(props) { return <h1>Welcome back!</h1> }
-    function GuestGreeting(props) { return <h1>Please sign up.</h1> }
+    function UsersGreeting() { return <h1>Welcome back!</h1> }
+    function GuestGreeting() { return <h1>Please sign up.</h1> }
 
     function Greeting(props) {
       const isLoggedIn = props.masuk
@@ -741,8 +741,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 
     // 3. Komponen LoginControl
     class LoginControl2 extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor() {
+        super()
         this.state = { isLoggedIn: true }
       }
 
@@ -825,8 +825,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     }
 
     class Page extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor() {
+        super()
         this.state = { showWarning: false }
       }
 
@@ -1000,8 +1000,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* ----------------------------------------------------------------------- */
 
     class NameForm1 extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor() {
+        super()
         this.state = {
           name: '',           // Nilai default untuk input text
           age: 0,             // Nilai default untuk input number
@@ -1079,8 +1079,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* ----------------------------------------------------------------------- */
 
     class NameForm2 extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor() {
+        super()
         this.state = {
           name: '',
           age: 0,
@@ -1210,8 +1210,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     }
 
     class Kalkulator1 extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor() {
+        super()
         this.state = { temperature: "" }            // <- Nilai default temperature
       }
 
@@ -1364,8 +1364,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     // ------------------------------
 
     class Kalkulator3 extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor() {
+        super()
         // 𝐒𝐓𝐄𝐏 𝟑: Sekarang temperature didefinisikan disini (Kalkulator3) sebagai state komponen induk,
         // yang kemudian akan diolah (dikonversi) untuk dikirimkan nantinya ke komponen InputTemperatur3.
         this.state = { scale: "c", temperature: "" }    // <- Nilai default
@@ -1439,8 +1439,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* --------------------------------------------------------------------- */
 
     class KalkulatorSuhu extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor() {
+        super()
         this.state = { skala: "celsius", suhu: "" } // <- Definisikan data state yang dibutuhkan nantinya
       }
 
