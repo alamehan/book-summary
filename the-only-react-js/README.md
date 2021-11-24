@@ -234,7 +234,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
   <script type="text/babel">
 
     /*  
-      Komponen mirip dengan fungsi pada Javascript. Komponen menerima beberapa 
+      Komponen mirip dengan fungsi pada JavaScript. Komponen menerima beberapa 
       masukan (biasa disebut “props”) dan mengembalikan element React yang 
       mendeskripsikan apa yang seharusnya tampil pada layar. Sebagai catatan,
       props bersifat read-only, artinya nilai dari props tidak bisa ditimpa.
@@ -579,8 +579,8 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     /* ----------------------------------------------------------------------- */
 
     class Toggle1 extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor() {   // <- Tidak perlu disisipkan props
+        super()         // <- Tidak perlu disisipkan props
         this.state = {
           isToggleOn: true
         }
@@ -605,15 +605,15 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       }
     }
 
-    ReactDOM.render(<Toggle1 step={1} />, document.getElementById('root1'))
+    ReactDOM.render(<Toggle1 />, document.getElementById('root1'))
 
     /* ----------------------------------------------------------------------- */
     /*                     Bagian 2: Contoh State & Props                      */
     /* ----------------------------------------------------------------------- */
 
     class Toggle2 extends React.Component {
-      constructor(props) {
-        super(props)
+      constructor(props) {  // <- Perlu disisipkan props
+        super(props)        // <- Perlu disisipkan props
         this.state = {
           isToggleOn: true,
           totalClick: 0,
