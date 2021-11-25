@@ -1918,7 +1918,7 @@ Forwarding Refs adalah sebuah teknik untuk meneruskan ref secara otomatis melalu
 
 ## F. Fragments
 
-Salah satu pola umum pada React adalah return banyak elemen sekaligus. Fragments memungkinkan Anda untuk mengelompokkan sejumlah elemen anak tanpa perlu menambahkan lagi node ekstra ke DOM. Teknisnya gunakan ```<React.Fragment></React.Fragment>``` atau ```<></>``` sebagai wrapper untuk return value sebuah komponen. Sebelum ada fragments ini, para react programmer menjadikan ```<div></div>``` sebagai wrapper.
+Salah satu pola umum pada React adalah return banyak elemen sekaligus. Fragments memungkinkan Anda untuk mengelompokkan sejumlah elemen anak tanpa perlu menambahkan lagi node ekstra ke DOM. Teknisnya gunakan ```<React.Fragment></React.Fragment>``` atau ```<></>``` sebagai wrapper untuk return value sebuah komponen. Sebelum ada fragments ini, biasanya menggunakan ```<div></div>``` sebagai wrapper.
 
 ## G. Higher-Order Components
 
