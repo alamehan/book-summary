@@ -1947,7 +1947,7 @@ Portal menyediakan sebuah cara utama untuk me-render anak ke dalam simpul DOM ya
 
 ## L. Profiler
 
-Profiler mengukur seberapa sering aplikasi React dirender dan berapa "cost" renderingnya. Tujuannya adalah untuk membantu mengidentifikasi bagian dari aplikasi yang lambat dan dapat mengambil manfaat dari pengoptimalan seperti memoization. Meskipun Profiler komponen yang ringan, itu harus digunakan hanya jika diperlukan; setiap penggunaan menambahkan beberapa overhead CPU dan memori ke aplikasi.
+Profiler mengukur seberapa sering aplikasi React dirender dan berapa "cost" renderingnya. Tujuannya adalah untuk membantu meng-identifikasi bagian dari aplikasi yang lambat dan dapat mengambil manfaat dari pengoptimalan seperti memoization. Meskipun Profiler komponen yang ringan, gunakan hanya jika diperlukan saja; setiap penggunaan menambahkan beberapa overhead CPU dan memori ke aplikasi.
 
 ## M. React Tanpa ES6
 
