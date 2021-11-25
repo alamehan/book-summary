@@ -1926,7 +1926,7 @@ Higher-order component (HOC) merupakan teknik lanjutan dalam React untuk menggun
 
 ## H. Integrasi dengan Library Lain
 
-React dapat digunakan pada web application apapun. React juga dapat ditanamkan di aplikasi lain (misal jQuery dan Backbone), begitu juga sebaliknya, dengan sedikit pengaturan, aplikasi lain dapat ditanamkan di React. Jika tertarik baca di official dokumentasi react.
+React dapat digunakan pada web application apapun. React juga dapat ditanamkan di aplikasi lain (misal jQuery dan Backbone), begitu juga sebaliknya, dengan sedikit pengaturan, aplikasi lain dapat ditanamkan di React. Jika tertarik baca di official dokumentasi React.
 
 ## I. JSX In Depth
 
@@ -1975,5 +1975,51 @@ Hindari penggunaan ref untuk semua yang bisa dilakukan secara deklaratif, jangan
 - Mengintegrasikan dengan library DOM pihak ketiga.
 
 ## Q. Render Props
+
+Istilah ”render props” merujuk kepada sebuah teknik untuk berbagi kode antara komponen React menggunakan suatu prop yang nilainya merupakan suatu fungsi. Sebuah komponen dengan render props mengambil suatu fungsi yang mengembalikan suatu elemen React dan memanggilnya alih-alih mengimplementasikan logika render-nya sendiri. Secara lebih konkrit, sebuah render props adalah suatu prop berupa sebuah fungsi yang digunakan suatu komponen untuk mengetahui apa yang harus ia render. 
+
+Library yang menggunakan render props termasuk <a href="https://reactrouter.com/">React Router</a> dan <a href="https://github.com/downshift-js/downshift">Downshift</a>. Sebagai catatan, berhati-hatilah ketika menggunakan render props dengan ```React.PureComponent()```, karena dapat menghilangkan keuntungan dari ```React.PureComponent()``` itu sendiri.
+
+## R. Pengecekan Static Type
+
+Pengecekan static type dapat mengidentifikasi jenis masalah tertentu bahkan sebelum kode dijalankan. Secara bawaan React memiliki <a href="https://www.npmjs.com/package/prop-types">propTypes</a> untuk pengecekan type (data). Namun untuk aplikasi yang berukuran besar lebih disarankan menggunakan <a href="https://www.typescriptlang.org/">TypeScript</a> atau <a href="https://flow.org/">Flow</a>. 
+
+Create React App (CRA) mendukung TypeScript secara langsung. Anda dapat membuat sebuah proyek CRA baru dengan dukungan TypeScript atau menambahkan TypesScript pada proyek CRA yang sudah ada, selebihnya kunjungi <a href="https://create-react-app.dev/docs/adding-typescript/">link berikut ini</a>.
+
+## S. Mode Ketat (Strict Mode)
+
+Mode Ketat (Strict Mode) merupakan alat untuk menyoroti potensi masalah dalam aplikasi. Seperti halnya Fragment, ```<React.StrictMode></React.StrictMode>``` tidak me-render antarmuka yang tampak. Mode ini mengaktifkan pemeriksaan dan peringatan ekstra untuk turunannya. Pemeriksaan mode ketat hanya berjalan dalam mode pengembangan. Mode ini tidak berdampak dalam build produksi.
+
+## T. Pengecekan Tipe Dengan propTypes
+
+Dengan berkembangnya aplikasi Anda, Anda dapat menemukan banyak kesalahan atau bugs dengan pengecekan tipe (data). React memiliki kemampuan pengecekan tipe. Untuk menjalankan pengecekan terhadap props disebuah komponen, Anda dapat menggunakan properti khusus ```propTypes```. Berikut contoh penggunaanya:
+
+```JavaScript
+import PropTypes from 'prop-types';
+
+class Greeting extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>
+  }
+}
+
+Greeting.propTypes = {
+  name: PropTypes.string // <- Tipe data String
+}
+```
+
+Selain String tentunya terdapat banyak validator yang disediakan React, seperti ```array```, ```bool```, ```func```, ```number```, ```object```, ```string```, ```symbol```, ```node``` (any/apapun), ```element``` (element React), ```elementType``` (tipe element React), dan masih banyak lagi, selebihnya kunjungi <a href="https://id.reactjs.org/docs/typechecking-with-proptypes.html">link berikut ini</a>.
+
+## U. Uncontrolled Component
+
+Pada banyak kasus, kami sarankan untuk menggunakan controlled component untuk implementasi form (lihat bagian **9. Form di React**). Pada controlled component, data form ditangani oleh komponen React. Cara alternatifnya adalah menggunakan uncontrolled component, di mana data form akan ditangani oleh DOM-nya sendiri. Untuk menulis uncontrolled component, alih-alih menulis event handler untuk setiap pembaruan state, Anda bisa menggunakan ref untuk mendapatkan nilai form dari DOM. Pelajari lebih lanjut di <a href="https://goshacmd.com/controlled-vs-uncontrolled-inputs-react/">link berikut ini</a> dan <a href="https://id.reactjs.org/docs/uncontrolled-components.html">ini</a>.
+
+Sebagai catatan, pada element form di React gunakan ```defaultValue``` alih-alih ```value```, serta gunakan ```defaultChecked``` alih-alih ```checked```.
+
+## V. Web Components
+
+<a href="https://www.webcomponents.org/introduction">Web Components</a> adalah rangkaian teknologi yang memungkinkan Anda membuat elemen kustom yang dapat digunakan kembali (reusable), layaknya React. Namun, React dan Web Components dibangun untuk menyelesaikan masalah yang berbeda. Web Components menyediakan enkapsulasi yang kuat untuk reusable components, sementara React menyediakan library yang deklaratif untuk menjaga DOM tetap sinkron dengan data Anda. Tujuan keduanya adalah untuk saling melengkapi. 
+
+Sebagai developer, Anda bebas untuk menggunakan React di dalam Web Components Anda, atau menggunakan Web Components di dalam React, ataupun keduanya. Namun kebanyakan orang yang menggunakan React tidak menggunakan Web Components.
 
 </details>
