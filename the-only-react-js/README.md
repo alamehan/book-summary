@@ -1908,6 +1908,8 @@ Dalam aplikasi React data dioper dari komponen atas ke bawah (parent ke child) m
 
 Sebelum Anda menggunakan Context: Jika Anda hanya ingin menghindari mengoper beberapa props melalui banyak tingkatan, **Component Composition** seringkali menjadi solusi yang lebih sederhana daripada Context.
 
+**Catatan (New)**: Dalam React terbaru (Hooks), Anda dapat menggunakan ```useContext``` sebagai pengganti context tradisional.
+
 ## D. Error Boundaries
 
 Sebuah class component menjadi komponen error boundary jika komponen tersebut mendefinisikan salah satu (atau kedua) metode lifecycle static: ```getDerivedStateFromError()``` untuk me-render antarmuka darurat saat kesalahan dilontarkan & ```componentDidCatch()``` untuk mencatat informasi kesalahan. Error boundaries bekerja seperti blok JavaScript ```catch {},``` tetapi diperuntukkan bagi komponen. Hanya komponen kelas yang bisa menjadi komponen error boundaries.
@@ -1924,7 +1926,7 @@ Salah satu pola umum pada React adalah return banyak elemen sekaligus. Fragments
 
 Higher-order component (HOC) merupakan teknik lanjutan dalam React untuk menggunakan kembali logika sebuah komponen. Konkritnya, HOC merupakan fungsi yang mengambil sebuah komponen dan mengembalikan sebuah komponen baru. Kita ingin sebuah abstraksi yang mengizinkan kita mendefinisikan logika ini pada satu tempat dan membaginya antar komponen. Dalam kondisi inilah, HOC digunakan.
 
-**Catatan**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru, sebagai gantinya Anda dapat menggunakan Custom Hooks.
+**Catatan (New)**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru, sebagai gantinya Anda dapat menggunakan Custom Hooks.
 
 ## H. Integrasi dengan Library Lain
 
@@ -1971,10 +1973,12 @@ Rekonsilisasi berarti perbuatan menyelesaikan perbedaan. React menyediakan API d
 
 Ref menyediakan cara untuk mengakses simpul DOM atau elemen React yang dibuat dalam render method. Dalam aliran data React yang umum, props adalah satu-satunya cara bagi komponen induk untuk berinteraksi dengan anaknya. Untuk memodifikasi anak, Anda me-render ulang dengan props yang baru. Tetapi ada beberapa kasus ketika Anda harus memodifikasi anak secara imperatif di luar aliran data yang umum. Anak yang akan dimodifikasi bisa berupa komponen React atau elemen DOM. Pada kedua kasus ini, React menyediakan jalan keluar. 
 
-Hindari penggunaan ref untuk semua yang bisa dilakukan secara deklaratif, jangan berlebihan menggunakan ref, karena mungkin Anda tergoda menggunakan ref agar aplikasi "dapat berfungsi". Pada React 16.3 diperkenalkan ```React.createRef()``` sebagai cara baru untuk ```callback ref```. Kemudian pada React Hook diperkenalkan ```useRef()```. Lalu kapan Ref digunakan? Berikut beberapa contoh kasus:
+Hindari penggunaan ref untuk semua yang bisa dilakukan secara deklaratif, jangan berlebihan menggunakan ref, karena mungkin Anda tergoda menggunakan ref agar aplikasi "dapat berfungsi". Pada React 16.3 diperkenalkan ```React.createRef()``` sebagai cara baru untuk ```callback ref```. Lalu kapan Ref digunakan? Berikut beberapa contoh kasus:
 - Mengelola focus, text selection, atau media playback.
 - Memicu imperative animations.
 - Mengintegrasikan dengan library DOM pihak ketiga.
+
+**Catatan (New)**: Dalam React terbaru (Hooks), Anda dapat menggunakan ```useRef()``` sebagai pengganti ref tradisional.
 
 ## Q. Render Props
 
@@ -1982,7 +1986,7 @@ Istilah ”render props” merujuk kepada sebuah teknik untuk berbagi kode antar
 
 Library yang menggunakan render props termasuk <a href="https://reactrouter.com/">React Router</a> dan <a href="https://github.com/downshift-js/downshift">Downshift</a>. Sebagai catatan, berhati-hatilah ketika menggunakan render props dengan ```React.PureComponent()```, karena dapat menghilangkan keuntungan dari ```React.PureComponent()``` itu sendiri.
 
-**Catatan**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru, sebagai gantinya Anda dapat menggunakan Custom Hooks.
+**Catatan (New)**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru, sebagai gantinya Anda dapat menggunakan Custom Hooks.
 
 ## R. Pengecekan Static Type
 
