@@ -1924,6 +1924,8 @@ Salah satu pola umum pada React adalah return banyak elemen sekaligus. Fragments
 
 Higher-order component (HOC) merupakan teknik lanjutan dalam React untuk menggunakan kembali logika sebuah komponen. Konkritnya, HOC merupakan fungsi yang mengambil sebuah komponen dan mengembalikan sebuah komponen baru. Kita ingin sebuah abstraksi yang mengizinkan kita mendefinisikan logika ini pada satu tempat dan membaginya antar komponen. Dalam kondisi inilah, HOC digunakan.
 
+**Catatan**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru, sebagai gantinya Anda dapat menggunakan Custom Hooks.
+
 ## H. Integrasi dengan Library Lain
 
 React dapat digunakan pada web application apapun. React juga dapat ditanamkan di aplikasi lain (misal jQuery dan Backbone), begitu juga sebaliknya, dengan sedikit pengaturan, aplikasi lain dapat ditanamkan di React. Jika tertarik baca di official dokumentasi React.
@@ -1979,6 +1981,8 @@ Hindari penggunaan ref untuk semua yang bisa dilakukan secara deklaratif, jangan
 Istilah ”render props” merujuk kepada sebuah teknik untuk berbagi kode antara komponen React menggunakan suatu prop yang nilainya merupakan suatu fungsi. Sebuah komponen dengan render props mengambil suatu fungsi yang mengembalikan suatu elemen React dan memanggilnya alih-alih mengimplementasikan logika render-nya sendiri. Secara lebih konkrit, sebuah render props adalah suatu prop berupa sebuah fungsi yang digunakan suatu komponen untuk mengetahui apa yang harus ia render. 
 
 Library yang menggunakan render props termasuk <a href="https://reactrouter.com/">React Router</a> dan <a href="https://github.com/downshift-js/downshift">Downshift</a>. Sebagai catatan, berhati-hatilah ketika menggunakan render props dengan ```React.PureComponent()```, karena dapat menghilangkan keuntungan dari ```React.PureComponent()``` itu sendiri.
+
+**Catatan**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru, sebagai gantinya Anda dapat menggunakan Custom Hooks.
 
 ## R. Pengecekan Static Type
 
