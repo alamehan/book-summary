@@ -1037,12 +1037,12 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
       constructor() {
         super()
         this.state = {
-          name: '',           // Nilai default untuk input text
-          age: 0,             // Nilai default untuk input number
-          comment: '',        // Nilai default untuk textarea
-          category: 'food',   // Nilai default untuk select
-          gender: '',         // Nilai default untuk input radio
-          isMember: false,    // Nilai default untuk input checkbox
+          name: '',           // Nilai awal untuk input text
+          age: 0,             // Nilai awal untuk input number
+          comment: '',        // Nilai awal untuk textarea
+          category: 'food',   // Nilai awal untuk select
+          gender: '',         // Nilai awal untuk input radio
+          isMember: false,    // Nilai awal untuk input checkbox
         }
         this.handleSubmit = this.handleSubmit.bind(this)
       }
@@ -1246,7 +1246,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     class Kalkulator1 extends React.Component {
       constructor() {
         super()
-        this.state = { temperature: "" }            // <- Nilai default temperature
+        this.state = { temperature: "" }            // <- Nilai awal temperature
       }
 
       handleChange = event => this.setState({ temperature: event.target.value })
@@ -1279,7 +1279,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
     class InputTemperatur2 extends React.Component {
       constructor(props) {
         super(props)
-        this.state = { temperature: 100 }           // <- Nilai default temperature
+        this.state = { temperature: 100 }           // <- Nilai awal temperature
       }
 
       handleChange = event => this.setState({ temperature: event.target.value })
@@ -1402,7 +1402,7 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
         super()
         // 𝐒𝐓𝐄𝐏 𝟑: Sekarang temperature didefinisikan disini (Kalkulator3) sebagai state komponen induk,
         // yang kemudian akan diolah (dikonversi) untuk dikirimkan nantinya ke komponen InputTemperatur3.
-        this.state = { scale: "c", temperature: "" }    // <- Nilai default
+        this.state = { scale: "c", temperature: "" }    // <- Nilai awal
       }
 
       // 𝐒𝐓𝐄𝐏 𝟒: Function ini nantinya akan dikirim dan dijalankan di komponen InputTemperatur3.
