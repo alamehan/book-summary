@@ -4,6 +4,10 @@
 
 Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.io</a>.
 
+<hr>
+
+## 👨‍💻 𝒫𝒶𝓇𝓉 𝐼: 𝑅𝑒𝒶𝒸𝓉 𝐵𝒶𝓈𝒾𝒸
+
 ## **0. Notes** <a href="#top">⟲</a>
 
 <details>
@@ -1848,7 +1852,11 @@ package, lebih baik gunakan "npm update" dibandingkan "npm install".
 
 </details>
 
-## **13. React Advanced Guides [Summary]** <a href="#top">⟲</a>
+<hr>
+
+## 🚀 𝒫𝒶𝓇𝓉 𝐼𝐼: 𝑅𝑒𝒶𝒸𝓉 𝒜𝒹𝓋𝒶𝓃𝒸𝑒𝒹
+
+## **13. Rangkuman Materi** <a href="#top">⟲</a>
 
 <details>
 <summary>Klik untuk membuka!</summary><br>
@@ -2029,5 +2037,130 @@ Sebagai catatan, pada element form di React gunakan ```defaultValue``` alih-alih
 <a href="https://www.webcomponents.org/introduction">Web Components</a> adalah rangkaian teknologi yang memungkinkan Anda membuat elemen kustom yang dapat digunakan kembali (reusable), layaknya React. Namun, React dan Web Components dibangun untuk menyelesaikan masalah yang berbeda. Web Components menyediakan enkapsulasi yang kuat untuk reusable components, sementara React menyediakan library yang deklaratif untuk menjaga DOM tetap sinkron dengan data Anda. Tujuan keduanya adalah untuk saling melengkapi. 
 
 Sebagai developer, Anda bebas untuk menggunakan React di dalam Web Components Anda, atau menggunakan Web Components di dalam React, ataupun keduanya. Namun kebanyakan orang yang menggunakan React tidak menggunakan Web Components.
+
+</details>
+
+<hr>
+
+## 🦸‍♂️ 𝒫𝒶𝓇𝓉 𝐼𝐼𝐼: 𝑅𝑒𝒶𝒸𝓉 𝐻𝑜𝑜𝓀𝓈
+
+## **14. Basic: useState** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **15. Basic: useEffect** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **16. Basic: useContext** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **17. More: useReducer** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **18. More: useCallback** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **19. More: useMemo** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **20. More: useRef** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **21. More: useImperativeHandle** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **22. More: useLayoutEffect** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **23. More: useDebugValue** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
+
+</details>
+
+## **24. Hooks FAQ** <a href="#top">⟲</a>
+
+<details>
+<summary>Klik untuk membuka!</summary><br>
+
+```HTML
+
+```
 
 </details>
