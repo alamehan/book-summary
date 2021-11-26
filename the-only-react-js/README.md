@@ -2062,7 +2062,11 @@ Sebagai developer, Anda bebas untuk menggunakan React di dalam Web Components An
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root1"></div>
+  <hr>
+  <div id="root2"></div>
+  <hr>
+  <div id="root3"></div>
 
   <script type="text/babel">
 
@@ -2073,7 +2077,11 @@ Sebagai developer, Anda bebas untuk menggunakan React di dalam Web Components An
       Hooks juga bisa dikatakan sebagai penganti Class Components. 90% cleaner React with Hooks!
     */
 
-    function Example() {
+    /* ----------------------------------------------------------------------- */
+    /*                                Bagian 1                                 */
+    /* ----------------------------------------------------------------------- */
+
+    function Example1() {
       // Buat state bernama count dengan nilai awal 0. setCount menjadi fungsi untuk update nilai count.
       // Penjelasan syntax: useState() me-return 2 item, pertama berupa "nilai saat ini" lalu simpan ke
       // count, kedua berupa fungsi "update nilai" yang disimpan ke setCount. Ingat: Array Destructuring.
@@ -2088,7 +2096,70 @@ Sebagai developer, Anda bebas untuk menggunakan React di dalam Web Components An
       )
     }
 
-    ReactDOM.render(<Example />, document.getElementById('root'))
+    ReactDOM.render(<Example1 />, document.getElementById('root1'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                   Bagian 2: Multiple State Variables                    */
+    /* ----------------------------------------------------------------------- */
+
+    function Example2() {
+      const [age, setAge] = React.useState(10)
+      const [sib, setSib] = React.useState(5)
+
+      const handleAge = () => setAge(age + 1)
+      const handleSib = () => setSib(sib + 1)
+
+      return (
+        <>
+          <p>Saya berumur {age} tahun</p>
+          <p>Saya punya {sib} saudara</p>
+
+          <button onClick={handleAge}>Tambah umur</button>
+          <button onClick={handleSib}>Tambah saudara</button>
+        </>
+      )
+    }
+
+    ReactDOM.render(<Example2 />, document.getElementById('root2'))
+
+    /* ----------------------------------------------------------------------- */
+    /*                     Bagian 3: Object State Variable                     */
+    /* ----------------------------------------------------------------------- */
+
+    function Example3() {
+      const [state, setState] = React.useState({ age: 10, sib: 5 })
+
+      const handleClick = val => setState({ ...state, [val]: state[val] + 1 })
+      const { age, sib } = state
+
+      return (
+        <>
+          <p>Saya berumur {age} tahun</p>
+          <p>Saya punya {sib} saudara</p>
+
+          <button onClick={handleClick.bind(null, "age")}>Tambah umur</button>
+          <button onClick={handleClick.bind(null, "sib")}>Tambah saudara</button>
+        </>
+      )
+    }
+
+    ReactDOM.render(<Example3 />, document.getElementById('root3'))
+
+    /*
+      Catatan:
+      - setState() pada Class Components    ➜ Object Merge
+      - useState() pada Function Components ➜ Object Replace
+
+      Pada contoh di atas hasil return useState disimpan kedalam variable state & setState, namun
+      sebenarnya nama variable bisa bebas saja (seperti pada Bagian 1 & 2 di atas).
+
+      Lalu apa maksudnya Object Merge & Object Replace?
+      - Misalkan initial state yaitu {name: "Budi"}.
+      - Maka perintah setState({ age: 17 }) pada Class Components akan membuat state baru Object menjadi
+        {name: "Budi", age: 17}, ini berarti Object Disatukan (Object Merge).
+      - Lalu perintah setState({ age: 17 }) (atau apapun nama yang Anda berikan) pada Function Components
+        akan membuat state baru Object menjadi { age: 17 }, ini berarti Object ditimpa (Object Replace).
+    */
 
   </script>
 </body>
