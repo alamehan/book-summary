@@ -1908,7 +1908,7 @@ Dalam aplikasi React data dioper dari komponen atas ke bawah (parent ke child) m
 
 Sebelum Anda menggunakan Context: Jika Anda hanya ingin menghindari mengoper beberapa props melalui banyak tingkatan, **Component Composition** seringkali menjadi solusi yang lebih sederhana daripada Context.
 
-**Catatan**: Dalam React terbaru (Hooks), Anda dapat menggunakan ```useContext``` sebagai pengganti context tradisional.
+**Catatan**: Dalam React terbaru (Hooks), Anda dapat menggunakan ```useContext()``` sebagai pengganti context tradisional.
 
 ## D. Error Boundaries
 
@@ -1926,7 +1926,7 @@ Salah satu pola umum pada React adalah return banyak elemen sekaligus. Fragments
 
 Higher-order component (HOC) merupakan teknik lanjutan dalam React untuk menggunakan kembali logika sebuah komponen. Konkritnya, HOC merupakan fungsi yang mengambil sebuah komponen dan mengembalikan sebuah komponen baru. Kita ingin sebuah abstraksi yang mengizinkan kita mendefinisikan logika ini pada satu tempat dan membaginya antar komponen. Dalam kondisi inilah, HOC digunakan.
 
-**Catatan**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru, sebagai gantinya Anda dapat menggunakan Custom Hooks.
+**Catatan**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru (Hooks), sebagai gantinya Anda dapat menggunakan Custom Hooks.
 
 ## H. Integrasi dengan Library Lain
 
@@ -1986,7 +1986,7 @@ Istilah ”render props” merujuk kepada sebuah teknik untuk berbagi kode antar
 
 Library yang menggunakan render props termasuk <a href="https://reactrouter.com/">React Router</a> dan <a href="https://github.com/downshift-js/downshift">Downshift</a>. Sebagai catatan, berhati-hatilah ketika menggunakan render props dengan ```React.PureComponent()```, karena dapat menghilangkan keuntungan dari ```React.PureComponent()``` itu sendiri.
 
-**Catatan**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru, sebagai gantinya Anda dapat menggunakan Custom Hooks.
+**Catatan**: Secara tradisional ada 2 solusi untuk masalah menggunakan kembali logika stateful antar komponen, yaitu dengan Higher-Order Components dan Render Props. Namun, dalam React terbaru (Hooks), sebagai gantinya Anda dapat menggunakan Custom Hooks.
 
 ## R. Pengecekan Static Type
 
