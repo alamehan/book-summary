@@ -2050,7 +2050,50 @@ Sebagai developer, Anda bebas untuk menggunakan React di dalam Web Components An
 <summary>Klik untuk membuka!</summary><br>
 
 ```HTML
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    /*
+      Hook adalah fungsi spesial yang memungkinkan Anda “terhubung” dengan fitur-fitur di React dari
+      Function Components. Namanya selalu dimulai dengan "use". Misal useState, merupakan Hook yang
+      memungkinkan Anda memberi state pada Function Components. Kita akan membahas Hooks lainnya nanti.
+      Hooks juga bisa dikatakan sebagai penganti Class Components. 90% cleaner React with Hooks!
+    */
+
+    function Example() {
+      // Buat state bernama count dengan nilai awal 0. setCount menjadi fungsi untuk update nilai count.
+      // Penjelasan syntax: useState() me-return 2 item, pertama berupa "nilai saat ini" lalu simpan ke
+      // count, kedua berupa fungsi "update nilai" yang disimpan ke setCount. Ingat: Array Destructuring.
+      const [count, setCount] = React.useState(0)
+
+      return (
+        // Saat button diklik, setCount dipanggil, React akan re-render komponen dengan nilai count baru.
+        <>
+          <p>Anda mengklik sebanyak {count} kali</p>
+          <button onClick={() => setCount(count + 1)}>Klik saya</button>
+        </>
+      )
+    }
+
+    ReactDOM.render(<Example />, document.getElementById('root'))
+
+  </script>
+</body>
+
+</html>
 ```
 
 </details>
