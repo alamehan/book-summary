@@ -1090,6 +1090,11 @@ var akses = user === "admin" ? true : false;            // Cara baca: Apakah use
 if (akses){ // jika akses bernilai true                 // var akses, lalu kondisi "if (akses)" akan dijalankan. Jika tidak,
   console.log("Welcome, admin!");                       // kirim false ke var akses, dan kondisi "if (akses)" tidak jalan.
 }
+
+var lulus = true;
+var nilai = 100;
+var hasil = lulus ? (nilai === 100 ? "Sempurna!" : "Memuaskan") : "Tidak Lulus";  // Contoh multiple conditions
+console.log(hasil);                                                               // Output: Sempurna!
 ```
 
 Catatan: ```if (akses) { ... }``` merupakan **Shorthand** untuk ```if (akses === true) { ... }```. Selain itu ada juga ```if (!akses) { ... }``` yang berarti ```if (akses !== true) { ... }``` atau sama juga dengan ```if (akses === false) { ... }```.
