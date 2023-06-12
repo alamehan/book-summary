@@ -4663,6 +4663,12 @@ function bandingkan(a, b){                            // Function ini mempunyai 
 
 arrV.sort(bandingkan);                                // sort() yang menggunakan Callback sebagai pengatur urutan Element Array
 console.log(arrV);                                    // Output: [1,2,3,5,8,11,22,31,33,44]
+  
+let arrW = [3,5,2,8,1,31,22,44,33,11];
+let arrX = [3,5,2,8,1,31,22,44,33,11];
+
+arrW.sort((a, b) => a - b); console.log(arrW);        // Output: [1,2,3,5,8,11,22,31,33,44]
+arrX.sort((a, b) => b - a); console.log(arrX);        // Output: [44,33,31,22,11,8,5,3,2,1]
 ```
 
 ### ![✔] 𝐅. Date Object
