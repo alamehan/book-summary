@@ -4687,6 +4687,57 @@ console.log(arrZ);                                    // Output: [3,5,2,8,1,31,2
 console.log(arrZ_sorted);                             // Output: [1,2,3,5,8,11,22,31,33,44]
 ```
 
+**Pro Tips:** Working with Immutable Arrays
+
+```Javascript
+// Example Data
+
+const data = [
+  {
+    id: 1,
+    title: "The Lord of the Rings",
+    author: "J. R. R. Tolkien",
+  },
+  {
+    id: 2,
+    title: "The Cyberiad",
+    author: "Stanislaw Lem",
+  },
+  {
+    id: 3,
+    title: "Dune",
+    author: "Frank Herbert",
+  },
+];
+
+function getBooks() {
+  return data;
+}
+
+const books = getBooks();
+
+// ➊ [ADD] - Add book Object to Array - Gunakan Spread Operator
+
+const newBook = {
+  id: 4,
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+}
+
+const booksAfterAdd = [...books, newBook];
+console.log(booksAfterAdd);
+
+// ➋ [DELETE] - Delete book Object from Array - Gunakan Method filter()
+
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+console.log(booksAfterDelete);
+
+// ➌ [UPDATE] - Update book Object in the Array -  Gunakan Method map()
+
+const booksAfterUpdate = booksAfterDelete.map((book) => book.id === 1 ? {...book, title: "LOTR"} : book);
+console.log(booksAfterUpdate);
+```
+
 ### ![✔] 𝐅. Date Object
 
 **F1. Membuat Date Object**
