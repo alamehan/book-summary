@@ -464,6 +464,8 @@ var bolA = true;                      // Bernilai true, biasanya di pakai di Str
 var bolB = false;                     // Bernilai false, biasanya di pakai di Struktur Logika, Perulangan, dll
 ```
 
+Tipe data boolean adalah tipe data yang hanya memiliki dua nilai, yaitu true (benar) dan false (salah). Tipe data boolean digunakan untuk mewakili nilai logika, seperti kondisi suatu pernyataan atau hasil perbandingan antara dua nilai.
+
 ### ![✔] 𝐄. Null & Undefined
 
 ```Javascript
