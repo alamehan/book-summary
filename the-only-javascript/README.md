@@ -457,6 +457,8 @@ var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: 
 | ```\uXXXX```        | Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
 | 📚 Bonus            | Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/   	|
 
+Tipe data string adalah tipe data yang digunakan untuk menyimpan barisan karakter. Tipe data string dapat berupa kata, kalimat, atau bahkan paragraf.
+
 ### ![✔] 𝐃. Boolean
 
 ```Javascript
