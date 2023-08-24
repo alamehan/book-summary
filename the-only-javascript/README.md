@@ -14,7 +14,7 @@ Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu dik
 
 **Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya Anda akan memahaminya juga, bersabarlah. **Ketik ulang** contoh kode yang sedang dipelajari (dari situlah proses belajar didapat), bukan hanya copy-paste kode.
 
-**Pro Tips:** Jika terdapat bagian materi yang tidak dipahami, Anda dapat bertanya pada <a href="https://bard.google.com/">Google Bard</a> atau <a href="https://chat.openai.com/">ChatGPT</a> ⚠️.
+**Pro Tips:** Jika terdapat bagian materi yang tidak dipahami, Anda dapat bertanya pada <a href="https://bard.google.com/">Google Bard</a> atau <a href="https://chat.openai.com/">ChatGPT</a>. Jika Anda ingin mempelajari JavaScript secara komprehensif bisa mulai dari <a href="https://www.notion.so/RighTr4ck-by-alamehan-db60d6cb87d542fdaa03b560c75d22cb?pvs=4">RighTr4ck: 80 daftar pertanyaan terpenting sebelum memulai belajar sesuatu</a>.
 
 # 𝐋𝐞𝐭'𝐬 𝐆𝐞𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝!
 
