@@ -441,6 +441,9 @@ var strG = "\u2764 You!"              // Contoh pemakaian Unicode ⇨ Hasilnya: 
 var strH = `Hello World!`;            // String dengan backtick `` (Template String ES6+)
 var strI = `"Hei!", Jum'at today.`;   // Kutip satu & dua di dalam backtick
 var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
+
+Tipe data string adalah tipe data yang digunakan untuk menyimpan barisan karakter. Dapat berupa kata, kalimat, atau paragraf.
+
 ```
 
 | Escape Characters 	| Kegunaan                                                       	|
@@ -458,8 +461,6 @@ var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: 
 | ```\xXX```          | Karakter Latin-1 dengan menggunakan dua digit heksa desimal XX 	|
 | ```\uXXXX```        | Karakter Unicode dengan menggunakan empat digit heksa XXXX     	|
 | 📚 Bonus            | Daftar Karakter Latin-1 & Unicode: http://unicode-table.com/   	|
-
-Tipe data string adalah tipe data yang digunakan untuk menyimpan barisan karakter. Tipe data string dapat berupa kata, kalimat, atau bahkan paragraf.
 
 ### ![✔] 𝐃. Boolean
 
@@ -521,8 +522,8 @@ var arrAcak  = [1, 2.0, "tiga", true, null];    // Array 1D berisi beragam tipe 
 var arr2D    = [[2,5], [9,5]];                  // Array 2D, misalnya untuk koordinat
 
 console.log(arrSiswa);                // Output: ["Andri", "Joko", "Sukma"]
-console.log(arrSiswa[0]);             // Output: Andri                        ⇨ ⚠️ Array di JavaScript dimulai dari indeks ke 0,
-console.log(arrSiswa[1]);             // Output: Joko                            bukan dari indeks ke 1, ingat baik-baik ya.
+console.log(arrSiswa[0]);             // Output: Andri      ⇨ ⚠️ Array di JavaScript dimulai dari indeks ke 0,
+console.log(arrSiswa[1]);             // Output: Joko         bukan dari indeks ke 1, ingat baik-baik ya.
 console.log(arrSiswa[2]);             // Output: Sukma
 
 console.log(arr2D);                   // Output: [[2,5],[9,5]]
