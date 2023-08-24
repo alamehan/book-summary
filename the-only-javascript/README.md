@@ -10,7 +10,7 @@ Markdown ini ditulis oleh <a href="https://alamehan.github.io/">alamehan.github.
 
 "20+ years dev experience, 8 books with 100k+ copies sold, 300k+ hours watched of my videos, 4k+ taught in person... And you know what? I still struggle to get my code to work and it's still a tedious slog. And my code still confuses me the next day. You're not alone in these struggles." <a href="https://github.com/getify">Kyle Simpson (Getify)</a>, penulis buku seri "You Don't Know JS".
 
-Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu diketahui dalam Web Development. Web Development adalah bidang ilmu yang sangat luas, jadi itu benar-benar normal dan dapat diterima bahwa Anda tidak pernah tahu segalanya tentang Web Development. Jangan terlalu membebani pundakmu dan membuat terlalu banyak ekspektasi. Developer dan senior terbaik sekalipun tidak memiliki masalah dalam mengakui bahwa mereka tidak tahu segalanya seperti ungkapan Kyle Simpson di atas.
+Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu diketahui dalam Web Development. Web Development adalah bidang ilmu yang sangat luas, jadi itu benar-benar normal dan dapat diterima bahwa Anda tidak pernah tahu segalanya tentang Web Development. Jangan terlalu membebani pundakmu dan membuat terlalu banyak ekspektasi. Senior Developer terbaik sekalipun tidak memiliki masalah dalam mengakui bahwa mereka tidak mengetahui segalanya, seperti apa yang diungkapkan Kyle Simpson.
 
 **Catatan:** Belajar JavaScript itu tidak mungkin linear (lurus-lurus aja), terkadang beberapa konsep lanjutan mesti diperkenalkan dulu diawal hanya untuk tujuan mengetahui saja, bukan mendalami. Hal ini tidak menjadi masalah, karena pada akhirnya Anda akan memahaminya juga, bersabarlah. **Ketik ulang** contoh kode yang sedang dipelajari (dari situlah proses belajar didapat), bukan hanya copy-paste kode.
 
@@ -18,10 +18,10 @@ Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu dik
 
 | Emoticon 	| Keterangan                                	|
 |----------	|-------------------------------------------	|
-| 🔔        	| Baca selebihnya di bab/point yang ditunjuk 	|
+| 🔔        	| Baca selebihnya di bab/point yang diacu 	|
 | 🚧        	| Materi tidak dibahas di markdown ini      	|
-| 📚        	| Resource eksternal (berupa website)       	|
-| 📖        	| Informasi tambahan yang berguna           	|
+| 📚        	| Resource eksternal (berupa website, dll)       	|
+| 📖        	| Informasi tambahan yang bermanfaat           	|
 | ⚠️        	| Informasi yang sangat penting diketahui   	|
 | ✔️        	| Direkomendasikan untuk digunakan          	|
 | ❌        	| Tidak direkomendasikan untuk digunakan    	|
@@ -47,9 +47,9 @@ Terima kenyataan bahwa Anda tidak akan pernah tahu segala sesuatu yang perlu dik
 <hr>
 <div id="bab1_1"></div>
 
-## `1-1. Kenalan dengan JavaScript` <a href="#daftar_isi_bab1">🡅</a>
+## `1-1. Kenalan dengan JavaScript` <a href="#daftar_isi_bab1">⬆</a>
 
-JavaScript (JS) merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CSS, PHP, MySQL dan JavaScript. Bersama-sama dengan HTML dan CSS, ketiganya berbagi peran masing-masing. HTML digunakan untuk membuat struktur dan isi dari halaman web (content). CSS untuk mempercantik tampilan website (design). Sedangkan JavaScript berfungsi menangani interaksi (behavior).**“HTML for content, CSS for presentation and JavaScript for behavior”**.
+JavaScript (JS) merupakan bagian dari 5 materi dasar web programming, yakni: HTML, CSS, PHP, MySQL dan JavaScript. Bersama-sama dengan HTML dan CSS, ketiganya berbagi peran masing-masing. HTML digunakan untuk membuat struktur dan isi dari halaman web (content). CSS untuk mempercantik tampilan website (design). Sedangkan JavaScript berfungsi menangani interaksi (behavior). **“HTML for content, CSS for presentation and JavaScript for behavior”**.
 
 HTML, CSS dan JavaScript sama-sama termasuk ke dalam kelompok “client side programming language”, yakni bahasa pemrograman yang dijalankan di sisi client (web browser). PHP juga merupakan bahasa pemrograman web, tapi berada di dalam server, sehingga disebut sebagai “server side programming language”.
 
@@ -66,7 +66,7 @@ Setelah mempelajari JavaScript, barulah kita masuk ke DOM. Disinilah JavaScript 
 <hr>
 <div id="bab1_2"></div>
 
-## `1-2. Sejarah & Perkembangan` <a href="#daftar_isi_bab1">🡅</a>
+## `1-2. Sejarah & Perkembangan` <a href="#daftar_isi_bab1">⬆</a>
 
 <img src="assets/brendan-eich.png"><br>
 
@@ -90,7 +90,7 @@ Setelah perang web browser pertama berakhir dengan kekalahan telak Netscape, per
 
 ES5 (ECMAScript 5) dirilis pada tahun 2009, menghadirkan beragam fitur menarik. Berselang 6 tahun kemudian yaitu pada tahun 2015, ES6 (ECMAScript 6/ES2015) rilis sebagai versi update terbesar yang pernah ada, menghadirkan banyak sekali fitur modern yang canggih dan powerful. Sebagian besar merupakan fitur lanjutan untuk membuat aplikasi yang kompleks.
 
-Setelah ES6 ini, ECMAScript memutuskan tidak lagi rilis segudang fitur sekaligus dalam satu waktu dengan konsekuensi memakan waktu bertahun-tahun lamanya (seperti yang terjadi di ES6), melainkan mengubahnya menjadi pola rilis tahunan, men-deliver fitur terbarunya sedikit demit sedikit. ES6/ES2015 hingga ES11/ES2020 kemudian disebut sebagai ES6+, dan ES12/ES2021 hingga seterusnya disebut sebagai ESNext. Namun secara umum dari semenjak ES6 dan seterusnya disebut sebagai Modern JavaScript.
+Setelah ES6 ini, ECMAScript memutuskan tidak lagi rilis segudang fitur sekaligus dalam satu waktu dengan konsekuensi memakan waktu bertahun-tahun lamanya (seperti yang terjadi di ES6), melainkan mengubahnya menjadi pola rilis tahunan, men-deliver fitur terbarunya sedikit demit sedikit. ES6/ES2015 hingga ES11/ES2020 kemudian disebut sebagai ES6+, dan ES12/ES2021 hingga seterusnya disebut sebagai ESNext. Namun secara umum dimulai dari ES6 dan seterusnya disebut sebagai Modern JavaScript.
 
 <img src="assets/ecmascript-release.png"><br>
 
@@ -98,16 +98,23 @@ Setelah ES6 ini, ECMAScript memutuskan tidak lagi rilis segudang fitur sekaligus
 
 Perkembangan JavaScript Saat Ini: Website yang tidak berbentuk “website”, tetapi menyerupai aplikasi desktop yang dikenal sebagai **Single-page Application (SPA)**. Contoh dari Single-page Application ini seperti aplikasi Google: Gmail, GDrive, Google Doc, dll. Di website tersebut, halamannya akan tetap sama, tidak di reload seperti layaknya sebuah website.
 
-Namun perlu juga dipahami bahwa walaupun materi di markdown ini sudah lumayan rumit, ini barulah dasar dari JavaScript. Jika Anda serius ingin mempelajari JavaScript lebih jauh lagi, bisa lanjut ke library seperti **jQuery**, framework seperti **AngularJS**, **ReactJS** maupun **VueJS**, atau ke sisi server dengan menggunakan **Node.js**.
+Namun perlu juga dipahami bahwa walaupun materi di markdown ini sudah cukup rumit, ini barulah dasar dari JavaScript. Jika Anda serius ingin mempelajari JavaScript lebih jauh lagi, bisa lanjut ke library seperti **jQuery**, framework seperti **AngularJS**, **ReactJS** maupun **VueJS**, atau ke sisi server dengan menggunakan **Node.js**.
 
-Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat diakses di:
-- <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript (Wikipedia)</a>
+Timeline sejarah JavaScript dari awal kemunculannya hingga saat ini secara ringkas dapat diakses di:
 - <a href="https://www.jetbrains.com/lp/javascript-25/">25 years of JavaScript history (JetBrains)</a>
+- <a href="https://webreference.com/javascript/basics/versions/">A Brief History of ECMAScript Versions in JavaScript (WebReference)</a>
+- <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript (Wikipedia)</a>
+- <a href="https://github.com/sudheerj/ECMAScript-features">ECMAScript Features Cheatsheet (GitHub)</a>
+
+Sepanjang proses belajar JavaScript pada markdown ini, Anda dapat menggunakan salah satu online code editor berikut:
+- <a href="https://developer.mozilla.org/en-US/play">MDN Playground</a>
+- <a href="https://codepen.io/pen/">Codepen.io</a>
+- <a href="https://vscode.dev/">VSCode.dev</a>
 
 <hr>
 <div id="bab1_3"></div>
 
-## `1-3. Menjalankan Kode` <a href="#daftar_isi_bab1">🡅</a>
+## `1-3. Menjalankan Kode` <a href="#daftar_isi_bab1">⬆</a>
 
 > - [X] 𝐀. Inline JavaScript
 > - [X] 𝐁. Internal JavaScript
@@ -161,7 +168,7 @@ Timeline sejarah JavaScript dari awal lahir hingga saat ini secara ringkas dapat
 </html>
 ```
 
-Menempatkan kode JavaScript di bagian atas banyak ditemukan. Namun berkaitan dengan masalah performa, beberapa developer web menyarankan meletakkan JavaScript dibagian bawah tag ```<body>```, yakni sebelum tag penutup ```</body>```, sebagaimana yang dijelaskan dari sebuah artikel di <a href="https://developer.yahoo.com/performance/rules.html">Yahoo Developer Network: Best Practices for Speeding Up Your Web Site</a>.
+Berkaitan dengan masalah performa, beberapa developer web menyarankan meletakkan JavaScript dibagian bawah tag ```<body>```, yakni sebelum tag penutup ```</body>```, sebagaimana yang dijelaskan dari sebuah artikel di <a href="https://developer.yahoo.com/performance/rules.html">Yahoo Developer Network: Best Practices for Speeding Up Your Web Site</a>.
 
 Cara web browser dalam menampilkan sebuah halaman web, yakni secara berurutan dari atas ke bawah, mulai dari baris pertama hingga baris terakhir. Fitur **cache** dari web browser bisa mempercepat pengaksesan website dengan cara menyimpan file JavaScript di dalam cache.
 
@@ -198,7 +205,7 @@ Berbeda dengan mayoritas bahasa pemrograman lain, secara default kita tidak bisa
 
 Tab Inspector (1) bisa digunakan untuk menelusuri seluruh kode HTML yang terdapat di dalam halaman web (2), di sisi kanan kita bisa melihat kode CSS yang digunakan oleh tag HTML tersebut (3). Jika Anda sering mengedit kode CSS, tab Inspector ini sangat bermanfaat untuk melihat dan menjalankan (mengedit) kode CSS tanpa perlu mengubah file asli.
 
-Tab yang sering kita akses selama membuat kode program JavaScript adalah **tab console**, yang berada di sebelah kanan tab Inspector. Apabila kode yang Anda buat tidak berjalan sebagaimana mestinya, hal pertama yang harus dilakukan adalah memeriksa tab console ini. Selain menampilkan pesan error, di dalam tab console kita juga bisa menjalankan kode program JavaScript secara langsung, tanpa harus menulisnya di dalam file HTML. Fungsi ```console.log()``` berguna untuk menampilkan hasil kode program ke tab console.
+Tab yang sering kita akses selama membuat kode program JavaScript adalah **tab console**, yang berada di sebelah kanan tab Inspector. Apabila kode yang Anda buat tidak berjalan sebagaimana mestinya, hal pertama yang harus dilakukan adalah memeriksa tab console ini. Selain menampilkan pesan error, di dalam tab console kita juga bisa menjalankan kode program JavaScript secara langsung, tanpa harus menulisnya di dalam file HTML. Function ```console.log()``` berguna untuk menampilkan hasil kode program ke tab console.
 
 ### ![✔] 𝐄. Helper Methods
 
@@ -236,7 +243,7 @@ Salah satu kelemahan (sekaligus keunggulan) dari JavaScript adalah, pengunjung w
 <hr>
 <div id="bab1_4"></div>
 
-## `1-4. Aturan Dasar` <a href="#daftar_isi_bab1">🡅</a>
+## `1-4. Aturan Dasar` <a href="#daftar_isi_bab1">⬆</a>
 
 > - [X] 𝐀. Statement
 > - [X] 𝐁. Case Sensitive
@@ -267,7 +274,7 @@ Salah satu kelemahan (sekaligus keunggulan) dari JavaScript adalah, pengunjung w
 <hr>
 <div id="bab1_5"></div>
 
-## `1-5. Variable` <a href="#daftar_isi_bab1">🡅</a>
+## `1-5. Variable` <a href="#daftar_isi_bab1">⬆</a>
 
 Secara sederhana, Variable adalah “wadah/penampung” dari sebuah data. Disebut Variable karena data yang kita simpan bisa berubah-ubah sepanjang kode program (isinya tidak tetap). ```var angka = 192;``` **Operasi Assignment** atau memberikan nilai ke sebuah Variable dibaca dari kanan ke kiri (right-to-left, baca selengkapnya di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN: Operator Precedence</a>). Artinya, 192 “dimasukkan” sebagai nilai ke Variable ```angka```.
 
@@ -308,7 +315,7 @@ Terdapat istilah **Identifier** dan **Literal**, pada contoh di bawah ini: var `
 <hr>
 <div id="bab1_6"></div>
 
-## `1-6. Strict Mode & Debugger` <a href="#daftar_isi_bab1">🡅</a>
+## `1-6. Strict Mode & Debugger` <a href="#daftar_isi_bab1">⬆</a>
 
 **Strict Mode** berfungsi untuk melarang programmer melakukan hal-hal tertentu, misalnya mendefinisikan Variable menggunakan "future" reserved word, artinya sebuah keyword yang sudah "dipesan" JavaScript untuk dijadikan reserved word di masa depan, seperti ```interface```, ```private```, ```protected```, dst. Selain itu, Strict Mode juga memaksa JavaScript menampilkan error (di tab console) pada kode program yang seharusnya bisa berjalan “normal” atau **“silent error”**, misalnya ketika membuat Variable tanpa didahului keyword ```var```/```let```/```const``` (bisa saja karena lupa). Dengan Strict Mode setidaknya dapat meminimalisir kemungkinan bug karena penulisan yang salah, typo, dan berbagai hal lain. 
 
@@ -333,7 +340,7 @@ Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu digunakan, terutam
 </html>
 ```
 
-**Nasihat Senior**: Jika kode JavaScript yang akan dirancang cukup panjang, sangat disarankan untuk memeriksa hasilnya secara berkala. Buat beberapa baris, cek ```console.log()```. Jika aman, barulah lanjut. Setelah beberapa baris, cek lagi dengan ```console.log()```, demikian hingga akhir kode program. Ini untuk memastikan kita bisa mengatasi masalah sedini mungkin. **Akan jauh lebih mudah mencari error di 10 baris kode program dibandingkan 100 baris**. Dengan memeriksa secara reguler, kita juga menciptakan sebuah "save point". Yakni jika terjadi error, bisa ditelusuri itu kemungkinan besar berasal dari beberapa baris kode terakhir.
+**Nasihat Senior**: Jika kode JavaScript yang akan dirancang cukup kompleks, sangat disarankan untuk memeriksa hasilnya secara berkala. Buat beberapa baris, cek ```console.log()```. Jika aman, lanjutkan. Setelah beberapa baris, cek lagi dengan ```console.log()```, demikian hingga akhir kode program. Ini untuk memastikan kita bisa mengatasi masalah sedini mungkin. **Akan jauh lebih mudah mencari error di 10 baris kode program dibandingkan 100 baris**. Dengan memeriksa secara berkala, kita juga menciptakan sebuah "save point". Yakni jika terjadi error, bisa ditelusuri itu kemungkinan besar berasal dari beberapa baris kode terakhir.
 
 </details>
 
@@ -357,7 +364,7 @@ Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu digunakan, terutam
 <hr>
 <div id="bab2_1"></div>
 
-## `2-1. Tipe Data` <a href="#daftar_isi_bab2">🡅</a>
+## `2-1. Tipe Data` <a href="#daftar_isi_bab2">⬆</a>
 
 > 𝐓𝐢𝐩𝐞 𝐃𝐚𝐭𝐚 𝐏𝐫𝐢𝐦𝐢𝐭𝐢𝐟
 > > - [X] 𝐀. Number
@@ -375,7 +382,7 @@ Strict mode sepenuhnya opsional dan mungkin tidak bisa selalu digunakan, terutam
 
 Secara garis besar, tipe data dalam JavaScript terdiri dari 2 kelompok, yakni tipe data primitif, dan tipe data Object. Tipe data primitif disebut demikian karena tipe data ini “sederhana” dan hanya terdiri dari 1 nilai. Yang termasuk ke dalam **Tipe data primitif**, yaitu: **Number, String, Boolean, Null, Undefined, dan Symbol**. Sedangkan tipe data Object, bisa disebut sebagai tipe data “khusus” yang prilaku dan isinya beragam. Adapun yang termasuk ke dalam **Tipe data Object**, yaitu: **Array, Object, RegExp, Date, Map, WeakMap, Set, dan WeakSet.**
 
-JavaScript termasuk ke dalam bahasa **Dynamic typing**, artinya kita tidak perlu memberi tahu mesin tipe data apa yang dimiliki sebuah Variabel, hal itu akan diketahui saat kode berjalan. Variabel dapat menampung berbagai jenis nilai karena semuanya diketahui selama eksekusi.
+JavaScript termasuk ke dalam bahasa **Dynamic typing**, artinya kita tidak perlu memberi tahu mesin tipe data apa yang dimiliki sebuah Variable, hal itu akan diketahui saat kode berjalan. Variable dapat menampung berbagai jenis nilai karena semuanya diketahui selama eksekusi.
 
 ### ![✔] 𝐀. Number
 
@@ -400,7 +407,7 @@ var numL = Infinity;                  // Keadaan dimana data "angka tak hingga"
 var numM = -Infinity;                 // Keadaan dimana data "angka negatif tak hingga"
 ```
 
-NaN & Infinity sebenarnya tidak termasuk ke dalam tipe data. Contoh di atas yaitu assign nilai NaN & Infinity ke dalam sebuah Variable, dalam kasus real tidak pernah dilakukan. NaN & Infinity hanya berupa nilai output yang dihasilkan JavaScript saat menjumpai kasus-kasus yang memang menghasilkan nilai tersebut, contohnya dapat dilihat di bawah ini.
+NaN (Not a Number) & Infinity sebenarnya tidak termasuk ke dalam tipe data. Pada contoh di atas, assign nilai NaN & Infinity ke dalam sebuah Variable, dalam studi kasus nyata tidak pernah dilakukan. NaN & Infinity hanya berupa nilai output yang dihasilkan JavaScript saat menjumpai kasus-kasus yang memang menghasilkan nilai tersebut, contohnya dapat dilihat di bawah ini.
 
 #### ⤷ Kasus yang menghasilkan NaN & Infinity:
 
@@ -540,7 +547,7 @@ console.log(arr2D[1][1]);             // Output: 5
 <hr>
 <div id="bab2_2"></div>
 
-## `2-2. Operator` <a href="#daftar_isi_bab2">🡅</a>
+## `2-2. Operator` <a href="#daftar_isi_bab2">⬆</a>
 
 > 𝐏𝐞𝐧𝐭𝐢𝐧𝐠 𝐔𝐧𝐭𝐮𝐤 𝐃𝐢𝐤𝐞𝐭𝐚𝐡𝐮𝐢
 > > - [X] 𝐀. Operator Precedence
@@ -1008,7 +1015,7 @@ console.log(...siswa[2]);             // Output: J a k a
 <hr>
 <div id="bab2_3"></div>
 
-## `2-3. Struktur Logika` <a href="#daftar_isi_bab2">🡅</a>
+## `2-3. Struktur Logika` <a href="#daftar_isi_bab2">⬆</a>
 
 > - [X] 𝐀. If & Else
 > - [X] 𝐁. Switch
@@ -1140,7 +1147,7 @@ console.log(data2);                                     // Output: Ada isinya   
 <hr>
 <div id="bab2_4"></div>
 
-## `2-4. Perulangan` <a href="#daftar_isi_bab2">🡅</a>
+## `2-4. Perulangan` <a href="#daftar_isi_bab2">⬆</a>
 
 > - [X] 𝐀. For Loop
 > - [X] 𝐁. While Loop
@@ -1301,7 +1308,7 @@ Isi hidupkan = function(){return "Mesin dihidupkan!";}
 <hr>
 <div id="bab2_5"></div>
 
-## `2-5. Function` <a href="#daftar_isi_bab2">🡅</a>
+## `2-5. Function` <a href="#daftar_isi_bab2">⬆</a>
 
 > 𝐊𝐨𝐧𝐬𝐞𝐩 𝐔𝐭𝐚𝐦𝐚
 > > - [X] 𝐀. Function Declaration
@@ -1370,7 +1377,7 @@ Jika kita (secara eksplisit) tidak menuliskan keyword ```return``` beserta nilai
 
 ⚠️ Berikut catatan penting terkait keyword ```return``` pada Function:
 
-Dalam kasus real, biasanya saat menjalankan sebuah Function yang me-return sesuatu, hasilnya akan disimpan ke dalam sebuah Variable terlebih dahulu. Misalnya ```var hasil = ratarata(1, 2, 3, 4)```, dimana Variable ```hasil``` akan menampung hasil return dari Function ```ratarata(1, 2, 3, 4)```, barulah kemudian Variable ```hasil``` ini diolah sesuai kebutuhan. Atau untuk keperluan debugging, agar lebih cepat, bisa juga hasil return sebuah Function langsung ditampilkan di tab console tanpa perlu ditampung ke dalam sebuah Variable terlebih dahulu, misalnya ```console.log(ratarata(1, 2, 3, 4))``` yang akan langsung menampilkan hasil return di tab console. 
+Dalam studi kasus nyata, biasanya saat menjalankan sebuah Function yang me-return sesuatu, hasilnya akan disimpan ke dalam sebuah Variable terlebih dahulu. Misalnya ```var hasil = ratarata(1, 2, 3, 4)```, dimana Variable ```hasil``` akan menampung hasil return dari Function ```ratarata(1, 2, 3, 4)```, barulah kemudian Variable ```hasil``` ini diolah sesuai kebutuhan. Atau untuk keperluan debugging, agar lebih cepat, bisa juga hasil return sebuah Function langsung ditampilkan di tab console tanpa perlu ditampung ke dalam sebuah Variable terlebih dahulu, misalnya ```console.log(ratarata(1, 2, 3, 4))``` yang akan langsung menampilkan hasil return di tab console. 
 
 Hal semacam ini akan banyak sekali dijumpai di dalam markdown ini. Mindset yang perlu ditanamkan yaitu "**Jika di dalam sebuah Function terdapat keyword return, artinya hasil return tersebut butuh ditampung terlebih dahulu untuk diolah kemudian atau munculkan langsung di tab console.**". Di pembahasan mengenai Closures, Function as Return Value, Factory Function & Immediately Invoked Function Expression (IIFE) nanti, mindset tersebut akan sangat membantu untuk memudahkan Anda dalam memahami baris kode.
 
@@ -2487,7 +2494,7 @@ Pada contoh "Penulisan dengan Arrow Function (2)" di atas, saat kita ingin me-re
 <hr>
 <div id="bab2_6"></div>
 
-## `2-6. Object` <a href="#daftar_isi_bab2">🡅</a>
+## `2-6. Object` <a href="#daftar_isi_bab2">⬆</a>
 
 > - [X] 𝐀. Object Sebagai Tipe Data
 > - [X] 𝐁. Nested Object
@@ -3473,7 +3480,7 @@ console.log(getMhs(mhs));             // Output: 123 coding Bandung default
 <hr>
 <div id="bab3_1"></div>
 
-## `3-1. Object Oriented Programming` <a href="#daftar_isi_bab3">🡅</a>
+## `3-1. Object Oriented Programming` <a href="#daftar_isi_bab3">⬆</a>
 
 > - [X] 𝐀. Prosedural vs. OOP
 > - [X] 𝐁. Object Sebagai OOP
@@ -3773,14 +3780,14 @@ console.log(huruf);                   // Output: ["A", "B", "C"]
 console.log(tampung2);                // Output: D
 ```
 
-Karena ```push``` dan ```pop``` merupakan sebuah method, maka tentunya ia juga dapat mengembalikan/me-return sesuatu. Misalnya seperti pada contoh di atas, jika ditampung ke dalam sebuah Variable terlebih dahulu (tidak hanya menjalankan method-nya saja), maka method push me-return panjang (length) dari Array tersebut, sedangkan method pop me-return nilai yang di hapus dari Array. Namun, dalam kasus real jarang sekali hasil return sebuah method bawaan JavaScript ditampung ke Variable, kecuali memang ada keperluan tertentu untuk diolah lebih lanjut.
+Karena ```push``` dan ```pop``` merupakan sebuah method, maka tentunya ia juga dapat mengembalikan/me-return sesuatu. Misalnya seperti pada contoh di atas, jika ditampung ke dalam sebuah Variable terlebih dahulu (tidak hanya menjalankan method-nya saja), maka method push me-return panjang (length) dari Array tersebut, sedangkan method pop me-return nilai yang di hapus dari Array. Namun, dalam studi kasus nyata jarang sekali hasil return sebuah method bawaan JavaScript ditampung ke Variable, kecuali memang ada keperluan tertentu untuk diolah lebih lanjut.
 
 ⚠️ Di pembahasan-pembahasan berikutnya, method bawaan JavaScript hanya akan dijalankan saja, tidak ditampung hasil return-nya.
 
 <hr>
 <div id="bab3_2"></div>
 
-## `3-2. JavaScript Native Object` <a href="#daftar_isi_bab3">🡅</a>
+## `3-2. JavaScript Native Object` <a href="#daftar_isi_bab3">⬆</a>
 
 > - [X] 𝐀. Number Object
 > - [X] 𝐁. Math Object
@@ -4990,7 +4997,7 @@ Info: Algoritma di atas, serupa juga dengan algoritma "Membagi nilai rupiah". Mi
 <hr>
 <div id="bab3_3"></div>
 
-## `3-3. Global property & Function` <a href="#daftar_isi_bab3">🡅</a>
+## `3-3. Global property & Function` <a href="#daftar_isi_bab3">⬆</a>
 
 > - [X] 𝐀. Global property
 > - [X] 𝐁. Global Function
@@ -5078,7 +5085,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 <hr>
 <div id="bab4_1"></div>
 
-## `4-1. Pengantar DOM` <a href="#daftar_isi_bab4">🡅</a>
+## `4-1. Pengantar DOM` <a href="#daftar_isi_bab4">⬆</a>
 
 **Materi tentang JavaScript sudah selesai!** Mulai dari sini JavaScript akan digunakan untuk merakit komponen DOM (pemrosesan DOM tidak harus selalu menggunakan JavaScript, hanya saja JavaScript memang sangat dominan dan nyaris tidak tersaingi). DOM Merupakan pemodelan dokumen HTML ke dalam bentuk Object. Artinya, setiap tag-tag HTML seperti ```<h1>```, ```<p>``` atau ```<form>``` dimodelkan menjadi sebuah Object. Sebagaimana layaknya Object, tag-tag HTML ini nantinya memiliki property dan method yang bisa digunakan untuk mengatur tampilan. “Model” yang dipakai di dalam DOM adalah dengan “memetakan” seluruh Object HTML layaknya sebuah **pohon (tree)**.
 
@@ -5107,7 +5114,7 @@ console.log(decodeURIComponent(noo));   // Output: http://www.duniailkom.com/Bel
 <hr>
 <div id="bab4_2"></div>
 
-## `4-2. DOM Object` <a href="#daftar_isi_bab4">🡅</a>
+## `4-2. DOM Object` <a href="#daftar_isi_bab4">⬆</a>
 
 > - [X] 𝐀. Window Object
 > - [X] 𝐁. Document Object (Part 1)
@@ -5588,7 +5595,7 @@ console.log(joo.className);                         // Output: tebal
 <hr>
 <div id="bab4_3"></div>
 
-## `4-3. Event Handler` <a href="#daftar_isi_bab4">🡅</a>
+## `4-3. Event Handler` <a href="#daftar_isi_bab4">⬆</a>
 
 > - [X] 𝐀. Event Handler dari atribut HTML
 > - [X] 𝐁. Event Handler dari property Element
@@ -5773,7 +5780,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 <hr>
 <div id="bab4_4"></div>
 
-## `4-4. DOM Event` <a href="#daftar_isi_bab4">🡅</a>
+## `4-4. DOM Event` <a href="#daftar_isi_bab4">⬆</a>
 
 > - [X] 𝐀. Event Object
 > - [X] 𝐁. Event Propagation
@@ -5781,7 +5788,7 @@ Jumlah DOM event yang tersedia sangat banyak, lebih dari 200 dan terus bertambah
 
 <img src="assets/dom-event.png">
 
-Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya Argument sebuah fungsi berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada Event Object bisa langsung diinput tanpa diisi nilai apapun. Misalnya pada contoh di bawah ini, nilai dari Argument ```event``` akan di generate otomatis oleh web browser. Penulisan tidak harus ```event```, bisa apa saja, misalnya ```e```, dll.
+Event Object merupakan Object khusus yang dibuat secara otomatis oleh web browser ketika event terjadi. Object ini berisi berbagai informasi terkait event tersebut, apa yang di klik, posisi dari cursor mouse, dst. Yang cukup unik, biasanya Argument sebuah function berisi Variable yang telah di definisikan atau sudah memiliki nilai, tetapi pada Event Object bisa langsung diinput tanpa diisi nilai apapun. Misalnya pada contoh di bawah ini, nilai dari Argument ```event``` akan di generate otomatis oleh web browser. Penulisan tidak harus ```event```, bisa apa saja, misalnya ```e```, dll.
 
 ### ![✔] 𝐀. Event Object
 
@@ -5989,7 +5996,7 @@ Selain tag ```<a>```, contoh lainnya yaitu event bawaan pada tombol submit di fo
 <hr>
 <div id="bab4_5"></div>
 
-## `4-5. Mouse Events` <a href="#daftar_isi_bab4">🡅</a>
+## `4-5. Mouse Events` <a href="#daftar_isi_bab4">⬆</a>
 
 Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. Karena itulah mouse event perlu dibahas dengan detail.
 
@@ -6142,7 +6149,7 @@ Mouse merupakan alat interaksi yang banyak dipakai dalam mengakses halaman web. 
 <hr>
 <div id="bab4_6"></div>
 
-## `4-6. Form Processing` <a href="#daftar_isi_bab4">🡅</a>
+## `4-6. Form Processing` <a href="#daftar_isi_bab4">⬆</a>
 
 > - [X] 𝐀. Form Element (property, method & event)
 > - [X] 𝐁. Input Element Type Text
@@ -6389,7 +6396,7 @@ Pada bagian ```action="proses.php"``` di atas hanyalah contoh saja. Kita hanya a
 </html>
 ```
 
-Sebagai catatan, terdapat event yang serupa dengan ```keydown``` yaitu ```keypress```. Namun dalam kasus real, ```keydown``` lebih banyak dijumpai.
+Sebagai catatan, terdapat event yang serupa dengan ```keydown``` yaitu ```keypress```. Namun dalam studi kasus nyata, ```keydown``` lebih banyak dijumpai.
 
 📚 Referensi Event Objects & Property-nya (MouseEvent, InputEvent, KeyboardEvent, dll): <a href="https://www.w3schools.com/jsref/obj_events.asp">W3Schools: Event Object</a>.
 
@@ -6684,7 +6691,7 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 <hr>
 <div id="bab4_7"></div>
 
-## `4-7. Studi Kasus DOM` <a href="#daftar_isi_bab4">🡅</a>
+## `4-7. Studi Kasus DOM` <a href="#daftar_isi_bab4">⬆</a>
 
 > - [X] 𝐀. Membuat Dropdown Dinamis
 > - [X] 𝐁. Membuat Form Validation (V1)
@@ -7044,7 +7051,7 @@ Input Element type radio sangat mirip dengan checkbox. Bedanya, di radio hanya b
 <hr>
 <div id="bab6_1"></div>
 
-## `6-1. Pengantar Asynchronous` <a href="#daftar_isi_bab6">🡅</a>
+## `6-1. Pengantar Asynchronous` <a href="#daftar_isi_bab6">⬆</a>
 
 > - [X] 𝐀. Definisi JavaScript Lanjutan
 > - [X] 𝐁. Synchronous vs. Asynchronous
@@ -7077,7 +7084,7 @@ console.log("Tugas B selesai");
 
 Pada contoh di atas terdapat sebuah Function ```contohProsesYangMakanBanyakWaktu()``` yang memakan waktu cukup lama pada saat dieksekusi. Di dalam Function tersebut terdapat proses looping yang berat. Alhasil, "Tugas B selesai" harus menunggu proses eksekusi Function (kompleks) tersebut selesai terlebih dahulu. Urutan output: "Tugas A selesai", "Tugas kompleks selesai", dan terakhir "Tugas B selesai".
 
-Dalam kasus real, salah satu proses yang memakan waktu cukup lama bisa terjadi pada saat mengirim/menerima data (misalnya .json) dari web server menggunakan AJAX. Dibandingkan harus menunggu proses kirim/terima data dari server hingga selesai terlebih dahulu baru kemudian menjalankan tugas berikutnya, alangkah lebih baiknya sembari menunggu proses (yang memakan waktu cukup lama) tersebut selesai, JavaScript bisa pindah ke tugas lainnya untuk diselesaikan. Inilah yang dimaksud dengan Asynchronous.
+Dalam studi kasus nyata, salah satu proses yang memakan waktu cukup lama bisa terjadi pada saat mengirim/menerima data (misalnya .json) dari web server menggunakan AJAX. Dibandingkan harus menunggu proses kirim/terima data dari server hingga selesai terlebih dahulu baru kemudian menjalankan tugas berikutnya, alangkah lebih baiknya sembari menunggu proses (yang memakan waktu cukup lama) tersebut selesai, JavaScript bisa pindah ke tugas lainnya untuk diselesaikan. Inilah yang dimaksud dengan Asynchronous.
 
 Dengan Asynchronous, komponen dari sebuah website bisa muncul langsung terlebih dahulu sembari menunggu data/asset dari server tiba.
 
@@ -7123,7 +7130,7 @@ Selain beberapa istilah yang telah dijelaskan di atas, terdapa juga istilah Onli
 <hr>
 <div id="bab6_2"></div>
 
-## `6-2. Teknologi AJAX di JavaScript` <a href="#daftar_isi_bab6">🡅</a>
+## `6-2. Teknologi AJAX di JavaScript` <a href="#daftar_isi_bab6">⬆</a>
 
 > 𝐂𝐨𝐧𝐭𝐨𝐡 𝐒𝐞𝐝𝐞𝐫𝐡𝐚𝐧𝐚
 > > - [X] 𝐀. AJAX studi kasus Local File
