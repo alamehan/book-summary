@@ -632,7 +632,7 @@ Tidak selalu jelas terkait tipe data apa yang diputuskan JavaScript sebagai hasi
 var text = "Hello World!";
 
 if (text) {
- console.log("text berupa Truthy");   // Output: "text berupa Truthy"
+ console.log("text berupa Truthy");   // Output: "variable text berupa Truthy"
 } else {
  console.log("text berupa Falsy");    // Tidak dieksekusi
 }
@@ -754,13 +754,13 @@ console.log((4+6)/(5-3)*2+3);         // Output: 13     ⇨ Operator () diproses
 ### ![✔] 𝐅. Operator Assignment
 
 ```Javascript
-var g = 10;         // Artinya 10 dimasukkan sebagai nilai ke Variable g (Operator assignment memiliki precedence: 3)
-var h = 10 + 5;     // Artinya jumlahkan 10 + 5 dulu (Operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable h
-var i = g + h;      // Artinya jumlahkan g + h dulu (Operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable i
+var g = 10;       // Artinya 10 dimasukkan sebagai nilai ke Variable g (Operator assignment memiliki precedence: 3)
+var h = 10 + 5;   // Artinya jumlahkan 10 + 5 dulu (Operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable h
+var i = g + h;    // Artinya jumlahkan g + h dulu (Operator "+" memiliki precedence: 14), lalu masukkan hasilnya ke Variable i
 
-console.log(g);     // Output: 10
-console.log(h);     // Output: 15
-console.log(i);     // Output: 25
+console.log(g);   // Output: 10
+console.log(h);   // Output: 15
+console.log(i);   // Output: 25
 ```
 
 #### ⤷ Gabungan Assignment:
@@ -845,9 +845,9 @@ console.log("ali" < 9999999);         // Output: false  (Perbandingan String & N
 ### ![✔] 𝐈. Operator Logika
 
 ```Javascript
-console.log(true && false);           // Output: false  ⇨ and operator (true hanya jika kedua nilai true)
-console.log(true || false);           // Output: true   ⇨ or operator (true jika salah satu nilai true)
-console.log(!false);                  // Output: true   ⇨ not operator (negasi/kebalikannya)
+console.log(true && false);           // Output: false  ⇨ AND operator (true hanya jika kedua nilai true)
+console.log(true || false);           // Output: true   ⇨ OR operator (true jika salah satu nilai true)
+console.log(!false);                  // Output: true   ⇨ NOT operator (negasi/kebalikannya)
 console.log(true || true && false);   // Output: true   ⇨ Operator && diproses lebih awal (precedence: 7)
 ```
 
