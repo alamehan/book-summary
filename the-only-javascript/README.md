@@ -441,10 +441,9 @@ var strG = "\u2764 You!"              // Contoh pemakaian Unicode ⇨ Hasilnya: 
 var strH = `Hello World!`;            // String dengan backtick `` (Template String ES6+)
 var strI = `"Hei!", Jum'at today.`;   // Kutip satu & dua di dalam backtick
 var strJ = `\u2764 You!`;             // Contoh pemakaian Unicode ⇨ Hasilnya: ❤ You!
+```
 
 Tipe data string adalah tipe data yang digunakan untuk menyimpan barisan karakter. Dapat berupa kata, kalimat, atau paragraf.
-
-```
 
 | Escape Characters 	| Kegunaan                                                       	|
 |-------------------	|----------------------------------------------------------------	|
